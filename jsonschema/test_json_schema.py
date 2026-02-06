@@ -1,16 +1,19 @@
 import json
 import sys
 from pathlib import Path
-from jsonschema import Draft7Validator
+from jsonschema import Draft202012Validator
 
 def remove_nested_ids(obj, is_root=True):
-    """Remove $id from nested properties to fix reference resolution."""
+    """Remove $id from nested properties and rewrite $ref paths for Draft 2020-12."""
     if isinstance(obj, dict):
         result = {}
         for key, value in obj.items():
             if key == "$id" and not is_root:
                 continue
-            result[key] = remove_nested_ids(value, is_root=False)
+            if key == "$ref" and isinstance(value, str) and value.startswith("#/definitions/"):
+                result[key] = value.replace("#/definitions/", "#/$defs/")
+            else:
+                result[key] = remove_nested_ids(value, is_root=False)
         return result
     elif isinstance(obj, list):
         return [remove_nested_ids(item, is_root=False) for item in obj]
@@ -56,15 +59,15 @@ def main():
         
         # Create a schema that references the specific definition
         test_schema = {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "definitions": definitions,
-            "$ref": f"#/definitions/{schema_name}"
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": definitions,
+            "$ref": f"#/$defs/{schema_name}"
         }
-        
+
         with open(example_file) as f:
             example = json.load(f)
-        
-        validator = Draft7Validator(test_schema)
+
+        validator = Draft202012Validator(test_schema)
         errors = list(validator.iter_errors(example))
         validation_passed = len(errors) == 0
         
