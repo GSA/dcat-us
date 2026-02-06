@@ -131,15 +131,6 @@
                     "type": "null"
                 },
                 {
-                    "$ref": "#/definitions/Kind",
-                    "description": "inline description of Kind"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Kind",
-                    "format": "iri"
-                },
-                {
                     "type": "array",
                     "items": {
                         "oneOf": [
