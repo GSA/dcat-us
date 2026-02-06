@@ -281,7 +281,11 @@
                     "type": "null"
                 },
                 {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
                 }
             ]
         },
@@ -606,18 +610,18 @@
                 {
                     "type": "array",
                     "items": {
-						"oneOf": [
-							{
-								"$ref": "#/definitions/Standard",
-								"description": "inline description of Standard"
-							},
-							{
-								"type": "string",
-								"description": "reference iri of Standard",
-								"format": "iri"
-							}
-						]
-					}
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Standard",
+                                "description": "inline description of Standard"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Standard",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1189,17 +1193,17 @@
                 {
                     "type": "array",
                     "items": {
-                       "oneOf": [
-                           {
-                               "$ref": "#/definitions/Document",
-                               "description": "inline description of Document"
-                           },
-                           {
-                               "type": "string",
-                               "description": "reference iri of Document",
-                               "format": "iri"
-                           }
-                       ]
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Document",
+                                "description": "inline description of Document"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Document",
+                                "format": "iri"
+                            }
+                        ]
                     }
                 }
             ]
