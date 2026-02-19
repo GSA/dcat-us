@@ -43,12 +43,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
+                                "type": "string",
+                                "description": "An in-line description of the endpoint description, e.g. a free text description or a machine-readable description such as an OpenAPI specification or similar document."
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Resource",
+                                "description": "reference iri of the endpoint description, ie. an OpenAPI specification or similar document",
                                 "format": "iri"
                             }
                         ]
