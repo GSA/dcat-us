@@ -1011,7 +1011,7 @@
         "source": {
             "$id": "http://purl.org/dc/terms/source",
             "title": "data source",
-            "description": "Reference to the source of the dataset",
+            "description": "A related Dataset from which the described Dataset is derived",
             "oneOf": [
                 {
                     "type": "null"
@@ -1021,12 +1021,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Resource",
+                                "description": "reference iri of Dataset",
                                 "format": "iri"
                             }
                         ]
