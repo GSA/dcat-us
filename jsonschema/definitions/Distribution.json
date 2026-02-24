@@ -515,25 +515,20 @@
         "language": {
             "$id": "http://purl.org/dc/terms/language",
             "title": "language",
-            "description": "A language used in the Distribution.",
+            "description": "A language used in the Distribution. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
+                    "type": "string",
+                    "maxLength": 2
+                },
+                {
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/LinguisticSystem",
-                                "description": "inline description of LinguisticSystem"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of LinguisticSystem",
-                                "format": "iri"
-                            }
-                        ]
+                        "type": "string",
+                        "maxLength": 2
                     }
                 }
             ]
