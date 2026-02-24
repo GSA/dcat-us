@@ -766,17 +766,9 @@
                 {
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Resource",
-                                "format": "iri"
-                            }
-                        ]
+                        "type": "string",
+                        "description": "reference iri of Resource",
+                        "format": "iri"
                     }
                 }
             ]
@@ -910,7 +902,7 @@
         "relation": {
             "$id": "http://purl.org/dc/terms/relation",
             "title": "related resource",
-            "description": "Reference to a related source",
+            "description": "Reference to a related resource",
             "oneOf": [
                 {
                     "type": "null"
@@ -918,17 +910,9 @@
                 {
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Resource",
-                                "format": "iri"
-                            }
-                        ]
+                        "type": "string",
+                        "description": "reference iri of Resource",
+                        "format": "iri"
                     }
                 }
             ]
