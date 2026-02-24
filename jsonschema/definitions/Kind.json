@@ -39,19 +39,10 @@
         },
         "hasEmail": {
             "$id": "http://www.w3.org/2006/vcard/ns#hasEmail",
-            "title": "email",
-            "description": "The email address of the contact",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Resource",
-                    "description": "inline description of Resource"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Resource",
-                    "format": "iri"
-                }
-            ]
+            "title": "Email",
+            "description": "Email address for the contact",
+            "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
+            "type": "string"
         },
         "family-name": {
             "$id": "http://www.w3.org/2006/vcard/ns#family-name",
