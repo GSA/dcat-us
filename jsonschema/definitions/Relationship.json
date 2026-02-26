@@ -31,17 +31,8 @@
             "$id": "http://purl.org/dc/terms/relation",
             "title": "relation",
             "description": "The resource related to the source resource.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Resource",
-                    "description": "inline description of Resource"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Resource",
-                    "format": "iri"
-                }
-            ]
+            "type": "string",
+            "format": "iri"
         }
     },
     "required": [
