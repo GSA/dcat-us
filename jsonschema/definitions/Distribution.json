@@ -108,17 +108,9 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
                 }
             ]
         },
@@ -161,23 +153,15 @@
         "downloadURL": {
             "$id": "http://www.w3.org/ns/dcat#downloadURL",
             "title": "download URL",
-            "description": "A URL that is a direct link to a downloadable file in a given format.",
+            "description": "A URL that is a direct link to a downloadable file of the Distribution in a given format.",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
                 }
             ]
         },
