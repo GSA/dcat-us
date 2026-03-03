@@ -603,32 +603,6 @@
                 }
             ]
         },
-        "hasPolicy": {
-            "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
-            "title": "has policy",
-            "description": "An ODRL conformant policy expressing the rights associated with the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Policy",
-                                "description": "inline description of Policy"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Policy",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "qualifiedAttribution": {
             "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
             "title": "qualified attribution",
