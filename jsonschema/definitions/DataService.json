@@ -62,17 +62,9 @@
             "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "#/definitions/Resource",
-                        "description": "inline description of Resource"
-                    },
-                    {
-                        "type": "string",
-                        "description": "reference iri of Resource",
-                        "format": "iri"
-                    }
-                ]
+                "type": "string",
+                "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
+                "format": "iri"
             }
         },
         "keyword": {
