@@ -690,20 +690,9 @@
                     "type": "null"
                 },
                 {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/ImageObject",
-                                "description": "inline description of ImageObject"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of ImageObject",
-                                "format": "iri"
-                            }
-                        ]
-                    }
+                    "type": "string",
+                    "description": "The link to the image",
+                    "format": "iri"
                 }
             ]
         },
