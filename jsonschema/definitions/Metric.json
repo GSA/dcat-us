@@ -31,17 +31,8 @@
             "$id": "http://www.w3.org/ns/dqv#inDimension",
             "title": "in dimension",
             "description": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Dimension",
-                    "description": "inline description of Dimension"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Dimension",
-                    "format": "iri"
-                }
-            ]
+            "type": "string",
+            "format": "iri"
         }
     },
     "required": [
