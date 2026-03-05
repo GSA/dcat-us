@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/qualitymeasurement",
     "title": "QualityMeasurement",
+    "description": "A single measurement of one metric",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,12 +14,11 @@
             "default": "QualityMeasurement"
         },
         "isMeasurementOf": {
-            "$id": "http://www.w3.org/ns/dqv#isMeasurementOf",
             "title": "is measurement of",
-            "description": "Indicates the metric being observed.",
+            "description": "The metric being observed",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Metric",
+                    "$ref": "/dcat-us/3.0.0/definitions/metric",
                     "description": "inline description of Metric"
                 },
                 {
@@ -28,16 +29,14 @@
             ]
         },
         "value": {
-            "$id": "http://www.w3.org/ns/dqv#value",
             "title": "value",
-            "description": "Refers to values computed by metric.",
+            "description": "The value computed by metric",
             "type": "string"
         },
         "unitMeasure": {
-            "$id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
             "title": "unit of measure",
             "description": "Unit of measure associated with the value",
-            "oneOf": [
+            "anyOf": [
                 {
                     "type": "null"
                 },

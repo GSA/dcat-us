@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/standard",
     "title": "Standard",
+    "description": "Information about a particular standard that another item conforms to",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "Standard"
         },
         "created": {
-            "$id": "http://purl.org/dc/terms/created",
             "title": "creation date",
-            "description": "This property contains the date on which the Standard has been first created.",
-            "oneOf": [
+            "description": "The date on which the Standard has been first created",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -41,10 +42,9 @@
             ]
         },
         "description": {
-            "$id": "http://purl.org/dc/terms/description",
             "title": "description",
-            "description": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description",
-            "oneOf": [
+            "description": "A free-text account of the Standard",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -54,18 +54,16 @@
             ]
         },
         "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "identifier": {
-            "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "description": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register",
-            "oneOf": [
+            "description": "The main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -78,10 +76,9 @@
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "issued",
-            "description": "This property contains the date of formal issuance (e.g., publication) of the Standard.",
-            "oneOf": [
+            "description": "The date of formal issuance (e.g., publication) of the Standard",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -107,10 +104,9 @@
             ]
         },
         "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
             "title": "last modified",
-            "description": "This property contains the most recent date on which the Standard was changed or modified.",
-            "oneOf": [
+            "description": "The most recent date on which the Standard was changed or modified",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -136,10 +132,9 @@
             ]
         },
         "title": {
-            "$id": "http://purl.org/dc/terms/title",
             "title": "title",
-            "description": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name",
-            "oneOf": [
+            "description": "A name given to the Standard",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -149,56 +144,45 @@
             ]
         },
         "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "category": {
-            "$id": "http://purl.org/dc/terms/type",
             "title": "category",
-            "description": "This property refers to the type of the Standard. A controlled vocabulary for the values has not been established.",
+            "description": "The type of the Standard. A controlled vocabulary for the values has not been established",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of Concept"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Concept",
+                    "format": "iri"
                 }
             ]
         },
         "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
             "title": "in scheme",
-            "description": "This property MAY be used to specify the reference register to which the Standard belongs.",
+            "description": "The reference register to which the Standard belongs",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/ConceptScheme",
-                            "description": "inline description of ConceptScheme"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of ConceptScheme",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
+                    "description": "inline description of ConceptScheme"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of ConceptScheme",
+                    "format": "iri"
                 }
             ]
         }

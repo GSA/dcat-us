@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/rightsstatement",
     "title": "RightsStatement",
+    "description": "A statement about rights held with respect to another item",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "RightsStatement"
         },
         "attributionText": {
-            "$id": "http://schema.theodi.org/odrs#attributionText",
             "title": "attribution text",
-            "description": "The custom attribution text for the right statement",
-            "oneOf": [
+            "description": "The custom attribution text for the rights statement",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -25,8 +26,7 @@
             ]
         },
         "attributionTextMap": {
-            "$id": "http://schema.theodi.org/odrs#attributionText_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

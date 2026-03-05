@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/licensedocument",
     "title": "LicenseDocument",
+    "description": "Text of the license for an item",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "LicenseDocument"
         },
         "licenseText": {
-            "$id": "http://spdx.org/rdf/terms#licenseText",
             "title": "license text",
-            "description": "Full text of the license.",
-            "oneOf": [
+            "description": "Full text of the license",
+            "anyOf": [
                 {
                     "type": "null"
                 },

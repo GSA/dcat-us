@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/provenancestatement",
     "title": "ProvenanceStatement",
+    "description": "A single statement about the provenance of a dataset",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "ProvenanceStatement"
         },
         "label": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label",
             "title": "provenance statement text",
-            "description": "This property contains the text of the Provenance Statement. This property can be repeated for parallel language versions of the name",
-            "oneOf": [
+            "description": "The text of the Provenance Statement",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -25,8 +26,7 @@
             ]
         },
         "labelMap": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for provenance statement text. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/kind",
     "title": "Kind",
+    "description": "Contact information for an individual or entity",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "Kind"
         },
         "address": {
-            "$id": "http://www.w3.org/2006/vcard/ns#address",
             "title": "address",
-            "description": "This property specifies the address of the contact",
-            "oneOf": [
+            "description": "The address of the contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -24,8 +25,8 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Address",
-                                "description": "inline description of Address"
+                                "$ref": "/dcat-us/3.0.0/definitions/address",
+                                "description": "inline address information"
                             },
                             {
                                 "type": "string",
@@ -38,17 +39,15 @@
             ]
         },
         "hasEmail": {
-            "$id": "http://www.w3.org/2006/vcard/ns#hasEmail",
             "title": "Email",
             "description": "Email address for the contact",
             "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
             "type": "string"
         },
         "family-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#family-name",
             "title": "family name",
-            "description": "This property specifies the family name of the person to contact",
-            "oneOf": [
+            "description": "The family name of the contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -58,16 +57,14 @@
             ]
         },
         "fn": {
-            "$id": "http://www.w3.org/2006/vcard/ns#fn",
             "title": "formatted name",
-            "description": "The formatted text corresponding to the name of the contact",
+            "description": "The formatted text of the name of the contact",
             "type": "string"
         },
         "given-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#given-name",
             "title": "given name",
-            "description": "This property specifies the given name of the person to contact",
-            "oneOf": [
+            "description": "The given name of the contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -77,10 +74,9 @@
             ]
         },
         "organization-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#organization-name",
             "title": "organization name",
-            "description": "This property specifies the name of the organization to contact",
-            "oneOf": [
+            "description": "The name of the organization to contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -90,10 +86,9 @@
             ]
         },
         "tel": {
-            "$id": "http://www.w3.org/2006/vcard/ns#tel",
             "title": "telephone",
-            "description": "This property specifies the telephone number for telephony communication with the person or organization.",
-            "oneOf": [
+            "description": "The telephone number for the contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -103,10 +98,9 @@
             ]
         },
         "title": {
-            "$id": "http://www.w3.org/2006/vcard/ns#title",
             "title": "position title",
-            "description": "This property specifies the position role of the person to contact",
-            "oneOf": [
+            "description": "The position role of the person to contact",
+            "anyOf": [
                 {
                     "type": "null"
                 },

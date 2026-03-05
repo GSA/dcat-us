@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/userestriction",
     "title": "UseRestriction",
+    "description": "A restriction on usage of another item",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "UseRestriction"
         },
         "restrictionNote": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
-            "description": "Significant information pertaining to the use or reproduction of the data.",
-            "oneOf": [
+            "description": "Significant information pertaining to the use or reproduction of the data",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -25,31 +26,28 @@
             ]
         },
         "restrictionNoteMap": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "restrictionStatus": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
             "description": "Indication of whether or not there are use restrictions on the archival materials",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Concept",
-                    "description": "inline description of Concept"
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of restriction status"
                 },
                 {
                     "type": "string",
-                    "description": "reference iri of Concept",
+                    "description": "reference iri of restriction status",
                     "format": "iri"
                 }
             ]
         },
         "specificRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
             "description": "The specific NARA restriction associated with the use restriction",
             "oneOf": [
@@ -57,17 +55,13 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of the specific restriction"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the specific restriction",
+                    "format": "iri"
                 }
             ]
         }
