@@ -42,6 +42,19 @@
                     "format": "iri"
                 }
             ]
+        },
+        "definition": {
+            "$id": "https://www.w3.org/ns/dqv#definition",
+            "title": "definition",
+            "description": "Definition of the metric.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         }
     },
     "required": [
