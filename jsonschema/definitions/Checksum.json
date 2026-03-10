@@ -15,17 +15,7 @@
             "$id": "http://spdx.org/rdf/terms#algorithm",
             "title": "algorithm",
             "description": "The algorithm used to produce the subject Checksum.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/ChecksumAlgorithm",
-                    "description": "inline description of ChecksumAlgorithm"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of ChecksumAlgorithm",
-                    "format": "iri"
-                }
-            ]
+            "type": "string"
         },
         "checksumValue": {
             "$id": "http://spdx.org/rdf/terms#checksumValue",
