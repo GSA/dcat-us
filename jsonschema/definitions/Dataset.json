@@ -752,10 +752,7 @@
                     "type": "null"
                 },
                 {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 }
             ]
         },
@@ -1024,6 +1021,15 @@
             "oneOf": [
                 {
                     "type": "null"
+                },
+                {
+                    "$ref": "#/definitions/Location",
+                    "description": "inline description of Location"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Location",
+                    "format": "iri"
                 },
                 {
                     "type": "array",

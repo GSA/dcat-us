@@ -15,17 +15,7 @@
             "$id": "http://www.w3.org/ns/dcat#hadRole",
             "title": "role",
             "description": "The function of an entity or agent with respect to another entity or resource.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Role",
-                    "description": "inline description of Role"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Role",
-                    "format": "iri"
-                }
-            ]
+            "type": "string"
         },
         "relation": {
             "$id": "http://purl.org/dc/terms/relation",
