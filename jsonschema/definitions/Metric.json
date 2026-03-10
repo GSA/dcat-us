@@ -15,17 +15,7 @@
             "$id": "http://www.w3.org/ns/dqv#expectedDataType",
             "title": "expected datatype",
             "description": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/anySimpleType",
-                    "description": "inline description of anySimpleType"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of anySimpleType",
-                    "format": "iri"
-                }
-            ]
+            "type": "string"
         },
         "inDimension": {
             "$id": "http://www.w3.org/ns/dqv#inDimension",
