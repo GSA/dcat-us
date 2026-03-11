@@ -85,13 +85,16 @@
         "keyword": {
             "$id": "http://www.w3.org/ns/dcat#keyword",
             "title": "keyword/tag",
-            "description": "A keyword or tag describing the resource.",
+            "description": "A list of keywords or tags describing the resource.",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             ]
         },
@@ -283,7 +286,14 @@
             "$id": "http://purl.org/dc/terms/description",
             "title": "description",
             "description": "Free-text description of the catalog (in the language indicated in the attribute).",
-            "type": "string"
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "descriptionMap": {
             "$id": "http://purl.org/dc/terms/description_lang_map",
@@ -443,13 +453,20 @@
             "description": "Entity responsible for making the catalog available.",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Agent",
-                    "description": "inline description of Agent"
+                    "type": "null"
                 },
-                {
-                    "type": "string",
-                    "description": "reference iri of Agent",
-                    "format": "iri"
+                {   
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Agent",
+                            "description": "inline description of Agent"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Agent",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },
@@ -584,7 +601,14 @@
             "$id": "http://purl.org/dc/terms/title",
             "title": "title",
             "description": "The title of the catalog in the indicated language",
-            "type": "string"
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "titleMap": {
             "$id": "http://purl.org/dc/terms/title_lang_map",
@@ -668,9 +692,6 @@
         }
     },
     "required": [
-        "dataset",
-        "description",
-        "publisher",
-        "title"
+        "dataset"
     ]
 }
