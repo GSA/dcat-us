@@ -37,10 +37,9 @@
 
         },
         "definition": {
-            "$id": "https://www.w3.org/ns/dqv#definition",
             "title": "definition",
             "description": "Definition of the metric.",
-            "oneOf": [
+            "anyOf": [
                 {
                     "type": "null"
                 },
