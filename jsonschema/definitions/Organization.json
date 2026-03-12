@@ -84,7 +84,14 @@
             "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "title": "preferred label",
             "description": "Preferred or legal name of the organization",
-            "type": "string"
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "prefLabelMap": {
             "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
@@ -96,7 +103,6 @@
         }
     },
     "required": [
-        "name",
-        "prefLabel"
+        "name"
     ]
 }
