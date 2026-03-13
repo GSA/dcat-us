@@ -455,18 +455,14 @@
                 {
                     "type": "null"
                 },
-                {   
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Agent",
-                            "description": "inline description of Agent"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Agent",
-                            "format": "iri"
-                        }
-                    ]
+                {
+                    "$ref": "#/definitions/Agent",
+                    "description": "inline description of Agent"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Agent",
+                    "format": "iri"
                 }
             ]
         },
