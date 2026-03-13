@@ -16,49 +16,33 @@
         "country-name": {
             "title": "country",
             "description": "The country of the Address",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "locality": {
             "title": "locality",
             "description": "The city of the Address",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "postal-code": {
             "title": "postal code",
             "description": "The postal code of the Address",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "region": {
             "title": "administrative area",
             "description": "The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "street-address": {
