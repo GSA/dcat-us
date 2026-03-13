@@ -16,13 +16,9 @@
         "licenseText": {
             "title": "license text",
             "description": "Full text of the license",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

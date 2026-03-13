@@ -36,13 +36,9 @@
         "unitMeasure": {
             "title": "unit of measure",
             "description": "Unit of measure associated with the value",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

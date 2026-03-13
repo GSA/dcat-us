@@ -46,13 +46,9 @@
         "altLabel": {
             "title": "alternative label",
             "description": "alternative name (trading name, colloquial name) for an organization",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {

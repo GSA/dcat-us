@@ -16,13 +16,9 @@
         "altLabel": {
             "title": "alternate label",
             "description": "Alternative label for a concept",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {
@@ -35,13 +31,9 @@
         "definition": {
             "title": "definition",
             "description": "Definition of the controlled vocabulary term",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "definitionMap": {

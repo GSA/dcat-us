@@ -47,13 +47,9 @@
         "family-name": {
             "title": "family name",
             "description": "The family name of the contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "fn": {
@@ -64,49 +60,33 @@
         "given-name": {
             "title": "given name",
             "description": "The given name of the contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "organization-name": {
             "title": "organization name",
             "description": "The name of the organization to contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "tel": {
             "title": "telephone",
             "description": "The telephone number for the contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "title": {
             "title": "position title",
             "description": "The position role of the person to contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

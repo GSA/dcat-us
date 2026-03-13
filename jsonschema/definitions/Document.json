@@ -16,7 +16,7 @@
         "creators": {
             "title": "authors",
             "description": "List of authors",
-            "oneOf": [
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -31,13 +31,9 @@
         "publishers": {
             "title": "publisher",
             "description": "Publisher",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "mediaType": {
@@ -68,13 +64,9 @@
         "abstract": {
             "title": "abstract",
             "description": "Text abstract of the document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "abstractMap": {
@@ -87,13 +79,9 @@
         "bibliographicCitation": {
             "title": "bibliographic citation",
             "description": "Bibliographic citation as text",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "conformsTo": {
@@ -149,13 +137,9 @@
         "description": {
             "title": "description",
             "description": "A free-text account of the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {

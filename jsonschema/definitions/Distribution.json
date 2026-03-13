@@ -106,13 +106,9 @@
         "byteSize": {
             "title": "byte size",
             "description": "The size of a Distribution in bytes",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "compressFormat": {
@@ -186,25 +182,17 @@
         "spatialResolutionInMeters": {
             "title": "Spatial resolution (meters)",
             "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "temporalResolution": {
             "title": "termporal resolution",
             "description": "The minimum time period resolvable in the dataset distribution",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "availability": {
@@ -357,13 +345,9 @@
         "description": {
             "title": "description",
             "description": "A free-text account of the Distribution",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {
@@ -521,13 +505,9 @@
         "title": {
             "title": "title",
             "description": "A name given to the Distribution",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "titleMap": {

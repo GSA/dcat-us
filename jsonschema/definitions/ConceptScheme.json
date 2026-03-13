@@ -16,13 +16,9 @@
         "version": {
             "title": "version info",
             "description": "A version number or other version designation of the concept scheme",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "created": {
@@ -56,13 +52,9 @@
         "description": {
             "title": "description",
             "description": "A description of the concept scheme",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {

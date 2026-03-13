@@ -102,13 +102,9 @@
         "versionNotes": {
             "title": "version notes",
             "description": "version notes for this dataset",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "contactPoint": {
@@ -334,25 +330,17 @@
         "spatialResolutionInMeters": {
             "title": "Spatial resolution (meters)",
             "description": "Spatial resolution in meters",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "temporalResolution": {
             "title": "temporal resolution",
             "description": "Temporal resolution using xsd:duration syntax",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "theme": {
@@ -383,13 +371,9 @@
         "version": {
             "title": "version",
             "description": "The version indicator (name or identifier) of a resource",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "describedBy": {
@@ -481,13 +465,9 @@
         "purpose": {
             "title": "purpose",
             "description": "The purpose of the dataset",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "purposeMap": {
@@ -669,13 +649,9 @@
         "identifier": {
             "title": "identifier",
             "description": "The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "isReferencedBy": {
@@ -1209,13 +1185,9 @@
         "scopeNote": {
             "title": "usage note",
             "description": "usage note for the dataset",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "scopeNoteMap": {

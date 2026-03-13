@@ -16,13 +16,9 @@
         "label": {
             "title": "label",
             "description": "The denomination of the Media Type",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "labelMap": {

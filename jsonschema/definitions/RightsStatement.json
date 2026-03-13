@@ -16,13 +16,9 @@
         "attributionText": {
             "title": "attribution text",
             "description": "The custom attribution text for the rights statement",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "attributionTextMap": {

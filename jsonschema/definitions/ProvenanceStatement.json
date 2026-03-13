@@ -16,13 +16,9 @@
         "label": {
             "title": "provenance statement text",
             "description": "The text of the Provenance Statement",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "labelMap": {

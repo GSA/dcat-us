@@ -16,13 +16,9 @@
         "label": {
             "title": "liability statement text",
             "description": "Full text of the liability statement",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "labelMap": {

@@ -34,13 +34,9 @@
         "label": {
             "title": "label",
             "description": "A human-readable label for the activity",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "labelMap": {

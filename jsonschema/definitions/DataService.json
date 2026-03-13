@@ -69,13 +69,9 @@
         "keyword": {
             "title": "keyword/tag",
             "description": "A keyword or tag describing the Data Service",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "keywordMap": {
@@ -289,13 +285,9 @@
         "description": {
             "title": "description",
             "description": "A free-text account of the Data Service",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {

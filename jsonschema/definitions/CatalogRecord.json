@@ -16,7 +16,7 @@
         "status": {
             "title": "change type",
             "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": "null"
                 },
@@ -34,7 +34,7 @@
         "conformsTo": {
             "title": "application profile",
             "description": "An Application Profile that the Catalog Record's metadata conforms to",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": "null"
                 },
@@ -139,7 +139,7 @@
         "source": {
             "title": "source metadata",
             "description": "The original metadata that was used in creating metadata for the items in the catalog record",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": "null"
                 },
@@ -157,13 +157,9 @@
         "title": {
             "title": "title",
             "description": "A name given to the Catalog Record",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "titleMap": {

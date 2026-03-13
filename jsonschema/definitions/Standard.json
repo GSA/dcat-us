@@ -44,13 +44,9 @@
         "description": {
             "title": "description",
             "description": "A free-text account of the Standard",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {
@@ -134,13 +130,9 @@
         "title": {
             "title": "title",
             "description": "A name given to the Standard",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "titleMap": {

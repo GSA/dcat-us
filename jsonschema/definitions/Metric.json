@@ -26,26 +26,9 @@
         "definition": {
             "title": "definition",
             "description": "Definition of the metric.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-
-        },
-        "definition": {
-            "title": "definition",
-            "description": "Definition of the metric.",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

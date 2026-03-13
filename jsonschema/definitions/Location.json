@@ -92,13 +92,9 @@
         "altLabel": {
             "title": "alternative name",
             "description": "An alternative name for a location",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {
@@ -111,13 +107,9 @@
         "prefLabel": {
             "title": "geographic name",
             "description": "Preferred label of the Location",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "prefLabelMap": {

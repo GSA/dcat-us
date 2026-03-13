@@ -64,13 +64,9 @@
         "street-address": {
             "title": "street address",
             "description": "The street name and civic number of an Address",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

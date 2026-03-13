@@ -16,13 +16,9 @@
         "restrictionNote": {
             "title": "restriction note",
             "description": "Significant information pertaining to the use or reproduction of the data",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "restrictionNoteMap": {
