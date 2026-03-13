@@ -286,13 +286,9 @@
             "$id": "http://purl.org/dc/terms/description",
             "title": "description",
             "description": "Free-text description of the catalog (in the language indicated in the attribute).",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null", 
+                "string"
             ]
         },
         "descriptionMap": {
@@ -597,13 +593,9 @@
             "$id": "http://purl.org/dc/terms/title",
             "title": "title",
             "description": "The title of the catalog in the indicated language",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null", 
+                "string"
             ]
         },
         "titleMap": {
