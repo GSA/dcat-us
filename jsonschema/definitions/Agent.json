@@ -1,43 +1,41 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/agent",
-    "title": "Agent",
-    "description": "An entity that could be involved with a resource",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Agent"
-        },
-        "category": {
-            "title": "category",
-            "description": "The type of the agent that makes the item available",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of the agent type"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of the agent type",
-                    "format": "iri"
-                }
-            ]
-        },
-        "name": {
-            "title": "name",
-            "description": "The name of the agent",
-            "type": "string"
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/agent",
+  "title": "Agent",
+  "description": "An entity that could be involved with a resource",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "name"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Agent"
+    },
+    "category": {
+      "title": "category",
+      "description": "The type of the agent that makes the item available",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of the agent type"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the agent type",
+          "format": "iri"
+        }
+      ]
+    },
+    "name": {
+      "title": "name",
+      "description": "The name of the agent",
+      "type": "string"
+    }
+  },
+  "required": ["name"]
 }

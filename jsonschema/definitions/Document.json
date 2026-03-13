@@ -1,247 +1,224 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
-    "title": "Document",
-    "description": "Information about a text document",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Document"
-        },
-        "creators": {
-            "title": "authors",
-            "description": "List of authors",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "publishers": {
-            "title": "publisher",
-            "description": "Publisher",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "mediaType": {
-            "title": "media type",
-            "description": "List of file formats of the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-                                "description": "inline description of MediaType"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of MediaType",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "abstract": {
-            "title": "abstract",
-            "description": "Text abstract of the document",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "abstractMap": {
-            "description": "Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "bibliographicCitation": {
-            "title": "bibliographic citation",
-            "description": "Bibliographic citation as text",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "conformsTo": {
-            "title": "conforms to standard",
-            "description": "A standard to which the document conforms",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                                "description": "inline description of Standard"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Standard",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "creator": {
-            "title": "corporate author",
-            "description": "The organization responsible for creating the resource",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                                "description": "inline description of corporate author"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of corporate author",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "description": {
-            "title": "description",
-            "description": "A free-text account of the Document",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "descriptionMap": {
-            "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "identifier": {
-            "title": "identifier",
-            "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "issued": {
-            "title": "publication date",
-            "description": "Publication date of the document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
-        "publisher": {
-            "title": "publisher",
-            "description": "publisher organization of the document",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/organization",
-                    "description": "inline description of publisher organization"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of publisher organization",
-                    "format": "iri"
-                }
-            ]
-        },
-        "title": {
-            "title": "title",
-            "description": "The title of the document in the indicated language",
-            "type": "string"
-        },
-        "titleMap": {
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "category": {
-            "title": "category",
-            "description": "Category of the document",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of Concept"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Concept",
-                    "format": "iri"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
+  "title": "Document",
+  "description": "Information about a text document",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "title"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Document"
+    },
+    "creators": {
+      "title": "authors",
+      "description": "List of authors",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "publishers": {
+      "title": "publisher",
+      "description": "Publisher",
+      "type": ["null", "string"]
+    },
+    "mediaType": {
+      "title": "media type",
+      "description": "List of file formats of the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/mediatype",
+                "description": "inline description of MediaType"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of MediaType",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "abstract": {
+      "title": "abstract",
+      "description": "Text abstract of the document",
+      "type": ["null", "string"]
+    },
+    "abstractMap": {
+      "description": "Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "bibliographicCitation": {
+      "title": "bibliographic citation",
+      "description": "Bibliographic citation as text",
+      "type": ["null", "string"]
+    },
+    "conformsTo": {
+      "title": "conforms to standard",
+      "description": "A standard to which the document conforms",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/standard",
+                "description": "inline description of Standard"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Standard",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "creator": {
+      "title": "corporate author",
+      "description": "The organization responsible for creating the resource",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/organization",
+                "description": "inline description of corporate author"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of corporate author",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "description": {
+      "title": "description",
+      "description": "A free-text account of the Document",
+      "type": ["null", "string"]
+    },
+    "descriptionMap": {
+      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "identifier": {
+      "title": "identifier",
+      "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "issued": {
+      "title": "publication date",
+      "description": "Publication date of the document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "oneOf": [
+            {
+              "format": "date-time"
+            },
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "^[0-9]{4}$",
+              "description": "A year in YYYY format"
+            },
+            {
+              "pattern": "^[0-9]{4}-[0-9]{2}$",
+              "description": "A year and month in YYYY-MM format"
+            }
+          ]
+        }
+      ]
+    },
+    "publisher": {
+      "title": "publisher",
+      "description": "publisher organization of the document",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/organization",
+          "description": "inline description of publisher organization"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of publisher organization",
+          "format": "iri"
+        }
+      ]
+    },
+    "title": {
+      "title": "title",
+      "description": "The title of the document in the indicated language",
+      "type": "string"
+    },
+    "titleMap": {
+      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "category": {
+      "title": "category",
+      "description": "Category of the document",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of Concept"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Concept",
+          "format": "iri"
+        }
+      ]
+    }
+  },
+  "required": ["title"]
 }

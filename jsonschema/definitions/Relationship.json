@@ -1,32 +1,29 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/relationship",
-    "title": "Relationship",
-    "description": "Information about an item or entity that has some relationship to a dataset and the nature of the relationship",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Relationship"
-        },
-        "hadRole": {
-            "title": "role",
-            "description": "The function of an entity or agent with respect to a dataset",
-            "type": "string"
-        },
-        "relation": {
-            "title": "relation",
-            "description": "Link to the entity related to the dataset",
-            "type": "string",
-            "format": "iri"
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/relationship",
+  "title": "Relationship",
+  "description": "Information about an item or entity that has some relationship to a dataset and the nature of the relationship",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "hadRole",
-        "relation"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Relationship"
+    },
+    "hadRole": {
+      "title": "role",
+      "description": "The function of an entity or agent with respect to a dataset",
+      "type": "string"
+    },
+    "relation": {
+      "title": "relation",
+      "description": "Link to the entity related to the dataset",
+      "type": "string",
+      "format": "iri"
+    }
+  },
+  "required": ["hadRole", "relation"]
 }

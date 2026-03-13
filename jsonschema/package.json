@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "generate": "./generate-schema.js"
+  },
+  "dependencies": {
+    "ajv-formats-draft2019": "^1.6.1",
+    "json-schema-static-docs": "^0.28.1"
+  },
+  "devDependencies": {
+    "prettier": "3.8.1"
+  }
+}
