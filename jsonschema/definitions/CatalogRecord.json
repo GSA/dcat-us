@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/catalogrecord",
     "title": "CatalogRecord",
-    "description": "An item in a data catalog that is not a dataset or data service",
+    "description": "A record in a catalog, describing the registration of a single resource",
     "type": "object",
     "properties": {
         "@id": {

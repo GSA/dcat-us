@@ -84,13 +84,9 @@
         "keyword": {
             "title": "keyword/tag",
             "description": "A keyword or tag describing the resource",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "keywordMap": {
@@ -203,44 +199,36 @@
         "accessRights": {
             "title": "access rights",
             "description": "Information that indicates whether the Catalog is open data, has access restrictions or is not public",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-                            "description": "inline description of access rights"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of the access rights",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
+                    "description": "inline description of access rights"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the access rights",
+                    "format": "iri"
                 }
             ]
         },
         "conformsTo": {
             "title": "schema version",
             "description": "An established standard to which the described catalog conforms",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "/dcat-us/3.0.0/definitions/standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/standard",
+                    "description": "inline description of Standard"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Standard",
+                    "format": "iri"
                 }
             ]
         },

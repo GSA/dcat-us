@@ -41,7 +41,7 @@
                 {
                     "type": "array",
                     "items": {
-                        "oneOf": [
+                        "anyOf": [
                             {
                                 "type": "string",
                                 "description": "An in-line description of the endpoint description"
