@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/identifier",
     "title": "Identifier",
+    "description": "Information about an identifier scheme",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,20 +14,14 @@
             "default": "Identifier"
         },
         "schemaAgency": {
-            "$id": "http://www.w3.org/ns/adms#schemaAgency",
             "title": "schema agency",
-            "description": "The name of the agency that issued the identifier.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "The name of the agency that issued the identifier",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "creator": {
-            "$id": "http://purl.org/dc/terms/creator",
             "title": "creator",
             "description": "the agency that manages the identifier scheme",
             "oneOf": [
@@ -33,25 +29,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Organization",
-                            "description": "inline description of Organization"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Organization",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/organization",
+                    "description": "inline description of the creator"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the creator",
+                    "format": "iri"
                 }
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "issued",
-            "description": "The date of formal issuance (e.g., publication) of the Identiifer.",
-            "oneOf": [
+            "description": "The date of formal issuance (e.g., publication) of the Identifier",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -77,29 +68,19 @@
             ]
         },
         "version": {
-            "$id": "http://purl.org/dc/terms/version",
             "title": "version",
             "description": "version of the identifier scheme",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "notation": {
-            "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
-            "description": "abbreviations or codes from code lists for an identifier",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "abbreviation or code from code lists for an identifier",
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

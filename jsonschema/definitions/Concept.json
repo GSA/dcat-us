@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/concept",
     "title": "Concept",
+    "description": "A labeled value from a specified concept scheme",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,54 +14,41 @@
             "default": "Concept"
         },
         "altLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "title": "alternate label",
-            "description": "Alternative labels for a concept.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "Alternative label for a concept",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "definition": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition",
             "title": "definition",
-            "description": "Definition of the controlled vocabulary term.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "Definition of the controlled vocabulary term",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "definitionMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
             "title": "in scheme",
-            "description": "\nConcept scheme defining the concept.",
+            "description": "Concept scheme defining this concept",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/ConceptScheme",
+                    "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
                     "description": "inline description of ConceptScheme"
                 },
                 {
@@ -70,10 +59,9 @@
             ]
         },
         "notation": {
-            "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
-            "description": "abbreviations or codes from code lists for an organization.",
-            "oneOf": [
+            "description": "List of abbreviations or codes from code lists for an organization",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -86,14 +74,12 @@
             ]
         },
         "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "title": "preferred label",
-            "description": "Preferred label for the controlled vocabulary term (one per language).",
+            "description": "Preferred label for the term",
             "type": "string"
         },
         "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

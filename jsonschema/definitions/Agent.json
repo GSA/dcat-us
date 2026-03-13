@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/agent",
     "title": "Agent",
+    "description": "An entity that could be involved with a resource",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,32 +14,26 @@
             "default": "Agent"
         },
         "category": {
-            "$id": "http://purl.org/dc/terms/type",
             "title": "category",
-            "description": "This property refers to a type of the Agent that makes the Catalog, Catalog Record, Data Service, or Dataset available",
+            "description": "The type of the agent that makes the item available",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of the agent type"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the agent type",
+                    "format": "iri"
                 }
             ]
         },
         "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
             "title": "name",
-            "description": "The name of the software agent",
+            "description": "The name of the agent",
             "type": "string"
         }
     },
