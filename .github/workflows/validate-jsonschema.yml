@@ -21,3 +21,17 @@ jobs:
 
       - name: Run JSON Schema validation tests
         run: python jsonschema/test_json_schema.py
+
+  check-format:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v6
+
+      - name: Install NPM dependencies
+        working-directory: ./jsonschema
+        run: npm ci
+
+      - name: Check JSON format with prettier
+        working-directory: ./jsonschema
+        run: npx prettier --check Catalog.json definitions/*.json
+

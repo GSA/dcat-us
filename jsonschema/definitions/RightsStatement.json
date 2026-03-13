@@ -1,33 +1,27 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/rightsstatement",
-    "title": "RightsStatement",
-    "description": "A statement about rights held with respect to another item",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "RightsStatement"
-        },
-        "attributionText": {
-            "title": "attribution text",
-            "description": "The custom attribution text for the rights statement",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "attributionTextMap": {
-            "description": "Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/rightsstatement",
+  "title": "RightsStatement",
+  "description": "A statement about rights held with respect to another item",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": []
+    "@type": {
+      "type": "string",
+      "default": "RightsStatement"
+    },
+    "attributionText": {
+      "title": "attribution text",
+      "description": "The custom attribution text for the rights statement",
+      "type": ["null", "string"]
+    },
+    "attributionTextMap": {
+      "description": "Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    }
+  },
+  "required": []
 }
