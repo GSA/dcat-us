@@ -343,7 +343,7 @@
           "items": {
             "oneOf": [
               {
-                "$ref": "/dcat-us/3.0.0.0/definitions/concept",
+                "$ref": "/dcat-us/3.0.0/definitions/concept",
                 "description": "inline description of Concept"
               },
               {
