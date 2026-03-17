@@ -83,11 +83,14 @@
         },
         "keyword": {
             "title": "keyword/tag",
-            "description": "A keyword or tag describing the resource",
+            "description": "A list of keywords or tags describing the resource",
             "type": [
                 "null",
-                "string"
-            ]
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
         },
         "keywordMap": {
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
@@ -260,7 +263,10 @@
         "description": {
             "title": "description",
             "description": "Free-text description of the catalog (in the language indicated in the language property)",
-            "type": "string"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "descriptionMap": {
             "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
@@ -408,6 +414,9 @@
             "description": "Agent responsible for making the catalog available",
             "oneOf": [
                 {
+                    "type": "null"
+                },
+                {
                     "$ref": "/dcat-us/3.0.0/definitions/agent",
                     "description": "inline description of the publisher"
                 },
@@ -539,7 +548,10 @@
         "title": {
             "title": "title",
             "description": "The title of the catalog in the indicated language",
-            "type": "string"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "titleMap": {
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
@@ -611,9 +623,6 @@
         }
     },
     "required": [
-        "dataset",
-        "description",
-        "publisher",
-        "title"
+        "dataset"
     ]
 }
