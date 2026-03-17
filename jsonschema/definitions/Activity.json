@@ -34,10 +34,7 @@
         "label": {
             "title": "label",
             "description": "A human-readable label for the activity",
-            "type": [
-                "null",
-                "string"
-            ]
+            "type": "string"
         },
         "labelMap": {
             "description": "Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
@@ -47,5 +44,7 @@
             ]
         }
     },
-    "required": []
+    "required": [
+        "label"
+    ]
 }
