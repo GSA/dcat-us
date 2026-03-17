@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/mediatype",
     "title": "MediaType",
+    "description": "Information about a specific file format",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,21 +14,15 @@
             "default": "MediaType"
         },
         "label": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label",
             "title": "label",
-            "description": "This property contains the denomination of the Media Type.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "The denomination of the Media Type",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "labelMap": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

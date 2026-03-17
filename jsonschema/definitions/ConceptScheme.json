@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/conceptscheme",
     "title": "ConceptScheme",
+    "description": "A system for specifying approved values for a single concept",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,23 +14,17 @@
             "default": "ConceptScheme"
         },
         "version": {
-            "$id": "http://www.w3.org/ns/dcat#version",
             "title": "version info",
-            "description": "This property contains a version number or other version designation of the Concept Scheme.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "A version number or other version designation of the concept scheme",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "created": {
-            "$id": "http://purl.org/dc/terms/created",
             "title": "creation date",
-            "description": "This property contains the date on which the Concept Scheme has been first created.",
-            "oneOf": [
+            "description": "The date on which the Concept Scheme was first created",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -54,31 +50,24 @@
             ]
         },
         "description": {
-            "$id": "http://purl.org/dc/terms/description",
             "title": "description",
-            "description": "This property contains a description of the Concept Scheme. ",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "A description of the concept scheme",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "publication date",
-            "description": "This property contains the date of formal issuance (e.g., publication) of the Concept Scheme.",
-            "oneOf": [
+            "description": "The date of formal issuance (e.g., publication) of the concept scheme",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -104,10 +93,9 @@
             ]
         },
         "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
             "title": "update/modification date",
-            "description": "This property contains the most recent date at which the Concept Scheme was changed or modified.",
-            "oneOf": [
+            "description": "The most recent date at which the concept scheme was changed or modified",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -133,13 +121,11 @@
             ]
         },
         "title": {
-            "$id": "http://purl.org/dc/terms/title",
             "title": "title",
-            "description": "The title of the concept scheme in the indicated language.",
+            "description": "The title of the concept scheme",
             "type": "string"
         },
         "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",

@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Catalog",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/catalog",
+    "title": "DCAT-US 3 Catalog",
+    "description": "The main item defined by DCAT-US 3 is the Catalog class",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "Catalog"
         },
         "catalog": {
-            "$id": "http://www.w3.org/ns/dcat#catalog",
             "title": "catalog",
-            "description": "This property refers to a catalog whose contents are of interest in the context of this catalog.",
-            "oneOf": [
+            "description": "List of related catalogs whose contents are of interest in the context of this catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -24,7 +25,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Catalog",
+                                "$ref": "/dcat-us/3.0.0/definitions/catalog",
                                 "description": "inline description of Catalog"
                             },
                             {
@@ -38,10 +39,9 @@
             ]
         },
         "contactPoint": {
-            "$id": "http://www.w3.org/ns/dcat#contactPoint",
             "title": "contact point",
-            "description": "This property contains contact information that can be used for sending comments about the Catalogue.",
-            "oneOf": [
+            "description": "Contact information that can be used for sending comments about the Catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -50,12 +50,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Kind",
-                                "description": "inline description of Kind"
+                                "$ref": "/dcat-us/3.0.0/definitions/kind",
+                                "description": "inline value for contact point"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Kind",
+                                "description": "reference iri of contact point",
                                 "format": "iri"
                             }
                         ]
@@ -64,14 +64,13 @@
             ]
         },
         "dataset": {
-            "$id": "http://www.w3.org/ns/dcat#dataset",
             "title": "dataset",
-            "description": "This property links the Catalog with the Dataset(s) that is/are part of the Catalog.",
+            "description": "List of Datasets that are part of the Catalog",
             "type": "array",
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "#/definitions/Dataset",
+                        "$ref": "/dcat-us/3.0.0/definitions/dataset",
                         "description": "inline description of Dataset"
                     },
                     {
@@ -83,20 +82,14 @@
             }
         },
         "keyword": {
-            "$id": "http://www.w3.org/ns/dcat#keyword",
             "title": "keyword/tag",
-            "description": "A keyword or tag describing the resource.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "A keyword or tag describing the resource",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "keywordMap": {
-            "$id": "http://www.w3.org/ns/dcat#keyword_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -104,10 +97,9 @@
             ]
         },
         "record": {
-            "$id": "http://www.w3.org/ns/dcat#record",
             "title": "catalog record",
-            "description": "A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog.",
-            "oneOf": [
+            "description": "A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -116,12 +108,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/CatalogRecord",
-                                "description": "inline description of CatalogRecord"
+                                "$ref": "/dcat-us/3.0.0/definitions/catalogrecord",
+                                "description": "inline description of the record"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of CatalogRecord",
+                                "description": "reference iri of the record",
                                 "format": "iri"
                             }
                         ]
@@ -130,10 +122,9 @@
             ]
         },
         "service": {
-            "$id": "http://www.w3.org/ns/dcat#service",
             "title": "service",
-            "description": "This property refers to a site or end-point (Data Service) that is listed in the Catalog.",
-            "oneOf": [
+            "description": "List of data services that are listed in the Catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -142,12 +133,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/DataService",
-                                "description": "inline description of DataService"
+                                "$ref": "/dcat-us/3.0.0/definitions/dataservice",
+                                "description": "inline description of the service"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of DataService",
+                                "description": "reference iri of the service",
                                 "format": "iri"
                             }
                         ]
@@ -156,10 +147,9 @@
             ]
         },
         "theme": {
-            "$id": "http://www.w3.org/ns/dcat#theme",
             "title": "theme/category",
-            "description": "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes.",
-            "oneOf": [
+            "description": "A list of categories for the Catalog. A Catalog may be associated with multiple themes",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -168,12 +158,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Concept",
-                                "description": "inline description of Concept"
+                                "$ref": "/dcat-us/3.0.0/definitions/concept",
+                                "description": "inline description of the theme"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Concept",
+                                "description": "reference iri of the theme",
                                 "format": "iri"
                             }
                         ]
@@ -182,10 +172,9 @@
             ]
         },
         "themeTaxonomy": {
-            "$id": "http://www.w3.org/ns/dcat#themeTaxonomy",
             "title": "themes",
-            "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services).",
-            "oneOf": [
+            "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -194,7 +183,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/ConceptScheme",
+                                "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
                                 "description": "inline description of ConceptScheme"
                             },
                             {
@@ -208,56 +197,45 @@
             ]
         },
         "accessRights": {
-            "$id": "http://purl.org/dc/terms/accessRights",
             "title": "access rights",
-            "description": "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public.",
+            "description": "Information that indicates whether the Catalog is open data, has access restrictions or is not public",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/RightsStatement",
-                            "description": "inline description of RightsStatement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of RightsStatement",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
+                    "description": "inline description of access rights"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the access rights",
+                    "format": "iri"
                 }
             ]
         },
         "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
             "title": "schema version",
-            "description": "An established standard to which the described catalog conforms.",
+            "description": "An established standard to which the described catalog conforms",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/standard",
+                    "description": "inline description of Standard"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Standard",
+                    "format": "iri"
                 }
             ]
         },
         "creator": {
-            "$id": "http://purl.org/dc/terms/creator",
             "title": "creator",
-            "description": "The entity responsible for creating the resource.",
-            "oneOf": [
+            "description": "The entity responsible for creating the resource",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -266,12 +244,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Agent",
-                                "description": "inline description of Agent"
+                                "$ref": "/dcat-us/3.0.0/definitions/agent",
+                                "description": "inline description of creator"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Agent",
+                                "description": "reference iri of creator",
                                 "format": "iri"
                             }
                         ]
@@ -280,24 +258,21 @@
             ]
         },
         "description": {
-            "$id": "http://purl.org/dc/terms/description",
             "title": "description",
-            "description": "Free-text description of the catalog (in the language indicated in the attribute).",
+            "description": "Free-text description of the catalog (in the language indicated in the language property)",
             "type": "string"
         },
         "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "hasPart": {
-            "$id": "http://purl.org/dc/terms/hasPart",
             "title": "has part",
-            "description": "This property refers to a related catalog that is part of the described catalog.",
-            "oneOf": [
+            "description": "A list of related catalogs that are part of the described catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -306,12 +281,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Catalog",
-                                "description": "inline description of Catalog"
+                                "$ref": "#",
+                                "description": "inline description of the related catalog"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Catalog",
+                                "description": "reference iri of the related catalog",
                                 "format": "iri"
                             }
                         ]
@@ -320,10 +295,9 @@
             ]
         },
         "identifier": {
-            "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "description": "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier.",
-            "oneOf": [
+            "description": "List of identifiers for the Catalog, e.g. the URI or other unique identifier",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -336,10 +310,9 @@
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "release date",
-            "description": "Date of formal issuance (e.g., publication) of the resource.",
-            "oneOf": [
+            "description": "Date of formal issuance (e.g., publication) of the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -365,10 +338,9 @@
             ]
         },
         "language": {
-            "$id": "http://purl.org/dc/terms/language",
             "title": "language",
-            "description": "This property refers to a language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
-            "oneOf": [
+            "description": "Language or languages used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -386,33 +358,27 @@
             ]
         },
         "license": {
-            "$id": "http://purl.org/dc/terms/license",
             "title": "license",
-            "description": "This property refers to the license under which the Catalog can be used or reused.",
+            "description": "The license under which the Catalog can be used or reused",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LicenseDocument",
-                            "description": "inline description of LicenseDocument"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LicenseDocument",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/licensedocument",
+                    "description": "inline description of the license"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the license",
+                    "format": "iri"
                 }
             ]
         },
         "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
             "title": "update/modification date",
-            "description": "Most recent date on which the resource was changed, updated or modified.",
-            "oneOf": [
+            "description": "Most recent date on which the catalog was changed, updated or modified",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -438,49 +404,42 @@
             ]
         },
         "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
             "title": "publisher",
-            "description": "Entity responsible for making the catalog available.",
+            "description": "Agent responsible for making the catalog available",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Agent",
-                    "description": "inline description of Agent"
+                    "$ref": "/dcat-us/3.0.0/definitions/agent",
+                    "description": "inline description of the publisher"
                 },
                 {
                     "type": "string",
-                    "description": "reference iri of Agent",
+                    "description": "reference iri of the publisher",
                     "format": "iri"
                 }
             ]
         },
         "rights": {
-            "$id": "http://purl.org/dc/terms/rights",
             "title": "rights",
-            "description": "This property refers to a statement that specifies rights associated with the Catalogue.",
+            "description": "A statement that specifies rights associated with the catalog",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/RightsStatement",
-                            "description": "inline description of RightsStatement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of RightsStatement",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
+                    "description": "inline description of rights"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of rights",
+                    "format": "iri"
                 }
             ]
         },
         "rightsHolder": {
-            "$id": "http://purl.org/dc/terms/rightsHolder",
             "title": "rights holder",
-            "description": "This property refers to an organization holding rights on the Catalog.",
-            "oneOf": [
+            "description": "List of organizations holding rights on the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -489,12 +448,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Organization",
-                                "description": "inline description of Organization"
+                                "$ref": "/dcat-us/3.0.0/definitions/organization",
+                                "description": "inline description of rights holder"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Organization",
+                                "description": "reference iri of rights holder",
                                 "format": "iri"
                             }
                         ]
@@ -503,10 +462,9 @@
             ]
         },
         "spatial": {
-            "$id": "http://purl.org/dc/terms/spatial",
             "title": "spatial/geographic coverage",
-            "description": "The geographical area covered by the catalog.",
-            "oneOf": [
+            "description": "The geographical area covered by the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -515,12 +473,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Location",
-                                "description": "inline description of Location"
+                                "$ref": "/dcat-us/3.0.0/definitions/location",
+                                "description": "inline description of geographical coverage"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Location",
+                                "description": "reference iri of geographical coverage",
                                 "format": "iri"
                             }
                         ]
@@ -529,10 +487,9 @@
             ]
         },
         "subject": {
-            "$id": "http://purl.org/dc/terms/subject",
             "title": "subject",
-            "description": "Primary subject of the catalog",
-            "oneOf": [
+            "description": "List of subjects of the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -541,12 +498,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Concept",
-                                "description": "inline description of Concept"
+                                "$ref": "/dcat-us/3.0.0/definitions/concept",
+                                "description": "inline description of the subject"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Concept",
+                                "description": "reference iri of the subject",
                                 "format": "iri"
                             }
                         ]
@@ -555,10 +512,9 @@
             ]
         },
         "temporal": {
-            "$id": "http://purl.org/dc/terms/temporal",
             "title": "temporal coverage",
-            "description": "A temporal period that the Catalog covers.",
-            "oneOf": [
+            "description": "List of temporal periods that the Catalog covers",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -567,12 +523,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/PeriodOfTime",
-                                "description": "inline description of PeriodOfTime"
+                                "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
+                                "description": "inline description of the temporal coverage"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of PeriodOfTime",
+                                "description": "reference iri of the temporal coverage",
                                 "format": "iri"
                             }
                         ]
@@ -581,13 +537,11 @@
             ]
         },
         "title": {
-            "$id": "http://purl.org/dc/terms/title",
             "title": "title",
             "description": "The title of the catalog in the indicated language",
             "type": "string"
         },
         "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -595,56 +549,45 @@
             ]
         },
         "category": {
-            "$id": "http://purl.org/dc/terms/type",
             "title": "category",
-            "description": "The category of the Catalog ",
+            "description": "The category of the Catalog",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of the category"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the category",
+                    "format": "iri"
                 }
             ]
         },
         "homepage": {
-            "$id": "http://xmlns.com/foaf/0.1/homepage",
             "title": "homepage",
-            "description": "A homepage of the catalog (a public Web document usually available in HTML).",
+            "description": "The home page of the catalog (a public Web document usually available in HTML)",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Document",
-                            "description": "inline description of Document"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Document",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/document",
+                    "description": "inline description of the home page"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the home page",
+                    "format": "iri"
                 }
             ]
         },
         "qualifiedAttribution": {
-            "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
             "title": "qualified attribution",
-            "description": "This property refers to a link to an Agent having some form of responsibility for the Catalog.",
-            "oneOf": [
+            "description": "A list of agents having some form of responsibility for the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -653,7 +596,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Attribution",
+                                "$ref": "/dcat-us/3.0.0/definitions/attribution",
                                 "description": "inline description of Attribution"
                             },
                             {

@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/organization",
     "title": "Organization",
+    "description": "Information about an organization, including other organizations that it is part of",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,16 +14,14 @@
             "default": "Organization"
         },
         "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
             "title": "name",
             "description": "The full name of the Organization",
             "type": "string"
         },
         "subOrganizationOf": {
-            "$id": "http://www.w3.org/ns/org#subOrganizationOf",
             "title": "suborganization of",
-            "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization.",
-            "oneOf": [
+            "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -30,7 +30,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Organization",
+                                "$ref": "#",
                                 "description": "inline description of Organization"
                             },
                             {
@@ -44,31 +44,24 @@
             ]
         },
         "altLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "title": "alternative label",
-            "description": "alternative names (trading names, colloquial names) for an organization",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "alternative name (trading name, colloquial name) for an organization",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "notation": {
-            "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
-            "description": "abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
-            "oneOf": [
+            "description": "List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -81,14 +74,12 @@
             ]
         },
         "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "title": "preferred label",
             "description": "Preferred or legal name of the organization",
             "type": "string"
         },
         "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

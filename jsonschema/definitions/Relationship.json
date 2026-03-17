@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/relationship",
     "title": "Relationship",
+    "description": "Information about an item or entity that has some relationship to a dataset and the nature of the relationship",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,15 +14,13 @@
             "default": "Relationship"
         },
         "hadRole": {
-            "$id": "http://www.w3.org/ns/dcat#hadRole",
             "title": "role",
-            "description": "The function of an entity or agent with respect to another entity or resource.",
+            "description": "The function of an entity or agent with respect to a dataset",
             "type": "string"
         },
         "relation": {
-            "$id": "http://purl.org/dc/terms/relation",
             "title": "relation",
-            "description": "The resource related to the source resource.",
+            "description": "Link to the entity related to the dataset",
             "type": "string",
             "format": "iri"
         }

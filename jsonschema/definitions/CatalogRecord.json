@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/catalogrecord",
     "title": "CatalogRecord",
+    "description": "A record in a catalog, describing the registration of a single resource",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,56 +14,45 @@
             "default": "CatalogRecord"
         },
         "status": {
-            "$id": "http://www.w3.org/ns/adms#status",
             "title": "change type",
-            "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions.",
+            "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of status"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of status",
+                    "format": "iri"
                 }
             ]
         },
         "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
             "title": "application profile",
-            "description": "An Application Profile that the Catalog Record's metadata conforms to.",
+            "description": "An Application Profile that the Catalog Record's metadata conforms to",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/standard",
+                    "description": "inline description of application profile"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of application profile",
+                    "format": "iri"
                 }
             ]
         },
         "description": {
-            "$id": "http://purl.org/dc/terms/description",
             "title": "description",
-            "description": "A free-text account of the Catalog Record. This property can be repeated for parallel language versions of the description.",
-            "oneOf": [
+            "description": "A list of free-text accounts of the catalog record",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -74,10 +65,9 @@
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "listing date",
-            "description": "The date on which the description of the Dataset was included in the Catalog.",
-            "oneOf": [
+            "description": "List of dates on which the catalog record was included in the catalog",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -106,10 +96,9 @@
             ]
         },
         "language": {
-            "$id": "http://purl.org/dc/terms/language",
             "title": "language",
-            "description": "A language used in the textual metadata describing titles, descriptions, etc. of the Catalog Record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
-            "oneOf": [
+            "description": "A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -127,9 +116,8 @@
             ]
         },
         "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
             "title": "update/modification date",
-            "description": "The most recent date on which the Catalog Record's entry was changed or modified.",
+            "description": "The most recent date on which the catalog record was changed or modified",
             "type": "string",
             "oneOf": [
                 {
@@ -149,43 +137,32 @@
             ]
         },
         "source": {
-            "$id": "http://purl.org/dc/terms/source",
             "title": "source metadata",
-            "description": "The original metadata that was used in creating metadata for the datasets, data services, or catalogs in the Catalog Record.",
+            "description": "The original metadata that was used in creating metadata for the items in the catalog record",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/resource",
+                    "description": "inline description of the source"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the source",
+                    "format": "iri"
                 }
             ]
         },
         "title": {
-            "$id": "http://purl.org/dc/terms/title",
             "title": "title",
-            "description": "A name given to the Catalog Record.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "A name given to the Catalog Record",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -193,9 +170,8 @@
             ]
         },
         "primaryTopic": {
-            "$id": "http://xmlns.com/foaf/0.1/primaryTopic",
             "title": "primary topic",
-            "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
+            "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record",
             "type": "string"
         }
     },

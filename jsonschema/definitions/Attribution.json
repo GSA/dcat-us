@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/attribution",
     "title": "Attribution",
+    "description": "An attribution that an agent plays some role",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,18 +14,16 @@
             "default": "Attribution"
         },
         "hadRole": {
-            "$id": "http://www.w3.org/ns/dcat#hadRole",
             "title": "role",
-            "description": "The function of an entity or agent with respect to another entity or resource.",
+            "description": "The function of an entity or agent with respect to another entity or resource",
             "type": "string"
         },
         "agent": {
-            "$id": "http://www.w3.org/ns/prov#agent",
             "title": "agent",
-            "description": "The agent property references an Agent that plays a role in the resource",
+            "description": "The agent that plays a role in the resource",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Agent",
+                    "$ref": "/dcat-us/3.0.0/definitions/agent",
                     "description": "inline description of Agent"
                 },
                 {

@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/periodoftime",
     "title": "PeriodOfTime",
+    "description": "Information about a specific time period with a start- and/or end-time",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "PeriodOfTime"
         },
         "endDate": {
-            "$id": "http://www.w3.org/ns/dcat#endDate",
             "title": "end date",
             "description": "The end date of the period of time",
-            "oneOf": [
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -41,10 +42,9 @@
             ]
         },
         "startDate": {
-            "$id": "http://www.w3.org/ns/dcat#startDate",
             "title": "start date",
             "description": "The start date of the period of time",
-            "oneOf": [
+            "anyOf": [
                 {
                     "type": "null"
                 },

@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/metric",
     "title": "Metric",
     "type": "object",
     "properties": {
@@ -12,29 +13,22 @@
             "default": "Metric"
         },
         "expectedDataType": {
-            "$id": "http://www.w3.org/ns/dqv#expectedDataType",
             "title": "expected datatype",
             "description": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)",
             "type": "string"
         },
         "inDimension": {
-            "$id": "http://www.w3.org/ns/dqv#inDimension",
             "title": "in dimension",
             "description": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of.",
             "type": "string",
             "format": "iri"
         },
         "definition": {
-            "$id": "https://www.w3.org/ns/dqv#definition",
             "title": "definition",
             "description": "Definition of the metric.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         }
     },

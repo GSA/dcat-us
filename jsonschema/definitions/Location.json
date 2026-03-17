@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/location",
     "title": "Location",
+    "description": "Information about a specific geographic location",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,48 +14,38 @@
             "default": "Location"
         },
         "bbox": {
-            "$id": "http://www.w3.org/ns/dcat#bbox",
             "title": "bounding box",
-            "description": "bounding box associated location (in any coordinate system)",
-            "oneOf": [
+            "description": "bounding box of a location (in any coordinate system)",
+            "anyOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "type": "string",
-                            "format": "iri",
-                            "description": "This can be one of the following: "
-                        }
-                    ]
+                    "type": "string",
+                    "format": "iri",
+                    "description": "Bounding box represented in some string format"
                 }
+
             ]
         },
         "centroid": {
-            "$id": "http://www.w3.org/ns/dcat#centroid",
             "title": "centroid",
-            "description": "The geographic center (centroid) of a spatial thing",
-            "oneOf": [
+            "description": "The geographic center (centroid) of a location",
+            "anyOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "type": "string",
-                            "format": "iri",
-                            "description": "This can be one of the following: "
-                        }
-                    ]
+                    "type": "string",
+                    "format": "iri",
+                    "description": "Center point in some string format"
                 }
             ]
         },
         "identifier": {
-            "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "description": "This property contains the geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer.",
-            "oneOf": [
+            "description": "A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -66,84 +58,62 @@
             ]
         },
         "geometry": {
-            "$id": "http://www.w3.org/ns/locn#geometry",
             "title": "geometry",
-            "description": "Associates a location with a corresponding geometry.",
-            "oneOf": [
+            "description": "Associates a location with a corresponding geometry",
+            "anyOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "type": "string",
-                            "format": "iri",
-                            "description": "This can be one of the following: "
-                        }
-                    ]
+                    "type": "string",
+                    "format": "iri",
+                    "description": "String format of the full geometry of the location"
                 }
             ]
         },
         "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
             "title": "gazetteer",
-            "description": "This property MAY be used to specify the gazetteer to which the Location belongs.",
+            "description": "The gazetteer to which the location belongs",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/ConceptScheme",
-                            "description": "inline description of ConceptScheme"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of ConceptScheme",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
+                    "description": "inline description of the gazetteer"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of the gazetteer",
+                    "format": "iri"
                 }
             ]
         },
         "altLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
-            "title": "alternative names",
-            "description": "This property provides alternative names for a location",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "title": "alternative name",
+            "description": "An alternative name for a location",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "altLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "title": "geographic name",
-            "description": "This property contains a preferred label of the Location.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "description": "Preferred label of the Location",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"

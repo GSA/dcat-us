@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
     "title": "Document",
+    "description": "Information about a text document",
     "type": "object",
     "properties": {
         "@id": {
@@ -12,10 +14,9 @@
             "default": "Document"
         },
         "creators": {
-            "$id": "http://purl.org/dc/elements/1.1/creator",
-            "title": "author(s) as literal",
-            "description": "list of authors as a literal",
-            "oneOf": [
+            "title": "authors",
+            "description": "List of authors",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -28,23 +29,17 @@
             ]
         },
         "publishers": {
-            "$id": "http://purl.org/dc/elements/1.1/publisher",
-            "title": "publisher(s) as literal",
-            "description": "list of publishers as a literal",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "title": "publisher",
+            "description": "Publisher",
+            "type": [
+                "null",
+                "string"
             ]
         },
         "mediaType": {
-            "$id": "http://www.w3.org/ns/dcat#mediaType",
             "title": "media type",
-            "description": "The file format of the Document.",
-            "oneOf": [
+            "description": "List of file formats of the Document",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -53,7 +48,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/MediaType",
+                                "$ref": "/dcat-us/3.0.0/definitions/mediatype",
                                 "description": "inline description of MediaType"
                             },
                             {
@@ -67,44 +62,32 @@
             ]
         },
         "abstract": {
-            "$id": "http://purl.org/dc/terms/abstract",
             "title": "abstract",
             "description": "Text abstract of the document",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "abstractMap": {
-            "$id": "http://purl.org/dc/terms/abstract_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "bibliographicCitation": {
-            "$id": "http://purl.org/dc/terms/bibliographicCitation",
             "title": "bibliographic citation",
             "description": "Bibliographic citation as text",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
             "title": "conforms to standard",
-            "description": "This property refers to an standard which the described Document conforms.",
-            "oneOf": [
+            "description": "A standard to which the document conforms",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -113,7 +96,7 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Standard",
+                                "$ref": "/dcat-us/3.0.0/definitions/standard",
                                 "description": "inline description of Standard"
                             },
                             {
@@ -127,10 +110,9 @@
             ]
         },
         "creator": {
-            "$id": "http://purl.org/dc/terms/creator",
             "title": "corporate author",
-            "description": "The organization responsible for creating the resource.",
-            "oneOf": [
+            "description": "The organization responsible for creating the resource",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -139,12 +121,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Organization",
-                                "description": "inline description of Organization"
+                                "$ref": "/dcat-us/3.0.0/definitions/organization",
+                                "description": "inline description of corporate author"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Organization",
+                                "description": "reference iri of corporate author",
                                 "format": "iri"
                             }
                         ]
@@ -153,31 +135,24 @@
             ]
         },
         "description": {
-            "$id": "http://purl.org/dc/terms/description",
             "title": "description",
             "description": "A free-text account of the Document",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "null",
+                "string"
             ]
         },
         "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
                 "object"
             ]
         },
         "identifier": {
-            "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "description": "This property contains a unique identifier for the Document (e.g. DOI, ISBN)",
-            "oneOf": [
+            "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -190,10 +165,9 @@
             ]
         },
         "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
             "title": "publication date",
-            "description": "publication date of the document",
-            "oneOf": [
+            "description": "Publication date of the document",
+            "anyOf": [
                 {
                     "type": "null"
                 },
@@ -219,7 +193,6 @@
             ]
         },
         "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
             "title": "publisher",
             "description": "publisher organization of the document",
             "oneOf": [
@@ -227,28 +200,22 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Organization",
-                            "description": "inline description of Organization"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Organization",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/organization",
+                    "description": "inline description of publisher organization"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of publisher organization",
+                    "format": "iri"
                 }
             ]
         },
         "title": {
-            "$id": "http://purl.org/dc/terms/title",
             "title": "title",
             "description": "The title of the document in the indicated language",
             "type": "string"
         },
         "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -256,7 +223,6 @@
             ]
         },
         "category": {
-            "$id": "http://purl.org/dc/terms/type",
             "title": "category",
             "description": "Category of the document",
             "oneOf": [
@@ -264,17 +230,13 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "$ref": "/dcat-us/3.0.0/definitions/concept",
+                    "description": "inline description of Concept"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Concept",
+                    "format": "iri"
                 }
             ]
         }
