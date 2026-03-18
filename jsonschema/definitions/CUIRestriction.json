@@ -1,46 +1,43 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/cuirestriction",
-    "title": "CUIRestriction",
-    "description": "A specific restriction on handling Controlled Unclassified Information (CUI)",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "CUIRestriction"
-        },
-        "cuiBannerMarking": {
-            "title": "CUI banner marking",
-            "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection",
-            "type": "string"
-        },
-        "designationIndicator": {
-            "title": "CUI designation indicator",
-            "description": "Designation Indicator shows which agency made the document CUI",
-            "type": "string"
-        },
-        "requiredIndicatorPerAuthority": {
-            "title": "required indicator per authority",
-            "description": "List of free text of the required indicator",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/cuirestriction",
+  "title": "CUIRestriction",
+  "description": "A specific restriction on handling Controlled Unclassified Information (CUI)",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "cuiBannerMarking",
-        "designationIndicator"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "CUIRestriction"
+    },
+    "cuiBannerMarking": {
+      "title": "CUI banner marking",
+      "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection",
+      "type": "string"
+    },
+    "designationIndicator": {
+      "title": "CUI designation indicator",
+      "description": "Designation Indicator shows which agency made the document CUI",
+      "type": "string"
+    },
+    "requiredIndicatorPerAuthority": {
+      "title": "required indicator per authority",
+      "description": "List of free text of the required indicator",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "required": ["cuiBannerMarking", "designationIndicator"]
 }
