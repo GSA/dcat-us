@@ -102,18 +102,55 @@
     "accrualPeriodicity": {
       "title": "frequency",
       "description": "The frequency at which the Dataset Series is updated",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/frequency",
-          "description": "inline description of Frequency"
+          "type": "string",
+          "description": "ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "enum": [
+            "continual",
+            "daily",
+            "weekly",
+            "fortnightly",
+            "monthly",
+            "quarterly",
+            "biannually",
+            "annually",
+            "asNeeded",
+            "irregular",
+            "notPlanned",
+            "unknown"
+          ]
         },
         {
           "type": "string",
-          "description": "reference iri of Frequency",
-          "format": "iri"
+          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "pattern": "^R\/P.+$"
+        },
+        {
+          "type": "string",
+          "description": "Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "enum": [
+            "continuous",
+            "daily",
+            "weekly",
+            "biweekly",
+            "monthly",
+            "quarterly",
+            "semiannual",
+            "annual",
+            "irregular",
+            "triennial",
+            "biennial",
+            "threeTimesAYear",
+            "bimonthly",
+            "semimonthly",
+            "threeTimesAMonth",
+            "semiweekly",
+            "threeTimesAWeek"
+          ]
         }
       ]
     },
@@ -124,7 +161,7 @@
     },
     "descriptionMap": {
       "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "issued": {
       "title": "release date",
@@ -257,8 +294,8 @@
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     }
   },
-  "required": ["description", "title"]
+  "required": [ "description", "title" ]
 }
