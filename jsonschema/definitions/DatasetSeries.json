@@ -161,7 +161,7 @@
     },
     "descriptionMap": {
       "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "issued": {
       "title": "release date",
@@ -294,8 +294,8 @@
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     }
   },
-  "required": [ "description", "title" ]
+  "required": ["description", "title"]
 }
