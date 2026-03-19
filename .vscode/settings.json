@@ -1,4 +1,18 @@
 {
     "todo-tree.tree.scanMode": "current file",
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "json.format.keepLines": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.indentSize": "tabSize",
+		"editor.insertSpaces": false,
+		"editor.useTabStops": false,
+		"[json]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+		},
+		"js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+		"js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+		"js/ts.format.insertSpaceBeforeAndAfterBinaryOperators": true,
 }
