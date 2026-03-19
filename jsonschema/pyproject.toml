@@ -1,0 +1,21 @@
+[project]
+name = "dcat-us-3"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Datagov Team",email = "datagovhelp@gsa.gov"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "jsonschema (>=4.26.0,<5.0.0)",
+    "json-schema-for-humans (>=1.5.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
