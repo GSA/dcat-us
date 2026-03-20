@@ -41,17 +41,6 @@ def is_null_type_error(error):
             error.validator_value == "null")
 
 
-def is_trivial_error(error):
-    """Check if this is a trivial error we should skip in summaries."""
-    # Skip "type is not null" errors
-    if is_null_type_error(error):
-        return True
-    # Skip "not valid under any of the given schemas" when we'll dig into context
-    if error.validator in ("anyOf", "oneOf") and error.context:
-        return False  # Not trivial - we need to process this
-    return False
-
-
 def find_meaningful_errors(errors):
     """Filter errors to find the meaningful ones, skipping null-type failures."""
     meaningful = []
