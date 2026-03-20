@@ -80,6 +80,11 @@ def generate_docs(output_dir):
         "footer_show_time": False,  # so diff won't always be different
         "show_toc": False,
         "template_name": "md",
+        "template_md_options": {
+            "show_array_restrictions": False,
+            "show_heading_numbers": False,
+            "properties_table_columns": ["Property", "Type", "Title/Description"],
+        },
     }
     final_config = get_final_config(True, True, True, True, config=config)
 
