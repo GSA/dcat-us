@@ -1,285 +1,262 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
-    "title": "Document",
-    "description": "Information about a text document",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Document"
-        },
-        "accessURL": {
-            "title": "access URL",
-            "description": "A URL that gives access to the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Document",
-                    "format": "iri"
-                }
-            ]
-        },
-        "downloadURL": {
-            "title": "download URL",
-            "description": "A URL that is a direct link to a downloadable file of the Document in a given format",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Document",
-                    "format": "iri"
-                }
-            ]
-        },
-        "title": {
-            "title": "title",
-            "description": "The title of the document in the indicated language",
-            "type": "string"
-        },
-        "titleMap": {
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "creator": {
-            "title": "author",
-            "description": "The individual(s) responsible for creating the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/person",
-                                "description": "inline description of Person"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Person",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "corporateCreator": {
-            "title": "corporate author",
-            "description": "The corporate organization(s) responsible for creating the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                                "description": "inline description of Organization"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Organization",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "publisher": {
-            "title": "publisher",
-            "description": "The organization that published the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                                "description": "inline description of publisher organization"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of publisher organization",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "identifier": {
-            "title": "identifier",
-            "description": "A unique identifier for the Document (e.g. DOI, ISBN)",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "otherIdentifier": {
-            "title": "other identifier",
-            "description": "A list of other/alternative identifiers for the Document (e.g. DOI, ISBN)",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "issued": {
-            "title": "publication date",
-            "description": "Publication date of the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
-        "bibliographicCitation": {
-            "title": "bibliographic citation",
-            "description": "Bibliographic citation as text",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "category": {
-            "title": "category",
-            "description": "The category, nature, or genre of the Document",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of Concept"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Concept",
-                    "format": "iri"
-                }
-            ]
-        },
-        "abstract": {
-            "title": "abstract",
-            "description": "Text abstract of the Document",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "abstractMap": {
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "description": {
-            "title": "description",
-            "description": "A free-text account of the Document",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "descriptionMap": {
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "conformsTo": {
-            "title": "conforms to",
-            "description": "A standard which the described Document conforms to",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                                "description": "inline description of Standard"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Standard",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "mediaType": {
-            "title": "media type",
-            "description": "The file format of the Document as defined in the official register of media types managed by IANA.",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-                    "description": "inline description of MediaType"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of MediaType",
-                    "format": "iri"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
+  "title": "Document",
+  "description": "Information about a text document",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "title"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Document"
+    },
+    "accessURL": {
+      "title": "access URL",
+      "description": "A URL that gives access to the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Document",
+          "format": "iri"
+        }
+      ]
+    },
+    "downloadURL": {
+      "title": "download URL",
+      "description": "A URL that is a direct link to a downloadable file of the Document in a given format",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Document",
+          "format": "iri"
+        }
+      ]
+    },
+    "title": {
+      "title": "title",
+      "description": "The title of the document in the indicated language",
+      "type": "string"
+    },
+    "titleMap": {
+      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "creator": {
+      "title": "author",
+      "description": "The individual(s) responsible for creating the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/person",
+                "description": "inline description of Person"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Person",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "corporateCreator": {
+      "title": "corporate author",
+      "description": "The corporate organization(s) responsible for creating the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/organization",
+                "description": "inline description of Organization"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Organization",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "publisher": {
+      "title": "publisher",
+      "description": "The organization that published the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/organization",
+                "description": "inline description of publisher organization"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of publisher organization",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "identifier": {
+      "title": "identifier",
+      "description": "A unique identifier for the Document (e.g. DOI, ISBN)",
+      "type": ["null", "string"]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of other/alternative identifiers for the Document (e.g. DOI, ISBN)",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "issued": {
+      "title": "publication date",
+      "description": "Publication date of the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "oneOf": [
+            {
+              "format": "date-time"
+            },
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "^[0-9]{4}$",
+              "description": "A year in YYYY format"
+            },
+            {
+              "pattern": "^[0-9]{4}-[0-9]{2}$",
+              "description": "A year and month in YYYY-MM format"
+            }
+          ]
+        }
+      ]
+    },
+    "bibliographicCitation": {
+      "title": "bibliographic citation",
+      "description": "Bibliographic citation as text",
+      "type": ["null", "string"]
+    },
+    "category": {
+      "title": "category",
+      "description": "The category, nature, or genre of the Document",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of Concept"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Concept",
+          "format": "iri"
+        }
+      ]
+    },
+    "abstract": {
+      "title": "abstract",
+      "description": "Text abstract of the Document",
+      "type": ["null", "string"]
+    },
+    "abstractMap": {
+      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "description": {
+      "title": "description",
+      "description": "A free-text account of the Document",
+      "type": ["null", "string"]
+    },
+    "descriptionMap": {
+      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "conformsTo": {
+      "title": "conforms to",
+      "description": "A standard which the described Document conforms to",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/standard",
+                "description": "inline description of Standard"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Standard",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "mediaType": {
+      "title": "media type",
+      "description": "The file format of the Document as defined in the official register of media types managed by IANA.",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
+          "description": "inline description of MediaType"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of MediaType",
+          "format": "iri"
+        }
+      ]
+    }
+  },
+  "required": ["title"]
 }
