@@ -1,50 +1,45 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/activity",
-    "title": "Activity",
-    "description": "An activity which a resource could be related to",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Activity"
-        },
-        "category": {
-            "title": "category",
-            "description": "The category of the Activity",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of the category"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of the category",
-                    "format": "iri"
-                }
-            ]
-        },
-        "label": {
-            "title": "label",
-            "description": "A human-readable label for the activity",
-            "type": "string"
-        },
-        "labelMap": {
-            "description": "Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/activity",
+  "title": "Activity",
+  "description": "An activity which a resource could be related to",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "label"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Activity"
+    },
+    "category": {
+      "title": "category",
+      "description": "The category of the Activity",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of the category"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the category",
+          "format": "iri"
+        }
+      ]
+    },
+    "label": {
+      "title": "label",
+      "description": "A human-readable label for the activity",
+      "type": "string"
+    },
+    "labelMap": {
+      "description": "Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    }
+  },
+  "required": ["label"]
 }
