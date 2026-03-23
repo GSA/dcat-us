@@ -290,7 +290,25 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "List of identifiers for the Catalog, e.g. the URI or other unique identifier",
+      "description": "The unique identifier for the Catalog, e.g. the URI or other unique identifier",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
+        }
+      ]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers",
       "anyOf": [
         {
           "type": "null"
@@ -298,7 +316,17 @@
         {
           "type": "array",
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/identifier",
+                "description": "inline description of Identifier"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Identifier",
+                "format": "iri"
+              }
+            ]
           }
         }
       ]

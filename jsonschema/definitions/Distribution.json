@@ -362,7 +362,25 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "A list of unique identifiers for the Distribution (e.g. DOI, ISBN)",
+      "description": "The unique identifier for the Distribution (e.g. DOI, ISBN)",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
+        }
+      ]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "anyOf": [
         {
           "type": "null"
@@ -370,7 +388,17 @@
         {
           "type": "array",
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/identifier",
+                "description": "inline description of Identifier"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Identifier",
+                "format": "iri"
+              }
+            ]
           }
         }
       ]

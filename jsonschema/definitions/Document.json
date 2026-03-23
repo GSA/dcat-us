@@ -133,7 +133,25 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
+      "description": "The unique identifier for the Document (e.g. DOI, ISBN)",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
+        }
+      ]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "anyOf": [
         {
           "type": "null"
@@ -141,7 +159,17 @@
         {
           "type": "array",
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/identifier",
+                "description": "inline description of Identifier"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Identifier",
+                "format": "iri"
+              }
+            ]
           }
         }
       ]
