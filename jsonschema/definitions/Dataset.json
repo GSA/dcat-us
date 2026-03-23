@@ -107,27 +107,20 @@
     "contactPoint": {
       "title": "contact point",
       "description": "List of contact information that can be used for sending comments about the Dataset",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/kind",
-                "description": "inline description of Kind"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Kind",
-                "format": "iri"
-              }
-            ]
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/kind",
+            "description": "inline description of Kind"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Kind",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "distribution": {
       "title": "dataset distribution",
@@ -1162,5 +1155,5 @@
       "type": ["null", "object"]
     }
   },
-  "required": ["description", "publisher", "title"]
+  "required": ["description", "publisher", "title", "contactPoint"]
 }
