@@ -1,7 +1,7 @@
 {
   "@type": "Dataset",
   "title": "Example Dataset",
-  "description": "A minimal dataset example with invalid periodicity",
+  "description": "A minimal dataset example with a valid periodicity",
   "publisher": "https://example.gov/org/sample-agency",
   "accrualPeriodicity": "quarterly"
 }
