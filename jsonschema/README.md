@@ -50,7 +50,6 @@ The `definitions/` folder contains individual JSON Schema files for each DCAT-US
 | Metric | Quality metric definition |
 | Organization | An organization entity |
 | PeriodOfTime | Temporal coverage |
-| Person | A person entity |
 | ProvenanceStatement | Provenance information |
 | QualityMeasurement | Quality measurement result |
 | Relationship | Relationship between resources |
@@ -145,4 +144,31 @@ else:
 
 ### Using Individual Definitions
 
-When using individual definition files, note that cross-references (e.g., `$ref: "#/definitions/Concept"`) require all definitions to be loaded together. The test script demonstrates how to combine definitions into a single schema for validation.
+When using individual definition files, the other definitions should be
+referred to correctly by their relative-URI `$id` values, but your system will
+have its own way of loading the related schema files according to those `$id`
+values.  `test_json_schema.py` has an example of how to do it with the Python
+`jsonschema` and `referencing` libraries.
+
+## Formatting
+
+For consistency, we format all of our schema files with Prettier, an
+opinionated code formatter. With formatters like this, we don't apply manual
+formatting decisions to our files, we simply run the formatter over the code
+and use its decision on what format to apply. As a best practice then we
+check that all of the files have the suggested format in a CI/CD job and fail
+the test if they are not formatted correctly.
+
+To install Prettier, run `npm ci` in this directory. To check the format we
+run
+
+```bash
+npx prettier --check Catalog.json definitions/*.json
+```
+
+and if that fails, the correct format can be applied automatically with the
+`--write` option
+
+```bash
+npx prettier --write Catalog.json definitions/*.json
+```

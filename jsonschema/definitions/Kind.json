@@ -1,97 +1,79 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/kind",
-    "title": "Kind",
-    "description": "Contact information for an individual or entity",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Kind"
-        },
-        "address": {
-            "title": "address",
-            "description": "The address of the contact",
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "/dcat-us/3.0.0/definitions/address",
-                                "description": "inline address information"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Address",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasEmail": {
-            "title": "Email",
-            "description": "Email address for the contact",
-            "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
-            "type": "string"
-        },
-        "family-name": {
-            "title": "family name",
-            "description": "The family name of the contact",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "fn": {
-            "title": "formatted name",
-            "description": "The formatted text of the name of the contact",
-            "type": "string"
-        },
-        "given-name": {
-            "title": "given name",
-            "description": "The given name of the contact",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "organization-name": {
-            "title": "organization name",
-            "description": "The name of the organization to contact",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "tel": {
-            "title": "telephone",
-            "description": "The telephone number for the contact",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "title": {
-            "title": "position title",
-            "description": "The position role of the person to contact",
-            "type": [
-                "null",
-                "string"
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/kind",
+  "title": "Kind",
+  "description": "Contact information for an individual or entity",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "hasEmail",
-        "fn"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Kind"
+    },
+    "address": {
+      "title": "address",
+      "description": "The address of the contact",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/address",
+                "description": "inline address information"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Address",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "hasEmail": {
+      "title": "Email",
+      "description": "Email address for the contact",
+      "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
+      "type": "string"
+    },
+    "family-name": {
+      "title": "family name",
+      "description": "The family name of the contact",
+      "type": ["null", "string"]
+    },
+    "fn": {
+      "title": "formatted name",
+      "description": "The formatted text of the name of the contact",
+      "type": "string"
+    },
+    "given-name": {
+      "title": "given name",
+      "description": "The given name of the contact",
+      "type": ["null", "string"]
+    },
+    "organization-name": {
+      "title": "organization name",
+      "description": "The name of the organization to contact",
+      "type": ["null", "string"]
+    },
+    "tel": {
+      "title": "telephone",
+      "description": "The telephone number for the contact",
+      "type": ["null", "string"]
+    },
+    "title": {
+      "title": "position title",
+      "description": "The position role of the person to contact",
+      "type": ["null", "string"]
+    }
+  },
+  "required": ["hasEmail", "fn"]
 }

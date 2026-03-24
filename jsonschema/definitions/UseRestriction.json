@@ -1,68 +1,60 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/userestriction",
-    "title": "UseRestriction",
-    "description": "A restriction on usage of another item",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "UseRestriction"
-        },
-        "restrictionNote": {
-            "title": "restriction note",
-            "description": "Significant information pertaining to the use or reproduction of the data",
-            "type": [
-                "null",
-                "string"
-            ]
-        },
-        "restrictionNoteMap": {
-            "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "restrictionStatus": {
-            "title": "restriction status",
-            "description": "Indication of whether or not there are use restrictions on the archival materials",
-            "oneOf": [
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of restriction status"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of restriction status",
-                    "format": "iri"
-                }
-            ]
-        },
-        "specificRestriction": {
-            "title": "specific restriction",
-            "description": "The specific NARA restriction associated with the use restriction",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "$ref": "/dcat-us/3.0.0/definitions/concept",
-                    "description": "inline description of the specific restriction"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of the specific restriction",
-                    "format": "iri"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/userestriction",
+  "title": "UseRestriction",
+  "description": "A restriction on usage of another item",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "restrictionStatus"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "UseRestriction"
+    },
+    "restrictionNote": {
+      "title": "restriction note",
+      "description": "Significant information pertaining to the use or reproduction of the data",
+      "type": ["null", "string"]
+    },
+    "restrictionNoteMap": {
+      "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "restrictionStatus": {
+      "title": "restriction status",
+      "description": "Indication of whether or not there are use restrictions on the archival materials",
+      "oneOf": [
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of restriction status"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of restriction status",
+          "format": "iri"
+        }
+      ]
+    },
+    "specificRestriction": {
+      "title": "specific restriction",
+      "description": "The specific NARA restriction associated with the use restriction",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of the specific restriction"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the specific restriction",
+          "format": "iri"
+        }
+      ]
+    }
+  },
+  "required": ["restrictionStatus"]
 }
