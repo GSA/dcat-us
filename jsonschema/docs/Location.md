@@ -23,21 +23,21 @@ Information about a specific geographic location
 | - [prefLabel](#prefLabel )       | null or string     | geographic name                                                                           |
 | - [prefLabelMap](#prefLabelMap ) | null or object     | Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Location > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Location > @type`
 
 |             |              |
 | ----------- | ------------ |
 | **Type**    | `string`     |
 | **Default** | `"Location"` |
 
-## <a name="bbox"></a>Property `bbox`
+## <a name="bbox"></a>Property `Location > bbox`
 
 **Title:** bounding box
 
@@ -53,13 +53,13 @@ bounding box of a location (in any coordinate system)
 | [item 0](#bbox_anyOf_i0) |
 | [item 1](#bbox_anyOf_i1) |
 
-### <a name="bbox_anyOf_i0"></a>Property `item 0`
+### <a name="bbox_anyOf_i0"></a>Property `Location > bbox > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="bbox_anyOf_i1"></a>Property `item 1`
+### <a name="bbox_anyOf_i1"></a>Property `Location > bbox > anyOf > item 1`
 
 Bounding box represented in some string format
 
@@ -68,7 +68,7 @@ Bounding box represented in some string format
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="centroid"></a>Property `centroid`
+## <a name="centroid"></a>Property `Location > centroid`
 
 **Title:** centroid
 
@@ -84,13 +84,13 @@ The geographic center (centroid) of a location
 | [item 0](#centroid_anyOf_i0) |
 | [item 1](#centroid_anyOf_i1) |
 
-### <a name="centroid_anyOf_i0"></a>Property `item 0`
+### <a name="centroid_anyOf_i0"></a>Property `Location > centroid > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="centroid_anyOf_i1"></a>Property `item 1`
+### <a name="centroid_anyOf_i1"></a>Property `Location > centroid > anyOf > item 1`
 
 Center point in some string format
 
@@ -99,7 +99,7 @@ Center point in some string format
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="identifier"></a>Property `identifier`
+## <a name="identifier"></a>Property `Location > identifier`
 
 **Title:** identifier
 
@@ -115,13 +115,13 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 | [item 0](#identifier_anyOf_i0) |
 | [item 1](#identifier_anyOf_i1) |
 
-### <a name="identifier_anyOf_i0"></a>Property `item 0`
+### <a name="identifier_anyOf_i0"></a>Property `Location > identifier > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="identifier_anyOf_i1"></a>Property `item 1`
+### <a name="identifier_anyOf_i1"></a>Property `Location > identifier > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -131,13 +131,13 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 | ------------------------------------------ | ----------- |
 | [item 1 items](#identifier_anyOf_i1_items) | -           |
 
-#### <a name="identifier_anyOf_i1_items"></a>item 1 items
+#### <a name="identifier_anyOf_i1_items"></a>Location > identifier > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
 | **Type** | `string` |
 
-## <a name="geometry"></a>Property `geometry`
+## <a name="geometry"></a>Property `Location > geometry`
 
 **Title:** geometry
 
@@ -153,13 +153,13 @@ Associates a location with a corresponding geometry
 | [item 0](#geometry_anyOf_i0) |
 | [item 1](#geometry_anyOf_i1) |
 
-### <a name="geometry_anyOf_i0"></a>Property `item 0`
+### <a name="geometry_anyOf_i0"></a>Property `Location > geometry > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="geometry_anyOf_i1"></a>Property `item 1`
+### <a name="geometry_anyOf_i1"></a>Property `Location > geometry > anyOf > item 1`
 
 String format of the full geometry of the location
 
@@ -168,7 +168,7 @@ String format of the full geometry of the location
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="inScheme"></a>Property `inScheme`
+## <a name="inScheme"></a>Property `Location > inScheme`
 
 **Title:** gazetteer
 
@@ -185,13 +185,13 @@ The gazetteer to which the location belongs
 | [ConceptScheme](#inScheme_oneOf_i1) |
 | [item 2](#inScheme_oneOf_i2)        |
 
-### <a name="inScheme_oneOf_i0"></a>Property `item 0`
+### <a name="inScheme_oneOf_i0"></a>Property `Location > inScheme > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="inScheme_oneOf_i1"></a>Property `ConceptScheme`
+### <a name="inScheme_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
@@ -203,7 +203,7 @@ inline description of the gazetteer
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-### <a name="inScheme_oneOf_i2"></a>Property `item 2`
+### <a name="inScheme_oneOf_i2"></a>Property `Location > inScheme > oneOf > item 2`
 
 reference iri of the gazetteer
 
@@ -212,7 +212,7 @@ reference iri of the gazetteer
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="altLabel"></a>Property `altLabel`
+## <a name="altLabel"></a>Property `Location > altLabel`
 
 **Title:** alternative name
 
@@ -222,7 +222,7 @@ An alternative name for a location
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="altLabelMap"></a>Property `altLabelMap`
+## <a name="altLabelMap"></a>Property `Location > altLabelMap`
 
 Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -230,7 +230,7 @@ Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'frenc
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="prefLabel"></a>Property `prefLabel`
+## <a name="prefLabel"></a>Property `Location > prefLabel`
 
 **Title:** geographic name
 
@@ -240,7 +240,7 @@ Preferred label of the Location
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="prefLabelMap"></a>Property `prefLabelMap`
+## <a name="prefLabelMap"></a>Property `Location > prefLabelMap`
 
 Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

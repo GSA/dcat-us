@@ -15,21 +15,21 @@
 | + [inDimension](#inDimension )           | string         | in dimension      |
 | - [definition](#definition )             | null or string | definition        |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Metric > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Metric > @type`
 
 |             |            |
 | ----------- | ---------- |
 | **Type**    | `string`   |
 | **Default** | `"Metric"` |
 
-## <a name="expectedDataType"></a>Property `expectedDataType`
+## <a name="expectedDataType"></a>Property `Metric > expectedDataType`
 
 **Title:** expected datatype
 
@@ -40,7 +40,7 @@ Represents the expected data type for the metric's observed value (e.g., xsd:boo
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="inDimension"></a>Property `inDimension`
+## <a name="inDimension"></a>Property `Metric > inDimension`
 
 **Title:** in dimension
 
@@ -52,7 +52,7 @@ Represents the dimensions a quality metric, certificate and annotation allow a m
 | **Required** | Yes      |
 | **Format**   | `iri`    |
 
-## <a name="definition"></a>Property `definition`
+## <a name="definition"></a>Property `Metric > definition`
 
 **Title:** definition
 

@@ -16,21 +16,21 @@ An attribution that an agent plays some role
 | + [hadRole](#hadRole ) | string             | role              |
 | + [agent](#agent )     | More than one type | agent             |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Attribution > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Attribution > @type`
 
 |             |                 |
 | ----------- | --------------- |
 | **Type**    | `string`        |
 | **Default** | `"Attribution"` |
 
-## <a name="hadRole"></a>Property `hadRole`
+## <a name="hadRole"></a>Property `Attribution > hadRole`
 
 **Title:** role
 
@@ -41,7 +41,7 @@ The function of an entity or agent with respect to another entity or resource
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="agent"></a>Property `agent`
+## <a name="agent"></a>Property `Attribution > agent`
 
 **Title:** agent
 
@@ -58,7 +58,7 @@ The agent that plays a role in the resource
 | [Agent](#agent_oneOf_i0)  |
 | [item 1](#agent_oneOf_i1) |
 
-### <a name="agent_oneOf_i0"></a>Property `Agent`
+### <a name="agent_oneOf_i0"></a>Property `Attribution > agent > oneOf > Agent`
 
 **Title:** Agent
 
@@ -70,7 +70,7 @@ inline description of Agent
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
-### <a name="agent_oneOf_i1"></a>Property `item 1`
+### <a name="agent_oneOf_i1"></a>Property `Attribution > agent > oneOf > item 1`
 
 reference iri of Agent
 

@@ -21,21 +21,21 @@ Information about an organization, including other organizations that it is part
 | - [prefLabel](#prefLabel )                 | null or string     | preferred label                                                                        |
 | - [prefLabelMap](#prefLabelMap )           | null or object     | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Organization > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Organization > @type`
 
 |             |                  |
 | ----------- | ---------------- |
 | **Type**    | `string`         |
 | **Default** | `"Organization"` |
 
-## <a name="name"></a>Property `name`
+## <a name="name"></a>Property `Organization > name`
 
 **Title:** name
 
@@ -46,7 +46,7 @@ The full name of the Organization
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="subOrganizationOf"></a>Property `subOrganizationOf`
+## <a name="subOrganizationOf"></a>Property `Organization > subOrganizationOf`
 
 **Title:** suborganization of
 
@@ -62,13 +62,13 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | [item 0](#subOrganizationOf_anyOf_i0) |
 | [item 1](#subOrganizationOf_anyOf_i1) |
 
-### <a name="subOrganizationOf_anyOf_i0"></a>Property `item 0`
+### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="subOrganizationOf_anyOf_i1"></a>Property `item 1`
+### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -78,7 +78,7 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | ------------------------------------------------- | ----------- |
 | [item 1 items](#subOrganizationOf_anyOf_i1_items) | -           |
 
-#### <a name="subOrganizationOf_anyOf_i1_items"></a>item 1 items
+#### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -90,7 +90,7 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | [Organization](#subOrganizationOf_anyOf_i1_items_oneOf_i0) |
 | [item 1](#subOrganizationOf_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization`
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > Organization`
 
 **Title:** Organization
 
@@ -102,7 +102,7 @@ inline description of Organization
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Organization
 
@@ -111,7 +111,7 @@ reference iri of Organization
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="altLabel"></a>Property `altLabel`
+## <a name="altLabel"></a>Property `Organization > altLabel`
 
 **Title:** alternative label
 
@@ -121,7 +121,7 @@ alternative name (trading name, colloquial name) for an organization
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="altLabelMap"></a>Property `altLabelMap`
+## <a name="altLabelMap"></a>Property `Organization > altLabelMap`
 
 Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -129,7 +129,7 @@ Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french w
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="notation"></a>Property `notation`
+## <a name="notation"></a>Property `Organization > notation`
 
 **Title:** notation
 
@@ -145,13 +145,13 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | [item 0](#notation_anyOf_i0) |
 | [item 1](#notation_anyOf_i1) |
 
-### <a name="notation_anyOf_i0"></a>Property `item 0`
+### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="notation_anyOf_i1"></a>Property `item 1`
+### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -161,13 +161,13 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | ---------------------------------------- | ----------- |
 | [item 1 items](#notation_anyOf_i1_items) | -           |
 
-#### <a name="notation_anyOf_i1_items"></a>item 1 items
+#### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
 | **Type** | `string` |
 
-## <a name="prefLabel"></a>Property `prefLabel`
+## <a name="prefLabel"></a>Property `Organization > prefLabel`
 
 **Title:** preferred label
 
@@ -177,7 +177,7 @@ Preferred or legal name of the organization
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="prefLabelMap"></a>Property `prefLabelMap`
+## <a name="prefLabelMap"></a>Property `Organization > prefLabelMap`
 
 Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

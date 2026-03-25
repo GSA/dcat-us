@@ -16,21 +16,21 @@ A statement about rights held with respect to another item
 | - [attributionText](#attributionText )       | null or string | attribution text                                                                      |
 | - [attributionTextMap](#attributionTextMap ) | null or object | Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `RightsStatement > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `RightsStatement > @type`
 
 |             |                     |
 | ----------- | ------------------- |
 | **Type**    | `string`            |
 | **Default** | `"RightsStatement"` |
 
-## <a name="attributionText"></a>Property `attributionText`
+## <a name="attributionText"></a>Property `RightsStatement > attributionText`
 
 **Title:** attribution text
 
@@ -40,7 +40,7 @@ The custom attribution text for the rights statement
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="attributionTextMap"></a>Property `attributionTextMap`
+## <a name="attributionTextMap"></a>Property `RightsStatement > attributionTextMap`
 
 Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

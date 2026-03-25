@@ -18,21 +18,21 @@ A restriction on the permitted access to a resource
 | + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status                                                                        |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction                                                                      |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `AccessRestriction > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `AccessRestriction > @type`
 
 |             |                       |
 | ----------- | --------------------- |
 | **Type**    | `string`              |
 | **Default** | `"AccessRestriction"` |
 
-## <a name="restrictionNote"></a>Property `restrictionNote`
+## <a name="restrictionNote"></a>Property `AccessRestriction > restrictionNote`
 
 **Title:** restriction note
 
@@ -42,7 +42,7 @@ A note related to the access restriction
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="restrictionNoteMap"></a>Property `restrictionNoteMap`
+## <a name="restrictionNoteMap"></a>Property `AccessRestriction > restrictionNoteMap`
 
 Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -50,7 +50,7 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="restrictionStatus"></a>Property `restrictionStatus`
+## <a name="restrictionStatus"></a>Property `AccessRestriction > restrictionStatus`
 
 **Title:** restriction status
 
@@ -67,7 +67,7 @@ The indication of whether or not there are access restrictions on the item
 | [Concept](#restrictionStatus_oneOf_i0) |
 | [item 1](#restrictionStatus_oneOf_i1)  |
 
-### <a name="restrictionStatus_oneOf_i0"></a>Property `Concept`
+### <a name="restrictionStatus_oneOf_i0"></a>Property `AccessRestriction > restrictionStatus > oneOf > Concept`
 
 **Title:** Concept
 
@@ -79,7 +79,7 @@ inline description of restriction status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="restrictionStatus_oneOf_i1"></a>Property `item 1`
+### <a name="restrictionStatus_oneOf_i1"></a>Property `AccessRestriction > restrictionStatus > oneOf > item 1`
 
 reference iri of restriction status
 
@@ -88,7 +88,7 @@ reference iri of restriction status
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="specificRestriction"></a>Property `specificRestriction`
+## <a name="specificRestriction"></a>Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
 
@@ -105,13 +105,13 @@ The specific NARA restriction associated with this restriction
 | [Concept](#specificRestriction_oneOf_i1) |
 | [item 2](#specificRestriction_oneOf_i2)  |
 
-### <a name="specificRestriction_oneOf_i0"></a>Property `item 0`
+### <a name="specificRestriction_oneOf_i0"></a>Property `AccessRestriction > specificRestriction > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="specificRestriction_oneOf_i1"></a>Property `Concept`
+### <a name="specificRestriction_oneOf_i1"></a>Property `AccessRestriction > specificRestriction > oneOf > Concept`
 
 **Title:** Concept
 
@@ -123,7 +123,7 @@ inline description of the specific restriction
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
 
-### <a name="specificRestriction_oneOf_i2"></a>Property `item 2`
+### <a name="specificRestriction_oneOf_i2"></a>Property `AccessRestriction > specificRestriction > oneOf > item 2`
 
 reference iri of the specific restriction
 

@@ -28,21 +28,21 @@ An ordered series of datasets
 | + [title](#title )                           | string             | title                                                                               |
 | - [titleMap](#titleMap )                     | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `DatasetSeries > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `DatasetSeries > @type`
 
 |             |                   |
 | ----------- | ----------------- |
 | **Type**    | `string`          |
 | **Default** | `"DatasetSeries"` |
 
-## <a name="contactPoint"></a>Property `contactPoint`
+## <a name="contactPoint"></a>Property `DatasetSeries > contactPoint`
 
 **Title:** contact point
 
@@ -58,13 +58,13 @@ List of contacts that can be used for sending comments about the Dataset Series
 | [item 0](#contactPoint_anyOf_i0) |
 | [item 1](#contactPoint_anyOf_i1) |
 
-### <a name="contactPoint_anyOf_i0"></a>Property `item 0`
+### <a name="contactPoint_anyOf_i0"></a>Property `DatasetSeries > contactPoint > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="contactPoint_anyOf_i1"></a>Property `item 1`
+### <a name="contactPoint_anyOf_i1"></a>Property `DatasetSeries > contactPoint > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -74,7 +74,7 @@ List of contacts that can be used for sending comments about the Dataset Series
 | -------------------------------------------- | ----------- |
 | [item 1 items](#contactPoint_anyOf_i1_items) | -           |
 
-#### <a name="contactPoint_anyOf_i1_items"></a>item 1 items
+#### <a name="contactPoint_anyOf_i1_items"></a>DatasetSeries > contactPoint > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -86,7 +86,7 @@ List of contacts that can be used for sending comments about the Dataset Series
 | [Kind](#contactPoint_anyOf_i1_items_oneOf_i0)   |
 | [item 1](#contactPoint_anyOf_i1_items_oneOf_i1) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `Kind`
+##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `DatasetSeries > contactPoint > anyOf > item 1 > item 1 items > oneOf > Kind`
 
 **Title:** Kind
 
@@ -98,7 +98,7 @@ inline description of the contact
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `DatasetSeries > contactPoint > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of the contact
 
@@ -107,7 +107,7 @@ reference iri of the contact
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="first"></a>Property `first`
+## <a name="first"></a>Property `DatasetSeries > first`
 
 **Title:** first
 
@@ -124,13 +124,13 @@ The first dataset in an ordered dataset series
 | [Dataset](#first_oneOf_i1) |
 | [item 2](#first_oneOf_i2)  |
 
-### <a name="first_oneOf_i0"></a>Property `item 0`
+### <a name="first_oneOf_i0"></a>Property `DatasetSeries > first > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="first_oneOf_i1"></a>Property `Dataset`
+### <a name="first_oneOf_i1"></a>Property `DatasetSeries > first > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -142,7 +142,7 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-### <a name="first_oneOf_i2"></a>Property `item 2`
+### <a name="first_oneOf_i2"></a>Property `DatasetSeries > first > oneOf > item 2`
 
 reference iri of the first dataset
 
@@ -151,7 +151,7 @@ reference iri of the first dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="last"></a>Property `last`
+## <a name="last"></a>Property `DatasetSeries > last`
 
 **Title:** last
 
@@ -168,13 +168,13 @@ The last dataset in an ordered dataset series
 | [Dataset](#last_oneOf_i1) |
 | [item 2](#last_oneOf_i2)  |
 
-### <a name="last_oneOf_i0"></a>Property `item 0`
+### <a name="last_oneOf_i0"></a>Property `DatasetSeries > last > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="last_oneOf_i1"></a>Property `Dataset`
+### <a name="last_oneOf_i1"></a>Property `DatasetSeries > last > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -186,7 +186,7 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_oneOf_i1) |
 
-### <a name="last_oneOf_i2"></a>Property `item 2`
+### <a name="last_oneOf_i2"></a>Property `DatasetSeries > last > oneOf > item 2`
 
 reference iri of the last dataset
 
@@ -195,7 +195,7 @@ reference iri of the last dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="seriesMember"></a>Property `seriesMember`
+## <a name="seriesMember"></a>Property `DatasetSeries > seriesMember`
 
 **Title:** series member
 
@@ -211,13 +211,13 @@ List of members of the Dataset Series
 | [item 0](#seriesMember_anyOf_i0) |
 | [item 1](#seriesMember_anyOf_i1) |
 
-### <a name="seriesMember_anyOf_i0"></a>Property `item 0`
+### <a name="seriesMember_anyOf_i0"></a>Property `DatasetSeries > seriesMember > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="seriesMember_anyOf_i1"></a>Property `item 1`
+### <a name="seriesMember_anyOf_i1"></a>Property `DatasetSeries > seriesMember > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -227,7 +227,7 @@ List of members of the Dataset Series
 | -------------------------------------------- | ----------- |
 | [item 1 items](#seriesMember_anyOf_i1_items) | -           |
 
-#### <a name="seriesMember_anyOf_i1_items"></a>item 1 items
+#### <a name="seriesMember_anyOf_i1_items"></a>DatasetSeries > seriesMember > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -239,7 +239,7 @@ List of members of the Dataset Series
 | [Dataset](#seriesMember_anyOf_i1_items_oneOf_i0) |
 | [item 1](#seriesMember_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="seriesMember_anyOf_i1_items_oneOf_i0"></a>Property `Dataset`
+##### <a name="seriesMember_anyOf_i1_items_oneOf_i0"></a>Property `DatasetSeries > seriesMember > anyOf > item 1 > item 1 items > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -251,7 +251,7 @@ inline description of the member dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_oneOf_i1) |
 
-##### <a name="seriesMember_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="seriesMember_anyOf_i1_items_oneOf_i1"></a>Property `DatasetSeries > seriesMember > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of the member dataset
 
@@ -260,7 +260,7 @@ reference iri of the member dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="accrualPeriodicity"></a>Property `accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>Property `DatasetSeries > accrualPeriodicity`
 
 **Title:** frequency
 
@@ -271,38 +271,81 @@ The frequency at which the Dataset Series is updated
 | **Type**                  | `combining`      |
 | **Additional properties** | Any type allowed |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#accrualPeriodicity_oneOf_i0)    |
-| [frequency](#accrualPeriodicity_oneOf_i1) |
-| [item 2](#accrualPeriodicity_oneOf_i2)    |
+| Any of(Option)                         |
+| -------------------------------------- |
+| [item 0](#accrualPeriodicity_anyOf_i0) |
+| [item 1](#accrualPeriodicity_anyOf_i1) |
+| [item 2](#accrualPeriodicity_anyOf_i2) |
+| [item 3](#accrualPeriodicity_anyOf_i3) |
 
-### <a name="accrualPeriodicity_oneOf_i0"></a>Property `item 0`
+### <a name="accrualPeriodicity_anyOf_i0"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="accrualPeriodicity_oneOf_i1"></a>Property `frequency`
+### <a name="accrualPeriodicity_anyOf_i1"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 1`
 
-inline description of Frequency
+ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding
 
-|                           |                             |
-| ------------------------- | --------------------------- |
-| **Type**                  | `object`                    |
-| **Additional properties** | Any type allowed            |
-| **Defined in**            | [Frequency](./Frequency.md) |
+|          |                    |
+| -------- | ------------------ |
+| **Type** | `enum (of string)` |
 
-### <a name="accrualPeriodicity_oneOf_i2"></a>Property `item 2`
+Must be one of:
+* "continual"
+* "daily"
+* "weekly"
+* "fortnightly"
+* "monthly"
+* "quarterly"
+* "biannually"
+* "annually"
+* "asNeeded"
+* "irregular"
+* "notPlanned"
+* "unknown"
 
-reference iri of Frequency
+### <a name="accrualPeriodicity_anyOf_i2"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 2`
 
-|            |          |
-| ---------- | -------- |
-| **Type**   | `string` |
-| **Format** | `iri`    |
+ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding
 
-## <a name="description"></a>Property `description`
+|          |          |
+| -------- | -------- |
+| **Type** | `string` |
+
+| Restrictions                      |                                                                   |
+| --------------------------------- | ----------------------------------------------------------------- |
+| **Must match regular expression** | ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24) |
+
+### <a name="accrualPeriodicity_anyOf_i3"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 3`
+
+Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding
+
+|          |                    |
+| -------- | ------------------ |
+| **Type** | `enum (of string)` |
+
+Must be one of:
+* "continuous"
+* "daily"
+* "weekly"
+* "biweekly"
+* "monthly"
+* "quarterly"
+* "semiannual"
+* "annual"
+* "irregular"
+* "triennial"
+* "biennial"
+* "threeTimesAYear"
+* "bimonthly"
+* "semimonthly"
+* "threeTimesAMonth"
+* "semiweekly"
+* "threeTimesAWeek"
+
+## <a name="description"></a>Property `DatasetSeries > description`
 
 **Title:** description
 
@@ -313,7 +356,7 @@ A free-text account of the Dataset Series
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="descriptionMap"></a>Property `descriptionMap`
+## <a name="descriptionMap"></a>Property `DatasetSeries > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -321,7 +364,7 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="issued"></a>Property `issued`
+## <a name="issued"></a>Property `DatasetSeries > issued`
 
 **Title:** release date
 
@@ -337,13 +380,13 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 | [item 0](#issued_anyOf_i0) |
 | [item 1](#issued_anyOf_i1) |
 
-### <a name="issued_anyOf_i0"></a>Property `item 0`
+### <a name="issued_anyOf_i0"></a>Property `DatasetSeries > issued > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="issued_anyOf_i1"></a>Property `item 1`
+### <a name="issued_anyOf_i1"></a>Property `DatasetSeries > issued > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -356,7 +399,7 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `DatasetSeries > issued > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -364,7 +407,7 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `DatasetSeries > issued > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -372,7 +415,7 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `DatasetSeries > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -385,7 +428,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `DatasetSeries > issued > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -398,7 +441,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `modified`
+## <a name="modified"></a>Property `DatasetSeries > modified`
 
 **Title:** update/modification date
 
@@ -414,13 +457,13 @@ The most recent date on which the Dataset Series was changed or modified
 | [item 0](#modified_anyOf_i0) |
 | [item 1](#modified_anyOf_i1) |
 
-### <a name="modified_anyOf_i0"></a>Property `item 0`
+### <a name="modified_anyOf_i0"></a>Property `DatasetSeries > modified > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="modified_anyOf_i1"></a>Property `item 1`
+### <a name="modified_anyOf_i1"></a>Property `DatasetSeries > modified > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -433,7 +476,7 @@ The most recent date on which the Dataset Series was changed or modified
 | [item 2](#modified_anyOf_i1_oneOf_i2) |
 | [item 3](#modified_anyOf_i1_oneOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `DatasetSeries > modified > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -441,7 +484,7 @@ The most recent date on which the Dataset Series was changed or modified
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `DatasetSeries > modified > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -449,7 +492,7 @@ The most recent date on which the Dataset Series was changed or modified
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `DatasetSeries > modified > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -462,7 +505,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `DatasetSeries > modified > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -475,7 +518,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `publisher`
+## <a name="publisher"></a>Property `DatasetSeries > publisher`
 
 **Title:** publisher
 
@@ -492,13 +535,13 @@ An entity (organization) responsible for ensuring the coherency of the Dataset S
 | [Agent](#publisher_oneOf_i1)  |
 | [item 2](#publisher_oneOf_i2) |
 
-### <a name="publisher_oneOf_i0"></a>Property `item 0`
+### <a name="publisher_oneOf_i0"></a>Property `DatasetSeries > publisher > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="publisher_oneOf_i1"></a>Property `Agent`
+### <a name="publisher_oneOf_i1"></a>Property `DatasetSeries > publisher > oneOf > Agent`
 
 **Title:** Agent
 
@@ -510,7 +553,7 @@ inline description of publisher
 | **Additional properties** | Any type allowed                                                                                                              |
 | **Same definition as**    | [Agent](#first_oneOf_i1_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
 
-### <a name="publisher_oneOf_i2"></a>Property `item 2`
+### <a name="publisher_oneOf_i2"></a>Property `DatasetSeries > publisher > oneOf > item 2`
 
 reference iri of publisher
 
@@ -519,7 +562,7 @@ reference iri of publisher
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="spatial"></a>Property `spatial`
+## <a name="spatial"></a>Property `DatasetSeries > spatial`
 
 **Title:** spatial/geographic coverage
 
@@ -535,13 +578,13 @@ A geographic region that is covered by the Dataset Series
 | [item 0](#spatial_anyOf_i0) |
 | [item 1](#spatial_anyOf_i1) |
 
-### <a name="spatial_anyOf_i0"></a>Property `item 0`
+### <a name="spatial_anyOf_i0"></a>Property `DatasetSeries > spatial > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="spatial_anyOf_i1"></a>Property `item 1`
+### <a name="spatial_anyOf_i1"></a>Property `DatasetSeries > spatial > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -551,7 +594,7 @@ A geographic region that is covered by the Dataset Series
 | --------------------------------------- | ----------- |
 | [item 1 items](#spatial_anyOf_i1_items) | -           |
 
-#### <a name="spatial_anyOf_i1_items"></a>item 1 items
+#### <a name="spatial_anyOf_i1_items"></a>DatasetSeries > spatial > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -563,7 +606,7 @@ A geographic region that is covered by the Dataset Series
 | [Location](#spatial_anyOf_i1_items_oneOf_i0) |
 | [item 1](#spatial_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i0"></a>Property `Location`
+##### <a name="spatial_anyOf_i1_items_oneOf_i0"></a>Property `DatasetSeries > spatial > anyOf > item 1 > item 1 items > oneOf > Location`
 
 **Title:** Location
 
@@ -575,7 +618,7 @@ inline description of Location
 | **Additional properties** | Any type allowed                                                                                                                 |
 | **Same definition as**    | [Location](#first_oneOf_i1_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_spatial_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="spatial_anyOf_i1_items_oneOf_i1"></a>Property `DatasetSeries > spatial > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Location
 
@@ -584,7 +627,7 @@ reference iri of Location
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="temporal"></a>Property `temporal`
+## <a name="temporal"></a>Property `DatasetSeries > temporal`
 
 **Title:** temporal coverage
 
@@ -600,13 +643,13 @@ A list of temporal periods that the Dataset Series covers
 | [item 0](#temporal_anyOf_i0) |
 | [item 1](#temporal_anyOf_i1) |
 
-### <a name="temporal_anyOf_i0"></a>Property `item 0`
+### <a name="temporal_anyOf_i0"></a>Property `DatasetSeries > temporal > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="temporal_anyOf_i1"></a>Property `item 1`
+### <a name="temporal_anyOf_i1"></a>Property `DatasetSeries > temporal > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -616,7 +659,7 @@ A list of temporal periods that the Dataset Series covers
 | ---------------------------------------- | ----------- |
 | [item 1 items](#temporal_anyOf_i1_items) | -           |
 
-#### <a name="temporal_anyOf_i1_items"></a>item 1 items
+#### <a name="temporal_anyOf_i1_items"></a>DatasetSeries > temporal > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -628,7 +671,7 @@ A list of temporal periods that the Dataset Series covers
 | [PeriodOfTime](#temporal_anyOf_i1_items_oneOf_i0) |
 | [item 1](#temporal_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `PeriodOfTime`
+##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `DatasetSeries > temporal > anyOf > item 1 > item 1 items > oneOf > PeriodOfTime`
 
 **Title:** PeriodOfTime
 
@@ -640,7 +683,7 @@ inline description of PeriodOfTime
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [PeriodOfTime](#first_oneOf_i1_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_temporal_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `DatasetSeries > temporal > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of PeriodOfTime
 
@@ -649,7 +692,7 @@ reference iri of PeriodOfTime
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="title"></a>Property `title`
+## <a name="title"></a>Property `DatasetSeries > title`
 
 **Title:** title
 
@@ -660,7 +703,7 @@ A name given to the Dataset Series
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="titleMap"></a>Property `titleMap`
+## <a name="titleMap"></a>Property `DatasetSeries > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

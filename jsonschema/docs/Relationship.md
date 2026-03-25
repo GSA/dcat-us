@@ -16,21 +16,21 @@ Information about an item or entity that has some relationship to a dataset and 
 | + [hadRole](#hadRole )   | string | role              |
 | + [relation](#relation ) | string | relation          |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Relationship > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Relationship > @type`
 
 |             |                  |
 | ----------- | ---------------- |
 | **Type**    | `string`         |
 | **Default** | `"Relationship"` |
 
-## <a name="hadRole"></a>Property `hadRole`
+## <a name="hadRole"></a>Property `Relationship > hadRole`
 
 **Title:** role
 
@@ -41,7 +41,7 @@ The function of an entity or agent with respect to a dataset
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="relation"></a>Property `relation`
+## <a name="relation"></a>Property `Relationship > relation`
 
 **Title:** relation
 

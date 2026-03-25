@@ -76,21 +76,21 @@ Information about a set of data
 | - [scopeNote](#scopeNote )                                 | null or string     | usage note                                                                          |
 | - [scopeNoteMap](#scopeNoteMap )                           | null or object     | Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Dataset > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Dataset > @type`
 
 |             |             |
 | ----------- | ----------- |
 | **Type**    | `string`    |
 | **Default** | `"Dataset"` |
 
-## <a name="otherIdentifier"></a>Property `otherIdentifier`
+## <a name="otherIdentifier"></a>Property `Dataset > otherIdentifier`
 
 **Title:** other identifier
 
@@ -106,13 +106,13 @@ List of structure identifiers
 | [item 0](#otherIdentifier_anyOf_i0) |
 | [item 1](#otherIdentifier_anyOf_i1) |
 
-### <a name="otherIdentifier_anyOf_i0"></a>Property `item 0`
+### <a name="otherIdentifier_anyOf_i0"></a>Property `Dataset > otherIdentifier > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="otherIdentifier_anyOf_i1"></a>Property `item 1`
+### <a name="otherIdentifier_anyOf_i1"></a>Property `Dataset > otherIdentifier > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -122,7 +122,7 @@ List of structure identifiers
 | ----------------------------------------------- | ----------- |
 | [item 1 items](#otherIdentifier_anyOf_i1_items) | -           |
 
-#### <a name="otherIdentifier_anyOf_i1_items"></a>item 1 items
+#### <a name="otherIdentifier_anyOf_i1_items"></a>Dataset > otherIdentifier > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -134,7 +134,7 @@ List of structure identifiers
 | [Identifier](#otherIdentifier_anyOf_i1_items_oneOf_i0) |
 | [item 1](#otherIdentifier_anyOf_i1_items_oneOf_i1)     |
 
-##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i0"></a>Property `Identifier`
+##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > otherIdentifier > anyOf > item 1 > item 1 items > oneOf > Identifier`
 
 **Title:** Identifier
 
@@ -146,7 +146,7 @@ inline description of other identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > otherIdentifier > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of other identifier
 
@@ -155,7 +155,7 @@ reference iri of other identifier
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="sample"></a>Property `sample`
+## <a name="sample"></a>Property `Dataset > sample`
 
 **Title:** sample
 
@@ -171,13 +171,13 @@ List of links to samples of a Dataset
 | [item 0](#sample_anyOf_i0) |
 | [item 1](#sample_anyOf_i1) |
 
-### <a name="sample_anyOf_i0"></a>Property `item 0`
+### <a name="sample_anyOf_i0"></a>Property `Dataset > sample > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="sample_anyOf_i1"></a>Property `item 1`
+### <a name="sample_anyOf_i1"></a>Property `Dataset > sample > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -187,7 +187,7 @@ List of links to samples of a Dataset
 | -------------------------------------- | ----------- |
 | [item 1 items](#sample_anyOf_i1_items) | -           |
 
-#### <a name="sample_anyOf_i1_items"></a>item 1 items
+#### <a name="sample_anyOf_i1_items"></a>Dataset > sample > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -199,7 +199,7 @@ List of links to samples of a Dataset
 | [Distribution](#sample_anyOf_i1_items_oneOf_i0) |
 | [item 1](#sample_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="sample_anyOf_i1_items_oneOf_i0"></a>Property `Distribution`
+##### <a name="sample_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > sample > anyOf > item 1 > item 1 items > oneOf > Distribution`
 
 **Title:** Distribution
 
@@ -211,7 +211,7 @@ inline description of Distribution
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Distribution](./Distribution.md) |
 
-##### <a name="sample_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="sample_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > sample > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Distribution
 
@@ -220,7 +220,7 @@ reference iri of Distribution
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="status"></a>Property `status`
+## <a name="status"></a>Property `Dataset > status`
 
 **Title:** lifecycle status
 
@@ -237,13 +237,13 @@ The status of the dataset  in the context of maturity lifecycle
 | [Concept](#status_oneOf_i1) |
 | [item 2](#status_oneOf_i2)  |
 
-### <a name="status_oneOf_i0"></a>Property `item 0`
+### <a name="status_oneOf_i0"></a>Property `Dataset > status > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="status_oneOf_i1"></a>Property `Concept`
+### <a name="status_oneOf_i1"></a>Property `Dataset > status > oneOf > Concept`
 
 **Title:** Concept
 
@@ -255,7 +255,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                                            |
 | **Same definition as**    | [Concept](#sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-### <a name="status_oneOf_i2"></a>Property `item 2`
+### <a name="status_oneOf_i2"></a>Property `Dataset > status > oneOf > item 2`
 
 reference iri of Concept
 
@@ -264,7 +264,7 @@ reference iri of Concept
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="supportedSchema"></a>Property `supportedSchema`
+## <a name="supportedSchema"></a>Property `Dataset > supportedSchema`
 
 **Title:** supported schema
 
@@ -281,13 +281,13 @@ supported schema for this dataset
 | [Dataset](#supportedSchema_oneOf_i1) |
 | [item 2](#supportedSchema_oneOf_i2)  |
 
-### <a name="supportedSchema_oneOf_i0"></a>Property `item 0`
+### <a name="supportedSchema_oneOf_i0"></a>Property `Dataset > supportedSchema > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="supportedSchema_oneOf_i1"></a>Property `Dataset`
+### <a name="supportedSchema_oneOf_i1"></a>Property `Dataset > supportedSchema > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -299,7 +299,7 @@ inline description of the supported schema
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-### <a name="supportedSchema_oneOf_i2"></a>Property `item 2`
+### <a name="supportedSchema_oneOf_i2"></a>Property `Dataset > supportedSchema > oneOf > item 2`
 
 reference iri of the supported schema
 
@@ -308,7 +308,7 @@ reference iri of the supported schema
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="versionNotes"></a>Property `versionNotes`
+## <a name="versionNotes"></a>Property `Dataset > versionNotes`
 
 **Title:** version notes
 
@@ -318,7 +318,7 @@ version notes for this dataset
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="contactPoint"></a>Property `contactPoint`
+## <a name="contactPoint"></a>Property `Dataset > contactPoint`
 
 **Title:** contact point
 
@@ -334,13 +334,13 @@ List of contact information that can be used for sending comments about the Data
 | [item 0](#contactPoint_anyOf_i0) |
 | [item 1](#contactPoint_anyOf_i1) |
 
-### <a name="contactPoint_anyOf_i0"></a>Property `item 0`
+### <a name="contactPoint_anyOf_i0"></a>Property `Dataset > contactPoint > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="contactPoint_anyOf_i1"></a>Property `item 1`
+### <a name="contactPoint_anyOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -350,7 +350,7 @@ List of contact information that can be used for sending comments about the Data
 | -------------------------------------------- | ----------- |
 | [item 1 items](#contactPoint_anyOf_i1_items) | -           |
 
-#### <a name="contactPoint_anyOf_i1_items"></a>item 1 items
+#### <a name="contactPoint_anyOf_i1_items"></a>Dataset > contactPoint > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -362,7 +362,7 @@ List of contact information that can be used for sending comments about the Data
 | [Kind](#contactPoint_anyOf_i1_items_oneOf_i0)   |
 | [item 1](#contactPoint_anyOf_i1_items_oneOf_i1) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `Kind`
+##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > contactPoint > anyOf > item 1 > item 1 items > oneOf > Kind`
 
 **Title:** Kind
 
@@ -374,7 +374,7 @@ inline description of Kind
 | **Additional properties** | Any type allowed                                                                                          |
 | **Same definition as**    | [Kind](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_contactPoint_items_oneOf_i0) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Kind
 
@@ -383,7 +383,7 @@ reference iri of Kind
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="distribution"></a>Property `distribution`
+## <a name="distribution"></a>Property `Dataset > distribution`
 
 **Title:** dataset distribution
 
@@ -399,13 +399,13 @@ List of available distributions for the Dataset
 | [item 0](#distribution_anyOf_i0) |
 | [item 1](#distribution_anyOf_i1) |
 
-### <a name="distribution_anyOf_i0"></a>Property `item 0`
+### <a name="distribution_anyOf_i0"></a>Property `Dataset > distribution > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="distribution_anyOf_i1"></a>Property `item 1`
+### <a name="distribution_anyOf_i1"></a>Property `Dataset > distribution > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -415,7 +415,7 @@ List of available distributions for the Dataset
 | -------------------------------------------- | ----------- |
 | [item 1 items](#distribution_anyOf_i1_items) | -           |
 
-#### <a name="distribution_anyOf_i1_items"></a>item 1 items
+#### <a name="distribution_anyOf_i1_items"></a>Dataset > distribution > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -427,7 +427,7 @@ List of available distributions for the Dataset
 | [Distribution](#distribution_anyOf_i1_items_oneOf_i0) |
 | [item 1](#distribution_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="distribution_anyOf_i1_items_oneOf_i0"></a>Property `Distribution`
+##### <a name="distribution_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > distribution > anyOf > item 1 > item 1 items > oneOf > Distribution`
 
 **Title:** Distribution
 
@@ -439,7 +439,7 @@ inline description of Distribution
 | **Additional properties** | Any type allowed                                |
 | **Same definition as**    | [Distribution](#sample_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="distribution_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="distribution_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > distribution > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Distribution
 
@@ -448,7 +448,7 @@ reference iri of Distribution
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="first"></a>Property `first`
+## <a name="first"></a>Property `Dataset > first`
 
 **Title:** first
 
@@ -465,13 +465,13 @@ the first item of the sequence the dataset belongs to
 | [Dataset](#first_oneOf_i1) |
 | [item 2](#first_oneOf_i2)  |
 
-### <a name="first_oneOf_i0"></a>Property `item 0`
+### <a name="first_oneOf_i0"></a>Property `Dataset > first > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="first_oneOf_i1"></a>Property `Dataset`
+### <a name="first_oneOf_i1"></a>Property `Dataset > first > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -483,7 +483,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-### <a name="first_oneOf_i2"></a>Property `item 2`
+### <a name="first_oneOf_i2"></a>Property `Dataset > first > oneOf > item 2`
 
 reference iri of Dataset
 
@@ -492,7 +492,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="hasCurrentVersion"></a>Property `hasCurrentVersion`
+## <a name="hasCurrentVersion"></a>Property `Dataset > hasCurrentVersion`
 
 **Title:** current version
 
@@ -509,13 +509,13 @@ reference to the current (latest) version of a dataset
 | [Dataset](#hasCurrentVersion_oneOf_i1) |
 | [item 2](#hasCurrentVersion_oneOf_i2)  |
 
-### <a name="hasCurrentVersion_oneOf_i0"></a>Property `item 0`
+### <a name="hasCurrentVersion_oneOf_i0"></a>Property `Dataset > hasCurrentVersion > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="hasCurrentVersion_oneOf_i1"></a>Property `Dataset`
+### <a name="hasCurrentVersion_oneOf_i1"></a>Property `Dataset > hasCurrentVersion > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -527,7 +527,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-### <a name="hasCurrentVersion_oneOf_i2"></a>Property `item 2`
+### <a name="hasCurrentVersion_oneOf_i2"></a>Property `Dataset > hasCurrentVersion > oneOf > item 2`
 
 reference iri of Dataset
 
@@ -536,7 +536,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="hasVersion"></a>Property `hasVersion`
+## <a name="hasVersion"></a>Property `Dataset > hasVersion`
 
 **Title:** has version
 
@@ -552,13 +552,13 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 | [item 0](#hasVersion_anyOf_i0) |
 | [item 1](#hasVersion_anyOf_i1) |
 
-### <a name="hasVersion_anyOf_i0"></a>Property `item 0`
+### <a name="hasVersion_anyOf_i0"></a>Property `Dataset > hasVersion > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="hasVersion_anyOf_i1"></a>Property `item 1`
+### <a name="hasVersion_anyOf_i1"></a>Property `Dataset > hasVersion > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -568,7 +568,7 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 | ------------------------------------------ | ----------- |
 | [item 1 items](#hasVersion_anyOf_i1_items) | -           |
 
-#### <a name="hasVersion_anyOf_i1_items"></a>item 1 items
+#### <a name="hasVersion_anyOf_i1_items"></a>Dataset > hasVersion > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -580,7 +580,7 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 | [Dataset](#hasVersion_anyOf_i1_items_oneOf_i0) |
 | [item 1](#hasVersion_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="hasVersion_anyOf_i1_items_oneOf_i0"></a>Property `Dataset`
+##### <a name="hasVersion_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > hasVersion > anyOf > item 1 > item 1 items > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -592,7 +592,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="hasVersion_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="hasVersion_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > hasVersion > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Dataset
 
@@ -601,7 +601,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="inSeries"></a>Property `inSeries`
+## <a name="inSeries"></a>Property `Dataset > inSeries`
 
 **Title:** in series
 
@@ -617,13 +617,13 @@ List of Dataset Series this dataset belongs to
 | [item 0](#inSeries_anyOf_i0) |
 | [item 1](#inSeries_anyOf_i1) |
 
-### <a name="inSeries_anyOf_i0"></a>Property `item 0`
+### <a name="inSeries_anyOf_i0"></a>Property `Dataset > inSeries > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="inSeries_anyOf_i1"></a>Property `item 1`
+### <a name="inSeries_anyOf_i1"></a>Property `Dataset > inSeries > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -633,7 +633,7 @@ List of Dataset Series this dataset belongs to
 | ---------------------------------------- | ----------- |
 | [item 1 items](#inSeries_anyOf_i1_items) | -           |
 
-#### <a name="inSeries_anyOf_i1_items"></a>item 1 items
+#### <a name="inSeries_anyOf_i1_items"></a>Dataset > inSeries > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -645,7 +645,7 @@ List of Dataset Series this dataset belongs to
 | [DatasetSeries](#inSeries_anyOf_i1_items_oneOf_i0) |
 | [item 1](#inSeries_anyOf_i1_items_oneOf_i1)        |
 
-##### <a name="inSeries_anyOf_i1_items_oneOf_i0"></a>Property `DatasetSeries`
+##### <a name="inSeries_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > inSeries > anyOf > item 1 > item 1 items > oneOf > DatasetSeries`
 
 **Title:** DatasetSeries
 
@@ -657,7 +657,7 @@ inline description of DatasetSeries
 | **Additional properties** | Any type allowed                                                                                                                                              |
 | **Same definition as**    | [DatasetSeries](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="inSeries_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="inSeries_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > inSeries > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of DatasetSeries
 
@@ -666,7 +666,7 @@ reference iri of DatasetSeries
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="keyword"></a>Property `keyword`
+## <a name="keyword"></a>Property `Dataset > keyword`
 
 **Title:** keyword/tag
 
@@ -682,13 +682,13 @@ List of keywords or tags describing the Dataset
 | [item 0](#keyword_anyOf_i0) |
 | [item 1](#keyword_anyOf_i1) |
 
-### <a name="keyword_anyOf_i0"></a>Property `item 0`
+### <a name="keyword_anyOf_i0"></a>Property `Dataset > keyword > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="keyword_anyOf_i1"></a>Property `item 1`
+### <a name="keyword_anyOf_i1"></a>Property `Dataset > keyword > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -698,7 +698,7 @@ List of keywords or tags describing the Dataset
 | --------------------------------------- | ----------- |
 | [item 1 items](#keyword_anyOf_i1_items) | -           |
 
-#### <a name="keyword_anyOf_i1_items"></a>item 1 items
+#### <a name="keyword_anyOf_i1_items"></a>Dataset > keyword > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
@@ -708,7 +708,7 @@ List of keywords or tags describing the Dataset
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="keywordMap"></a>Property `keywordMap`
+## <a name="keywordMap"></a>Property `Dataset > keywordMap`
 
 Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -716,7 +716,7 @@ Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="landingPage"></a>Property `landingPage`
+## <a name="landingPage"></a>Property `Dataset > landingPage`
 
 **Title:** landing page
 
@@ -733,13 +733,13 @@ A web page that provides access to the Dataset, its Distributions and/or additio
 | [Document](#landingPage_oneOf_i1) |
 | [item 2](#landingPage_oneOf_i2)   |
 
-### <a name="landingPage_oneOf_i0"></a>Property `item 0`
+### <a name="landingPage_oneOf_i0"></a>Property `Dataset > landingPage > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="landingPage_oneOf_i1"></a>Property `Document`
+### <a name="landingPage_oneOf_i1"></a>Property `Dataset > landingPage > oneOf > Document`
 
 **Title:** Document
 
@@ -751,7 +751,7 @@ inline description of Document
 | **Additional properties** | Any type allowed                                                                                                                             |
 | **Same definition as**    | [Document](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_landingPage_oneOf_i1) |
 
-### <a name="landingPage_oneOf_i2"></a>Property `item 2`
+### <a name="landingPage_oneOf_i2"></a>Property `Dataset > landingPage > oneOf > item 2`
 
 reference iri of Document
 
@@ -760,7 +760,7 @@ reference iri of Document
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="previousVersion"></a>Property `previousVersion`
+## <a name="previousVersion"></a>Property `Dataset > previousVersion`
 
 **Title:** previous version
 
@@ -777,13 +777,13 @@ reference to the previous dataset version
 | [Dataset](#previousVersion_oneOf_i1) |
 | [item 2](#previousVersion_oneOf_i2)  |
 
-### <a name="previousVersion_oneOf_i0"></a>Property `item 0`
+### <a name="previousVersion_oneOf_i0"></a>Property `Dataset > previousVersion > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="previousVersion_oneOf_i1"></a>Property `Dataset`
+### <a name="previousVersion_oneOf_i1"></a>Property `Dataset > previousVersion > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -795,7 +795,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-### <a name="previousVersion_oneOf_i2"></a>Property `item 2`
+### <a name="previousVersion_oneOf_i2"></a>Property `Dataset > previousVersion > oneOf > item 2`
 
 reference iri of Dataset
 
@@ -804,7 +804,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="qualifiedRelation"></a>Property `qualifiedRelation`
+## <a name="qualifiedRelation"></a>Property `Dataset > qualifiedRelation`
 
 **Title:** qualified relation
 
@@ -820,13 +820,13 @@ Qualified relationship with role of the dataset with another resource
 | [item 0](#qualifiedRelation_anyOf_i0) |
 | [item 1](#qualifiedRelation_anyOf_i1) |
 
-### <a name="qualifiedRelation_anyOf_i0"></a>Property `item 0`
+### <a name="qualifiedRelation_anyOf_i0"></a>Property `Dataset > qualifiedRelation > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="qualifiedRelation_anyOf_i1"></a>Property `item 1`
+### <a name="qualifiedRelation_anyOf_i1"></a>Property `Dataset > qualifiedRelation > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -836,7 +836,7 @@ Qualified relationship with role of the dataset with another resource
 | ------------------------------------------------- | ----------- |
 | [item 1 items](#qualifiedRelation_anyOf_i1_items) | -           |
 
-#### <a name="qualifiedRelation_anyOf_i1_items"></a>item 1 items
+#### <a name="qualifiedRelation_anyOf_i1_items"></a>Dataset > qualifiedRelation > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -848,7 +848,7 @@ Qualified relationship with role of the dataset with another resource
 | [Relationship](#qualifiedRelation_anyOf_i1_items_oneOf_i0) |
 | [item 1](#qualifiedRelation_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="qualifiedRelation_anyOf_i1_items_oneOf_i0"></a>Property `Relationship`
+##### <a name="qualifiedRelation_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > qualifiedRelation > anyOf > item 1 > item 1 items > oneOf > Relationship`
 
 **Title:** Relationship
 
@@ -860,7 +860,7 @@ inline description of Relationship
 | **Additional properties** | Any type allowed                                                                                                                                                      |
 | **Same definition as**    | [Relationship](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_qualifiedRelation_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="qualifiedRelation_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="qualifiedRelation_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > qualifiedRelation > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Relationship
 
@@ -869,7 +869,7 @@ reference iri of Relationship
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="spatialResolutionInMeters"></a>Property `spatialResolutionInMeters`
+## <a name="spatialResolutionInMeters"></a>Property `Dataset > spatialResolutionInMeters`
 
 **Title:** Spatial resolution (meters)
 
@@ -879,7 +879,7 @@ Spatial resolution in meters
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="temporalResolution"></a>Property `temporalResolution`
+## <a name="temporalResolution"></a>Property `Dataset > temporalResolution`
 
 **Title:** temporal resolution
 
@@ -889,7 +889,7 @@ Temporal resolution using xsd:duration syntax
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="theme"></a>Property `theme`
+## <a name="theme"></a>Property `Dataset > theme`
 
 **Title:** theme/category
 
@@ -905,13 +905,13 @@ List of themes of the dataset
 | [item 0](#theme_anyOf_i0) |
 | [item 1](#theme_anyOf_i1) |
 
-### <a name="theme_anyOf_i0"></a>Property `item 0`
+### <a name="theme_anyOf_i0"></a>Property `Dataset > theme > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="theme_anyOf_i1"></a>Property `item 1`
+### <a name="theme_anyOf_i1"></a>Property `Dataset > theme > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -921,7 +921,7 @@ List of themes of the dataset
 | ------------------------------------- | ----------- |
 | [item 1 items](#theme_anyOf_i1_items) | -           |
 
-#### <a name="theme_anyOf_i1_items"></a>item 1 items
+#### <a name="theme_anyOf_i1_items"></a>Dataset > theme > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -933,7 +933,7 @@ List of themes of the dataset
 | [Concept](#theme_anyOf_i1_items_oneOf_i0) |
 | [item 1](#theme_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i0"></a>Property `Concept`
+##### <a name="theme_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > theme > anyOf > item 1 > item 1 items > oneOf > Concept`
 
 **Title:** Concept
 
@@ -945,7 +945,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                                            |
 | **Same definition as**    | [Concept](#sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="theme_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > theme > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Concept
 
@@ -954,7 +954,7 @@ reference iri of Concept
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="version"></a>Property `version`
+## <a name="version"></a>Property `Dataset > version`
 
 **Title:** version
 
@@ -964,7 +964,7 @@ The version indicator (name or identifier) of a resource
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="describedBy"></a>Property `describedBy`
+## <a name="describedBy"></a>Property `Dataset > describedBy`
 
 **Title:** data dictionary
 
@@ -981,13 +981,13 @@ A distribution describing the Data Dictionary for this dataset
 | [Distribution](#describedBy_oneOf_i1) |
 | [item 2](#describedBy_oneOf_i2)       |
 
-### <a name="describedBy_oneOf_i0"></a>Property `item 0`
+### <a name="describedBy_oneOf_i0"></a>Property `Dataset > describedBy > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="describedBy_oneOf_i1"></a>Property `Distribution`
+### <a name="describedBy_oneOf_i1"></a>Property `Dataset > describedBy > oneOf > Distribution`
 
 **Title:** Distribution
 
@@ -999,7 +999,7 @@ inline description of Distribution
 | **Additional properties** | Any type allowed                                |
 | **Same definition as**    | [Distribution](#sample_anyOf_i1_items_oneOf_i0) |
 
-### <a name="describedBy_oneOf_i2"></a>Property `item 2`
+### <a name="describedBy_oneOf_i2"></a>Property `Dataset > describedBy > oneOf > item 2`
 
 reference iri of Distribution
 
@@ -1008,7 +1008,7 @@ reference iri of Distribution
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="geographicBoundingBox"></a>Property `geographicBoundingBox`
+## <a name="geographicBoundingBox"></a>Property `Dataset > geographicBoundingBox`
 
 **Title:** geographic bounding box
 
@@ -1024,13 +1024,13 @@ List of WGS84 Geographic Bounding Boxes for this dataset
 | [item 0](#geographicBoundingBox_anyOf_i0) |
 | [item 1](#geographicBoundingBox_anyOf_i1) |
 
-### <a name="geographicBoundingBox_anyOf_i0"></a>Property `item 0`
+### <a name="geographicBoundingBox_anyOf_i0"></a>Property `Dataset > geographicBoundingBox > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="geographicBoundingBox_anyOf_i1"></a>Property `item 1`
+### <a name="geographicBoundingBox_anyOf_i1"></a>Property `Dataset > geographicBoundingBox > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1040,7 +1040,7 @@ List of WGS84 Geographic Bounding Boxes for this dataset
 | ----------------------------------------------------- | ----------- |
 | [item 1 items](#geographicBoundingBox_anyOf_i1_items) | -           |
 
-#### <a name="geographicBoundingBox_anyOf_i1_items"></a>item 1 items
+#### <a name="geographicBoundingBox_anyOf_i1_items"></a>Dataset > geographicBoundingBox > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1052,7 +1052,7 @@ List of WGS84 Geographic Bounding Boxes for this dataset
 | [GeographicBoundingBox](#geographicBoundingBox_anyOf_i1_items_oneOf_i0) |
 | [item 1](#geographicBoundingBox_anyOf_i1_items_oneOf_i1)                |
 
-##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i0"></a>Property `GeographicBoundingBox`
+##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > geographicBoundingBox > anyOf > item 1 > item 1 items > oneOf > GeographicBoundingBox`
 
 **Title:** GeographicBoundingBox
 
@@ -1064,7 +1064,7 @@ inline description of GeographicBoundingBox
 | **Additional properties** | Any type allowed                                                                                                                                                                   |
 | **Same definition as**    | [GeographicBoundingBox](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_geographicBoundingBox_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > geographicBoundingBox > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of GeographicBoundingBox
 
@@ -1073,7 +1073,7 @@ reference iri of GeographicBoundingBox
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="liabilityStatement"></a>Property `liabilityStatement`
+## <a name="liabilityStatement"></a>Property `Dataset > liabilityStatement`
 
 **Title:** liability statement
 
@@ -1090,13 +1090,13 @@ A liability statement about the dataset
 | [LiabilityStatement](#liabilityStatement_oneOf_i1) |
 | [item 2](#liabilityStatement_oneOf_i2)             |
 
-### <a name="liabilityStatement_oneOf_i0"></a>Property `item 0`
+### <a name="liabilityStatement_oneOf_i0"></a>Property `Dataset > liabilityStatement > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="liabilityStatement_oneOf_i1"></a>Property `LiabilityStatement`
+### <a name="liabilityStatement_oneOf_i1"></a>Property `Dataset > liabilityStatement > oneOf > LiabilityStatement`
 
 **Title:** LiabilityStatement
 
@@ -1108,7 +1108,7 @@ inline description of LiabilityStatement
 | **Additional properties** | Any type allowed                                                                                                                                              |
 | **Same definition as**    | [LiabilityStatement](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_liabilityStatement_oneOf_i1) |
 
-### <a name="liabilityStatement_oneOf_i2"></a>Property `item 2`
+### <a name="liabilityStatement_oneOf_i2"></a>Property `Dataset > liabilityStatement > oneOf > item 2`
 
 reference iri of LiabilityStatement
 
@@ -1117,7 +1117,7 @@ reference iri of LiabilityStatement
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="metadataDistribution"></a>Property `metadataDistribution`
+## <a name="metadataDistribution"></a>Property `Dataset > metadataDistribution`
 
 **Title:** metadata distribution
 
@@ -1133,13 +1133,13 @@ Distribution to "original" metadata document
 | [item 0](#metadataDistribution_anyOf_i0) |
 | [item 1](#metadataDistribution_anyOf_i1) |
 
-### <a name="metadataDistribution_anyOf_i0"></a>Property `item 0`
+### <a name="metadataDistribution_anyOf_i0"></a>Property `Dataset > metadataDistribution > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="metadataDistribution_anyOf_i1"></a>Property `item 1`
+### <a name="metadataDistribution_anyOf_i1"></a>Property `Dataset > metadataDistribution > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1149,7 +1149,7 @@ Distribution to "original" metadata document
 | ---------------------------------------------------- | ----------- |
 | [item 1 items](#metadataDistribution_anyOf_i1_items) | -           |
 
-#### <a name="metadataDistribution_anyOf_i1_items"></a>item 1 items
+#### <a name="metadataDistribution_anyOf_i1_items"></a>Dataset > metadataDistribution > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1161,7 +1161,7 @@ Distribution to "original" metadata document
 | [Distribution](#metadataDistribution_anyOf_i1_items_oneOf_i0) |
 | [item 1](#metadataDistribution_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="metadataDistribution_anyOf_i1_items_oneOf_i0"></a>Property `Distribution`
+##### <a name="metadataDistribution_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > metadataDistribution > anyOf > item 1 > item 1 items > oneOf > Distribution`
 
 **Title:** Distribution
 
@@ -1173,7 +1173,7 @@ inline description of Distribution
 | **Additional properties** | Any type allowed                                |
 | **Same definition as**    | [Distribution](#sample_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="metadataDistribution_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="metadataDistribution_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > metadataDistribution > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Distribution
 
@@ -1182,7 +1182,7 @@ reference iri of Distribution
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="purpose"></a>Property `purpose`
+## <a name="purpose"></a>Property `Dataset > purpose`
 
 **Title:** purpose
 
@@ -1192,7 +1192,7 @@ The purpose of the dataset
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="purposeMap"></a>Property `purposeMap`
+## <a name="purposeMap"></a>Property `Dataset > purposeMap`
 
 Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -1200,7 +1200,7 @@ Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="accessRights"></a>Property `accessRights`
+## <a name="accessRights"></a>Property `Dataset > accessRights`
 
 **Title:** access rights
 
@@ -1217,13 +1217,13 @@ Information that indicates whether the Dataset is open data, has access restrict
 | [RightsStatement](#accessRights_oneOf_i1) |
 | [item 2](#accessRights_oneOf_i2)          |
 
-### <a name="accessRights_oneOf_i0"></a>Property `item 0`
+### <a name="accessRights_oneOf_i0"></a>Property `Dataset > accessRights > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="accessRights_oneOf_i1"></a>Property `RightsStatement`
+### <a name="accessRights_oneOf_i1"></a>Property `Dataset > accessRights > oneOf > RightsStatement`
 
 **Title:** RightsStatement
 
@@ -1235,7 +1235,7 @@ inline description of RightsStatement
 | **Additional properties** | Any type allowed                                                                                                                                     |
 | **Same definition as**    | [RightsStatement](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
-### <a name="accessRights_oneOf_i2"></a>Property `item 2`
+### <a name="accessRights_oneOf_i2"></a>Property `Dataset > accessRights > oneOf > item 2`
 
 reference iri of RightsStatement
 
@@ -1244,7 +1244,7 @@ reference iri of RightsStatement
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="accrualPeriodicity"></a>Property `accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>Property `Dataset > accrualPeriodicity`
 
 **Title:** frequency
 
@@ -1255,38 +1255,81 @@ The frequency at which the Dataset is updated
 | **Type**                  | `combining`      |
 | **Additional properties** | Any type allowed |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#accrualPeriodicity_oneOf_i0)    |
-| [frequency](#accrualPeriodicity_oneOf_i1) |
-| [item 2](#accrualPeriodicity_oneOf_i2)    |
+| Any of(Option)                         |
+| -------------------------------------- |
+| [item 0](#accrualPeriodicity_anyOf_i0) |
+| [item 1](#accrualPeriodicity_anyOf_i1) |
+| [item 2](#accrualPeriodicity_anyOf_i2) |
+| [item 3](#accrualPeriodicity_anyOf_i3) |
 
-### <a name="accrualPeriodicity_oneOf_i0"></a>Property `item 0`
+### <a name="accrualPeriodicity_anyOf_i0"></a>Property `Dataset > accrualPeriodicity > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="accrualPeriodicity_oneOf_i1"></a>Property `frequency`
+### <a name="accrualPeriodicity_anyOf_i1"></a>Property `Dataset > accrualPeriodicity > anyOf > item 1`
 
-inline description of Frequency
+ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding
 
-|                           |                             |
-| ------------------------- | --------------------------- |
-| **Type**                  | `object`                    |
-| **Additional properties** | Any type allowed            |
-| **Defined in**            | [Frequency](./Frequency.md) |
+|          |                    |
+| -------- | ------------------ |
+| **Type** | `enum (of string)` |
 
-### <a name="accrualPeriodicity_oneOf_i2"></a>Property `item 2`
+Must be one of:
+* "continual"
+* "daily"
+* "weekly"
+* "fortnightly"
+* "monthly"
+* "quarterly"
+* "biannually"
+* "annually"
+* "asNeeded"
+* "irregular"
+* "notPlanned"
+* "unknown"
 
-reference iri of Frequency
+### <a name="accrualPeriodicity_anyOf_i2"></a>Property `Dataset > accrualPeriodicity > anyOf > item 2`
 
-|            |          |
-| ---------- | -------- |
-| **Type**   | `string` |
-| **Format** | `iri`    |
+ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding
 
-## <a name="conformsTo"></a>Property `conformsTo`
+|          |          |
+| -------- | -------- |
+| **Type** | `string` |
+
+| Restrictions                      |                                                                   |
+| --------------------------------- | ----------------------------------------------------------------- |
+| **Must match regular expression** | ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24) |
+
+### <a name="accrualPeriodicity_anyOf_i3"></a>Property `Dataset > accrualPeriodicity > anyOf > item 3`
+
+Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding
+
+|          |                    |
+| -------- | ------------------ |
+| **Type** | `enum (of string)` |
+
+Must be one of:
+* "continuous"
+* "daily"
+* "weekly"
+* "biweekly"
+* "monthly"
+* "quarterly"
+* "semiannual"
+* "annual"
+* "irregular"
+* "triennial"
+* "biennial"
+* "threeTimesAYear"
+* "bimonthly"
+* "semimonthly"
+* "threeTimesAMonth"
+* "semiweekly"
+* "threeTimesAWeek"
+
+## <a name="conformsTo"></a>Property `Dataset > conformsTo`
 
 **Title:** conforms to
 
@@ -1302,13 +1345,13 @@ List of standards to which the described Dataset conforms
 | [item 0](#conformsTo_anyOf_i0) |
 | [item 1](#conformsTo_anyOf_i1) |
 
-### <a name="conformsTo_anyOf_i0"></a>Property `item 0`
+### <a name="conformsTo_anyOf_i0"></a>Property `Dataset > conformsTo > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="conformsTo_anyOf_i1"></a>Property `item 1`
+### <a name="conformsTo_anyOf_i1"></a>Property `Dataset > conformsTo > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1318,7 +1361,7 @@ List of standards to which the described Dataset conforms
 | ------------------------------------------ | ----------- |
 | [item 1 items](#conformsTo_anyOf_i1_items) | -           |
 
-#### <a name="conformsTo_anyOf_i1_items"></a>item 1 items
+#### <a name="conformsTo_anyOf_i1_items"></a>Dataset > conformsTo > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1330,7 +1373,7 @@ List of standards to which the described Dataset conforms
 | [Standard](#conformsTo_anyOf_i1_items_oneOf_i0) |
 | [item 1](#conformsTo_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `Standard`
+##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > conformsTo > anyOf > item 1 > item 1 items > oneOf > Standard`
 
 **Title:** Standard
 
@@ -1342,7 +1385,7 @@ inline description of Standard
 | **Additional properties** | Any type allowed                                                                                                                                                                |
 | **Same definition as**    | [Standard](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_landingPage_oneOf_i1_conformsTo_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > conformsTo > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Standard
 
@@ -1351,7 +1394,7 @@ reference iri of Standard
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="contributor"></a>Property `contributor`
+## <a name="contributor"></a>Property `Dataset > contributor`
 
 **Title:** contributor
 
@@ -1367,13 +1410,13 @@ List of agents contributing to the Dataset
 | [item 0](#contributor_anyOf_i0) |
 | [item 1](#contributor_anyOf_i1) |
 
-### <a name="contributor_anyOf_i0"></a>Property `item 0`
+### <a name="contributor_anyOf_i0"></a>Property `Dataset > contributor > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="contributor_anyOf_i1"></a>Property `item 1`
+### <a name="contributor_anyOf_i1"></a>Property `Dataset > contributor > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1383,7 +1426,7 @@ List of agents contributing to the Dataset
 | ------------------------------------------- | ----------- |
 | [item 1 items](#contributor_anyOf_i1_items) | -           |
 
-#### <a name="contributor_anyOf_i1_items"></a>item 1 items
+#### <a name="contributor_anyOf_i1_items"></a>Dataset > contributor > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1395,7 +1438,7 @@ List of agents contributing to the Dataset
 | [Agent](#contributor_anyOf_i1_items_oneOf_i0)  |
 | [item 1](#contributor_anyOf_i1_items_oneOf_i1) |
 
-##### <a name="contributor_anyOf_i1_items_oneOf_i0"></a>Property `Agent`
+##### <a name="contributor_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > contributor > anyOf > item 1 > item 1 items > oneOf > Agent`
 
 **Title:** Agent
 
@@ -1407,7 +1450,7 @@ inline description of Agent
 | **Additional properties** | Any type allowed                                                                                                                                                         |
 | **Same definition as**    | [Agent](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_publisher_oneOf_i1) |
 
-##### <a name="contributor_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="contributor_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > contributor > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Agent
 
@@ -1416,7 +1459,7 @@ reference iri of Agent
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="created"></a>Property `created`
+## <a name="created"></a>Property `Dataset > created`
 
 **Title:** creation date
 
@@ -1432,13 +1475,13 @@ The date on which the Dataset was first created
 | [item 0](#created_anyOf_i0) |
 | [item 1](#created_anyOf_i1) |
 
-### <a name="created_anyOf_i0"></a>Property `item 0`
+### <a name="created_anyOf_i0"></a>Property `Dataset > created > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="created_anyOf_i1"></a>Property `item 1`
+### <a name="created_anyOf_i1"></a>Property `Dataset > created > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -1451,7 +1494,7 @@ The date on which the Dataset was first created
 | [item 2](#created_anyOf_i1_oneOf_i2) |
 | [item 3](#created_anyOf_i1_oneOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `Dataset > created > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1459,7 +1502,7 @@ The date on which the Dataset was first created
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `Dataset > created > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1467,7 +1510,7 @@ The date on which the Dataset was first created
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `Dataset > created > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -1480,7 +1523,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `Dataset > created > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -1493,7 +1536,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="creator"></a>Property `creator`
+## <a name="creator"></a>Property `Dataset > creator`
 
 **Title:** creator
 
@@ -1510,13 +1553,13 @@ An entity responsible for producing the dataset
 | [Agent](#creator_oneOf_i1)  |
 | [item 2](#creator_oneOf_i2) |
 
-### <a name="creator_oneOf_i0"></a>Property `item 0`
+### <a name="creator_oneOf_i0"></a>Property `Dataset > creator > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="creator_oneOf_i1"></a>Property `Agent`
+### <a name="creator_oneOf_i1"></a>Property `Dataset > creator > oneOf > Agent`
 
 **Title:** Agent
 
@@ -1528,7 +1571,7 @@ inline description of Agent
 | **Additional properties** | Any type allowed                                                                                                                                                         |
 | **Same definition as**    | [Agent](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_publisher_oneOf_i1) |
 
-### <a name="creator_oneOf_i2"></a>Property `item 2`
+### <a name="creator_oneOf_i2"></a>Property `Dataset > creator > oneOf > item 2`
 
 reference iri of Agent
 
@@ -1537,7 +1580,7 @@ reference iri of Agent
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="description"></a>Property `description`
+## <a name="description"></a>Property `Dataset > description`
 
 **Title:** description
 
@@ -1548,7 +1591,7 @@ A free-text account of the Dataset
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="descriptionMap"></a>Property `descriptionMap`
+## <a name="descriptionMap"></a>Property `Dataset > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -1556,7 +1599,7 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="hasPart"></a>Property `hasPart`
+## <a name="hasPart"></a>Property `Dataset > hasPart`
 
 **Title:** has part
 
@@ -1572,13 +1615,13 @@ List of related datasets that are part of the described dataset
 | [item 0](#hasPart_anyOf_i0) |
 | [item 1](#hasPart_anyOf_i1) |
 
-### <a name="hasPart_anyOf_i0"></a>Property `item 0`
+### <a name="hasPart_anyOf_i0"></a>Property `Dataset > hasPart > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="hasPart_anyOf_i1"></a>Property `item 1`
+### <a name="hasPart_anyOf_i1"></a>Property `Dataset > hasPart > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1588,7 +1631,7 @@ List of related datasets that are part of the described dataset
 | --------------------------------------- | ----------- |
 | [item 1 items](#hasPart_anyOf_i1_items) | -           |
 
-#### <a name="hasPart_anyOf_i1_items"></a>item 1 items
+#### <a name="hasPart_anyOf_i1_items"></a>Dataset > hasPart > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1600,7 +1643,7 @@ List of related datasets that are part of the described dataset
 | [Dataset](#hasPart_anyOf_i1_items_oneOf_i0) |
 | [item 1](#hasPart_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="hasPart_anyOf_i1_items_oneOf_i0"></a>Property `Dataset`
+##### <a name="hasPart_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > hasPart > anyOf > item 1 > item 1 items > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -1612,7 +1655,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="hasPart_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="hasPart_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > hasPart > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Dataset
 
@@ -1621,7 +1664,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="identifier"></a>Property `identifier`
+## <a name="identifier"></a>Property `Dataset > identifier`
 
 **Title:** identifier
 
@@ -1631,7 +1674,7 @@ The unique identifier for the Dataset, e.g. the URI or other unique identifier i
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="isReferencedBy"></a>Property `isReferencedBy`
+## <a name="isReferencedBy"></a>Property `Dataset > isReferencedBy`
 
 **Title:** is referenced by
 
@@ -1647,13 +1690,13 @@ List of links to related resources, such as publications, that reference, cite, 
 | [item 0](#isReferencedBy_anyOf_i0) |
 | [item 1](#isReferencedBy_anyOf_i1) |
 
-### <a name="isReferencedBy_anyOf_i0"></a>Property `item 0`
+### <a name="isReferencedBy_anyOf_i0"></a>Property `Dataset > isReferencedBy > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="isReferencedBy_anyOf_i1"></a>Property `item 1`
+### <a name="isReferencedBy_anyOf_i1"></a>Property `Dataset > isReferencedBy > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -1663,7 +1706,7 @@ List of links to related resources, such as publications, that reference, cite, 
 | ---------------------------------------------- | ------------------------- |
 | [item 1 items](#isReferencedBy_anyOf_i1_items) | reference iri of Resource |
 
-#### <a name="isReferencedBy_anyOf_i1_items"></a>item 1 items
+#### <a name="isReferencedBy_anyOf_i1_items"></a>Dataset > isReferencedBy > anyOf > item 1 > item 1 items
 
 reference iri of Resource
 
@@ -1672,7 +1715,7 @@ reference iri of Resource
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="issued"></a>Property `issued`
+## <a name="issued"></a>Property `Dataset > issued`
 
 **Title:** release date
 
@@ -1688,13 +1731,13 @@ Date of formal issuance (e.g., publication) of the dataset
 | [item 0](#issued_anyOf_i0) |
 | [item 1](#issued_anyOf_i1) |
 
-### <a name="issued_anyOf_i0"></a>Property `item 0`
+### <a name="issued_anyOf_i0"></a>Property `Dataset > issued > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="issued_anyOf_i1"></a>Property `item 1`
+### <a name="issued_anyOf_i1"></a>Property `Dataset > issued > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -1707,7 +1750,7 @@ Date of formal issuance (e.g., publication) of the dataset
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Dataset > issued > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1715,7 +1758,7 @@ Date of formal issuance (e.g., publication) of the dataset
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Dataset > issued > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1723,7 +1766,7 @@ Date of formal issuance (e.g., publication) of the dataset
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Dataset > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -1736,7 +1779,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Dataset > issued > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -1749,7 +1792,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `language`
+## <a name="language"></a>Property `Dataset > language`
 
 **Title:** language
 
@@ -1766,13 +1809,13 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 | [item 1](#language_anyOf_i1) |
 | [item 2](#language_anyOf_i2) |
 
-### <a name="language_anyOf_i0"></a>Property `item 0`
+### <a name="language_anyOf_i0"></a>Property `Dataset > language > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="language_anyOf_i1"></a>Property `item 1`
+### <a name="language_anyOf_i1"></a>Property `Dataset > language > anyOf > item 1`
 
 |          |          |
 | -------- | -------- |
@@ -1782,7 +1825,7 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 | -------------- | - |
 | **Max length** | 2 |
 
-### <a name="language_anyOf_i2"></a>Property `item 2`
+### <a name="language_anyOf_i2"></a>Property `Dataset > language > anyOf > item 2`
 
 |          |                   |
 | -------- | ----------------- |
@@ -1792,7 +1835,7 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 | ---------------------------------------- | ----------- |
 | [item 2 items](#language_anyOf_i2_items) | -           |
 
-#### <a name="language_anyOf_i2_items"></a>item 2 items
+#### <a name="language_anyOf_i2_items"></a>Dataset > language > anyOf > item 2 > item 2 items
 
 |          |          |
 | -------- | -------- |
@@ -1802,7 +1845,7 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>Property `modified`
+## <a name="modified"></a>Property `Dataset > modified`
 
 **Title:** last modified
 
@@ -1818,13 +1861,13 @@ The most recent date on which the Dataset was changed or modified
 | [item 0](#modified_anyOf_i0) |
 | [item 1](#modified_anyOf_i1) |
 
-### <a name="modified_anyOf_i0"></a>Property `item 0`
+### <a name="modified_anyOf_i0"></a>Property `Dataset > modified > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="modified_anyOf_i1"></a>Property `item 1`
+### <a name="modified_anyOf_i1"></a>Property `Dataset > modified > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -1837,7 +1880,7 @@ The most recent date on which the Dataset was changed or modified
 | [item 2](#modified_anyOf_i1_oneOf_i2) |
 | [item 3](#modified_anyOf_i1_oneOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `Dataset > modified > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1845,7 +1888,7 @@ The most recent date on which the Dataset was changed or modified
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `Dataset > modified > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1853,7 +1896,7 @@ The most recent date on which the Dataset was changed or modified
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `Dataset > modified > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -1866,7 +1909,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `Dataset > modified > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -1879,7 +1922,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="provenance"></a>Property `provenance`
+## <a name="provenance"></a>Property `Dataset > provenance`
 
 **Title:** provenance
 
@@ -1895,13 +1938,13 @@ List of statements about the lineage of a Dataset
 | [item 0](#provenance_anyOf_i0) |
 | [item 1](#provenance_anyOf_i1) |
 
-### <a name="provenance_anyOf_i0"></a>Property `item 0`
+### <a name="provenance_anyOf_i0"></a>Property `Dataset > provenance > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="provenance_anyOf_i1"></a>Property `item 1`
+### <a name="provenance_anyOf_i1"></a>Property `Dataset > provenance > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -1911,7 +1954,7 @@ List of statements about the lineage of a Dataset
 | ------------------------------------------ | ----------- |
 | [item 1 items](#provenance_anyOf_i1_items) | -           |
 
-#### <a name="provenance_anyOf_i1_items"></a>item 1 items
+#### <a name="provenance_anyOf_i1_items"></a>Dataset > provenance > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -1923,7 +1966,7 @@ List of statements about the lineage of a Dataset
 | [ProvenanceStatement](#provenance_anyOf_i1_items_oneOf_i0) |
 | [item 1](#provenance_anyOf_i1_items_oneOf_i1)              |
 
-##### <a name="provenance_anyOf_i1_items_oneOf_i0"></a>Property `ProvenanceStatement`
+##### <a name="provenance_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > provenance > anyOf > item 1 > item 1 items > oneOf > ProvenanceStatement`
 
 **Title:** ProvenanceStatement
 
@@ -1935,7 +1978,7 @@ inline description of ProvenanceStatement
 | **Additional properties** | Any type allowed                                                                                                                                                      |
 | **Same definition as**    | [ProvenanceStatement](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_provenance_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="provenance_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="provenance_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > provenance > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of ProvenanceStatement
 
@@ -1944,7 +1987,7 @@ reference iri of ProvenanceStatement
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="publisher"></a>Property `publisher`
+## <a name="publisher"></a>Property `Dataset > publisher`
 
 **Title:** publisher
 
@@ -1961,7 +2004,7 @@ An organization responsible for making the Dataset available
 | [Organization](#publisher_oneOf_i0) |
 | [item 1](#publisher_oneOf_i1)       |
 
-### <a name="publisher_oneOf_i0"></a>Property `Organization`
+### <a name="publisher_oneOf_i0"></a>Property `Dataset > publisher > oneOf > Organization`
 
 **Title:** Organization
 
@@ -1973,7 +2016,7 @@ inline description of Organization
 | **Additional properties** | Any type allowed                                                          |
 | **Same definition as**    | [Organization](#otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
 
-### <a name="publisher_oneOf_i1"></a>Property `item 1`
+### <a name="publisher_oneOf_i1"></a>Property `Dataset > publisher > oneOf > item 1`
 
 reference iri of Organization
 
@@ -1982,7 +2025,7 @@ reference iri of Organization
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="relation"></a>Property `relation`
+## <a name="relation"></a>Property `Dataset > relation`
 
 **Title:** related resource
 
@@ -1998,13 +2041,13 @@ List of references to a related resource
 | [item 0](#relation_anyOf_i0) |
 | [item 1](#relation_anyOf_i1) |
 
-### <a name="relation_anyOf_i0"></a>Property `item 0`
+### <a name="relation_anyOf_i0"></a>Property `Dataset > relation > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="relation_anyOf_i1"></a>Property `item 1`
+### <a name="relation_anyOf_i1"></a>Property `Dataset > relation > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -2014,7 +2057,7 @@ List of references to a related resource
 | ---------------------------------------- | ------------------------- |
 | [item 1 items](#relation_anyOf_i1_items) | reference iri of Resource |
 
-#### <a name="relation_anyOf_i1_items"></a>item 1 items
+#### <a name="relation_anyOf_i1_items"></a>Dataset > relation > anyOf > item 1 > item 1 items
 
 reference iri of Resource
 
@@ -2023,7 +2066,7 @@ reference iri of Resource
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="replaces"></a>Property `replaces`
+## <a name="replaces"></a>Property `Dataset > replaces`
 
 **Title:** replaces
 
@@ -2039,13 +2082,13 @@ List of Datasets replaced by this Dataset
 | [item 0](#replaces_anyOf_i0) |
 | [item 1](#replaces_anyOf_i1) |
 
-### <a name="replaces_anyOf_i0"></a>Property `item 0`
+### <a name="replaces_anyOf_i0"></a>Property `Dataset > replaces > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="replaces_anyOf_i1"></a>Property `item 1`
+### <a name="replaces_anyOf_i1"></a>Property `Dataset > replaces > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2055,7 +2098,7 @@ List of Datasets replaced by this Dataset
 | ---------------------------------------- | ----------- |
 | [item 1 items](#replaces_anyOf_i1_items) | -           |
 
-#### <a name="replaces_anyOf_i1_items"></a>item 1 items
+#### <a name="replaces_anyOf_i1_items"></a>Dataset > replaces > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2067,7 +2110,7 @@ List of Datasets replaced by this Dataset
 | [Dataset](#replaces_anyOf_i1_items_oneOf_i0) |
 | [item 1](#replaces_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="replaces_anyOf_i1_items_oneOf_i0"></a>Property `Dataset`
+##### <a name="replaces_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > replaces > anyOf > item 1 > item 1 items > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -2079,7 +2122,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="replaces_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="replaces_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > replaces > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Dataset
 
@@ -2088,7 +2131,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="rights"></a>Property `rights`
+## <a name="rights"></a>Property `Dataset > rights`
 
 **Title:** rights
 
@@ -2105,13 +2148,13 @@ List of statements concerning all rights for the Dataset not addressed with lice
 | [RightsStatement](#rights_oneOf_i1) |
 | [item 2](#rights_oneOf_i2)          |
 
-### <a name="rights_oneOf_i0"></a>Property `item 0`
+### <a name="rights_oneOf_i0"></a>Property `Dataset > rights > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="rights_oneOf_i1"></a>Property `RightsStatement`
+### <a name="rights_oneOf_i1"></a>Property `Dataset > rights > oneOf > RightsStatement`
 
 **Title:** RightsStatement
 
@@ -2123,7 +2166,7 @@ inline description of RightsStatement
 | **Additional properties** | Any type allowed                                                                                                                                     |
 | **Same definition as**    | [RightsStatement](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
-### <a name="rights_oneOf_i2"></a>Property `item 2`
+### <a name="rights_oneOf_i2"></a>Property `Dataset > rights > oneOf > item 2`
 
 reference iri of RightsStatement
 
@@ -2132,7 +2175,7 @@ reference iri of RightsStatement
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="rightsHolder"></a>Property `rightsHolder`
+## <a name="rightsHolder"></a>Property `Dataset > rightsHolder`
 
 **Title:** rights holder
 
@@ -2148,13 +2191,13 @@ List of agents (organizations) holding rights on the Dataset
 | [item 0](#rightsHolder_anyOf_i0) |
 | [item 1](#rightsHolder_anyOf_i1) |
 
-### <a name="rightsHolder_anyOf_i0"></a>Property `item 0`
+### <a name="rightsHolder_anyOf_i0"></a>Property `Dataset > rightsHolder > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="rightsHolder_anyOf_i1"></a>Property `item 1`
+### <a name="rightsHolder_anyOf_i1"></a>Property `Dataset > rightsHolder > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2164,7 +2207,7 @@ List of agents (organizations) holding rights on the Dataset
 | -------------------------------------------- | ----------- |
 | [item 1 items](#rightsHolder_anyOf_i1_items) | -           |
 
-#### <a name="rightsHolder_anyOf_i1_items"></a>item 1 items
+#### <a name="rightsHolder_anyOf_i1_items"></a>Dataset > rightsHolder > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2176,7 +2219,7 @@ List of agents (organizations) holding rights on the Dataset
 | [Organization](#rightsHolder_anyOf_i1_items_oneOf_i0) |
 | [item 1](#rightsHolder_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i0"></a>Property `Organization`
+##### <a name="rightsHolder_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > rightsHolder > anyOf > item 1 > item 1 items > oneOf > Organization`
 
 **Title:** Organization
 
@@ -2188,7 +2231,7 @@ inline description of Organization
 | **Additional properties** | Any type allowed                                                          |
 | **Same definition as**    | [Organization](#otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > rightsHolder > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Organization
 
@@ -2197,7 +2240,7 @@ reference iri of Organization
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="source"></a>Property `source`
+## <a name="source"></a>Property `Dataset > source`
 
 **Title:** data source
 
@@ -2213,13 +2256,13 @@ List of related Datasets from which the described Dataset is derived
 | [item 0](#source_anyOf_i0) |
 | [item 1](#source_anyOf_i1) |
 
-### <a name="source_anyOf_i0"></a>Property `item 0`
+### <a name="source_anyOf_i0"></a>Property `Dataset > source > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="source_anyOf_i1"></a>Property `item 1`
+### <a name="source_anyOf_i1"></a>Property `Dataset > source > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2229,7 +2272,7 @@ List of related Datasets from which the described Dataset is derived
 | -------------------------------------- | ----------- |
 | [item 1 items](#source_anyOf_i1_items) | -           |
 
-#### <a name="source_anyOf_i1_items"></a>item 1 items
+#### <a name="source_anyOf_i1_items"></a>Dataset > source > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2241,7 +2284,7 @@ List of related Datasets from which the described Dataset is derived
 | [Dataset](#source_anyOf_i1_items_oneOf_i0) |
 | [item 1](#source_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="source_anyOf_i1_items_oneOf_i0"></a>Property `Dataset`
+##### <a name="source_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > source > anyOf > item 1 > item 1 items > oneOf > Dataset`
 
 **Title:** Dataset
 
@@ -2253,7 +2296,7 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                                                                       |
 | **Same definition as**    | [Dataset](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="source_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="source_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > source > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Dataset
 
@@ -2262,7 +2305,7 @@ reference iri of Dataset
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="spatial"></a>Property `spatial`
+## <a name="spatial"></a>Property `Dataset > spatial`
 
 **Title:** spatial/geographic coverage
 
@@ -2280,13 +2323,13 @@ A geographic region or regions that are covered by the Dataset
 | [item 2](#spatial_oneOf_i2)   |
 | [item 3](#spatial_oneOf_i3)   |
 
-### <a name="spatial_oneOf_i0"></a>Property `item 0`
+### <a name="spatial_oneOf_i0"></a>Property `Dataset > spatial > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="spatial_oneOf_i1"></a>Property `Location`
+### <a name="spatial_oneOf_i1"></a>Property `Dataset > spatial > oneOf > Location`
 
 **Title:** Location
 
@@ -2298,7 +2341,7 @@ inline description of Location
 | **Additional properties** | Any type allowed                                                                                                                                                                         |
 | **Same definition as**    | [Location](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_spatial_anyOf_i1_items_oneOf_i0) |
 
-### <a name="spatial_oneOf_i2"></a>Property `item 2`
+### <a name="spatial_oneOf_i2"></a>Property `Dataset > spatial > oneOf > item 2`
 
 reference iri of Location
 
@@ -2307,7 +2350,7 @@ reference iri of Location
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-### <a name="spatial_oneOf_i3"></a>Property `item 3`
+### <a name="spatial_oneOf_i3"></a>Property `Dataset > spatial > oneOf > item 3`
 
 |          |         |
 | -------- | ------- |
@@ -2317,7 +2360,7 @@ reference iri of Location
 | --------------------------------------- | ----------- |
 | [item 3 items](#spatial_oneOf_i3_items) | -           |
 
-#### <a name="spatial_oneOf_i3_items"></a>item 3 items
+#### <a name="spatial_oneOf_i3_items"></a>Dataset > spatial > oneOf > item 3 > item 3 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2329,7 +2372,7 @@ reference iri of Location
 | [Location](#spatial_oneOf_i3_items_oneOf_i0) |
 | [item 1](#spatial_oneOf_i3_items_oneOf_i1)   |
 
-##### <a name="spatial_oneOf_i3_items_oneOf_i0"></a>Property `Location`
+##### <a name="spatial_oneOf_i3_items_oneOf_i0"></a>Property `Dataset > spatial > oneOf > item 3 > item 3 items > oneOf > Location`
 
 **Title:** Location
 
@@ -2341,7 +2384,7 @@ inline description of Location
 | **Additional properties** | Any type allowed                                                                                                                                                                         |
 | **Same definition as**    | [Location](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_spatial_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="spatial_oneOf_i3_items_oneOf_i1"></a>Property `item 1`
+##### <a name="spatial_oneOf_i3_items_oneOf_i1"></a>Property `Dataset > spatial > oneOf > item 3 > item 3 items > oneOf > item 1`
 
 reference iri of Location
 
@@ -2350,7 +2393,7 @@ reference iri of Location
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="subject"></a>Property `subject`
+## <a name="subject"></a>Property `Dataset > subject`
 
 **Title:** subject
 
@@ -2366,13 +2409,13 @@ List of primary subjects of the dataset
 | [item 0](#subject_anyOf_i0) |
 | [item 1](#subject_anyOf_i1) |
 
-### <a name="subject_anyOf_i0"></a>Property `item 0`
+### <a name="subject_anyOf_i0"></a>Property `Dataset > subject > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="subject_anyOf_i1"></a>Property `item 1`
+### <a name="subject_anyOf_i1"></a>Property `Dataset > subject > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2382,7 +2425,7 @@ List of primary subjects of the dataset
 | --------------------------------------- | ----------- |
 | [item 1 items](#subject_anyOf_i1_items) | -           |
 
-#### <a name="subject_anyOf_i1_items"></a>item 1 items
+#### <a name="subject_anyOf_i1_items"></a>Dataset > subject > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2394,7 +2437,7 @@ List of primary subjects of the dataset
 | [Concept](#subject_anyOf_i1_items_oneOf_i0) |
 | [item 1](#subject_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="subject_anyOf_i1_items_oneOf_i0"></a>Property `Concept`
+##### <a name="subject_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > subject > anyOf > item 1 > item 1 items > oneOf > Concept`
 
 **Title:** Concept
 
@@ -2406,7 +2449,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                                            |
 | **Same definition as**    | [Concept](#sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-##### <a name="subject_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="subject_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > subject > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Concept
 
@@ -2415,7 +2458,7 @@ reference iri of Concept
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="temporal"></a>Property `temporal`
+## <a name="temporal"></a>Property `Dataset > temporal`
 
 **Title:** temporal coverage
 
@@ -2431,13 +2474,13 @@ List of temporal periods that the dataset covers
 | [item 0](#temporal_anyOf_i0) |
 | [item 1](#temporal_anyOf_i1) |
 
-### <a name="temporal_anyOf_i0"></a>Property `item 0`
+### <a name="temporal_anyOf_i0"></a>Property `Dataset > temporal > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="temporal_anyOf_i1"></a>Property `item 1`
+### <a name="temporal_anyOf_i1"></a>Property `Dataset > temporal > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2447,7 +2490,7 @@ List of temporal periods that the dataset covers
 | ---------------------------------------- | ----------- |
 | [item 1 items](#temporal_anyOf_i1_items) | -           |
 
-#### <a name="temporal_anyOf_i1_items"></a>item 1 items
+#### <a name="temporal_anyOf_i1_items"></a>Dataset > temporal > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2459,7 +2502,7 @@ List of temporal periods that the dataset covers
 | [PeriodOfTime](#temporal_anyOf_i1_items_oneOf_i0) |
 | [item 1](#temporal_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `PeriodOfTime`
+##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > temporal > anyOf > item 1 > item 1 items > oneOf > PeriodOfTime`
 
 **Title:** PeriodOfTime
 
@@ -2471,7 +2514,7 @@ inline description of PeriodOfTime
 | **Additional properties** | Any type allowed                                                                                                                                                                              |
 | **Same definition as**    | [PeriodOfTime](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_temporal_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > temporal > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of PeriodOfTime
 
@@ -2480,7 +2523,7 @@ reference iri of PeriodOfTime
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="title"></a>Property `title`
+## <a name="title"></a>Property `Dataset > title`
 
 **Title:** title
 
@@ -2491,7 +2534,7 @@ A name given to the Dataset
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="titleMap"></a>Property `titleMap`
+## <a name="titleMap"></a>Property `Dataset > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -2499,7 +2542,7 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="category"></a>Property `category`
+## <a name="category"></a>Property `Dataset > category`
 
 **Title:** category
 
@@ -2515,13 +2558,13 @@ List of categories of the dataset
 | [item 0](#category_anyOf_i0) |
 | [item 1](#category_anyOf_i1) |
 
-### <a name="category_anyOf_i0"></a>Property `item 0`
+### <a name="category_anyOf_i0"></a>Property `Dataset > category > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="category_anyOf_i1"></a>Property `item 1`
+### <a name="category_anyOf_i1"></a>Property `Dataset > category > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2531,7 +2574,7 @@ List of categories of the dataset
 | ---------------------------------------- | ----------- |
 | [item 1 items](#category_anyOf_i1_items) | -           |
 
-#### <a name="category_anyOf_i1_items"></a>item 1 items
+#### <a name="category_anyOf_i1_items"></a>Dataset > category > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2543,7 +2586,7 @@ List of categories of the dataset
 | [Concept](#category_anyOf_i1_items_oneOf_i0) |
 | [item 1](#category_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="category_anyOf_i1_items_oneOf_i0"></a>Property `Concept`
+##### <a name="category_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > category > anyOf > item 1 > item 1 items > oneOf > Concept`
 
 **Title:** Concept
 
@@ -2555,7 +2598,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                                            |
 | **Same definition as**    | [Concept](#sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-##### <a name="category_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="category_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > category > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Concept
 
@@ -2564,7 +2607,7 @@ reference iri of Concept
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="hasQualityMeasurement"></a>Property `hasQualityMeasurement`
+## <a name="hasQualityMeasurement"></a>Property `Dataset > hasQualityMeasurement`
 
 **Title:** quality measurement
 
@@ -2580,13 +2623,13 @@ List of quality measurements for the dataset
 | [item 0](#hasQualityMeasurement_anyOf_i0) |
 | [item 1](#hasQualityMeasurement_anyOf_i1) |
 
-### <a name="hasQualityMeasurement_anyOf_i0"></a>Property `item 0`
+### <a name="hasQualityMeasurement_anyOf_i0"></a>Property `Dataset > hasQualityMeasurement > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="hasQualityMeasurement_anyOf_i1"></a>Property `item 1`
+### <a name="hasQualityMeasurement_anyOf_i1"></a>Property `Dataset > hasQualityMeasurement > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2596,7 +2639,7 @@ List of quality measurements for the dataset
 | ----------------------------------------------------- | ----------- |
 | [item 1 items](#hasQualityMeasurement_anyOf_i1_items) | -           |
 
-#### <a name="hasQualityMeasurement_anyOf_i1_items"></a>item 1 items
+#### <a name="hasQualityMeasurement_anyOf_i1_items"></a>Dataset > hasQualityMeasurement > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2608,7 +2651,7 @@ List of quality measurements for the dataset
 | [QualityMeasurement](#hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
 | [item 1](#hasQualityMeasurement_anyOf_i1_items_oneOf_i1)             |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i0"></a>Property `QualityMeasurement`
+##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > hasQualityMeasurement > anyOf > item 1 > item 1 items > oneOf > QualityMeasurement`
 
 **Title:** QualityMeasurement
 
@@ -2620,7 +2663,7 @@ inline description of QualityMeasurement
 | **Additional properties** | Any type allowed                                                                                                                                                                |
 | **Same definition as**    | [QualityMeasurement](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > hasQualityMeasurement > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of QualityMeasurement
 
@@ -2629,7 +2672,7 @@ reference iri of QualityMeasurement
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="page"></a>Property `page`
+## <a name="page"></a>Property `Dataset > page`
 
 **Title:** documentation
 
@@ -2645,13 +2688,13 @@ List of pages or documents about this dataset
 | [item 0](#page_anyOf_i0) |
 | [item 1](#page_anyOf_i1) |
 
-### <a name="page_anyOf_i0"></a>Property `item 0`
+### <a name="page_anyOf_i0"></a>Property `Dataset > page > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="page_anyOf_i1"></a>Property `item 1`
+### <a name="page_anyOf_i1"></a>Property `Dataset > page > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2661,7 +2704,7 @@ List of pages or documents about this dataset
 | ------------------------------------ | ----------- |
 | [item 1 items](#page_anyOf_i1_items) | -           |
 
-#### <a name="page_anyOf_i1_items"></a>item 1 items
+#### <a name="page_anyOf_i1_items"></a>Dataset > page > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2673,7 +2716,7 @@ List of pages or documents about this dataset
 | [Document](#page_anyOf_i1_items_oneOf_i0) |
 | [item 1](#page_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="page_anyOf_i1_items_oneOf_i0"></a>Property `Document`
+##### <a name="page_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > page > anyOf > item 1 > item 1 items > oneOf > Document`
 
 **Title:** Document
 
@@ -2685,7 +2728,7 @@ inline description of Document
 | **Additional properties** | Any type allowed                                                                                                                             |
 | **Same definition as**    | [Document](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_landingPage_oneOf_i1) |
 
-##### <a name="page_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="page_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > page > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Document
 
@@ -2694,7 +2737,7 @@ reference iri of Document
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="qualifiedAttribution"></a>Property `qualifiedAttribution`
+## <a name="qualifiedAttribution"></a>Property `Dataset > qualifiedAttribution`
 
 **Title:** qualified attribution
 
@@ -2710,13 +2753,13 @@ List of agents having some form of responsibility for the dataset
 | [item 0](#qualifiedAttribution_anyOf_i0) |
 | [item 1](#qualifiedAttribution_anyOf_i1) |
 
-### <a name="qualifiedAttribution_anyOf_i0"></a>Property `item 0`
+### <a name="qualifiedAttribution_anyOf_i0"></a>Property `Dataset > qualifiedAttribution > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="qualifiedAttribution_anyOf_i1"></a>Property `item 1`
+### <a name="qualifiedAttribution_anyOf_i1"></a>Property `Dataset > qualifiedAttribution > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2726,7 +2769,7 @@ List of agents having some form of responsibility for the dataset
 | ---------------------------------------------------- | ----------- |
 | [item 1 items](#qualifiedAttribution_anyOf_i1_items) | -           |
 
-#### <a name="qualifiedAttribution_anyOf_i1_items"></a>item 1 items
+#### <a name="qualifiedAttribution_anyOf_i1_items"></a>Dataset > qualifiedAttribution > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2738,7 +2781,7 @@ List of agents having some form of responsibility for the dataset
 | [Attribution](#qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
 | [item 1](#qualifiedAttribution_anyOf_i1_items_oneOf_i1)      |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i0"></a>Property `Attribution`
+##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > qualifiedAttribution > anyOf > item 1 > item 1 items > oneOf > Attribution`
 
 **Title:** Attribution
 
@@ -2750,7 +2793,7 @@ inline description of Attribution
 | **Additional properties** | Any type allowed                                                                                                                                                        |
 | **Same definition as**    | [Attribution](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > qualifiedAttribution > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Attribution
 
@@ -2759,7 +2802,7 @@ reference iri of Attribution
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="wasAttributedTo"></a>Property `wasAttributedTo`
+## <a name="wasAttributedTo"></a>Property `Dataset > wasAttributedTo`
 
 **Title:** attribution
 
@@ -2775,13 +2818,13 @@ List of agents attributed to this dataset
 | [item 0](#wasAttributedTo_anyOf_i0) |
 | [item 1](#wasAttributedTo_anyOf_i1) |
 
-### <a name="wasAttributedTo_anyOf_i0"></a>Property `item 0`
+### <a name="wasAttributedTo_anyOf_i0"></a>Property `Dataset > wasAttributedTo > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="wasAttributedTo_anyOf_i1"></a>Property `item 1`
+### <a name="wasAttributedTo_anyOf_i1"></a>Property `Dataset > wasAttributedTo > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2791,7 +2834,7 @@ List of agents attributed to this dataset
 | ----------------------------------------------- | ----------- |
 | [item 1 items](#wasAttributedTo_anyOf_i1_items) | -           |
 
-#### <a name="wasAttributedTo_anyOf_i1_items"></a>item 1 items
+#### <a name="wasAttributedTo_anyOf_i1_items"></a>Dataset > wasAttributedTo > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2803,7 +2846,7 @@ List of agents attributed to this dataset
 | [Agent](#wasAttributedTo_anyOf_i1_items_oneOf_i0)  |
 | [item 1](#wasAttributedTo_anyOf_i1_items_oneOf_i1) |
 
-##### <a name="wasAttributedTo_anyOf_i1_items_oneOf_i0"></a>Property `Agent`
+##### <a name="wasAttributedTo_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > wasAttributedTo > anyOf > item 1 > item 1 items > oneOf > Agent`
 
 **Title:** Agent
 
@@ -2815,7 +2858,7 @@ inline description of Agent
 | **Additional properties** | Any type allowed                                                                                                                                                         |
 | **Same definition as**    | [Agent](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_inSeries_anyOf_i1_items_oneOf_i0_publisher_oneOf_i1) |
 
-##### <a name="wasAttributedTo_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="wasAttributedTo_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > wasAttributedTo > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Agent
 
@@ -2824,7 +2867,7 @@ reference iri of Agent
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="wasGeneratedBy"></a>Property `wasGeneratedBy`
+## <a name="wasGeneratedBy"></a>Property `Dataset > wasGeneratedBy`
 
 **Title:** was generated by
 
@@ -2840,13 +2883,13 @@ List of activities that generated, or provide the business context for the creat
 | [item 0](#wasGeneratedBy_anyOf_i0) |
 | [item 1](#wasGeneratedBy_anyOf_i1) |
 
-### <a name="wasGeneratedBy_anyOf_i0"></a>Property `item 0`
+### <a name="wasGeneratedBy_anyOf_i0"></a>Property `Dataset > wasGeneratedBy > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="wasGeneratedBy_anyOf_i1"></a>Property `item 1`
+### <a name="wasGeneratedBy_anyOf_i1"></a>Property `Dataset > wasGeneratedBy > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2856,7 +2899,7 @@ List of activities that generated, or provide the business context for the creat
 | ---------------------------------------------- | ----------- |
 | [item 1 items](#wasGeneratedBy_anyOf_i1_items) | -           |
 
-#### <a name="wasGeneratedBy_anyOf_i1_items"></a>item 1 items
+#### <a name="wasGeneratedBy_anyOf_i1_items"></a>Dataset > wasGeneratedBy > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2868,7 +2911,7 @@ List of activities that generated, or provide the business context for the creat
 | [Activity](#wasGeneratedBy_anyOf_i1_items_oneOf_i0) |
 | [item 1](#wasGeneratedBy_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="wasGeneratedBy_anyOf_i1_items_oneOf_i0"></a>Property `Activity`
+##### <a name="wasGeneratedBy_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > wasGeneratedBy > anyOf > item 1 > item 1 items > oneOf > Activity`
 
 **Title:** Activity
 
@@ -2880,7 +2923,7 @@ inline description of Activity
 | **Additional properties** | Any type allowed                                                                                                                                               |
 | **Same definition as**    | [Activity](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_wasGeneratedBy_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="wasGeneratedBy_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="wasGeneratedBy_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > wasGeneratedBy > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Activity
 
@@ -2889,7 +2932,7 @@ reference iri of Activity
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="wasUsedBy"></a>Property `wasUsedBy`
+## <a name="wasUsedBy"></a>Property `Dataset > wasUsedBy`
 
 **Title:** used by
 
@@ -2905,13 +2948,13 @@ List of activities that used the Dataset
 | [item 0](#wasUsedBy_anyOf_i0) |
 | [item 1](#wasUsedBy_anyOf_i1) |
 
-### <a name="wasUsedBy_anyOf_i0"></a>Property `item 0`
+### <a name="wasUsedBy_anyOf_i0"></a>Property `Dataset > wasUsedBy > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="wasUsedBy_anyOf_i1"></a>Property `item 1`
+### <a name="wasUsedBy_anyOf_i1"></a>Property `Dataset > wasUsedBy > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -2921,7 +2964,7 @@ List of activities that used the Dataset
 | ----------------------------------------- | ----------- |
 | [item 1 items](#wasUsedBy_anyOf_i1_items) | -           |
 
-#### <a name="wasUsedBy_anyOf_i1_items"></a>item 1 items
+#### <a name="wasUsedBy_anyOf_i1_items"></a>Dataset > wasUsedBy > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -2933,7 +2976,7 @@ List of activities that used the Dataset
 | [Activity](#wasUsedBy_anyOf_i1_items_oneOf_i0) |
 | [item 1](#wasUsedBy_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i0"></a>Property `Activity`
+##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > wasUsedBy > anyOf > item 1 > item 1 items > oneOf > Activity`
 
 **Title:** Activity
 
@@ -2945,7 +2988,7 @@ inline description of Activity
 | **Additional properties** | Any type allowed                                                                                                                                               |
 | **Same definition as**    | [Activity](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_wasGeneratedBy_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > wasUsedBy > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Activity
 
@@ -2954,7 +2997,7 @@ reference iri of Activity
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="image"></a>Property `image`
+## <a name="image"></a>Property `Dataset > image`
 
 **Title:** image
 
@@ -2970,13 +3013,13 @@ Link to a thumbnail picture illustrating the content of the dataset
 | [item 0](#image_anyOf_i0) |
 | [item 1](#image_anyOf_i1) |
 
-### <a name="image_anyOf_i0"></a>Property `item 0`
+### <a name="image_anyOf_i0"></a>Property `Dataset > image > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="image_anyOf_i1"></a>Property `item 1`
+### <a name="image_anyOf_i1"></a>Property `Dataset > image > anyOf > item 1`
 
 The link to the image
 
@@ -2985,7 +3028,7 @@ The link to the image
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="scopeNote"></a>Property `scopeNote`
+## <a name="scopeNote"></a>Property `Dataset > scopeNote`
 
 **Title:** usage note
 
@@ -2995,7 +3038,7 @@ usage note for the dataset
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="scopeNoteMap"></a>Property `scopeNoteMap`
+## <a name="scopeNoteMap"></a>Property `Dataset > scopeNoteMap`
 
 Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

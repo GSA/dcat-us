@@ -30,21 +30,21 @@ Information about a text document
 | - [titleMap](#titleMap )                           | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 | - [category](#category )                           | More than one type | category                                                                            |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Document > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Document > @type`
 
 |             |              |
 | ----------- | ------------ |
 | **Type**    | `string`     |
 | **Default** | `"Document"` |
 
-## <a name="creators"></a>Property `creators`
+## <a name="creators"></a>Property `Document > creators`
 
 **Title:** authors
 
@@ -60,13 +60,13 @@ List of authors
 | [item 0](#creators_anyOf_i0) |
 | [item 1](#creators_anyOf_i1) |
 
-### <a name="creators_anyOf_i0"></a>Property `item 0`
+### <a name="creators_anyOf_i0"></a>Property `Document > creators > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="creators_anyOf_i1"></a>Property `item 1`
+### <a name="creators_anyOf_i1"></a>Property `Document > creators > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -76,13 +76,13 @@ List of authors
 | ---------------------------------------- | ----------- |
 | [item 1 items](#creators_anyOf_i1_items) | -           |
 
-#### <a name="creators_anyOf_i1_items"></a>item 1 items
+#### <a name="creators_anyOf_i1_items"></a>Document > creators > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
 | **Type** | `string` |
 
-## <a name="publishers"></a>Property `publishers`
+## <a name="publishers"></a>Property `Document > publishers`
 
 **Title:** publisher
 
@@ -92,7 +92,7 @@ Publisher
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="mediaType"></a>Property `mediaType`
+## <a name="mediaType"></a>Property `Document > mediaType`
 
 **Title:** media type
 
@@ -108,13 +108,13 @@ List of file formats of the Document
 | [item 0](#mediaType_anyOf_i0) |
 | [item 1](#mediaType_anyOf_i1) |
 
-### <a name="mediaType_anyOf_i0"></a>Property `item 0`
+### <a name="mediaType_anyOf_i0"></a>Property `Document > mediaType > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="mediaType_anyOf_i1"></a>Property `item 1`
+### <a name="mediaType_anyOf_i1"></a>Property `Document > mediaType > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -124,7 +124,7 @@ List of file formats of the Document
 | ----------------------------------------- | ----------- |
 | [item 1 items](#mediaType_anyOf_i1_items) | -           |
 
-#### <a name="mediaType_anyOf_i1_items"></a>item 1 items
+#### <a name="mediaType_anyOf_i1_items"></a>Document > mediaType > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -136,7 +136,7 @@ List of file formats of the Document
 | [MediaType](#mediaType_anyOf_i1_items_oneOf_i0) |
 | [item 1](#mediaType_anyOf_i1_items_oneOf_i1)    |
 
-##### <a name="mediaType_anyOf_i1_items_oneOf_i0"></a>Property `MediaType`
+##### <a name="mediaType_anyOf_i1_items_oneOf_i0"></a>Property `Document > mediaType > anyOf > item 1 > item 1 items > oneOf > MediaType`
 
 **Title:** MediaType
 
@@ -148,7 +148,7 @@ inline description of MediaType
 | **Additional properties** | Any type allowed            |
 | **Defined in**            | [Mediatype](./Mediatype.md) |
 
-##### <a name="mediaType_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="mediaType_anyOf_i1_items_oneOf_i1"></a>Property `Document > mediaType > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of MediaType
 
@@ -157,7 +157,7 @@ reference iri of MediaType
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="abstract"></a>Property `abstract`
+## <a name="abstract"></a>Property `Document > abstract`
 
 **Title:** abstract
 
@@ -167,7 +167,7 @@ Text abstract of the document
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="abstractMap"></a>Property `abstractMap`
+## <a name="abstractMap"></a>Property `Document > abstractMap`
 
 Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -175,7 +175,7 @@ Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="bibliographicCitation"></a>Property `bibliographicCitation`
+## <a name="bibliographicCitation"></a>Property `Document > bibliographicCitation`
 
 **Title:** bibliographic citation
 
@@ -185,7 +185,7 @@ Bibliographic citation as text
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="conformsTo"></a>Property `conformsTo`
+## <a name="conformsTo"></a>Property `Document > conformsTo`
 
 **Title:** conforms to standard
 
@@ -201,13 +201,13 @@ A standard to which the document conforms
 | [item 0](#conformsTo_anyOf_i0) |
 | [item 1](#conformsTo_anyOf_i1) |
 
-### <a name="conformsTo_anyOf_i0"></a>Property `item 0`
+### <a name="conformsTo_anyOf_i0"></a>Property `Document > conformsTo > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="conformsTo_anyOf_i1"></a>Property `item 1`
+### <a name="conformsTo_anyOf_i1"></a>Property `Document > conformsTo > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -217,7 +217,7 @@ A standard to which the document conforms
 | ------------------------------------------ | ----------- |
 | [item 1 items](#conformsTo_anyOf_i1_items) | -           |
 
-#### <a name="conformsTo_anyOf_i1_items"></a>item 1 items
+#### <a name="conformsTo_anyOf_i1_items"></a>Document > conformsTo > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -229,7 +229,7 @@ A standard to which the document conforms
 | [Standard](#conformsTo_anyOf_i1_items_oneOf_i0) |
 | [item 1](#conformsTo_anyOf_i1_items_oneOf_i1)   |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `Standard`
+##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `Document > conformsTo > anyOf > item 1 > item 1 items > oneOf > Standard`
 
 **Title:** Standard
 
@@ -241,7 +241,7 @@ inline description of Standard
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `Document > conformsTo > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of Standard
 
@@ -250,7 +250,7 @@ reference iri of Standard
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="creator"></a>Property `creator`
+## <a name="creator"></a>Property `Document > creator`
 
 **Title:** corporate author
 
@@ -266,13 +266,13 @@ The organization responsible for creating the resource
 | [item 0](#creator_anyOf_i0) |
 | [item 1](#creator_anyOf_i1) |
 
-### <a name="creator_anyOf_i0"></a>Property `item 0`
+### <a name="creator_anyOf_i0"></a>Property `Document > creator > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="creator_anyOf_i1"></a>Property `item 1`
+### <a name="creator_anyOf_i1"></a>Property `Document > creator > anyOf > item 1`
 
 |          |         |
 | -------- | ------- |
@@ -282,7 +282,7 @@ The organization responsible for creating the resource
 | --------------------------------------- | ----------- |
 | [item 1 items](#creator_anyOf_i1_items) | -           |
 
-#### <a name="creator_anyOf_i1_items"></a>item 1 items
+#### <a name="creator_anyOf_i1_items"></a>Document > creator > anyOf > item 1 > item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -294,7 +294,7 @@ The organization responsible for creating the resource
 | [Organization](#creator_anyOf_i1_items_oneOf_i0) |
 | [item 1](#creator_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `Organization`
+##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `Document > creator > anyOf > item 1 > item 1 items > oneOf > Organization`
 
 **Title:** Organization
 
@@ -306,7 +306,7 @@ inline description of corporate author
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
+##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `Document > creator > anyOf > item 1 > item 1 items > oneOf > item 1`
 
 reference iri of corporate author
 
@@ -315,7 +315,7 @@ reference iri of corporate author
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="description"></a>Property `description`
+## <a name="description"></a>Property `Document > description`
 
 **Title:** description
 
@@ -325,7 +325,7 @@ A free-text account of the Document
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="descriptionMap"></a>Property `descriptionMap`
+## <a name="descriptionMap"></a>Property `Document > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -333,7 +333,7 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="identifier"></a>Property `identifier`
+## <a name="identifier"></a>Property `Document > identifier`
 
 **Title:** identifier
 
@@ -349,13 +349,13 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 | [item 0](#identifier_anyOf_i0) |
 | [item 1](#identifier_anyOf_i1) |
 
-### <a name="identifier_anyOf_i0"></a>Property `item 0`
+### <a name="identifier_anyOf_i0"></a>Property `Document > identifier > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="identifier_anyOf_i1"></a>Property `item 1`
+### <a name="identifier_anyOf_i1"></a>Property `Document > identifier > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -365,13 +365,13 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 | ------------------------------------------ | ----------- |
 | [item 1 items](#identifier_anyOf_i1_items) | -           |
 
-#### <a name="identifier_anyOf_i1_items"></a>item 1 items
+#### <a name="identifier_anyOf_i1_items"></a>Document > identifier > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
 | **Type** | `string` |
 
-## <a name="issued"></a>Property `issued`
+## <a name="issued"></a>Property `Document > issued`
 
 **Title:** publication date
 
@@ -387,13 +387,13 @@ Publication date of the document
 | [item 0](#issued_anyOf_i0) |
 | [item 1](#issued_anyOf_i1) |
 
-### <a name="issued_anyOf_i0"></a>Property `item 0`
+### <a name="issued_anyOf_i0"></a>Property `Document > issued > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="issued_anyOf_i1"></a>Property `item 1`
+### <a name="issued_anyOf_i1"></a>Property `Document > issued > anyOf > item 1`
 
 |          |             |
 | -------- | ----------- |
@@ -406,7 +406,7 @@ Publication date of the document
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -414,7 +414,7 @@ Publication date of the document
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
@@ -422,7 +422,7 @@ Publication date of the document
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -435,7 +435,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -448,7 +448,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `publisher`
+## <a name="publisher"></a>Property `Document > publisher`
 
 **Title:** publisher
 
@@ -465,13 +465,13 @@ publisher organization of the document
 | [Organization](#publisher_oneOf_i1) |
 | [item 2](#publisher_oneOf_i2)       |
 
-### <a name="publisher_oneOf_i0"></a>Property `item 0`
+### <a name="publisher_oneOf_i0"></a>Property `Document > publisher > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="publisher_oneOf_i1"></a>Property `Organization`
+### <a name="publisher_oneOf_i1"></a>Property `Document > publisher > oneOf > Organization`
 
 **Title:** Organization
 
@@ -483,7 +483,7 @@ inline description of publisher organization
 | **Additional properties** | Any type allowed                                 |
 | **Same definition as**    | [Organization](#creator_anyOf_i1_items_oneOf_i0) |
 
-### <a name="publisher_oneOf_i2"></a>Property `item 2`
+### <a name="publisher_oneOf_i2"></a>Property `Document > publisher > oneOf > item 2`
 
 reference iri of publisher organization
 
@@ -492,7 +492,7 @@ reference iri of publisher organization
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="title"></a>Property `title`
+## <a name="title"></a>Property `Document > title`
 
 **Title:** title
 
@@ -503,7 +503,7 @@ The title of the document in the indicated language
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="titleMap"></a>Property `titleMap`
+## <a name="titleMap"></a>Property `Document > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -511,7 +511,7 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="category"></a>Property `category`
+## <a name="category"></a>Property `Document > category`
 
 **Title:** category
 
@@ -528,13 +528,13 @@ Category of the document
 | [Concept](#category_oneOf_i1) |
 | [item 2](#category_oneOf_i2)  |
 
-### <a name="category_oneOf_i0"></a>Property `item 0`
+### <a name="category_oneOf_i0"></a>Property `Document > category > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="category_oneOf_i1"></a>Property `Concept`
+### <a name="category_oneOf_i1"></a>Property `Document > category > oneOf > Concept`
 
 **Title:** Concept
 
@@ -546,7 +546,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Concept](#conformsTo_anyOf_i1_items_oneOf_i0_category_oneOf_i1) |
 
-### <a name="category_oneOf_i2"></a>Property `item 2`
+### <a name="category_oneOf_i2"></a>Property `Document > category > oneOf > item 2`
 
 reference iri of Concept
 

@@ -22,21 +22,21 @@ A labeled value from a specified concept scheme
 | + [prefLabel](#prefLabel )         | string             | preferred label                                                                      |
 | - [prefLabelMap](#prefLabelMap )   | null or object     | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Concept > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Concept > @type`
 
 |             |             |
 | ----------- | ----------- |
 | **Type**    | `string`    |
 | **Default** | `"Concept"` |
 
-## <a name="altLabel"></a>Property `altLabel`
+## <a name="altLabel"></a>Property `Concept > altLabel`
 
 **Title:** alternate label
 
@@ -46,7 +46,7 @@ Alternative label for a concept
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="altLabelMap"></a>Property `altLabelMap`
+## <a name="altLabelMap"></a>Property `Concept > altLabelMap`
 
 Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -54,7 +54,7 @@ Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french wor
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="definition"></a>Property `definition`
+## <a name="definition"></a>Property `Concept > definition`
 
 **Title:** definition
 
@@ -64,7 +64,7 @@ Definition of the controlled vocabulary term
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="definitionMap"></a>Property `definitionMap`
+## <a name="definitionMap"></a>Property `Concept > definitionMap`
 
 Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
@@ -72,7 +72,7 @@ Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}
 | -------- | ---------------- |
 | **Type** | `null or object` |
 
-## <a name="inScheme"></a>Property `inScheme`
+## <a name="inScheme"></a>Property `Concept > inScheme`
 
 **Title:** in scheme
 
@@ -89,7 +89,7 @@ Concept scheme defining this concept
 | [ConceptScheme](#inScheme_oneOf_i0) |
 | [item 1](#inScheme_oneOf_i1)        |
 
-### <a name="inScheme_oneOf_i0"></a>Property `ConceptScheme`
+### <a name="inScheme_oneOf_i0"></a>Property `Concept > inScheme > oneOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
@@ -101,7 +101,7 @@ inline description of ConceptScheme
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-### <a name="inScheme_oneOf_i1"></a>Property `item 1`
+### <a name="inScheme_oneOf_i1"></a>Property `Concept > inScheme > oneOf > item 1`
 
 reference iri of ConceptScheme
 
@@ -110,7 +110,7 @@ reference iri of ConceptScheme
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="notation"></a>Property `notation`
+## <a name="notation"></a>Property `Concept > notation`
 
 **Title:** notation
 
@@ -126,13 +126,13 @@ List of abbreviations or codes from code lists for an organization
 | [item 0](#notation_anyOf_i0) |
 | [item 1](#notation_anyOf_i1) |
 
-### <a name="notation_anyOf_i0"></a>Property `item 0`
+### <a name="notation_anyOf_i0"></a>Property `Concept > notation > anyOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="notation_anyOf_i1"></a>Property `item 1`
+### <a name="notation_anyOf_i1"></a>Property `Concept > notation > anyOf > item 1`
 
 |          |                   |
 | -------- | ----------------- |
@@ -142,13 +142,13 @@ List of abbreviations or codes from code lists for an organization
 | ---------------------------------------- | ----------- |
 | [item 1 items](#notation_anyOf_i1_items) | -           |
 
-#### <a name="notation_anyOf_i1_items"></a>item 1 items
+#### <a name="notation_anyOf_i1_items"></a>Concept > notation > anyOf > item 1 > item 1 items
 
 |          |          |
 | -------- | -------- |
 | **Type** | `string` |
 
-## <a name="prefLabel"></a>Property `prefLabel`
+## <a name="prefLabel"></a>Property `Concept > prefLabel`
 
 **Title:** preferred label
 
@@ -159,7 +159,7 @@ Preferred label for the term
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="prefLabelMap"></a>Property `prefLabelMap`
+## <a name="prefLabelMap"></a>Property `Concept > prefLabelMap`
 
 Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 

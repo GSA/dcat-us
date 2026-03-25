@@ -16,21 +16,21 @@ An entity that could be involved with a resource
 | - [category](#category ) | More than one type | category          |
 | + [name](#name )         | string             | name              |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Agent > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Agent > @type`
 
 |             |           |
 | ----------- | --------- |
 | **Type**    | `string`  |
 | **Default** | `"Agent"` |
 
-## <a name="category"></a>Property `category`
+## <a name="category"></a>Property `Agent > category`
 
 **Title:** category
 
@@ -47,13 +47,13 @@ The type of the agent that makes the item available
 | [Concept](#category_oneOf_i1) |
 | [item 2](#category_oneOf_i2)  |
 
-### <a name="category_oneOf_i0"></a>Property `item 0`
+### <a name="category_oneOf_i0"></a>Property `Agent > category > oneOf > item 0`
 
 |          |        |
 | -------- | ------ |
 | **Type** | `null` |
 
-### <a name="category_oneOf_i1"></a>Property `Concept`
+### <a name="category_oneOf_i1"></a>Property `Agent > category > oneOf > Concept`
 
 **Title:** Concept
 
@@ -65,7 +65,7 @@ inline description of the agent type
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_oneOf_i2"></a>Property `item 2`
+### <a name="category_oneOf_i2"></a>Property `Agent > category > oneOf > item 2`
 
 reference iri of the agent type
 
@@ -74,7 +74,7 @@ reference iri of the agent type
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="name"></a>Property `name`
+## <a name="name"></a>Property `Agent > name`
 
 **Title:** name
 

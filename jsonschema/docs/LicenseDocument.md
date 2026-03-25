@@ -15,21 +15,21 @@ Text of the license for an item
 | - [@type](#@type )             | string         | -                 |
 | - [licenseText](#licenseText ) | null or string | license text      |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `LicenseDocument > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `LicenseDocument > @type`
 
 |             |                     |
 | ----------- | ------------------- |
 | **Type**    | `string`            |
 | **Default** | `"LicenseDocument"` |
 
-## <a name="licenseText"></a>Property `licenseText`
+## <a name="licenseText"></a>Property `LicenseDocument > licenseText`
 
 **Title:** license text
 

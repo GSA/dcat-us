@@ -19,21 +19,21 @@ A single physical address
 | - [region](#region )                 | null or string | administrative area |
 | - [street-address](#street-address ) | null or string | street address      |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Address > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Address > @type`
 
 |             |             |
 | ----------- | ----------- |
 | **Type**    | `string`    |
 | **Default** | `"Address"` |
 
-## <a name="country-name"></a>Property `country-name`
+## <a name="country-name"></a>Property `Address > country-name`
 
 **Title:** country
 
@@ -43,7 +43,7 @@ The country of the Address
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="locality"></a>Property `locality`
+## <a name="locality"></a>Property `Address > locality`
 
 **Title:** locality
 
@@ -53,7 +53,7 @@ The city of the Address
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="postal-code"></a>Property `postal-code`
+## <a name="postal-code"></a>Property `Address > postal-code`
 
 **Title:** postal code
 
@@ -63,7 +63,7 @@ The postal code of the Address
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="region"></a>Property `region`
+## <a name="region"></a>Property `Address > region`
 
 **Title:** administrative area
 
@@ -73,7 +73,7 @@ The administrative area of the Address. Depending on the country, this correspon
 | -------- | ---------------- |
 | **Type** | `null or string` |
 
-## <a name="street-address"></a>Property `street-address`
+## <a name="street-address"></a>Property `Address > street-address`
 
 **Title:** street address
 

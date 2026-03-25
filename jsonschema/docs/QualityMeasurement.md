@@ -17,21 +17,21 @@ A single measurement of one metric
 | + [value](#value )                     | string             | value             |
 | - [unitMeasure](#unitMeasure )         | null or string     | unit of measure   |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `QualityMeasurement > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `QualityMeasurement > @type`
 
 |             |                        |
 | ----------- | ---------------------- |
 | **Type**    | `string`               |
 | **Default** | `"QualityMeasurement"` |
 
-## <a name="isMeasurementOf"></a>Property `isMeasurementOf`
+## <a name="isMeasurementOf"></a>Property `QualityMeasurement > isMeasurementOf`
 
 **Title:** is measurement of
 
@@ -48,7 +48,7 @@ The metric being observed
 | [Metric](#isMeasurementOf_oneOf_i0) |
 | [item 1](#isMeasurementOf_oneOf_i1) |
 
-### <a name="isMeasurementOf_oneOf_i0"></a>Property `Metric`
+### <a name="isMeasurementOf_oneOf_i0"></a>Property `QualityMeasurement > isMeasurementOf > oneOf > Metric`
 
 **Title:** Metric
 
@@ -60,7 +60,7 @@ inline description of Metric
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
-### <a name="isMeasurementOf_oneOf_i1"></a>Property `item 1`
+### <a name="isMeasurementOf_oneOf_i1"></a>Property `QualityMeasurement > isMeasurementOf > oneOf > item 1`
 
 reference iri of Metric
 
@@ -69,7 +69,7 @@ reference iri of Metric
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="value"></a>Property `value`
+## <a name="value"></a>Property `QualityMeasurement > value`
 
 **Title:** value
 
@@ -80,7 +80,7 @@ The value computed by metric
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="unitMeasure"></a>Property `unitMeasure`
+## <a name="unitMeasure"></a>Property `QualityMeasurement > unitMeasure`
 
 **Title:** unit of measure
 

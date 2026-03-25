@@ -16,21 +16,21 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | + [algorithm](#algorithm )         | string | algorithm         |
 | + [checksumValue](#checksumValue ) | string | checksum value    |
 
-## <a name="@id"></a>Property `@id`
+## <a name="@id"></a>Property `Checksum > @id`
 
 |            |          |
 | ---------- | -------- |
 | **Type**   | `string` |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `@type`
+## <a name="@type"></a>Property `Checksum > @type`
 
 |             |              |
 | ----------- | ------------ |
 | **Type**    | `string`     |
 | **Default** | `"Checksum"` |
 
-## <a name="algorithm"></a>Property `algorithm`
+## <a name="algorithm"></a>Property `Checksum > algorithm`
 
 **Title:** algorithm
 
@@ -41,7 +41,7 @@ The algorithm used to produce the checksum
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-## <a name="checksumValue"></a>Property `checksumValue`
+## <a name="checksumValue"></a>Property `Checksum > checksumValue`
 
 **Title:** checksum value
 
