@@ -1,11 +1,10 @@
-# Metric
+
 
 **Title:** Metric
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
 | Property                                 | Type           | Title/Description |
@@ -16,36 +15,36 @@
 | + [inDimension](#inDimension )           | string         | in dimension      |
 | - [definition](#definition )             | null or string | definition        |
 
-## <a name="@id"></a>Property `Metric > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Metric > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |            |
-| ------------ | ---------- |
-| **Type**     | `string`   |
-| **Required** | No         |
-| **Default**  | `"Metric"` |
+|             |            |
+| ----------- | ---------- |
+| **Type**    | `string`   |
+| **Default** | `"Metric"` |
 
-## <a name="expectedDataType"></a>Property `Metric > expectedDataType`
+## <a name="expectedDataType"></a>Property `expectedDataType`
 
 **Title:** expected datatype
 
+Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)
-
-## <a name="inDimension"></a>Property `Metric > inDimension`
+## <a name="inDimension"></a>Property `inDimension`
 
 **Title:** in dimension
+
+Represents the dimensions a quality metric, certificate and annotation allow a measurement of.
 
 |              |          |
 | ------------ | -------- |
@@ -53,18 +52,13 @@
 | **Required** | Yes      |
 | **Format**   | `iri`    |
 
-**Description:** Represents the dimensions a quality metric, certificate and annotation allow a measurement of.
-
-## <a name="definition"></a>Property `Metric > definition`
+## <a name="definition"></a>Property `definition`
 
 **Title:** definition
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+Definition of the metric.
 
-**Description:** Definition of the metric.
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

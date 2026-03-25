@@ -1,14 +1,13 @@
-# LicenseDocument
+
 
 **Title:** LicenseDocument
+
+Text of the license for an item
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** Text of the license for an item
 
 | Property                       | Type           | Title/Description |
 | ------------------------------ | -------------- | ----------------- |
@@ -16,32 +15,27 @@
 | - [@type](#@type )             | string         | -                 |
 | - [licenseText](#licenseText ) | null or string | license text      |
 
-## <a name="@id"></a>Property `LicenseDocument > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `LicenseDocument > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |                     |
-| ------------ | ------------------- |
-| **Type**     | `string`            |
-| **Required** | No                  |
-| **Default**  | `"LicenseDocument"` |
+|             |                     |
+| ----------- | ------------------- |
+| **Type**    | `string`            |
+| **Default** | `"LicenseDocument"` |
 
-## <a name="licenseText"></a>Property `LicenseDocument > licenseText`
+## <a name="licenseText"></a>Property `licenseText`
 
 **Title:** license text
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+Full text of the license
 
-**Description:** Full text of the license
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

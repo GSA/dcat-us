@@ -1,14 +1,13 @@
-# ProvenanceStatement
+
 
 **Title:** ProvenanceStatement
+
+A single statement about the provenance of a dataset
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A single statement about the provenance of a dataset
 
 | Property                 | Type           | Title/Description                                                                              |
 | ------------------------ | -------------- | ---------------------------------------------------------------------------------------------- |
@@ -17,41 +16,35 @@
 | - [label](#label )       | null or string | provenance statement text                                                                      |
 | - [labelMap](#labelMap ) | null or object | Language map for provenance statement text. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `ProvenanceStatement > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `ProvenanceStatement > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |                         |
-| ------------ | ----------------------- |
-| **Type**     | `string`                |
-| **Required** | No                      |
-| **Default**  | `"ProvenanceStatement"` |
+|             |                         |
+| ----------- | ----------------------- |
+| **Type**    | `string`                |
+| **Default** | `"ProvenanceStatement"` |
 
-## <a name="label"></a>Property `ProvenanceStatement > label`
+## <a name="label"></a>Property `label`
 
 **Title:** provenance statement text
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The text of the Provenance Statement
 
-**Description:** The text of the Provenance Statement
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="labelMap"></a>Property `ProvenanceStatement > labelMap`
+## <a name="labelMap"></a>Property `labelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for provenance statement text. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for provenance statement text. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

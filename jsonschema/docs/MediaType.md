@@ -1,14 +1,13 @@
-# MediaType
+
 
 **Title:** MediaType
+
+Information about a specific file format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** Information about a specific file format
 
 | Property                 | Type           | Title/Description                                                          |
 | ------------------------ | -------------- | -------------------------------------------------------------------------- |
@@ -17,41 +16,35 @@
 | - [label](#label )       | null or string | label                                                                      |
 | - [labelMap](#labelMap ) | null or object | Language map for label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `MediaType > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `MediaType > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |               |
-| ------------ | ------------- |
-| **Type**     | `string`      |
-| **Required** | No            |
-| **Default**  | `"MediaType"` |
+|             |               |
+| ----------- | ------------- |
+| **Type**    | `string`      |
+| **Default** | `"MediaType"` |
 
-## <a name="label"></a>Property `MediaType > label`
+## <a name="label"></a>Property `label`
 
 **Title:** label
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The denomination of the Media Type
 
-**Description:** The denomination of the Media Type
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="labelMap"></a>Property `MediaType > labelMap`
+## <a name="labelMap"></a>Property `labelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for label. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

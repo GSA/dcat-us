@@ -1,14 +1,13 @@
-# GeographicBoundingBox
+
 
 **Title:** GeographicBoundingBox
+
+A bounding box in latitude and longitude
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A bounding box in latitude and longitude
 
 | Property                                           | Type   | Title/Description       |
 | -------------------------------------------------- | ------ | ----------------------- |
@@ -19,65 +18,61 @@
 | + [southBoundingLatitude](#southBoundingLatitude ) | string | south bouding latitude  |
 | + [westBoundingLongitude](#westBoundingLongitude ) | string | west bounding longitude |
 
-## <a name="@id"></a>Property `GeographicBoundingBox > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `GeographicBoundingBox > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |                           |
-| ------------ | ------------------------- |
-| **Type**     | `string`                  |
-| **Required** | No                        |
-| **Default**  | `"GeographicBoundingBox"` |
+|             |                           |
+| ----------- | ------------------------- |
+| **Type**    | `string`                  |
+| **Default** | `"GeographicBoundingBox"` |
 
-## <a name="eastBoundingLongitude"></a>Property `GeographicBoundingBox > eastBoundingLongitude`
+## <a name="eastBoundingLongitude"></a>Property `eastBoundingLongitude`
 
 **Title:** east bounding longitude
 
+East bound longitude in decimal degrees
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** East bound longitude in decimal degrees
-
-## <a name="northBoundingLatitude"></a>Property `GeographicBoundingBox > northBoundingLatitude`
+## <a name="northBoundingLatitude"></a>Property `northBoundingLatitude`
 
 **Title:** north bounding latitude
 
+North bound latitude in decimal degrees
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** North bound latitude in decimal degrees
-
-## <a name="southBoundingLatitude"></a>Property `GeographicBoundingBox > southBoundingLatitude`
+## <a name="southBoundingLatitude"></a>Property `southBoundingLatitude`
 
 **Title:** south bouding latitude
 
+South bound latitude in decimal degrees
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** South bound latitude in decimal degrees
-
-## <a name="westBoundingLongitude"></a>Property `GeographicBoundingBox > westBoundingLongitude`
+## <a name="westBoundingLongitude"></a>Property `westBoundingLongitude`
 
 **Title:** west bounding longitude
 
+West bound longitude in decimal degrees
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** West bound longitude in decimal degrees
-
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

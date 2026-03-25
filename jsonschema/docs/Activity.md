@@ -1,50 +1,46 @@
-# Activity
+
 
 **Title:** Activity
+
+An activity which a resource could be related to
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
-**Description:** An activity which a resource could be related to
+| Property                 | Type               | Title/Description                                                              |
+| ------------------------ | ------------------ | ------------------------------------------------------------------------------ |
+| - [@id](#@id )           | string             | -                                                                              |
+| - [@type](#@type )       | string             | -                                                                              |
+| - [category](#category ) | More than one type | category                                                                       |
+| - [label](#label )       | null or string     | label                                                                          |
+| - [labelMap](#labelMap ) | null or object     | Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-| Property                 | Type           | Title/Description                                                              |
-| ------------------------ | -------------- | ------------------------------------------------------------------------------ |
-| - [@id](#@id )           | string         | -                                                                              |
-| - [@type](#@type )       | string         | -                                                                              |
-| - [category](#category ) | Combination    | category                                                                       |
-| - [label](#label )       | null or string | label                                                                          |
-| - [labelMap](#labelMap ) | null or object | Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+## <a name="@id"></a>Property `@id`
 
-## <a name="@id"></a>Property `Activity > @id`
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+## <a name="@type"></a>Property `@type`
 
-## <a name="@type"></a>Property `Activity > @type`
+|             |              |
+| ----------- | ------------ |
+| **Type**    | `string`     |
+| **Default** | `"Activity"` |
 
-|              |              |
-| ------------ | ------------ |
-| **Type**     | `string`     |
-| **Required** | No           |
-| **Default**  | `"Activity"` |
-
-## <a name="category"></a>Property `Activity > category`
+## <a name="category"></a>Property `category`
 
 **Title:** category
+
+The category of the Activity
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The category of the Activity
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -52,558 +48,48 @@
 | [Concept](#category_anyOf_i1) |
 | [item 2](#category_anyOf_i2)  |
 
-### <a name="category_anyOf_i0"></a>Property `Activity > category > anyOf > item 0`
+### <a name="category_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="category_anyOf_i1"></a>Property `Activity > category > anyOf > Concept`
+### <a name="category_anyOf_i1"></a>Property `Concept`
 
 **Title:** Concept
 
-|                           |                                    |
-| ------------------------- | ---------------------------------- |
-| **Type**                  | `object`                           |
-| **Required**              | No                                 |
-| **Additional properties** | Any type allowed                   |
-| **Defined in**            | /dcat-us/3.0.0/definitions/concept |
+inline description of the category
 
-**Description:** inline description of the category
+|                           |                         |
+| ------------------------- | ----------------------- |
+| **Type**                  | `object`                |
+| **Additional properties** | Any type allowed        |
+| **Defined in**            | [Concept](./Concept.md) |
 
-| Property                                             | Type           | Title/Description                                                                    |
-| ---------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------ |
-| - [@id](#category_anyOf_i1_@id )                     | string         | -                                                                                    |
-| - [@type](#category_anyOf_i1_@type )                 | string         | -                                                                                    |
-| - [altLabel](#category_anyOf_i1_altLabel )           | null or string | alternate label                                                                      |
-| - [altLabelMap](#category_anyOf_i1_altLabelMap )     | null or object | Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [definition](#category_anyOf_i1_definition )       | null or string | definition                                                                           |
-| - [definitionMap](#category_anyOf_i1_definitionMap ) | null or object | Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
-| + [inScheme](#category_anyOf_i1_inScheme )           | Combination    | in scheme                                                                            |
-| - [notation](#category_anyOf_i1_notation )           | Combination    | notation                                                                             |
-| + [prefLabel](#category_anyOf_i1_prefLabel )         | string         | preferred label                                                                      |
-| - [prefLabelMap](#category_anyOf_i1_prefLabelMap )   | null or object | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+### <a name="category_anyOf_i2"></a>Property `item 2`
 
-#### <a name="category_anyOf_i1_@id"></a>Property `Activity > category > anyOf > Concept > @id`
+reference iri of the category
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-#### <a name="category_anyOf_i1_@type"></a>Property `Activity > category > anyOf > Concept > @type`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `string`    |
-| **Required** | No          |
-| **Default**  | `"Concept"` |
-
-#### <a name="category_anyOf_i1_altLabel"></a>Property `Activity > category > anyOf > Concept > altLabel`
-
-**Title:** alternate label
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** Alternative label for a concept
-
-#### <a name="category_anyOf_i1_altLabelMap"></a>Property `Activity > category > anyOf > Concept > altLabelMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-#### <a name="category_anyOf_i1_definition"></a>Property `Activity > category > anyOf > Concept > definition`
-
-**Title:** definition
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** Definition of the controlled vocabulary term
-
-#### <a name="category_anyOf_i1_definitionMap"></a>Property `Activity > category > anyOf > Concept > definitionMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-#### <a name="category_anyOf_i1_inScheme"></a>Property `Activity > category > anyOf > Concept > inScheme`
-
-**Title:** in scheme
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
-
-**Description:** Concept scheme defining this concept
-
-| One of(Option)                                        |
-| ----------------------------------------------------- |
-| [ConceptScheme](#category_anyOf_i1_inScheme_oneOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i1)        |
-
-##### <a name="category_anyOf_i1_inScheme_oneOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme`
-
-**Title:** ConceptScheme
-
-|                           |                                          |
-| ------------------------- | ---------------------------------------- |
-| **Type**                  | `object`                                 |
-| **Required**              | No                                       |
-| **Additional properties** | Any type allowed                         |
-| **Defined in**            | /dcat-us/3.0.0/definitions/conceptscheme |
-
-**Description:** inline description of ConceptScheme
-
-| Property                                                                 | Type           | Title/Description                                                                   |
-| ------------------------------------------------------------------------ | -------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#category_anyOf_i1_inScheme_oneOf_i0_@id )                       | string         | -                                                                                   |
-| - [@type](#category_anyOf_i1_inScheme_oneOf_i0_@type )                   | string         | -                                                                                   |
-| - [version](#category_anyOf_i1_inScheme_oneOf_i0_version )               | null or string | version info                                                                        |
-| - [created](#category_anyOf_i1_inScheme_oneOf_i0_created )               | Combination    | creation date                                                                       |
-| - [description](#category_anyOf_i1_inScheme_oneOf_i0_description )       | null or string | description                                                                         |
-| - [descriptionMap](#category_anyOf_i1_inScheme_oneOf_i0_descriptionMap ) | null or object | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [issued](#category_anyOf_i1_inScheme_oneOf_i0_issued )                 | Combination    | publication date                                                                    |
-| - [modified](#category_anyOf_i1_inScheme_oneOf_i0_modified )             | Combination    | update/modification date                                                            |
-| + [title](#category_anyOf_i1_inScheme_oneOf_i0_title )                   | string         | title                                                                               |
-| - [titleMap](#category_anyOf_i1_inScheme_oneOf_i0_titleMap )             | null or object | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_@id"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > @id`
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_@type"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > @type`
-
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `string`          |
-| **Required** | No                |
-| **Default**  | `"ConceptScheme"` |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_version"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > version`
-
-**Title:** version info
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** A version number or other version designation of the concept scheme
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created`
-
-**Title:** creation date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The date on which the Concept Scheme was first created
-
-| Any of(Option)                                                  |
-| --------------------------------------------------------------- |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                                           |
-| ------------------------------------------------------------------------ |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i1) |
-| [item 2](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i2) |
-| [item 3](#category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i3) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i2"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_created_anyOf_i1_oneOf_i3"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_description"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > description`
-
-**Title:** description
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** A description of the concept scheme
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_descriptionMap"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > descriptionMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued`
-
-**Title:** publication date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The date of formal issuance (e.g., publication) of the concept scheme
-
-| Any of(Option)                                                 |
-| -------------------------------------------------------------- |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                                          |
-| ----------------------------------------------------------------------- |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i1) |
-| [item 2](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i2) |
-| [item 3](#category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i3) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i2"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_issued_anyOf_i1_oneOf_i3"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified`
-
-**Title:** update/modification date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The most recent date at which the concept scheme was changed or modified
-
-| Any of(Option)                                                   |
-| ---------------------------------------------------------------- |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                                            |
-| ------------------------------------------------------------------------- |
-| [item 0](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i0) |
-| [item 1](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i1) |
-| [item 2](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i2) |
-| [item 3](#category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i3) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i0"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i2"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_modified_anyOf_i1_oneOf_i3"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_title"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > title`
-
-**Title:** title
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
-
-**Description:** The title of the concept scheme
-
-###### <a name="category_anyOf_i1_inScheme_oneOf_i0_titleMap"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > ConceptScheme > titleMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-##### <a name="category_anyOf_i1_inScheme_oneOf_i1"></a>Property `Activity > category > anyOf > Concept > inScheme > oneOf > item 1`
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
-
-**Description:** reference iri of ConceptScheme
-
-#### <a name="category_anyOf_i1_notation"></a>Property `Activity > category > anyOf > Concept > notation`
-
-**Title:** notation
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** List of abbreviations or codes from code lists for an organization
-
-| Any of(Option)                                 |
-| ---------------------------------------------- |
-| [item 0](#category_anyOf_i1_notation_anyOf_i0) |
-| [item 1](#category_anyOf_i1_notation_anyOf_i1) |
-
-##### <a name="category_anyOf_i1_notation_anyOf_i0"></a>Property `Activity > category > anyOf > Concept > notation > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-##### <a name="category_anyOf_i1_notation_anyOf_i1"></a>Property `Activity > category > anyOf > Concept > notation > anyOf > item 1`
-
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `array of string` |
-| **Required** | No                |
-
-| Each item of this array must be                            | Description |
-| ---------------------------------------------------------- | ----------- |
-| [item 1 items](#category_anyOf_i1_notation_anyOf_i1_items) | -           |
-
-###### <a name="category_anyOf_i1_notation_anyOf_i1_items"></a>Activity > category > anyOf > Concept > notation > anyOf > item 1 > item 1 items
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-
-#### <a name="category_anyOf_i1_prefLabel"></a>Property `Activity > category > anyOf > Concept > prefLabel`
-
-**Title:** preferred label
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
-
-**Description:** Preferred label for the term
-
-#### <a name="category_anyOf_i1_prefLabelMap"></a>Property `Activity > category > anyOf > Concept > prefLabelMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-### <a name="category_anyOf_i2"></a>Property `Activity > category > anyOf > item 2`
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
-
-**Description:** reference iri of the category
-
-## <a name="label"></a>Property `Activity > label`
+## <a name="label"></a>Property `label`
 
 **Title:** label
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+A human-readable label for the activity
 
-**Description:** A human-readable label for the activity
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="labelMap"></a>Property `Activity > labelMap`
+## <a name="labelMap"></a>Property `labelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

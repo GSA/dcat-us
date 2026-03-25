@@ -1,14 +1,13 @@
-# Address
+
 
 **Title:** Address
+
+A single physical address
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A single physical address
 
 | Property                             | Type           | Title/Description   |
 | ------------------------------------ | -------------- | ------------------- |
@@ -20,76 +19,67 @@
 | - [region](#region )                 | null or string | administrative area |
 | - [street-address](#street-address ) | null or string | street address      |
 
-## <a name="@id"></a>Property `Address > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Address > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `string`    |
-| **Required** | No          |
-| **Default**  | `"Address"` |
+|             |             |
+| ----------- | ----------- |
+| **Type**    | `string`    |
+| **Default** | `"Address"` |
 
-## <a name="country-name"></a>Property `Address > country-name`
+## <a name="country-name"></a>Property `country-name`
 
 **Title:** country
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The country of the Address
 
-**Description:** The country of the Address
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="locality"></a>Property `Address > locality`
+## <a name="locality"></a>Property `locality`
 
 **Title:** locality
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The city of the Address
 
-**Description:** The city of the Address
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="postal-code"></a>Property `Address > postal-code`
+## <a name="postal-code"></a>Property `postal-code`
 
 **Title:** postal code
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The postal code of the Address
 
-**Description:** The postal code of the Address
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="region"></a>Property `Address > region`
+## <a name="region"></a>Property `region`
 
 **Title:** administrative area
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state
 
-**Description:** The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="street-address"></a>Property `Address > street-address`
+## <a name="street-address"></a>Property `street-address`
 
 **Title:** street address
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The street name and civic number of an Address
 
-**Description:** The street name and civic number of an Address
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

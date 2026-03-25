@@ -1,95 +1,88 @@
-# Organization
+
 
 **Title:** Organization
+
+Information about an organization, including other organizations that it is part of
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
-**Description:** Information about an organization, including other organizations that it is part of
+| Property                                   | Type               | Title/Description                                                                      |
+| ------------------------------------------ | ------------------ | -------------------------------------------------------------------------------------- |
+| - [@id](#@id )                             | string             | -                                                                                      |
+| - [@type](#@type )                         | string             | -                                                                                      |
+| + [name](#name )                           | string             | name                                                                                   |
+| - [subOrganizationOf](#subOrganizationOf ) | More than one type | suborganization of                                                                     |
+| - [altLabel](#altLabel )                   | null or string     | alternative label                                                                      |
+| - [altLabelMap](#altLabelMap )             | null or object     | Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [notation](#notation )                   | More than one type | notation                                                                               |
+| - [prefLabel](#prefLabel )                 | null or string     | preferred label                                                                        |
+| - [prefLabelMap](#prefLabelMap )           | null or object     | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
 
-| Property                                   | Type           | Title/Description                                                                      |
-| ------------------------------------------ | -------------- | -------------------------------------------------------------------------------------- |
-| - [@id](#@id )                             | string         | -                                                                                      |
-| - [@type](#@type )                         | string         | -                                                                                      |
-| + [name](#name )                           | string         | name                                                                                   |
-| - [subOrganizationOf](#subOrganizationOf ) | Combination    | suborganization of                                                                     |
-| - [altLabel](#altLabel )                   | null or string | alternative label                                                                      |
-| - [altLabelMap](#altLabelMap )             | null or object | Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [notation](#notation )                   | Combination    | notation                                                                               |
-| - [prefLabel](#prefLabel )                 | null or string | preferred label                                                                        |
-| - [prefLabelMap](#prefLabelMap )           | null or object | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
+## <a name="@id"></a>Property `@id`
 
-## <a name="@id"></a>Property `Organization > @id`
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+## <a name="@type"></a>Property `@type`
 
-## <a name="@type"></a>Property `Organization > @type`
+|             |                  |
+| ----------- | ---------------- |
+| **Type**    | `string`         |
+| **Default** | `"Organization"` |
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string`         |
-| **Required** | No               |
-| **Default**  | `"Organization"` |
-
-## <a name="name"></a>Property `Organization > name`
+## <a name="name"></a>Property `name`
 
 **Title:** name
+
+The full name of the Organization
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** The full name of the Organization
-
-## <a name="subOrganizationOf"></a>Property `Organization > subOrganizationOf`
+## <a name="subOrganizationOf"></a>Property `subOrganizationOf`
 
 **Title:** suborganization of
+
+Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
 | Any of(Option)                        |
 | ------------------------------------- |
 | [item 0](#subOrganizationOf_anyOf_i0) |
 | [item 1](#subOrganizationOf_anyOf_i1) |
 
-### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 0`
+### <a name="subOrganizationOf_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1`
+### <a name="subOrganizationOf_anyOf_i1"></a>Property `item 1`
 
-|              |         |
-| ------------ | ------- |
-| **Type**     | `array` |
-| **Required** | No      |
+|          |         |
+| -------- | ------- |
+| **Type** | `array` |
 
 | Each item of this array must be                   | Description |
 | ------------------------------------------------- | ----------- |
 | [item 1 items](#subOrganizationOf_anyOf_i1_items) | -           |
 
-#### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > item 1 > item 1 items
+#### <a name="subOrganizationOf_anyOf_i1_items"></a>item 1 items
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                             |
@@ -97,110 +90,98 @@
 | [Organization](#subOrganizationOf_anyOf_i1_items_oneOf_i0) |
 | [item 1](#subOrganizationOf_anyOf_i1_items_oneOf_i1)       |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > Organization`
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization`
 
 **Title:** Organization
+
+inline description of Organization
 
 |                           |                       |
 | ------------------------- | --------------------- |
 | **Type**                  | `object`              |
-| **Required**              | No                    |
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
-**Description:** inline description of Organization
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `item 1`
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > item 1`
+reference iri of Organization
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-**Description:** reference iri of Organization
-
-## <a name="altLabel"></a>Property `Organization > altLabel`
+## <a name="altLabel"></a>Property `altLabel`
 
 **Title:** alternative label
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+alternative name (trading name, colloquial name) for an organization
 
-**Description:** alternative name (trading name, colloquial name) for an organization
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="altLabelMap"></a>Property `Organization > altLabelMap`
+## <a name="altLabelMap"></a>Property `altLabelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-## <a name="notation"></a>Property `Organization > notation`
+## <a name="notation"></a>Property `notation`
 
 **Title:** notation
+
+List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
 | Any of(Option)               |
 | ---------------------------- |
 | [item 0](#notation_anyOf_i0) |
 | [item 1](#notation_anyOf_i1) |
 
-### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > item 0`
+### <a name="notation_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > item 1`
+### <a name="notation_anyOf_i1"></a>Property `item 1`
 
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `array of string` |
-| **Required** | No                |
+|          |                   |
+| -------- | ----------------- |
+| **Type** | `array of string` |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
 | [item 1 items](#notation_anyOf_i1_items) | -           |
 
-#### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > item 1 > item 1 items
+#### <a name="notation_anyOf_i1_items"></a>item 1 items
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
+|          |          |
+| -------- | -------- |
+| **Type** | `string` |
 
-## <a name="prefLabel"></a>Property `Organization > prefLabel`
+## <a name="prefLabel"></a>Property `prefLabel`
 
 **Title:** preferred label
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+Preferred or legal name of the organization
 
-**Description:** Preferred or legal name of the organization
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="prefLabelMap"></a>Property `Organization > prefLabelMap`
+## <a name="prefLabelMap"></a>Property `prefLabelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

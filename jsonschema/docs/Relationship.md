@@ -1,14 +1,13 @@
-# Relationship
+
 
 **Title:** Relationship
+
+Information about an item or entity that has some relationship to a dataset and the nature of the relationship
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** Information about an item or entity that has some relationship to a dataset and the nature of the relationship
 
 | Property                 | Type   | Title/Description |
 | ------------------------ | ------ | ----------------- |
@@ -17,36 +16,36 @@
 | + [hadRole](#hadRole )   | string | role              |
 | + [relation](#relation ) | string | relation          |
 
-## <a name="@id"></a>Property `Relationship > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Relationship > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string`         |
-| **Required** | No               |
-| **Default**  | `"Relationship"` |
+|             |                  |
+| ----------- | ---------------- |
+| **Type**    | `string`         |
+| **Default** | `"Relationship"` |
 
-## <a name="hadRole"></a>Property `Relationship > hadRole`
+## <a name="hadRole"></a>Property `hadRole`
 
 **Title:** role
 
+The function of an entity or agent with respect to a dataset
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** The function of an entity or agent with respect to a dataset
-
-## <a name="relation"></a>Property `Relationship > relation`
+## <a name="relation"></a>Property `relation`
 
 **Title:** relation
+
+Link to the entity related to the dataset
 
 |              |          |
 | ------------ | -------- |
@@ -54,7 +53,3 @@
 | **Required** | Yes      |
 | **Format**   | `iri`    |
 
-**Description:** Link to the entity related to the dataset
-
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

@@ -1,85 +1,78 @@
-# ConceptScheme
+
 
 **Title:** ConceptScheme
+
+A system for specifying approved values for a single concept
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
-**Description:** A system for specifying approved values for a single concept
+| Property                             | Type               | Title/Description                                                                   |
+| ------------------------------------ | ------------------ | ----------------------------------------------------------------------------------- |
+| - [@id](#@id )                       | string             | -                                                                                   |
+| - [@type](#@type )                   | string             | -                                                                                   |
+| - [version](#version )               | null or string     | version info                                                                        |
+| - [created](#created )               | More than one type | creation date                                                                       |
+| - [description](#description )       | null or string     | description                                                                         |
+| - [descriptionMap](#descriptionMap ) | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
+| - [issued](#issued )                 | More than one type | publication date                                                                    |
+| - [modified](#modified )             | More than one type | update/modification date                                                            |
+| + [title](#title )                   | string             | title                                                                               |
+| - [titleMap](#titleMap )             | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-| Property                             | Type           | Title/Description                                                                   |
-| ------------------------------------ | -------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                       | string         | -                                                                                   |
-| - [@type](#@type )                   | string         | -                                                                                   |
-| - [version](#version )               | null or string | version info                                                                        |
-| - [created](#created )               | Combination    | creation date                                                                       |
-| - [description](#description )       | null or string | description                                                                         |
-| - [descriptionMap](#descriptionMap ) | null or object | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [issued](#issued )                 | Combination    | publication date                                                                    |
-| - [modified](#modified )             | Combination    | update/modification date                                                            |
-| + [title](#title )                   | string         | title                                                                               |
-| - [titleMap](#titleMap )             | null or object | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+## <a name="@id"></a>Property `@id`
 
-## <a name="@id"></a>Property `ConceptScheme > @id`
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+## <a name="@type"></a>Property `@type`
 
-## <a name="@type"></a>Property `ConceptScheme > @type`
+|             |                   |
+| ----------- | ----------------- |
+| **Type**    | `string`          |
+| **Default** | `"ConceptScheme"` |
 
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `string`          |
-| **Required** | No                |
-| **Default**  | `"ConceptScheme"` |
-
-## <a name="version"></a>Property `ConceptScheme > version`
+## <a name="version"></a>Property `version`
 
 **Title:** version info
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+A version number or other version designation of the concept scheme
 
-**Description:** A version number or other version designation of the concept scheme
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="created"></a>Property `ConceptScheme > created`
+## <a name="created"></a>Property `created`
 
 **Title:** creation date
+
+The date on which the Concept Scheme was first created
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The date on which the Concept Scheme was first created
 
 | Any of(Option)              |
 | --------------------------- |
 | [item 0](#created_anyOf_i0) |
 | [item 1](#created_anyOf_i1) |
 
-### <a name="created_anyOf_i0"></a>Property `ConceptScheme > created > anyOf > item 0`
+### <a name="created_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="created_anyOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1`
+### <a name="created_anyOf_i1"></a>Property `item 1`
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
+|          |             |
+| -------- | ----------- |
+| **Type** | `combining` |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -88,102 +81,93 @@
 | [item 2](#created_anyOf_i1_oneOf_i2) |
 | [item 3](#created_anyOf_i1_oneOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 0`
+#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 1`
+#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 2`
+#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `item 2`
+
+A year in YYYY format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 3`
+#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `item 3`
+
+A year and month in YYYY-MM format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>Property `ConceptScheme > description`
+## <a name="description"></a>Property `description`
 
 **Title:** description
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+A description of the concept scheme
 
-**Description:** A description of the concept scheme
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="descriptionMap"></a>Property `ConceptScheme > descriptionMap`
+## <a name="descriptionMap"></a>Property `descriptionMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-## <a name="issued"></a>Property `ConceptScheme > issued`
+## <a name="issued"></a>Property `issued`
 
 **Title:** publication date
+
+The date of formal issuance (e.g., publication) of the concept scheme
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The date of formal issuance (e.g., publication) of the concept scheme
 
 | Any of(Option)             |
 | -------------------------- |
 | [item 0](#issued_anyOf_i0) |
 | [item 1](#issued_anyOf_i1) |
 
-### <a name="issued_anyOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 0`
+### <a name="issued_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="issued_anyOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1`
+### <a name="issued_anyOf_i1"></a>Property `item 1`
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
+|          |             |
+| -------- | ----------- |
+| **Type** | `combining` |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -192,82 +176,75 @@
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `item 2`
+
+A year in YYYY format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `item 3`
+
+A year and month in YYYY-MM format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `ConceptScheme > modified`
+## <a name="modified"></a>Property `modified`
 
 **Title:** update/modification date
+
+The most recent date at which the concept scheme was changed or modified
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The most recent date at which the concept scheme was changed or modified
 
 | Any of(Option)               |
 | ---------------------------- |
 | [item 0](#modified_anyOf_i0) |
 | [item 1](#modified_anyOf_i1) |
 
-### <a name="modified_anyOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 0`
+### <a name="modified_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="modified_anyOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `item 1`
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
+|          |             |
+| -------- | ----------- |
+| **Type** | `combining` |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -276,71 +253,64 @@
 | [item 2](#modified_anyOf_i1_oneOf_i2) |
 | [item 3](#modified_anyOf_i1_oneOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `item 0`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `item 1`
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `item 2`
+
+A year in YYYY format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `item 3`
+
+A year and month in YYYY-MM format
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>Property `ConceptScheme > title`
+## <a name="title"></a>Property `title`
 
 **Title:** title
+
+The title of the concept scheme
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** The title of the concept scheme
+## <a name="titleMap"></a>Property `titleMap`
 
-## <a name="titleMap"></a>Property `ConceptScheme > titleMap`
+Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-**Description:** Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

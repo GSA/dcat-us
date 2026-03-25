@@ -1,200 +1,183 @@
-# Location
+
 
 **Title:** Location
+
+Information about a specific geographic location
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
-**Description:** Information about a specific geographic location
+| Property                         | Type               | Title/Description                                                                         |
+| -------------------------------- | ------------------ | ----------------------------------------------------------------------------------------- |
+| - [@id](#@id )                   | string             | -                                                                                         |
+| - [@type](#@type )               | string             | -                                                                                         |
+| - [bbox](#bbox )                 | More than one type | bounding box                                                                              |
+| - [centroid](#centroid )         | More than one type | centroid                                                                                  |
+| - [identifier](#identifier )     | More than one type | identifier                                                                                |
+| - [geometry](#geometry )         | More than one type | geometry                                                                                  |
+| - [inScheme](#inScheme )         | More than one type | gazetteer                                                                                 |
+| - [altLabel](#altLabel )         | null or string     | alternative name                                                                          |
+| - [altLabelMap](#altLabelMap )   | null or object     | Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [prefLabel](#prefLabel )       | null or string     | geographic name                                                                           |
+| - [prefLabelMap](#prefLabelMap ) | null or object     | Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
 
-| Property                         | Type           | Title/Description                                                                         |
-| -------------------------------- | -------------- | ----------------------------------------------------------------------------------------- |
-| - [@id](#@id )                   | string         | -                                                                                         |
-| - [@type](#@type )               | string         | -                                                                                         |
-| - [bbox](#bbox )                 | Combination    | bounding box                                                                              |
-| - [centroid](#centroid )         | Combination    | centroid                                                                                  |
-| - [identifier](#identifier )     | Combination    | identifier                                                                                |
-| - [geometry](#geometry )         | Combination    | geometry                                                                                  |
-| - [inScheme](#inScheme )         | Combination    | gazetteer                                                                                 |
-| - [altLabel](#altLabel )         | null or string | alternative name                                                                          |
-| - [altLabelMap](#altLabelMap )   | null or object | Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [prefLabel](#prefLabel )       | null or string | geographic name                                                                           |
-| - [prefLabelMap](#prefLabelMap ) | null or object | Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
+## <a name="@id"></a>Property `@id`
 
-## <a name="@id"></a>Property `Location > @id`
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+## <a name="@type"></a>Property `@type`
 
-## <a name="@type"></a>Property `Location > @type`
+|             |              |
+| ----------- | ------------ |
+| **Type**    | `string`     |
+| **Default** | `"Location"` |
 
-|              |              |
-| ------------ | ------------ |
-| **Type**     | `string`     |
-| **Required** | No           |
-| **Default**  | `"Location"` |
-
-## <a name="bbox"></a>Property `Location > bbox`
+## <a name="bbox"></a>Property `bbox`
 
 **Title:** bounding box
+
+bounding box of a location (in any coordinate system)
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** bounding box of a location (in any coordinate system)
 
 | Any of(Option)           |
 | ------------------------ |
 | [item 0](#bbox_anyOf_i0) |
 | [item 1](#bbox_anyOf_i1) |
 
-### <a name="bbox_anyOf_i0"></a>Property `Location > bbox > anyOf > item 0`
+### <a name="bbox_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="bbox_anyOf_i1"></a>Property `Location > bbox > anyOf > item 1`
+### <a name="bbox_anyOf_i1"></a>Property `item 1`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+Bounding box represented in some string format
 
-**Description:** Bounding box represented in some string format
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="centroid"></a>Property `Location > centroid`
+## <a name="centroid"></a>Property `centroid`
 
 **Title:** centroid
+
+The geographic center (centroid) of a location
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The geographic center (centroid) of a location
 
 | Any of(Option)               |
 | ---------------------------- |
 | [item 0](#centroid_anyOf_i0) |
 | [item 1](#centroid_anyOf_i1) |
 
-### <a name="centroid_anyOf_i0"></a>Property `Location > centroid > anyOf > item 0`
+### <a name="centroid_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="centroid_anyOf_i1"></a>Property `Location > centroid > anyOf > item 1`
+### <a name="centroid_anyOf_i1"></a>Property `item 1`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+Center point in some string format
 
-**Description:** Center point in some string format
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="identifier"></a>Property `Location > identifier`
+## <a name="identifier"></a>Property `identifier`
 
 **Title:** identifier
+
+A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
 | Any of(Option)                 |
 | ------------------------------ |
 | [item 0](#identifier_anyOf_i0) |
 | [item 1](#identifier_anyOf_i1) |
 
-### <a name="identifier_anyOf_i0"></a>Property `Location > identifier > anyOf > item 0`
+### <a name="identifier_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="identifier_anyOf_i1"></a>Property `Location > identifier > anyOf > item 1`
+### <a name="identifier_anyOf_i1"></a>Property `item 1`
 
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `array of string` |
-| **Required** | No                |
+|          |                   |
+| -------- | ----------------- |
+| **Type** | `array of string` |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
 | [item 1 items](#identifier_anyOf_i1_items) | -           |
 
-#### <a name="identifier_anyOf_i1_items"></a>Location > identifier > anyOf > item 1 > item 1 items
+#### <a name="identifier_anyOf_i1_items"></a>item 1 items
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
+|          |          |
+| -------- | -------- |
+| **Type** | `string` |
 
-## <a name="geometry"></a>Property `Location > geometry`
+## <a name="geometry"></a>Property `geometry`
 
 **Title:** geometry
+
+Associates a location with a corresponding geometry
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** Associates a location with a corresponding geometry
 
 | Any of(Option)               |
 | ---------------------------- |
 | [item 0](#geometry_anyOf_i0) |
 | [item 1](#geometry_anyOf_i1) |
 
-### <a name="geometry_anyOf_i0"></a>Property `Location > geometry > anyOf > item 0`
+### <a name="geometry_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="geometry_anyOf_i1"></a>Property `Location > geometry > anyOf > item 1`
+### <a name="geometry_anyOf_i1"></a>Property `item 1`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+String format of the full geometry of the location
 
-**Description:** String format of the full geometry of the location
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="inScheme"></a>Property `Location > inScheme`
+## <a name="inScheme"></a>Property `inScheme`
 
 **Title:** gazetteer
+
+The gazetteer to which the location belongs
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** The gazetteer to which the location belongs
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -202,407 +185,66 @@
 | [ConceptScheme](#inScheme_oneOf_i1) |
 | [item 2](#inScheme_oneOf_i2)        |
 
-### <a name="inScheme_oneOf_i0"></a>Property `Location > inScheme > oneOf > item 0`
+### <a name="inScheme_oneOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="inScheme_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme`
+### <a name="inScheme_oneOf_i1"></a>Property `ConceptScheme`
 
 **Title:** ConceptScheme
 
-|                           |                                          |
-| ------------------------- | ---------------------------------------- |
-| **Type**                  | `object`                                 |
-| **Required**              | No                                       |
-| **Additional properties** | Any type allowed                         |
-| **Defined in**            | /dcat-us/3.0.0/definitions/conceptscheme |
+inline description of the gazetteer
 
-**Description:** inline description of the gazetteer
+|                           |                                     |
+| ------------------------- | ----------------------------------- |
+| **Type**                  | `object`                            |
+| **Additional properties** | Any type allowed                    |
+| **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-| Property                                               | Type           | Title/Description                                                                   |
-| ------------------------------------------------------ | -------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#inScheme_oneOf_i1_@id )                       | string         | -                                                                                   |
-| - [@type](#inScheme_oneOf_i1_@type )                   | string         | -                                                                                   |
-| - [version](#inScheme_oneOf_i1_version )               | null or string | version info                                                                        |
-| - [created](#inScheme_oneOf_i1_created )               | Combination    | creation date                                                                       |
-| - [description](#inScheme_oneOf_i1_description )       | null or string | description                                                                         |
-| - [descriptionMap](#inScheme_oneOf_i1_descriptionMap ) | null or object | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [issued](#inScheme_oneOf_i1_issued )                 | Combination    | publication date                                                                    |
-| - [modified](#inScheme_oneOf_i1_modified )             | Combination    | update/modification date                                                            |
-| + [title](#inScheme_oneOf_i1_title )                   | string         | title                                                                               |
-| - [titleMap](#inScheme_oneOf_i1_titleMap )             | null or object | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+### <a name="inScheme_oneOf_i2"></a>Property `item 2`
 
-#### <a name="inScheme_oneOf_i1_@id"></a>Property `Location > inScheme > oneOf > ConceptScheme > @id`
+reference iri of the gazetteer
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-#### <a name="inScheme_oneOf_i1_@type"></a>Property `Location > inScheme > oneOf > ConceptScheme > @type`
-
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `string`          |
-| **Required** | No                |
-| **Default**  | `"ConceptScheme"` |
-
-#### <a name="inScheme_oneOf_i1_version"></a>Property `Location > inScheme > oneOf > ConceptScheme > version`
-
-**Title:** version info
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** A version number or other version designation of the concept scheme
-
-#### <a name="inScheme_oneOf_i1_created"></a>Property `Location > inScheme > oneOf > ConceptScheme > created`
-
-**Title:** creation date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The date on which the Concept Scheme was first created
-
-| Any of(Option)                                |
-| --------------------------------------------- |
-| [item 0](#inScheme_oneOf_i1_created_anyOf_i0) |
-| [item 1](#inScheme_oneOf_i1_created_anyOf_i1) |
-
-##### <a name="inScheme_oneOf_i1_created_anyOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-##### <a name="inScheme_oneOf_i1_created_anyOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                         |
-| ------------------------------------------------------ |
-| [item 0](#inScheme_oneOf_i1_created_anyOf_i1_oneOf_i0) |
-| [item 1](#inScheme_oneOf_i1_created_anyOf_i1_oneOf_i1) |
-| [item 2](#inScheme_oneOf_i1_created_anyOf_i1_oneOf_i2) |
-| [item 3](#inScheme_oneOf_i1_created_anyOf_i1_oneOf_i3) |
-
-###### <a name="inScheme_oneOf_i1_created_anyOf_i1_oneOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_created_anyOf_i1_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_created_anyOf_i1_oneOf_i2"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="inScheme_oneOf_i1_created_anyOf_i1_oneOf_i3"></a>Property `Location > inScheme > oneOf > ConceptScheme > created > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-#### <a name="inScheme_oneOf_i1_description"></a>Property `Location > inScheme > oneOf > ConceptScheme > description`
-
-**Title:** description
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
-
-**Description:** A description of the concept scheme
-
-#### <a name="inScheme_oneOf_i1_descriptionMap"></a>Property `Location > inScheme > oneOf > ConceptScheme > descriptionMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-#### <a name="inScheme_oneOf_i1_issued"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued`
-
-**Title:** publication date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The date of formal issuance (e.g., publication) of the concept scheme
-
-| Any of(Option)                               |
-| -------------------------------------------- |
-| [item 0](#inScheme_oneOf_i1_issued_anyOf_i0) |
-| [item 1](#inScheme_oneOf_i1_issued_anyOf_i1) |
-
-##### <a name="inScheme_oneOf_i1_issued_anyOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-##### <a name="inScheme_oneOf_i1_issued_anyOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                        |
-| ----------------------------------------------------- |
-| [item 0](#inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i0) |
-| [item 1](#inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i1) |
-| [item 2](#inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i2) |
-| [item 3](#inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i3) |
-
-###### <a name="inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i2"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="inScheme_oneOf_i1_issued_anyOf_i1_oneOf_i3"></a>Property `Location > inScheme > oneOf > ConceptScheme > issued > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-#### <a name="inScheme_oneOf_i1_modified"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified`
-
-**Title:** update/modification date
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `combining`      |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** The most recent date at which the concept scheme was changed or modified
-
-| Any of(Option)                                 |
-| ---------------------------------------------- |
-| [item 0](#inScheme_oneOf_i1_modified_anyOf_i0) |
-| [item 1](#inScheme_oneOf_i1_modified_anyOf_i1) |
-
-##### <a name="inScheme_oneOf_i1_modified_anyOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 0`
-
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
-
-##### <a name="inScheme_oneOf_i1_modified_anyOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1`
-
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `combining` |
-| **Required** | No          |
-
-| One of(Option)                                          |
-| ------------------------------------------------------- |
-| [item 0](#inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i0) |
-| [item 1](#inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i1) |
-| [item 2](#inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i2) |
-| [item 3](#inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i3) |
-
-###### <a name="inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i0"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 0`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 1`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
-
-###### <a name="inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i2"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 2`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year in YYYY format
-
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
-
-###### <a name="inScheme_oneOf_i1_modified_anyOf_i1_oneOf_i3"></a>Property `Location > inScheme > oneOf > ConceptScheme > modified > anyOf > item 1 > oneOf > item 3`
-
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
-
-**Description:** A year and month in YYYY-MM format
-
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
-
-#### <a name="inScheme_oneOf_i1_title"></a>Property `Location > inScheme > oneOf > ConceptScheme > title`
-
-**Title:** title
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
-
-**Description:** The title of the concept scheme
-
-#### <a name="inScheme_oneOf_i1_titleMap"></a>Property `Location > inScheme > oneOf > ConceptScheme > titleMap`
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
-
-**Description:** Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-### <a name="inScheme_oneOf_i2"></a>Property `Location > inScheme > oneOf > item 2`
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
-
-**Description:** reference iri of the gazetteer
-
-## <a name="altLabel"></a>Property `Location > altLabel`
+## <a name="altLabel"></a>Property `altLabel`
 
 **Title:** alternative name
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+An alternative name for a location
 
-**Description:** An alternative name for a location
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="altLabelMap"></a>Property `Location > altLabelMap`
+## <a name="altLabelMap"></a>Property `altLabelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-## <a name="prefLabel"></a>Property `Location > prefLabel`
+## <a name="prefLabel"></a>Property `prefLabel`
 
 **Title:** geographic name
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+Preferred label of the Location
 
-**Description:** Preferred label of the Location
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="prefLabelMap"></a>Property `Location > prefLabelMap`
+## <a name="prefLabelMap"></a>Property `prefLabelMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

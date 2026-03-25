@@ -1,102 +1,93 @@
-# CUIRestriction
+
 
 **Title:** CUIRestriction
+
+A specific restriction on handling Controlled Unclassified Information (CUI)
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
 
-**Description:** A specific restriction on handling Controlled Unclassified Information (CUI)
+| Property                                                           | Type               | Title/Description                |
+| ------------------------------------------------------------------ | ------------------ | -------------------------------- |
+| - [@id](#@id )                                                     | string             | -                                |
+| - [@type](#@type )                                                 | string             | -                                |
+| + [cuiBannerMarking](#cuiBannerMarking )                           | string             | CUI banner marking               |
+| + [designationIndicator](#designationIndicator )                   | string             | CUI designation indicator        |
+| - [requiredIndicatorPerAuthority](#requiredIndicatorPerAuthority ) | More than one type | required indicator per authority |
 
-| Property                                                           | Type        | Title/Description                |
-| ------------------------------------------------------------------ | ----------- | -------------------------------- |
-| - [@id](#@id )                                                     | string      | -                                |
-| - [@type](#@type )                                                 | string      | -                                |
-| + [cuiBannerMarking](#cuiBannerMarking )                           | string      | CUI banner marking               |
-| + [designationIndicator](#designationIndicator )                   | string      | CUI designation indicator        |
-| - [requiredIndicatorPerAuthority](#requiredIndicatorPerAuthority ) | Combination | required indicator per authority |
+## <a name="@id"></a>Property `@id`
 
-## <a name="@id"></a>Property `CUIRestriction > @id`
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+## <a name="@type"></a>Property `@type`
 
-## <a name="@type"></a>Property `CUIRestriction > @type`
+|             |                    |
+| ----------- | ------------------ |
+| **Type**    | `string`           |
+| **Default** | `"CUIRestriction"` |
 
-|              |                    |
-| ------------ | ------------------ |
-| **Type**     | `string`           |
-| **Required** | No                 |
-| **Default**  | `"CUIRestriction"` |
-
-## <a name="cuiBannerMarking"></a>Property `CUIRestriction > cuiBannerMarking`
+## <a name="cuiBannerMarking"></a>Property `cuiBannerMarking`
 
 **Title:** CUI banner marking
 
+CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
-
-## <a name="designationIndicator"></a>Property `CUIRestriction > designationIndicator`
+## <a name="designationIndicator"></a>Property `designationIndicator`
 
 **Title:** CUI designation indicator
 
+Designation Indicator shows which agency made the document CUI
+
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | Yes      |
 
-**Description:** Designation Indicator shows which agency made the document CUI
-
-## <a name="requiredIndicatorPerAuthority"></a>Property `CUIRestriction > requiredIndicatorPerAuthority`
+## <a name="requiredIndicatorPerAuthority"></a>Property `requiredIndicatorPerAuthority`
 
 **Title:** required indicator per authority
+
+List of free text of the required indicator
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** List of free text of the required indicator
 
 | Any of(Option)                                    |
 | ------------------------------------------------- |
 | [item 0](#requiredIndicatorPerAuthority_anyOf_i0) |
 | [item 1](#requiredIndicatorPerAuthority_anyOf_i1) |
 
-### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 0`
+### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `item 0`
 
-|              |        |
-| ------------ | ------ |
-| **Type**     | `null` |
-| **Required** | No     |
+|          |        |
+| -------- | ------ |
+| **Type** | `null` |
 
-### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1`
+### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `item 1`
 
-|              |                   |
-| ------------ | ----------------- |
-| **Type**     | `array of string` |
-| **Required** | No                |
+|          |                   |
+| -------- | ----------------- |
+| **Type** | `array of string` |
 
 | Each item of this array must be                               | Description |
 | ------------------------------------------------------------- | ----------- |
 | [item 1 items](#requiredIndicatorPerAuthority_anyOf_i1_items) | -           |
 
-#### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1 > item 1 items
+#### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>item 1 items
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
+|          |          |
+| -------- | -------- |
+| **Type** | `string` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)

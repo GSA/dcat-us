@@ -1,14 +1,13 @@
-# RightsStatement
+
 
 **Title:** RightsStatement
+
+A statement about rights held with respect to another item
 
 |                           |                  |
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
-| **Required**              | No               |
 | **Additional properties** | Any type allowed |
-
-**Description:** A statement about rights held with respect to another item
 
 | Property                                     | Type           | Title/Description                                                                     |
 | -------------------------------------------- | -------------- | ------------------------------------------------------------------------------------- |
@@ -17,41 +16,35 @@
 | - [attributionText](#attributionText )       | null or string | attribution text                                                                      |
 | - [attributionTextMap](#attributionTextMap ) | null or object | Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 
-## <a name="@id"></a>Property `RightsStatement > @id`
+## <a name="@id"></a>Property `@id`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | No       |
-| **Format**   | `iri`    |
+|            |          |
+| ---------- | -------- |
+| **Type**   | `string` |
+| **Format** | `iri`    |
 
-## <a name="@type"></a>Property `RightsStatement > @type`
+## <a name="@type"></a>Property `@type`
 
-|              |                     |
-| ------------ | ------------------- |
-| **Type**     | `string`            |
-| **Required** | No                  |
-| **Default**  | `"RightsStatement"` |
+|             |                     |
+| ----------- | ------------------- |
+| **Type**    | `string`            |
+| **Default** | `"RightsStatement"` |
 
-## <a name="attributionText"></a>Property `RightsStatement > attributionText`
+## <a name="attributionText"></a>Property `attributionText`
 
 **Title:** attribution text
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or string` |
-| **Required** | No               |
+The custom attribution text for the rights statement
 
-**Description:** The custom attribution text for the rights statement
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or string` |
 
-## <a name="attributionTextMap"></a>Property `RightsStatement > attributionTextMap`
+## <a name="attributionTextMap"></a>Property `attributionTextMap`
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `null or object` |
-| **Required** | No               |
+Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-**Description:** Language map for attribution text. E.g. {'es': 'spanish words', 'fr': 'french words'}
+|          |                  |
+| -------- | ---------------- |
+| **Type** | `null or object` |
 
-----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans)
