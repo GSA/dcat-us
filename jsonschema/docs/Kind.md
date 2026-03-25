@@ -4,9 +4,8 @@
 
 Contact information for an individual or entity
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                   | Type               | Title/Description |
@@ -24,16 +23,14 @@ Contact information for an individual or entity
 
 ## <a name="@id"></a>Property `Kind > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Kind > @type`
 
-|             |          |
-| ----------- | -------- |
 | **Type**    | `string` |
+| ----------- | -------- |
 | **Default** | `"Kind"` |
 
 ## <a name="address"></a>Property `Kind > address`
@@ -42,9 +39,8 @@ Contact information for an individual or entity
 
 The address of the contact
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)              |
@@ -54,15 +50,13 @@ The address of the contact
 
 ### <a name="address_anyOf_i0"></a>Property `Kind > address > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="address_anyOf_i1"></a>Property `Kind > address > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be         | Description |
 | --------------------------------------- | ----------- |
@@ -70,9 +64,8 @@ The address of the contact
 
 #### <a name="address_anyOf_i1_items"></a>Kind > address > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                              |
@@ -86,9 +79,8 @@ The address of the contact
 
 inline address information
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
 
@@ -96,9 +88,8 @@ inline address information
 
 reference iri of Address
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="hasEmail"></a>Property `Kind > hasEmail`
@@ -107,9 +98,8 @@ reference iri of Address
 
 Email address for the contact
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 | Restrictions                      |                                                                                                                                                                                                                                                                 |
@@ -122,9 +112,8 @@ Email address for the contact
 
 The family name of the contact
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="fn"></a>Property `Kind > fn`
 
@@ -132,9 +121,8 @@ The family name of the contact
 
 The formatted text of the name of the contact
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="given-name"></a>Property `Kind > given-name`
@@ -143,9 +131,8 @@ The formatted text of the name of the contact
 
 The given name of the contact
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="organization-name"></a>Property `Kind > organization-name`
 
@@ -153,9 +140,8 @@ The given name of the contact
 
 The name of the organization to contact
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="tel"></a>Property `Kind > tel`
 
@@ -163,9 +149,8 @@ The name of the organization to contact
 
 The telephone number for the contact
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="title"></a>Property `Kind > title`
 
@@ -173,7 +158,6 @@ The telephone number for the contact
 
 The position role of the person to contact
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 

@@ -4,9 +4,8 @@
 
 A restriction on the permitted access to a resource
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                       | Type               | Title/Description                                                                         |
@@ -20,16 +19,14 @@ A restriction on the permitted access to a resource
 
 ## <a name="@id"></a>Property `AccessRestriction > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `AccessRestriction > @type`
 
-|             |                       |
-| ----------- | --------------------- |
 | **Type**    | `string`              |
+| ----------- | --------------------- |
 | **Default** | `"AccessRestriction"` |
 
 ## <a name="restrictionNote"></a>Property `AccessRestriction > restrictionNote`
@@ -38,17 +35,15 @@ A restriction on the permitted access to a resource
 
 A note related to the access restriction
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="restrictionNoteMap"></a>Property `AccessRestriction > restrictionNoteMap`
 
 Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="restrictionStatus"></a>Property `AccessRestriction > restrictionStatus`
 
@@ -56,9 +51,8 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 The indication of whether or not there are access restrictions on the item
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Required**              | Yes              |
 | **Additional properties** | Any type allowed |
 
@@ -73,9 +67,8 @@ The indication of whether or not there are access restrictions on the item
 
 inline description of restriction status
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -83,9 +76,8 @@ inline description of restriction status
 
 reference iri of restriction status
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="specificRestriction"></a>Property `AccessRestriction > specificRestriction`
@@ -94,9 +86,8 @@ reference iri of restriction status
 
 The specific NARA restriction associated with this restriction
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                           |
@@ -107,9 +98,8 @@ The specific NARA restriction associated with this restriction
 
 ### <a name="specificRestriction_oneOf_i0"></a>Property `AccessRestriction > specificRestriction > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="specificRestriction_oneOf_i1"></a>Property `AccessRestriction > specificRestriction > oneOf > Concept`
 
@@ -117,9 +107,8 @@ The specific NARA restriction associated with this restriction
 
 inline description of the specific restriction
 
-|                           |                                        |
-| ------------------------- | -------------------------------------- |
 | **Type**                  | `object`                               |
+| ------------------------- | -------------------------------------- |
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
 
@@ -127,8 +116,7 @@ inline description of the specific restriction
 
 reference iri of the specific restriction
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 

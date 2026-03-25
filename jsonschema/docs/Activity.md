@@ -4,9 +4,8 @@
 
 An activity which a resource could be related to
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                 | Type               | Title/Description                                                              |
@@ -19,16 +18,14 @@ An activity which a resource could be related to
 
 ## <a name="@id"></a>Property `Activity > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Activity > @type`
 
-|             |              |
-| ----------- | ------------ |
 | **Type**    | `string`     |
+| ----------- | ------------ |
 | **Default** | `"Activity"` |
 
 ## <a name="category"></a>Property `Activity > category`
@@ -37,9 +34,8 @@ An activity which a resource could be related to
 
 The category of the Activity
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                |
@@ -50,9 +46,8 @@ The category of the Activity
 
 ### <a name="category_anyOf_i0"></a>Property `Activity > category > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="category_anyOf_i1"></a>Property `Activity > category > anyOf > Concept`
 
@@ -60,9 +55,8 @@ The category of the Activity
 
 inline description of the category
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -70,9 +64,8 @@ inline description of the category
 
 reference iri of the category
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="label"></a>Property `Activity > label`
@@ -81,16 +74,14 @@ reference iri of the category
 
 A human-readable label for the activity
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="labelMap"></a>Property `Activity > labelMap`
 
 Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

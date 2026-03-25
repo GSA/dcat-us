@@ -4,9 +4,8 @@
 
 A single physical address
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                             | Type           | Title/Description   |
@@ -21,16 +20,14 @@ A single physical address
 
 ## <a name="@id"></a>Property `Address > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Address > @type`
 
-|             |             |
-| ----------- | ----------- |
 | **Type**    | `string`    |
+| ----------- | ----------- |
 | **Default** | `"Address"` |
 
 ## <a name="country-name"></a>Property `Address > country-name`
@@ -39,9 +36,8 @@ A single physical address
 
 The country of the Address
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="locality"></a>Property `Address > locality`
 
@@ -49,9 +45,8 @@ The country of the Address
 
 The city of the Address
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="postal-code"></a>Property `Address > postal-code`
 
@@ -59,9 +54,8 @@ The city of the Address
 
 The postal code of the Address
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="region"></a>Property `Address > region`
 
@@ -69,9 +63,8 @@ The postal code of the Address
 
 The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="street-address"></a>Property `Address > street-address`
 
@@ -79,7 +72,6 @@ The administrative area of the Address. Depending on the country, this correspon
 
 The street name and civic number of an Address
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 

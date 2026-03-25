@@ -4,9 +4,8 @@
 
 An entity that could be involved with a resource
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                 | Type               | Title/Description |
@@ -18,16 +17,14 @@ An entity that could be involved with a resource
 
 ## <a name="@id"></a>Property `Agent > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Agent > @type`
 
-|             |           |
-| ----------- | --------- |
 | **Type**    | `string`  |
+| ----------- | --------- |
 | **Default** | `"Agent"` |
 
 ## <a name="category"></a>Property `Agent > category`
@@ -36,9 +33,8 @@ An entity that could be involved with a resource
 
 The type of the agent that makes the item available
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                |
@@ -49,9 +45,8 @@ The type of the agent that makes the item available
 
 ### <a name="category_oneOf_i0"></a>Property `Agent > category > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="category_oneOf_i1"></a>Property `Agent > category > oneOf > Concept`
 
@@ -59,9 +54,8 @@ The type of the agent that makes the item available
 
 inline description of the agent type
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -69,9 +63,8 @@ inline description of the agent type
 
 reference iri of the agent type
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="name"></a>Property `Agent > name`
@@ -80,8 +73,7 @@ reference iri of the agent type
 
 The name of the agent
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 

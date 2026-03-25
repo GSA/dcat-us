@@ -4,9 +4,8 @@
 
 A record in a catalog, describing the registration of a single resource
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                         | Type               | Title/Description                                                                   |
@@ -26,16 +25,14 @@ A record in a catalog, describing the registration of a single resource
 
 ## <a name="@id"></a>Property `CatalogRecord > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `CatalogRecord > @type`
 
-|             |                   |
-| ----------- | ----------------- |
 | **Type**    | `string`          |
+| ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
 
 ## <a name="status"></a>Property `CatalogRecord > status`
@@ -44,9 +41,8 @@ A record in a catalog, describing the registration of a single resource
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)              |
@@ -57,9 +53,8 @@ The status of the catalog record in the context of editorial flow of the dataset
 
 ### <a name="status_oneOf_i0"></a>Property `CatalogRecord > status > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="status_oneOf_i1"></a>Property `CatalogRecord > status > oneOf > Concept`
 
@@ -67,9 +62,8 @@ The status of the catalog record in the context of editorial flow of the dataset
 
 inline description of status
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -77,9 +71,8 @@ inline description of status
 
 reference iri of status
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="conformsTo"></a>Property `CatalogRecord > conformsTo`
@@ -88,9 +81,8 @@ reference iri of status
 
 An Application Profile that the Catalog Record's metadata conforms to
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                   |
@@ -101,9 +93,8 @@ An Application Profile that the Catalog Record's metadata conforms to
 
 ### <a name="conformsTo_oneOf_i0"></a>Property `CatalogRecord > conformsTo > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="conformsTo_oneOf_i1"></a>Property `CatalogRecord > conformsTo > oneOf > Standard`
 
@@ -111,9 +102,8 @@ An Application Profile that the Catalog Record's metadata conforms to
 
 inline description of application profile
 
-|                           |                           |
-| ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
+| ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
@@ -121,9 +111,8 @@ inline description of application profile
 
 reference iri of application profile
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="description"></a>Property `CatalogRecord > description`
@@ -132,9 +121,8 @@ reference iri of application profile
 
 A list of free-text accounts of the catalog record
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                  |
@@ -144,15 +132,13 @@ A list of free-text accounts of the catalog record
 
 ### <a name="description_anyOf_i0"></a>Property `CatalogRecord > description > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="description_anyOf_i1"></a>Property `CatalogRecord > description > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be             | Description |
 | ------------------------------------------- | ----------- |
@@ -160,9 +146,8 @@ A list of free-text accounts of the catalog record
 
 #### <a name="description_anyOf_i1_items"></a>CatalogRecord > description > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="issued"></a>Property `CatalogRecord > issued`
 
@@ -170,9 +155,8 @@ A list of free-text accounts of the catalog record
 
 List of dates on which the catalog record was included in the catalog
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)             |
@@ -182,15 +166,13 @@ List of dates on which the catalog record was included in the catalog
 
 ### <a name="issued_anyOf_i0"></a>Property `CatalogRecord > issued > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `CatalogRecord > issued > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be        | Description |
 | -------------------------------------- | ----------- |
@@ -198,9 +180,8 @@ List of dates on which the catalog record was included in the catalog
 
 #### <a name="issued_anyOf_i1_items"></a>CatalogRecord > issued > anyOf > item 1 > item 1 items
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -211,17 +192,15 @@ List of dates on which the catalog record was included in the catalog
 
 ##### <a name="issued_anyOf_i1_items_oneOf_i0"></a>Property `CatalogRecord > issued > anyOf > item 1 > item 1 items > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 ##### <a name="issued_anyOf_i1_items_oneOf_i1"></a>Property `CatalogRecord > issued > anyOf > item 1 > item 1 items > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -229,9 +208,8 @@ List of dates on which the catalog record was included in the catalog
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -242,9 +220,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -257,9 +234,8 @@ A year and month in YYYY-MM format
 
 A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -270,15 +246,13 @@ A language or languages used in the textual metadata describing titles, descript
 
 ### <a name="language_anyOf_i0"></a>Property `CatalogRecord > language > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="language_anyOf_i1"></a>Property `CatalogRecord > language > anyOf > item 1`
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions   |   |
 | -------------- | - |
@@ -286,9 +260,8 @@ A language or languages used in the textual metadata describing titles, descript
 
 ### <a name="language_anyOf_i2"></a>Property `CatalogRecord > language > anyOf > item 2`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
@@ -296,9 +269,8 @@ A language or languages used in the textual metadata describing titles, descript
 
 #### <a name="language_anyOf_i2_items"></a>CatalogRecord > language > anyOf > item 2 > item 2 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions   |   |
 | -------------- | - |
@@ -310,9 +282,8 @@ A language or languages used in the textual metadata describing titles, descript
 
 The most recent date on which the catalog record was changed or modified
 
-|              |             |
-| ------------ | ----------- |
 | **Type**     | `combining` |
+| ------------ | ----------- |
 | **Required** | Yes         |
 
 | One of(Option)               |
@@ -324,17 +295,15 @@ The most recent date on which the catalog record was changed or modified
 
 ### <a name="modified_oneOf_i0"></a>Property `CatalogRecord > modified > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 ### <a name="modified_oneOf_i1"></a>Property `CatalogRecord > modified > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -342,9 +311,8 @@ The most recent date on which the catalog record was changed or modified
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -355,9 +323,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -370,9 +337,8 @@ A year and month in YYYY-MM format
 
 The original metadata that was used in creating metadata for the items in the catalog record
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)               |
@@ -383,17 +349,15 @@ The original metadata that was used in creating metadata for the items in the ca
 
 ### <a name="source_oneOf_i0"></a>Property `CatalogRecord > source > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="source_oneOf_i1"></a>Property `CatalogRecord > source > oneOf > resource`
 
 inline description of the source
 
-|                           |                           |
-| ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
+| ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Resource](./Resource.md) |
 
@@ -401,9 +365,8 @@ inline description of the source
 
 reference iri of the source
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="title"></a>Property `CatalogRecord > title`
@@ -412,17 +375,15 @@ reference iri of the source
 
 A name given to the Catalog Record
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="titleMap"></a>Property `CatalogRecord > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="primaryTopic"></a>Property `CatalogRecord > primaryTopic`
 
@@ -430,8 +391,7 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 A link to the Dataset, Data service or Catalog described in the Catalog Record
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 

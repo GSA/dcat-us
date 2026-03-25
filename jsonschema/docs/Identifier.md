@@ -4,9 +4,8 @@
 
 Information about an identifier scheme
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                         | Type               | Title/Description |
@@ -21,16 +20,14 @@ Information about an identifier scheme
 
 ## <a name="@id"></a>Property `Identifier > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Identifier > @type`
 
-|             |                |
-| ----------- | -------------- |
 | **Type**    | `string`       |
+| ----------- | -------------- |
 | **Default** | `"Identifier"` |
 
 ## <a name="schemaAgency"></a>Property `Identifier > schemaAgency`
@@ -39,9 +36,8 @@ Information about an identifier scheme
 
 The name of the agency that issued the identifier
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="creator"></a>Property `Identifier > creator`
 
@@ -49,9 +45,8 @@ The name of the agency that issued the identifier
 
 the agency that manages the identifier scheme
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                    |
@@ -62,9 +57,8 @@ the agency that manages the identifier scheme
 
 ### <a name="creator_oneOf_i0"></a>Property `Identifier > creator > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="creator_oneOf_i1"></a>Property `Identifier > creator > oneOf > Organization`
 
@@ -72,9 +66,8 @@ the agency that manages the identifier scheme
 
 inline description of the creator
 
-|                           |                                   |
-| ------------------------- | --------------------------------- |
 | **Type**                  | `object`                          |
+| ------------------------- | --------------------------------- |
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
@@ -82,9 +75,8 @@ inline description of the creator
 
 reference iri of the creator
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="issued"></a>Property `Identifier > issued`
@@ -93,9 +85,8 @@ reference iri of the creator
 
 The date of formal issuance (e.g., publication) of the Identifier
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)             |
@@ -105,15 +96,13 @@ The date of formal issuance (e.g., publication) of the Identifier
 
 ### <a name="issued_anyOf_i0"></a>Property `Identifier > issued > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `Identifier > issued > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -124,17 +113,15 @@ The date of formal issuance (e.g., publication) of the Identifier
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -142,9 +129,8 @@ The date of formal issuance (e.g., publication) of the Identifier
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -155,9 +141,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -170,9 +155,8 @@ A year and month in YYYY-MM format
 
 version of the identifier scheme
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="notation"></a>Property `Identifier > notation`
 
@@ -180,7 +164,6 @@ version of the identifier scheme
 
 abbreviation or code from code lists for an identifier
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 

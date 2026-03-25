@@ -4,9 +4,8 @@
 
 A file that distributes the dataset
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                                   | Type               | Title/Description                                                                   |
@@ -50,16 +49,14 @@ A file that distributes the dataset
 
 ## <a name="@id"></a>Property `Distribution > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Distribution > @type`
 
-|             |                  |
-| ----------- | ---------------- |
 | **Type**    | `string`         |
+| ----------- | ---------------- |
 | **Default** | `"Distribution"` |
 
 ## <a name="representationTechnique"></a>Property `Distribution > representationTechnique`
@@ -68,9 +65,8 @@ A file that distributes the dataset
 
 The format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                               |
@@ -81,9 +77,8 @@ The format in which an Distribution is released. This is different from the file
 
 ### <a name="representationTechnique_oneOf_i0"></a>Property `Distribution > representationTechnique > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="representationTechnique_oneOf_i1"></a>Property `Distribution > representationTechnique > oneOf > Concept`
 
@@ -91,9 +86,8 @@ The format in which an Distribution is released. This is different from the file
 
 inline description of Concept
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -101,9 +95,8 @@ inline description of Concept
 
 reference iri of Concept
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="status"></a>Property `Distribution > status`
@@ -112,9 +105,8 @@ reference iri of Concept
 
 The status of the distribution in the context of maturity lifecycle
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)              |
@@ -125,9 +117,8 @@ The status of the distribution in the context of maturity lifecycle
 
 ### <a name="status_oneOf_i0"></a>Property `Distribution > status > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="status_oneOf_i1"></a>Property `Distribution > status > oneOf > Concept`
 
@@ -135,9 +126,8 @@ The status of the distribution in the context of maturity lifecycle
 
 inline description of Concept
 
-|                           |                                              |
-| ------------------------- | -------------------------------------------- |
 | **Type**                  | `object`                                     |
+| ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_oneOf_i1) |
 
@@ -145,9 +135,8 @@ inline description of Concept
 
 reference iri of Concept
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="characterEncoding"></a>Property `Distribution > characterEncoding`
@@ -156,9 +145,8 @@ reference iri of Concept
 
 The list of character encodings of the Distribution, by using as value the character set names in the IANA register 
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                        |
@@ -168,15 +156,13 @@ The list of character encodings of the Distribution, by using as value the chara
 
 ### <a name="characterEncoding_anyOf_i0"></a>Property `Distribution > characterEncoding > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="characterEncoding_anyOf_i1"></a>Property `Distribution > characterEncoding > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be                   | Description |
 | ------------------------------------------------- | ----------- |
@@ -184,9 +170,8 @@ The list of character encodings of the Distribution, by using as value the chara
 
 #### <a name="characterEncoding_anyOf_i1_items"></a>Distribution > characterEncoding > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="accessService"></a>Property `Distribution > accessService`
 
@@ -194,9 +179,8 @@ The list of character encodings of the Distribution, by using as value the chara
 
 A data service that gives access to the distribution of the dataset
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                    |
@@ -206,15 +190,13 @@ A data service that gives access to the distribution of the dataset
 
 ### <a name="accessService_anyOf_i0"></a>Property `Distribution > accessService > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="accessService_anyOf_i1"></a>Property `Distribution > accessService > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be               | Description |
 | --------------------------------------------- | ----------- |
@@ -222,9 +204,8 @@ A data service that gives access to the distribution of the dataset
 
 #### <a name="accessService_anyOf_i1_items"></a>Distribution > accessService > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                        |
@@ -238,9 +219,8 @@ A data service that gives access to the distribution of the dataset
 
 inline description of DataService
 
-|                           |                                 |
-| ------------------------- | ------------------------------- |
 | **Type**                  | `object`                        |
+| ------------------------- | ------------------------------- |
 | **Additional properties** | Any type allowed                |
 | **Defined in**            | [Dataservice](./Dataservice.md) |
 
@@ -248,9 +228,8 @@ inline description of DataService
 
 reference iri of DataService
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="accessURL"></a>Property `Distribution > accessURL`
@@ -259,9 +238,8 @@ reference iri of DataService
 
 A URL that gives access to a Distribution of the Dataset
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                |
@@ -271,17 +249,15 @@ A URL that gives access to a Distribution of the Dataset
 
 ### <a name="accessURL_anyOf_i0"></a>Property `Distribution > accessURL > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="accessURL_anyOf_i1"></a>Property `Distribution > accessURL > anyOf > item 1`
 
 reference iri of Resource
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="byteSize"></a>Property `Distribution > byteSize`
@@ -290,9 +266,8 @@ reference iri of Resource
 
 The size of a Distribution in bytes
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="compressFormat"></a>Property `Distribution > compressFormat`
 
@@ -300,9 +275,8 @@ The size of a Distribution in bytes
 
 The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                        |
@@ -313,9 +287,8 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 ### <a name="compressFormat_oneOf_i0"></a>Property `Distribution > compressFormat > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="compressFormat_oneOf_i1"></a>Property `Distribution > compressFormat > oneOf > MediaType`
 
@@ -323,9 +296,8 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 inline description of MediaType
 
-|                           |                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Type**                  | `object`                                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                                                 |
 | **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
 
@@ -333,9 +305,8 @@ inline description of MediaType
 
 reference iri of MediaType
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="downloadURL"></a>Property `Distribution > downloadURL`
@@ -344,9 +315,8 @@ reference iri of MediaType
 
 A URL that is a direct link to a downloadable file of the Distribution in a given format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                  |
@@ -356,17 +326,15 @@ A URL that is a direct link to a downloadable file of the Distribution in a give
 
 ### <a name="downloadURL_anyOf_i0"></a>Property `Distribution > downloadURL > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="downloadURL_anyOf_i1"></a>Property `Distribution > downloadURL > anyOf > item 1`
 
 reference iri of Resource
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="mediaType"></a>Property `Distribution > mediaType`
@@ -375,9 +343,8 @@ reference iri of Resource
 
 The media type of the Distribution as defined in the official register of media types managed by IANA
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                   |
@@ -388,9 +355,8 @@ The media type of the Distribution as defined in the official register of media 
 
 ### <a name="mediaType_oneOf_i0"></a>Property `Distribution > mediaType > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="mediaType_oneOf_i1"></a>Property `Distribution > mediaType > oneOf > MediaType`
 
@@ -398,9 +364,8 @@ The media type of the Distribution as defined in the official register of media 
 
 inline description of MediaType
 
-|                           |                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Type**                  | `object`                                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                                                 |
 | **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
 
@@ -408,9 +373,8 @@ inline description of MediaType
 
 reference iri of MediaType
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="packageFormat"></a>Property `Distribution > packageFormat`
@@ -419,9 +383,8 @@ reference iri of MediaType
 
 The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                       |
@@ -432,9 +395,8 @@ The format of the file in which one or more data files are grouped together, e.g
 
 ### <a name="packageFormat_oneOf_i0"></a>Property `Distribution > packageFormat > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="packageFormat_oneOf_i1"></a>Property `Distribution > packageFormat > oneOf > MediaType`
 
@@ -442,9 +404,8 @@ The format of the file in which one or more data files are grouped together, e.g
 
 inline description of MediaType
 
-|                           |                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Type**                  | `object`                                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                                                 |
 | **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
 
@@ -452,9 +413,8 @@ inline description of MediaType
 
 reference iri of MediaType
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="spatialResolutionInMeters"></a>Property `Distribution > spatialResolutionInMeters`
@@ -463,9 +423,8 @@ reference iri of MediaType
 
 The minimum spatial separation resolvable in a dataset distribution, measured in meters
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="temporalResolution"></a>Property `Distribution > temporalResolution`
 
@@ -473,9 +432,8 @@ The minimum spatial separation resolvable in a dataset distribution, measured in
 
 The minimum time period resolvable in the dataset distribution
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="availability"></a>Property `Distribution > availability`
 
@@ -483,9 +441,8 @@ The minimum time period resolvable in the dataset distribution
 
 An indication how long it is planned to keep the Distribution of the Dataset available
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                    |
@@ -496,9 +453,8 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 
 ### <a name="availability_oneOf_i0"></a>Property `Distribution > availability > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="availability_oneOf_i1"></a>Property `Distribution > availability > oneOf > Concept`
 
@@ -506,9 +462,8 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 
 inline description of Concept
 
-|                           |                                              |
-| ------------------------- | -------------------------------------------- |
 | **Type**                  | `object`                                     |
+| ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_oneOf_i1) |
 
@@ -516,9 +471,8 @@ inline description of Concept
 
 reference iri of Concept
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="accessRestriction"></a>Property `Distribution > accessRestriction`
@@ -527,9 +481,8 @@ reference iri of Concept
 
 List of access restrictions related to the distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                        |
@@ -539,15 +492,13 @@ List of access restrictions related to the distribution
 
 ### <a name="accessRestriction_anyOf_i0"></a>Property `Distribution > accessRestriction > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="accessRestriction_anyOf_i1"></a>Property `Distribution > accessRestriction > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be                   | Description |
 | ------------------------------------------------- | ----------- |
@@ -555,9 +506,8 @@ List of access restrictions related to the distribution
 
 #### <a name="accessRestriction_anyOf_i1_items"></a>Distribution > accessRestriction > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                                  |
@@ -571,9 +521,8 @@ List of access restrictions related to the distribution
 
 inline description of AccessRestriction
 
-|                           |                                                                                                                                                                            |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                                           |
 | **Same definition as**    | [AccessRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRestriction_anyOf_i1_items_oneOf_i0) |
 
@@ -581,9 +530,8 @@ inline description of AccessRestriction
 
 reference iri of AccessRestriction
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="cuiRestriction"></a>Property `Distribution > cuiRestriction`
@@ -592,9 +540,8 @@ reference iri of AccessRestriction
 
 Controlled Unclassified Information restriction related to the distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                             |
@@ -605,9 +552,8 @@ Controlled Unclassified Information restriction related to the distribution
 
 ### <a name="cuiRestriction_oneOf_i0"></a>Property `Distribution > cuiRestriction > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="cuiRestriction_oneOf_i1"></a>Property `Distribution > cuiRestriction > oneOf > CUIRestriction`
 
@@ -615,9 +561,8 @@ Controlled Unclassified Information restriction related to the distribution
 
 inline description of CUIRestriction
 
-|                           |                                                                                                                                                       |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                              |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                      |
 | **Same definition as**    | [CUIRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_cuiRestriction_oneOf_i1) |
 
@@ -625,9 +570,8 @@ inline description of CUIRestriction
 
 reference iri of CUIRestriction
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="describedBy"></a>Property `Distribution > describedBy`
@@ -636,9 +580,8 @@ reference iri of CUIRestriction
 
 A distribution containing the Data Dictionary for this distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                        |
@@ -649,9 +592,8 @@ A distribution containing the Data Dictionary for this distribution
 
 ### <a name="describedBy_oneOf_i0"></a>Property `Distribution > describedBy > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="describedBy_oneOf_i1"></a>Property `Distribution > describedBy > oneOf > Distribution`
 
@@ -659,9 +601,8 @@ A distribution containing the Data Dictionary for this distribution
 
 inline description of the data dictionary
 
-|                           |                                                                                                                             |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                    |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                            |
 | **Same definition as**    | [Distribution](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0) |
 
@@ -669,9 +610,8 @@ inline description of the data dictionary
 
 reference iri of the data dictionary
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="useRestriction"></a>Property `Distribution > useRestriction`
@@ -680,9 +620,8 @@ reference iri of the data dictionary
 
 Use restriction related to the distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                     |
@@ -692,15 +631,13 @@ Use restriction related to the distribution
 
 ### <a name="useRestriction_anyOf_i0"></a>Property `Distribution > useRestriction > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="useRestriction_anyOf_i1"></a>Property `Distribution > useRestriction > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be                | Description |
 | ---------------------------------------------- | ----------- |
@@ -708,9 +645,8 @@ Use restriction related to the distribution
 
 #### <a name="useRestriction_anyOf_i1_items"></a>Distribution > useRestriction > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                            |
@@ -724,9 +660,8 @@ Use restriction related to the distribution
 
 inline description of UseRestriction
 
-|                           |                                                                                                                                                                      |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                                             |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                                     |
 | **Same definition as**    | [UseRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_useRestriction_anyOf_i1_items_oneOf_i0) |
 
@@ -734,9 +669,8 @@ inline description of UseRestriction
 
 reference iri of UseRestriction
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="accessRights"></a>Property `Distribution > accessRights`
@@ -745,9 +679,8 @@ reference iri of UseRestriction
 
 Information regarding access or restrictions based on privacy, security, or other policies
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                            |
@@ -758,9 +691,8 @@ Information regarding access or restrictions based on privacy, security, or othe
 
 ### <a name="accessRights_oneOf_i0"></a>Property `Distribution > accessRights > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="accessRights_oneOf_i1"></a>Property `Distribution > accessRights > oneOf > RightsStatement`
 
@@ -768,9 +700,8 @@ Information regarding access or restrictions based on privacy, security, or othe
 
 inline description of RightsStatement
 
-|                           |                                                                                                                                                      |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                     |
 | **Same definition as**    | [RightsStatement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
@@ -778,9 +709,8 @@ inline description of RightsStatement
 
 reference iri of RightsStatement
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="conformsTo"></a>Property `Distribution > conformsTo`
@@ -789,9 +719,8 @@ reference iri of RightsStatement
 
 List of established schemas or reference systems to which the described Distribution conforms
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                 |
@@ -801,15 +730,13 @@ List of established schemas or reference systems to which the described Distribu
 
 ### <a name="conformsTo_anyOf_i0"></a>Property `Distribution > conformsTo > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="conformsTo_anyOf_i1"></a>Property `Distribution > conformsTo > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
@@ -817,9 +744,8 @@ List of established schemas or reference systems to which the described Distribu
 
 #### <a name="conformsTo_anyOf_i1_items"></a>Distribution > conformsTo > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                  |
@@ -833,9 +759,8 @@ List of established schemas or reference systems to which the described Distribu
 
 inline description of Standard
 
-|                           |                                                                                                                                                            |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                                   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                           |
 | **Same definition as**    | [Standard](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_conformsTo_anyOf_i1_items_oneOf_i0) |
 
@@ -843,9 +768,8 @@ inline description of Standard
 
 reference iri of Standard
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="description"></a>Property `Distribution > description`
@@ -854,17 +778,15 @@ reference iri of Standard
 
 A free-text account of the Distribution
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="descriptionMap"></a>Property `Distribution > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="format"></a>Property `Distribution > format`
 
@@ -872,9 +794,8 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The file format of the Distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                |
@@ -885,9 +806,8 @@ The file format of the Distribution
 
 ### <a name="format_oneOf_i0"></a>Property `Distribution > format > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="format_oneOf_i1"></a>Property `Distribution > format > oneOf > MediaType`
 
@@ -895,9 +815,8 @@ The file format of the Distribution
 
 inline description of the format
 
-|                           |                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Type**                  | `object`                                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                                                 |
 | **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
 
@@ -905,9 +824,8 @@ inline description of the format
 
 reference iri of the format
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="identifier"></a>Property `Distribution > identifier`
@@ -916,9 +834,8 @@ reference iri of the format
 
 A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                 |
@@ -928,15 +845,13 @@ A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
 ### <a name="identifier_anyOf_i0"></a>Property `Distribution > identifier > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="identifier_anyOf_i1"></a>Property `Distribution > identifier > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
@@ -944,9 +859,8 @@ A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
 #### <a name="identifier_anyOf_i1_items"></a>Distribution > identifier > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="issued"></a>Property `Distribution > issued`
 
@@ -954,9 +868,8 @@ A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
 The date of formal issuance (e.g., publication) of the Distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)             |
@@ -966,15 +879,13 @@ The date of formal issuance (e.g., publication) of the Distribution
 
 ### <a name="issued_anyOf_i0"></a>Property `Distribution > issued > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `Distribution > issued > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -985,17 +896,15 @@ The date of formal issuance (e.g., publication) of the Distribution
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -1003,9 +912,8 @@ The date of formal issuance (e.g., publication) of the Distribution
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -1016,9 +924,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -1031,9 +938,8 @@ A year and month in YYYY-MM format
 
 A language or languages used in the Distribution. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -1044,15 +950,13 @@ A language or languages used in the Distribution. This should be provided as an 
 
 ### <a name="language_anyOf_i0"></a>Property `Distribution > language > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="language_anyOf_i1"></a>Property `Distribution > language > anyOf > item 1`
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions   |   |
 | -------------- | - |
@@ -1060,9 +964,8 @@ A language or languages used in the Distribution. This should be provided as an 
 
 ### <a name="language_anyOf_i2"></a>Property `Distribution > language > anyOf > item 2`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
@@ -1070,9 +973,8 @@ A language or languages used in the Distribution. This should be provided as an 
 
 #### <a name="language_anyOf_i2_items"></a>Distribution > language > anyOf > item 2 > item 2 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions   |   |
 | -------------- | - |
@@ -1084,9 +986,8 @@ A language or languages used in the Distribution. This should be provided as an 
 
 A license under which the Distribution is made available
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                       |
@@ -1097,9 +998,8 @@ A license under which the Distribution is made available
 
 ### <a name="license_oneOf_i0"></a>Property `Distribution > license > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="license_oneOf_i1"></a>Property `Distribution > license > oneOf > LicenseDocument`
 
@@ -1107,9 +1007,8 @@ A license under which the Distribution is made available
 
 inline description of LicenseDocument
 
-|                           |                                                                                                                                                 |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                |
 | **Same definition as**    | [LicenseDocument](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_license_oneOf_i1) |
 
@@ -1117,9 +1016,8 @@ inline description of LicenseDocument
 
 reference iri of LicenseDocument
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="modified"></a>Property `Distribution > modified`
@@ -1128,9 +1026,8 @@ reference iri of LicenseDocument
 
 The most recent date on which the Distribution was changed or modified
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -1140,15 +1037,13 @@ The most recent date on which the Distribution was changed or modified
 
 ### <a name="modified_anyOf_i0"></a>Property `Distribution > modified > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>Property `Distribution > modified > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -1159,17 +1054,15 @@ The most recent date on which the Distribution was changed or modified
 
 #### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -1177,9 +1070,8 @@ The most recent date on which the Distribution was changed or modified
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -1190,9 +1082,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -1205,9 +1096,8 @@ A year and month in YYYY-MM format
 
 A statement that specifies rights associated with the Distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                      |
@@ -1218,9 +1108,8 @@ A statement that specifies rights associated with the Distribution
 
 ### <a name="rights_oneOf_i0"></a>Property `Distribution > rights > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="rights_oneOf_i1"></a>Property `Distribution > rights > oneOf > RightsStatement`
 
@@ -1228,9 +1117,8 @@ A statement that specifies rights associated with the Distribution
 
 inline description of RightsStatement
 
-|                           |                                                                                                                                                      |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                     |
 | **Same definition as**    | [RightsStatement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
@@ -1238,9 +1126,8 @@ inline description of RightsStatement
 
 reference iri of RightsStatement
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="title"></a>Property `Distribution > title`
@@ -1249,17 +1136,15 @@ reference iri of RightsStatement
 
 A name given to the Distribution
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="titleMap"></a>Property `Distribution > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="hasQualityMeasurement"></a>Property `Distribution > hasQualityMeasurement`
 
@@ -1267,9 +1152,8 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 A list of quality measurements for the distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                            |
@@ -1279,15 +1163,13 @@ A list of quality measurements for the distribution
 
 ### <a name="hasQualityMeasurement_anyOf_i0"></a>Property `Distribution > hasQualityMeasurement > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="hasQualityMeasurement_anyOf_i1"></a>Property `Distribution > hasQualityMeasurement > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be                       | Description |
 | ----------------------------------------------------- | ----------- |
@@ -1295,9 +1177,8 @@ A list of quality measurements for the distribution
 
 #### <a name="hasQualityMeasurement_anyOf_i1_items"></a>Distribution > hasQualityMeasurement > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                                       |
@@ -1311,9 +1192,8 @@ A list of quality measurements for the distribution
 
 inline description of QualityMeasurement
 
-|                           |                                                                                                                                                                                 |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                                                |
 | **Same definition as**    | [QualityMeasurement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
 
@@ -1321,9 +1201,8 @@ inline description of QualityMeasurement
 
 reference iri of QualityMeasurement
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="page"></a>Property `Distribution > page`
@@ -1332,9 +1211,8 @@ reference iri of QualityMeasurement
 
 A page or document about this Distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)           |
@@ -1344,15 +1222,13 @@ A page or document about this Distribution
 
 ### <a name="page_anyOf_i0"></a>Property `Distribution > page > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="page_anyOf_i1"></a>Property `Distribution > page > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be      | Description |
 | ------------------------------------ | ----------- |
@@ -1360,9 +1236,8 @@ A page or document about this Distribution
 
 #### <a name="page_anyOf_i1_items"></a>Distribution > page > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                            |
@@ -1376,9 +1251,8 @@ A page or document about this Distribution
 
 inline description of Document
 
-|                           |                                                                                                                                                      |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                                     |
 | **Same definition as**    | [Document](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_page_anyOf_i1_items_oneOf_i0) |
 
@@ -1386,9 +1260,8 @@ inline description of Document
 
 reference iri of Document
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="image"></a>Property `Distribution > image`
@@ -1397,9 +1270,8 @@ reference iri of Document
 
 A link to a thumbnail picture illustrating the content of the distribution
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)            |
@@ -1409,17 +1281,15 @@ A link to a thumbnail picture illustrating the content of the distribution
 
 ### <a name="image_anyOf_i0"></a>Property `Distribution > image > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="image_anyOf_i1"></a>Property `Distribution > image > anyOf > item 1`
 
 The link to the image
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="checksum"></a>Property `Distribution > checksum`
@@ -1428,9 +1298,8 @@ The link to the image
 
 A mechanism that can be used to verify that the contents of a distribution have not changed
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                 |
@@ -1441,9 +1310,8 @@ A mechanism that can be used to verify that the contents of a distribution have 
 
 ### <a name="checksum_oneOf_i0"></a>Property `Distribution > checksum > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="checksum_oneOf_i1"></a>Property `Distribution > checksum > oneOf > Checksum`
 
@@ -1451,9 +1319,8 @@ A mechanism that can be used to verify that the contents of a distribution have 
 
 inline description of Checksum
 
-|                           |                                                                                                                                           |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**                  | `object`                                                                                                                                  |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                                          |
 | **Same definition as**    | [Checksum](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_checksum_oneOf_i1) |
 
@@ -1461,8 +1328,7 @@ inline description of Checksum
 
 reference iri of Checksum
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 

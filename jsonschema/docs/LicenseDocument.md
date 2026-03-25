@@ -4,9 +4,8 @@
 
 Text of the license for an item
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                       | Type           | Title/Description |
@@ -17,16 +16,14 @@ Text of the license for an item
 
 ## <a name="@id"></a>Property `LicenseDocument > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `LicenseDocument > @type`
 
-|             |                     |
-| ----------- | ------------------- |
 | **Type**    | `string`            |
+| ----------- | ------------------- |
 | **Default** | `"LicenseDocument"` |
 
 ## <a name="licenseText"></a>Property `LicenseDocument > licenseText`
@@ -35,7 +32,6 @@ Text of the license for an item
 
 Full text of the license
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 

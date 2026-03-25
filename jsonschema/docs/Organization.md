@@ -4,9 +4,8 @@
 
 Information about an organization, including other organizations that it is part of
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                   | Type               | Title/Description                                                                      |
@@ -23,16 +22,14 @@ Information about an organization, including other organizations that it is part
 
 ## <a name="@id"></a>Property `Organization > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Organization > @type`
 
-|             |                  |
-| ----------- | ---------------- |
 | **Type**    | `string`         |
+| ----------- | ---------------- |
 | **Default** | `"Organization"` |
 
 ## <a name="name"></a>Property `Organization > name`
@@ -41,9 +38,8 @@ Information about an organization, including other organizations that it is part
 
 The full name of the Organization
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="subOrganizationOf"></a>Property `Organization > subOrganizationOf`
@@ -52,9 +48,8 @@ The full name of the Organization
 
 Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                        |
@@ -64,15 +59,13 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 ### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be                   | Description |
 | ------------------------------------------------- | ----------- |
@@ -80,9 +73,8 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 #### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                             |
@@ -96,9 +88,8 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 inline description of Organization
 
-|                           |                       |
-| ------------------------- | --------------------- |
 | **Type**                  | `object`              |
+| ------------------------- | --------------------- |
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
@@ -106,9 +97,8 @@ inline description of Organization
 
 reference iri of Organization
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="altLabel"></a>Property `Organization > altLabel`
@@ -117,17 +107,15 @@ reference iri of Organization
 
 alternative name (trading name, colloquial name) for an organization
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="altLabelMap"></a>Property `Organization > altLabelMap`
 
 Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="notation"></a>Property `Organization > notation`
 
@@ -135,9 +123,8 @@ Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french w
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -147,15 +134,13 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 
 ### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
@@ -163,9 +148,8 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 
 #### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="prefLabel"></a>Property `Organization > prefLabel`
 
@@ -173,15 +157,13 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 
 Preferred or legal name of the organization
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="prefLabelMap"></a>Property `Organization > prefLabelMap`
 
 Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

@@ -4,9 +4,8 @@
 
 Information about a specific time period with a start- and/or end-time
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                   | Type               | Title/Description |
@@ -18,16 +17,14 @@ Information about a specific time period with a start- and/or end-time
 
 ## <a name="@id"></a>Property `PeriodOfTime > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `PeriodOfTime > @type`
 
-|             |                  |
-| ----------- | ---------------- |
 | **Type**    | `string`         |
+| ----------- | ---------------- |
 | **Default** | `"PeriodOfTime"` |
 
 ## <a name="endDate"></a>Property `PeriodOfTime > endDate`
@@ -36,9 +33,8 @@ Information about a specific time period with a start- and/or end-time
 
 The end date of the period of time
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)              |
@@ -48,15 +44,13 @@ The end date of the period of time
 
 ### <a name="endDate_anyOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="endDate_anyOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | Any of(Option)                       |
 | ------------------------------------ |
@@ -67,17 +61,15 @@ The end date of the period of time
 
 #### <a name="endDate_anyOf_i1_anyOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="endDate_anyOf_i1_anyOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -85,9 +77,8 @@ The end date of the period of time
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -98,9 +89,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -113,9 +103,8 @@ A year and month in YYYY-MM format
 
 The start date of the period of time
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                |
@@ -125,15 +114,13 @@ The start date of the period of time
 
 ### <a name="startDate_anyOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="startDate_anyOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | Any of(Option)                         |
 | -------------------------------------- |
@@ -144,17 +131,15 @@ The start date of the period of time
 
 #### <a name="startDate_anyOf_i1_anyOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="startDate_anyOf_i1_anyOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -162,9 +147,8 @@ The start date of the period of time
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -175,9 +159,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |

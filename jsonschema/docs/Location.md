@@ -4,9 +4,8 @@
 
 Information about a specific geographic location
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                         | Type               | Title/Description                                                                         |
@@ -25,16 +24,14 @@ Information about a specific geographic location
 
 ## <a name="@id"></a>Property `Location > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Location > @type`
 
-|             |              |
-| ----------- | ------------ |
 | **Type**    | `string`     |
+| ----------- | ------------ |
 | **Default** | `"Location"` |
 
 ## <a name="bbox"></a>Property `Location > bbox`
@@ -43,9 +40,8 @@ Information about a specific geographic location
 
 bounding box of a location (in any coordinate system)
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)           |
@@ -55,17 +51,15 @@ bounding box of a location (in any coordinate system)
 
 ### <a name="bbox_anyOf_i0"></a>Property `Location > bbox > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="bbox_anyOf_i1"></a>Property `Location > bbox > anyOf > item 1`
 
 Bounding box represented in some string format
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="centroid"></a>Property `Location > centroid`
@@ -74,9 +68,8 @@ Bounding box represented in some string format
 
 The geographic center (centroid) of a location
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -86,17 +79,15 @@ The geographic center (centroid) of a location
 
 ### <a name="centroid_anyOf_i0"></a>Property `Location > centroid > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="centroid_anyOf_i1"></a>Property `Location > centroid > anyOf > item 1`
 
 Center point in some string format
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="identifier"></a>Property `Location > identifier`
@@ -105,9 +96,8 @@ Center point in some string format
 
 A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                 |
@@ -117,15 +107,13 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 
 ### <a name="identifier_anyOf_i0"></a>Property `Location > identifier > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="identifier_anyOf_i1"></a>Property `Location > identifier > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
@@ -133,9 +121,8 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 
 #### <a name="identifier_anyOf_i1_items"></a>Location > identifier > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="geometry"></a>Property `Location > geometry`
 
@@ -143,9 +130,8 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 
 Associates a location with a corresponding geometry
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -155,17 +141,15 @@ Associates a location with a corresponding geometry
 
 ### <a name="geometry_anyOf_i0"></a>Property `Location > geometry > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="geometry_anyOf_i1"></a>Property `Location > geometry > anyOf > item 1`
 
 String format of the full geometry of the location
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="inScheme"></a>Property `Location > inScheme`
@@ -174,9 +158,8 @@ String format of the full geometry of the location
 
 The gazetteer to which the location belongs
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                      |
@@ -187,9 +170,8 @@ The gazetteer to which the location belongs
 
 ### <a name="inScheme_oneOf_i0"></a>Property `Location > inScheme > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="inScheme_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme`
 
@@ -197,9 +179,8 @@ The gazetteer to which the location belongs
 
 inline description of the gazetteer
 
-|                           |                                     |
-| ------------------------- | ----------------------------------- |
 | **Type**                  | `object`                            |
+| ------------------------- | ----------------------------------- |
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
@@ -207,9 +188,8 @@ inline description of the gazetteer
 
 reference iri of the gazetteer
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="altLabel"></a>Property `Location > altLabel`
@@ -218,17 +198,15 @@ reference iri of the gazetteer
 
 An alternative name for a location
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="altLabelMap"></a>Property `Location > altLabelMap`
 
 Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="prefLabel"></a>Property `Location > prefLabel`
 
@@ -236,15 +214,13 @@ Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 Preferred label of the Location
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="prefLabelMap"></a>Property `Location > prefLabelMap`
 
 Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

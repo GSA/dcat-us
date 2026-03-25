@@ -4,9 +4,8 @@
 
 Information about a specific file format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                 | Type           | Title/Description                                                          |
@@ -18,16 +17,14 @@ Information about a specific file format
 
 ## <a name="@id"></a>Property `MediaType > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `MediaType > @type`
 
-|             |               |
-| ----------- | ------------- |
 | **Type**    | `string`      |
+| ----------- | ------------- |
 | **Default** | `"MediaType"` |
 
 ## <a name="label"></a>Property `MediaType > label`
@@ -36,15 +33,13 @@ Information about a specific file format
 
 The denomination of the Media Type
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="labelMap"></a>Property `MediaType > labelMap`
 
 Language map for label. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

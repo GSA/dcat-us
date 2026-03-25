@@ -4,9 +4,8 @@
 
 A specific restriction on handling Controlled Unclassified Information (CUI)
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                                           | Type               | Title/Description                |
@@ -19,16 +18,14 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 
 ## <a name="@id"></a>Property `CUIRestriction > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `CUIRestriction > @type`
 
-|             |                    |
-| ----------- | ------------------ |
 | **Type**    | `string`           |
+| ----------- | ------------------ |
 | **Default** | `"CUIRestriction"` |
 
 ## <a name="cuiBannerMarking"></a>Property `CUIRestriction > cuiBannerMarking`
@@ -37,9 +34,8 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 
 CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="designationIndicator"></a>Property `CUIRestriction > designationIndicator`
@@ -48,9 +44,8 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 
 Designation Indicator shows which agency made the document CUI
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="requiredIndicatorPerAuthority"></a>Property `CUIRestriction > requiredIndicatorPerAuthority`
@@ -59,9 +54,8 @@ Designation Indicator shows which agency made the document CUI
 
 List of free text of the required indicator
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                                    |
@@ -71,15 +65,13 @@ List of free text of the required indicator
 
 ### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be                               | Description |
 | ------------------------------------------------------------- | ----------- |
@@ -87,7 +79,6 @@ List of free text of the required indicator
 
 #### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 

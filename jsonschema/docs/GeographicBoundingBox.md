@@ -4,9 +4,8 @@
 
 A bounding box in latitude and longitude
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                           | Type   | Title/Description       |
@@ -20,16 +19,14 @@ A bounding box in latitude and longitude
 
 ## <a name="@id"></a>Property `GeographicBoundingBox > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `GeographicBoundingBox > @type`
 
-|             |                           |
-| ----------- | ------------------------- |
 | **Type**    | `string`                  |
+| ----------- | ------------------------- |
 | **Default** | `"GeographicBoundingBox"` |
 
 ## <a name="eastBoundingLongitude"></a>Property `GeographicBoundingBox > eastBoundingLongitude`
@@ -38,9 +35,8 @@ A bounding box in latitude and longitude
 
 East bound longitude in decimal degrees
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="northBoundingLatitude"></a>Property `GeographicBoundingBox > northBoundingLatitude`
@@ -49,9 +45,8 @@ East bound longitude in decimal degrees
 
 North bound latitude in decimal degrees
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="southBoundingLatitude"></a>Property `GeographicBoundingBox > southBoundingLatitude`
@@ -60,9 +55,8 @@ North bound latitude in decimal degrees
 
 South bound latitude in decimal degrees
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="westBoundingLongitude"></a>Property `GeographicBoundingBox > westBoundingLongitude`
@@ -71,8 +65,7 @@ South bound latitude in decimal degrees
 
 West bound longitude in decimal degrees
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 

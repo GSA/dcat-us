@@ -4,9 +4,8 @@
 
 Information about a text document
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                           | Type               | Title/Description                                                                   |
@@ -32,16 +31,14 @@ Information about a text document
 
 ## <a name="@id"></a>Property `Document > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `Document > @type`
 
-|             |              |
-| ----------- | ------------ |
 | **Type**    | `string`     |
+| ----------- | ------------ |
 | **Default** | `"Document"` |
 
 ## <a name="creators"></a>Property `Document > creators`
@@ -50,9 +47,8 @@ Information about a text document
 
 List of authors
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -62,15 +58,13 @@ List of authors
 
 ### <a name="creators_anyOf_i0"></a>Property `Document > creators > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="creators_anyOf_i1"></a>Property `Document > creators > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
@@ -78,9 +72,8 @@ List of authors
 
 #### <a name="creators_anyOf_i1_items"></a>Document > creators > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="publishers"></a>Property `Document > publishers`
 
@@ -88,9 +81,8 @@ List of authors
 
 Publisher
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="mediaType"></a>Property `Document > mediaType`
 
@@ -98,9 +90,8 @@ Publisher
 
 List of file formats of the Document
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                |
@@ -110,15 +101,13 @@ List of file formats of the Document
 
 ### <a name="mediaType_anyOf_i0"></a>Property `Document > mediaType > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="mediaType_anyOf_i1"></a>Property `Document > mediaType > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be           | Description |
 | ----------------------------------------- | ----------- |
@@ -126,9 +115,8 @@ List of file formats of the Document
 
 #### <a name="mediaType_anyOf_i1_items"></a>Document > mediaType > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                  |
@@ -142,9 +130,8 @@ List of file formats of the Document
 
 inline description of MediaType
 
-|                           |                             |
-| ------------------------- | --------------------------- |
 | **Type**                  | `object`                    |
+| ------------------------- | --------------------------- |
 | **Additional properties** | Any type allowed            |
 | **Defined in**            | [Mediatype](./Mediatype.md) |
 
@@ -152,9 +139,8 @@ inline description of MediaType
 
 reference iri of MediaType
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="abstract"></a>Property `Document > abstract`
@@ -163,17 +149,15 @@ reference iri of MediaType
 
 Text abstract of the document
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="abstractMap"></a>Property `Document > abstractMap`
 
 Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="bibliographicCitation"></a>Property `Document > bibliographicCitation`
 
@@ -181,9 +165,8 @@ Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 Bibliographic citation as text
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="conformsTo"></a>Property `Document > conformsTo`
 
@@ -191,9 +174,8 @@ Bibliographic citation as text
 
 A standard to which the document conforms
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                 |
@@ -203,15 +185,13 @@ A standard to which the document conforms
 
 ### <a name="conformsTo_anyOf_i0"></a>Property `Document > conformsTo > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="conformsTo_anyOf_i1"></a>Property `Document > conformsTo > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
@@ -219,9 +199,8 @@ A standard to which the document conforms
 
 #### <a name="conformsTo_anyOf_i1_items"></a>Document > conformsTo > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                  |
@@ -235,9 +214,8 @@ A standard to which the document conforms
 
 inline description of Standard
 
-|                           |                           |
-| ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
+| ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
@@ -245,9 +223,8 @@ inline description of Standard
 
 reference iri of Standard
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="creator"></a>Property `Document > creator`
@@ -256,9 +233,8 @@ reference iri of Standard
 
 The organization responsible for creating the resource
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)              |
@@ -268,15 +244,13 @@ The organization responsible for creating the resource
 
 ### <a name="creator_anyOf_i0"></a>Property `Document > creator > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="creator_anyOf_i1"></a>Property `Document > creator > anyOf > item 1`
 
-|          |         |
-| -------- | ------- |
 | **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be         | Description |
 | --------------------------------------- | ----------- |
@@ -284,9 +258,8 @@ The organization responsible for creating the resource
 
 #### <a name="creator_anyOf_i1_items"></a>Document > creator > anyOf > item 1 > item 1 items
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                                   |
@@ -300,9 +273,8 @@ The organization responsible for creating the resource
 
 inline description of corporate author
 
-|                           |                                   |
-| ------------------------- | --------------------------------- |
 | **Type**                  | `object`                          |
+| ------------------------- | --------------------------------- |
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
@@ -310,9 +282,8 @@ inline description of corporate author
 
 reference iri of corporate author
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="description"></a>Property `Document > description`
@@ -321,17 +292,15 @@ reference iri of corporate author
 
 A free-text account of the Document
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="descriptionMap"></a>Property `Document > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="identifier"></a>Property `Document > identifier`
 
@@ -339,9 +308,8 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 List of unique identifiers for the Document (e.g. DOI, ISBN)
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)                 |
@@ -351,15 +319,13 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 
 ### <a name="identifier_anyOf_i0"></a>Property `Document > identifier > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="identifier_anyOf_i1"></a>Property `Document > identifier > anyOf > item 1`
 
-|          |                   |
-| -------- | ----------------- |
 | **Type** | `array of string` |
+| -------- | ----------------- |
 
 | Each item of this array must be            | Description |
 | ------------------------------------------ | ----------- |
@@ -367,9 +333,8 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 
 #### <a name="identifier_anyOf_i1_items"></a>Document > identifier > anyOf > item 1 > item 1 items
 
-|          |          |
-| -------- | -------- |
 | **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="issued"></a>Property `Document > issued`
 
@@ -377,9 +342,8 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 
 Publication date of the document
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)             |
@@ -389,15 +353,13 @@ Publication date of the document
 
 ### <a name="issued_anyOf_i0"></a>Property `Document > issued > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `Document > issued > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -408,17 +370,15 @@ Publication date of the document
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -426,9 +386,8 @@ Publication date of the document
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -439,9 +398,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -454,9 +412,8 @@ A year and month in YYYY-MM format
 
 publisher organization of the document
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                      |
@@ -467,9 +424,8 @@ publisher organization of the document
 
 ### <a name="publisher_oneOf_i0"></a>Property `Document > publisher > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="publisher_oneOf_i1"></a>Property `Document > publisher > oneOf > Organization`
 
@@ -477,9 +433,8 @@ publisher organization of the document
 
 inline description of publisher organization
 
-|                           |                                                  |
-| ------------------------- | ------------------------------------------------ |
 | **Type**                  | `object`                                         |
+| ------------------------- | ------------------------------------------------ |
 | **Additional properties** | Any type allowed                                 |
 | **Same definition as**    | [Organization](#creator_anyOf_i1_items_oneOf_i0) |
 
@@ -487,9 +442,8 @@ inline description of publisher organization
 
 reference iri of publisher organization
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="title"></a>Property `Document > title`
@@ -498,18 +452,16 @@ reference iri of publisher organization
 
 The title of the document in the indicated language
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="titleMap"></a>Property `Document > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="category"></a>Property `Document > category`
 
@@ -517,9 +469,8 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 Category of the document
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                |
@@ -530,9 +481,8 @@ Category of the document
 
 ### <a name="category_oneOf_i0"></a>Property `Document > category > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="category_oneOf_i1"></a>Property `Document > category > oneOf > Concept`
 
@@ -540,9 +490,8 @@ Category of the document
 
 inline description of Concept
 
-|                           |                                                                  |
-| ------------------------- | ---------------------------------------------------------------- |
 | **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Concept](#conformsTo_anyOf_i1_items_oneOf_i0_category_oneOf_i1) |
 
@@ -550,8 +499,7 @@ inline description of Concept
 
 reference iri of Concept
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 

@@ -4,9 +4,8 @@
 
 A system for specifying approved values for a single concept
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                             | Type               | Title/Description                                                                   |
@@ -24,16 +23,14 @@ A system for specifying approved values for a single concept
 
 ## <a name="@id"></a>Property `ConceptScheme > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `ConceptScheme > @type`
 
-|             |                   |
-| ----------- | ----------------- |
 | **Type**    | `string`          |
+| ----------- | ----------------- |
 | **Default** | `"ConceptScheme"` |
 
 ## <a name="version"></a>Property `ConceptScheme > version`
@@ -42,9 +39,8 @@ A system for specifying approved values for a single concept
 
 A version number or other version designation of the concept scheme
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="created"></a>Property `ConceptScheme > created`
 
@@ -52,9 +48,8 @@ A version number or other version designation of the concept scheme
 
 The date on which the Concept Scheme was first created
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)              |
@@ -64,15 +59,13 @@ The date on which the Concept Scheme was first created
 
 ### <a name="created_anyOf_i0"></a>Property `ConceptScheme > created > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="created_anyOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -83,17 +76,15 @@ The date on which the Concept Scheme was first created
 
 #### <a name="created_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="created_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -101,9 +92,8 @@ The date on which the Concept Scheme was first created
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -114,9 +104,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -129,17 +118,15 @@ A year and month in YYYY-MM format
 
 A description of the concept scheme
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="descriptionMap"></a>Property `ConceptScheme > descriptionMap`
 
 Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="issued"></a>Property `ConceptScheme > issued`
 
@@ -147,9 +134,8 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The date of formal issuance (e.g., publication) of the concept scheme
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)             |
@@ -159,15 +145,13 @@ The date of formal issuance (e.g., publication) of the concept scheme
 
 ### <a name="issued_anyOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -178,17 +162,15 @@ The date of formal issuance (e.g., publication) of the concept scheme
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -196,9 +178,8 @@ The date of formal issuance (e.g., publication) of the concept scheme
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -209,9 +190,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -224,9 +204,8 @@ A year and month in YYYY-MM format
 
 The most recent date at which the concept scheme was changed or modified
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Any of(Option)               |
@@ -236,15 +215,13 @@ The most recent date at which the concept scheme was changed or modified
 
 ### <a name="modified_anyOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1`
 
-|          |             |
-| -------- | ----------- |
 | **Type** | `combining` |
+| -------- | ----------- |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -255,17 +232,15 @@ The most recent date at which the concept scheme was changed or modified
 
 #### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 0`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
 #### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 1`
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
@@ -273,9 +248,8 @@ The most recent date at which the concept scheme was changed or modified
 
 A year in YYYY format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                             |
@@ -286,9 +260,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Restrictions                      |                                                                                                       |
@@ -301,16 +274,14 @@ A year and month in YYYY-MM format
 
 The title of the concept scheme
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="titleMap"></a>Property `ConceptScheme > titleMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

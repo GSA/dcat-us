@@ -4,9 +4,8 @@
 
 A single statement about the provenance of a dataset
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                 | Type           | Title/Description                                                                              |
@@ -18,16 +17,14 @@ A single statement about the provenance of a dataset
 
 ## <a name="@id"></a>Property `ProvenanceStatement > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `ProvenanceStatement > @type`
 
-|             |                         |
-| ----------- | ----------------------- |
 | **Type**    | `string`                |
+| ----------- | ----------------------- |
 | **Default** | `"ProvenanceStatement"` |
 
 ## <a name="label"></a>Property `ProvenanceStatement > label`
@@ -36,15 +33,13 @@ A single statement about the provenance of a dataset
 
 The text of the Provenance Statement
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="labelMap"></a>Property `ProvenanceStatement > labelMap`
 
 Language map for provenance statement text. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 

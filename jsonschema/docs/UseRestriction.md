@@ -4,9 +4,8 @@
 
 A restriction on usage of another item
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                                       | Type               | Title/Description                                                                         |
@@ -20,16 +19,14 @@ A restriction on usage of another item
 
 ## <a name="@id"></a>Property `UseRestriction > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `UseRestriction > @type`
 
-|             |                    |
-| ----------- | ------------------ |
 | **Type**    | `string`           |
+| ----------- | ------------------ |
 | **Default** | `"UseRestriction"` |
 
 ## <a name="restrictionNote"></a>Property `UseRestriction > restrictionNote`
@@ -38,17 +35,15 @@ A restriction on usage of another item
 
 Significant information pertaining to the use or reproduction of the data
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="restrictionNoteMap"></a>Property `UseRestriction > restrictionNoteMap`
 
 Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or object` |
+| -------- | ---------------- |
 
 ## <a name="restrictionStatus"></a>Property `UseRestriction > restrictionStatus`
 
@@ -56,9 +51,8 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 Indication of whether or not there are use restrictions on the archival materials
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Required**              | Yes              |
 | **Additional properties** | Any type allowed |
 
@@ -73,9 +67,8 @@ Indication of whether or not there are use restrictions on the archival material
 
 inline description of restriction status
 
-|                           |                         |
-| ------------------------- | ----------------------- |
 | **Type**                  | `object`                |
+| ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
@@ -83,9 +76,8 @@ inline description of restriction status
 
 reference iri of restriction status
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="specificRestriction"></a>Property `UseRestriction > specificRestriction`
@@ -94,9 +86,8 @@ reference iri of restriction status
 
 The specific NARA restriction associated with the use restriction
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | One of(Option)                           |
@@ -107,9 +98,8 @@ The specific NARA restriction associated with the use restriction
 
 ### <a name="specificRestriction_oneOf_i0"></a>Property `UseRestriction > specificRestriction > oneOf > item 0`
 
-|          |        |
-| -------- | ------ |
 | **Type** | `null` |
+| -------- | ------ |
 
 ### <a name="specificRestriction_oneOf_i1"></a>Property `UseRestriction > specificRestriction > oneOf > Concept`
 
@@ -117,9 +107,8 @@ The specific NARA restriction associated with the use restriction
 
 inline description of the specific restriction
 
-|                           |                                        |
-| ------------------------- | -------------------------------------- |
 | **Type**                  | `object`                               |
+| ------------------------- | -------------------------------------- |
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
 
@@ -127,8 +116,7 @@ inline description of the specific restriction
 
 reference iri of the specific restriction
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 

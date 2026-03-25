@@ -4,9 +4,8 @@
 
 A single measurement of one metric
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `object`         |
+| ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
 | Property                               | Type               | Title/Description |
@@ -19,16 +18,14 @@ A single measurement of one metric
 
 ## <a name="@id"></a>Property `QualityMeasurement > @id`
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="@type"></a>Property `QualityMeasurement > @type`
 
-|             |                        |
-| ----------- | ---------------------- |
 | **Type**    | `string`               |
+| ----------- | ---------------------- |
 | **Default** | `"QualityMeasurement"` |
 
 ## <a name="isMeasurementOf"></a>Property `QualityMeasurement > isMeasurementOf`
@@ -37,9 +34,8 @@ A single measurement of one metric
 
 The metric being observed
 
-|                           |                  |
-| ------------------------- | ---------------- |
 | **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
 | **Required**              | Yes              |
 | **Additional properties** | Any type allowed |
 
@@ -54,9 +50,8 @@ The metric being observed
 
 inline description of Metric
 
-|                           |                       |
-| ------------------------- | --------------------- |
 | **Type**                  | `object`              |
+| ------------------------- | --------------------- |
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
@@ -64,9 +59,8 @@ inline description of Metric
 
 reference iri of Metric
 
-|            |          |
-| ---------- | -------- |
 | **Type**   | `string` |
+| ---------- | -------- |
 | **Format** | `iri`    |
 
 ## <a name="value"></a>Property `QualityMeasurement > value`
@@ -75,9 +69,8 @@ reference iri of Metric
 
 The value computed by metric
 
-|              |          |
-| ------------ | -------- |
 | **Type**     | `string` |
+| ------------ | -------- |
 | **Required** | Yes      |
 
 ## <a name="unitMeasure"></a>Property `QualityMeasurement > unitMeasure`
@@ -86,7 +79,6 @@ The value computed by metric
 
 Unit of measure associated with the value
 
-|          |                  |
-| -------- | ---------------- |
 | **Type** | `null or string` |
+| -------- | ---------------- |
 
