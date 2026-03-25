@@ -15,22 +15,21 @@
     },
     "category": {
       "title": "category",
-      "description": "List of categories for the Agent",
-      "type": ["null", "array"],
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/concept",
-            "description": "inline description of Concept"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Concept",
-            "format": "iri"
-          }
-        ]
-      }
+      "description": "The type of the agent that makes the item available",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of the agent type"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the agent type",
+          "format": "iri"
+        }
+      ]
     },
     "name": {
       "title": "name",
@@ -38,5 +37,5 @@
       "type": "string"
     }
   },
-  "required": ["name"]
+  "required": [ "name" ]
 }
