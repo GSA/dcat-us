@@ -81,7 +81,13 @@ def properties_table_wrap(properties_list):
             # replace combining with something better
             line[line.index("Combination")] = "More than one type"
 
-    return properties_list
+    # remove lines
+    def _remove_me(line):
+        return (line[0].strip("*") == "Required" and line[1] == "No") or (
+            all(not bool(item) for item in line)  # remove empty lines
+        )
+
+    return [line for line in properties_list if not _remove_me(line)]
 
 
 def type_info_table_wrap(type_info_list):
@@ -101,7 +107,10 @@ def type_info_table_wrap(type_info_list):
 
     # remove lines
     def _remove_me(line):
-        return line[0].strip("*") == "Required" and line[1] == "No"
+        return (line[0].strip("*") == "Required" and line[1] == "No") or (
+            all(not bool(item) for item in line)  # remove empty lines
+        )
+
     return [line for line in type_info_list if not _remove_me(line)]
 
 
