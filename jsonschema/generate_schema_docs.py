@@ -3,6 +3,7 @@
 import filecmp
 import glob
 import json
+import re
 import sys
 import tempfile
 
@@ -62,6 +63,48 @@ def check_output_matches(output_dir):
             return 0
 
 
+def _wrapped_filter(old_filter, wrap_func):
+    def _func_that_wraps(*args, **kwargs):
+        return wrap_func(old_filter(*args, **kwargs))
+
+    return _func_that_wraps
+
+
+def properties_table_wrap(properties_list):
+    """Edit the properties list for our preferred format.
+
+    properties_list is a list of lists that will eventually be formatted
+    into a table.
+    """
+    for line in properties_list:
+        if "Combination" in line:
+            # replace combining with something better
+            line[line.index("Combination")] = "More than one type"
+
+    return properties_list
+
+
+def type_info_table_wrap(type_info_list):
+    """Edit the type info table for our preferred format.
+
+    type_info_list is a list of lists that will eventually be formatted
+    into a table.
+    """
+
+    # edit lines
+    for line in type_info_list:
+        if line[0].strip("*") == "Defined in":
+            # This is a link to another type, so turn it into a relative link
+            match = re.match(r"^/dcat-us/3.0.0/definitions/(\w+)", line[1])
+            class_name = match.group(1)
+            line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
+
+    # remove lines
+    def _remove_me(line):
+        return line[0].strip("*") == "Required" and line[1] == "No"
+    return [line for line in type_info_list if not _remove_me(line)]
+
+
 def generate_docs(output_dir):
     """Generate the schema documentation into output_dir."""
     schema_files = ["Catalog.json"] + glob.glob("definitions/*.json")
@@ -77,9 +120,11 @@ def generate_docs(output_dir):
 
     # generation config
     config = {
-        "footer_show_time": False,  # so diff won't always be different
+        "link_to_reused_ref": True,
+        "show_breadcrumbs": True,
         "show_toc": False,
         "template_name": "md",
+        "custom_template_path": "doc_templates/md/content.md",
         "template_md_options": {
             "show_array_restrictions": False,
             "show_heading_numbers": False,
@@ -95,6 +140,21 @@ def generate_docs(output_dir):
             schema_file, output_dir, final_config.result_extension
         )
     template_renderer = TemplateRenderer(final_config)
+
+    # hack the rendering process
+    template_renderer.template.environment.filters["md_properties_table"] = (
+        _wrapped_filter(
+            template_renderer.template.environment.filters["md_properties_table"],
+            properties_table_wrap,
+        )
+    )
+    template_renderer.template.environment.filters["md_type_info_table"] = (
+        _wrapped_filter(
+            template_renderer.template.environment.filters["md_type_info_table"],
+            type_info_table_wrap,
+        )
+    )
+
     generate.generate_schemas_doc(schemas_to_render, template_renderer, loaded_schemas)
     generate.copy_additional_files_to_target(schemas_to_render, final_config)
 
