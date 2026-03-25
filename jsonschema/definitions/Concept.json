@@ -2,74 +2,83 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/concept",
   "title": "Concept",
-  "description": "A labeled value from a specified concept scheme",
-  "type": "object",
-  "properties": {
-    "@id": {
+  "description": "A labeled value from an optionally specified concept scheme",
+  "anyOf": [
+    {
       "type": "string",
-      "format": "iri"
+      "title": "Concept",
+      "description": "The value of the concept, expressed as a string. This is only used when the concept is not further described by the properties of the Concept object and is not linked to a concept scheme."
     },
-    "@type": {
-      "type": "string",
-      "default": "Concept"
-    },
-    "altLabel": {
-      "title": "alternate label",
-      "description": "Alternative label for a concept",
-      "type": ["null", "string"]
-    },
-    "altLabelMap": {
-      "description": "Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
-    "definition": {
-      "title": "definition",
-      "description": "Definition of the controlled vocabulary term",
-      "type": ["null", "string"]
-    },
-    "definitionMap": {
-      "description": "Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
-    "inScheme": {
-      "title": "in scheme",
-      "description": "Concept scheme defining this concept",
-      "oneOf": [
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
-          "description": "inline description of ConceptScheme"
-        },
-        {
+    {
+      "type": "object",
+      "properties": {
+        "@id": {
           "type": "string",
-          "description": "reference iri of ConceptScheme",
           "format": "iri"
-        }
-      ]
-    },
-    "notation": {
-      "title": "notation",
-      "description": "List of abbreviations or codes from code lists for an organization",
-      "anyOf": [
-        {
-          "type": "null"
         },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "@type": {
+          "type": "string",
+          "default": "Concept"
+        },
+        "altLabel": {
+          "title": "alternate label",
+          "description": "Alternative label for a concept",
+          "type": ["null", "string"]
+        },
+        "altLabelMap": {
+          "description": "Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+          "type": ["null", "object"]
+        },
+        "definition": {
+          "title": "definition",
+          "description": "Definition of the controlled vocabulary term",
+          "type": ["null", "string"]
+        },
+        "definitionMap": {
+          "description": "Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+          "type": ["null", "object"]
+        },
+        "inScheme": {
+          "title": "in scheme",
+          "description": "Concept scheme defining this concept",
+          "oneOf": [
+            {
+              "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
+              "description": "inline description of ConceptScheme"
+            },
+            {
+              "type": "string",
+              "description": "reference iri of ConceptScheme",
+              "format": "iri"
+            }
+          ]
+        },
+        "notation": {
+          "title": "notation",
+          "description": "List of abbreviations or codes from code lists for an organization",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "prefLabel": {
+          "title": "preferred label",
+          "description": "Preferred label for the term",
+          "type": "string"
+        },
+        "prefLabelMap": {
+          "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+          "type": ["null", "object"]
         }
-      ]
-    },
-    "prefLabel": {
-      "title": "preferred label",
-      "description": "Preferred label for the term",
-      "type": "string"
-    },
-    "prefLabelMap": {
-      "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      },
+      "required": ["prefLabel"]
     }
-  },
-  "required": ["inScheme", "prefLabel"]
+  ]
 }
