@@ -23,20 +23,20 @@
         "altLabel": {
           "title": "alternate label",
           "description": "Alternative label for a concept",
-          "type": [ "null", "string" ]
+          "type": ["null", "string"]
         },
         "altLabelMap": {
           "description": "Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-          "type": [ "null", "object" ]
+          "type": ["null", "object"]
         },
         "definition": {
           "title": "definition",
           "description": "Definition of the controlled vocabulary term",
-          "type": [ "null", "string" ]
+          "type": ["null", "string"]
         },
         "definitionMap": {
           "description": "Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-          "type": [ "null", "object" ]
+          "type": ["null", "object"]
         },
         "inScheme": {
           "title": "in scheme",
@@ -75,10 +75,10 @@
         },
         "prefLabelMap": {
           "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-          "type": [ "null", "object" ]
+          "type": ["null", "object"]
         }
       },
-      "required": [ "prefLabel" ]
+      "required": ["prefLabel"]
     }
   ]
 }
