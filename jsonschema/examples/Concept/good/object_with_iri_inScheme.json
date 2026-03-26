@@ -1,8 +1,8 @@
 {
-  "@id": "https://resources.data.gov/concepts/transportation",
+  "@id": "https://example.gov/concepts/transportation",
   "@type": "Concept",
   "prefLabel": "Transportation",
   "definition": "Data related to the movement of people and goods via various modes of transport.",
   "notation": [ "TRANS", "T01" ],
-  "inScheme": "https://resources.data.gov/concept-schemes/data-themes"
+  "inScheme": "https://example.gov/concept-schemes/data-themes"
 }
