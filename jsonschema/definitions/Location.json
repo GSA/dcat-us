@@ -44,17 +44,10 @@
     "identifier": {
       "title": "identifier",
       "description": "A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "geometry": {
       "title": "geometry",
@@ -73,7 +66,7 @@
     "inScheme": {
       "title": "gazetteer",
       "description": "The gazetteer to which the location belongs",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },

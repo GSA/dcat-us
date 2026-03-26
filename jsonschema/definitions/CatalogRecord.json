@@ -16,7 +16,7 @@
     "status": {
       "title": "change type",
       "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -34,7 +34,7 @@
     "conformsTo": {
       "title": "application profile",
       "description": "An Application Profile that the Catalog Record's metadata conforms to",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -52,48 +52,34 @@
     "description": {
       "title": "description",
       "description": "A list of free-text accounts of the catalog record",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "issued": {
       "title": "listing date",
       "description": "List of dates on which the catalog record was included in the catalog",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "oneOf": [
-              {
-                "format": "date-time"
-              },
-              {
-                "format": "date"
-              },
-              {
-                "pattern": "^[0-9]{4}$",
-                "description": "A year in YYYY format"
-              },
-              {
-                "pattern": "^[0-9]{4}-[0-9]{2}$",
-                "description": "A year and month in YYYY-MM format"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string",
+        "anyOf": [
+          {
+            "format": "date-time"
+          },
+          {
+            "format": "date"
+          },
+          {
+            "pattern": "^[0-9]{4}$",
+            "description": "A year in YYYY format"
+          },
+          {
+            "pattern": "^[0-9]{4}-[0-9]{2}$",
+            "description": "A year and month in YYYY-MM format"
           }
-        }
-      ]
+        ]
+      }
     },
     "language": {
       "title": "language",
@@ -119,7 +105,7 @@
       "title": "update/modification date",
       "description": "The most recent date on which the catalog record was changed or modified",
       "type": "string",
-      "oneOf": [
+      "anyOf": [
         {
           "format": "date-time"
         },
@@ -139,7 +125,7 @@
     "source": {
       "title": "source metadata",
       "description": "The original metadata that was used in creating metadata for the items in the catalog record",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },

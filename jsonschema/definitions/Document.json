@@ -16,17 +16,10 @@
     "creators": {
       "title": "authors",
       "description": "List of authors",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "publishers": {
       "title": "publisher",
@@ -36,27 +29,20 @@
     "mediaType": {
       "title": "media type",
       "description": "List of file formats of the Document",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-                "description": "inline description of MediaType"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of MediaType",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/mediatype",
+            "description": "inline description of MediaType"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of MediaType",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "abstract": {
       "title": "abstract",
@@ -75,52 +61,38 @@
     "conformsTo": {
       "title": "conforms to standard",
       "description": "A standard to which the document conforms",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                "description": "inline description of Standard"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Standard",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/standard",
+            "description": "inline description of Standard"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Standard",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "creator": {
       "title": "corporate author",
       "description": "The organization responsible for creating the resource",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                "description": "inline description of corporate author"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of corporate author",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/organization",
+            "description": "inline description of corporate author"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of corporate author",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "description": {
       "title": "description",
@@ -134,17 +106,10 @@
     "identifier": {
       "title": "identifier",
       "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "issued": {
       "title": "publication date",
@@ -155,7 +120,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -177,7 +142,7 @@
     "publisher": {
       "title": "publisher",
       "description": "publisher organization of the document",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -204,7 +169,7 @@
     "category": {
       "title": "category",
       "description": "Category of the document",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },

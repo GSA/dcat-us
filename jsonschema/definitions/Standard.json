@@ -22,7 +22,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -53,17 +53,10 @@
     "identifier": {
       "title": "identifier",
       "description": "The main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "issued": {
       "title": "issued",
@@ -74,7 +67,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -102,7 +95,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -133,7 +126,7 @@
     "category": {
       "title": "category",
       "description": "The type of the Standard. A controlled vocabulary for the values has not been established",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -151,7 +144,7 @@
     "inScheme": {
       "title": "in scheme",
       "description": "The reference register to which the Standard belongs",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
