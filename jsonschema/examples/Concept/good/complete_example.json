@@ -1,5 +1,5 @@
 {
-  "@id": "https://resources.data.gov/concepts/environment",
+  "@id": "https://example.gov/concepts/environment",
   "@type": "Concept",
   "prefLabel": "Environment",
   "prefLabelMap": {
@@ -21,7 +21,7 @@
   },
   "notation": [ "ENV", "E01", "ENVI" ],
   "inScheme": {
-    "@id": "https://resources.data.gov/concept-schemes/data-themes",
+    "@id": "https://example.gov/concept-schemes/data-themes",
     "@type": "ConceptScheme",
     "version": "2.0",
     "description": "DCAT-US approved themes for categorizing datasets",
