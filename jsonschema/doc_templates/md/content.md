@@ -84,7 +84,7 @@
     {{- schema | md_restrictions_table | md_generate_table -}}
 
     {# Show array restrictions #}
-    {% if schema.type_name.startswith("array") %}
+    {% if "array" in schema.type_name %}
         {% include "section_array.md" %}
     {% endif %}
 
