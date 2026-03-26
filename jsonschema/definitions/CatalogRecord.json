@@ -138,30 +138,17 @@
     },
     "source": {
       "title": "source metadata",
-      "description": "The original metadata that was used in creating metadata for the items in the catalog record",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/resource",
-          "description": "inline description of the source"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of the source",
-          "format": "iri"
-        }
-      ]
+      "description": "The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself",
+      "type": [ "null", "string" ]
     },
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "primaryTopic": {
       "title": "primary topic",
@@ -169,5 +156,5 @@
       "type": "string"
     }
   },
-  "required": ["modified", "primaryTopic"]
+  "required": [ "modified", "primaryTopic" ]
 }
