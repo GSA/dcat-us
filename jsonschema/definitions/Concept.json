@@ -55,7 +55,7 @@
         },
         "notation": {
           "title": "notation",
-          "description": "List of abbreviations or codes from code lists for an organization",
+          "description": "List of abbreviations or codes from code lists for the Concept",
           "anyOf": [
             {
               "type": "null"
