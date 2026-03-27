@@ -20,6 +20,18 @@ Please review the [DCAT-US v3.0 Schema](https://doi-do.github.io/dcat-us/) and t
 1. [What is DCAT-US?](https://github.com/DOI-DO/dcat-us/wiki/What-is-DCAT%E2%80%90US%3F)
 1. [Discussion and Topics](https://github.com/DOI-DO/dcat-us/wiki#discussion-and-topics)
 
+## Getting Started
+
+To begin working with the schema in Python, you can clone this repository and explore the schema definitions:
+
+```bash
+git clone https://github.com/DOI-DO/dcat-us.git
+cd dcat-us
+# Explore the schema files in the /schema directory
+```
+
+For detailed implementation guidance and a list of fields, please visit the [online documentation](https://doi-do.github.io/dcat-us/).
+
 ## License
 
 This document is a work of the United States Government and is in the public domain. See [17 USC §105](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim) and [the license file](LICENSE.md) for additional information.
