@@ -106,7 +106,7 @@
     },
     "contactPoint": {
       "title": "contact point",
-      "description": "List of contact information that can be used for sending comments about the Dataset",
+      "description": "A single contact point or list of contact information that can be used for sending comments about the Dataset",
       "anyOf": {
         {
           "$ref": "/dcat-us/3.0.0/definitions/kind",
