@@ -152,27 +152,20 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/identifier",
-                "description": "inline description of Identifier"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Identifier",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/identifier",
+            "description": "inline description of Identifier"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Identifier",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "issued": {
       "title": "publication date",
