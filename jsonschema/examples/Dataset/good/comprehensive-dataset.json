@@ -207,7 +207,7 @@
       "@type": "Standard",
       "title": "DCAT-US 3.0",
       "description": "Data Catalog Vocabulary - US Profile Version 3.0",
-      "identifier": [ "DCAT-US-3.0" ],
+      "identifier": "DCAT-US-3.0",
       "created": null,
       "issued": null,
       "modified": null
@@ -275,7 +275,7 @@
     "@type": "Location",
     "prefLabel": "Continental United States",
     "altLabel": "CONUS",
-    "identifier": [ "https://www.wikidata.org/wiki/Q578170" ],
+    "identifier": "https://www.wikidata.org/wiki/Q578170",
     "bbox": "POLYGON((-124.848974 24.396308, -66.885444 24.396308, -66.885444 49.384358, -124.848974 49.384358, -124.848974 24.396308))"
   },
   "temporal": [
