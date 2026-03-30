@@ -1,78 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "AccessRestriction",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "AccessRestriction"
-        },
-        "restrictionNote": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
-            "title": "restriction note",
-            "description": "A note related to the access restriction",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "restrictionNoteMap": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "restrictionStatus": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
-            "title": "restriction status",
-            "description": "The indication of whether or not there are access restrictions on the data.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Concept",
-                    "description": "inline description of Concept"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Concept",
-                    "format": "iri"
-                }
-            ]
-        },
-        "specificRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
-            "title": "specific restriction",
-            "description": "The specific NARA restriction associated with the access restriction",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/accessrestriction",
+  "title": "AccessRestriction",
+  "description": "A restriction on the permitted access to a resource",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "restrictionStatus"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "AccessRestriction"
+    },
+    "restrictionNote": {
+      "title": "restriction note",
+      "description": "A note related to the access restriction",
+      "type": ["null", "string"]
+    },
+    "restrictionNoteMap": {
+      "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "restrictionStatus": {
+      "title": "restriction status",
+      "description": "The indication of whether or not there are access restrictions on the item",
+      "oneOf": [
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of restriction status"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of restriction status",
+          "format": "iri"
+        }
+      ]
+    },
+    "specificRestriction": {
+      "title": "specific restriction",
+      "description": "The specific NARA restriction associated with this restriction",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/concept",
+          "description": "inline description of the specific restriction"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the specific restriction",
+          "format": "iri"
+        }
+      ]
+    }
+  },
+  "required": ["restrictionStatus"]
 }

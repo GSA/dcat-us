@@ -1,102 +1,81 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Organization",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Organization"
-        },
-        "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
-            "title": "name",
-            "description": "The full name of the Organization",
-            "type": "string"
-        },
-        "subOrganizationOf": {
-            "$id": "http://www.w3.org/ns/org#subOrganizationOf",
-            "title": "suborganization of",
-            "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Organization",
-                                "description": "inline description of Organization"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Organization",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "altLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
-            "title": "alternative label",
-            "description": "alternative names (trading names, colloquial names) for an organization",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "altLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "notation": {
-            "$id": "http://www.w3.org/2004/02/skos/core#notation",
-            "title": "notation",
-            "description": "abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-            "title": "preferred label",
-            "description": "Preferred or legal name of the organization",
-            "type": "string"
-        },
-        "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/organization",
+  "title": "Organization",
+  "description": "Information about an organization, including other organizations that it is part of",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "name",
-        "prefLabel"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Organization"
+    },
+    "name": {
+      "title": "name",
+      "description": "The full name of the Organization",
+      "type": "string"
+    },
+    "subOrganizationOf": {
+      "title": "suborganization of",
+      "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#",
+                "description": "inline description of Organization"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Organization",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "altLabel": {
+      "title": "alternative label",
+      "description": "alternative name (trading name, colloquial name) for an organization",
+      "type": ["null", "string"]
+    },
+    "altLabelMap": {
+      "description": "Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    },
+    "notation": {
+      "title": "notation",
+      "description": "List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "prefLabel": {
+      "title": "preferred label",
+      "description": "Preferred or legal name of the organization",
+      "type": ["null", "string"]
+    },
+    "prefLabelMap": {
+      "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "type": ["null", "object"]
+    }
+  },
+  "required": ["name"]
 }

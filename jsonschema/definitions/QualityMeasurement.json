@@ -1,54 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "QualityMeasurement",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "QualityMeasurement"
-        },
-        "isMeasurementOf": {
-            "$id": "http://www.w3.org/ns/dqv#isMeasurementOf",
-            "title": "is measurement of",
-            "description": "Indicates the metric being observed.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Metric",
-                    "description": "inline description of Metric"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Metric",
-                    "format": "iri"
-                }
-            ]
-        },
-        "value": {
-            "$id": "http://www.w3.org/ns/dqv#value",
-            "title": "value",
-            "description": "Refers to values computed by metric.",
-            "type": "string"
-        },
-        "unitMeasure": {
-            "$id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
-            "title": "unit of measure",
-            "description": "Unit of measure associated with the value",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/qualitymeasurement",
+  "title": "QualityMeasurement",
+  "description": "A single measurement of one metric",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "isMeasurementOf",
-        "value"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "QualityMeasurement"
+    },
+    "isMeasurementOf": {
+      "title": "is measurement of",
+      "description": "The metric being observed",
+      "oneOf": [
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/metric",
+          "description": "inline description of Metric"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Metric",
+          "format": "iri"
+        }
+      ]
+    },
+    "value": {
+      "title": "value",
+      "description": "The value computed by metric",
+      "type": "string"
+    },
+    "unitMeasure": {
+      "title": "unit of measure",
+      "description": "Unit of measure associated with the value",
+      "type": ["null", "string"]
+    }
+  },
+  "required": ["isMeasurementOf", "value"]
 }

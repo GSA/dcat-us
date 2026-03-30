@@ -1,81 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Address",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Address"
-        },
-        "country-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#country-name",
-            "title": "country",
-            "description": "The country of an Address of the Kind.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "locality": {
-            "$id": "http://www.w3.org/2006/vcard/ns#locality",
-            "title": "locality",
-            "description": "The city of an Address of the Kind.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "postal-code": {
-            "$id": "http://www.w3.org/2006/vcard/ns#postal-code",
-            "title": "postal code",
-            "description": "The postal code of an Address of the Kind.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "region": {
-            "$id": "http://www.w3.org/2006/vcard/ns#region",
-            "title": "administrative area",
-            "description": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "street-address": {
-            "$id": "http://www.w3.org/2006/vcard/ns#street-address",
-            "title": "street address",
-            "description": "The street name and civic number of an Address of the Kind.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/address",
+  "title": "Address",
+  "description": "A single physical address",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": []
+    "@type": {
+      "type": "string",
+      "default": "Address"
+    },
+    "country-name": {
+      "title": "country",
+      "description": "The country of the Address",
+      "type": ["null", "string"]
+    },
+    "locality": {
+      "title": "locality",
+      "description": "The city of the Address",
+      "type": ["null", "string"]
+    },
+    "postal-code": {
+      "title": "postal code",
+      "description": "The postal code of the Address",
+      "type": ["null", "string"]
+    },
+    "region": {
+      "title": "administrative area",
+      "description": "The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state",
+      "type": ["null", "string"]
+    },
+    "street-address": {
+      "title": "street address",
+      "description": "The street name and civic number of an Address",
+      "type": ["null", "string"]
+    }
+  },
+  "required": []
 }

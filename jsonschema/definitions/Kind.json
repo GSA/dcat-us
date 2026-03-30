@@ -1,123 +1,79 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Kind",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "format": "iri"
-        },
-        "@type": {
-            "type": "string",
-            "default": "Kind"
-        },
-        "address": {
-            "$id": "http://www.w3.org/2006/vcard/ns#address",
-            "title": "address",
-            "description": "This property specifies the address of the contact",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Address",
-                                "description": "inline description of Address"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Address",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasEmail": {
-            "$id": "http://www.w3.org/2006/vcard/ns#hasEmail",
-            "title": "Email",
-            "description": "Email address for the contact",
-            "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
-            "type": "string"
-        },
-        "family-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#family-name",
-            "title": "family name",
-            "description": "This property specifies the family name of the person to contact",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "fn": {
-            "$id": "http://www.w3.org/2006/vcard/ns#fn",
-            "title": "formatted name",
-            "description": "The formatted text corresponding to the name of the contact",
-            "type": "string"
-        },
-        "given-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#given-name",
-            "title": "given name",
-            "description": "This property specifies the given name of the person to contact",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "organization-name": {
-            "$id": "http://www.w3.org/2006/vcard/ns#organization-name",
-            "title": "organization name",
-            "description": "This property specifies the name of the organization to contact",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "tel": {
-            "$id": "http://www.w3.org/2006/vcard/ns#tel",
-            "title": "telephone",
-            "description": "This property specifies the telephone number for telephony communication with the person or organization.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://www.w3.org/2006/vcard/ns#title",
-            "title": "position title",
-            "description": "This property specifies the position role of the person to contact",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/kind",
+  "title": "Kind",
+  "description": "Contact information for an individual or entity",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "iri"
     },
-    "required": [
-        "hasEmail",
-        "fn"
-    ]
+    "@type": {
+      "type": "string",
+      "default": "Kind"
+    },
+    "address": {
+      "title": "address",
+      "description": "The address of the contact",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/address",
+                "description": "inline address information"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Address",
+                "format": "iri"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "hasEmail": {
+      "title": "Email",
+      "description": "Email address for the contact",
+      "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
+      "type": "string"
+    },
+    "family-name": {
+      "title": "family name",
+      "description": "The family name of the contact",
+      "type": ["null", "string"]
+    },
+    "fn": {
+      "title": "formatted name",
+      "description": "The formatted text of the name of the contact",
+      "type": "string"
+    },
+    "given-name": {
+      "title": "given name",
+      "description": "The given name of the contact",
+      "type": ["null", "string"]
+    },
+    "organization-name": {
+      "title": "organization name",
+      "description": "The name of the organization to contact",
+      "type": ["null", "string"]
+    },
+    "tel": {
+      "title": "telephone",
+      "description": "The telephone number for the contact",
+      "type": ["null", "string"]
+    },
+    "title": {
+      "title": "position title",
+      "description": "The position role of the person to contact",
+      "type": ["null", "string"]
+    }
+  },
+  "required": ["hasEmail", "fn"]
 }
