@@ -2,35 +2,51 @@
 
 **Title:** Identifier
 
-Information about an identifier scheme
+A unique identifier and optionally it's scheme and other relevant information
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)      |
+| ------------------- |
+| [item 0](#anyOf_i0) |
+| [item 1](#anyOf_i1) |
+
+## <a name="anyOf_i0"></a>Property `Identifier > anyOf > item 0`
+
+| **Type** | `string` |
+| -------- | -------- |
+
+## <a name="anyOf_i1"></a>Property `Identifier > anyOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                         | Type               | Title/Description |
-| -------------------------------- | ------------------ | ----------------- |
-| - [@id](#@id )                   | string             | -                 |
-| - [@type](#@type )               | string             | -                 |
-| - [schemaAgency](#schemaAgency ) | null or string     | schema agency     |
-| - [creator](#creator )           | More than one type | creator           |
-| - [issued](#issued )             | More than one type | issued            |
-| - [version](#version )           | null or string     | version           |
-| - [notation](#notation )         | null or string     | notation          |
+| Property                                  | Type               | Title/Description |
+| ----------------------------------------- | ------------------ | ----------------- |
+| - [@id](#anyOf_i1_@id )                   | string             | -                 |
+| - [@type](#anyOf_i1_@type )               | string             | -                 |
+| - [schemaAgency](#anyOf_i1_schemaAgency ) | null or string     | schema agency     |
+| - [creator](#anyOf_i1_creator )           | More than one type | creator           |
+| - [issued](#anyOf_i1_issued )             | More than one type | issued            |
+| - [version](#anyOf_i1_version )           | null or string     | version           |
+| - [notation](#anyOf_i1_notation )         | null or string     | notation          |
 
-## <a name="@id"></a>Property `Identifier > @id`
+### <a name="anyOf_i1_@id"></a>Property `Identifier > anyOf > item 1 > @id`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Identifier > @type`
+### <a name="anyOf_i1_@type"></a>Property `Identifier > anyOf > item 1 > @type`
 
 | **Type**    | `string`       |
 | ----------- | -------------- |
 | **Default** | `"Identifier"` |
 
-## <a name="schemaAgency"></a>Property `Identifier > schemaAgency`
+### <a name="anyOf_i1_schemaAgency"></a>Property `Identifier > anyOf > item 1 > schemaAgency`
 
 **Title:** schema agency
 
@@ -39,7 +55,7 @@ The name of the agency that issued the identifier
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="creator"></a>Property `Identifier > creator`
+### <a name="anyOf_i1_creator"></a>Property `Identifier > anyOf > item 1 > creator`
 
 **Title:** creator
 
@@ -49,18 +65,18 @@ the agency that manages the identifier scheme
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                    |
-| --------------------------------- |
-| [item 0](#creator_oneOf_i0)       |
-| [Organization](#creator_oneOf_i1) |
-| [item 2](#creator_oneOf_i2)       |
+| One of(Option)                             |
+| ------------------------------------------ |
+| [item 0](#anyOf_i1_creator_oneOf_i0)       |
+| [Organization](#anyOf_i1_creator_oneOf_i1) |
+| [item 2](#anyOf_i1_creator_oneOf_i2)       |
 
-### <a name="creator_oneOf_i0"></a>Property `Identifier > creator > oneOf > item 0`
+#### <a name="anyOf_i1_creator_oneOf_i0"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="creator_oneOf_i1"></a>Property `Identifier > creator > oneOf > Organization`
+#### <a name="anyOf_i1_creator_oneOf_i1"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > Organization`
 
 **Title:** Organization
 
@@ -71,7 +87,7 @@ inline description of the creator
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
-### <a name="creator_oneOf_i2"></a>Property `Identifier > creator > oneOf > item 2`
+#### <a name="anyOf_i1_creator_oneOf_i2"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > item 2`
 
 reference iri of the creator
 
@@ -79,7 +95,7 @@ reference iri of the creator
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="issued"></a>Property `Identifier > issued`
+### <a name="anyOf_i1_issued"></a>Property `Identifier > anyOf > item 1 > issued`
 
 **Title:** issued
 
@@ -89,43 +105,43 @@ The date of formal issuance (e.g., publication) of the Identifier
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)             |
-| -------------------------- |
-| [item 0](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1) |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [item 0](#anyOf_i1_issued_anyOf_i0) |
+| [item 1](#anyOf_i1_issued_anyOf_i1) |
 
-### <a name="issued_anyOf_i0"></a>Property `Identifier > issued > anyOf > item 0`
+#### <a name="anyOf_i1_issued_anyOf_i0"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `Identifier > issued > anyOf > item 1`
+#### <a name="anyOf_i1_issued_anyOf_i1"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1`
 
 | **Type** | More than one type |
 | -------- | ------------------ |
 
-| One of(Option)                      |
-| ----------------------------------- |
-| [item 0](#issued_anyOf_i1_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_oneOf_i3) |
+| One of(Option)                               |
+| -------------------------------------------- |
+| [item 0](#anyOf_i1_issued_anyOf_i1_oneOf_i0) |
+| [item 1](#anyOf_i1_issued_anyOf_i1_oneOf_i1) |
+| [item 2](#anyOf_i1_issued_anyOf_i1_oneOf_i2) |
+| [item 3](#anyOf_i1_issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 0`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i0"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 1`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i1"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 2`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i2"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
@@ -137,7 +153,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Identifier > issued > anyOf > item 1 > oneOf > item 3`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i3"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -149,7 +165,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="version"></a>Property `Identifier > version`
+### <a name="anyOf_i1_version"></a>Property `Identifier > anyOf > item 1 > version`
 
 **Title:** version
 
@@ -158,7 +174,7 @@ version of the identifier scheme
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="notation"></a>Property `Identifier > notation`
+### <a name="anyOf_i1_notation"></a>Property `Identifier > anyOf > item 1 > notation`
 
 **Title:** notation
 

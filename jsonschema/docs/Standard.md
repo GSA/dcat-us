@@ -8,20 +8,21 @@ Information about a particular standard that another item conforms to
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                             | Type               | Title/Description                                                                |
-| ------------------------------------ | ------------------ | -------------------------------------------------------------------------------- |
-| - [@id](#@id )                       | string             | -                                                                                |
-| - [@type](#@type )                   | string             | -                                                                                |
-| - [created](#created )               | More than one type | creation date                                                                    |
-| - [description](#description )       | null or string     | description                                                                      |
-| - [descriptionMap](#descriptionMap ) | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [identifier](#identifier )         | More than one type | identifier                                                                       |
-| - [issued](#issued )                 | More than one type | issued                                                                           |
-| - [modified](#modified )             | More than one type | last modified                                                                    |
-| - [title](#title )                   | null or string     | title                                                                            |
-| - [titleMap](#titleMap )             | null or object     | Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )             | More than one type | category                                                                         |
-| - [inScheme](#inScheme )             | More than one type | in scheme                                                                        |
+| Property                               | Type               | Title/Description                                                                |
+| -------------------------------------- | ------------------ | -------------------------------------------------------------------------------- |
+| - [@id](#@id )                         | string             | -                                                                                |
+| - [@type](#@type )                     | string             | -                                                                                |
+| - [created](#created )                 | More than one type | creation date                                                                    |
+| - [description](#description )         | null or string     | description                                                                      |
+| - [descriptionMap](#descriptionMap )   | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [identifier](#identifier )           | More than one type | identifier                                                                       |
+| - [otherIdentifier](#otherIdentifier ) | null or array      | other identifier                                                                 |
+| - [issued](#issued )                   | More than one type | issued                                                                           |
+| - [modified](#modified )               | More than one type | last modified                                                                    |
+| - [title](#title )                     | null or string     | title                                                                            |
+| - [titleMap](#titleMap )               | null or object     | Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
+| - [category](#category )               | More than one type | category                                                                         |
+| - [inScheme](#inScheme )               | More than one type | in scheme                                                                        |
 
 ## <a name="@id"></a>Property `Standard > @id`
 
@@ -125,35 +126,84 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 **Title:** identifier
 
-The main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register
+The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                 |
-| ------------------------------ |
-| [item 0](#identifier_anyOf_i0) |
-| [item 1](#identifier_anyOf_i1) |
+| Any of(Option)                     |
+| ---------------------------------- |
+| [item 0](#identifier_anyOf_i0)     |
+| [Identifier](#identifier_anyOf_i1) |
+| [item 2](#identifier_anyOf_i2)     |
 
 ### <a name="identifier_anyOf_i0"></a>Property `Standard > identifier > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="identifier_anyOf_i1"></a>Property `Standard > identifier > anyOf > item 1`
+### <a name="identifier_anyOf_i1"></a>Property `Standard > identifier > anyOf > Identifier`
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+**Title:** Identifier
 
-| Each item of this array must be            | Description |
-| ------------------------------------------ | ----------- |
-| [item 1 items](#identifier_anyOf_i1_items) | -           |
+inline description of Identifier
 
-#### <a name="identifier_anyOf_i1_items"></a>Standard > identifier > anyOf > item 1 > item 1 items
+| **Type**                  | More than one type            |
+| ------------------------- | ----------------------------- |
+| **Additional properties** | Any type allowed              |
+| **Defined in**            | [Identifier](./Identifier.md) |
 
-| **Type** | `string` |
-| -------- | -------- |
+### <a name="identifier_anyOf_i2"></a>Property `Standard > identifier > anyOf > item 2`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
+
+## <a name="otherIdentifier"></a>Property `Standard > otherIdentifier`
+
+**Title:** other identifier
+
+A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [otherIdentifier items](#otherIdentifier_items) | -           |
+
+### <a name="otherIdentifier_items"></a>Standard > otherIdentifier > otherIdentifier items
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [Identifier](#otherIdentifier_items_anyOf_i0) |
+| [item 1](#otherIdentifier_items_anyOf_i1)     |
+
+#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+
+**Title:** Identifier
+
+inline description of Identifier
+
+| **Type**                  | More than one type                 |
+| ------------------------- | ---------------------------------- |
+| **Additional properties** | Any type allowed                   |
+| **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
+
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > item 1`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
 
 ## <a name="issued"></a>Property `Standard > issued`
 

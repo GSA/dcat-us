@@ -18,7 +18,7 @@ A record in a catalog, describing the registration of a single resource
 | - [issued](#issued )             | More than one type | listing date                                                                        |
 | - [language](#language )         | More than one type | language                                                                            |
 | + [modified](#modified )         | More than one type | update/modification date                                                            |
-| - [source](#source )             | More than one type | source metadata                                                                     |
+| - [source](#source )             | null or string     | source metadata                                                                     |
 | - [title](#title )               | null or string     | title                                                                               |
 | - [titleMap](#titleMap )         | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 | + [primaryTopic](#primaryTopic ) | string             | primary topic                                                                       |
@@ -363,39 +363,10 @@ A year and month in YYYY-MM format
 
 **Title:** source metadata
 
-The original metadata that was used in creating metadata for the items in the catalog record
+The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| One of(Option)               |
-| ---------------------------- |
-| [item 0](#source_oneOf_i0)   |
-| [resource](#source_oneOf_i1) |
-| [item 2](#source_oneOf_i2)   |
-
-### <a name="source_oneOf_i0"></a>Property `CatalogRecord > source > oneOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="source_oneOf_i1"></a>Property `CatalogRecord > source > oneOf > resource`
-
-inline description of the source
-
-| **Type**                  | `object`                  |
-| ------------------------- | ------------------------- |
-| **Additional properties** | Any type allowed          |
-| **Defined in**            | [Resource](./Resource.md) |
-
-### <a name="source_oneOf_i2"></a>Property `CatalogRecord > source > oneOf > item 2`
-
-reference iri of the source
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="title"></a>Property `CatalogRecord > title`
 

@@ -35,6 +35,7 @@ A file that distributes the dataset
 | - [descriptionMap](#descriptionMap )                       | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
 | - [format](#format )                                       | More than one type | format                                                                              |
 | - [identifier](#identifier )                               | More than one type | identifier                                                                          |
+| - [otherIdentifier](#otherIdentifier )                     | null or array      | other identifier                                                                    |
 | - [issued](#issued )                                       | More than one type | release date                                                                        |
 | - [language](#language )                                   | More than one type | language                                                                            |
 | - [license](#license )                                     | More than one type | license                                                                             |
@@ -832,35 +833,84 @@ reference iri of the format
 
 **Title:** identifier
 
-A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
+The unique identifier for the Distribution (e.g. DOI, ISBN)
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                 |
-| ------------------------------ |
-| [item 0](#identifier_anyOf_i0) |
-| [item 1](#identifier_anyOf_i1) |
+| Any of(Option)                     |
+| ---------------------------------- |
+| [item 0](#identifier_anyOf_i0)     |
+| [Identifier](#identifier_anyOf_i1) |
+| [item 2](#identifier_anyOf_i2)     |
 
 ### <a name="identifier_anyOf_i0"></a>Property `Distribution > identifier > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="identifier_anyOf_i1"></a>Property `Distribution > identifier > anyOf > item 1`
+### <a name="identifier_anyOf_i1"></a>Property `Distribution > identifier > anyOf > Identifier`
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+**Title:** Identifier
 
-| Each item of this array must be            | Description |
-| ------------------------------------------ | ----------- |
-| [item 1 items](#identifier_anyOf_i1_items) | -           |
+inline description of Identifier
 
-#### <a name="identifier_anyOf_i1_items"></a>Distribution > identifier > anyOf > item 1 > item 1 items
+| **Type**                  | More than one type                                                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [Identifier](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
 
-| **Type** | `string` |
-| -------- | -------- |
+### <a name="identifier_anyOf_i2"></a>Property `Distribution > identifier > anyOf > item 2`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
+
+## <a name="otherIdentifier"></a>Property `Distribution > otherIdentifier`
+
+**Title:** other identifier
+
+A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [otherIdentifier items](#otherIdentifier_items) | -           |
+
+### <a name="otherIdentifier_items"></a>Distribution > otherIdentifier > otherIdentifier items
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [Identifier](#otherIdentifier_items_anyOf_i0) |
+| [item 1](#otherIdentifier_items_anyOf_i1)     |
+
+#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Distribution > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+
+**Title:** Identifier
+
+inline description of Identifier
+
+| **Type**                  | More than one type                                                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [Identifier](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Distribution > otherIdentifier > otherIdentifier items > anyOf > item 1`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
 
 ## <a name="issued"></a>Property `Distribution > issued`
 

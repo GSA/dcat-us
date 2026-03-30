@@ -8,41 +8,42 @@ A service for providing data at a URL or URLs
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                                   | Type               | Title/Description                                                                    |
-| ---------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| - [@id](#@id )                                             | string             | -                                                                                    |
-| - [@type](#@type )                                         | string             | -                                                                                    |
-| + [contactPoint](#contactPoint )                           | array              | contact point                                                                        |
-| - [endpointDescription](#endpointDescription )             | More than one type | endpoint description                                                                 |
-| + [endpointURL](#endpointURL )                             | array of string    | endpoint URL                                                                         |
-| - [keyword](#keyword )                                     | null or string     | keyword/tag                                                                          |
-| - [keywordMap](#keywordMap )                               | null or object     | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}         |
-| - [servesDataset](#servesDataset )                         | More than one type | serves dataset                                                                       |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | More than one type | spatial resolution in meters                                                         |
-| - [temporalResolution](#temporalResolution )               | More than one type | temporal resolution                                                                  |
-| - [theme](#theme )                                         | More than one type | theme/category                                                                       |
-| - [geographicBoundingBox](#geographicBoundingBox )         | More than one type | geographic bounding box                                                              |
-| - [accessRights](#accessRights )                           | More than one type | access rights                                                                        |
-| - [conformsTo](#conformsTo )                               | More than one type | conforms to                                                                          |
-| - [created](#created )                                     | More than one type | creation date                                                                        |
-| - [creator](#creator )                                     | More than one type | creator                                                                              |
-| - [description](#description )                             | null or string     | description                                                                          |
-| - [descriptionMap](#descriptionMap )                       | null or object     | Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [identifier](#identifier )                               | More than one type | identifier                                                                           |
-| - [language](#language )                                   | More than one type | language                                                                             |
-| - [license](#license )                                     | More than one type | license                                                                              |
-| - [modified](#modified )                                   | More than one type | update/modification date                                                             |
-| + [publisher](#publisher )                                 | More than one type | publisher                                                                            |
-| - [rights](#rights )                                       | More than one type | rights                                                                               |
-| - [rightsHolder](#rightsHolder )                           | More than one type | rights holder                                                                        |
-| - [spatial](#spatial )                                     | More than one type | spatial/geographic coverage                                                          |
-| - [temporal](#temporal )                                   | More than one type | temporal coverage                                                                    |
-| + [title](#title )                                         | string             | title                                                                                |
-| - [titleMap](#titleMap )                                   | null or object     | Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )                                   | More than one type | category                                                                             |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | More than one type | quality measurement                                                                  |
-| - [qualifiedAttribution](#qualifiedAttribution )           | More than one type | qualified attribution                                                                |
-| - [wasUsedBy](#wasUsedBy )                                 | More than one type | was used by                                                                          |
+| Property                                                   | Type                    | Title/Description                                                                    |
+| ---------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------ |
+| - [@id](#@id )                                             | string                  | -                                                                                    |
+| - [@type](#@type )                                         | string                  | -                                                                                    |
+| + [contactPoint](#contactPoint )                           | array                   | contact point                                                                        |
+| - [endpointDescription](#endpointDescription )             | More than one type      | endpoint description                                                                 |
+| + [endpointURL](#endpointURL )                             | array of string         | endpoint URL                                                                         |
+| - [keyword](#keyword )                                     | null or array of string | keyword/tag                                                                          |
+| - [keywordMap](#keywordMap )                               | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}         |
+| - [servesDataset](#servesDataset )                         | More than one type      | serves dataset                                                                       |
+| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | spatial resolution in meters                                                         |
+| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution                                                                  |
+| - [theme](#theme )                                         | More than one type      | theme/category                                                                       |
+| - [geographicBoundingBox](#geographicBoundingBox )         | More than one type      | geographic bounding box                                                              |
+| - [accessRights](#accessRights )                           | More than one type      | access rights                                                                        |
+| - [conformsTo](#conformsTo )                               | More than one type      | conforms to                                                                          |
+| - [created](#created )                                     | More than one type      | creation date                                                                        |
+| - [creator](#creator )                                     | More than one type      | creator                                                                              |
+| - [description](#description )                             | null or string          | description                                                                          |
+| - [descriptionMap](#descriptionMap )                       | null or object          | Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [identifier](#identifier )                               | More than one type      | identifier                                                                           |
+| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier                                                                     |
+| - [language](#language )                                   | More than one type      | language                                                                             |
+| - [license](#license )                                     | More than one type      | license                                                                              |
+| - [modified](#modified )                                   | More than one type      | update/modification date                                                             |
+| + [publisher](#publisher )                                 | More than one type      | publisher                                                                            |
+| - [rights](#rights )                                       | More than one type      | rights                                                                               |
+| - [rightsHolder](#rightsHolder )                           | More than one type      | rights holder                                                                        |
+| - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage                                                          |
+| - [temporal](#temporal )                                   | More than one type      | temporal coverage                                                                    |
+| + [title](#title )                                         | string                  | title                                                                                |
+| - [titleMap](#titleMap )                                   | null or object          | Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
+| - [category](#category )                                   | More than one type      | category                                                                             |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | More than one type      | quality measurement                                                                  |
+| - [qualifiedAttribution](#qualifiedAttribution )           | More than one type      | qualified attribution                                                                |
+| - [wasUsedBy](#wasUsedBy )                                 | More than one type      | was used by                                                                          |
 
 ## <a name="@id"></a>Property `DataService > @id`
 
@@ -181,10 +182,19 @@ The root location or primary endpoint of the service (a Web-resolvable IRI)
 
 **Title:** keyword/tag
 
-A keyword or tag describing the Data Service
+A list of keywords or tags describing the Data Service
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+| **Type** | `null or array of string` |
+| -------- | ------------------------- |
+
+| Each item of this array must be | Description |
+| ------------------------------- | ----------- |
+| [keyword items](#keyword_items) | -           |
+
+### <a name="keyword_items"></a>DataService > keyword > keyword items
+
+| **Type** | `string` |
+| -------- | -------- |
 
 ## <a name="keywordMap"></a>Property `DataService > keywordMap`
 
@@ -258,33 +268,8 @@ reference iri of Dataset
 
 The minimum spatial separation resolvable in a Data Service, measured in meters
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                |
-| --------------------------------------------- |
-| [item 0](#spatialResolutionInMeters_anyOf_i0) |
-| [item 1](#spatialResolutionInMeters_anyOf_i1) |
-
-### <a name="spatialResolutionInMeters_anyOf_i0"></a>Property `DataService > spatialResolutionInMeters > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="spatialResolutionInMeters_anyOf_i1"></a>Property `DataService > spatialResolutionInMeters > anyOf > item 1`
-
-| **Type** | `array of string` |
-| -------- | ----------------- |
-
-| Each item of this array must be                           | Description |
-| --------------------------------------------------------- | ----------- |
-| [item 1 items](#spatialResolutionInMeters_anyOf_i1_items) | -           |
-
-#### <a name="spatialResolutionInMeters_anyOf_i1_items"></a>DataService > spatialResolutionInMeters > anyOf > item 1 > item 1 items
-
-| **Type** | `string` |
-| -------- | -------- |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="temporalResolution"></a>Property `DataService > temporalResolution`
 
@@ -292,33 +277,8 @@ The minimum spatial separation resolvable in a Data Service, measured in meters
 
 The minimum time period resolvable by the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                         |
-| -------------------------------------- |
-| [item 0](#temporalResolution_anyOf_i0) |
-| [item 1](#temporalResolution_anyOf_i1) |
-
-### <a name="temporalResolution_anyOf_i0"></a>Property `DataService > temporalResolution > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="temporalResolution_anyOf_i1"></a>Property `DataService > temporalResolution > anyOf > item 1`
-
-| **Type** | `array of string` |
-| -------- | ----------------- |
-
-| Each item of this array must be                    | Description |
-| -------------------------------------------------- | ----------- |
-| [item 1 items](#temporalResolution_anyOf_i1_items) | -           |
-
-#### <a name="temporalResolution_anyOf_i1_items"></a>DataService > temporalResolution > anyOf > item 1 > item 1 items
-
-| **Type** | `string` |
-| -------- | -------- |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="theme"></a>Property `DataService > theme`
 
@@ -383,7 +343,7 @@ reference iri of Concept
 
 **Title:** geographic bounding box
 
-The spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system
+List of WGS84 Geographic Bounding Boxes for this Data Service
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -442,7 +402,7 @@ reference iri of GeographicBoundingBox
 
 **Title:** access rights
 
-Information regarding access or restrictions based on privacy, security, or other policies
+Information that indicates whether the Data Service is open data, has access restrictions or is public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -541,7 +501,7 @@ reference iri of Standard
 
 **Title:** creation date
 
-The date on which the Data Service has been first created
+The date on which the Data Service was first created
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -686,35 +646,84 @@ Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french wor
 
 **Title:** identifier
 
-List of the main identifiers for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
+The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                 |
-| ------------------------------ |
-| [item 0](#identifier_anyOf_i0) |
-| [item 1](#identifier_anyOf_i1) |
+| Any of(Option)                     |
+| ---------------------------------- |
+| [item 0](#identifier_anyOf_i0)     |
+| [Identifier](#identifier_anyOf_i1) |
+| [item 2](#identifier_anyOf_i2)     |
 
 ### <a name="identifier_anyOf_i0"></a>Property `DataService > identifier > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="identifier_anyOf_i1"></a>Property `DataService > identifier > anyOf > item 1`
+### <a name="identifier_anyOf_i1"></a>Property `DataService > identifier > anyOf > Identifier`
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+**Title:** Identifier
 
-| Each item of this array must be            | Description |
-| ------------------------------------------ | ----------- |
-| [item 1 items](#identifier_anyOf_i1_items) | -           |
+inline description of Identifier
 
-#### <a name="identifier_anyOf_i1_items"></a>DataService > identifier > anyOf > item 1 > item 1 items
+| **Type**                  | More than one type                                                                  |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                    |
+| **Same definition as**    | [Identifier](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
 
-| **Type** | `string` |
-| -------- | -------- |
+### <a name="identifier_anyOf_i2"></a>Property `DataService > identifier > anyOf > item 2`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
+
+## <a name="otherIdentifier"></a>Property `DataService > otherIdentifier`
+
+**Title:** other identifier
+
+A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [otherIdentifier items](#otherIdentifier_items) | -           |
+
+### <a name="otherIdentifier_items"></a>DataService > otherIdentifier > otherIdentifier items
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [Identifier](#otherIdentifier_items_anyOf_i0) |
+| [item 1](#otherIdentifier_items_anyOf_i1)     |
+
+#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `DataService > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+
+**Title:** Identifier
+
+inline description of Identifier
+
+| **Type**                  | More than one type                                                                  |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                    |
+| **Same definition as**    | [Identifier](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `DataService > otherIdentifier > otherIdentifier items > anyOf > item 1`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
 
 ## <a name="language"></a>Property `DataService > language`
 
@@ -1017,7 +1026,7 @@ inline description of Organization
 | **Type**                  | `object`                                                                                                        |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                |
-| **Same definition as**    | [Organization](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0_anyOf_i1_creator_oneOf_i1) |
 
 ##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `DataService > rightsHolder > anyOf > item 1 > item 1 items > oneOf > item 1`
 
@@ -1265,7 +1274,7 @@ reference iri of QualityMeasurement
 
 **Title:** qualified attribution
 
-An Agent having some form of responsibility for the DataService
+List of agents having some form of responsibility for the Data Service
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

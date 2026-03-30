@@ -1,5 +1,6 @@
 """Generate documentation from the JSON schema files."""
 
+import difflib
 import filecmp
 import glob
 import json
@@ -42,6 +43,17 @@ def _any_differences(comp_object):
     return False
 
 
+def _report_file_differences(comp_object):
+    """Print the line differences for files in comp_object that differ."""
+    for filename in comp_object.diff_files:
+        print(f"\n=== {filename}")
+        with open(Path(comp_object.left) / filename) as f_left:
+            with open(Path(comp_object.right) / filename) as f_right:
+                diff_list = difflib.unified_diff(f_left.readlines(), f_right.readlines())
+                for line in diff_list:
+                    print(line, end="")
+
+
 def check_output_matches(output_dir):
     """Check if the generated files match the content already in output_dir.
 
@@ -58,6 +70,7 @@ def check_output_matches(output_dir):
         )
         if _any_differences(comparison):
             comparison.report_full_closure()
+            _report_file_differences(comparison)
             return 1
         else:
             return 0

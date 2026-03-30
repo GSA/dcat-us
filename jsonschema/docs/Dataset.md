@@ -12,12 +12,12 @@ Information about a set of data
 | ---------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------- |
 | - [@id](#@id )                                             | string             | -                                                                                   |
 | - [@type](#@type )                                         | string             | -                                                                                   |
-| - [otherIdentifier](#otherIdentifier )                     | More than one type | other identifier                                                                    |
+| - [otherIdentifier](#otherIdentifier )                     | null or array      | other identifier                                                                    |
 | - [sample](#sample )                                       | More than one type | sample                                                                              |
 | - [status](#status )                                       | More than one type | lifecycle status                                                                    |
 | - [supportedSchema](#supportedSchema )                     | More than one type | supported schema                                                                    |
 | - [versionNotes](#versionNotes )                           | null or string     | version notes                                                                       |
-| - [contactPoint](#contactPoint )                           | More than one type | contact point                                                                       |
+| + [contactPoint](#contactPoint )                           | More than one type | contact point                                                                       |
 | - [distribution](#distribution )                           | More than one type | dataset distribution                                                                |
 | - [first](#first )                                         | More than one type | first                                                                               |
 | - [hasCurrentVersion](#hasCurrentVersion )                 | More than one type | current version                                                                     |
@@ -47,7 +47,7 @@ Information about a set of data
 | + [description](#description )                             | string             | description                                                                         |
 | - [descriptionMap](#descriptionMap )                       | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
 | - [hasPart](#hasPart )                                     | More than one type | has part                                                                            |
-| - [identifier](#identifier )                               | null or string     | identifier                                                                          |
+| - [identifier](#identifier )                               | More than one type | identifier                                                                          |
 | - [isReferencedBy](#isReferencedBy )                       | More than one type | is referenced by                                                                    |
 | - [issued](#issued )                                       | More than one type | release date                                                                        |
 | - [language](#language )                                   | More than one type | language                                                                            |
@@ -91,56 +91,40 @@ Information about a set of data
 
 **Title:** other identifier
 
-List of structure identifiers
+A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [item 0](#otherIdentifier_anyOf_i0) |
-| [item 1](#otherIdentifier_anyOf_i1) |
-
-### <a name="otherIdentifier_anyOf_i0"></a>Property `Dataset > otherIdentifier > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="otherIdentifier_anyOf_i1"></a>Property `Dataset > otherIdentifier > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
 | Each item of this array must be                 | Description |
 | ----------------------------------------------- | ----------- |
-| [item 1 items](#otherIdentifier_anyOf_i1_items) | -           |
+| [otherIdentifier items](#otherIdentifier_items) | -           |
 
-#### <a name="otherIdentifier_anyOf_i1_items"></a>Dataset > otherIdentifier > anyOf > item 1 > item 1 items
+### <a name="otherIdentifier_items"></a>Dataset > otherIdentifier > otherIdentifier items
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                         |
-| ------------------------------------------------------ |
-| [Identifier](#otherIdentifier_anyOf_i1_items_oneOf_i0) |
-| [item 1](#otherIdentifier_anyOf_i1_items_oneOf_i1)     |
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [Identifier](#otherIdentifier_items_anyOf_i0) |
+| [item 1](#otherIdentifier_items_anyOf_i1)     |
 
-##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > otherIdentifier > anyOf > item 1 > item 1 items > oneOf > Identifier`
+#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Dataset > otherIdentifier > otherIdentifier items > anyOf > Identifier`
 
 **Title:** Identifier
 
-inline description of other identifier
+inline description of Identifier
 
-| **Type**                  | `object`                      |
+| **Type**                  | More than one type            |
 | ------------------------- | ----------------------------- |
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-##### <a name="otherIdentifier_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > otherIdentifier > anyOf > item 1 > item 1 items > oneOf > item 1`
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Dataset > otherIdentifier > otherIdentifier items > anyOf > item 1`
 
-reference iri of other identifier
+reference iri of Identifier
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -298,43 +282,20 @@ version notes for this dataset
 
 **Title:** contact point
 
-List of contact information that can be used for sending comments about the Dataset
+A single contact point or list of contact information that can be used for sending comments about the Dataset
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
+| **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
-| [item 0](#contactPoint_anyOf_i0) |
+| [Kind](#contactPoint_anyOf_i0)   |
 | [item 1](#contactPoint_anyOf_i1) |
+| [item 2](#contactPoint_anyOf_i2) |
 
-### <a name="contactPoint_anyOf_i0"></a>Property `Dataset > contactPoint > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="contactPoint_anyOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be              | Description |
-| -------------------------------------------- | ----------- |
-| [item 1 items](#contactPoint_anyOf_i1_items) | -           |
-
-#### <a name="contactPoint_anyOf_i1_items"></a>Dataset > contactPoint > anyOf > item 1 > item 1 items
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| One of(Option)                                  |
-| ----------------------------------------------- |
-| [Kind](#contactPoint_anyOf_i1_items_oneOf_i0)   |
-| [item 1](#contactPoint_anyOf_i1_items_oneOf_i1) |
-
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `Dataset > contactPoint > anyOf > item 1 > item 1 items > oneOf > Kind`
+### <a name="contactPoint_anyOf_i0"></a>Property `Dataset > contactPoint > anyOf > Kind`
 
 **Title:** Kind
 
@@ -345,7 +306,46 @@ inline description of Kind
 | **Additional properties** | Any type allowed                                                                                          |
 | **Same definition as**    | [Kind](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_contactPoint_items_oneOf_i0) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 1 > item 1 items > oneOf > item 1`
+### <a name="contactPoint_anyOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 1`
+
+reference iri of Kind
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
+
+### <a name="contactPoint_anyOf_i2"></a>Property `Dataset > contactPoint > anyOf > item 2`
+
+| **Type** | `array` |
+| -------- | ------- |
+
+| Each item of this array must be              | Description |
+| -------------------------------------------- | ----------- |
+| [item 2 items](#contactPoint_anyOf_i2_items) | -           |
+
+#### <a name="contactPoint_anyOf_i2_items"></a>Dataset > contactPoint > anyOf > item 2 > item 2 items
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                                  |
+| ----------------------------------------------- |
+| [Kind](#contactPoint_anyOf_i2_items_anyOf_i0)   |
+| [item 1](#contactPoint_anyOf_i2_items_anyOf_i1) |
+
+##### <a name="contactPoint_anyOf_i2_items_anyOf_i0"></a>Property `Dataset > contactPoint > anyOf > item 2 > item 2 items > anyOf > Kind`
+
+**Title:** Kind
+
+inline description of Kind
+
+| **Type**                  | `object`                                                                                                  |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                          |
+| **Same definition as**    | [Kind](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_contactPoint_items_oneOf_i0) |
+
+##### <a name="contactPoint_anyOf_i2_items_anyOf_i1"></a>Property `Dataset > contactPoint > anyOf > item 2 > item 2 items > anyOf > item 1`
 
 reference iri of Kind
 
@@ -1260,10 +1260,10 @@ List of standards to which the described Dataset conforms
 
 inline description of Standard
 
-| **Type**                  | `object`                                                                                                                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                                |
-| **Same definition as**    | [Standard](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_landingPage_oneOf_i1_conformsTo_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                                                               |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                                                       |
+| **Same definition as**    | [Standard](#sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_landingPage_oneOf_i1_conformsTo_items_anyOf_i0) |
 
 ##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > conformsTo > anyOf > item 1 > item 1 items > oneOf > item 1`
 
@@ -1524,8 +1524,39 @@ reference iri of Dataset
 
 The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                     |
+| ---------------------------------- |
+| [item 0](#identifier_anyOf_i0)     |
+| [Identifier](#identifier_anyOf_i1) |
+| [item 2](#identifier_anyOf_i2)     |
+
+### <a name="identifier_anyOf_i0"></a>Property `Dataset > identifier > anyOf > item 0`
+
+| **Type** | `null` |
+| -------- | ------ |
+
+### <a name="identifier_anyOf_i1"></a>Property `Dataset > identifier > anyOf > Identifier`
+
+**Title:** Identifier
+
+inline description of Identifier
+
+| **Type**                  | More than one type                            |
+| ------------------------- | --------------------------------------------- |
+| **Additional properties** | Any type allowed                              |
+| **Same definition as**    | [Identifier](#otherIdentifier_items_anyOf_i0) |
+
+### <a name="identifier_anyOf_i2"></a>Property `Dataset > identifier > anyOf > item 2`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
 
 ## <a name="isReferencedBy"></a>Property `Dataset > isReferencedBy`
 
@@ -1836,7 +1867,7 @@ inline description of Organization
 | **Type**                  | `object`                                                                  |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Organization](#otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#otherIdentifier_items_anyOf_i0_anyOf_i1_creator_oneOf_i1) |
 
 ### <a name="publisher_oneOf_i1"></a>Property `Dataset > publisher > oneOf > item 1`
 
@@ -2031,7 +2062,7 @@ inline description of Organization
 | **Type**                  | `object`                                                                  |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Organization](#otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#otherIdentifier_items_anyOf_i0_anyOf_i1_creator_oneOf_i1) |
 
 ##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `Dataset > rightsHolder > anyOf > item 1 > item 1 items > oneOf > item 1`
 

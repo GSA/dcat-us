@@ -28,6 +28,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 | - [descriptionMap](#descriptionMap )             | null or object          | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
 | - [hasPart](#hasPart )                           | More than one type      | has part                                                                            |
 | - [identifier](#identifier )                     | More than one type      | identifier                                                                          |
+| - [otherIdentifier](#otherIdentifier )           | null or array           | other identifier                                                                    |
 | - [issued](#issued )                             | More than one type      | release date                                                                        |
 | - [language](#language )                         | More than one type      | language                                                                            |
 | - [license](#license )                           | More than one type      | license                                                                             |
@@ -729,7 +730,7 @@ reference iri of the related catalog
 
 **Title:** identifier
 
-List of identifiers for the Catalog, e.g. the URI or other unique identifier
+The unique identifier for the Catalog, e.g. the URI or other unique identifier
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -738,7 +739,8 @@ List of identifiers for the Catalog, e.g. the URI or other unique identifier
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
-| [item 1](#identifier_anyOf_i1)                         |
+| [Identifier](#identifier_anyOf_i1)                     |
+| [item 2](#identifier_anyOf_i2)                         |
 
 ### <a name="identifier_anyOf_i0"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
 
@@ -747,19 +749,67 @@ List of identifiers for the Catalog, e.g. the URI or other unique identifier
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="identifier_anyOf_i1"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > item 1`
+### <a name="identifier_anyOf_i1"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Identifier`
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+**Title:** Identifier
 
-| Each item of this array must be            | Description |
-| ------------------------------------------ | ----------- |
-| [item 1 items](#identifier_anyOf_i1_items) | -           |
+inline description of Identifier
 
-#### <a name="identifier_anyOf_i1_items"></a>DCAT-US 3 Catalog > identifier > anyOf > item 1 > item 1 items
+| **Type**                  | More than one type                                                   |
+| ------------------------- | -------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                     |
+| **Same definition as**    | [Identifier](#dataset_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
 
-| **Type** | `string` |
-| -------- | -------- |
+### <a name="identifier_anyOf_i2"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > item 2`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
+
+## <a name="otherIdentifier"></a>Property `DCAT-US 3 Catalog > otherIdentifier`
+
+**Title:** other identifier
+
+A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [otherIdentifier items](#otherIdentifier_items) | -           |
+
+### <a name="otherIdentifier_items"></a>DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
+
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [Identifier](#otherIdentifier_items_anyOf_i0) |
+| [item 1](#otherIdentifier_items_anyOf_i1)     |
+
+#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+
+**Title:** Identifier
+
+inline description of Identifier
+
+| **Type**                  | More than one type                                                   |
+| ------------------------- | -------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                     |
+| **Same definition as**    | [Identifier](#dataset_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items > anyOf > item 1`
+
+reference iri of Identifier
+
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `iri`    |
 
 ## <a name="issued"></a>Property `DCAT-US 3 Catalog > issued`
 
@@ -1152,7 +1202,7 @@ inline description of rights holder
 | **Type**                  | `object`                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                 |
-| **Same definition as**    | [Organization](#dataset_items_oneOf_i0_otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#dataset_items_oneOf_i0_otherIdentifier_items_anyOf_i0_anyOf_i1_creator_oneOf_i1) |
 
 ##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > Array of rights holders > Organization or link > oneOf > Link`
 
