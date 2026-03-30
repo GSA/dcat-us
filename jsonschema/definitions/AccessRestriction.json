@@ -16,11 +16,11 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "A note related to the access restriction",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "restrictionNoteMap": {
       "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "restrictionStatus": {
       "title": "restriction status",
@@ -32,6 +32,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of restriction status",
           "format": "iri"
         }
@@ -42,7 +43,8 @@
       "description": "The specific NARA restriction associated with this restriction",
       "oneOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
@@ -50,11 +52,12 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of the specific restriction",
           "format": "iri"
         }
       ]
     }
   },
-  "required": ["restrictionStatus"]
+  "required": [ "restrictionStatus" ]
 }

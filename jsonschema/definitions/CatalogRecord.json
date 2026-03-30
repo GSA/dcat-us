@@ -18,7 +18,8 @@
       "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions",
       "oneOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
@@ -26,6 +27,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of status",
           "format": "iri"
         }
@@ -36,7 +38,8 @@
       "description": "An Application Profile that the Catalog Record's metadata conforms to",
       "oneOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/standard",
@@ -44,21 +47,25 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of application profile",
           "format": "iri"
         }
       ]
     },
     "description": {
-      "title": "description",
+      "title": "Descriptions",
       "description": "A list of free-text accounts of the catalog record",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "Array of descriptions",
           "items": {
+            "title": "Description string",
             "type": "string"
           }
         }
@@ -69,11 +76,14 @@
       "description": "List of dates on which the catalog record was included in the catalog",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "Array of dates",
           "items": {
+            "title": "Date string",
             "type": "string",
             "oneOf": [
               {
@@ -100,15 +110,19 @@
       "description": "A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "string",
+          "title": "Language code",
           "maxLength": 2
         },
         {
           "type": "array",
+          "title": "Array of language codes",
           "items": {
+            "title": "Language code",
             "type": "string",
             "maxLength": 2
           }
@@ -144,11 +158,11 @@
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "primaryTopic": {
       "title": "primary topic",
@@ -156,5 +170,5 @@
       "type": "string"
     }
   },
-  "required": ["modified", "primaryTopic"]
+  "required": [ "modified", "primaryTopic" ]
 }

@@ -104,6 +104,9 @@ def type_info_table_wrap(type_info_list):
             match = re.match(r"^/dcat-us/3.0.0/definitions/(\w+)", line[1])
             class_name = match.group(1)
             line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
+        elif "`combining`" in line:
+            # replace combining with something better
+            line[line.index("`combining`")] = "More than one type"
 
     # remove lines
     def _remove_me(line):

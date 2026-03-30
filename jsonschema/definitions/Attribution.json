@@ -28,11 +28,12 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Agent",
           "format": "iri"
         }
       ]
     }
   },
-  "required": ["hadRole", "agent"]
+  "required": [ "hadRole", "agent" ]
 }
