@@ -47,9 +47,9 @@ Information about a text document
 
 List of authors
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -90,9 +90,9 @@ Publisher
 
 List of file formats of the Document
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -115,9 +115,9 @@ List of file formats of the Document
 
 #### <a name="mediaType_anyOf_i1_items"></a>Document > mediaType > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -174,9 +174,9 @@ Bibliographic citation as text
 
 A standard to which the document conforms
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -199,9 +199,9 @@ A standard to which the document conforms
 
 #### <a name="conformsTo_anyOf_i1_items"></a>Document > conformsTo > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -233,9 +233,9 @@ reference iri of Standard
 
 The organization responsible for creating the resource
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -258,9 +258,9 @@ The organization responsible for creating the resource
 
 #### <a name="creator_anyOf_i1_items"></a>Document > creator > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                   |
 | ------------------------------------------------ |
@@ -308,9 +308,9 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 List of unique identifiers for the Document (e.g. DOI, ISBN)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -342,9 +342,9 @@ List of unique identifiers for the Document (e.g. DOI, ISBN)
 
 Publication date of the document
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -358,8 +358,8 @@ Publication date of the document
 
 ### <a name="issued_anyOf_i1"></a>Property `Document > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -412,9 +412,9 @@ A year and month in YYYY-MM format
 
 publisher organization of the document
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -469,9 +469,9 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 Category of the document
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |

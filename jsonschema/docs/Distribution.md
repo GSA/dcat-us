@@ -65,9 +65,9 @@ A file that distributes the dataset
 
 The format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -105,9 +105,9 @@ reference iri of Concept
 
 The status of the distribution in the context of maturity lifecycle
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)              |
 | --------------------------- |
@@ -145,9 +145,9 @@ reference iri of Concept
 
 The list of character encodings of the Distribution, by using as value the character set names in the IANA register 
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                        |
 | ------------------------------------- |
@@ -179,9 +179,9 @@ The list of character encodings of the Distribution, by using as value the chara
 
 A data service that gives access to the distribution of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                    |
 | --------------------------------- |
@@ -204,9 +204,9 @@ A data service that gives access to the distribution of the dataset
 
 #### <a name="accessService_anyOf_i1_items"></a>Distribution > accessService > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
@@ -238,9 +238,9 @@ reference iri of DataService
 
 A URL that gives access to a Distribution of the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -275,9 +275,9 @@ The size of a Distribution in bytes
 
 The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -315,9 +315,9 @@ reference iri of MediaType
 
 A URL that is a direct link to a downloadable file of the Distribution in a given format
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                  |
 | ------------------------------- |
@@ -343,9 +343,9 @@ reference iri of Resource
 
 The media type of the Distribution as defined in the official register of media types managed by IANA
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                   |
 | -------------------------------- |
@@ -383,9 +383,9 @@ reference iri of MediaType
 
 The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -441,9 +441,9 @@ The minimum time period resolvable in the dataset distribution
 
 An indication how long it is planned to keep the Distribution of the Dataset available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                    |
 | --------------------------------- |
@@ -481,9 +481,9 @@ reference iri of Concept
 
 List of access restrictions related to the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                        |
 | ------------------------------------- |
@@ -506,9 +506,9 @@ List of access restrictions related to the distribution
 
 #### <a name="accessRestriction_anyOf_i1_items"></a>Distribution > accessRestriction > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                  |
 | --------------------------------------------------------------- |
@@ -540,9 +540,9 @@ reference iri of AccessRestriction
 
 Controlled Unclassified Information restriction related to the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                             |
 | ------------------------------------------ |
@@ -580,9 +580,9 @@ reference iri of CUIRestriction
 
 A distribution containing the Data Dictionary for this distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -620,9 +620,9 @@ reference iri of the data dictionary
 
 Use restriction related to the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                     |
 | ---------------------------------- |
@@ -645,9 +645,9 @@ Use restriction related to the distribution
 
 #### <a name="useRestriction_anyOf_i1_items"></a>Distribution > useRestriction > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                            |
 | --------------------------------------------------------- |
@@ -679,9 +679,9 @@ reference iri of UseRestriction
 
 Information regarding access or restrictions based on privacy, security, or other policies
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -719,9 +719,9 @@ reference iri of RightsStatement
 
 List of established schemas or reference systems to which the described Distribution conforms
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -744,9 +744,9 @@ List of established schemas or reference systems to which the described Distribu
 
 #### <a name="conformsTo_anyOf_i1_items"></a>Distribution > conformsTo > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -794,9 +794,9 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The file format of the Distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -834,9 +834,9 @@ reference iri of the format
 
 A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -868,9 +868,9 @@ A list of unique identifiers for the Distribution (e.g. DOI, ISBN)
 
 The date of formal issuance (e.g., publication) of the Distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -884,8 +884,8 @@ The date of formal issuance (e.g., publication) of the Distribution
 
 ### <a name="issued_anyOf_i1"></a>Property `Distribution > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -938,9 +938,9 @@ A year and month in YYYY-MM format
 
 A language or languages used in the Distribution. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -986,9 +986,9 @@ A language or languages used in the Distribution. This should be provided as an 
 
 A license under which the Distribution is made available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -1026,9 +1026,9 @@ reference iri of LicenseDocument
 
 The most recent date on which the Distribution was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1042,8 +1042,8 @@ The most recent date on which the Distribution was changed or modified
 
 ### <a name="modified_anyOf_i1"></a>Property `Distribution > modified > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -1096,9 +1096,9 @@ A year and month in YYYY-MM format
 
 A statement that specifies rights associated with the Distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -1152,9 +1152,9 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 A list of quality measurements for the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                            |
 | ----------------------------------------- |
@@ -1177,9 +1177,9 @@ A list of quality measurements for the distribution
 
 #### <a name="hasQualityMeasurement_anyOf_i1_items"></a>Distribution > hasQualityMeasurement > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                       |
 | -------------------------------------------------------------------- |
@@ -1211,9 +1211,9 @@ reference iri of QualityMeasurement
 
 A page or document about this Distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)           |
 | ------------------------ |
@@ -1236,9 +1236,9 @@ A page or document about this Distribution
 
 #### <a name="page_anyOf_i1_items"></a>Distribution > page > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -1270,9 +1270,9 @@ reference iri of Document
 
 A link to a thumbnail picture illustrating the content of the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)            |
 | ------------------------- |
@@ -1298,9 +1298,9 @@ The link to the image
 
 A mechanism that can be used to verify that the contents of a distribution have not changed
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                 |
 | ------------------------------ |

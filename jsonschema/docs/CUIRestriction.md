@@ -54,30 +54,36 @@ Designation Indicator shows which agency made the document CUI
 
 List of free text of the required indicator
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                    |
-| ------------------------------------------------- |
-| [item 0](#requiredIndicatorPerAuthority_anyOf_i0) |
-| [item 1](#requiredIndicatorPerAuthority_anyOf_i1) |
+| Any of(Option)                                                            |
+| ------------------------------------------------------------------------- |
+| [Null allowed when not required](#requiredIndicatorPerAuthority_anyOf_i0) |
+| [Array of indicators](#requiredIndicatorPerAuthority_anyOf_i1)            |
 
-### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 0`
+### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1`
+### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > Array of indicators`
+
+**Title:** Array of indicators
 
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
-| Each item of this array must be                               | Description |
-| ------------------------------------------------------------- | ----------- |
-| [item 1 items](#requiredIndicatorPerAuthority_anyOf_i1_items) | -           |
+| Each item of this array must be                                   | Description |
+| ----------------------------------------------------------------- | ----------- |
+| [Indicator string](#requiredIndicatorPerAuthority_anyOf_i1_items) | -           |
 
-#### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>CUIRestriction > requiredIndicatorPerAuthority > anyOf > item 1 > item 1 items
+#### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>CUIRestriction > requiredIndicatorPerAuthority > anyOf > Array of indicators > Indicator string
+
+**Title:** Indicator string
 
 | **Type** | `string` |
 | -------- | -------- |

@@ -33,9 +33,9 @@ Information about a specific time period with a start- and/or end-time
 
 The end date of the period of time
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -49,8 +49,8 @@ The end date of the period of time
 
 ### <a name="endDate_anyOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | Any of(Option)                       |
 | ------------------------------------ |
@@ -103,9 +103,9 @@ A year and month in YYYY-MM format
 
 The start date of the period of time
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -119,8 +119,8 @@ The start date of the period of time
 
 ### <a name="startDate_anyOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | Any of(Option)                         |
 | -------------------------------------- |

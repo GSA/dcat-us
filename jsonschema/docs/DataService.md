@@ -72,9 +72,9 @@ Contact information that can be used for sending comments about the Data Service
 
 ### <a name="contactPoint_items"></a>DataService > contactPoint > contactPoint items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                         |
 | -------------------------------------- |
@@ -106,9 +106,9 @@ reference iri of Kind
 
 A list of descriptions of the services available via the end-points, including their operations, parameters etc
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                          |
 | --------------------------------------- |
@@ -131,9 +131,9 @@ A list of descriptions of the services available via the end-points, including t
 
 #### <a name="endpointDescription_anyOf_i1_items"></a>DataService > endpointDescription > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -199,9 +199,9 @@ Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 List of datasets that are served by this data service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                    |
 | --------------------------------- |
@@ -224,9 +224,9 @@ List of datasets that are served by this data service
 
 #### <a name="servesDataset_anyOf_i1_items"></a>DataService > servesDataset > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                    |
 | ------------------------------------------------- |
@@ -258,9 +258,9 @@ reference iri of Dataset
 
 The minimum spatial separation resolvable in a Data Service, measured in meters
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                                |
 | --------------------------------------------- |
@@ -292,9 +292,9 @@ The minimum spatial separation resolvable in a Data Service, measured in meters
 
 The minimum time period resolvable by the Data Service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                         |
 | -------------------------------------- |
@@ -326,9 +326,9 @@ The minimum time period resolvable by the Data Service
 
 A list of themes of the Data Service. A Data Service may be associated with multiple themes
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)            |
 | ------------------------- |
@@ -351,9 +351,9 @@ A list of themes of the Data Service. A Data Service may be associated with mult
 
 #### <a name="theme_anyOf_i1_items"></a>DataService > theme > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -385,9 +385,9 @@ reference iri of Concept
 
 The spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                            |
 | ----------------------------------------- |
@@ -410,9 +410,9 @@ The spatial extent of domain of application of an data service and is standardiz
 
 #### <a name="geographicBoundingBox_anyOf_i1_items"></a>DataService > geographicBoundingBox > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                          |
 | ----------------------------------------------------------------------- |
@@ -444,9 +444,9 @@ reference iri of GeographicBoundingBox
 
 Information regarding access or restrictions based on privacy, security, or other policies
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -484,9 +484,9 @@ reference iri of access rights
 
 List of general standards or specifications that the Data Service endpoints implement
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -509,9 +509,9 @@ List of general standards or specifications that the Data Service endpoints impl
 
 #### <a name="conformsTo_anyOf_i1_items"></a>DataService > conformsTo > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -543,9 +543,9 @@ reference iri of Standard
 
 The date on which the Data Service has been first created
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -559,8 +559,8 @@ The date on which the Data Service has been first created
 
 ### <a name="created_anyOf_i1"></a>Property `DataService > created > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -613,9 +613,9 @@ A year and month in YYYY-MM format
 
 List of agents primarily responsible for producing the Data Service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -638,9 +638,9 @@ List of agents primarily responsible for producing the Data Service
 
 #### <a name="creator_anyOf_i1_items"></a>DataService > creator > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                             |
 | ------------------------------------------ |
@@ -688,9 +688,9 @@ Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french wor
 
 List of the main identifiers for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -722,9 +722,9 @@ List of the main identifiers for the Data Service, e.g. the URI or other unique 
 
 Language or languages supported by the Data Service. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -770,9 +770,9 @@ Language or languages supported by the Data Service. This should be provided as 
 
 The license under which the Data Service is made available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -810,9 +810,9 @@ reference iri of LicenseDocument
 
 The most recent date on which the Data Service was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -826,8 +826,8 @@ The most recent date on which the Data Service was changed or modified
 
 ### <a name="modified_anyOf_i1"></a>Property `DataService > modified > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -880,10 +880,10 @@ A year and month in YYYY-MM format
 
 An entity (organization) responsible for making the Data Service available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -915,9 +915,9 @@ reference iri of Agent
 
 A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -940,9 +940,9 @@ A list of statements concerning all rights for the Data Service not addressed wi
 
 #### <a name="rights_anyOf_i1_items"></a>DataService > rights > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                     |
 | -------------------------------------------------- |
@@ -974,9 +974,9 @@ reference iri of RightsStatement
 
 A list of Agents (organizations) holding rights on the Data Service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -999,9 +999,9 @@ A list of Agents (organizations) holding rights on the Data Service
 
 #### <a name="rightsHolder_anyOf_i1_items"></a>DataService > rightsHolder > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
@@ -1033,9 +1033,9 @@ reference iri of Organization
 
 A geographic region that is covered by the Data Service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -1058,9 +1058,9 @@ A geographic region that is covered by the Data Service
 
 #### <a name="spatial_anyOf_i1_items"></a>DataService > spatial > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -1092,9 +1092,9 @@ reference iri of Location
 
 A list of temporal periods that the DataService covers
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1117,9 +1117,9 @@ A list of temporal periods that the DataService covers
 
 #### <a name="temporal_anyOf_i1_items"></a>DataService > temporal > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                    |
 | ------------------------------------------------- |
@@ -1168,9 +1168,9 @@ Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 Category of the data service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -1208,9 +1208,9 @@ reference iri of Concept
 
 Refers to the performed quality measurements
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                            |
 | ----------------------------------------- |
@@ -1233,9 +1233,9 @@ Refers to the performed quality measurements
 
 #### <a name="hasQualityMeasurement_anyOf_i1_items"></a>DataService > hasQualityMeasurement > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                       |
 | -------------------------------------------------------------------- |
@@ -1267,9 +1267,9 @@ reference iri of QualityMeasurement
 
 An Agent having some form of responsibility for the DataService
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                           |
 | ---------------------------------------- |
@@ -1292,9 +1292,9 @@ An Agent having some form of responsibility for the DataService
 
 #### <a name="qualifiedAttribution_anyOf_i1_items"></a>DataService > qualifiedAttribution > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                               |
 | ------------------------------------------------------------ |
@@ -1326,9 +1326,9 @@ reference iri of Attribution
 
 List of activities that used the Data Service
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -1351,9 +1351,9 @@ List of activities that used the Data Service
 
 #### <a name="wasUsedBy_anyOf_i1_items"></a>DataService > wasUsedBy > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                 |
 | ---------------------------------------------- |

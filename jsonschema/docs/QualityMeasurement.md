@@ -34,10 +34,10 @@ A single measurement of one metric
 
 The metric being observed
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |

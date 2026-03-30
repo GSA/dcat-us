@@ -51,10 +51,10 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 Indication of whether or not there are use restrictions on the archival materials
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                         |
 | -------------------------------------- |
@@ -86,9 +86,9 @@ reference iri of restriction status
 
 The specific NARA restriction associated with the use restriction
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                           |
 | ---------------------------------------- |

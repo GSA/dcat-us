@@ -34,17 +34,19 @@ An activity which a resource could be related to
 
 The category of the Activity
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                |
-| ----------------------------- |
-| [item 0](#category_anyOf_i0)  |
-| [Concept](#category_anyOf_i1) |
-| [item 2](#category_anyOf_i2)  |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#category_anyOf_i0) |
+| [Concept](#category_anyOf_i1)                        |
+| [Link](#category_anyOf_i2)                           |
 
-### <a name="category_anyOf_i0"></a>Property `Activity > category > anyOf > item 0`
+### <a name="category_anyOf_i0"></a>Property `Activity > category > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -60,7 +62,9 @@ inline description of the category
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_anyOf_i2"></a>Property `Activity > category > anyOf > item 2`
+### <a name="category_anyOf_i2"></a>Property `Activity > category > anyOf > Link`
+
+**Title:** Link
 
 reference iri of the category
 

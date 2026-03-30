@@ -33,17 +33,19 @@ An entity that could be involved with a resource
 
 The type of the agent that makes the item available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                |
-| ----------------------------- |
-| [item 0](#category_oneOf_i0)  |
-| [Concept](#category_oneOf_i1) |
-| [item 2](#category_oneOf_i2)  |
+| One of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#category_oneOf_i0) |
+| [Concept](#category_oneOf_i1)                        |
+| [Link](#category_oneOf_i2)                           |
 
-### <a name="category_oneOf_i0"></a>Property `Agent > category > oneOf > item 0`
+### <a name="category_oneOf_i0"></a>Property `Agent > category > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -59,7 +61,9 @@ inline description of the agent type
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_oneOf_i2"></a>Property `Agent > category > oneOf > item 2`
+### <a name="category_oneOf_i2"></a>Property `Agent > category > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the agent type
 

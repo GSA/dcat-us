@@ -39,9 +39,9 @@ Contact information for an individual or entity
 
 The address of the contact
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -64,9 +64,9 @@ The address of the contact
 
 #### <a name="address_anyOf_i1_items"></a>Kind > address > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                              |
 | ------------------------------------------- |

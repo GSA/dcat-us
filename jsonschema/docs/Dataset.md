@@ -93,9 +93,9 @@ Information about a set of data
 
 List of structure identifiers
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                      |
 | ----------------------------------- |
@@ -118,9 +118,9 @@ List of structure identifiers
 
 #### <a name="otherIdentifier_anyOf_i1_items"></a>Dataset > otherIdentifier > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                         |
 | ------------------------------------------------------ |
@@ -152,9 +152,9 @@ reference iri of other identifier
 
 List of links to samples of a Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -177,9 +177,9 @@ List of links to samples of a Dataset
 
 #### <a name="sample_anyOf_i1_items"></a>Dataset > sample > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -211,9 +211,9 @@ reference iri of Distribution
 
 The status of the dataset  in the context of maturity lifecycle
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)              |
 | --------------------------- |
@@ -251,9 +251,9 @@ reference iri of Concept
 
 supported schema for this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -300,9 +300,9 @@ version notes for this dataset
 
 List of contact information that can be used for sending comments about the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -325,9 +325,9 @@ List of contact information that can be used for sending comments about the Data
 
 #### <a name="contactPoint_anyOf_i1_items"></a>Dataset > contactPoint > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -359,9 +359,9 @@ reference iri of Kind
 
 List of available distributions for the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -384,9 +384,9 @@ List of available distributions for the Dataset
 
 #### <a name="distribution_anyOf_i1_items"></a>Dataset > distribution > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
@@ -418,9 +418,9 @@ reference iri of Distribution
 
 the first item of the sequence the dataset belongs to
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)             |
 | -------------------------- |
@@ -458,9 +458,9 @@ reference iri of Dataset
 
 reference to the current (latest) version of a dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                         |
 | -------------------------------------- |
@@ -498,9 +498,9 @@ reference iri of Dataset
 
 List of related Datasets that are a version, edition, or adaptation of the described Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -523,9 +523,9 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 
 #### <a name="hasVersion_anyOf_i1_items"></a>Dataset > hasVersion > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                 |
 | ---------------------------------------------- |
@@ -557,9 +557,9 @@ reference iri of Dataset
 
 List of Dataset Series this dataset belongs to
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -582,9 +582,9 @@ List of Dataset Series this dataset belongs to
 
 #### <a name="inSeries_anyOf_i1_items"></a>Dataset > inSeries > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                     |
 | -------------------------------------------------- |
@@ -616,9 +616,9 @@ reference iri of DatasetSeries
 
 List of keywords or tags describing the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -661,9 +661,9 @@ Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 A web page that provides access to the Dataset, its Distributions and/or additional information
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                    |
 | --------------------------------- |
@@ -701,9 +701,9 @@ reference iri of Document
 
 reference to the previous dataset version
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -741,9 +741,9 @@ reference iri of Dataset
 
 Qualified relationship with role of the dataset with another resource
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                        |
 | ------------------------------------- |
@@ -766,9 +766,9 @@ Qualified relationship with role of the dataset with another resource
 
 #### <a name="qualifiedRelation_anyOf_i1_items"></a>Dataset > qualifiedRelation > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                             |
 | ---------------------------------------------------------- |
@@ -818,9 +818,9 @@ Temporal resolution using xsd:duration syntax
 
 List of themes of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)            |
 | ------------------------- |
@@ -843,9 +843,9 @@ List of themes of the dataset
 
 #### <a name="theme_anyOf_i1_items"></a>Dataset > theme > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -886,9 +886,9 @@ The version indicator (name or identifier) of a resource
 
 A distribution describing the Data Dictionary for this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -926,9 +926,9 @@ reference iri of Distribution
 
 List of WGS84 Geographic Bounding Boxes for this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                            |
 | ----------------------------------------- |
@@ -951,9 +951,9 @@ List of WGS84 Geographic Bounding Boxes for this dataset
 
 #### <a name="geographicBoundingBox_anyOf_i1_items"></a>Dataset > geographicBoundingBox > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                          |
 | ----------------------------------------------------------------------- |
@@ -985,9 +985,9 @@ reference iri of GeographicBoundingBox
 
 A liability statement about the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                     |
 | -------------------------------------------------- |
@@ -1025,9 +1025,9 @@ reference iri of LiabilityStatement
 
 Distribution to "original" metadata document
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                           |
 | ---------------------------------------- |
@@ -1050,9 +1050,9 @@ Distribution to "original" metadata document
 
 #### <a name="metadataDistribution_anyOf_i1_items"></a>Dataset > metadataDistribution > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                |
 | ------------------------------------------------------------- |
@@ -1100,9 +1100,9 @@ Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 Information that indicates whether the Dataset is open data, has access restrictions or is public
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -1140,9 +1140,9 @@ reference iri of RightsStatement
 
 The frequency at which the Dataset is updated
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                         |
 | -------------------------------------- |
@@ -1220,9 +1220,9 @@ Must be one of:
 
 List of standards to which the described Dataset conforms
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -1245,9 +1245,9 @@ List of standards to which the described Dataset conforms
 
 #### <a name="conformsTo_anyOf_i1_items"></a>Dataset > conformsTo > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -1279,9 +1279,9 @@ reference iri of Standard
 
 List of agents contributing to the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                  |
 | ------------------------------- |
@@ -1304,9 +1304,9 @@ List of agents contributing to the Dataset
 
 #### <a name="contributor_anyOf_i1_items"></a>Dataset > contributor > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                 |
 | ---------------------------------------------- |
@@ -1338,9 +1338,9 @@ reference iri of Agent
 
 The date on which the Dataset was first created
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -1354,8 +1354,8 @@ The date on which the Dataset was first created
 
 ### <a name="created_anyOf_i1"></a>Property `Dataset > created > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -1408,9 +1408,9 @@ A year and month in YYYY-MM format
 
 An entity responsible for producing the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)              |
 | --------------------------- |
@@ -1465,9 +1465,9 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 List of related datasets that are part of the described dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -1490,9 +1490,9 @@ List of related datasets that are part of the described dataset
 
 #### <a name="hasPart_anyOf_i1_items"></a>Dataset > hasPart > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                              |
 | ------------------------------------------- |
@@ -1533,9 +1533,9 @@ The unique identifier for the Dataset, e.g. the URI or other unique identifier i
 
 List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                     |
 | ---------------------------------- |
@@ -1570,9 +1570,9 @@ reference iri of Resource
 
 Date of formal issuance (e.g., publication) of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -1586,8 +1586,8 @@ Date of formal issuance (e.g., publication) of the dataset
 
 ### <a name="issued_anyOf_i1"></a>Property `Dataset > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -1640,9 +1640,9 @@ A year and month in YYYY-MM format
 
 Language or languages used in the Dataset. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1688,9 +1688,9 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 
 The most recent date on which the Dataset was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1704,8 +1704,8 @@ The most recent date on which the Dataset was changed or modified
 
 ### <a name="modified_anyOf_i1"></a>Property `Dataset > modified > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -1758,9 +1758,9 @@ A year and month in YYYY-MM format
 
 List of statements about the lineage of a Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -1783,9 +1783,9 @@ List of statements about the lineage of a Dataset
 
 #### <a name="provenance_anyOf_i1_items"></a>Dataset > provenance > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                             |
 | ---------------------------------------------------------- |
@@ -1817,10 +1817,10 @@ reference iri of ProvenanceStatement
 
 An organization responsible for making the Dataset available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -1852,9 +1852,9 @@ reference iri of Organization
 
 List of references to a related resource
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1889,9 +1889,9 @@ reference iri of Resource
 
 List of Datasets replaced by this Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -1914,9 +1914,9 @@ List of Datasets replaced by this Dataset
 
 #### <a name="replaces_anyOf_i1_items"></a>Dataset > replaces > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -1948,9 +1948,9 @@ reference iri of Dataset
 
 List of statements concerning all rights for the Dataset not addressed with license or accessRights, such as copyright statements
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -1988,9 +1988,9 @@ reference iri of RightsStatement
 
 List of agents (organizations) holding rights on the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -2013,9 +2013,9 @@ List of agents (organizations) holding rights on the Dataset
 
 #### <a name="rightsHolder_anyOf_i1_items"></a>Dataset > rightsHolder > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
@@ -2047,9 +2047,9 @@ reference iri of Organization
 
 List of related Datasets from which the described Dataset is derived
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -2072,9 +2072,9 @@ List of related Datasets from which the described Dataset is derived
 
 #### <a name="source_anyOf_i1_items"></a>Dataset > source > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                             |
 | ------------------------------------------ |
@@ -2106,9 +2106,9 @@ reference iri of Dataset
 
 A geographic region or regions that are covered by the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -2152,9 +2152,9 @@ reference iri of Location
 
 #### <a name="spatial_oneOf_i3_items"></a>Dataset > spatial > oneOf > item 3 > item 3 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -2186,9 +2186,9 @@ reference iri of Location
 
 List of primary subjects of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -2211,9 +2211,9 @@ List of primary subjects of the dataset
 
 #### <a name="subject_anyOf_i1_items"></a>Dataset > subject > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                              |
 | ------------------------------------------- |
@@ -2245,9 +2245,9 @@ reference iri of Concept
 
 List of temporal periods that the dataset covers
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -2270,9 +2270,9 @@ List of temporal periods that the dataset covers
 
 #### <a name="temporal_anyOf_i1_items"></a>Dataset > temporal > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                    |
 | ------------------------------------------------- |
@@ -2321,9 +2321,9 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 List of categories of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -2346,9 +2346,9 @@ List of categories of the dataset
 
 #### <a name="category_anyOf_i1_items"></a>Dataset > category > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -2380,9 +2380,9 @@ reference iri of Concept
 
 List of quality measurements for the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                            |
 | ----------------------------------------- |
@@ -2405,9 +2405,9 @@ List of quality measurements for the dataset
 
 #### <a name="hasQualityMeasurement_anyOf_i1_items"></a>Dataset > hasQualityMeasurement > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                                       |
 | -------------------------------------------------------------------- |
@@ -2439,9 +2439,9 @@ reference iri of QualityMeasurement
 
 List of pages or documents about this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)           |
 | ------------------------ |
@@ -2464,9 +2464,9 @@ List of pages or documents about this dataset
 
 #### <a name="page_anyOf_i1_items"></a>Dataset > page > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -2498,9 +2498,9 @@ reference iri of Document
 
 List of agents having some form of responsibility for the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                           |
 | ---------------------------------------- |
@@ -2523,9 +2523,9 @@ List of agents having some form of responsibility for the dataset
 
 #### <a name="qualifiedAttribution_anyOf_i1_items"></a>Dataset > qualifiedAttribution > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                               |
 | ------------------------------------------------------------ |
@@ -2557,9 +2557,9 @@ reference iri of Attribution
 
 List of agents attributed to this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                      |
 | ----------------------------------- |
@@ -2582,9 +2582,9 @@ List of agents attributed to this dataset
 
 #### <a name="wasAttributedTo_anyOf_i1_items"></a>Dataset > wasAttributedTo > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                     |
 | -------------------------------------------------- |
@@ -2616,9 +2616,9 @@ reference iri of Agent
 
 List of activities that generated, or provide the business context for the creation of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                     |
 | ---------------------------------- |
@@ -2641,9 +2641,9 @@ List of activities that generated, or provide the business context for the creat
 
 #### <a name="wasGeneratedBy_anyOf_i1_items"></a>Dataset > wasGeneratedBy > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                      |
 | --------------------------------------------------- |
@@ -2675,9 +2675,9 @@ reference iri of Activity
 
 List of activities that used the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                |
 | ----------------------------- |
@@ -2700,9 +2700,9 @@ List of activities that used the Dataset
 
 #### <a name="wasUsedBy_anyOf_i1_items"></a>Dataset > wasUsedBy > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                 |
 | ---------------------------------------------- |
@@ -2734,9 +2734,9 @@ reference iri of Activity
 
 Link to a thumbnail picture illustrating the content of the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)            |
 | ------------------------- |

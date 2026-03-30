@@ -45,9 +45,9 @@ An ordered series of datasets
 
 List of contacts that can be used for sending comments about the Dataset Series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -70,9 +70,9 @@ List of contacts that can be used for sending comments about the Dataset Series
 
 #### <a name="contactPoint_anyOf_i1_items"></a>DatasetSeries > contactPoint > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
@@ -104,9 +104,9 @@ reference iri of the contact
 
 The first dataset in an ordered dataset series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)             |
 | -------------------------- |
@@ -144,9 +144,9 @@ reference iri of the first dataset
 
 The last dataset in an ordered dataset series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)            |
 | ------------------------- |
@@ -184,9 +184,9 @@ reference iri of the last dataset
 
 List of members of the Dataset Series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -209,9 +209,9 @@ List of members of the Dataset Series
 
 #### <a name="seriesMember_anyOf_i1_items"></a>DatasetSeries > seriesMember > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                   |
 | ------------------------------------------------ |
@@ -243,9 +243,9 @@ reference iri of the member dataset
 
 The frequency at which the Dataset Series is updated
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                         |
 | -------------------------------------- |
@@ -340,9 +340,9 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The date of formal issuance (e.g.,publication) of the Dataset Series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -356,8 +356,8 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 
 ### <a name="issued_anyOf_i1"></a>Property `DatasetSeries > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -410,9 +410,9 @@ A year and month in YYYY-MM format
 
 The most recent date on which the Dataset Series was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -426,8 +426,8 @@ The most recent date on which the Dataset Series was changed or modified
 
 ### <a name="modified_anyOf_i1"></a>Property `DatasetSeries > modified > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -480,9 +480,9 @@ A year and month in YYYY-MM format
 
 An entity (organization) responsible for ensuring the coherency of the Dataset Series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -520,9 +520,9 @@ reference iri of publisher
 
 A geographic region that is covered by the Dataset Series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -545,9 +545,9 @@ A geographic region that is covered by the Dataset Series
 
 #### <a name="spatial_anyOf_i1_items"></a>DatasetSeries > spatial > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -579,9 +579,9 @@ reference iri of Location
 
 A list of temporal periods that the Dataset Series covers
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -604,9 +604,9 @@ A list of temporal periods that the Dataset Series covers
 
 #### <a name="temporal_anyOf_i1_items"></a>DatasetSeries > temporal > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                    |
 | ------------------------------------------------- |

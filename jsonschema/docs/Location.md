@@ -40,9 +40,9 @@ Information about a specific geographic location
 
 bounding box of a location (in any coordinate system)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)           |
 | ------------------------ |
@@ -68,9 +68,9 @@ Bounding box represented in some string format
 
 The geographic center (centroid) of a location
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -96,9 +96,9 @@ Center point in some string format
 
 A list of geographic identifiers for the location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -130,9 +130,9 @@ A list of geographic identifiers for the location, e.g., the URI or other unique
 
 Associates a location with a corresponding geometry
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -158,9 +158,9 @@ String format of the full geometry of the location
 
 The gazetteer to which the location belongs
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |

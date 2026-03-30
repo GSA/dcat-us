@@ -12,8 +12,8 @@ The main item defined by DCAT-US 3 is the Catalog class
 | ------------------------------------------------ | ----------------------- | ----------------------------------------------------------------------------------- |
 | - [@id](#@id )                                   | string                  | -                                                                                   |
 | - [@type](#@type )                               | string                  | -                                                                                   |
-| - [catalog](#catalog )                           | More than one type      | catalog                                                                             |
-| - [contactPoint](#contactPoint )                 | More than one type      | contact point                                                                       |
+| - [catalog](#catalog )                           | null or array           | Related catalogs                                                                    |
+| - [contactPoint](#contactPoint )                 | null or array           | Contact points                                                                      |
 | + [dataset](#dataset )                           | array                   | dataset                                                                             |
 | - [keyword](#keyword )                           | null or array of string | keyword/tag                                                                         |
 | - [keywordMap](#keywordMap )                     | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
@@ -58,54 +58,44 @@ The main item defined by DCAT-US 3 is the Catalog class
 
 ## <a name="catalog"></a>Property `DCAT-US 3 Catalog > catalog`
 
-**Title:** catalog
+**Title:** Related catalogs
 
 List of related catalogs whose contents are of interest in the context of this catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#catalog_anyOf_i0) |
-| [item 1](#catalog_anyOf_i1) |
+| Each item of this array must be     | Description |
+| ----------------------------------- | ----------- |
+| [Catalog or a link](#catalog_items) | -           |
 
-### <a name="catalog_anyOf_i0"></a>Property `DCAT-US 3 Catalog > catalog > anyOf > item 0`
+### <a name="catalog_items"></a>DCAT-US 3 Catalog > catalog > Catalog or a link
 
-| **Type** | `null` |
-| -------- | ------ |
+**Title:** Catalog or a link
 
-### <a name="catalog_anyOf_i1"></a>Property `DCAT-US 3 Catalog > catalog > anyOf > item 1`
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| **Type** | `array` |
-| -------- | ------- |
+| One of(Option)                               |
+| -------------------------------------------- |
+| [DCAT-US 3 Catalog](#catalog_items_oneOf_i0) |
+| [Link](#catalog_items_oneOf_i1)              |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#catalog_anyOf_i1_items) | -           |
+#### <a name="catalog_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > catalog > Catalog or a link > oneOf > DCAT-US 3 Catalog`
 
-#### <a name="catalog_anyOf_i1_items"></a>DCAT-US 3 Catalog > catalog > anyOf > item 1 > item 1 items
+**Title:** DCAT-US 3 Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+inline description of a Catalog object
 
-| One of(Option)                              |
-| ------------------------------------------- |
-| [catalog](#catalog_anyOf_i1_items_oneOf_i0) |
-| [item 1](#catalog_anyOf_i1_items_oneOf_i1)  |
+| **Type**                  | `object`                   |
+| ------------------------- | -------------------------- |
+| **Additional properties** | Any type allowed           |
+| **Same definition as**    | [DCAT-US 3 Catalog](#root) |
 
-##### <a name="catalog_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > catalog > anyOf > item 1 > item 1 items > oneOf > catalog`
+#### <a name="catalog_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > catalog > Catalog or a link > oneOf > Link`
 
-inline description of Catalog
-
-| **Type**                  | `object`                |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Catalog](./Catalog.md) |
-
-##### <a name="catalog_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > catalog > anyOf > item 1 > item 1 items > oneOf > item 1`
+**Title:** Link
 
 reference iri of Catalog
 
@@ -115,45 +105,31 @@ reference iri of Catalog
 
 ## <a name="contactPoint"></a>Property `DCAT-US 3 Catalog > contactPoint`
 
-**Title:** contact point
+**Title:** Contact points
 
 Contact information that can be used for sending comments about the Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                   |
-| -------------------------------- |
-| [item 0](#contactPoint_anyOf_i0) |
-| [item 1](#contactPoint_anyOf_i1) |
+| Each item of this array must be                | Description |
+| ---------------------------------------------- | ----------- |
+| [Contact point or a link](#contactPoint_items) | -           |
 
-### <a name="contactPoint_anyOf_i0"></a>Property `DCAT-US 3 Catalog > contactPoint > anyOf > item 0`
+### <a name="contactPoint_items"></a>DCAT-US 3 Catalog > contactPoint > Contact point or a link
 
-| **Type** | `null` |
-| -------- | ------ |
+**Title:** Contact point or a link
 
-### <a name="contactPoint_anyOf_i1"></a>Property `DCAT-US 3 Catalog > contactPoint > anyOf > item 1`
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| **Type** | `array` |
-| -------- | ------- |
+| One of(Option)                       |
+| ------------------------------------ |
+| [Kind](#contactPoint_items_oneOf_i0) |
+| [Link](#contactPoint_items_oneOf_i1) |
 
-| Each item of this array must be              | Description |
-| -------------------------------------------- | ----------- |
-| [item 1 items](#contactPoint_anyOf_i1_items) | -           |
-
-#### <a name="contactPoint_anyOf_i1_items"></a>DCAT-US 3 Catalog > contactPoint > anyOf > item 1 > item 1 items
-
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
-
-| One of(Option)                                  |
-| ----------------------------------------------- |
-| [Kind](#contactPoint_anyOf_i1_items_oneOf_i0)   |
-| [item 1](#contactPoint_anyOf_i1_items_oneOf_i1) |
-
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > contactPoint > anyOf > item 1 > item 1 items > oneOf > Kind`
+#### <a name="contactPoint_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > contactPoint > Contact point or a link > oneOf > Kind`
 
 **Title:** Kind
 
@@ -164,7 +140,9 @@ inline value for contact point
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-##### <a name="contactPoint_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > contactPoint > anyOf > item 1 > item 1 items > oneOf > item 1`
+#### <a name="contactPoint_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > contactPoint > Contact point or a link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of contact point
 
@@ -188,14 +166,14 @@ List of Datasets that are part of the Catalog
 
 ### <a name="dataset_items"></a>DCAT-US 3 Catalog > dataset > dataset items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                     |
 | ---------------------------------- |
 | [Dataset](#dataset_items_oneOf_i0) |
-| [item 1](#dataset_items_oneOf_i1)  |
+| [Link](#dataset_items_oneOf_i1)    |
 
 #### <a name="dataset_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > dataset > dataset items > oneOf > Dataset`
 
@@ -208,7 +186,9 @@ inline description of Dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-#### <a name="dataset_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > dataset > dataset items > oneOf > item 1`
+#### <a name="dataset_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > dataset > dataset items > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Dataset
 
@@ -225,6 +205,15 @@ A list of keywords or tags describing the resource
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
 
+| Each item of this array must be | Description |
+| ------------------------------- | ----------- |
+| [keyword items](#keyword_items) | -           |
+
+### <a name="keyword_items"></a>DCAT-US 3 Catalog > keyword > keyword items
+
+| **Type** | `string` |
+| -------- | -------- |
+
 ## <a name="keywordMap"></a>Property `DCAT-US 3 Catalog > keywordMap`
 
 Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
@@ -238,41 +227,47 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)             |
-| -------------------------- |
-| [item 0](#record_anyOf_i0) |
-| [item 1](#record_anyOf_i1) |
+| Any of(Option)                                     |
+| -------------------------------------------------- |
+| [Null allowed when not required](#record_anyOf_i0) |
+| [Array of records](#record_anyOf_i1)               |
 
-### <a name="record_anyOf_i0"></a>Property `DCAT-US 3 Catalog > record > anyOf > item 0`
+### <a name="record_anyOf_i0"></a>Property `DCAT-US 3 Catalog > record > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="record_anyOf_i1"></a>Property `DCAT-US 3 Catalog > record > anyOf > item 1`
+### <a name="record_anyOf_i1"></a>Property `DCAT-US 3 Catalog > record > anyOf > Array of records`
+
+**Title:** Array of records
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be        | Description |
-| -------------------------------------- | ----------- |
-| [item 1 items](#record_anyOf_i1_items) | -           |
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [Record object or Link](#record_anyOf_i1_items) | -           |
 
-#### <a name="record_anyOf_i1_items"></a>DCAT-US 3 Catalog > record > anyOf > item 1 > item 1 items
+#### <a name="record_anyOf_i1_items"></a>DCAT-US 3 Catalog > record > anyOf > Array of records > Record object or Link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Record object or Link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                   |
 | ------------------------------------------------ |
 | [CatalogRecord](#record_anyOf_i1_items_oneOf_i0) |
-| [item 1](#record_anyOf_i1_items_oneOf_i1)        |
+| [Link](#record_anyOf_i1_items_oneOf_i1)          |
 
-##### <a name="record_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > record > anyOf > item 1 > item 1 items > oneOf > CatalogRecord`
+##### <a name="record_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > record > anyOf > Array of records > Record object or Link > oneOf > CatalogRecord`
 
 **Title:** CatalogRecord
 
@@ -283,7 +278,9 @@ inline description of the record
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Catalogrecord](./Catalogrecord.md) |
 
-##### <a name="record_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > record > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="record_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > record > anyOf > Array of records > Record object or Link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the record
 
@@ -297,41 +294,47 @@ reference iri of the record
 
 List of data services that are listed in the Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#service_anyOf_i0) |
-| [item 1](#service_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#service_anyOf_i0) |
+| [Array of data services](#service_anyOf_i1)         |
 
-### <a name="service_anyOf_i0"></a>Property `DCAT-US 3 Catalog > service > anyOf > item 0`
+### <a name="service_anyOf_i0"></a>Property `DCAT-US 3 Catalog > service > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="service_anyOf_i1"></a>Property `DCAT-US 3 Catalog > service > anyOf > item 1`
+### <a name="service_anyOf_i1"></a>Property `DCAT-US 3 Catalog > service > anyOf > Array of data services`
+
+**Title:** Array of data services
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#service_anyOf_i1_items) | -           |
+| Each item of this array must be                       | Description |
+| ----------------------------------------------------- | ----------- |
+| [DataService object or link](#service_anyOf_i1_items) | -           |
 
-#### <a name="service_anyOf_i1_items"></a>DCAT-US 3 Catalog > service > anyOf > item 1 > item 1 items
+#### <a name="service_anyOf_i1_items"></a>DCAT-US 3 Catalog > service > anyOf > Array of data services > DataService object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** DataService object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                  |
 | ----------------------------------------------- |
 | [DataService](#service_anyOf_i1_items_oneOf_i0) |
-| [item 1](#service_anyOf_i1_items_oneOf_i1)      |
+| [Link](#service_anyOf_i1_items_oneOf_i1)        |
 
-##### <a name="service_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > service > anyOf > item 1 > item 1 items > oneOf > DataService`
+##### <a name="service_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > service > anyOf > Array of data services > DataService object or link > oneOf > DataService`
 
 **Title:** DataService
 
@@ -342,7 +345,9 @@ inline description of the service
 | **Additional properties** | Any type allowed                                                                                            |
 | **Same definition as**    | [DataService](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="service_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > service > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="service_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > service > anyOf > Array of data services > DataService object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the service
 
@@ -356,41 +361,47 @@ reference iri of the service
 
 A list of categories for the Catalog. A Catalog may be associated with multiple themes
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)            |
-| ------------------------- |
-| [item 0](#theme_anyOf_i0) |
-| [item 1](#theme_anyOf_i1) |
+| Any of(Option)                                    |
+| ------------------------------------------------- |
+| [Null allowed when not required](#theme_anyOf_i0) |
+| [Array of categories](#theme_anyOf_i1)            |
 
-### <a name="theme_anyOf_i0"></a>Property `DCAT-US 3 Catalog > theme > anyOf > item 0`
+### <a name="theme_anyOf_i0"></a>Property `DCAT-US 3 Catalog > theme > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="theme_anyOf_i1"></a>Property `DCAT-US 3 Catalog > theme > anyOf > item 1`
+### <a name="theme_anyOf_i1"></a>Property `DCAT-US 3 Catalog > theme > anyOf > Array of categories`
+
+**Title:** Array of categories
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be       | Description |
-| ------------------------------------- | ----------- |
-| [item 1 items](#theme_anyOf_i1_items) | -           |
+| Each item of this array must be           | Description |
+| ----------------------------------------- | ----------- |
+| [Category or link](#theme_anyOf_i1_items) | -           |
 
-#### <a name="theme_anyOf_i1_items"></a>DCAT-US 3 Catalog > theme > anyOf > item 1 > item 1 items
+#### <a name="theme_anyOf_i1_items"></a>DCAT-US 3 Catalog > theme > anyOf > Array of categories > Category or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Category or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
 | [Concept](#theme_anyOf_i1_items_oneOf_i0) |
-| [item 1](#theme_anyOf_i1_items_oneOf_i1)  |
+| [Link](#theme_anyOf_i1_items_oneOf_i1)    |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > theme > anyOf > item 1 > item 1 items > oneOf > Concept`
+##### <a name="theme_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > theme > anyOf > Array of categories > Category or link > oneOf > Concept`
 
 **Title:** Concept
 
@@ -401,7 +412,9 @@ inline description of the theme
 | **Additional properties** | Any type allowed                                                                                   |
 | **Same definition as**    | [Concept](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > theme > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="theme_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > theme > anyOf > Array of categories > Category or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the theme
 
@@ -415,41 +428,47 @@ reference iri of the theme
 
 A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                    |
-| --------------------------------- |
-| [item 0](#themeTaxonomy_anyOf_i0) |
-| [item 1](#themeTaxonomy_anyOf_i1) |
+| Any of(Option)                                            |
+| --------------------------------------------------------- |
+| [Null allowed when not required](#themeTaxonomy_anyOf_i0) |
+| [Array of taxonomies](#themeTaxonomy_anyOf_i1)            |
 
-### <a name="themeTaxonomy_anyOf_i0"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > item 0`
+### <a name="themeTaxonomy_anyOf_i0"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="themeTaxonomy_anyOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > item 1`
+### <a name="themeTaxonomy_anyOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > Array of taxonomies`
+
+**Title:** Array of taxonomies
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be               | Description |
-| --------------------------------------------- | ----------- |
-| [item 1 items](#themeTaxonomy_anyOf_i1_items) | -           |
+| Each item of this array must be                               | Description |
+| ------------------------------------------------------------- | ----------- |
+| [ConceptScheme object or link](#themeTaxonomy_anyOf_i1_items) | -           |
 
-#### <a name="themeTaxonomy_anyOf_i1_items"></a>DCAT-US 3 Catalog > themeTaxonomy > anyOf > item 1 > item 1 items
+#### <a name="themeTaxonomy_anyOf_i1_items"></a>DCAT-US 3 Catalog > themeTaxonomy > anyOf > Array of taxonomies > ConceptScheme object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** ConceptScheme object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                          |
 | ------------------------------------------------------- |
 | [ConceptScheme](#themeTaxonomy_anyOf_i1_items_oneOf_i0) |
-| [item 1](#themeTaxonomy_anyOf_i1_items_oneOf_i1)        |
+| [Link](#themeTaxonomy_anyOf_i1_items_oneOf_i1)          |
 
-##### <a name="themeTaxonomy_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > item 1 > item 1 items > oneOf > ConceptScheme`
+##### <a name="themeTaxonomy_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > Array of taxonomies > ConceptScheme object or link > oneOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
@@ -460,7 +479,9 @@ inline description of ConceptScheme
 | **Additional properties** | Any type allowed                                                                                                           |
 | **Same definition as**    | [ConceptScheme](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1_inScheme_oneOf_i0) |
 
-##### <a name="themeTaxonomy_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="themeTaxonomy_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > anyOf > Array of taxonomies > ConceptScheme object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of ConceptScheme
 
@@ -474,17 +495,19 @@ reference iri of ConceptScheme
 
 Information that indicates whether the Catalog is open data, has access restrictions or is not public
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#accessRights_oneOf_i0)          |
-| [RightsStatement](#accessRights_oneOf_i1) |
-| [item 2](#accessRights_oneOf_i2)          |
+| One of(Option)                                           |
+| -------------------------------------------------------- |
+| [Null allowed when not required](#accessRights_oneOf_i0) |
+| [RightsStatement](#accessRights_oneOf_i1)                |
+| [Link](#accessRights_oneOf_i2)                           |
 
-### <a name="accessRights_oneOf_i0"></a>Property `DCAT-US 3 Catalog > accessRights > oneOf > item 0`
+### <a name="accessRights_oneOf_i0"></a>Property `DCAT-US 3 Catalog > accessRights > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -500,7 +523,9 @@ inline description of access rights
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [RightsStatement](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
-### <a name="accessRights_oneOf_i2"></a>Property `DCAT-US 3 Catalog > accessRights > oneOf > item 2`
+### <a name="accessRights_oneOf_i2"></a>Property `DCAT-US 3 Catalog > accessRights > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the access rights
 
@@ -514,17 +539,19 @@ reference iri of the access rights
 
 An established standard to which the described catalog conforms
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                   |
-| -------------------------------- |
-| [item 0](#conformsTo_oneOf_i0)   |
-| [Standard](#conformsTo_oneOf_i1) |
-| [item 2](#conformsTo_oneOf_i2)   |
+| One of(Option)                                         |
+| ------------------------------------------------------ |
+| [Null allowed when not required](#conformsTo_oneOf_i0) |
+| [Standard](#conformsTo_oneOf_i1)                       |
+| [Link](#conformsTo_oneOf_i2)                           |
 
-### <a name="conformsTo_oneOf_i0"></a>Property `DCAT-US 3 Catalog > conformsTo > oneOf > item 0`
+### <a name="conformsTo_oneOf_i0"></a>Property `DCAT-US 3 Catalog > conformsTo > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -540,7 +567,9 @@ inline description of Standard
 | **Additional properties** | Any type allowed                                                                                                                            |
 | **Same definition as**    | [Standard](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_conformsTo_anyOf_i1_items_oneOf_i0) |
 
-### <a name="conformsTo_oneOf_i2"></a>Property `DCAT-US 3 Catalog > conformsTo > oneOf > item 2`
+### <a name="conformsTo_oneOf_i2"></a>Property `DCAT-US 3 Catalog > conformsTo > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Standard
 
@@ -554,21 +583,25 @@ reference iri of Standard
 
 The entity responsible for creating the resource
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#creator_anyOf_i0) |
-| [item 1](#creator_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#creator_anyOf_i0) |
+| [Array of creators](#creator_anyOf_i1)              |
 
-### <a name="creator_anyOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > item 0`
+### <a name="creator_anyOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="creator_anyOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > item 1`
+### <a name="creator_anyOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators`
+
+**Title:** Array of creators
 
 | **Type** | `array` |
 | -------- | ------- |
@@ -577,18 +610,18 @@ The entity responsible for creating the resource
 | --------------------------------------- | ----------- |
 | [item 1 items](#creator_anyOf_i1_items) | -           |
 
-#### <a name="creator_anyOf_i1_items"></a>DCAT-US 3 Catalog > creator > anyOf > item 1 > item 1 items
+#### <a name="creator_anyOf_i1_items"></a>DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                             |
-| ------------------------------------------ |
-| [Agent](#creator_anyOf_i1_items_oneOf_i0)  |
-| [item 1](#creator_anyOf_i1_items_oneOf_i1) |
+| One of(Option)                            |
+| ----------------------------------------- |
+| [Agent](#creator_anyOf_i1_items_oneOf_i0) |
+| [Link](#creator_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > item 1 > item 1 items > oneOf > Agent`
+##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items > oneOf > Agent`
 
 **Title:** Agent
 
@@ -599,7 +632,9 @@ inline description of creator
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [Agent](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items > oneOf > Link`
+
+**Title:** Link
 
 reference iri of creator
 
@@ -629,41 +664,47 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 A list of related catalogs that are part of the described catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#hasPart_anyOf_i0) |
-| [item 1](#hasPart_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#hasPart_anyOf_i0) |
+| [Array of catalogs](#hasPart_anyOf_i1)              |
 
-### <a name="hasPart_anyOf_i0"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > item 0`
+### <a name="hasPart_anyOf_i0"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="hasPart_anyOf_i1"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > item 1`
+### <a name="hasPart_anyOf_i1"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > Array of catalogs`
+
+**Title:** Array of catalogs
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#hasPart_anyOf_i1_items) | -           |
+| Each item of this array must be                   | Description |
+| ------------------------------------------------- | ----------- |
+| [Catalog object or link](#hasPart_anyOf_i1_items) | -           |
 
-#### <a name="hasPart_anyOf_i1_items"></a>DCAT-US 3 Catalog > hasPart > anyOf > item 1 > item 1 items
+#### <a name="hasPart_anyOf_i1_items"></a>DCAT-US 3 Catalog > hasPart > anyOf > Array of catalogs > Catalog object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Catalog object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
 | [DCAT-US 3 Catalog](#hasPart_anyOf_i1_items_oneOf_i0) |
-| [item 1](#hasPart_anyOf_i1_items_oneOf_i1)            |
+| [Link](#hasPart_anyOf_i1_items_oneOf_i1)              |
 
-##### <a name="hasPart_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > item 1 > item 1 items > oneOf > DCAT-US 3 Catalog`
+##### <a name="hasPart_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > Array of catalogs > Catalog object or link > oneOf > DCAT-US 3 Catalog`
 
 **Title:** DCAT-US 3 Catalog
 
@@ -674,7 +715,9 @@ inline description of the related catalog
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [DCAT-US 3 Catalog](#root) |
 
-##### <a name="hasPart_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="hasPart_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > hasPart > anyOf > Array of catalogs > Catalog object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the related catalog
 
@@ -688,16 +731,18 @@ reference iri of the related catalog
 
 List of identifiers for the Catalog, e.g. the URI or other unique identifier
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                 |
-| ------------------------------ |
-| [item 0](#identifier_anyOf_i0) |
-| [item 1](#identifier_anyOf_i1) |
+| Any of(Option)                                         |
+| ------------------------------------------------------ |
+| [Null allowed when not required](#identifier_anyOf_i0) |
+| [item 1](#identifier_anyOf_i1)                         |
 
-### <a name="identifier_anyOf_i0"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > item 0`
+### <a name="identifier_anyOf_i0"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -722,24 +767,28 @@ List of identifiers for the Catalog, e.g. the URI or other unique identifier
 
 Date of formal issuance (e.g., publication) of the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)             |
-| -------------------------- |
-| [item 0](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1) |
+| Any of(Option)                                     |
+| -------------------------------------------------- |
+| [Null allowed when not required](#issued_anyOf_i0) |
+| [Date string](#issued_anyOf_i1)                    |
 
-### <a name="issued_anyOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 0`
+### <a name="issued_anyOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 1`
+### <a name="issued_anyOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+**Title:** Date string
+
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -748,21 +797,21 @@ Date of formal issuance (e.g., publication) of the catalog
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
@@ -774,7 +823,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `DCAT-US 3 Catalog > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -792,22 +841,26 @@ A year and month in YYYY-MM format
 
 Language or languages used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#language_anyOf_i0) |
-| [item 1](#language_anyOf_i1) |
-| [item 2](#language_anyOf_i2) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#language_anyOf_i0) |
+| [Language code](#language_anyOf_i1)                  |
+| [List of language codes](#language_anyOf_i2)         |
 
-### <a name="language_anyOf_i0"></a>Property `DCAT-US 3 Catalog > language > anyOf > item 0`
+### <a name="language_anyOf_i0"></a>Property `DCAT-US 3 Catalog > language > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="language_anyOf_i1"></a>Property `DCAT-US 3 Catalog > language > anyOf > item 1`
+### <a name="language_anyOf_i1"></a>Property `DCAT-US 3 Catalog > language > anyOf > Language code`
+
+**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -816,16 +869,20 @@ Language or languages used in the textual metadata describing titles, descriptio
 | -------------- | - |
 | **Max length** | 2 |
 
-### <a name="language_anyOf_i2"></a>Property `DCAT-US 3 Catalog > language > anyOf > item 2`
+### <a name="language_anyOf_i2"></a>Property `DCAT-US 3 Catalog > language > anyOf > List of language codes`
+
+**Title:** List of language codes
 
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
-| Each item of this array must be          | Description |
-| ---------------------------------------- | ----------- |
-| [item 2 items](#language_anyOf_i2_items) | -           |
+| Each item of this array must be           | Description |
+| ----------------------------------------- | ----------- |
+| [Language code](#language_anyOf_i2_items) | -           |
 
-#### <a name="language_anyOf_i2_items"></a>DCAT-US 3 Catalog > language > anyOf > item 2 > item 2 items
+#### <a name="language_anyOf_i2_items"></a>DCAT-US 3 Catalog > language > anyOf > List of language codes > Language code
+
+**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -840,17 +897,19 @@ Language or languages used in the textual metadata describing titles, descriptio
 
 The license under which the Catalog can be used or reused
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                       |
-| ------------------------------------ |
-| [item 0](#license_oneOf_i0)          |
-| [LicenseDocument](#license_oneOf_i1) |
-| [item 2](#license_oneOf_i2)          |
+| One of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#license_oneOf_i0) |
+| [LicenseDocument](#license_oneOf_i1)                |
+| [Link](#license_oneOf_i2)                           |
 
-### <a name="license_oneOf_i0"></a>Property `DCAT-US 3 Catalog > license > oneOf > item 0`
+### <a name="license_oneOf_i0"></a>Property `DCAT-US 3 Catalog > license > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -866,7 +925,9 @@ inline description of the license
 | **Additional properties** | Any type allowed                                                                                                                 |
 | **Same definition as**    | [LicenseDocument](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_license_oneOf_i1) |
 
-### <a name="license_oneOf_i2"></a>Property `DCAT-US 3 Catalog > license > oneOf > item 2`
+### <a name="license_oneOf_i2"></a>Property `DCAT-US 3 Catalog > license > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the license
 
@@ -880,24 +941,28 @@ reference iri of the license
 
 Most recent date on which the catalog was changed, updated or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#modified_anyOf_i0) |
+| [Date string](#modified_anyOf_i1)                    |
 
-### <a name="modified_anyOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 0`
+### <a name="modified_anyOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+**Title:** Date string
+
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -906,21 +971,21 @@ Most recent date on which the catalog was changed, updated or modified
 | [item 2](#modified_anyOf_i1_oneOf_i2) |
 | [item 3](#modified_anyOf_i1_oneOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
@@ -932,7 +997,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `DCAT-US 3 Catalog > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -950,17 +1015,19 @@ A year and month in YYYY-MM format
 
 Agent responsible for making the catalog available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                |
-| ----------------------------- |
-| [item 0](#publisher_oneOf_i0) |
-| [Agent](#publisher_oneOf_i1)  |
-| [item 2](#publisher_oneOf_i2) |
+| One of(Option)                                        |
+| ----------------------------------------------------- |
+| [Null allowed when not required](#publisher_oneOf_i0) |
+| [Agent](#publisher_oneOf_i1)                          |
+| [Link](#publisher_oneOf_i2)                           |
 
-### <a name="publisher_oneOf_i0"></a>Property `DCAT-US 3 Catalog > publisher > oneOf > item 0`
+### <a name="publisher_oneOf_i0"></a>Property `DCAT-US 3 Catalog > publisher > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -976,7 +1043,9 @@ inline description of the publisher
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [Agent](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
 
-### <a name="publisher_oneOf_i2"></a>Property `DCAT-US 3 Catalog > publisher > oneOf > item 2`
+### <a name="publisher_oneOf_i2"></a>Property `DCAT-US 3 Catalog > publisher > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the publisher
 
@@ -990,17 +1059,19 @@ reference iri of the publisher
 
 A statement that specifies rights associated with the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
-| ----------------------------------- |
-| [item 0](#rights_oneOf_i0)          |
-| [RightsStatement](#rights_oneOf_i1) |
-| [item 2](#rights_oneOf_i2)          |
+| One of(Option)                                     |
+| -------------------------------------------------- |
+| [Null allowed when not required](#rights_oneOf_i0) |
+| [RightsStatement](#rights_oneOf_i1)                |
+| [Link](#rights_oneOf_i2)                           |
 
-### <a name="rights_oneOf_i0"></a>Property `DCAT-US 3 Catalog > rights > oneOf > item 0`
+### <a name="rights_oneOf_i0"></a>Property `DCAT-US 3 Catalog > rights > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -1016,7 +1087,9 @@ inline description of rights
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [RightsStatement](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
 
-### <a name="rights_oneOf_i2"></a>Property `DCAT-US 3 Catalog > rights > oneOf > item 2`
+### <a name="rights_oneOf_i2"></a>Property `DCAT-US 3 Catalog > rights > oneOf > Link`
+
+**Title:** Link
 
 reference iri of rights
 
@@ -1030,41 +1103,47 @@ reference iri of rights
 
 List of organizations holding rights on the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                   |
-| -------------------------------- |
-| [item 0](#rightsHolder_anyOf_i0) |
-| [item 1](#rightsHolder_anyOf_i1) |
+| Any of(Option)                                           |
+| -------------------------------------------------------- |
+| [Null allowed when not required](#rightsHolder_anyOf_i0) |
+| [Array of rights holders](#rightsHolder_anyOf_i1)        |
 
-### <a name="rightsHolder_anyOf_i0"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > item 0`
+### <a name="rightsHolder_anyOf_i0"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="rightsHolder_anyOf_i1"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > item 1`
+### <a name="rightsHolder_anyOf_i1"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > Array of rights holders`
+
+**Title:** Array of rights holders
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be              | Description |
-| -------------------------------------------- | ----------- |
-| [item 1 items](#rightsHolder_anyOf_i1_items) | -           |
+| Each item of this array must be                      | Description |
+| ---------------------------------------------------- | ----------- |
+| [Organization or link](#rightsHolder_anyOf_i1_items) | -           |
 
-#### <a name="rightsHolder_anyOf_i1_items"></a>DCAT-US 3 Catalog > rightsHolder > anyOf > item 1 > item 1 items
+#### <a name="rightsHolder_anyOf_i1_items"></a>DCAT-US 3 Catalog > rightsHolder > anyOf > Array of rights holders > Organization or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Organization or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                        |
 | ----------------------------------------------------- |
 | [Organization](#rightsHolder_anyOf_i1_items_oneOf_i0) |
-| [item 1](#rightsHolder_anyOf_i1_items_oneOf_i1)       |
+| [Link](#rightsHolder_anyOf_i1_items_oneOf_i1)         |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > item 1 > item 1 items > oneOf > Organization`
+##### <a name="rightsHolder_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > Array of rights holders > Organization or link > oneOf > Organization`
 
 **Title:** Organization
 
@@ -1075,7 +1154,9 @@ inline description of rights holder
 | **Additional properties** | Any type allowed                                                                                 |
 | **Same definition as**    | [Organization](#dataset_items_oneOf_i0_otherIdentifier_anyOf_i1_items_oneOf_i0_creator_oneOf_i1) |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > rightsHolder > anyOf > Array of rights holders > Organization or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of rights holder
 
@@ -1089,41 +1170,47 @@ reference iri of rights holder
 
 The geographical area covered by the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#spatial_anyOf_i0) |
-| [item 1](#spatial_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#spatial_anyOf_i0) |
+| [Array of locations](#spatial_anyOf_i1)             |
 
-### <a name="spatial_anyOf_i0"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > item 0`
+### <a name="spatial_anyOf_i0"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="spatial_anyOf_i1"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > item 1`
+### <a name="spatial_anyOf_i1"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > Array of locations`
+
+**Title:** Array of locations
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#spatial_anyOf_i1_items) | -           |
+| Each item of this array must be                    | Description |
+| -------------------------------------------------- | ----------- |
+| [Location object or link](#spatial_anyOf_i1_items) | -           |
 
-#### <a name="spatial_anyOf_i1_items"></a>DCAT-US 3 Catalog > spatial > anyOf > item 1 > item 1 items
+#### <a name="spatial_anyOf_i1_items"></a>DCAT-US 3 Catalog > spatial > anyOf > Array of locations > Location object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Location object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
 | [Location](#spatial_anyOf_i1_items_oneOf_i0) |
-| [item 1](#spatial_anyOf_i1_items_oneOf_i1)   |
+| [Link](#spatial_anyOf_i1_items_oneOf_i1)     |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > item 1 > item 1 items > oneOf > Location`
+##### <a name="spatial_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > Array of locations > Location object or link > oneOf > Location`
 
 **Title:** Location
 
@@ -1134,7 +1221,9 @@ inline description of geographical coverage
 | **Additional properties** | Any type allowed                                                                                                                         |
 | **Same definition as**    | [Location](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_spatial_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="spatial_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > spatial > anyOf > Array of locations > Location object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of geographical coverage
 
@@ -1148,41 +1237,47 @@ reference iri of geographical coverage
 
 List of subjects of the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#subject_anyOf_i0) |
-| [item 1](#subject_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#subject_anyOf_i0) |
+| [Array of subjects](#subject_anyOf_i1)              |
 
-### <a name="subject_anyOf_i0"></a>Property `DCAT-US 3 Catalog > subject > anyOf > item 0`
+### <a name="subject_anyOf_i0"></a>Property `DCAT-US 3 Catalog > subject > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="subject_anyOf_i1"></a>Property `DCAT-US 3 Catalog > subject > anyOf > item 1`
+### <a name="subject_anyOf_i1"></a>Property `DCAT-US 3 Catalog > subject > anyOf > Array of subjects`
+
+**Title:** Array of subjects
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#subject_anyOf_i1_items) | -           |
+| Each item of this array must be            | Description |
+| ------------------------------------------ | ----------- |
+| [Concept or link](#subject_anyOf_i1_items) | -           |
 
-#### <a name="subject_anyOf_i1_items"></a>DCAT-US 3 Catalog > subject > anyOf > item 1 > item 1 items
+#### <a name="subject_anyOf_i1_items"></a>DCAT-US 3 Catalog > subject > anyOf > Array of subjects > Concept or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Concept or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                              |
 | ------------------------------------------- |
 | [Concept](#subject_anyOf_i1_items_oneOf_i0) |
-| [item 1](#subject_anyOf_i1_items_oneOf_i1)  |
+| [Link](#subject_anyOf_i1_items_oneOf_i1)    |
 
-##### <a name="subject_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > subject > anyOf > item 1 > item 1 items > oneOf > Concept`
+##### <a name="subject_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > subject > anyOf > Array of subjects > Concept or link > oneOf > Concept`
 
 **Title:** Concept
 
@@ -1193,7 +1288,9 @@ inline description of the subject
 | **Additional properties** | Any type allowed                                                                                   |
 | **Same definition as**    | [Concept](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-##### <a name="subject_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > subject > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="subject_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > subject > anyOf > Array of subjects > Concept or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the subject
 
@@ -1207,41 +1304,47 @@ reference iri of the subject
 
 List of temporal periods that the Catalog covers
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#temporal_anyOf_i0) |
-| [item 1](#temporal_anyOf_i1) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#temporal_anyOf_i0) |
+| [Array of time periods](#temporal_anyOf_i1)          |
 
-### <a name="temporal_anyOf_i0"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > item 0`
+### <a name="temporal_anyOf_i0"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="temporal_anyOf_i1"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > item 1`
+### <a name="temporal_anyOf_i1"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > Array of time periods`
+
+**Title:** Array of time periods
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be          | Description |
-| ---------------------------------------- | ----------- |
-| [item 1 items](#temporal_anyOf_i1_items) | -           |
+| Each item of this array must be                         | Description |
+| ------------------------------------------------------- | ----------- |
+| [PeriodOfTime object or link](#temporal_anyOf_i1_items) | -           |
 
-#### <a name="temporal_anyOf_i1_items"></a>DCAT-US 3 Catalog > temporal > anyOf > item 1 > item 1 items
+#### <a name="temporal_anyOf_i1_items"></a>DCAT-US 3 Catalog > temporal > anyOf > Array of time periods > PeriodOfTime object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** PeriodOfTime object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                    |
 | ------------------------------------------------- |
 | [PeriodOfTime](#temporal_anyOf_i1_items_oneOf_i0) |
-| [item 1](#temporal_anyOf_i1_items_oneOf_i1)       |
+| [Link](#temporal_anyOf_i1_items_oneOf_i1)         |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > item 1 > item 1 items > oneOf > PeriodOfTime`
+##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > Array of time periods > PeriodOfTime object or link > oneOf > PeriodOfTime`
 
 **Title:** PeriodOfTime
 
@@ -1252,7 +1355,9 @@ inline description of the temporal coverage
 | **Additional properties** | Any type allowed                                                                                                                              |
 | **Same definition as**    | [PeriodOfTime](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_temporal_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > temporal > anyOf > Array of time periods > PeriodOfTime object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the temporal coverage
 
@@ -1282,17 +1387,19 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 The category of the Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                |
-| ----------------------------- |
-| [item 0](#category_oneOf_i0)  |
-| [Concept](#category_oneOf_i1) |
-| [item 2](#category_oneOf_i2)  |
+| One of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#category_oneOf_i0) |
+| [Concept](#category_oneOf_i1)                        |
+| [Link](#category_oneOf_i2)                           |
 
-### <a name="category_oneOf_i0"></a>Property `DCAT-US 3 Catalog > category > oneOf > item 0`
+### <a name="category_oneOf_i0"></a>Property `DCAT-US 3 Catalog > category > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -1308,7 +1415,9 @@ inline description of the category
 | **Additional properties** | Any type allowed                                                                                   |
 | **Same definition as**    | [Concept](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
 
-### <a name="category_oneOf_i2"></a>Property `DCAT-US 3 Catalog > category > oneOf > item 2`
+### <a name="category_oneOf_i2"></a>Property `DCAT-US 3 Catalog > category > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the category
 
@@ -1322,15 +1431,15 @@ reference iri of the category
 
 The home page of the catalog (a public Web document usually available in HTML)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                 |
 | ------------------------------ |
 | [item 0](#homepage_oneOf_i0)   |
 | [Document](#homepage_oneOf_i1) |
-| [item 2](#homepage_oneOf_i2)   |
+| [Link](#homepage_oneOf_i2)     |
 
 ### <a name="homepage_oneOf_i0"></a>Property `DCAT-US 3 Catalog > homepage > oneOf > item 0`
 
@@ -1348,7 +1457,9 @@ inline description of the home page
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [Document](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_page_anyOf_i1_items_oneOf_i0) |
 
-### <a name="homepage_oneOf_i2"></a>Property `DCAT-US 3 Catalog > homepage > oneOf > item 2`
+### <a name="homepage_oneOf_i2"></a>Property `DCAT-US 3 Catalog > homepage > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the home page
 
@@ -1362,41 +1473,47 @@ reference iri of the home page
 
 A list of agents having some form of responsibility for the catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                           |
-| ---------------------------------------- |
-| [item 0](#qualifiedAttribution_anyOf_i0) |
-| [item 1](#qualifiedAttribution_anyOf_i1) |
+| Any of(Option)                                                   |
+| ---------------------------------------------------------------- |
+| [Null allowed when not required](#qualifiedAttribution_anyOf_i0) |
+| [Array of attributions](#qualifiedAttribution_anyOf_i1)          |
 
-### <a name="qualifiedAttribution_anyOf_i0"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > item 0`
+### <a name="qualifiedAttribution_anyOf_i0"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="qualifiedAttribution_anyOf_i1"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > item 1`
+### <a name="qualifiedAttribution_anyOf_i1"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > Array of attributions`
+
+**Title:** Array of attributions
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be                      | Description |
-| ---------------------------------------------------- | ----------- |
-| [item 1 items](#qualifiedAttribution_anyOf_i1_items) | -           |
+| Each item of this array must be                                    | Description |
+| ------------------------------------------------------------------ | ----------- |
+| [Attribution object or link](#qualifiedAttribution_anyOf_i1_items) | -           |
 
-#### <a name="qualifiedAttribution_anyOf_i1_items"></a>DCAT-US 3 Catalog > qualifiedAttribution > anyOf > item 1 > item 1 items
+#### <a name="qualifiedAttribution_anyOf_i1_items"></a>DCAT-US 3 Catalog > qualifiedAttribution > anyOf > Array of attributions > Attribution object or link
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+**Title:** Attribution object or link
+
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                               |
 | ------------------------------------------------------------ |
 | [Attribution](#qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
-| [item 1](#qualifiedAttribution_anyOf_i1_items_oneOf_i1)      |
+| [Link](#qualifiedAttribution_anyOf_i1_items_oneOf_i1)        |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > item 1 > item 1 items > oneOf > Attribution`
+##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > Array of attributions > Attribution object or link > oneOf > Attribution`
 
 **Title:** Attribution
 
@@ -1407,7 +1524,9 @@ inline description of Attribution
 | **Additional properties** | Any type allowed                                                                                                                                         |
 | **Same definition as**    | [Attribution](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution > anyOf > Array of attributions > Attribution object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Attribution
 

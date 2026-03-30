@@ -48,9 +48,9 @@ The full name of the Organization
 
 Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                        |
 | ------------------------------------- |
@@ -73,9 +73,9 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 #### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > item 1 > item 1 items
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                                             |
 | ---------------------------------------------------------- |
@@ -123,9 +123,9 @@ Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french w
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |

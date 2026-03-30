@@ -51,15 +51,15 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 The indication of whether or not there are access restrictions on the item
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                         |
 | -------------------------------------- |
 | [Concept](#restrictionStatus_oneOf_i0) |
-| [item 1](#restrictionStatus_oneOf_i1)  |
+| [Link](#restrictionStatus_oneOf_i1)    |
 
 ### <a name="restrictionStatus_oneOf_i0"></a>Property `AccessRestriction > restrictionStatus > oneOf > Concept`
 
@@ -72,7 +72,9 @@ inline description of restriction status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="restrictionStatus_oneOf_i1"></a>Property `AccessRestriction > restrictionStatus > oneOf > item 1`
+### <a name="restrictionStatus_oneOf_i1"></a>Property `AccessRestriction > restrictionStatus > oneOf > Link`
+
+**Title:** Link
 
 reference iri of restriction status
 
@@ -86,17 +88,19 @@ reference iri of restriction status
 
 The specific NARA restriction associated with this restriction
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)                           |
-| ---------------------------------------- |
-| [item 0](#specificRestriction_oneOf_i0)  |
-| [Concept](#specificRestriction_oneOf_i1) |
-| [item 2](#specificRestriction_oneOf_i2)  |
+| One of(Option)                                                  |
+| --------------------------------------------------------------- |
+| [Null allowed when not required](#specificRestriction_oneOf_i0) |
+| [Concept](#specificRestriction_oneOf_i1)                        |
+| [Link](#specificRestriction_oneOf_i2)                           |
 
-### <a name="specificRestriction_oneOf_i0"></a>Property `AccessRestriction > specificRestriction > oneOf > item 0`
+### <a name="specificRestriction_oneOf_i0"></a>Property `AccessRestriction > specificRestriction > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -112,7 +116,9 @@ inline description of the specific restriction
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
 
-### <a name="specificRestriction_oneOf_i2"></a>Property `AccessRestriction > specificRestriction > oneOf > item 2`
+### <a name="specificRestriction_oneOf_i2"></a>Property `AccessRestriction > specificRestriction > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the specific restriction
 

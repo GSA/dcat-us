@@ -43,15 +43,15 @@ The function of an entity or agent with respect to another entity or resource
 
 The agent that plays a role in the resource
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
-| One of(Option)            |
-| ------------------------- |
-| [Agent](#agent_oneOf_i0)  |
-| [item 1](#agent_oneOf_i1) |
+| One of(Option)           |
+| ------------------------ |
+| [Agent](#agent_oneOf_i0) |
+| [Link](#agent_oneOf_i1)  |
 
 ### <a name="agent_oneOf_i0"></a>Property `Attribution > agent > oneOf > Agent`
 
@@ -64,7 +64,9 @@ inline description of Agent
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
-### <a name="agent_oneOf_i1"></a>Property `Attribution > agent > oneOf > item 1`
+### <a name="agent_oneOf_i1"></a>Property `Attribution > agent > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Agent
 

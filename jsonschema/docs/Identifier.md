@@ -45,9 +45,9 @@ The name of the agency that issued the identifier
 
 the agency that manages the identifier scheme
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                    |
 | --------------------------------- |
@@ -85,9 +85,9 @@ reference iri of the creator
 
 The date of formal issuance (e.g., publication) of the Identifier
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -101,8 +101,8 @@ The date of formal issuance (e.g., publication) of the Identifier
 
 ### <a name="issued_anyOf_i1"></a>Property `Identifier > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |

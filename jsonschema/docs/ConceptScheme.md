@@ -48,24 +48,28 @@ A version number or other version designation of the concept scheme
 
 The date on which the Concept Scheme was first created
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#created_anyOf_i0) |
-| [item 1](#created_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#created_anyOf_i0) |
+| [Date string](#created_anyOf_i1)                    |
 
-### <a name="created_anyOf_i0"></a>Property `ConceptScheme > created > anyOf > item 0`
+### <a name="created_anyOf_i0"></a>Property `ConceptScheme > created > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="created_anyOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1`
+### <a name="created_anyOf_i1"></a>Property `ConceptScheme > created > anyOf > Date string`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+**Title:** Date string
+
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -74,21 +78,21 @@ The date on which the Concept Scheme was first created
 | [item 2](#created_anyOf_i1_oneOf_i2) |
 | [item 3](#created_anyOf_i1_oneOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 0`
+#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 1`
+#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 2`
+#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
@@ -100,7 +104,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > created > anyOf > item 1 > oneOf > item 3`
+#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -134,24 +138,28 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The date of formal issuance (e.g., publication) of the concept scheme
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)             |
-| -------------------------- |
-| [item 0](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1) |
+| Any of(Option)                                     |
+| -------------------------------------------------- |
+| [Null allowed when not required](#issued_anyOf_i0) |
+| [Date string](#issued_anyOf_i1)                    |
 
-### <a name="issued_anyOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 0`
+### <a name="issued_anyOf_i0"></a>Property `ConceptScheme > issued > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1`
+### <a name="issued_anyOf_i1"></a>Property `ConceptScheme > issued > anyOf > Date string`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+**Title:** Date string
+
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -160,21 +168,21 @@ The date of formal issuance (e.g., publication) of the concept scheme
 | [item 2](#issued_anyOf_i1_oneOf_i2) |
 | [item 3](#issued_anyOf_i1_oneOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
@@ -186,7 +194,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -204,24 +212,28 @@ A year and month in YYYY-MM format
 
 The most recent date at which the concept scheme was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#modified_anyOf_i0) |
+| [Date string](#modified_anyOf_i1)                    |
 
-### <a name="modified_anyOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 0`
+### <a name="modified_anyOf_i0"></a>Property `ConceptScheme > modified > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `ConceptScheme > modified > anyOf > Date string`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+**Title:** Date string
+
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -230,21 +242,21 @@ The most recent date at which the concept scheme was changed or modified
 | [item 2](#modified_anyOf_i1_oneOf_i2) |
 | [item 3](#modified_anyOf_i1_oneOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 0`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date-time`      |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Format**                | `date`           |
 | **Additional properties** | Any type allowed |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
@@ -256,7 +268,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 3`
 
 A year and month in YYYY-MM format
 

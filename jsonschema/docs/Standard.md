@@ -41,9 +41,9 @@ Information about a particular standard that another item conforms to
 
 The date on which the Standard has been first created
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)              |
 | --------------------------- |
@@ -57,8 +57,8 @@ The date on which the Standard has been first created
 
 ### <a name="created_anyOf_i1"></a>Property `Standard > created > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -127,9 +127,9 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)                 |
 | ------------------------------ |
@@ -161,9 +161,9 @@ The main identifier for the Standard, e.g. the URI or other unique identifier in
 
 The date of formal issuance (e.g., publication) of the Standard
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)             |
 | -------------------------- |
@@ -177,8 +177,8 @@ The date of formal issuance (e.g., publication) of the Standard
 
 ### <a name="issued_anyOf_i1"></a>Property `Standard > issued > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -231,9 +231,9 @@ A year and month in YYYY-MM format
 
 The most recent date on which the Standard was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -247,8 +247,8 @@ The most recent date on which the Standard was changed or modified
 
 ### <a name="modified_anyOf_i1"></a>Property `Standard > modified > anyOf > item 1`
 
-| **Type** | `combining` |
-| -------- | ----------- |
+| **Type** | More than one type |
+| -------- | ------------------ |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -317,9 +317,9 @@ Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 The type of the Standard. A controlled vocabulary for the values has not been established
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                |
 | ----------------------------- |
@@ -357,9 +357,9 @@ reference iri of Concept
 
 The reference register to which the Standard belongs
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
