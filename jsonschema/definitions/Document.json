@@ -48,8 +48,8 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "/dcat-us/3.0.0/definitions/person",
-            "description": "inline description of Person"
+            "$ref": "/dcat-us/3.0.0/definitions/kind",
+            "description": "inline description of author"
           },
           {
             "type": "string",
