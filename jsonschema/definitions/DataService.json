@@ -68,8 +68,11 @@
     },
     "keyword": {
       "title": "keyword/tag",
-      "description": "A keyword or tag describing the Data Service",
-      "type": ["null", "string"]
+      "description": "A list of keywords or tags describing the Data Service",
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "keywordMap": {
       "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
@@ -103,32 +106,12 @@
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "string"]
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "string"]
     },
     "theme": {
       "title": "theme/category",
@@ -157,7 +140,7 @@
     },
     "geographicBoundingBox": {
       "title": "geographic bounding box",
-      "description": "The spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system",
+      "description": "List of WGS84 Geographic Bounding Boxes for this Data Service",
       "anyOf": [
         {
           "type": "null"
@@ -182,7 +165,7 @@
     },
     "accessRights": {
       "title": "access rights",
-      "description": "Information regarding access or restrictions based on privacy, security, or other policies",
+      "description": "Information that indicates whether the Data Service is open data, has access restrictions or is public",
       "oneOf": [
         {
           "type": "null"
@@ -225,7 +208,7 @@
     },
     "created": {
       "title": "creation date",
-      "description": "The date on which the Data Service has been first created",
+      "description": "The date on which the Data Service was first created",
       "anyOf": [
         {
           "type": "null"
@@ -556,7 +539,7 @@
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
-      "description": "An Agent having some form of responsibility for the DataService",
+      "description": "List of agents having some form of responsibility for the Data Service",
       "anyOf": [
         {
           "type": "null"
