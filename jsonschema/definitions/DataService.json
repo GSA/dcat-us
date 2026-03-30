@@ -140,7 +140,7 @@
     },
     "geographicBoundingBox": {
       "title": "geographic bounding box",
-      "description": "The spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system",
+      "description": "List of WGS84 Geographic Bounding Boxes for this Data Service",
       "anyOf": [
         {
           "type": "null"
@@ -165,7 +165,7 @@
     },
     "accessRights": {
       "title": "access rights",
-      "description": "Information regarding access or restrictions based on privacy, security, or other policies",
+      "description": "Information that indicates whether the Data Service is open data, has access restrictions or is public",
       "oneOf": [
         {
           "type": "null"
@@ -518,7 +518,7 @@
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
-      "description": "An Agent having some form of responsibility for the DataService",
+      "description": "List of agents having some form of responsibility for the Data Service",
       "anyOf": [
         {
           "type": "null"
