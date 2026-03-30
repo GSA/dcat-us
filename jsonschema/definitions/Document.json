@@ -13,54 +13,73 @@
       "type": "string",
       "default": "Document"
     },
-    "creators": {
-      "title": "authors",
-      "description": "List of authors",
+    "accessURL": {
+      "title": "access URL",
+      "description": "A URL that gives access to the Document",
       "anyOf": [
         {
           "type": "null"
         },
         {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string",
+          "description": "reference iri of Document",
+          "format": "iri"
         }
       ]
     },
-    "publishers": {
-      "title": "publisher",
-      "description": "Publisher",
-      "type": ["null", "string"]
-    },
-    "mediaType": {
-      "title": "media type",
-      "description": "List of file formats of the Document",
+    "downloadURL": {
+      "title": "download URL",
+      "description": "A URL that is a direct link to a downloadable file of the Document in a given format",
       "anyOf": [
         {
           "type": "null"
         },
         {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-                "description": "inline description of MediaType"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of MediaType",
-                "format": "iri"
-              }
-            ]
+          "type": "string",
+          "description": "reference iri of Document",
+          "format": "iri"
+        }
+      ]
+    },
+    "creator": {
+      "title": "author",
+      "description": "The individual(s) responsible for creating the Document",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/person",
+            "description": "inline description of Person"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Person",
+            "format": "iri"
           }
+        ]
+      }
+    },
+    "mediaType": {
+      "title": "media type",
+      "description": "The file format of the Document as defined in the official register of media types managed by IANA",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
+          "description": "inline description of MediaType"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of MediaType",
+          "format": "iri"
         }
       ]
     },
     "abstract": {
       "title": "abstract",
-      "description": "Text abstract of the document",
+      "description": "Text abstract of the Document",
       "type": ["null", "string"]
     },
     "abstractMap": {
@@ -73,54 +92,40 @@
       "type": ["null", "string"]
     },
     "conformsTo": {
-      "title": "conforms to standard",
-      "description": "A standard to which the document conforms",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                "description": "inline description of Standard"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Standard",
-                "format": "iri"
-              }
-            ]
+      "title": "conforms to",
+      "description": "List of standards that the Document conforms to",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/standard",
+            "description": "inline description of Standard"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Standard",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
-    "creator": {
+    "corporateCreator": {
       "title": "corporate author",
-      "description": "The organization responsible for creating the resource",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                "description": "inline description of corporate author"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of corporate author",
-                "format": "iri"
-              }
-            ]
+      "description": "The corporate organization(s) responsible for creating the Document",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/organization",
+            "description": "inline description of corporate author"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of corporate author",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "description": {
       "title": "description",
@@ -133,7 +138,12 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "List of unique identifiers for the Document (e.g. DOI, ISBN)",
+      "description": "The unique identifier for the Document (e.g. DOI, ISBN)",
+      "type": ["null", "string"]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of other/alternative identifiers for the Document (e.g. DOI, ISBN)",
       "anyOf": [
         {
           "type": "null"
@@ -148,14 +158,14 @@
     },
     "issued": {
       "title": "publication date",
-      "description": "Publication date of the document",
+      "description": "Publication date of the Document",
       "anyOf": [
         {
           "type": "null"
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -176,25 +186,25 @@
     },
     "publisher": {
       "title": "publisher",
-      "description": "publisher organization of the document",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/organization",
-          "description": "inline description of publisher organization"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of publisher organization",
-          "format": "iri"
-        }
-      ]
+      "description": "The organization(s) that published the Document",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/organization",
+            "description": "inline description of publisher"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of publisher",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "title": {
       "title": "title",
-      "description": "The title of the document in the indicated language",
+      "description": "The title of the Document",
       "type": "string"
     },
     "titleMap": {
@@ -203,8 +213,8 @@
     },
     "category": {
       "title": "category",
-      "description": "Category of the document",
-      "oneOf": [
+      "description": "The category, nature, or genre of the Document",
+      "anyOf": [
         {
           "type": "null"
         },
