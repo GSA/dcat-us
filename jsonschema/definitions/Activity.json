@@ -40,8 +40,8 @@
     },
     "labelMap": {
       "description": "Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     }
   },
-  "required": [ "label" ]
+  "required": ["label"]
 }

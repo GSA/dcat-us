@@ -16,7 +16,7 @@
     "catalog": {
       "title": "Related catalogs",
       "description": "List of related catalogs whose contents are of interest in the context of this catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "title": "Catalog or a link",
         "oneOf": [
@@ -36,7 +36,7 @@
     "contactPoint": {
       "title": "Contact points",
       "description": "Contact information that can be used for sending comments about the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "title": "Contact point or a link",
         "oneOf": [
@@ -272,11 +272,11 @@
     "description": {
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "descriptionMap": {
       "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "hasPart": {
       "title": "has part",
@@ -607,11 +607,11 @@
     "title": {
       "title": "title",
       "description": "The title of the catalog in the indicated language",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "category": {
       "title": "category",
@@ -682,5 +682,5 @@
       ]
     }
   },
-  "required": [ "dataset" ]
+  "required": ["dataset"]
 }

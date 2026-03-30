@@ -35,5 +35,5 @@
       ]
     }
   },
-  "required": [ "hadRole", "agent" ]
+  "required": ["hadRole", "agent"]
 }

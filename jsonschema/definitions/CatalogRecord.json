@@ -158,11 +158,11 @@
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "primaryTopic": {
       "title": "primary topic",
@@ -170,5 +170,5 @@
       "type": "string"
     }
   },
-  "required": [ "modified", "primaryTopic" ]
+  "required": ["modified", "primaryTopic"]
 }
