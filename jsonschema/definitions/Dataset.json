@@ -15,28 +15,21 @@
     },
     "otherIdentifier": {
       "title": "other identifier",
-      "description": "List of structure identifiers",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/identifier",
-                "description": "inline description of other identifier"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of other identifier",
-                "format": "iri"
-              }
-            ]
+      "description": "A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/identifier",
+            "description": "inline description of Identifier"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Identifier",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "sample": {
       "title": "sample",
@@ -668,7 +661,20 @@
     "identifier": {
       "title": "identifier",
       "description": "The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog",
-      "type": ["null", "string"]
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
+        }
+      ]
     },
     "isReferencedBy": {
       "title": "is referenced by",

@@ -270,18 +270,39 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "List of the main identifiers for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog",
+      "description": "The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog",
       "anyOf": [
         {
           "type": "null"
         },
         {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
         }
       ]
+    },
+    "otherIdentifier": {
+      "title": "other identifier",
+      "description": "A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/identifier",
+            "description": "inline description of Identifier"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Identifier",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "language": {
       "title": "language",
