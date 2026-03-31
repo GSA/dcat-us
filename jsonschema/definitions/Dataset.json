@@ -1007,28 +1007,21 @@
     },
     "category": {
       "title": "category",
-      "description": "List of categories of the dataset",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/concept",
-                "description": "inline description of Concept"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Concept",
-                "format": "iri"
-              }
-            ]
+      "description": "List of categories for the Dataset",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Concept",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
