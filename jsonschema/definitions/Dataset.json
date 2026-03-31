@@ -242,18 +242,11 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Dataset",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "keywordMap": {
       "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
