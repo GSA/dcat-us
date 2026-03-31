@@ -15,17 +15,17 @@
     },
     "otherIdentifier": {
       "title": "other identifier",
-      "description": "List of structure identifiers",
+      "description": "A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "type": ["null", "array"],
       "items": {
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/identifier",
-            "description": "inline description of other identifier"
+            "description": "inline description of Identifier"
           },
           {
             "type": "string",
-            "description": "reference iri of other identifier",
+            "description": "reference iri of Identifier",
             "format": "iri"
           }
         ]
@@ -92,21 +92,34 @@
     },
     "contactPoint": {
       "title": "contact point",
-      "description": "List of contact information that can be used for sending comments about the Dataset",
-      "type": ["null", "array"],
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/kind",
-            "description": "inline description of Kind"
-          },
-          {
-            "type": "string",
-            "description": "reference iri of Kind",
-            "format": "iri"
+      "description": "A single contact point or list of contact information that can be used for sending comments about the Dataset",
+      "anyOf": [
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/kind",
+          "description": "inline description of Kind"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Kind",
+          "format": "iri"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "/dcat-us/3.0.0/definitions/kind",
+                "description": "inline description of Kind"
+              },
+              {
+                "type": "string",
+                "description": "reference iri of Kind",
+                "format": "iri"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "distribution": {
       "title": "dataset distribution",
@@ -405,13 +418,50 @@
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/frequency",
-          "description": "inline description of Frequency"
+          "type": "string",
+          "description": "ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "enum": [
+            "continual",
+            "daily",
+            "weekly",
+            "fortnightly",
+            "monthly",
+            "quarterly",
+            "biannually",
+            "annually",
+            "asNeeded",
+            "irregular",
+            "notPlanned",
+            "unknown"
+          ]
         },
         {
           "type": "string",
-          "description": "reference iri of Frequency",
-          "format": "iri"
+          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "pattern": "^R\/P.+$"
+        },
+        {
+          "type": "string",
+          "description": "Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "enum": [
+            "continuous",
+            "daily",
+            "weekly",
+            "biweekly",
+            "monthly",
+            "quarterly",
+            "semiannual",
+            "annual",
+            "irregular",
+            "triennial",
+            "biennial",
+            "threeTimesAYear",
+            "bimonthly",
+            "semimonthly",
+            "threeTimesAMonth",
+            "semiweekly",
+            "threeTimesAWeek"
+          ]
         }
       ]
     },
@@ -527,7 +577,20 @@
     "identifier": {
       "title": "identifier",
       "description": "The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog",
-      "type": ["null", "string"]
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/identifier",
+          "description": "inline description of Identifier"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of Identifier",
+          "format": "iri"
+        }
+      ]
     },
     "isReferencedBy": {
       "title": "is referenced by",
@@ -959,5 +1022,5 @@
       "type": ["null", "object"]
     }
   },
-  "required": ["description", "publisher", "title"]
+  "required": ["description", "publisher", "title", "contactPoint"]
 }

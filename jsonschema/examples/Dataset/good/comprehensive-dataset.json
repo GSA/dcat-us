@@ -1,0 +1,360 @@
+{
+  "@id": "https://example.gov/datasets/comprehensive-example-001",
+  "@type": "Dataset",
+  "title": "Comprehensive DCAT-US Dataset Example",
+  "titleMap": {
+    "es": "Ejemplo de conjunto de datos DCAT-US completo",
+    "fr": "Exemple de jeu de données DCAT-US complet"
+  },
+  "description": "This is a comprehensive example dataset demonstrating all available fields in the DCAT-US 3.0 schema, except for Concept references which are excluded. Note: Date fields are set to null due to a schema validation issue where dates match multiple oneOf alternatives.",
+  "descriptionMap": {
+    "es": "Este es un conjunto de datos de ejemplo completo que demuestra todos los campos disponibles.",
+    "fr": "Ceci est un exemple de jeu de données complet démontrant tous les champs disponibles."
+  },
+  "identifier": "dataset-comprehensive-001",
+  "publisher": {
+    "@id": "https://example.gov/organizations/sample-agency",
+    "@type": "Organization",
+    "name": "Sample Government Agency",
+    "altLabel": "SGA",
+    "prefLabel": "Sample Government Agency",
+    "notation": [ "SGA", "SAMPLE-GOV" ],
+    "subOrganizationOf": [
+      {
+        "@id": "https://example.gov/organizations/parent-department",
+        "@type": "Organization",
+        "name": "Parent Department"
+      }
+    ]
+  },
+  "otherIdentifier": [
+    {
+      "@id": "https://example.gov/identifiers/alt-001",
+      "@type": "Identifier",
+      "notation": "ALT-ID-001",
+      "schemaAgency": "Example Registry",
+      "version": "1.0",
+      "issued": null,
+      "creator": {
+        "@id": "https://example.gov/organizations/registrar",
+        "@type": "Organization",
+        "name": "Official Registrar Organization"
+      }
+    }
+  ],
+  "sample": [
+    {
+      "@id": "https://example.gov/distributions/sample-csv",
+      "@type": "Distribution",
+      "downloadURL": "https://example.gov/data/sample-preview.csv",
+      "byteSize": "1024",
+      "description": "A sample CSV file for preview"
+    }
+  ],
+  "supportedSchema": "https://example.gov/schemas/data-schema-v1",
+  "versionNotes": "Initial release of the comprehensive example dataset with all fields populated.",
+  "contactPoint": [
+    {
+      "@id": "https://example.gov/contacts/primary-contact",
+      "@type": "Kind",
+      "fn": "Data Steward Office",
+      "hasEmail": "mailto:data-steward@example.gov",
+      "organization-name": "Sample Government Agency",
+      "tel": "+1-555-123-4567",
+      "title": "Chief Data Steward",
+      "given-name": "Jane",
+      "family-name": "Smith",
+      "address": [
+        {
+          "@id": "https://example.gov/addresses/headquarters",
+          "@type": "Address",
+          "street-address": "123 Government Way",
+          "locality": "Washington",
+          "region": "DC",
+          "postal-code": "20001",
+          "country-name": "United States"
+        }
+      ]
+    }
+  ],
+  "distribution": [
+    {
+      "@id": "https://example.gov/distributions/main-csv",
+      "@type": "Distribution",
+      "accessURL": "https://example.gov/data/comprehensive-dataset.csv",
+      "downloadURL": "https://example.gov/downloads/comprehensive-dataset.csv",
+      "byteSize": "10485760",
+      "format": "CSV",
+      "description": "Main CSV distribution of the dataset",
+      "title": "Comprehensive Dataset CSV",
+      "characterEncoding": [ "UTF-8" ],
+      "spatialResolutionInMeters": "100",
+      "temporalResolution": "P1D",
+      "issued": null,
+      "modified": null
+    },
+    {
+      "@id": "https://example.gov/distributions/main-json",
+      "@type": "Distribution",
+      "accessURL": "https://example.gov/data/comprehensive-dataset.json",
+      "downloadURL": "https://example.gov/downloads/comprehensive-dataset.json",
+      "byteSize": "15728640",
+      "format": "JSON",
+      "description": "JSON distribution of the dataset"
+    }
+  ],
+  "first": "https://example.gov/datasets/comprehensive-example-first",
+  "hasCurrentVersion": "https://example.gov/datasets/comprehensive-example-001",
+  "hasVersion": [
+    "https://example.gov/datasets/comprehensive-example-v0.9"
+  ],
+  "inSeries": [
+    {
+      "@id": "https://example.gov/series/comprehensive-series",
+      "@type": "DatasetSeries",
+      "title": "Comprehensive Dataset Series",
+      "description": "A series of comprehensive example datasets demonstrating DCAT-US 3.0 schema",
+      "contactPoint": [
+        {
+          "@id": "https://example.gov/contacts/series-contact",
+          "@type": "Kind",
+          "fn": "Series Manager",
+          "hasEmail": "mailto:series@example.gov"
+        }
+      ],
+      "first": "https://example.gov/datasets/comprehensive-example-first",
+      "last": "https://example.gov/datasets/comprehensive-example-001"
+    }
+  ],
+  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
+  "keywordMap": {
+    "es": [ "gobierno", "datos abiertos", "ejemplo completo" ],
+    "fr": [ "gouvernement", "données ouvertes", "exemple complet" ]
+  },
+  "landingPage": {
+    "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
+    "@type": "Document",
+    "title": "Comprehensive Dataset Landing Page",
+    "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example",
+    "creators": [ "Sample Government Agency" ],
+    "publishers": "Sample Government Agency"
+  },
+  "previousVersion": "https://example.gov/datasets/comprehensive-example-v0.9",
+  "qualifiedRelation": [
+    {
+      "@id": "https://example.gov/relationships/related-dataset-rel",
+      "@type": "Relationship",
+      "hadRole": "relatedTo",
+      "relation": "https://example.gov/datasets/related-dataset-001"
+    }
+  ],
+  "spatialResolutionInMeters": "30",
+  "temporalResolution": "P1M",
+  "version": "1.0.0",
+  "describedBy": {
+    "@id": "https://example.gov/distributions/data-dictionary",
+    "@type": "Distribution",
+    "title": "Data Dictionary",
+    "description": "Comprehensive data dictionary describing all fields",
+    "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
+    "format": "PDF"
+  },
+  "geographicBoundingBox": [
+    {
+      "@id": "https://example.gov/bboxes/conus",
+      "@type": "GeographicBoundingBox",
+      "westBoundingLongitude": "-124.848974",
+      "eastBoundingLongitude": "-66.885444",
+      "northBoundingLatitude": "49.384358",
+      "southBoundingLatitude": "24.396308"
+    }
+  ],
+  "liabilityStatement": {
+    "@id": "https://example.gov/statements/liability",
+    "@type": "LiabilityStatement",
+    "label": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
+    "labelMap": {
+      "es": "Este conjunto de datos se proporciona tal cual sin garantía."
+    }
+  },
+  "metadataDistribution": [
+    {
+      "@id": "https://example.gov/distributions/metadata-xml",
+      "@type": "Distribution",
+      "title": "Original ISO 19115 Metadata",
+      "description": "The original metadata document in ISO 19115 format",
+      "downloadURL": "https://example.gov/metadata/comprehensive-dataset.xml",
+      "format": "XML"
+    }
+  ],
+  "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
+  "purposeMap": {
+    "es": "Este conjunto de datos fue creado para demostrar todos los campos disponibles.",
+    "fr": "Ce jeu de données a été créé pour démontrer tous les champs disponibles."
+  },
+  "accessRights": {
+    "@id": "https://example.gov/rights/public-access",
+    "@type": "RightsStatement",
+    "attributionText": "This dataset is public domain and freely available for any use.",
+    "attributionTextMap": {
+      "es": "Este conjunto de datos es de dominio público."
+    }
+  },
+  "accrualPeriodicity": "monthly",
+  "conformsTo": [
+    {
+      "@id": "https://resources.data.gov/dcat-us/3.0",
+      "@type": "Standard",
+      "title": "DCAT-US 3.0",
+      "description": "Data Catalog Vocabulary - US Profile Version 3.0",
+      "identifier": "DCAT-US-3.0",
+      "created": null,
+      "issued": null,
+      "modified": null
+    }
+  ],
+  "contributor": [
+    {
+      "@id": "https://example.gov/agents/data-analyst",
+      "@type": "Agent",
+      "name": "Data Analysis Team"
+    }
+  ],
+  "created": null,
+  "creator": {
+    "@id": "https://example.gov/agents/original-creator",
+    "@type": "Agent",
+    "name": "Original Dataset Creator"
+  },
+  "hasPart": [
+    "https://example.gov/datasets/comprehensive-part-1",
+    "https://example.gov/datasets/comprehensive-part-2"
+  ],
+  "isReferencedBy": [
+    "https://example.gov/publications/annual-report-2024",
+    "https://example.gov/publications/data-quality-study"
+  ],
+  "issued": null,
+  "language": [ "en", "es" ],
+  "modified": null,
+  "provenance": [
+    {
+      "@id": "https://example.gov/provenance/collection-method",
+      "@type": "ProvenanceStatement",
+      "label": "Data was collected through automated sensors deployed across the continental United States.",
+      "labelMap": {
+        "es": "Los datos fueron recopilados a través de sensores automáticos."
+      }
+    }
+  ],
+  "relation": [
+    "https://example.gov/datasets/supplementary-dataset",
+    "https://example.gov/services/api-endpoint"
+  ],
+  "replaces": [
+    "https://example.gov/datasets/legacy-comprehensive-dataset"
+  ],
+  "rights": {
+    "@id": "https://example.gov/rights/copyright",
+    "@type": "RightsStatement",
+    "attributionText": "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
+  },
+  "rightsHolder": [
+    {
+      "@id": "https://example.gov/organizations/rights-holder",
+      "@type": "Organization",
+      "name": "Sample Government Agency",
+      "prefLabel": "Sample Government Agency"
+    }
+  ],
+  "source": [
+    "https://example.gov/datasets/raw-sensor-data"
+  ],
+  "spatial": {
+    "@id": "https://example.gov/locations/conus",
+    "@type": "Location",
+    "prefLabel": "Continental United States",
+    "altLabel": "CONUS",
+    "identifier": "https://www.wikidata.org/wiki/Q578170",
+    "bbox": "POLYGON((-124.848974 24.396308, -66.885444 24.396308, -66.885444 49.384358, -124.848974 49.384358, -124.848974 24.396308))"
+  },
+  "temporal": [
+    {
+      "@id": "https://example.gov/periods/data-coverage",
+      "@type": "PeriodOfTime",
+      "startDate": "2020",
+      "endDate": "2026"
+    }
+  ],
+  "hasQualityMeasurement": [
+    {
+      "@id": "https://example.gov/quality/completeness",
+      "@type": "QualityMeasurement",
+      "isMeasurementOf": {
+        "@id": "https://example.gov/metrics/completeness",
+        "@type": "Metric",
+        "expectedDataType": "xsd:double",
+        "inDimension": "https://www.w3.org/TR/vocab-dqv/#completeness",
+        "definition": "The percentage of non-null values in the dataset"
+      },
+      "value": "98.5",
+      "unitMeasure": "percent"
+    }
+  ],
+  "page": [
+    {
+      "@id": "https://example.gov/docs/user-guide",
+      "@type": "Document",
+      "title": "User Guide",
+      "abstract": "A comprehensive guide for using this dataset",
+      "creators": [ "Documentation Team" ],
+      "publishers": "Sample Government Agency",
+      "bibliographicCitation": "Sample Government Agency. (2024). Comprehensive Dataset User Guide."
+    }
+  ],
+  "qualifiedAttribution": [
+    {
+      "@id": "https://example.gov/attributions/data-steward",
+      "@type": "Attribution",
+      "hadRole": "custodian",
+      "agent": {
+        "@id": "https://example.gov/agents/steward",
+        "@type": "Agent",
+        "name": "Data Stewardship Team"
+      }
+    }
+  ],
+  "wasAttributedTo": [
+    {
+      "@id": "https://example.gov/agents/processing-team",
+      "@type": "Agent",
+      "name": "Data Processing Team"
+    }
+  ],
+  "wasGeneratedBy": [
+    {
+      "@id": "https://example.gov/activities/data-collection",
+      "@type": "Activity",
+      "label": "2024 Data Collection Campaign",
+      "labelMap": {
+        "es": "Campaña de recopilación de datos 2024"
+      }
+    }
+  ],
+  "wasUsedBy": [
+    {
+      "@id": "https://example.gov/activities/annual-analysis",
+      "@type": "Activity",
+      "label": "Annual Data Analysis Project",
+      "labelMap": {
+        "es": "Proyecto de análisis de datos anual"
+      }
+    }
+  ],
+  "image": "https://example.gov/images/dataset-thumbnail.png",
+  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields.",
+  "scopeNoteMap": {
+    "es": "Este conjunto de datos debe utilizarse solo para fines de demostración y prueba.",
+    "fr": "Ce jeu de données doit être utilisé uniquement à des fins de démonstration et de test."
+  }
+}
