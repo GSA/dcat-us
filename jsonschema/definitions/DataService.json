@@ -68,10 +68,11 @@
     },
     "keyword": {
       "title": "keyword/tag",
-      "description": "A list of keywords or tags describing the Data Service",
+      "description": "List of keywords or tags describing the Data Service",
       "type": ["null", "array"],
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
     },
     "keywordMap": {

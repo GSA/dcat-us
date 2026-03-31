@@ -83,14 +83,15 @@
     },
     "keyword": {
       "title": "keyword/tag",
-      "description": "A list of keywords or tags describing the resource",
+      "description": "List of keywords or tags describing the Catalog",
       "type": ["null", "array"],
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
     },
     "keywordMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+      "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
       "type": ["null", "object"]
     },
     "record": {
