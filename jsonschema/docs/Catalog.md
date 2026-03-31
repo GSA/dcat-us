@@ -611,11 +611,13 @@ The entity responsible for creating the resource
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#creator_anyOf_i1_items) | -           |
+| Each item of this array must be          | Description |
+| ---------------------------------------- | ----------- |
+| [Agent or link](#creator_anyOf_i1_items) | -           |
 
-#### <a name="creator_anyOf_i1_items"></a>DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items
+#### <a name="creator_anyOf_i1_items"></a>DCAT-US 3 Catalog > creator > anyOf > Array of creators > Agent or link
+
+**Title:** Agent or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -626,7 +628,7 @@ The entity responsible for creating the resource
 | [Agent](#creator_anyOf_i1_items_oneOf_i0) |
 | [Link](#creator_anyOf_i1_items_oneOf_i1)  |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items > oneOf > Agent`
+##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > Agent or link > oneOf > Agent`
 
 **Title:** Agent
 
@@ -637,7 +639,7 @@ inline description of creator
 | **Additional properties** | Any type allowed                                                                                                                      |
 | **Same definition as**    | [Agent](#dataset_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > item 1 items > oneOf > Link`
+##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `DCAT-US 3 Catalog > creator > anyOf > Array of creators > Agent or link > oneOf > Link`
 
 **Title:** Link
 
@@ -744,7 +746,7 @@ The unique identifier for the Catalog, e.g. the URI or other unique identifier
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
 | [Identifier](#identifier_anyOf_i1)                     |
-| [item 2](#identifier_anyOf_i2)                         |
+| [Link](#identifier_anyOf_i2)                           |
 
 ### <a name="identifier_anyOf_i0"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
 
@@ -764,7 +766,9 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                                     |
 | **Same definition as**    | [Identifier](#dataset_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
 
-### <a name="identifier_anyOf_i2"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > item 2`
+### <a name="identifier_anyOf_i2"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Identifier
 
@@ -794,7 +798,7 @@ A list of identifiers for the Catalog besides the main identifier, e.g. the URI 
 | Any of(Option)                                |
 | --------------------------------------------- |
 | [Identifier](#otherIdentifier_items_anyOf_i0) |
-| [item 1](#otherIdentifier_items_anyOf_i1)     |
+| [Link](#otherIdentifier_items_anyOf_i1)       |
 
 #### <a name="otherIdentifier_items_anyOf_i0"></a>Property `DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items > anyOf > Identifier`
 
@@ -807,7 +811,9 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                                     |
 | **Same definition as**    | [Identifier](#dataset_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
 
-#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items > anyOf > item 1`
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > otherIdentifier > otherIdentifier items > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Identifier
 
@@ -841,8 +847,9 @@ Date of formal issuance (e.g., publication) of the catalog
 
 **Title:** Date string
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -853,25 +860,22 @@ Date of formal issuance (e.g., publication) of the catalog
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 #### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -881,9 +885,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -1015,8 +1018,9 @@ Most recent date on which the catalog was changed, updated or modified
 
 **Title:** Date string
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -1027,25 +1031,22 @@ Most recent date on which the catalog was changed, updated or modified
 
 #### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 #### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 #### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -1055,9 +1056,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |

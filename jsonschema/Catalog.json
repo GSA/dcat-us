@@ -16,7 +16,7 @@
     "catalog": {
       "title": "Related catalogs",
       "description": "List of related catalogs whose contents are of interest in the context of this catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "title": "Catalog or a link",
         "oneOf": [
@@ -36,7 +36,7 @@
     "contactPoint": {
       "title": "Contact points",
       "description": "Contact information that can be used for sending comments about the Catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "title": "Contact point or a link",
         "oneOf": [
@@ -75,7 +75,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "minLength": 1
@@ -83,7 +83,7 @@
     },
     "keywordMap": {
       "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "record": {
       "title": "catalog record",
@@ -253,6 +253,7 @@
           "type": "array",
           "title": "Array of creators",
           "items": {
+            "title": "Agent or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/agent",
@@ -272,11 +273,11 @@
     "description": {
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "descriptionMap": {
       "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "hasPart": {
       "title": "has part",
@@ -321,6 +322,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Identifier",
           "format": "iri"
         }
@@ -329,7 +331,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "anyOf": [
           {
@@ -338,6 +340,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Identifier",
             "format": "iri"
           }
@@ -353,20 +356,23 @@
           "title": "Null allowed when not required"
         },
         {
-          "type": "string",
           "title": "Date string",
           "oneOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -427,20 +433,23 @@
           "title": "Null allowed when not required"
         },
         {
-          "type": "string",
           "title": "Date string",
           "oneOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -607,11 +616,11 @@
     "title": {
       "title": "title",
       "description": "The title of the catalog in the indicated language",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "category": {
       "title": "category",
@@ -682,5 +691,5 @@
       ]
     }
   },
-  "required": ["dataset"]
+  "required": [ "dataset" ]
 }
