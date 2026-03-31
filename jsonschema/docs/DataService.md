@@ -182,7 +182,7 @@ The root location or primary endpoint of the service (a Web-resolvable IRI)
 
 **Title:** keyword/tag
 
-A list of keywords or tags describing the Data Service
+List of keywords or tags describing the Data Service
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -195,6 +195,10 @@ A list of keywords or tags describing the Data Service
 
 | **Type** | `string` |
 | -------- | -------- |
+
+| Restrictions   |   |
+| -------------- | - |
+| **Min length** | 1 |
 
 ## <a name="keywordMap"></a>Property `DataService > keywordMap`
 

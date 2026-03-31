@@ -16,7 +16,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 | - [contactPoint](#contactPoint )                 | null or array           | Contact points                                                                      |
 | + [dataset](#dataset )                           | array                   | dataset                                                                             |
 | - [keyword](#keyword )                           | null or array of string | keyword/tag                                                                         |
-| - [keywordMap](#keywordMap )                     | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [keywordMap](#keywordMap )                     | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}        |
 | - [record](#record )                             | More than one type      | catalog record                                                                      |
 | - [service](#service )                           | More than one type      | service                                                                             |
 | - [theme](#theme )                               | More than one type      | theme/category                                                                      |
@@ -201,7 +201,7 @@ reference iri of Dataset
 
 **Title:** keyword/tag
 
-A list of keywords or tags describing the resource
+List of keywords or tags describing the Catalog
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -215,9 +215,13 @@ A list of keywords or tags describing the resource
 | **Type** | `string` |
 | -------- | -------- |
 
+| Restrictions   |   |
+| -------------- | - |
+| **Min length** | 1 |
+
 ## <a name="keywordMap"></a>Property `DCAT-US 3 Catalog > keywordMap`
 
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
+Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 | **Type** | `null or object` |
 | -------- | ---------------- |
