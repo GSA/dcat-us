@@ -16,7 +16,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "anyOf": [
           {
@@ -95,7 +95,7 @@
     "versionNotes": {
       "title": "version notes",
       "description": "version notes for this dataset",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "contactPoint": {
       "title": "contact point",
@@ -242,7 +242,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "minLength": 1
@@ -250,7 +250,7 @@
     },
     "keywordMap": {
       "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "landingPage": {
       "title": "landing page",
@@ -316,12 +316,12 @@
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "Spatial resolution in meters",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "Temporal resolution using xsd:duration syntax",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "theme": {
       "title": "theme/category",
@@ -351,7 +351,7 @@
     "version": {
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "describedBy": {
       "title": "data dictionary",
@@ -368,31 +368,6 @@
           "type": "string",
           "description": "reference iri of Distribution",
           "format": "iri"
-        }
-      ]
-    },
-    "geographicBoundingBox": {
-      "title": "geographic bounding box",
-      "description": "List of WGS84 Geographic Bounding Boxes for this dataset",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/geographicboundingbox",
-                "description": "inline description of GeographicBoundingBox"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of GeographicBoundingBox",
-                "format": "iri"
-              }
-            ]
-          }
         }
       ]
     },
@@ -442,11 +417,11 @@
     "purpose": {
       "title": "purpose",
       "description": "The purpose of the dataset",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "purposeMap": {
       "description": "Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "accessRights": {
       "title": "access rights",
@@ -624,7 +599,7 @@
     },
     "descriptionMap": {
       "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "hasPart": {
       "title": "has part",
@@ -1003,7 +978,7 @@
     },
     "titleMap": {
       "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "category": {
       "title": "category",
@@ -1197,12 +1172,12 @@
     "scopeNote": {
       "title": "usage note",
       "description": "usage note for the dataset",
-      "type": ["null", "string"]
+      "type": [ "null", "string" ]
     },
     "scopeNoteMap": {
       "description": "Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     }
   },
-  "required": ["description", "publisher", "title", "contactPoint"]
+  "required": [ "description", "publisher", "title", "contactPoint" ]
 }
