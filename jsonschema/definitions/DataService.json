@@ -69,7 +69,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Data Service",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "minLength": 1
@@ -77,7 +77,7 @@
     },
     "keywordMap": {
       "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "servesDataset": {
       "title": "serves dataset",
@@ -107,12 +107,12 @@
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "theme": {
       "title": "theme/category",
@@ -238,11 +238,11 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Data Service",
-      "type": [ "null", "string" ]
+      "type": ["null", "string"]
     },
     "descriptionMap": {
       "description": "Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "identifier": {
       "title": "identifier",
@@ -265,7 +265,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "anyOf": [
           {
@@ -468,7 +468,7 @@
     },
     "titleMap": {
       "description": "Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": [ "null", "object" ]
+      "type": ["null", "object"]
     },
     "category": {
       "title": "category",
@@ -564,5 +564,5 @@
       ]
     }
   },
-  "required": [ "contactPoint", "endpointURL", "publisher", "title" ]
+  "required": ["contactPoint", "endpointURL", "publisher", "title"]
 }
