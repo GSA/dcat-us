@@ -15,29 +15,69 @@
     },
     "bbox": {
       "title": "bounding box",
-      "description": "bounding box of a location (in any coordinate system)",
+      "description": "bounding box of a location described in WKT, GeoJSON, or GML format",
       "anyOf": [
         {
           "type": "null"
         },
         {
           "type": "string",
-          "format": "iri",
-          "description": "Bounding box represented in some string format"
+          "description": "Bounding box represented in WKT, GeoJSON (stringified), or GML format"
+        },
+        {
+          "type": "object",
+          "description": "Bounding box represented in GeoJSON format",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "type": {
+              "type": "string",
+              "const": "Polygon"
+            }
+          },
+          "required": [ "type", "coordinates" ]
         }
       ]
     },
     "centroid": {
       "title": "centroid",
-      "description": "The geographic center (centroid) of a location",
+      "description": "The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format",
       "anyOf": [
         {
           "type": "null"
         },
         {
           "type": "string",
-          "format": "iri",
-          "description": "Center point in some string format"
+          "description": "Center point represented in WKT, GeoJSON (stringified), or GML format"
+        },
+        {
+          "type": "object",
+          "description": "Centroid represented in GeoJSON format; force point usage with coordinates of longitude and latitude",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "type": {
+              "type": "string",
+              "const": "Point"
+            }
+          },
+          "required": [ "type", "coordinates" ]
         }
       ]
     },
@@ -62,7 +102,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "anyOf": [
           {
@@ -79,15 +119,19 @@
     },
     "geometry": {
       "title": "geometry",
-      "description": "Associates a location with a corresponding geometry",
+      "description": "Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format",
       "anyOf": [
         {
           "type": "null"
         },
         {
           "type": "string",
-          "format": "iri",
-          "description": "String format of the full geometry of the location"
+          "description": "String format of the full geometry of the location in WKT, GeoJSON, or GML format"
+        },
+        {
+          "type": "object",
+          "description": "Geometry represented in GeoJSON format",
+          "required": [ "type", "coordinates" ]
         }
       ]
     },
@@ -111,22 +155,22 @@
     },
     "altLabel": {
       "title": "alternative name",
-      "description": "An alternative name for a location",
-      "type": ["null", "string"]
+      "description": "An alternative label or name for a location",
+      "type": [ "null", "string" ]
     },
     "altLabelMap": {
       "description": "Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     },
     "prefLabel": {
       "title": "geographic name",
-      "description": "Preferred label of the Location",
-      "type": ["null", "string"]
+      "description": "Preferred label or name of the Location",
+      "type": [ "null", "string" ]
     },
     "prefLabelMap": {
       "description": "Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
+      "type": [ "null", "object" ]
     }
   },
-  "required": []
+  "required": [ ]
 }
