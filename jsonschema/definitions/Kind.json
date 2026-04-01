@@ -18,10 +18,12 @@
       "description": "The address of the contact",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of addresses",
           "items": {
             "oneOf": [
               {
@@ -30,6 +32,7 @@
               },
               {
                 "type": "string",
+                "title": "Link",
                 "description": "reference iri of Address",
                 "format": "iri"
               }

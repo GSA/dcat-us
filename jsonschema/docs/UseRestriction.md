@@ -59,7 +59,7 @@ Indication of whether or not there are use restrictions on the archival material
 | One of(Option)                         |
 | -------------------------------------- |
 | [Concept](#restrictionStatus_oneOf_i0) |
-| [item 1](#restrictionStatus_oneOf_i1)  |
+| [Link](#restrictionStatus_oneOf_i1)    |
 
 ### <a name="restrictionStatus_oneOf_i0"></a>Property `UseRestriction > restrictionStatus > oneOf > Concept`
 
@@ -72,7 +72,9 @@ inline description of restriction status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="restrictionStatus_oneOf_i1"></a>Property `UseRestriction > restrictionStatus > oneOf > item 1`
+### <a name="restrictionStatus_oneOf_i1"></a>Property `UseRestriction > restrictionStatus > oneOf > Link`
+
+**Title:** Link
 
 reference iri of restriction status
 
@@ -90,13 +92,15 @@ The specific NARA restriction associated with the use restriction
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                           |
-| ---------------------------------------- |
-| [item 0](#specificRestriction_oneOf_i0)  |
-| [Concept](#specificRestriction_oneOf_i1) |
-| [item 2](#specificRestriction_oneOf_i2)  |
+| One of(Option)                                                  |
+| --------------------------------------------------------------- |
+| [Null allowed when not required](#specificRestriction_oneOf_i0) |
+| [Concept](#specificRestriction_oneOf_i1)                        |
+| [Link](#specificRestriction_oneOf_i2)                           |
 
-### <a name="specificRestriction_oneOf_i0"></a>Property `UseRestriction > specificRestriction > oneOf > item 0`
+### <a name="specificRestriction_oneOf_i0"></a>Property `UseRestriction > specificRestriction > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -112,7 +116,9 @@ inline description of the specific restriction
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
 
-### <a name="specificRestriction_oneOf_i2"></a>Property `UseRestriction > specificRestriction > oneOf > item 2`
+### <a name="specificRestriction_oneOf_i2"></a>Property `UseRestriction > specificRestriction > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the specific restriction
 

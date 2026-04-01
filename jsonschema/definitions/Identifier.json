@@ -5,10 +5,12 @@
   "description": "A unique identifier and optionally it's scheme and other relevant information",
   "anyOf": [
     {
-      "type": "string"
+      "type": "string",
+      "title": "Simple string identifier"
     },
     {
       "type": "object",
+      "title": "Identifier as a complex object",
       "properties": {
         "@id": {
           "type": "string",
@@ -28,7 +30,8 @@
           "description": "the agency that manages the identifier scheme",
           "oneOf": [
             {
-              "type": "null"
+              "type": "null",
+              "title": "Null allowed when not required"
             },
             {
               "$ref": "/dcat-us/3.0.0/definitions/organization",
@@ -36,6 +39,7 @@
             },
             {
               "type": "string",
+              "title": "Link",
               "description": "reference iri of the creator",
               "format": "iri"
             }
@@ -46,22 +50,26 @@
           "description": "The date of formal issuance (e.g., publication) of the Identifier",
           "anyOf": [
             {
-              "type": "null"
+              "type": "null",
+              "title": "Null allowed when not required"
             },
             {
-              "type": "string",
               "oneOf": [
                 {
+                  "type": "string",
                   "format": "date-time"
                 },
                 {
+                  "type": "string",
                   "format": "date"
                 },
                 {
+                  "type": "string",
                   "pattern": "^[0-9]{4}$",
                   "description": "A year in YYYY format"
                 },
                 {
+                  "type": "string",
                   "pattern": "^[0-9]{4}-[0-9]{2}$",
                   "description": "A year and month in YYYY-MM format"
                 }

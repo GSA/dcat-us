@@ -46,20 +46,23 @@ The date on which the Standard has been first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#created_anyOf_i0) |
-| [item 1](#created_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#created_anyOf_i0) |
+| [item 1](#created_anyOf_i1)                         |
 
-### <a name="created_anyOf_i0"></a>Property `Standard > created > anyOf > item 0`
+### <a name="created_anyOf_i0"></a>Property `Standard > created > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="created_anyOf_i1"></a>Property `Standard > created > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                       |
 | ------------------------------------ |
@@ -70,25 +73,22 @@ The date on which the Standard has been first created
 
 #### <a name="created_anyOf_i1_oneOf_i0"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 #### <a name="created_anyOf_i1_oneOf_i1"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 #### <a name="created_anyOf_i1_oneOf_i2"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -98,9 +98,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -132,13 +131,15 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                     |
-| ---------------------------------- |
-| [item 0](#identifier_anyOf_i0)     |
-| [Identifier](#identifier_anyOf_i1) |
-| [item 2](#identifier_anyOf_i2)     |
+| Any of(Option)                                         |
+| ------------------------------------------------------ |
+| [Null allowed when not required](#identifier_anyOf_i0) |
+| [Identifier](#identifier_anyOf_i1)                     |
+| [Link](#identifier_anyOf_i2)                           |
 
-### <a name="identifier_anyOf_i0"></a>Property `Standard > identifier > anyOf > item 0`
+### <a name="identifier_anyOf_i0"></a>Property `Standard > identifier > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -154,7 +155,9 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-### <a name="identifier_anyOf_i2"></a>Property `Standard > identifier > anyOf > item 2`
+### <a name="identifier_anyOf_i2"></a>Property `Standard > identifier > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Identifier
 
@@ -184,7 +187,7 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 | Any of(Option)                                |
 | --------------------------------------------- |
 | [Identifier](#otherIdentifier_items_anyOf_i0) |
-| [item 1](#otherIdentifier_items_anyOf_i1)     |
+| [Link](#otherIdentifier_items_anyOf_i1)       |
 
 #### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > Identifier`
 
@@ -197,7 +200,9 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
 
-#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > item 1`
+#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Identifier
 
@@ -215,20 +220,23 @@ The date of formal issuance (e.g., publication) of the Standard
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)             |
-| -------------------------- |
-| [item 0](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1) |
+| Any of(Option)                                     |
+| -------------------------------------------------- |
+| [Null allowed when not required](#issued_anyOf_i0) |
+| [item 1](#issued_anyOf_i1)                         |
 
-### <a name="issued_anyOf_i0"></a>Property `Standard > issued > anyOf > item 0`
+### <a name="issued_anyOf_i0"></a>Property `Standard > issued > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>Property `Standard > issued > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                      |
 | ----------------------------------- |
@@ -239,25 +247,22 @@ The date of formal issuance (e.g., publication) of the Standard
 
 #### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 #### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 #### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -267,9 +272,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -285,20 +289,23 @@ The most recent date on which the Standard was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#modified_anyOf_i0) |
+| [item 1](#modified_anyOf_i1)                         |
 
-### <a name="modified_anyOf_i0"></a>Property `Standard > modified > anyOf > item 0`
+### <a name="modified_anyOf_i0"></a>Property `Standard > modified > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>Property `Standard > modified > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                        |
 | ------------------------------------- |
@@ -309,25 +316,22 @@ The most recent date on which the Standard was changed or modified
 
 #### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 #### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 #### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -337,9 +341,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -371,13 +374,15 @@ The type of the Standard. A controlled vocabulary for the values has not been es
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                |
-| ----------------------------- |
-| [item 0](#category_oneOf_i0)  |
-| [Concept](#category_oneOf_i1) |
-| [item 2](#category_oneOf_i2)  |
+| One of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#category_oneOf_i0) |
+| [Concept](#category_oneOf_i1)                        |
+| [Link](#category_oneOf_i2)                           |
 
-### <a name="category_oneOf_i0"></a>Property `Standard > category > oneOf > item 0`
+### <a name="category_oneOf_i0"></a>Property `Standard > category > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -393,7 +398,9 @@ inline description of Concept
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_oneOf_i2"></a>Property `Standard > category > oneOf > item 2`
+### <a name="category_oneOf_i2"></a>Property `Standard > category > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Concept
 
@@ -411,13 +418,15 @@ The reference register to which the Standard belongs
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
-| ----------------------------------- |
-| [item 0](#inScheme_oneOf_i0)        |
-| [ConceptScheme](#inScheme_oneOf_i1) |
-| [item 2](#inScheme_oneOf_i2)        |
+| One of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#inScheme_oneOf_i0) |
+| [ConceptScheme](#inScheme_oneOf_i1)                  |
+| [Link](#inScheme_oneOf_i2)                           |
 
-### <a name="inScheme_oneOf_i0"></a>Property `Standard > inScheme > oneOf > item 0`
+### <a name="inScheme_oneOf_i0"></a>Property `Standard > inScheme > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -433,7 +442,9 @@ inline description of ConceptScheme
 | **Additional properties** | Any type allowed                                      |
 | **Same definition as**    | [ConceptScheme](#category_oneOf_i1_inScheme_oneOf_i0) |
 
-### <a name="inScheme_oneOf_i2"></a>Property `Standard > inScheme > oneOf > item 2`
+### <a name="inScheme_oneOf_i2"></a>Property `Standard > inScheme > oneOf > Link`
+
+**Title:** Link
 
 reference iri of ConceptScheme
 

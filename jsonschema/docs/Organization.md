@@ -52,26 +52,32 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                        |
-| ------------------------------------- |
-| [item 0](#subOrganizationOf_anyOf_i0) |
-| [item 1](#subOrganizationOf_anyOf_i1) |
+| Any of(Option)                                                |
+| ------------------------------------------------------------- |
+| [Null allowed when not required](#subOrganizationOf_anyOf_i0) |
+| [List of organizations](#subOrganizationOf_anyOf_i1)          |
 
-### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 0`
+### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1`
+### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations`
+
+**Title:** List of organizations
 
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be                   | Description |
-| ------------------------------------------------- | ----------- |
-| [item 1 items](#subOrganizationOf_anyOf_i1_items) | -           |
+| Each item of this array must be                                  | Description |
+| ---------------------------------------------------------------- | ----------- |
+| [Organization object or link](#subOrganizationOf_anyOf_i1_items) | -           |
 
-#### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > item 1 > item 1 items
+#### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link
+
+**Title:** Organization object or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -80,9 +86,9 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | One of(Option)                                             |
 | ---------------------------------------------------------- |
 | [Organization](#subOrganizationOf_anyOf_i1_items_oneOf_i0) |
-| [item 1](#subOrganizationOf_anyOf_i1_items_oneOf_i1)       |
+| [Link](#subOrganizationOf_anyOf_i1_items_oneOf_i1)         |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > Organization`
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link > oneOf > Organization`
 
 **Title:** Organization
 
@@ -93,7 +99,9 @@ inline description of Organization
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Organization
 
@@ -127,26 +135,32 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)               |
-| ---------------------------- |
-| [item 0](#notation_anyOf_i0) |
-| [item 1](#notation_anyOf_i1) |
+| Any of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#notation_anyOf_i0) |
+| [List of abbreviations](#notation_anyOf_i1)          |
 
-### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > item 0`
+### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > item 1`
+### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > List of abbreviations`
+
+**Title:** List of abbreviations
 
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
-| [item 1 items](#notation_anyOf_i1_items) | -           |
+| [Abbreviation](#notation_anyOf_i1_items) | -           |
 
-#### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > item 1 > item 1 items
+#### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > List of abbreviations > Abbreviation
+
+**Title:** Abbreviation
 
 | **Type** | `string` |
 | -------- | -------- |

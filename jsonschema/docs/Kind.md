@@ -43,17 +43,21 @@ The address of the contact
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#address_anyOf_i0) |
-| [item 1](#address_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#address_anyOf_i0) |
+| [List of addresses](#address_anyOf_i1)              |
 
-### <a name="address_anyOf_i0"></a>Property `Kind > address > anyOf > item 0`
+### <a name="address_anyOf_i0"></a>Property `Kind > address > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="address_anyOf_i1"></a>Property `Kind > address > anyOf > item 1`
+### <a name="address_anyOf_i1"></a>Property `Kind > address > anyOf > List of addresses`
+
+**Title:** List of addresses
 
 | **Type** | `array` |
 | -------- | ------- |
@@ -62,7 +66,7 @@ The address of the contact
 | --------------------------------------- | ----------- |
 | [item 1 items](#address_anyOf_i1_items) | -           |
 
-#### <a name="address_anyOf_i1_items"></a>Kind > address > anyOf > item 1 > item 1 items
+#### <a name="address_anyOf_i1_items"></a>Kind > address > anyOf > List of addresses > item 1 items
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -71,9 +75,9 @@ The address of the contact
 | One of(Option)                              |
 | ------------------------------------------- |
 | [Address](#address_anyOf_i1_items_oneOf_i0) |
-| [item 1](#address_anyOf_i1_items_oneOf_i1)  |
+| [Link](#address_anyOf_i1_items_oneOf_i1)    |
 
-##### <a name="address_anyOf_i1_items_oneOf_i0"></a>Property `Kind > address > anyOf > item 1 > item 1 items > oneOf > Address`
+##### <a name="address_anyOf_i1_items_oneOf_i0"></a>Property `Kind > address > anyOf > List of addresses > item 1 items > oneOf > Address`
 
 **Title:** Address
 
@@ -84,7 +88,9 @@ inline address information
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
 
-##### <a name="address_anyOf_i1_items_oneOf_i1"></a>Property `Kind > address > anyOf > item 1 > item 1 items > oneOf > item 1`
+##### <a name="address_anyOf_i1_items_oneOf_i1"></a>Property `Kind > address > anyOf > List of addresses > item 1 items > oneOf > Link`
+
+**Title:** Link
 
 reference iri of Address
 

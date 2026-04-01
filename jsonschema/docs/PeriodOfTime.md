@@ -37,61 +37,60 @@ The end date of the period of time
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#endDate_anyOf_i0) |
-| [item 1](#endDate_anyOf_i1) |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Null allowed when not required](#endDate_anyOf_i0) |
+| [item 1](#endDate_anyOf_i1)                         |
 
-### <a name="endDate_anyOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > item 0`
+### <a name="endDate_anyOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="endDate_anyOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                       |
+| One of(Option)                       |
 | ------------------------------------ |
-| [item 0](#endDate_anyOf_i1_anyOf_i0) |
-| [item 1](#endDate_anyOf_i1_anyOf_i1) |
-| [item 2](#endDate_anyOf_i1_anyOf_i2) |
-| [item 3](#endDate_anyOf_i1_anyOf_i3) |
+| [item 0](#endDate_anyOf_i1_oneOf_i0) |
+| [item 1](#endDate_anyOf_i1_oneOf_i1) |
+| [item 2](#endDate_anyOf_i1_oneOf_i2) |
+| [item 3](#endDate_anyOf_i1_oneOf_i3) |
 
-#### <a name="endDate_anyOf_i1_anyOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 0`
+#### <a name="endDate_anyOf_i1_oneOf_i0"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
-#### <a name="endDate_anyOf_i1_anyOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 1`
+#### <a name="endDate_anyOf_i1_oneOf_i1"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
-#### <a name="endDate_anyOf_i1_anyOf_i2"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 2`
+#### <a name="endDate_anyOf_i1_oneOf_i2"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="endDate_anyOf_i1_anyOf_i3"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 3`
+#### <a name="endDate_anyOf_i1_oneOf_i3"></a>Property `PeriodOfTime > endDate > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -107,61 +106,60 @@ The start date of the period of time
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                |
-| ----------------------------- |
-| [item 0](#startDate_anyOf_i0) |
-| [item 1](#startDate_anyOf_i1) |
+| Any of(Option)                                        |
+| ----------------------------------------------------- |
+| [Null allowed when not required](#startDate_anyOf_i0) |
+| [item 1](#startDate_anyOf_i1)                         |
 
-### <a name="startDate_anyOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > item 0`
+### <a name="startDate_anyOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="startDate_anyOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
-| Any of(Option)                         |
+| One of(Option)                         |
 | -------------------------------------- |
-| [item 0](#startDate_anyOf_i1_anyOf_i0) |
-| [item 1](#startDate_anyOf_i1_anyOf_i1) |
-| [item 2](#startDate_anyOf_i1_anyOf_i2) |
-| [item 3](#startDate_anyOf_i1_anyOf_i3) |
+| [item 0](#startDate_anyOf_i1_oneOf_i0) |
+| [item 1](#startDate_anyOf_i1_oneOf_i1) |
+| [item 2](#startDate_anyOf_i1_oneOf_i2) |
+| [item 3](#startDate_anyOf_i1_oneOf_i3) |
 
-#### <a name="startDate_anyOf_i1_anyOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 0`
+#### <a name="startDate_anyOf_i1_oneOf_i0"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
-#### <a name="startDate_anyOf_i1_anyOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 1`
+#### <a name="startDate_anyOf_i1_oneOf_i1"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
-#### <a name="startDate_anyOf_i1_anyOf_i2"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 2`
+#### <a name="startDate_anyOf_i1_oneOf_i2"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="startDate_anyOf_i1_anyOf_i3"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 3`
+#### <a name="startDate_anyOf_i1_oneOf_i3"></a>Property `PeriodOfTime > startDate > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |

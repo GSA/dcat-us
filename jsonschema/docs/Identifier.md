@@ -8,17 +8,21 @@ A unique identifier and optionally it's scheme and other relevant information
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)      |
-| ------------------- |
-| [item 0](#anyOf_i0) |
-| [item 1](#anyOf_i1) |
+| Any of(Option)                              |
+| ------------------------------------------- |
+| [Simple string identifier](#anyOf_i0)       |
+| [Identifier as a complex object](#anyOf_i1) |
 
-## <a name="anyOf_i0"></a>Property `Identifier > anyOf > item 0`
+## <a name="anyOf_i0"></a>Property `Identifier > anyOf > Simple string identifier`
+
+**Title:** Simple string identifier
 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="anyOf_i1"></a>Property `Identifier > anyOf > item 1`
+## <a name="anyOf_i1"></a>Property `Identifier > anyOf > Identifier as a complex object`
+
+**Title:** Identifier as a complex object
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -34,19 +38,19 @@ A unique identifier and optionally it's scheme and other relevant information
 | - [version](#anyOf_i1_version )           | null or string     | version           |
 | - [notation](#anyOf_i1_notation )         | null or string     | notation          |
 
-### <a name="anyOf_i1_@id"></a>Property `Identifier > anyOf > item 1 > @id`
+### <a name="anyOf_i1_@id"></a>Property `Identifier > anyOf > Identifier as a complex object > @id`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-### <a name="anyOf_i1_@type"></a>Property `Identifier > anyOf > item 1 > @type`
+### <a name="anyOf_i1_@type"></a>Property `Identifier > anyOf > Identifier as a complex object > @type`
 
 | **Type**    | `string`       |
 | ----------- | -------------- |
 | **Default** | `"Identifier"` |
 
-### <a name="anyOf_i1_schemaAgency"></a>Property `Identifier > anyOf > item 1 > schemaAgency`
+### <a name="anyOf_i1_schemaAgency"></a>Property `Identifier > anyOf > Identifier as a complex object > schemaAgency`
 
 **Title:** schema agency
 
@@ -55,7 +59,7 @@ The name of the agency that issued the identifier
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-### <a name="anyOf_i1_creator"></a>Property `Identifier > anyOf > item 1 > creator`
+### <a name="anyOf_i1_creator"></a>Property `Identifier > anyOf > Identifier as a complex object > creator`
 
 **Title:** creator
 
@@ -65,18 +69,20 @@ the agency that manages the identifier scheme
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                             |
-| ------------------------------------------ |
-| [item 0](#anyOf_i1_creator_oneOf_i0)       |
-| [Organization](#anyOf_i1_creator_oneOf_i1) |
-| [item 2](#anyOf_i1_creator_oneOf_i2)       |
+| One of(Option)                                               |
+| ------------------------------------------------------------ |
+| [Null allowed when not required](#anyOf_i1_creator_oneOf_i0) |
+| [Organization](#anyOf_i1_creator_oneOf_i1)                   |
+| [Link](#anyOf_i1_creator_oneOf_i2)                           |
 
-#### <a name="anyOf_i1_creator_oneOf_i0"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > item 0`
+#### <a name="anyOf_i1_creator_oneOf_i0"></a>Property `Identifier > anyOf > Identifier as a complex object > creator > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-#### <a name="anyOf_i1_creator_oneOf_i1"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > Organization`
+#### <a name="anyOf_i1_creator_oneOf_i1"></a>Property `Identifier > anyOf > Identifier as a complex object > creator > oneOf > Organization`
 
 **Title:** Organization
 
@@ -87,7 +93,9 @@ inline description of the creator
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
-#### <a name="anyOf_i1_creator_oneOf_i2"></a>Property `Identifier > anyOf > item 1 > creator > oneOf > item 2`
+#### <a name="anyOf_i1_creator_oneOf_i2"></a>Property `Identifier > anyOf > Identifier as a complex object > creator > oneOf > Link`
+
+**Title:** Link
 
 reference iri of the creator
 
@@ -95,7 +103,7 @@ reference iri of the creator
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-### <a name="anyOf_i1_issued"></a>Property `Identifier > anyOf > item 1 > issued`
+### <a name="anyOf_i1_issued"></a>Property `Identifier > anyOf > Identifier as a complex object > issued`
 
 **Title:** issued
 
@@ -105,20 +113,23 @@ The date of formal issuance (e.g., publication) of the Identifier
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                      |
-| ----------------------------------- |
-| [item 0](#anyOf_i1_issued_anyOf_i0) |
-| [item 1](#anyOf_i1_issued_anyOf_i1) |
+| Any of(Option)                                              |
+| ----------------------------------------------------------- |
+| [Null allowed when not required](#anyOf_i1_issued_anyOf_i0) |
+| [item 1](#anyOf_i1_issued_anyOf_i1)                         |
 
-#### <a name="anyOf_i1_issued_anyOf_i0"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 0`
+#### <a name="anyOf_i1_issued_anyOf_i0"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-#### <a name="anyOf_i1_issued_anyOf_i1"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1`
+#### <a name="anyOf_i1_issued_anyOf_i1"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > item 1`
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                               |
 | -------------------------------------------- |
@@ -127,45 +138,41 @@ The date of formal issuance (e.g., publication) of the Identifier
 | [item 2](#anyOf_i1_issued_anyOf_i1_oneOf_i2) |
 | [item 3](#anyOf_i1_issued_anyOf_i1_oneOf_i3) |
 
-##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i0"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 0`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i0"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > item 1 > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
-##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i1"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 1`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i1"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > item 1 > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
-##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i2"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 2`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i2"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > item 1 > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i3"></a>Property `Identifier > anyOf > item 1 > issued > anyOf > item 1 > oneOf > item 3`
+##### <a name="anyOf_i1_issued_anyOf_i1_oneOf_i3"></a>Property `Identifier > anyOf > Identifier as a complex object > issued > anyOf > item 1 > oneOf > item 3`
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-### <a name="anyOf_i1_version"></a>Property `Identifier > anyOf > item 1 > version`
+### <a name="anyOf_i1_version"></a>Property `Identifier > anyOf > Identifier as a complex object > version`
 
 **Title:** version
 
@@ -174,7 +181,7 @@ version of the identifier scheme
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-### <a name="anyOf_i1_notation"></a>Property `Identifier > anyOf > item 1 > notation`
+### <a name="anyOf_i1_notation"></a>Property `Identifier > anyOf > Identifier as a complex object > notation`
 
 **Title:** notation
 
