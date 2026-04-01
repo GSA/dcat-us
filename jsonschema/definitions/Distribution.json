@@ -111,20 +111,7 @@
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-          "description": "inline description of MediaType"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of MediaType",
-          "format": "iri"
-        }
-      ]
+      "type": ["null", "string"]
     },
     "downloadURL": {
       "title": "download URL",
@@ -142,39 +129,13 @@
     },
     "mediaType": {
       "title": "media type",
-      "description": "The media type of the Distribution as defined in the official register of media types managed by IANA",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-          "description": "inline description of MediaType"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of MediaType",
-          "format": "iri"
-        }
-      ]
+      "description": "The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
+      "type": ["null", "string"]
     },
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-          "description": "inline description of MediaType"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of MediaType",
-          "format": "iri"
-        }
-      ]
+      "type": ["null", "string"]
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
@@ -292,18 +253,18 @@
     },
     "accessRights": {
       "title": "access rights",
-      "description": "Information regarding access or restrictions based on privacy, security, or other policies",
-      "oneOf": [
+      "description": "Information that indicates whether the Distribution is open data, has access restrictions or is not public",
+      "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of RightsStatement"
+          "type": "string",
+          "description": "Text description of the access rights"
         },
         {
           "type": "string",
-          "description": "reference iri of RightsStatement",
+          "description": "reference iri of the access rights",
           "format": "iri"
         }
       ]
@@ -344,21 +305,8 @@
     },
     "format": {
       "title": "format",
-      "description": "The file format of the Distribution",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-          "description": "inline description of the format"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of the format",
-          "format": "iri"
-        }
-      ]
+      "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
+      "type": ["null", "string"]
     },
     "identifier": {
       "title": "identifier",
@@ -446,18 +394,18 @@
     },
     "license": {
       "title": "license",
-      "description": "A license under which the Distribution is made available",
-      "oneOf": [
+      "description": "The license under which the Distribution is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses",
+      "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/licensedocument",
-          "description": "inline description of LicenseDocument"
+          "type": "string",
+          "description": "Full text of the license"
         },
         {
           "type": "string",
-          "description": "reference iri of LicenseDocument",
+          "description": "reference iri of the license",
           "format": "iri"
         }
       ]
@@ -492,21 +440,21 @@
     },
     "rights": {
       "title": "rights",
-      "description": "A statement that specifies rights associated with the Distribution",
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of RightsStatement"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of RightsStatement",
-          "format": "iri"
-        }
-      ]
+      "description": "A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "Full text of a statement of rights"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of a statement of rights",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "title": {
       "title": "title",

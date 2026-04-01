@@ -61,21 +61,8 @@
     },
     "mediaType": {
       "title": "media type",
-      "description": "The file format of the Document as defined in the official register of media types managed by IANA",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/mediatype",
-          "description": "inline description of MediaType"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of MediaType",
-          "format": "iri"
-        }
-      ]
+      "description": "The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
+      "type": ["null", "string"]
     },
     "abstract": {
       "title": "abstract",

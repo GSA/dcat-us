@@ -167,17 +167,17 @@
     "accessRights": {
       "title": "access rights",
       "description": "Information that indicates whether the Data Service is open data, has access restrictions or is public",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of access rights"
+          "type": "string",
+          "description": "Text description of the access rights"
         },
         {
           "type": "string",
-          "description": "reference iri of access rights",
+          "description": "reference iri of the access rights",
           "format": "iri"
         }
       ]
@@ -327,18 +327,18 @@
     },
     "license": {
       "title": "license",
-      "description": "The license under which the Data Service is made available",
-      "oneOf": [
+      "description": "The license under which the Data Service is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses",
+      "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/licensedocument",
-          "description": "inline description of LicenseDocument"
+          "type": "string",
+          "description": "Full text of the license"
         },
         {
           "type": "string",
-          "description": "reference iri of LicenseDocument",
+          "description": "reference iri of the license",
           "format": "iri"
         }
       ]
@@ -388,28 +388,21 @@
     },
     "rights": {
       "title": "rights",
-      "description": "A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-                "description": "inline description of RightsStatement"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of RightsStatement",
-                "format": "iri"
-              }
-            ]
+      "description": "A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "Full text of a statement of rights"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of a statement of rights",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "rightsHolder": {
       "title": "rights holder",
