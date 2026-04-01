@@ -169,14 +169,7 @@
       "southBoundingLatitude": "24.396308"
     }
   ],
-  "liabilityStatement": {
-    "@id": "https://example.gov/statements/liability",
-    "@type": "LiabilityStatement",
-    "label": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
-    "labelMap": {
-      "es": "Este conjunto de datos se proporciona tal cual sin garantía."
-    }
-  },
+  "liabilityStatement": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
   "metadataDistribution": [
     {
       "@id": "https://example.gov/distributions/metadata-xml",
@@ -192,14 +185,7 @@
     "es": "Este conjunto de datos fue creado para demostrar todos los campos disponibles.",
     "fr": "Ce jeu de données a été créé pour démontrer tous les champs disponibles."
   },
-  "accessRights": {
-    "@id": "https://example.gov/rights/public-access",
-    "@type": "RightsStatement",
-    "attributionText": "This dataset is public domain and freely available for any use.",
-    "attributionTextMap": {
-      "es": "Este conjunto de datos es de dominio público."
-    }
-  },
+  "accessRights": "This dataset is public domain and freely available for any use.",
   "accrualPeriodicity": "monthly",
   "conformsTo": [
     {
@@ -237,16 +223,7 @@
   "issued": null,
   "language": [ "en", "es" ],
   "modified": null,
-  "provenance": [
-    {
-      "@id": "https://example.gov/provenance/collection-method",
-      "@type": "ProvenanceStatement",
-      "label": "Data was collected through automated sensors deployed across the continental United States.",
-      "labelMap": {
-        "es": "Los datos fueron recopilados a través de sensores automáticos."
-      }
-    }
-  ],
+  "provenance": "Data was collected through automated sensors deployed across the continental United States.",
   "relation": [
     "https://example.gov/datasets/supplementary-dataset",
     "https://example.gov/services/api-endpoint"
@@ -254,11 +231,9 @@
   "replaces": [
     "https://example.gov/datasets/legacy-comprehensive-dataset"
   ],
-  "rights": {
-    "@id": "https://example.gov/rights/copyright",
-    "@type": "RightsStatement",
-    "attributionText": "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
-  },
+  "rights": [
+    "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
+  ],
   "rightsHolder": [
     {
       "@id": "https://example.gov/organizations/rights-holder",
