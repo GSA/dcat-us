@@ -189,8 +189,8 @@ List of dates on which the catalog record was included in the catalog
 
 **Title:** Array of dates
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+| **Type** | `array` |
+| -------- | ------- |
 
 | Each item of this array must be       | Description |
 | ------------------------------------- | ----------- |
@@ -200,8 +200,9 @@ List of dates on which the catalog record was included in the catalog
 
 **Title:** Date string
 
-| **Type** | More than one type |
-| -------- | ------------------ |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)                            |
 | ----------------------------------------- |
@@ -212,25 +213,22 @@ List of dates on which the catalog record was included in the catalog
 
 ##### <a name="issued_anyOf_i1_items_oneOf_i0"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 ##### <a name="issued_anyOf_i1_items_oneOf_i1"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 ##### <a name="issued_anyOf_i1_items_oneOf_i2"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -240,9 +238,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -310,9 +307,10 @@ A language or languages used in the textual metadata describing titles, descript
 
 The most recent date on which the catalog record was changed or modified
 
-| **Type**     | More than one type |
-| ------------ | ------------------ |
-| **Required** | Yes                |
+| **Type**                  | More than one type |
+| ------------------------- | ------------------ |
+| **Required**              | Yes                |
+| **Additional properties** | Any type allowed   |
 
 | One of(Option)               |
 | ---------------------------- |
@@ -323,25 +321,22 @@ The most recent date on which the catalog record was changed or modified
 
 ### <a name="modified_oneOf_i0"></a>Property `CatalogRecord > modified > oneOf > item 0`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date-time`      |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string`    |
+| ---------- | ----------- |
+| **Format** | `date-time` |
 
 ### <a name="modified_oneOf_i1"></a>Property `CatalogRecord > modified > oneOf > item 1`
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Format**                | `date`           |
-| **Additional properties** | Any type allowed |
+| **Type**   | `string` |
+| ---------- | -------- |
+| **Format** | `date`   |
 
 ### <a name="modified_oneOf_i2"></a>Property `CatalogRecord > modified > oneOf > item 2`
 
 A year in YYYY format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -351,9 +346,8 @@ A year in YYYY format
 
 A year and month in YYYY-MM format
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+| **Type** | `string` |
+| -------- | -------- |
 
 | Restrictions                      |                                                                                                       |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |

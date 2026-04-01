@@ -1489,13 +1489,15 @@ The home page of the catalog (a public Web document usually available in HTML)
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                 |
-| ------------------------------ |
-| [item 0](#homepage_oneOf_i0)   |
-| [Document](#homepage_oneOf_i1) |
-| [Link](#homepage_oneOf_i2)     |
+| One of(Option)                                       |
+| ---------------------------------------------------- |
+| [Null allowed when not required](#homepage_oneOf_i0) |
+| [Document](#homepage_oneOf_i1)                       |
+| [Link](#homepage_oneOf_i2)                           |
 
-### <a name="homepage_oneOf_i0"></a>Property `DCAT-US 3 Catalog > homepage > oneOf > item 0`
+### <a name="homepage_oneOf_i0"></a>Property `DCAT-US 3 Catalog > homepage > oneOf > Null allowed when not required`
+
+**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
