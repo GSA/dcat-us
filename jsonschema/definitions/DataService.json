@@ -18,6 +18,7 @@
       "description": "Contact information that can be used for sending comments about the Data Service",
       "type": "array",
       "items": {
+        "title": "Kind object or link",
         "oneOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/kind",
@@ -25,6 +26,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Kind",
             "format": "iri"
           }
@@ -41,6 +43,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Description or link",
             "anyOf": [
               {
                 "type": "string",
@@ -48,6 +51,7 @@
               },
               {
                 "type": "string",
+                "title": "Link",
                 "description": "reference iri of the endpoint description",
                 "format": "iri"
               }
@@ -62,6 +66,7 @@
       "type": "array",
       "items": {
         "type": "string",
+        "title": "URLs",
         "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
         "format": "iri"
       }
@@ -71,6 +76,7 @@
       "description": "List of keywords or tags describing the Data Service",
       "type": ["null", "array"],
       "items": {
+        "title": "Non-empty strings",
         "type": "string",
         "minLength": 1
       }
@@ -89,6 +95,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Dataset object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/dataset",
@@ -124,6 +131,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Theme or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/concept",
@@ -149,6 +157,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Bounding box object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/geographicboundingbox",
@@ -177,6 +186,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of access rights",
           "format": "iri"
         }
@@ -192,6 +202,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Standard object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/standard",
@@ -215,19 +226,22 @@
           "type": "null"
         },
         {
-          "type": "string",
           "oneOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -245,6 +259,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Agent object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/agent",
@@ -282,6 +297,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Identifier",
           "format": "iri"
         }
@@ -299,6 +315,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Identifier",
             "format": "iri"
           }
@@ -310,15 +327,19 @@
       "description": "Language or languages supported by the Data Service. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "string",
+          "title": "Language code",
           "maxLength": 2
         },
         {
           "type": "array",
+          "title": "List of lanuages",
           "items": {
+            "title": "Language code",
             "type": "string",
             "maxLength": 2
           }
@@ -330,7 +351,8 @@
       "description": "The license under which the Data Service is made available",
       "oneOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/licensedocument",
@@ -338,6 +360,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of LicenseDocument",
           "format": "iri"
         }
@@ -348,22 +371,26 @@
       "description": "The most recent date on which the Data Service was changed or modified",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
-          "type": "string",
           "oneOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -381,6 +408,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Agent",
           "format": "iri"
         }
@@ -391,11 +419,14 @@
       "description": "A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of rights",
           "items": {
+            "title": "RightsStatement object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
@@ -416,11 +447,14 @@
       "description": "A list of Agents (organizations) holding rights on the Data Service",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of rights holders",
           "items": {
+            "title": "Organization object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/organization",
@@ -441,11 +475,14 @@
       "description": "A geographic region that is covered by the Data Service",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of locations",
           "items": {
+            "title": "Location object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/location",
@@ -466,11 +503,14 @@
       "description": "A list of temporal periods that the DataService covers",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of time periods",
           "items": {
+            "title": "PeriodOfTime object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
@@ -500,7 +540,8 @@
       "description": "Category of the data service",
       "oneOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
@@ -508,6 +549,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Concept",
           "format": "iri"
         }
@@ -518,11 +560,14 @@
       "description": "Refers to the performed quality measurements",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of quality measurements",
           "items": {
+            "title": "QualityMeasurement object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
@@ -530,6 +575,7 @@
               },
               {
                 "type": "string",
+                "title": "Link",
                 "description": "reference iri of QualityMeasurement",
                 "format": "iri"
               }
@@ -543,11 +589,14 @@
       "description": "List of agents having some form of responsibility for the Data Service",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of responsible agents",
           "items": {
+            "title": "Attribution object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/attribution",
@@ -555,6 +604,7 @@
               },
               {
                 "type": "string",
+                "title": "Link",
                 "description": "reference iri of Attribution",
                 "format": "iri"
               }
@@ -568,11 +618,14 @@
       "description": "List of activities that used the Data Service",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "array",
+          "title": "List of activities",
           "items": {
+            "title": "Activity object or link",
             "oneOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/activity",
@@ -580,6 +633,7 @@
               },
               {
                 "type": "string",
+                "title": "Link",
                 "description": "reference iri of Activity",
                 "format": "iri"
               }

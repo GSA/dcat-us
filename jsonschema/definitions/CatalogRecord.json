@@ -84,19 +84,22 @@
           "title": "Array of dates",
           "items": {
             "title": "Date string",
-            "type": "string",
             "oneOf": [
               {
+                "type": "string",
                 "format": "date-time"
               },
               {
+                "type": "string",
                 "format": "date"
               },
               {
+                "type": "string",
                 "pattern": "^[0-9]{4}$",
                 "description": "A year in YYYY format"
               },
               {
+                "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}$",
                 "description": "A year and month in YYYY-MM format"
               }
@@ -132,19 +135,22 @@
     "modified": {
       "title": "update/modification date",
       "description": "The most recent date on which the catalog record was changed or modified",
-      "type": "string",
       "oneOf": [
         {
+          "type": "string",
           "format": "date-time"
         },
         {
+          "type": "string",
           "format": "date"
         },
         {
+          "type": "string",
           "pattern": "^[0-9]{4}$",
           "description": "A year in YYYY format"
         },
         {
+          "type": "string",
           "pattern": "^[0-9]{4}-[0-9]{2}$",
           "description": "A year and month in YYYY-MM format"
         }
