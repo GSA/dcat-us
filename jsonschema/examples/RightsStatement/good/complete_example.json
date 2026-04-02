@@ -1,0 +1,9 @@
+{
+  "@id": "https://example.gov/rights-statements/public-domain",
+  "@type": "RightsStatement",
+  "attributionText": "U.S. Government Work - This dataset is in the public domain within the United States. Attribution is requested but not required.",
+  "attributionTextMap": {
+    "es": "Trabajo del Gobierno de EE. UU. - Este conjunto de datos es de dominio público dentro de los Estados Unidos.",
+    "fr": "Travail du gouvernement américain - Ce jeu de données est dans le domaine public aux États-Unis."
+  }
+}

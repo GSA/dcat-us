@@ -1,0 +1,9 @@
+{
+  "@id": "https://www.iana.org/assignments/media-types/application/json",
+  "@type": "MediaType",
+  "label": "JSON (JavaScript Object Notation)",
+  "labelMap": {
+    "es": "JSON (Notación de Objetos de JavaScript)",
+    "fr": "JSON (Notation Objet JavaScript)"
+  }
+}

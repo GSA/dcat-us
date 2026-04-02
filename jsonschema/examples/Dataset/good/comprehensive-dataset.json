@@ -84,7 +84,10 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.csv",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.csv",
       "byteSize": "10485760",
-      "format": "CSV",
+      "format": {
+        "@type": "MediaType",
+        "label": "CSV (Comma-Separated Values)"
+      },
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
       "characterEncoding": [ "UTF-8" ],
@@ -99,7 +102,10 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.json",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.json",
       "byteSize": "15728640",
-      "format": "JSON",
+      "format": {
+        "@type": "MediaType",
+        "label": "JSON (JavaScript Object Notation)"
+      },
       "description": "JSON distribution of the dataset"
     }
   ],
@@ -157,7 +163,10 @@
     "title": "Data Dictionary",
     "description": "Comprehensive data dictionary describing all fields",
     "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
-    "format": "PDF"
+    "format": {
+      "@type": "MediaType",
+      "label": "PDF (Portable Document Format)"
+    }
   },
   "geographicBoundingBox": [
     {
@@ -184,7 +193,10 @@
       "title": "Original ISO 19115 Metadata",
       "description": "The original metadata document in ISO 19115 format",
       "downloadURL": "https://example.gov/metadata/comprehensive-dataset.xml",
-      "format": "XML"
+      "format": {
+        "@type": "MediaType",
+        "label": "XML (Extensible Markup Language)"
+      }
     }
   ],
   "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
@@ -270,14 +282,6 @@
   "source": [
     "https://example.gov/datasets/raw-sensor-data"
   ],
-  "spatial": {
-    "@id": "https://example.gov/locations/conus",
-    "@type": "Location",
-    "prefLabel": "Continental United States",
-    "altLabel": "CONUS",
-    "identifier": "https://www.wikidata.org/wiki/Q578170",
-    "bbox": "POLYGON((-124.848974 24.396308, -66.885444 24.396308, -66.885444 49.384358, -124.848974 49.384358, -124.848974 24.396308))"
-  },
   "temporal": [
     {
       "@id": "https://example.gov/periods/data-coverage",

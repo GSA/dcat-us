@@ -1,0 +1,9 @@
+{
+  "@id": "https://example.gov/provenance/dataset-001",
+  "@type": "ProvenanceStatement",
+  "label": "This dataset was collected through the American Community Survey and processed by the U.S. Census Bureau. The raw data underwent quality assurance checks and statistical disclosure limitation before release.",
+  "labelMap": {
+    "es": "Este conjunto de datos fue recopilado a través de la Encuesta sobre la Comunidad Estadounidense y procesado por la Oficina del Censo.",
+    "fr": "Cet ensemble de données a été collecté via l'American Community Survey et traité par le Bureau du recensement des États-Unis."
+  }
+}

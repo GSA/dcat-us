@@ -17,7 +17,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install jsonschema
+        run: pip install jsonschema[format]
 
       - name: Run JSON Schema validation tests
         run: python jsonschema/test_json_schema.py
