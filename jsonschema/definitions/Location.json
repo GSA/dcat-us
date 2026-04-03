@@ -129,7 +129,7 @@
     "inScheme": {
       "title": "gazetteer",
       "description": "The gazetteer to which the location belongs",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },

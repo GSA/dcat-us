@@ -53,7 +53,7 @@
           },
           {
             "type": "string",
-            "description": "reference iri of Person",
+            "description": "reference iri of author",
             "format": "iri"
           }
         ]

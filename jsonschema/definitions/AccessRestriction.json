@@ -25,7 +25,7 @@
     "restrictionStatus": {
       "title": "restriction status",
       "description": "The indication of whether or not there are access restrictions on the item",
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of restriction status"
@@ -40,7 +40,7 @@
     "specificRestriction": {
       "title": "specific restriction",
       "description": "The specific NARA restriction associated with this restriction",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },

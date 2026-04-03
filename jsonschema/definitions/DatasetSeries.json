@@ -16,32 +16,25 @@
     "contactPoint": {
       "title": "contact point",
       "description": "List of contacts that can be used for sending comments about the Dataset Series",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/kind",
-                "description": "inline description of the contact"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of the contact",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/kind",
+            "description": "inline description of the contact"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of the contact",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "first": {
       "title": "first",
       "description": "The first dataset in an ordered dataset series",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -59,7 +52,7 @@
     "last": {
       "title": "last",
       "description": "The last dataset in an ordered dataset series",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -77,27 +70,20 @@
     "seriesMember": {
       "title": "series member",
       "description": "List of members of the Dataset Series",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of the member dataset"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of the member dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of the member dataset"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of the member dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "accrualPeriodicity": {
       "title": "frequency",
@@ -172,7 +158,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -200,7 +186,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -222,7 +208,7 @@
     "publisher": {
       "title": "publisher",
       "description": "An entity (organization) responsible for ensuring the coherency of the Dataset Series",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -240,52 +226,38 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Dataset Series",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/location",
-                "description": "inline description of Location"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Location",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/location",
+            "description": "inline description of Location"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Location",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the Dataset Series covers",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
-                "description": "inline description of PeriodOfTime"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of PeriodOfTime",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
+            "description": "inline description of PeriodOfTime"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of PeriodOfTime",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "title": {
       "title": "title",

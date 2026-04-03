@@ -18,7 +18,7 @@
       "description": "Contact information that can be used for sending comments about the Data Service",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/kind",
             "description": "inline description of Kind"
@@ -34,27 +34,20 @@
     "endpointDescription": {
       "title": "endpoint description",
       "description": "A list of descriptions of the services available via the end-points, including their operations, parameters etc",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "string",
-                "description": "An in-line description of the endpoint description"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of the endpoint description",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "An in-line description of the endpoint description"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of the endpoint description",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "endpointURL": {
       "title": "endpoint URL",
@@ -82,27 +75,20 @@
     "servesDataset": {
       "title": "serves dataset",
       "description": "List of datasets that are served by this data service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of Dataset"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of Dataset"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
@@ -117,32 +103,25 @@
     "theme": {
       "title": "theme/category",
       "description": "A list of themes of the Data Service. A Data Service may be associated with multiple themes",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/concept",
-                "description": "inline description of Concept"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Concept",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Concept",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "accessRights": {
       "title": "access rights",
       "description": "Information that indicates whether the Data Service is open data, has access restrictions or is public",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -160,27 +139,20 @@
     "conformsTo": {
       "title": "conforms to",
       "description": "List of general standards or specifications that the Data Service endpoints implement",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                "description": "inline description of Standard"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Standard",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/standard",
+            "description": "inline description of Standard"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Standard",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "created": {
       "title": "creation date",
@@ -191,7 +163,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -213,27 +185,20 @@
     "creator": {
       "title": "creator",
       "description": "List of agents primarily responsible for producing the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/agent",
-                "description": "inline description of Agent"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Agent",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/agent",
+            "description": "inline description of Agent"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Agent",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "description": {
       "title": "description",
@@ -303,7 +268,7 @@
     "license": {
       "title": "license",
       "description": "The license under which the Data Service is made available",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -327,7 +292,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -349,7 +314,7 @@
     "publisher": {
       "title": "publisher",
       "description": "An entity (organization) responsible for making the Data Service available",
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "/dcat-us/3.0.0/definitions/agent",
           "description": "inline description of Agent"
@@ -364,102 +329,74 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-                "description": "inline description of RightsStatement"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of RightsStatement",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
+            "description": "inline description of RightsStatement"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of RightsStatement",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "rightsHolder": {
       "title": "rights holder",
       "description": "A list of Agents (organizations) holding rights on the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                "description": "inline description of Organization"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Organization",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/organization",
+            "description": "inline description of Organization"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Organization",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/location",
-                "description": "inline description of Location"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Location",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/location",
+            "description": "inline description of Location"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Location",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the DataService covers",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
-                "description": "inline description of PeriodOfTime"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of PeriodOfTime",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
+            "description": "inline description of PeriodOfTime"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of PeriodOfTime",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "title": {
       "title": "title",
@@ -473,7 +410,7 @@
     "category": {
       "title": "category",
       "description": "Category of the data service",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -491,77 +428,56 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "Refers to the performed quality measurements",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
-                "description": "inline description of QualityMeasurement"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of QualityMeasurement",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
+            "description": "inline description of QualityMeasurement"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of QualityMeasurement",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents having some form of responsibility for the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/attribution",
-                "description": "inline description of Attribution"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Attribution",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/attribution",
+            "description": "inline description of Attribution"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Attribution",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "wasUsedBy": {
       "title": "was used by",
       "description": "List of activities that used the Data Service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/activity",
-                "description": "inline description of Activity"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Activity",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/activity",
+            "description": "inline description of Activity"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Activity",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     }
   },
   "required": ["contactPoint", "endpointURL", "publisher", "title"]

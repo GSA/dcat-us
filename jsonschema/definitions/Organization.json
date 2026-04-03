@@ -21,27 +21,20 @@
     "subOrganizationOf": {
       "title": "suborganization of",
       "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "#",
-                "description": "inline description of Organization"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Organization",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#",
+            "description": "inline description of Organization"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Organization",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "altLabel": {
       "title": "alternative label",
@@ -55,17 +48,10 @@
     "notation": {
       "title": "notation",
       "description": "List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "prefLabel": {
       "title": "preferred label",

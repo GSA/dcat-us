@@ -16,7 +16,7 @@
     "category": {
       "title": "category",
       "description": "The type of the agent that makes the item available",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
