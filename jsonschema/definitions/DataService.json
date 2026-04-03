@@ -427,21 +427,21 @@
     },
     "category": {
       "title": "category",
-      "description": "Category of the data service",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/concept",
-          "description": "inline description of Concept"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of Concept",
-          "format": "iri"
-        }
-      ]
+      "description": "List of categories for the Data Service",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Concept",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",

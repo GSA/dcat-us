@@ -1,6 +1,8 @@
 {
-    "@id": "https://example.gov/agents/invalid-agent",
-    "@type": "Agent",
-    "name": 12345,
-    "category": "https://example.gov/concepts/government-agency"
+  "@id": "https://example.gov/agents/invalid-agent",
+  "@type": "Agent",
+  "name": 12345,
+  "category": [
+    "https://example.gov/concepts/government-agency"
+  ]
 }

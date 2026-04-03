@@ -874,7 +874,7 @@
     },
     "category": {
       "title": "category",
-      "description": "List of categories of the dataset",
+      "description": "List of categories for the Dataset",
       "type": ["null", "array"],
       "items": {
         "anyOf": [
