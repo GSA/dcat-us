@@ -18,10 +18,12 @@
       "description": "A URL that gives access to the Document",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "string",
+          "title": "URL",
           "description": "reference iri of Document",
           "format": "iri"
         }
@@ -32,10 +34,12 @@
       "description": "A URL that is a direct link to a downloadable file of the Document in a given format",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "type": "string",
+          "title": "URL",
           "description": "reference iri of Document",
           "format": "iri"
         }
@@ -46,6 +50,7 @@
       "description": "The individual(s) responsible for creating the Document",
       "type": ["null", "array"],
       "items": {
+        "title": "Kind or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/kind",
@@ -53,6 +58,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of author",
             "format": "iri"
           }
@@ -83,6 +89,7 @@
       "description": "List of standards that the Document conforms to",
       "type": ["null", "array"],
       "items": {
+        "title": "Standard object or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/standard",
@@ -90,6 +97,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Standard",
             "format": "iri"
           }
@@ -101,6 +109,7 @@
       "description": "The corporate organization(s) responsible for creating the Document",
       "type": ["null", "array"],
       "items": {
+        "title": "Organization or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/organization",
@@ -108,6 +117,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of corporate author",
             "format": "iri"
           }
@@ -128,7 +138,8 @@
       "description": "The unique identifier for the Document (e.g. DOI, ISBN)",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
@@ -136,6 +147,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Identifier",
           "format": "iri"
         }
@@ -146,6 +158,7 @@
       "description": "A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "type": ["null", "array"],
       "items": {
+        "title": "Identifier object or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/identifier",
@@ -153,6 +166,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Identifier",
             "format": "iri"
           }
@@ -164,22 +178,26 @@
       "description": "Publication date of the Document",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
-          "type": "string",
-          "anyOf": [
+          "oneOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -192,6 +210,7 @@
       "description": "The organization(s) that published the Document",
       "type": ["null", "array"],
       "items": {
+        "title": "Organization object or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/organization",
@@ -199,6 +218,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of publisher",
             "format": "iri"
           }
@@ -219,6 +239,7 @@
       "description": "List of categories/genres for the Document",
       "type": ["null", "array"],
       "items": {
+        "title": "Category or link",
         "anyOf": [
           {
             "$ref": "/dcat-us/3.0.0/definitions/concept",
@@ -226,6 +247,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Concept",
             "format": "iri"
           }

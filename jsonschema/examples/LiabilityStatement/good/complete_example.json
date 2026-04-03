@@ -1,9 +1,0 @@
-{
-  "@id": "https://example.gov/liability-statements/standard-disclaimer",
-  "@type": "LiabilityStatement",
-  "label": "The data is provided 'as is' without warranty of any kind, express or implied. The government makes no warranties, representations, or guarantees regarding the accuracy, completeness, or reliability of the data.",
-  "labelMap": {
-    "es": "Los datos se proporcionan 'tal cual' sin garantía de ningún tipo, expresa o implícita.",
-    "fr": "Les données sont fournies 'en l'état' sans garantie d'aucune sorte, expresse ou implicite."
-  }
-}

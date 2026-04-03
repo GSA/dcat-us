@@ -28,6 +28,7 @@
       "description": "List of free text of the required indicator",
       "type": ["null", "array"],
       "items": {
+        "title": "Indicator string",
         "type": "string"
       }
     }

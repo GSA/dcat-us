@@ -23,6 +23,7 @@
         },
         {
           "type": "string",
+          "title": "Link",
           "description": "reference iri of Metric",
           "format": "iri"
         }

@@ -25,6 +25,7 @@
           },
           {
             "type": "string",
+            "title": "Link",
             "description": "reference iri of Concept",
             "format": "iri"
           }
