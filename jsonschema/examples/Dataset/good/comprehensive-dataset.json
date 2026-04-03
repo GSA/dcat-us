@@ -84,10 +84,7 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.csv",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.csv",
       "byteSize": "10485760",
-      "format": {
-        "@type": "MediaType",
-        "label": "CSV (Comma-Separated Values)"
-      },
+      "format": "CSV (Comma-Separated Values)",
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
       "characterEncoding": [ "UTF-8" ],
@@ -102,10 +99,7 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.json",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.json",
       "byteSize": "15728640",
-      "format": {
-        "@type": "MediaType",
-        "label": "JSON (JavaScript Object Notation)"
-      },
+      "format": "JSON (JavaScript Object Notation)",
       "description": "JSON distribution of the dataset"
     }
   ],
@@ -163,10 +157,7 @@
     "title": "Data Dictionary",
     "description": "Comprehensive data dictionary describing all fields",
     "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
-    "format": {
-      "@type": "MediaType",
-      "label": "PDF (Portable Document Format)"
-    }
+    "format": "PDF (Portable Document Format)"
   },
   "geographicBoundingBox": [
     {
@@ -186,10 +177,7 @@
       "title": "Original ISO 19115 Metadata",
       "description": "The original metadata document in ISO 19115 format",
       "downloadURL": "https://example.gov/metadata/comprehensive-dataset.xml",
-      "format": {
-        "@type": "MediaType",
-        "label": "XML (Extensible Markup Language)"
-      }
+      "format": "XML (Extensible Markup Language)"
     }
   ],
   "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
@@ -235,7 +223,9 @@
   "issued": null,
   "language": [ "en", "es" ],
   "modified": null,
-  "provenance": "Data was collected through automated sensors deployed across the continental United States.",
+  "provenance": [
+    "Data was collected through automated sensors deployed across the continental United States."
+  ],
   "relation": [
     "https://example.gov/datasets/supplementary-dataset",
     "https://example.gov/services/api-endpoint"
