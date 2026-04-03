@@ -89,7 +89,7 @@ The format in which an Distribution is released. This is different from the file
 
 inline description of Concept
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
@@ -133,7 +133,7 @@ The status of the distribution in the context of maturity lifecycle
 
 inline description of Concept
 
-| **Type**                  | `object`                                     |
+| **Type**                  | More than one type                           |
 | ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
@@ -382,7 +382,7 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 
 inline description of Concept
 
-| **Type**                  | `object`                                     |
+| **Type**                  | More than one type                           |
 | ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |

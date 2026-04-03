@@ -64,7 +64,7 @@ The status of the catalog record in the context of editorial flow of the dataset
 
 inline description of status
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |

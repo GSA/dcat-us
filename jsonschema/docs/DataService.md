@@ -297,7 +297,7 @@ A list of themes of the Data Service. A Data Service may be associated with mult
 
 inline description of Concept
 
-| **Type**                  | `object`                                                                                        |
+| **Type**                  | More than one type                                                                              |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [Concept](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -1053,7 +1053,7 @@ List of categories for the Data Service
 
 inline description of Concept
 
-| **Type**                  | `object`                                                                                        |
+| **Type**                  | More than one type                                                                              |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [Concept](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |

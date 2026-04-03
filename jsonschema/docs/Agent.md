@@ -31,7 +31,7 @@ An entity that could be involved with a resource
 
 **Title:** category
 
-List of categories for the Agent
+The type of the agent that makes the item available
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -57,7 +57,7 @@ List of categories for the Agent
 
 inline description of Concept
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |

@@ -344,7 +344,7 @@ A list of categories for the Catalog. A Catalog may be associated with multiple 
 
 inline description of the theme
 
-| **Type**                  | `object`                                                                                  |
+| **Type**                  | More than one type                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                          |
 | **Same definition as**    | [Concept](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -389,10 +389,10 @@ A knowledge organization system (KOS) used to classify the resources documented 
 
 inline description of ConceptScheme
 
-| **Type**                  | `object`                                                                                                          |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                  |
-| **Same definition as**    | [ConceptScheme](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1_inScheme_anyOf_i0) |
+| **Type**                  | `object`                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                           |
+| **Same definition as**    | [ConceptScheme](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1_anyOf_i1_inScheme_oneOf_i0) |
 
 #### <a name="themeTaxonomy_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > themeTaxonomy items > anyOf > Link`
 
@@ -1128,7 +1128,7 @@ List of subjects of the catalog
 
 inline description of the subject
 
-| **Type**                  | `object`                                                                                  |
+| **Type**                  | More than one type                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                          |
 | **Same definition as**    | [Concept](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -1234,7 +1234,7 @@ List of categories for the Catalog
 
 inline description of Concept
 
-| **Type**                  | `object`                                                                                  |
+| **Type**                  | More than one type                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                          |
 | **Same definition as**    | [Concept](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |

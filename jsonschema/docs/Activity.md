@@ -58,7 +58,7 @@ List of categories for the Activity
 
 inline description of Concept
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |

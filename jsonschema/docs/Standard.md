@@ -402,7 +402,7 @@ List of categories for the Standard
 
 inline description of Concept
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
@@ -446,10 +446,10 @@ The reference register to which the Standard belongs
 
 inline description of ConceptScheme
 
-| **Type**                  | `object`                                                    |
-| ------------------------- | ----------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                            |
-| **Same definition as**    | [ConceptScheme](#category_items_anyOf_i0_inScheme_anyOf_i0) |
+| **Type**                  | `object`                                                             |
+| ------------------------- | -------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                     |
+| **Same definition as**    | [ConceptScheme](#category_items_anyOf_i0_anyOf_i1_inScheme_oneOf_i0) |
 
 ### <a name="inScheme_anyOf_i2"></a>Property `Standard > inScheme > anyOf > Link`
 

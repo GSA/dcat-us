@@ -67,7 +67,7 @@ Indication of whether or not there are use restrictions on the archival material
 
 inline description of restriction status
 
-| **Type**                  | `object`                |
+| **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
@@ -111,7 +111,7 @@ The specific NARA restriction associated with the use restriction
 
 inline description of the specific restriction
 
-| **Type**                  | `object`                               |
+| **Type**                  | More than one type                     |
 | ------------------------- | -------------------------------------- |
 | **Additional properties** | Any type allowed                       |
 | **Same definition as**    | [Concept](#restrictionStatus_anyOf_i0) |

@@ -207,7 +207,7 @@ The status of the dataset  in the context of maturity lifecycle
 
 inline description of Concept
 
-| **Type**                  | `object`                                                           |
+| **Type**                  | More than one type                                                 |
 | ------------------------- | ------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                   |
 | **Same definition as**    | [Concept](#sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -803,7 +803,7 @@ List of themes of the dataset
 
 inline description of Concept
 
-| **Type**                  | `object`                                                           |
+| **Type**                  | More than one type                                                 |
 | ------------------------- | ------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                   |
 | **Same definition as**    | [Concept](#sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -2043,7 +2043,7 @@ List of primary subjects of the dataset
 
 inline description of Concept
 
-| **Type**                  | `object`                                                           |
+| **Type**                  | More than one type                                                 |
 | ------------------------- | ------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                   |
 | **Same definition as**    | [Concept](#sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
@@ -2154,7 +2154,7 @@ List of categories for the Dataset
 
 inline description of Concept
 
-| **Type**                  | `object`                                                           |
+| **Type**                  | More than one type                                                 |
 | ------------------------- | ------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                   |
 | **Same definition as**    | [Concept](#sample_items_anyOf_i0_representationTechnique_anyOf_i1) |

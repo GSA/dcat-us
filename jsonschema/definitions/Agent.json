@@ -16,7 +16,7 @@
     "category": {
       "title": "category",
       "description": "The type of the agent that makes the item available",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "anyOf": [
           {
@@ -38,5 +38,5 @@
       "type": "string"
     }
   },
-  "required": [ "name" ]
+  "required": ["name"]
 }

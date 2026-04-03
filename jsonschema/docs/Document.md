@@ -554,7 +554,7 @@ List of categories/genres for the Document
 
 inline description of Concept
 
-| **Type**                  | `object`                                                      |
+| **Type**                  | More than one type                                            |
 | ------------------------- | ------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                              |
 | **Same definition as**    | [Concept](#conformsTo_items_anyOf_i0_category_items_anyOf_i0) |
