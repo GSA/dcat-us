@@ -363,8 +363,8 @@
       "description": "A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements",
       "type": ["null", "array"],
       "items": {
+        "title": "RightsStatement object or link",
         "anyOf": [
-          "title": "RightsStatement object or link",
           {
             "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
             "description": "inline description of RightsStatement"

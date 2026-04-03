@@ -116,7 +116,7 @@
           },
           {
             "type": "string",
-                "title": "Link",
+            "title": "Link",
             "description": "reference iri of the service",
             "format": "iri"
           }
@@ -135,7 +135,7 @@
           },
           {
             "type": "string",
-                "title": "Link",
+            "title": "Link",
             "description": "reference iri of the theme",
             "format": "iri"
           }

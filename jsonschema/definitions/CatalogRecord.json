@@ -58,7 +58,7 @@
       "description": "A list of free-text accounts of the catalog record",
       "type": ["null", "array"],
       "items": {
-            "title": "Description string",
+        "title": "Description string",
         "type": "string"
       }
     },
@@ -69,24 +69,24 @@
       "items": {
         "title": "Date string",
         "anyOf": [
-            {
+          {
             "type": "string",
             "format": "date-time"
-            },
-            {
+          },
+          {
             "type": "string",
             "format": "date"
-            },
-            {
+          },
+          {
             "type": "string",
             "pattern": "^[0-9]{4}$",
             "description": "A year in YYYY format"
-            },
-            {
+          },
+          {
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{2}$",
             "description": "A year and month in YYYY-MM format"
-            }
+          }
         ]
       }
     },
