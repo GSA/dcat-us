@@ -28,7 +28,7 @@
         },
         {
           "title": "Date string",
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -70,7 +70,7 @@
         },
         {
           "title": "Date string",
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -103,7 +103,7 @@
         },
         {
           "title": "Date string",
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"

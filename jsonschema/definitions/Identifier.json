@@ -28,7 +28,7 @@
         "creator": {
           "title": "creator",
           "description": "the agency that manages the identifier scheme",
-          "oneOf": [
+          "anyOf": [
             {
               "type": "null",
               "title": "Null allowed when not required"
@@ -54,7 +54,8 @@
               "title": "Null allowed when not required"
             },
             {
-              "oneOf": [
+              "title": "Date string",
+              "anyOf": [
                 {
                   "type": "string",
                   "format": "date-time"

@@ -35,36 +35,27 @@
     "sample": {
       "title": "sample",
       "description": "List of links to samples of a Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of samples",
-          "items": {
-            "title": "Distribution object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/distribution",
-                "description": "inline description of Distribution"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Distribution",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Distribution object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/distribution",
+            "description": "inline description of Distribution"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Distribution",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "status": {
       "title": "lifecycle status",
       "description": "The status of the dataset  in the context of maturity lifecycle",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -84,7 +75,7 @@
     "supportedSchema": {
       "title": "supported schema",
       "description": "supported schema for this dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -144,36 +135,27 @@
     "distribution": {
       "title": "dataset distribution",
       "description": "List of available distributions for the Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of distributions",
-          "items": {
-            "title": "Distribution object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/distribution",
-                "description": "inline description of Distribution"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Distribution",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Distribution object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/distribution",
+            "description": "inline description of Distribution"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Distribution",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "first": {
       "title": "first",
       "description": "the first item of the sequence the dataset belongs to",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -193,7 +175,7 @@
     "hasCurrentVersion": {
       "title": "current version",
       "description": "reference to the current (latest) version of a dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -213,60 +195,42 @@
     "hasVersion": {
       "title": "has version",
       "description": "List of related Datasets that are a version, edition, or adaptation of the described Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of other versions of this dataset",
-          "items": {
-            "title": "Dataset object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of Dataset"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Dataset object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of Dataset"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "inSeries": {
       "title": "in series",
       "description": "List of Dataset Series this dataset belongs to",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of series",
-          "items": {
-            "title": "DatasetSeries object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/datasetseries",
-                "description": "inline description of DatasetSeries"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of DatasetSeries",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "DatasetSeries object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/datasetseries",
+            "description": "inline description of DatasetSeries"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of DatasetSeries",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "keyword": {
       "title": "keyword/tag",
@@ -285,7 +249,7 @@
     "landingPage": {
       "title": "landing page",
       "description": "A web page that provides access to the Dataset, its Distributions and/or additional information",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -305,7 +269,7 @@
     "previousVersion": {
       "title": "previous version",
       "description": "reference to the previous dataset version",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -325,31 +289,22 @@
     "qualifiedRelation": {
       "title": "qualified relation",
       "description": "Qualified relationship with role of the dataset with another resource",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of relationships",
-          "items": {
-            "title": "Relationship object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/relationship",
-                "description": "inline description of Relationship"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Relationship",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Relationship object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/relationship",
+            "description": "inline description of Relationship"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Relationship",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
@@ -364,31 +319,22 @@
     "theme": {
       "title": "theme/category",
       "description": "List of themes of the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of themes",
-          "items": {
-            "title": "Theme or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/concept",
-                "description": "inline description of Concept"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Concept",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Theme or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Concept",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "version": {
       "title": "version",
@@ -398,7 +344,7 @@
     "describedBy": {
       "title": "data dictionary",
       "description": "A distribution describing the Data Dictionary for this dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -415,39 +361,10 @@
         }
       ]
     },
-    "geographicBoundingBox": {
-      "title": "geographic bounding box",
-      "description": "List of WGS84 Geographic Bounding Boxes for this dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of bounding boxes",
-          "items": {
-            "title": "Bounding box object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/geographicboundingbox",
-                "description": "inline description of GeographicBoundingBox"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of GeographicBoundingBox",
-                "format": "iri"
-              }
-            ]
-          }
-        }
-      ]
-    },
     "liabilityStatement": {
       "title": "liability statement",
       "description": "A liability statement about the dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -467,31 +384,22 @@
     "metadataDistribution": {
       "title": "metadata distribution",
       "description": "Distribution to \"original\" metadata document",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of distributions",
-          "items": {
-            "title": "Distribution object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/distribution",
-                "description": "inline description of Distribution"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Distribution",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Distribution object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/distribution",
+            "description": "inline description of Distribution"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Distribution",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "purpose": {
       "title": "purpose",
@@ -505,7 +413,7 @@
     "accessRights": {
       "title": "access rights",
       "description": "Information that indicates whether the Dataset is open data, has access restrictions or is public",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -581,60 +489,42 @@
     "conformsTo": {
       "title": "conforms to",
       "description": "List of standards to which the described Dataset conforms",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of standards",
-          "items": {
-            "title": "Standard object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                "description": "inline description of Standard"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Standard",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Standard object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/standard",
+            "description": "inline description of Standard"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Standard",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "contributor": {
       "title": "contributor",
       "description": "List of agents contributing to the Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of agents",
-          "items": {
-            "title": "Agent object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/agent",
-                "description": "inline description of Agent"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Agent",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Agent object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/agent",
+            "description": "inline description of Agent"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Agent",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "created": {
       "title": "creation date",
@@ -645,7 +535,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -671,7 +562,7 @@
     "creator": {
       "title": "creator",
       "description": "An entity responsible for producing the dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -700,31 +591,22 @@
     "hasPart": {
       "title": "has part",
       "description": "List of related datasets that are part of the described dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of datasets",
-          "items": {
-            "title": "Dataset object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of Dataset"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Dataset object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of Dataset"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -749,22 +631,13 @@
     "isReferencedBy": {
       "title": "is referenced by",
       "description": "List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of related items",
-          "items": {
-            "title": "Link",
-            "type": "string",
-            "description": "reference iri of Resource",
-            "format": "iri"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string",
+        "title": "Link",
+        "description": "reference iri of Resource",
+        "format": "iri"
+      }
     },
     "issued": {
       "title": "release date",
@@ -775,7 +648,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -831,7 +705,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -857,36 +732,27 @@
     "provenance": {
       "title": "provenance",
       "description": "List of statements about the lineage of a Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of provenance information",
-          "items": {
-            "title": "ProvenanceStatement or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/provenancestatement",
-                "description": "inline description of ProvenanceStatement"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of ProvenanceStatement",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "ProvenanceStatement or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/provenancestatement",
+            "description": "inline description of ProvenanceStatement"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of ProvenanceStatement",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "publisher": {
       "title": "publisher",
       "description": "An organization responsible for making the Dataset available",
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "/dcat-us/3.0.0/definitions/organization",
           "description": "inline description of Organization"
@@ -902,56 +768,38 @@
     "relation": {
       "title": "related resource",
       "description": "List of references to a related resource",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of resources",
-          "items": {
-            "title": "Link",
-            "type": "string",
-            "description": "reference iri of Resource",
-            "format": "iri"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string",
+        "title": "Link",
+        "description": "reference iri of Resource",
+        "format": "iri"
+      }
     },
     "replaces": {
       "title": "replaces",
       "description": "List of Datasets replaced by this Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of replaced datasets",
-          "items": {
-            "title": "Dataset object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of Dataset"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Dataset object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of Dataset"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "rights": {
       "title": "rights",
       "description": "List of statements concerning all rights for the Dataset not addressed with license or accessRights, such as copyright statements",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -971,65 +819,47 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of agents (organizations) holding rights on the Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of rights holders",
-          "items": {
-            "title": "Organization or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/organization",
-                "description": "inline description of Organization"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Organization",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Organization or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/organization",
+            "description": "inline description of Organization"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Organization",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "source": {
       "title": "data source",
       "description": "List of related Datasets from which the described Dataset is derived",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of source datasets",
-          "items": {
-            "title": "Dataset object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataset",
-                "description": "inline description of Dataset"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Dataset",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Dataset object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataset",
+            "description": "inline description of Dataset"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Dataset",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region or regions that are covered by the Dataset",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
@@ -1049,7 +879,7 @@
           "title": "List og geographic regions",
           "items": {
             "title": "Location or link",
-            "oneOf": [
+            "anyOf": [
               {
                 "$ref": "/dcat-us/3.0.0/definitions/location",
                 "description": "inline description of Location"
@@ -1068,60 +898,42 @@
     "subject": {
       "title": "subject",
       "description": "List of primary subjects of the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of subjects",
-          "items": {
-            "title": "Subject or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/concept",
-                "description": "inline description of Concept"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Concept",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Subject or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Concept",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
       "description": "List of temporal periods that the dataset covers",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of covered time periods",
-          "items": {
-            "title": "PeriodOfTime object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
-                "description": "inline description of PeriodOfTime"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of PeriodOfTime",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "PeriodOfTime object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
+            "description": "inline description of PeriodOfTime"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of PeriodOfTime",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "title": {
       "title": "title",
@@ -1134,204 +946,142 @@
     },
     "category": {
       "title": "category",
-      "description": "List of categories of the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of categories",
-          "items": {
-            "title": "Category or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/concept",
-                "description": "inline description of Concept"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Concept",
-                "format": "iri"
-              }
-            ]
+      "description": "List of categories for the Dataset",
+      "type": ["null", "array"],
+      "items": {
+        "title": "Category or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Concept",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "List of quality measurements for the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of quality measurements",
-          "items": {
-            "title": "QualityMeasurement or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
-                "description": "inline description of QualityMeasurement"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of QualityMeasurement",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "QualityMeasurement or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
+            "description": "inline description of QualityMeasurement"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of QualityMeasurement",
           }
-        }
-      ]
+        ]
+      }
     },
     "page": {
       "title": "documentation",
       "description": "List of pages or documents about this dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of documents",
-          "items": {
-            "title": "Document object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/document",
-                "description": "inline description of Document"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Document",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Document object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/document",
+            "description": "inline description of Document"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Document",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents having some form of responsibility for the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of agents",
-          "items": {
-            "title": "Attribution object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/attribution",
-                "description": "inline description of Attribution"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Attribution",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Attribution object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/attribution",
+            "description": "inline description of Attribution"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Attribution",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "wasAttributedTo": {
       "title": "attribution",
       "description": "List of agents attributed to this dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of agents",
-          "items": {
-            "title": "Agent object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/agent",
-                "description": "inline description of Agent"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Agent",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Agent object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/agent",
+            "description": "inline description of Agent"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Agent",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "wasGeneratedBy": {
       "title": "was generated by",
       "description": "List of activities that generated, or provide the business context for the creation of the dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of activities",
-          "items": {
-            "title": "Activity object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/activity",
-                "description": "inline description of Activity"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Activity",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Activity object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/activity",
+            "description": "inline description of Activity"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Activity",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "wasUsedBy": {
       "title": "used by",
       "description": "List of activities that used the Dataset",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of activities",
-          "items": {
-            "title": "Activity object or link",
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/activity",
-                "description": "inline description of Activity"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Activity",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Activity object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/activity",
+            "description": "inline description of Activity"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Activity",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "image": {
       "title": "image",

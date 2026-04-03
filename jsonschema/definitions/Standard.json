@@ -22,7 +22,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -102,7 +103,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -134,7 +136,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
@@ -168,28 +171,28 @@
     },
     "category": {
       "title": "category",
-      "description": "The type of the Standard. A controlled vocabulary for the values has not been established",
-      "oneOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/concept",
-          "description": "inline description of Concept"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Concept",
-          "format": "iri"
-        }
-      ]
+      "description": "List of categories for the Standard",
+      "type": ["null", "array"],
+      "items": {
+        "title": "Category or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Concept",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "inScheme": {
       "title": "in scheme",
       "description": "The reference register to which the Standard belongs",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"

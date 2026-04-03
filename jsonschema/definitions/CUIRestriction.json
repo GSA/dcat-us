@@ -26,20 +26,11 @@
     "requiredIndicatorPerAuthority": {
       "title": "required indicator per authority",
       "description": "List of free text of the required indicator",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "Array of indicators",
-          "items": {
-            "title": "Indicator string",
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Indicator string",
+        "type": "string"
+      }
     }
   },
   "required": ["cuiBannerMarking", "designationIndicator"]

@@ -16,30 +16,22 @@
     "address": {
       "title": "address",
       "description": "The address of the contact",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "array",
-          "title": "List of addresses",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/address",
-                "description": "inline address information"
-              },
-              {
-                "type": "string",
-                "title": "Link",
-                "description": "reference iri of Address",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "title": "Address object or link",
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/address",
+            "description": "inline address information"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Address",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "hasEmail": {
       "title": "Email",
