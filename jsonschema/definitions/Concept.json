@@ -34,7 +34,7 @@
     "inScheme": {
       "title": "in scheme",
       "description": "Concept scheme defining this concept",
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
           "description": "inline description of ConceptScheme"
@@ -49,17 +49,10 @@
     "notation": {
       "title": "notation",
       "description": "List of abbreviations or codes from code lists for an organization",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "type": ["null", "array"],
+      "items": {
+        "type": "string"
+      }
     },
     "prefLabel": {
       "title": "preferred label",
