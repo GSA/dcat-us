@@ -21,7 +21,7 @@ Information about a particular standard that another item conforms to
 | - [modified](#modified )               | More than one type | last modified                                                                    |
 | - [title](#title )                     | null or string     | title                                                                            |
 | - [titleMap](#titleMap )               | null or object     | Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )               | More than one type | category                                                                         |
+| - [category](#category )               | null or array      | category                                                                         |
 | - [inScheme](#inScheme )               | More than one type | in scheme                                                                        |
 
 ## <a name="@id"></a>Property `Standard > @id`
@@ -49,7 +49,7 @@ The date on which the Standard has been first created
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#created_anyOf_i0) |
-| [item 1](#created_anyOf_i1)                         |
+| [Date string](#created_anyOf_i1)                    |
 
 ### <a name="created_anyOf_i0"></a>Property `Standard > created > anyOf > Null allowed when not required`
 
@@ -58,32 +58,34 @@ The date on which the Standard has been first created
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="created_anyOf_i1"></a>Property `Standard > created > anyOf > item 1`
+### <a name="created_anyOf_i1"></a>Property `Standard > created > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                       |
+| Any of(Option)                       |
 | ------------------------------------ |
-| [item 0](#created_anyOf_i1_oneOf_i0) |
-| [item 1](#created_anyOf_i1_oneOf_i1) |
-| [item 2](#created_anyOf_i1_oneOf_i2) |
-| [item 3](#created_anyOf_i1_oneOf_i3) |
+| [item 0](#created_anyOf_i1_anyOf_i0) |
+| [item 1](#created_anyOf_i1_anyOf_i1) |
+| [item 2](#created_anyOf_i1_anyOf_i2) |
+| [item 3](#created_anyOf_i1_anyOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 0`
+#### <a name="created_anyOf_i1_anyOf_i0"></a>Property `Standard > created > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 1`
+#### <a name="created_anyOf_i1_anyOf_i1"></a>Property `Standard > created > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 2`
+#### <a name="created_anyOf_i1_anyOf_i2"></a>Property `Standard > created > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -94,7 +96,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `Standard > created > anyOf > item 1 > oneOf > item 3`
+#### <a name="created_anyOf_i1_anyOf_i3"></a>Property `Standard > created > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -223,7 +225,7 @@ The date of formal issuance (e.g., publication) of the Standard
 | Any of(Option)                                     |
 | -------------------------------------------------- |
 | [Null allowed when not required](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1)                         |
+| [Date string](#issued_anyOf_i1)                    |
 
 ### <a name="issued_anyOf_i0"></a>Property `Standard > issued > anyOf > Null allowed when not required`
 
@@ -232,32 +234,34 @@ The date of formal issuance (e.g., publication) of the Standard
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `Standard > issued > anyOf > item 1`
+### <a name="issued_anyOf_i1"></a>Property `Standard > issued > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [item 0](#issued_anyOf_i1_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_oneOf_i3) |
+| [item 0](#issued_anyOf_i1_anyOf_i0) |
+| [item 1](#issued_anyOf_i1_anyOf_i1) |
+| [item 2](#issued_anyOf_i1_anyOf_i2) |
+| [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `Standard > issued > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `Standard > issued > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `Standard > issued > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -268,7 +272,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Standard > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `Standard > issued > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -292,7 +296,7 @@ The most recent date on which the Standard was changed or modified
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1)                         |
+| [Date string](#modified_anyOf_i1)                    |
 
 ### <a name="modified_anyOf_i0"></a>Property `Standard > modified > anyOf > Null allowed when not required`
 
@@ -301,32 +305,34 @@ The most recent date on which the Standard was changed or modified
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `Standard > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `Standard > modified > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                        |
+| Any of(Option)                        |
 | ------------------------------------- |
-| [item 0](#modified_anyOf_i1_oneOf_i0) |
-| [item 1](#modified_anyOf_i1_oneOf_i1) |
-| [item 2](#modified_anyOf_i1_oneOf_i2) |
-| [item 3](#modified_anyOf_i1_oneOf_i3) |
+| [item 0](#modified_anyOf_i1_anyOf_i0) |
+| [item 1](#modified_anyOf_i1_anyOf_i1) |
+| [item 2](#modified_anyOf_i1_anyOf_i2) |
+| [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `Standard > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `Standard > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `Standard > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -337,7 +343,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `Standard > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `Standard > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -368,26 +374,29 @@ Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 **Title:** category
 
-The type of the Standard. A controlled vocabulary for the values has not been established
+List of categories for the Standard
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be     | Description |
+| ----------------------------------- | ----------- |
+| [Category or link](#category_items) | -           |
+
+### <a name="category_items"></a>Standard > category > Category or link
+
+**Title:** Category or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#category_oneOf_i0) |
-| [Concept](#category_oneOf_i1)                        |
-| [Link](#category_oneOf_i2)                           |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [Concept](#category_items_anyOf_i0) |
+| [Link](#category_items_anyOf_i1)    |
 
-### <a name="category_oneOf_i0"></a>Property `Standard > category > oneOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="category_oneOf_i1"></a>Property `Standard > category > oneOf > Concept`
+#### <a name="category_items_anyOf_i0"></a>Property `Standard > category > Category or link > anyOf > Concept`
 
 **Title:** Concept
 
@@ -398,7 +407,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_oneOf_i2"></a>Property `Standard > category > oneOf > Link`
+#### <a name="category_items_anyOf_i1"></a>Property `Standard > category > Category or link > anyOf > Link`
 
 **Title:** Link
 
@@ -418,31 +427,31 @@ The reference register to which the Standard belongs
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                       |
+| Any of(Option)                                       |
 | ---------------------------------------------------- |
-| [Null allowed when not required](#inScheme_oneOf_i0) |
-| [ConceptScheme](#inScheme_oneOf_i1)                  |
-| [Link](#inScheme_oneOf_i2)                           |
+| [Null allowed when not required](#inScheme_anyOf_i0) |
+| [ConceptScheme](#inScheme_anyOf_i1)                  |
+| [Link](#inScheme_anyOf_i2)                           |
 
-### <a name="inScheme_oneOf_i0"></a>Property `Standard > inScheme > oneOf > Null allowed when not required`
+### <a name="inScheme_anyOf_i0"></a>Property `Standard > inScheme > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="inScheme_oneOf_i1"></a>Property `Standard > inScheme > oneOf > ConceptScheme`
+### <a name="inScheme_anyOf_i1"></a>Property `Standard > inScheme > anyOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
 inline description of ConceptScheme
 
-| **Type**                  | `object`                                              |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [ConceptScheme](#category_oneOf_i1_inScheme_oneOf_i0) |
+| **Type**                  | `object`                                                    |
+| ------------------------- | ----------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                            |
+| **Same definition as**    | [ConceptScheme](#category_items_anyOf_i0_inScheme_anyOf_i0) |
 
-### <a name="inScheme_oneOf_i2"></a>Property `Standard > inScheme > oneOf > Link`
+### <a name="inScheme_anyOf_i2"></a>Property `Standard > inScheme > anyOf > Link`
 
 **Title:** Link
 

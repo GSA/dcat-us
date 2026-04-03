@@ -29,7 +29,7 @@ Information about a text document
 | - [publisher](#publisher )                         | null or array      | publisher                                                                           |
 | + [title](#title )                                 | string             | title                                                                               |
 | - [titleMap](#titleMap )                           | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [category](#category )                           | More than one type | category                                                                            |
+| - [category](#category )                           | null or array      | category                                                                            |
 
 ## <a name="@id"></a>Property `Document > @id`
 
@@ -148,7 +148,7 @@ inline description of author
 
 **Title:** Link
 
-reference iri of Person
+reference iri of author
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -305,7 +305,7 @@ inline description of corporate author
 | **Type**                  | `object`                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
 #### <a name="corporateCreator_items_anyOf_i1"></a>Property `Document > corporateCreator > Organization or link > anyOf > Link`
 
@@ -528,7 +528,7 @@ inline description of publisher
 | **Type**                  | `object`                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_oneOf_i1) |
+| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
 #### <a name="publisher_items_anyOf_i1"></a>Property `Document > publisher > Organization object or link > anyOf > Link`
 
@@ -561,37 +561,40 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 **Title:** category
 
-The category, nature, or genre of the Document
+List of categories/genres for the Document
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be     | Description |
+| ----------------------------------- | ----------- |
+| [Category or link](#category_items) | -           |
+
+### <a name="category_items"></a>Document > category > Category or link
+
+**Title:** Category or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#category_anyOf_i0) |
-| [Concept](#category_anyOf_i1)                        |
-| [Link](#category_anyOf_i2)                           |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [Concept](#category_items_anyOf_i0) |
+| [Link](#category_items_anyOf_i1)    |
 
-### <a name="category_anyOf_i0"></a>Property `Document > category > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="category_anyOf_i1"></a>Property `Document > category > anyOf > Concept`
+#### <a name="category_items_anyOf_i0"></a>Property `Document > category > Category or link > anyOf > Concept`
 
 **Title:** Concept
 
 inline description of Concept
 
-| **Type**                  | `object`                                                |
-| ------------------------- | ------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                        |
-| **Same definition as**    | [Concept](#conformsTo_items_anyOf_i0_category_oneOf_i1) |
+| **Type**                  | `object`                                                      |
+| ------------------------- | ------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                              |
+| **Same definition as**    | [Concept](#conformsTo_items_anyOf_i0_category_items_anyOf_i0) |
 
-### <a name="category_anyOf_i2"></a>Property `Document > category > anyOf > Link`
+#### <a name="category_items_anyOf_i1"></a>Property `Document > category > Category or link > anyOf > Link`
 
 **Title:** Link
 

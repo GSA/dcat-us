@@ -39,7 +39,7 @@ Information about a specific geographic location
 
 **Title:** bounding box
 
-bounding box of a location (in any coordinate system)
+bounding box of a location described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -49,6 +49,7 @@ bounding box of a location (in any coordinate system)
 | ------------------------ |
 | [item 0](#bbox_anyOf_i0) |
 | [item 1](#bbox_anyOf_i1) |
+| [item 2](#bbox_anyOf_i2) |
 
 ### <a name="bbox_anyOf_i0"></a>Property `Location > bbox > anyOf > item 0`
 
@@ -57,17 +58,43 @@ bounding box of a location (in any coordinate system)
 
 ### <a name="bbox_anyOf_i1"></a>Property `Location > bbox > anyOf > item 1`
 
-Bounding box represented in some string format
+Bounding box represented in WKT, GeoJSON (stringified), or GML format
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `string` |
+| -------- | -------- |
+
+### <a name="bbox_anyOf_i2"></a>Property `Location > bbox > anyOf > item 2`
+
+Bounding box represented in GeoJSON format, either as a Polygon or in bbox array format
+
+| **Type**                  | `object`         |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
+
+| Property                                     | Type  | Title/Description |
+| -------------------------------------------- | ----- | ----------------- |
+| + [coordinates](#bbox_anyOf_i2_coordinates ) | array | -                 |
+| + [type](#bbox_anyOf_i2_type )               | const | -                 |
+
+#### <a name="bbox_anyOf_i2_coordinates"></a>Property `Location > bbox > anyOf > item 2 > coordinates`
+
+| **Type**     | `array` |
+| ------------ | ------- |
+| **Required** | Yes     |
+
+#### <a name="bbox_anyOf_i2_type"></a>Property `Location > bbox > anyOf > item 2 > type`
+
+| **Type**     | `const` |
+| ------------ | ------- |
+| **Required** | Yes     |
+
+Specific value: `"Polygon"`
 
 ## <a name="centroid"></a>Property `Location > centroid`
 
 **Title:** centroid
 
-The geographic center (centroid) of a location
+The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -77,6 +104,7 @@ The geographic center (centroid) of a location
 | ---------------------------- |
 | [item 0](#centroid_anyOf_i0) |
 | [item 1](#centroid_anyOf_i1) |
+| [item 2](#centroid_anyOf_i2) |
 
 ### <a name="centroid_anyOf_i0"></a>Property `Location > centroid > anyOf > item 0`
 
@@ -85,11 +113,46 @@ The geographic center (centroid) of a location
 
 ### <a name="centroid_anyOf_i1"></a>Property `Location > centroid > anyOf > item 1`
 
-Center point in some string format
+Center point represented in WKT, GeoJSON (stringified), or GML format
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `string` |
+| -------- | -------- |
+
+### <a name="centroid_anyOf_i2"></a>Property `Location > centroid > anyOf > item 2`
+
+Centroid represented in GeoJSON format; force point usage with coordinates of longitude and latitude
+
+| **Type**                  | `object`         |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
+
+| Property                                         | Type            | Title/Description |
+| ------------------------------------------------ | --------------- | ----------------- |
+| + [coordinates](#centroid_anyOf_i2_coordinates ) | array of number | -                 |
+| + [type](#centroid_anyOf_i2_type )               | const           | -                 |
+
+#### <a name="centroid_anyOf_i2_coordinates"></a>Property `Location > centroid > anyOf > item 2 > coordinates`
+
+| **Type**     | `array of number` |
+| ------------ | ----------------- |
+| **Required** | Yes               |
+
+| Each item of this array must be                           | Description |
+| --------------------------------------------------------- | ----------- |
+| [coordinates items](#centroid_anyOf_i2_coordinates_items) | -           |
+
+##### <a name="centroid_anyOf_i2_coordinates_items"></a>Location > centroid > anyOf > item 2 > coordinates > coordinates items
+
+| **Type** | `number` |
+| -------- | -------- |
+
+#### <a name="centroid_anyOf_i2_type"></a>Property `Location > centroid > anyOf > item 2 > type`
+
+| **Type**     | `const` |
+| ------------ | ------- |
+| **Required** | Yes     |
+
+Specific value: `"Point"`
 
 ## <a name="identifier"></a>Property `Location > identifier`
 
@@ -178,7 +241,7 @@ reference iri of Identifier
 
 **Title:** geometry
 
-Associates a location with a corresponding geometry
+Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -188,6 +251,7 @@ Associates a location with a corresponding geometry
 | ---------------------------- |
 | [item 0](#geometry_anyOf_i0) |
 | [item 1](#geometry_anyOf_i1) |
+| [item 2](#geometry_anyOf_i2) |
 
 ### <a name="geometry_anyOf_i0"></a>Property `Location > geometry > anyOf > item 0`
 
@@ -196,11 +260,22 @@ Associates a location with a corresponding geometry
 
 ### <a name="geometry_anyOf_i1"></a>Property `Location > geometry > anyOf > item 1`
 
-String format of the full geometry of the location
+String format of the full geometry of the location in WKT, GeoJSON, or GML format
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `string` |
+| -------- | -------- |
+
+### <a name="geometry_anyOf_i2"></a>Property `Location > geometry > anyOf > item 2`
+
+Geometry represented in GeoJSON format
+
+| **Type**                  | `object`         |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
+
+#### <a name="autogenerated_heading_1"></a>The following properties are required
+* type
+* coordinates
 
 ## <a name="inScheme"></a>Property `Location > inScheme`
 
@@ -212,18 +287,18 @@ The gazetteer to which the location belongs
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [item 0](#inScheme_oneOf_i0)        |
-| [ConceptScheme](#inScheme_oneOf_i1) |
-| [item 2](#inScheme_oneOf_i2)        |
+| [item 0](#inScheme_anyOf_i0)        |
+| [ConceptScheme](#inScheme_anyOf_i1) |
+| [item 2](#inScheme_anyOf_i2)        |
 
-### <a name="inScheme_oneOf_i0"></a>Property `Location > inScheme > oneOf > item 0`
+### <a name="inScheme_anyOf_i0"></a>Property `Location > inScheme > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="inScheme_oneOf_i1"></a>Property `Location > inScheme > oneOf > ConceptScheme`
+### <a name="inScheme_anyOf_i1"></a>Property `Location > inScheme > anyOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
@@ -234,7 +309,7 @@ inline description of the gazetteer
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-### <a name="inScheme_oneOf_i2"></a>Property `Location > inScheme > oneOf > item 2`
+### <a name="inScheme_anyOf_i2"></a>Property `Location > inScheme > anyOf > item 2`
 
 reference iri of the gazetteer
 
@@ -246,7 +321,7 @@ reference iri of the gazetteer
 
 **Title:** alternative name
 
-An alternative name for a location
+An alternative label or name for a location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -262,7 +337,7 @@ Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 **Title:** geographic name
 
-Preferred label of the Location
+Preferred label or name of the Location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |

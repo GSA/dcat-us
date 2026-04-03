@@ -48,12 +48,12 @@ The agent that plays a role in the resource
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)           |
+| Any of(Option)           |
 | ------------------------ |
-| [Agent](#agent_oneOf_i0) |
-| [Link](#agent_oneOf_i1)  |
+| [Agent](#agent_anyOf_i0) |
+| [Link](#agent_anyOf_i1)  |
 
-### <a name="agent_oneOf_i0"></a>Property `Attribution > agent > oneOf > Agent`
+### <a name="agent_anyOf_i0"></a>Property `Attribution > agent > anyOf > Agent`
 
 **Title:** Agent
 
@@ -64,7 +64,7 @@ inline description of Agent
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
-### <a name="agent_oneOf_i1"></a>Property `Attribution > agent > oneOf > Link`
+### <a name="agent_anyOf_i1"></a>Property `Attribution > agent > anyOf > Link`
 
 **Title:** Link
 

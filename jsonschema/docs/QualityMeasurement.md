@@ -39,12 +39,12 @@ The metric being observed
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [Metric](#isMeasurementOf_oneOf_i0) |
-| [Link](#isMeasurementOf_oneOf_i1)   |
+| [Metric](#isMeasurementOf_anyOf_i0) |
+| [Link](#isMeasurementOf_anyOf_i1)   |
 
-### <a name="isMeasurementOf_oneOf_i0"></a>Property `QualityMeasurement > isMeasurementOf > oneOf > Metric`
+### <a name="isMeasurementOf_anyOf_i0"></a>Property `QualityMeasurement > isMeasurementOf > anyOf > Metric`
 
 **Title:** Metric
 
@@ -55,7 +55,7 @@ inline description of Metric
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
-### <a name="isMeasurementOf_oneOf_i1"></a>Property `QualityMeasurement > isMeasurementOf > oneOf > Link`
+### <a name="isMeasurementOf_anyOf_i1"></a>Property `QualityMeasurement > isMeasurementOf > anyOf > Link`
 
 **Title:** Link
 

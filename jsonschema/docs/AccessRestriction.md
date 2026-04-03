@@ -56,12 +56,12 @@ The indication of whether or not there are access restrictions on the item
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                         |
+| Any of(Option)                         |
 | -------------------------------------- |
-| [Concept](#restrictionStatus_oneOf_i0) |
-| [Link](#restrictionStatus_oneOf_i1)    |
+| [Concept](#restrictionStatus_anyOf_i0) |
+| [Link](#restrictionStatus_anyOf_i1)    |
 
-### <a name="restrictionStatus_oneOf_i0"></a>Property `AccessRestriction > restrictionStatus > oneOf > Concept`
+### <a name="restrictionStatus_anyOf_i0"></a>Property `AccessRestriction > restrictionStatus > anyOf > Concept`
 
 **Title:** Concept
 
@@ -72,7 +72,7 @@ inline description of restriction status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="restrictionStatus_oneOf_i1"></a>Property `AccessRestriction > restrictionStatus > oneOf > Link`
+### <a name="restrictionStatus_anyOf_i1"></a>Property `AccessRestriction > restrictionStatus > anyOf > Link`
 
 **Title:** Link
 
@@ -92,20 +92,20 @@ The specific NARA restriction associated with this restriction
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                                  |
+| Any of(Option)                                                  |
 | --------------------------------------------------------------- |
-| [Null allowed when not required](#specificRestriction_oneOf_i0) |
-| [Concept](#specificRestriction_oneOf_i1)                        |
-| [Link](#specificRestriction_oneOf_i2)                           |
+| [Null allowed when not required](#specificRestriction_anyOf_i0) |
+| [Concept](#specificRestriction_anyOf_i1)                        |
+| [Link](#specificRestriction_anyOf_i2)                           |
 
-### <a name="specificRestriction_oneOf_i0"></a>Property `AccessRestriction > specificRestriction > oneOf > Null allowed when not required`
+### <a name="specificRestriction_anyOf_i0"></a>Property `AccessRestriction > specificRestriction > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="specificRestriction_oneOf_i1"></a>Property `AccessRestriction > specificRestriction > oneOf > Concept`
+### <a name="specificRestriction_anyOf_i1"></a>Property `AccessRestriction > specificRestriction > anyOf > Concept`
 
 **Title:** Concept
 
@@ -114,9 +114,9 @@ inline description of the specific restriction
 | **Type**                  | `object`                               |
 | ------------------------- | -------------------------------------- |
 | **Additional properties** | Any type allowed                       |
-| **Same definition as**    | [Concept](#restrictionStatus_oneOf_i0) |
+| **Same definition as**    | [Concept](#restrictionStatus_anyOf_i0) |
 
-### <a name="specificRestriction_oneOf_i2"></a>Property `AccessRestriction > specificRestriction > oneOf > Link`
+### <a name="specificRestriction_anyOf_i2"></a>Property `AccessRestriction > specificRestriction > anyOf > Link`
 
 **Title:** Link
 

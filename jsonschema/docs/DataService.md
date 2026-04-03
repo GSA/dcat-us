@@ -13,19 +13,18 @@ A service for providing data at a URL or URLs
 | - [@id](#@id )                                             | string                  | -                                                                                    |
 | - [@type](#@type )                                         | string                  | -                                                                                    |
 | + [contactPoint](#contactPoint )                           | array                   | contact point                                                                        |
-| - [endpointDescription](#endpointDescription )             | More than one type      | endpoint description                                                                 |
+| - [endpointDescription](#endpointDescription )             | null or array           | endpoint description                                                                 |
 | + [endpointURL](#endpointURL )                             | array of string         | endpoint URL                                                                         |
 | - [keyword](#keyword )                                     | null or array of string | keyword/tag                                                                          |
 | - [keywordMap](#keywordMap )                               | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}         |
-| - [servesDataset](#servesDataset )                         | More than one type      | serves dataset                                                                       |
+| - [servesDataset](#servesDataset )                         | null or array           | serves dataset                                                                       |
 | - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | spatial resolution in meters                                                         |
 | - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution                                                                  |
-| - [theme](#theme )                                         | More than one type      | theme/category                                                                       |
-| - [geographicBoundingBox](#geographicBoundingBox )         | More than one type      | geographic bounding box                                                              |
+| - [theme](#theme )                                         | null or array           | theme/category                                                                       |
 | - [accessRights](#accessRights )                           | More than one type      | access rights                                                                        |
-| - [conformsTo](#conformsTo )                               | More than one type      | conforms to                                                                          |
+| - [conformsTo](#conformsTo )                               | null or array           | conforms to                                                                          |
 | - [created](#created )                                     | More than one type      | creation date                                                                        |
-| - [creator](#creator )                                     | More than one type      | creator                                                                              |
+| - [creator](#creator )                                     | null or array           | creator                                                                              |
 | - [description](#description )                             | null or string          | description                                                                          |
 | - [descriptionMap](#descriptionMap )                       | null or object          | Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 | - [identifier](#identifier )                               | More than one type      | identifier                                                                           |
@@ -34,16 +33,16 @@ A service for providing data at a URL or URLs
 | - [license](#license )                                     | More than one type      | license                                                                              |
 | - [modified](#modified )                                   | More than one type      | update/modification date                                                             |
 | + [publisher](#publisher )                                 | More than one type      | publisher                                                                            |
-| - [rights](#rights )                                       | More than one type      | rights                                                                               |
-| - [rightsHolder](#rightsHolder )                           | More than one type      | rights holder                                                                        |
-| - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage                                                          |
-| - [temporal](#temporal )                                   | More than one type      | temporal coverage                                                                    |
+| - [rights](#rights )                                       | null or array           | rights                                                                               |
+| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                                                                        |
+| - [spatial](#spatial )                                     | null or array           | spatial/geographic coverage                                                          |
+| - [temporal](#temporal )                                   | null or array           | temporal coverage                                                                    |
 | + [title](#title )                                         | string                  | title                                                                                |
 | - [titleMap](#titleMap )                                   | null or object          | Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )                                   | More than one type      | category                                                                             |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | More than one type      | quality measurement                                                                  |
-| - [qualifiedAttribution](#qualifiedAttribution )           | More than one type      | qualified attribution                                                                |
-| - [wasUsedBy](#wasUsedBy )                                 | More than one type      | was used by                                                                          |
+| - [category](#category )                                   | null or array           | category                                                                             |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement                                                                  |
+| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution                                                                |
+| - [wasUsedBy](#wasUsedBy )                                 | null or array           | was used by                                                                          |
 
 ## <a name="@id"></a>Property `DataService > @id`
 
@@ -79,12 +78,12 @@ Contact information that can be used for sending comments about the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                       |
+| Any of(Option)                       |
 | ------------------------------------ |
-| [Kind](#contactPoint_items_oneOf_i0) |
-| [Link](#contactPoint_items_oneOf_i1) |
+| [Kind](#contactPoint_items_anyOf_i0) |
+| [Link](#contactPoint_items_anyOf_i1) |
 
-#### <a name="contactPoint_items_oneOf_i0"></a>Property `DataService > contactPoint > Kind object or link > oneOf > Kind`
+#### <a name="contactPoint_items_anyOf_i0"></a>Property `DataService > contactPoint > Kind object or link > anyOf > Kind`
 
 **Title:** Kind
 
@@ -95,7 +94,7 @@ inline description of Kind
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-#### <a name="contactPoint_items_oneOf_i1"></a>Property `DataService > contactPoint > Kind object or link > oneOf > Link`
+#### <a name="contactPoint_items_anyOf_i1"></a>Property `DataService > contactPoint > Kind object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -111,50 +110,32 @@ reference iri of Kind
 
 A list of descriptions of the services available via the end-points, including their operations, parameters etc
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                          |
-| --------------------------------------- |
-| [item 0](#endpointDescription_anyOf_i0) |
-| [item 1](#endpointDescription_anyOf_i1) |
+| Each item of this array must be                         | Description |
+| ------------------------------------------------------- | ----------- |
+| [endpointDescription items](#endpointDescription_items) | -           |
 
-### <a name="endpointDescription_anyOf_i0"></a>Property `DataService > endpointDescription > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="endpointDescription_anyOf_i1"></a>Property `DataService > endpointDescription > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                            | Description |
-| ---------------------------------------------------------- | ----------- |
-| [Description or link](#endpointDescription_anyOf_i1_items) | -           |
-
-#### <a name="endpointDescription_anyOf_i1_items"></a>DataService > endpointDescription > anyOf > item 1 > Description or link
-
-**Title:** Description or link
+### <a name="endpointDescription_items"></a>DataService > endpointDescription > endpointDescription items
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                         |
-| ------------------------------------------------------ |
-| [item 0](#endpointDescription_anyOf_i1_items_anyOf_i0) |
-| [Link](#endpointDescription_anyOf_i1_items_anyOf_i1)   |
+| Any of(Option)                                |
+| --------------------------------------------- |
+| [item 0](#endpointDescription_items_anyOf_i0) |
+| [Link](#endpointDescription_items_anyOf_i1)   |
 
-##### <a name="endpointDescription_anyOf_i1_items_anyOf_i0"></a>Property `DataService > endpointDescription > anyOf > item 1 > Description or link > anyOf > item 0`
+#### <a name="endpointDescription_items_anyOf_i0"></a>Property `DataService > endpointDescription > endpointDescription items > anyOf > item 0`
 
 An in-line description of the endpoint description
 
 | **Type** | `string` |
 | -------- | -------- |
 
-##### <a name="endpointDescription_anyOf_i1_items_anyOf_i1"></a>Property `DataService > endpointDescription > anyOf > item 1 > Description or link > anyOf > Link`
+#### <a name="endpointDescription_items_anyOf_i1"></a>Property `DataService > endpointDescription > endpointDescription items > anyOf > Link`
 
 **Title:** Link
 
@@ -225,30 +206,14 @@ Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 List of datasets that are served by this data service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                    |
-| --------------------------------- |
-| [item 0](#servesDataset_anyOf_i0) |
-| [item 1](#servesDataset_anyOf_i1) |
+| Each item of this array must be                | Description |
+| ---------------------------------------------- | ----------- |
+| [Dataset object or link](#servesDataset_items) | -           |
 
-### <a name="servesDataset_anyOf_i0"></a>Property `DataService > servesDataset > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="servesDataset_anyOf_i1"></a>Property `DataService > servesDataset > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                         | Description |
-| ------------------------------------------------------- | ----------- |
-| [Dataset object or link](#servesDataset_anyOf_i1_items) | -           |
-
-#### <a name="servesDataset_anyOf_i1_items"></a>DataService > servesDataset > anyOf > item 1 > Dataset object or link
+### <a name="servesDataset_items"></a>DataService > servesDataset > Dataset object or link
 
 **Title:** Dataset object or link
 
@@ -256,12 +221,12 @@ List of datasets that are served by this data service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                    |
-| ------------------------------------------------- |
-| [Dataset](#servesDataset_anyOf_i1_items_oneOf_i0) |
-| [item 1](#servesDataset_anyOf_i1_items_oneOf_i1)  |
+| Any of(Option)                           |
+| ---------------------------------------- |
+| [Dataset](#servesDataset_items_anyOf_i0) |
+| [Link](#servesDataset_items_anyOf_i1)    |
 
-##### <a name="servesDataset_anyOf_i1_items_oneOf_i0"></a>Property `DataService > servesDataset > anyOf > item 1 > Dataset object or link > oneOf > Dataset`
+#### <a name="servesDataset_items_anyOf_i0"></a>Property `DataService > servesDataset > Dataset object or link > anyOf > Dataset`
 
 **Title:** Dataset
 
@@ -272,7 +237,9 @@ inline description of Dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-##### <a name="servesDataset_anyOf_i1_items_oneOf_i1"></a>Property `DataService > servesDataset > anyOf > item 1 > Dataset object or link > oneOf > item 1`
+#### <a name="servesDataset_items_anyOf_i1"></a>Property `DataService > servesDataset > Dataset object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Dataset
 
@@ -304,30 +271,14 @@ The minimum time period resolvable by the Data Service
 
 A list of themes of the Data Service. A Data Service may be associated with multiple themes
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)            |
-| ------------------------- |
-| [item 0](#theme_anyOf_i0) |
-| [item 1](#theme_anyOf_i1) |
+| Each item of this array must be | Description |
+| ------------------------------- | ----------- |
+| [Theme or link](#theme_items)   | -           |
 
-### <a name="theme_anyOf_i0"></a>Property `DataService > theme > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="theme_anyOf_i1"></a>Property `DataService > theme > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be        | Description |
-| -------------------------------------- | ----------- |
-| [Theme or link](#theme_anyOf_i1_items) | -           |
-
-#### <a name="theme_anyOf_i1_items"></a>DataService > theme > anyOf > item 1 > Theme or link
+### <a name="theme_items"></a>DataService > theme > Theme or link
 
 **Title:** Theme or link
 
@@ -335,86 +286,27 @@ A list of themes of the Data Service. A Data Service may be associated with mult
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [Concept](#theme_anyOf_i1_items_oneOf_i0) |
-| [item 1](#theme_anyOf_i1_items_oneOf_i1)  |
+| Any of(Option)                   |
+| -------------------------------- |
+| [Concept](#theme_items_anyOf_i0) |
+| [Link](#theme_items_anyOf_i1)    |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i0"></a>Property `DataService > theme > anyOf > item 1 > Theme or link > oneOf > Concept`
+#### <a name="theme_items_anyOf_i0"></a>Property `DataService > theme > Theme or link > anyOf > Concept`
 
 **Title:** Concept
 
 inline description of Concept
 
-| **Type**                  | `object`                                                                                                          |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                  |
-| **Same definition as**    | [Concept](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
+| **Type**                  | `object`                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                |
+| **Same definition as**    | [Concept](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
 
-##### <a name="theme_anyOf_i1_items_oneOf_i1"></a>Property `DataService > theme > anyOf > item 1 > Theme or link > oneOf > item 1`
+#### <a name="theme_items_anyOf_i1"></a>Property `DataService > theme > Theme or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Concept
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
-## <a name="geographicBoundingBox"></a>Property `DataService > geographicBoundingBox`
-
-**Title:** geographic bounding box
-
-List of WGS84 Geographic Bounding Boxes for this Data Service
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#geographicBoundingBox_anyOf_i0) |
-| [item 1](#geographicBoundingBox_anyOf_i1) |
-
-### <a name="geographicBoundingBox_anyOf_i0"></a>Property `DataService > geographicBoundingBox > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="geographicBoundingBox_anyOf_i1"></a>Property `DataService > geographicBoundingBox > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                      | Description |
-| -------------------------------------------------------------------- | ----------- |
-| [Bounding box object or link](#geographicBoundingBox_anyOf_i1_items) | -           |
-
-#### <a name="geographicBoundingBox_anyOf_i1_items"></a>DataService > geographicBoundingBox > anyOf > item 1 > Bounding box object or link
-
-**Title:** Bounding box object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| One of(Option)                                                          |
-| ----------------------------------------------------------------------- |
-| [GeographicBoundingBox](#geographicBoundingBox_anyOf_i1_items_oneOf_i0) |
-| [item 1](#geographicBoundingBox_anyOf_i1_items_oneOf_i1)                |
-
-##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i0"></a>Property `DataService > geographicBoundingBox > anyOf > item 1 > Bounding box object or link > oneOf > GeographicBoundingBox`
-
-**Title:** GeographicBoundingBox
-
-inline description of GeographicBoundingBox
-
-| **Type**                  | `object`                                                                                                                                                                           |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                                   |
-| **Same definition as**    | [GeographicBoundingBox](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_geographicBoundingBox_anyOf_i1_items_oneOf_i0) |
-
-##### <a name="geographicBoundingBox_anyOf_i1_items_oneOf_i1"></a>Property `DataService > geographicBoundingBox > anyOf > item 1 > Bounding box object or link > oneOf > item 1`
-
-reference iri of GeographicBoundingBox
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -430,29 +322,29 @@ Information that indicates whether the Data Service is open data, has access res
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                            |
+| Any of(Option)                            |
 | ----------------------------------------- |
-| [item 0](#accessRights_oneOf_i0)          |
-| [RightsStatement](#accessRights_oneOf_i1) |
-| [Link](#accessRights_oneOf_i2)            |
+| [item 0](#accessRights_anyOf_i0)          |
+| [RightsStatement](#accessRights_anyOf_i1) |
+| [Link](#accessRights_anyOf_i2)            |
 
-### <a name="accessRights_oneOf_i0"></a>Property `DataService > accessRights > oneOf > item 0`
+### <a name="accessRights_anyOf_i0"></a>Property `DataService > accessRights > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_oneOf_i1"></a>Property `DataService > accessRights > oneOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `DataService > accessRights > anyOf > RightsStatement`
 
 **Title:** RightsStatement
 
 inline description of access rights
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [RightsStatement](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
+| **Type**                  | `object`                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [RightsStatement](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
 
-### <a name="accessRights_oneOf_i2"></a>Property `DataService > accessRights > oneOf > Link`
+### <a name="accessRights_anyOf_i2"></a>Property `DataService > accessRights > anyOf > Link`
 
 **Title:** Link
 
@@ -468,30 +360,14 @@ reference iri of access rights
 
 List of general standards or specifications that the Data Service endpoints implement
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                 |
-| ------------------------------ |
-| [item 0](#conformsTo_anyOf_i0) |
-| [item 1](#conformsTo_anyOf_i1) |
+| Each item of this array must be              | Description |
+| -------------------------------------------- | ----------- |
+| [Standard object or link](#conformsTo_items) | -           |
 
-### <a name="conformsTo_anyOf_i0"></a>Property `DataService > conformsTo > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="conformsTo_anyOf_i1"></a>Property `DataService > conformsTo > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                       | Description |
-| ----------------------------------------------------- | ----------- |
-| [Standard object or link](#conformsTo_anyOf_i1_items) | -           |
-
-#### <a name="conformsTo_anyOf_i1_items"></a>DataService > conformsTo > anyOf > item 1 > Standard object or link
+### <a name="conformsTo_items"></a>DataService > conformsTo > Standard object or link
 
 **Title:** Standard object or link
 
@@ -499,23 +375,25 @@ List of general standards or specifications that the Data Service endpoints impl
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                  |
-| ----------------------------------------------- |
-| [Standard](#conformsTo_anyOf_i1_items_oneOf_i0) |
-| [item 1](#conformsTo_anyOf_i1_items_oneOf_i1)   |
+| Any of(Option)                         |
+| -------------------------------------- |
+| [Standard](#conformsTo_items_anyOf_i0) |
+| [Link](#conformsTo_items_anyOf_i1)     |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `DataService > conformsTo > anyOf > item 1 > Standard object or link > oneOf > Standard`
+#### <a name="conformsTo_items_anyOf_i0"></a>Property `DataService > conformsTo > Standard object or link > anyOf > Standard`
 
 **Title:** Standard
 
 inline description of Standard
 
-| **Type**                  | `object`                                                                                                                                                   |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                           |
-| **Same definition as**    | [Standard](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_conformsTo_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                               |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                       |
+| **Same definition as**    | [Standard](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_conformsTo_items_anyOf_i0) |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `DataService > conformsTo > anyOf > item 1 > Standard object or link > oneOf > item 1`
+#### <a name="conformsTo_items_anyOf_i1"></a>Property `DataService > conformsTo > Standard object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Standard
 
@@ -533,42 +411,44 @@ The date on which the Data Service was first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#created_anyOf_i0) |
-| [item 1](#created_anyOf_i1) |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#created_anyOf_i0)      |
+| [Date string](#created_anyOf_i1) |
 
 ### <a name="created_anyOf_i0"></a>Property `DataService > created > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="created_anyOf_i1"></a>Property `DataService > created > anyOf > item 1`
+### <a name="created_anyOf_i1"></a>Property `DataService > created > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                       |
+| Any of(Option)                       |
 | ------------------------------------ |
-| [item 0](#created_anyOf_i1_oneOf_i0) |
-| [item 1](#created_anyOf_i1_oneOf_i1) |
-| [item 2](#created_anyOf_i1_oneOf_i2) |
-| [item 3](#created_anyOf_i1_oneOf_i3) |
+| [item 0](#created_anyOf_i1_anyOf_i0) |
+| [item 1](#created_anyOf_i1_anyOf_i1) |
+| [item 2](#created_anyOf_i1_anyOf_i2) |
+| [item 3](#created_anyOf_i1_anyOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `DataService > created > anyOf > item 1 > oneOf > item 0`
+#### <a name="created_anyOf_i1_anyOf_i0"></a>Property `DataService > created > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `DataService > created > anyOf > item 1 > oneOf > item 1`
+#### <a name="created_anyOf_i1_anyOf_i1"></a>Property `DataService > created > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `DataService > created > anyOf > item 1 > oneOf > item 2`
+#### <a name="created_anyOf_i1_anyOf_i2"></a>Property `DataService > created > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -579,7 +459,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `DataService > created > anyOf > item 1 > oneOf > item 3`
+#### <a name="created_anyOf_i1_anyOf_i3"></a>Property `DataService > created > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -596,30 +476,14 @@ A year and month in YYYY-MM format
 
 List of agents primarily responsible for producing the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)              |
-| --------------------------- |
-| [item 0](#creator_anyOf_i0) |
-| [item 1](#creator_anyOf_i1) |
+| Each item of this array must be        | Description |
+| -------------------------------------- | ----------- |
+| [Agent object or link](#creator_items) | -           |
 
-### <a name="creator_anyOf_i0"></a>Property `DataService > creator > anyOf > item 0`
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="creator_anyOf_i1"></a>Property `DataService > creator > anyOf > item 1`
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [Agent object or link](#creator_anyOf_i1_items) | -           |
-
-#### <a name="creator_anyOf_i1_items"></a>DataService > creator > anyOf > item 1 > Agent object or link
+### <a name="creator_items"></a>DataService > creator > Agent object or link
 
 **Title:** Agent object or link
 
@@ -627,23 +491,25 @@ List of agents primarily responsible for producing the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                             |
-| ------------------------------------------ |
-| [Agent](#creator_anyOf_i1_items_oneOf_i0)  |
-| [item 1](#creator_anyOf_i1_items_oneOf_i1) |
+| Any of(Option)                   |
+| -------------------------------- |
+| [Agent](#creator_items_anyOf_i0) |
+| [Link](#creator_items_anyOf_i1)  |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i0"></a>Property `DataService > creator > anyOf > item 1 > Agent object or link > oneOf > Agent`
+#### <a name="creator_items_anyOf_i0"></a>Property `DataService > creator > Agent object or link > anyOf > Agent`
 
 **Title:** Agent
 
 inline description of Agent
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [Agent](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                 |
+| **Same definition as**    | [Agent](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_creator_items_anyOf_i0) |
 
-##### <a name="creator_anyOf_i1_items_oneOf_i1"></a>Property `DataService > creator > anyOf > item 1 > Agent object or link > oneOf > item 1`
+#### <a name="creator_items_anyOf_i1"></a>Property `DataService > creator > Agent object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Agent
 
@@ -694,10 +560,10 @@ The unique identifier for the Data Service, e.g. the URI or other unique identif
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                                                  |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                    |
-| **Same definition as**    | [Identifier](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+| **Type**                  | More than one type                                                         |
+| ------------------------- | -------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                           |
+| **Same definition as**    | [Identifier](#servesDataset_items_anyOf_i0_otherIdentifier_items_anyOf_i0) |
 
 ### <a name="identifier_anyOf_i2"></a>Property `DataService > identifier > anyOf > Link`
 
@@ -739,10 +605,10 @@ A list of identifiers for the Data Service besides the main identifier, e.g. the
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                                                  |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                    |
-| **Same definition as**    | [Identifier](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+| **Type**                  | More than one type                                                         |
+| ------------------------- | -------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                           |
+| **Same definition as**    | [Identifier](#servesDataset_items_anyOf_i0_otherIdentifier_items_anyOf_i0) |
 
 #### <a name="otherIdentifier_items_anyOf_i1"></a>Property `DataService > otherIdentifier > otherIdentifier items > anyOf > Link`
 
@@ -820,31 +686,31 @@ The license under which the Data Service is made available
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                      |
+| Any of(Option)                                      |
 | --------------------------------------------------- |
-| [Null allowed when not required](#license_oneOf_i0) |
-| [LicenseDocument](#license_oneOf_i1)                |
-| [Link](#license_oneOf_i2)                           |
+| [Null allowed when not required](#license_anyOf_i0) |
+| [LicenseDocument](#license_anyOf_i1)                |
+| [Link](#license_anyOf_i2)                           |
 
-### <a name="license_oneOf_i0"></a>Property `DataService > license > oneOf > Null allowed when not required`
+### <a name="license_anyOf_i0"></a>Property `DataService > license > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_oneOf_i1"></a>Property `DataService > license > oneOf > LicenseDocument`
+### <a name="license_anyOf_i1"></a>Property `DataService > license > anyOf > LicenseDocument`
 
 **Title:** LicenseDocument
 
 inline description of LicenseDocument
 
-| **Type**                  | `object`                                                                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                |
-| **Same definition as**    | [LicenseDocument](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_license_oneOf_i1) |
+| **Type**                  | `object`                                                                                                             |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                     |
+| **Same definition as**    | [LicenseDocument](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_license_anyOf_i1) |
 
-### <a name="license_oneOf_i2"></a>Property `DataService > license > oneOf > Link`
+### <a name="license_anyOf_i2"></a>Property `DataService > license > anyOf > Link`
 
 **Title:** Link
 
@@ -867,7 +733,7 @@ The most recent date on which the Data Service was changed or modified
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1)                         |
+| [Date string](#modified_anyOf_i1)                    |
 
 ### <a name="modified_anyOf_i0"></a>Property `DataService > modified > anyOf > Null allowed when not required`
 
@@ -876,32 +742,34 @@ The most recent date on which the Data Service was changed or modified
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `DataService > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `DataService > modified > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                        |
+| Any of(Option)                        |
 | ------------------------------------- |
-| [item 0](#modified_anyOf_i1_oneOf_i0) |
-| [item 1](#modified_anyOf_i1_oneOf_i1) |
-| [item 2](#modified_anyOf_i1_oneOf_i2) |
-| [item 3](#modified_anyOf_i1_oneOf_i3) |
+| [item 0](#modified_anyOf_i1_anyOf_i0) |
+| [item 1](#modified_anyOf_i1_anyOf_i1) |
+| [item 2](#modified_anyOf_i1_anyOf_i2) |
+| [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `DataService > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `DataService > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `DataService > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `DataService > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `DataService > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `DataService > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -912,7 +780,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `DataService > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `DataService > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -934,23 +802,23 @@ An entity (organization) responsible for making the Data Service available
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)               |
+| Any of(Option)               |
 | ---------------------------- |
-| [Agent](#publisher_oneOf_i0) |
-| [Link](#publisher_oneOf_i1)  |
+| [Agent](#publisher_anyOf_i0) |
+| [Link](#publisher_anyOf_i1)  |
 
-### <a name="publisher_oneOf_i0"></a>Property `DataService > publisher > oneOf > Agent`
+### <a name="publisher_anyOf_i0"></a>Property `DataService > publisher > anyOf > Agent`
 
 **Title:** Agent
 
 inline description of Agent
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [Agent](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_creator_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                 |
+| **Same definition as**    | [Agent](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_creator_items_anyOf_i0) |
 
-### <a name="publisher_oneOf_i1"></a>Property `DataService > publisher > oneOf > Link`
+### <a name="publisher_anyOf_i1"></a>Property `DataService > publisher > anyOf > Link`
 
 **Title:** Link
 
@@ -966,34 +834,14 @@ reference iri of Agent
 
 A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#rights_anyOf_i0) |
-| [List of rights](#rights_anyOf_i1)                 |
+| Each item of this array must be                 | Description |
+| ----------------------------------------------- | ----------- |
+| [RightsStatement object or link](#rights_items) | -           |
 
-### <a name="rights_anyOf_i0"></a>Property `DataService > rights > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="rights_anyOf_i1"></a>Property `DataService > rights > anyOf > List of rights`
-
-**Title:** List of rights
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                          | Description |
-| -------------------------------------------------------- | ----------- |
-| [RightsStatement object or link](#rights_anyOf_i1_items) | -           |
-
-#### <a name="rights_anyOf_i1_items"></a>DataService > rights > anyOf > List of rights > RightsStatement object or link
+### <a name="rights_items"></a>DataService > rights > RightsStatement object or link
 
 **Title:** RightsStatement object or link
 
@@ -1001,23 +849,25 @@ A list of statements concerning all rights for the Data Service not addressed wi
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                     |
-| -------------------------------------------------- |
-| [RightsStatement](#rights_anyOf_i1_items_oneOf_i0) |
-| [item 1](#rights_anyOf_i1_items_oneOf_i1)          |
+| Any of(Option)                            |
+| ----------------------------------------- |
+| [RightsStatement](#rights_items_anyOf_i0) |
+| [Link](#rights_items_anyOf_i1)            |
 
-##### <a name="rights_anyOf_i1_items_oneOf_i0"></a>Property `DataService > rights > anyOf > List of rights > RightsStatement object or link > oneOf > RightsStatement`
+#### <a name="rights_items_anyOf_i0"></a>Property `DataService > rights > RightsStatement object or link > anyOf > RightsStatement`
 
 **Title:** RightsStatement
 
 inline description of RightsStatement
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [RightsStatement](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
+| **Type**                  | `object`                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [RightsStatement](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
 
-##### <a name="rights_anyOf_i1_items_oneOf_i1"></a>Property `DataService > rights > anyOf > List of rights > RightsStatement object or link > oneOf > item 1`
+#### <a name="rights_items_anyOf_i1"></a>Property `DataService > rights > RightsStatement object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of RightsStatement
 
@@ -1031,34 +881,14 @@ reference iri of RightsStatement
 
 A list of Agents (organizations) holding rights on the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                           |
-| -------------------------------------------------------- |
-| [Null allowed when not required](#rightsHolder_anyOf_i0) |
-| [List of rights holders](#rightsHolder_anyOf_i1)         |
+| Each item of this array must be                    | Description |
+| -------------------------------------------------- | ----------- |
+| [Organization object or link](#rightsHolder_items) | -           |
 
-### <a name="rightsHolder_anyOf_i0"></a>Property `DataService > rightsHolder > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="rightsHolder_anyOf_i1"></a>Property `DataService > rightsHolder > anyOf > List of rights holders`
-
-**Title:** List of rights holders
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                             | Description |
-| ----------------------------------------------------------- | ----------- |
-| [Organization object or link](#rightsHolder_anyOf_i1_items) | -           |
-
-#### <a name="rightsHolder_anyOf_i1_items"></a>DataService > rightsHolder > anyOf > List of rights holders > Organization object or link
+### <a name="rightsHolder_items"></a>DataService > rightsHolder > Organization object or link
 
 **Title:** Organization object or link
 
@@ -1066,23 +896,25 @@ A list of Agents (organizations) holding rights on the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                        |
-| ----------------------------------------------------- |
-| [Organization](#rightsHolder_anyOf_i1_items_oneOf_i0) |
-| [item 1](#rightsHolder_anyOf_i1_items_oneOf_i1)       |
+| Any of(Option)                               |
+| -------------------------------------------- |
+| [Organization](#rightsHolder_items_anyOf_i0) |
+| [Link](#rightsHolder_items_anyOf_i1)         |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i0"></a>Property `DataService > rightsHolder > anyOf > List of rights holders > Organization object or link > oneOf > Organization`
+#### <a name="rightsHolder_items_anyOf_i0"></a>Property `DataService > rightsHolder > Organization object or link > anyOf > Organization`
 
 **Title:** Organization
 
 inline description of Organization
 
-| **Type**                  | `object`                                                                                                        |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                |
-| **Same definition as**    | [Organization](#servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0_anyOf_i1_creator_oneOf_i1) |
+| **Type**                  | `object`                                                                                               |
+| ------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                       |
+| **Same definition as**    | [Organization](#servesDataset_items_anyOf_i0_otherIdentifier_items_anyOf_i0_anyOf_i1_creator_anyOf_i1) |
 
-##### <a name="rightsHolder_anyOf_i1_items_oneOf_i1"></a>Property `DataService > rightsHolder > anyOf > List of rights holders > Organization object or link > oneOf > item 1`
+#### <a name="rightsHolder_items_anyOf_i1"></a>Property `DataService > rightsHolder > Organization object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Organization
 
@@ -1096,34 +928,14 @@ reference iri of Organization
 
 A geographic region that is covered by the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                      |
-| --------------------------------------------------- |
-| [Null allowed when not required](#spatial_anyOf_i0) |
-| [List of locations](#spatial_anyOf_i1)              |
+| Each item of this array must be           | Description |
+| ----------------------------------------- | ----------- |
+| [Location object or link](#spatial_items) | -           |
 
-### <a name="spatial_anyOf_i0"></a>Property `DataService > spatial > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="spatial_anyOf_i1"></a>Property `DataService > spatial > anyOf > List of locations`
-
-**Title:** List of locations
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                    | Description |
-| -------------------------------------------------- | ----------- |
-| [Location object or link](#spatial_anyOf_i1_items) | -           |
-
-#### <a name="spatial_anyOf_i1_items"></a>DataService > spatial > anyOf > List of locations > Location object or link
+### <a name="spatial_items"></a>DataService > spatial > Location object or link
 
 **Title:** Location object or link
 
@@ -1131,23 +943,25 @@ A geographic region that is covered by the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                               |
-| -------------------------------------------- |
-| [Location](#spatial_anyOf_i1_items_oneOf_i0) |
-| [item 1](#spatial_anyOf_i1_items_oneOf_i1)   |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [Location](#spatial_items_anyOf_i0) |
+| [Link](#spatial_items_anyOf_i1)     |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i0"></a>Property `DataService > spatial > anyOf > List of locations > Location object or link > oneOf > Location`
+#### <a name="spatial_items_anyOf_i0"></a>Property `DataService > spatial > Location object or link > anyOf > Location`
 
 **Title:** Location
 
 inline description of Location
 
-| **Type**                  | `object`                                                                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                        |
-| **Same definition as**    | [Location](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_spatial_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                    |
+| **Same definition as**    | [Location](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_spatial_items_anyOf_i0) |
 
-##### <a name="spatial_anyOf_i1_items_oneOf_i1"></a>Property `DataService > spatial > anyOf > List of locations > Location object or link > oneOf > item 1`
+#### <a name="spatial_items_anyOf_i1"></a>Property `DataService > spatial > Location object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of Location
 
@@ -1161,34 +975,14 @@ reference iri of Location
 
 A list of temporal periods that the DataService covers
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#temporal_anyOf_i0) |
-| [List of time periods](#temporal_anyOf_i1)           |
+| Each item of this array must be                | Description |
+| ---------------------------------------------- | ----------- |
+| [PeriodOfTime object or link](#temporal_items) | -           |
 
-### <a name="temporal_anyOf_i0"></a>Property `DataService > temporal > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="temporal_anyOf_i1"></a>Property `DataService > temporal > anyOf > List of time periods`
-
-**Title:** List of time periods
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                         | Description |
-| ------------------------------------------------------- | ----------- |
-| [PeriodOfTime object or link](#temporal_anyOf_i1_items) | -           |
-
-#### <a name="temporal_anyOf_i1_items"></a>DataService > temporal > anyOf > List of time periods > PeriodOfTime object or link
+### <a name="temporal_items"></a>DataService > temporal > PeriodOfTime object or link
 
 **Title:** PeriodOfTime object or link
 
@@ -1196,23 +990,25 @@ A list of temporal periods that the DataService covers
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                    |
-| ------------------------------------------------- |
-| [PeriodOfTime](#temporal_anyOf_i1_items_oneOf_i0) |
-| [item 1](#temporal_anyOf_i1_items_oneOf_i1)       |
+| Any of(Option)                           |
+| ---------------------------------------- |
+| [PeriodOfTime](#temporal_items_anyOf_i0) |
+| [Link](#temporal_items_anyOf_i1)         |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i0"></a>Property `DataService > temporal > anyOf > List of time periods > PeriodOfTime object or link > oneOf > PeriodOfTime`
+#### <a name="temporal_items_anyOf_i0"></a>Property `DataService > temporal > PeriodOfTime object or link > anyOf > PeriodOfTime`
 
 **Title:** PeriodOfTime
 
 inline description of PeriodOfTime
 
-| **Type**                  | `object`                                                                                                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                                                                             |
-| **Same definition as**    | [PeriodOfTime](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_temporal_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                                         |
+| **Same definition as**    | [PeriodOfTime](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_temporal_items_anyOf_i0) |
 
-##### <a name="temporal_anyOf_i1_items_oneOf_i1"></a>Property `DataService > temporal > anyOf > List of time periods > PeriodOfTime object or link > oneOf > item 1`
+#### <a name="temporal_items_anyOf_i1"></a>Property `DataService > temporal > PeriodOfTime object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of PeriodOfTime
 
@@ -1241,37 +1037,40 @@ Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 **Title:** category
 
-Category of the data service
+List of categories for the Data Service
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be     | Description |
+| ----------------------------------- | ----------- |
+| [Category or link](#category_items) | -           |
+
+### <a name="category_items"></a>DataService > category > Category or link
+
+**Title:** Category or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#category_oneOf_i0) |
-| [Concept](#category_oneOf_i1)                        |
-| [Link](#category_oneOf_i2)                           |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [Concept](#category_items_anyOf_i0) |
+| [Link](#category_items_anyOf_i1)    |
 
-### <a name="category_oneOf_i0"></a>Property `DataService > category > oneOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="category_oneOf_i1"></a>Property `DataService > category > oneOf > Concept`
+#### <a name="category_items_anyOf_i0"></a>Property `DataService > category > Category or link > anyOf > Concept`
 
 **Title:** Concept
 
 inline description of Concept
 
-| **Type**                  | `object`                                                                                                          |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                  |
-| **Same definition as**    | [Concept](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_representationTechnique_oneOf_i1) |
+| **Type**                  | `object`                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                |
+| **Same definition as**    | [Concept](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1) |
 
-### <a name="category_oneOf_i2"></a>Property `DataService > category > oneOf > Link`
+#### <a name="category_items_anyOf_i1"></a>Property `DataService > category > Category or link > anyOf > Link`
 
 **Title:** Link
 
@@ -1287,34 +1086,14 @@ reference iri of Concept
 
 Refers to the performed quality measurements
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                                    |
-| ----------------------------------------------------------------- |
-| [Null allowed when not required](#hasQualityMeasurement_anyOf_i0) |
-| [List of quality measurements](#hasQualityMeasurement_anyOf_i1)   |
+| Each item of this array must be                                   | Description |
+| ----------------------------------------------------------------- | ----------- |
+| [QualityMeasurement object or link](#hasQualityMeasurement_items) | -           |
 
-### <a name="hasQualityMeasurement_anyOf_i0"></a>Property `DataService > hasQualityMeasurement > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="hasQualityMeasurement_anyOf_i1"></a>Property `DataService > hasQualityMeasurement > anyOf > List of quality measurements`
-
-**Title:** List of quality measurements
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                            | Description |
-| -------------------------------------------------------------------------- | ----------- |
-| [QualityMeasurement object or link](#hasQualityMeasurement_anyOf_i1_items) | -           |
-
-#### <a name="hasQualityMeasurement_anyOf_i1_items"></a>DataService > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link
+### <a name="hasQualityMeasurement_items"></a>DataService > hasQualityMeasurement > QualityMeasurement object or link
 
 **Title:** QualityMeasurement object or link
 
@@ -1322,23 +1101,23 @@ Refers to the performed quality measurements
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                                       |
-| -------------------------------------------------------------------- |
-| [QualityMeasurement](#hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
-| [Link](#hasQualityMeasurement_anyOf_i1_items_oneOf_i1)               |
+| Any of(Option)                                              |
+| ----------------------------------------------------------- |
+| [QualityMeasurement](#hasQualityMeasurement_items_anyOf_i0) |
+| [Link](#hasQualityMeasurement_items_anyOf_i1)               |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i0"></a>Property `DataService > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link > oneOf > QualityMeasurement`
+#### <a name="hasQualityMeasurement_items_anyOf_i0"></a>Property `DataService > hasQualityMeasurement > QualityMeasurement object or link > anyOf > QualityMeasurement`
 
 **Title:** QualityMeasurement
 
 inline description of QualityMeasurement
 
-| **Type**                  | `object`                                                                                                                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                                |
-| **Same definition as**    | [QualityMeasurement](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                            |
+| **Same definition as**    | [QualityMeasurement](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_hasQualityMeasurement_items_anyOf_i0) |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i1"></a>Property `DataService > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link > oneOf > Link`
+#### <a name="hasQualityMeasurement_items_anyOf_i1"></a>Property `DataService > hasQualityMeasurement > QualityMeasurement object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -1354,34 +1133,14 @@ reference iri of QualityMeasurement
 
 List of agents having some form of responsibility for the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                                   |
-| ---------------------------------------------------------------- |
-| [Null allowed when not required](#qualifiedAttribution_anyOf_i0) |
-| [List of responsible agents](#qualifiedAttribution_anyOf_i1)     |
+| Each item of this array must be                           | Description |
+| --------------------------------------------------------- | ----------- |
+| [Attribution object or link](#qualifiedAttribution_items) | -           |
 
-### <a name="qualifiedAttribution_anyOf_i0"></a>Property `DataService > qualifiedAttribution > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="qualifiedAttribution_anyOf_i1"></a>Property `DataService > qualifiedAttribution > anyOf > List of responsible agents`
-
-**Title:** List of responsible agents
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                    | Description |
-| ------------------------------------------------------------------ | ----------- |
-| [Attribution object or link](#qualifiedAttribution_anyOf_i1_items) | -           |
-
-#### <a name="qualifiedAttribution_anyOf_i1_items"></a>DataService > qualifiedAttribution > anyOf > List of responsible agents > Attribution object or link
+### <a name="qualifiedAttribution_items"></a>DataService > qualifiedAttribution > Attribution object or link
 
 **Title:** Attribution object or link
 
@@ -1389,23 +1148,23 @@ List of agents having some form of responsibility for the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                               |
-| ------------------------------------------------------------ |
-| [Attribution](#qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
-| [Link](#qualifiedAttribution_anyOf_i1_items_oneOf_i1)        |
+| Any of(Option)                                      |
+| --------------------------------------------------- |
+| [Attribution](#qualifiedAttribution_items_anyOf_i0) |
+| [Link](#qualifiedAttribution_items_anyOf_i1)        |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i0"></a>Property `DataService > qualifiedAttribution > anyOf > List of responsible agents > Attribution object or link > oneOf > Attribution`
+#### <a name="qualifiedAttribution_items_anyOf_i0"></a>Property `DataService > qualifiedAttribution > Attribution object or link > anyOf > Attribution`
 
 **Title:** Attribution
 
 inline description of Attribution
 
-| **Type**                  | `object`                                                                                                                                                                |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                        |
-| **Same definition as**    | [Attribution](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_qualifiedAttribution_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                            |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                    |
+| **Same definition as**    | [Attribution](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_qualifiedAttribution_items_anyOf_i0) |
 
-##### <a name="qualifiedAttribution_anyOf_i1_items_oneOf_i1"></a>Property `DataService > qualifiedAttribution > anyOf > List of responsible agents > Attribution object or link > oneOf > Link`
+#### <a name="qualifiedAttribution_items_anyOf_i1"></a>Property `DataService > qualifiedAttribution > Attribution object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -1421,34 +1180,14 @@ reference iri of Attribution
 
 List of activities that used the Data Service
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                        |
-| ----------------------------------------------------- |
-| [Null allowed when not required](#wasUsedBy_anyOf_i0) |
-| [List of activities](#wasUsedBy_anyOf_i1)             |
+| Each item of this array must be             | Description |
+| ------------------------------------------- | ----------- |
+| [Activity object or link](#wasUsedBy_items) | -           |
 
-### <a name="wasUsedBy_anyOf_i0"></a>Property `DataService > wasUsedBy > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="wasUsedBy_anyOf_i1"></a>Property `DataService > wasUsedBy > anyOf > List of activities`
-
-**Title:** List of activities
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                      | Description |
-| ---------------------------------------------------- | ----------- |
-| [Activity object or link](#wasUsedBy_anyOf_i1_items) | -           |
-
-#### <a name="wasUsedBy_anyOf_i1_items"></a>DataService > wasUsedBy > anyOf > List of activities > Activity object or link
+### <a name="wasUsedBy_items"></a>DataService > wasUsedBy > Activity object or link
 
 **Title:** Activity object or link
 
@@ -1456,23 +1195,23 @@ List of activities that used the Data Service
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                 |
-| ---------------------------------------------- |
-| [Activity](#wasUsedBy_anyOf_i1_items_oneOf_i0) |
-| [Link](#wasUsedBy_anyOf_i1_items_oneOf_i1)     |
+| Any of(Option)                        |
+| ------------------------------------- |
+| [Activity](#wasUsedBy_items_anyOf_i0) |
+| [Link](#wasUsedBy_items_anyOf_i1)     |
 
-##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i0"></a>Property `DataService > wasUsedBy > anyOf > List of activities > Activity object or link > oneOf > Activity`
+#### <a name="wasUsedBy_items_anyOf_i0"></a>Property `DataService > wasUsedBy > Activity object or link > anyOf > Activity`
 
 **Title:** Activity
 
 inline description of Activity
 
-| **Type**                  | `object`                                                                                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                          |
-| **Same definition as**    | [Activity](#servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessService_anyOf_i1_items_oneOf_i0_wasUsedBy_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                      |
+| **Same definition as**    | [Activity](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_wasUsedBy_items_anyOf_i0) |
 
-##### <a name="wasUsedBy_anyOf_i1_items_oneOf_i1"></a>Property `DataService > wasUsedBy > anyOf > List of activities > Activity object or link > oneOf > Link`
+#### <a name="wasUsedBy_items_anyOf_i1"></a>Property `DataService > wasUsedBy > Activity object or link > anyOf > Link`
 
 **Title:** Link
 

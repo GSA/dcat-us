@@ -15,7 +15,7 @@ A file that distributes the dataset
 | - [representationTechnique](#representationTechnique )     | More than one type | representation technique                                                            |
 | - [status](#status )                                       | More than one type | lifecycle status                                                                    |
 | - [characterEncoding](#characterEncoding )                 | More than one type | character encoding                                                                  |
-| - [accessService](#accessService )                         | More than one type | access service                                                                      |
+| - [accessService](#accessService )                         | null or array      | access service                                                                      |
 | - [accessURL](#accessURL )                                 | More than one type | access URL                                                                          |
 | - [byteSize](#byteSize )                                   | null or string     | byte size                                                                           |
 | - [compressFormat](#compressFormat )                       | More than one type | compression format                                                                  |
@@ -25,12 +25,12 @@ A file that distributes the dataset
 | - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string     | Spatial resolution (meters)                                                         |
 | - [temporalResolution](#temporalResolution )               | null or string     | termporal resolution                                                                |
 | - [availability](#availability )                           | More than one type | availability                                                                        |
-| - [accessRestriction](#accessRestriction )                 | More than one type | access restriction                                                                  |
+| - [accessRestriction](#accessRestriction )                 | null or array      | access restriction                                                                  |
 | - [cuiRestriction](#cuiRestriction )                       | More than one type | CUI restriction                                                                     |
 | - [describedBy](#describedBy )                             | More than one type | data dictionary                                                                     |
-| - [useRestriction](#useRestriction )                       | More than one type | use restriction                                                                     |
+| - [useRestriction](#useRestriction )                       | null or array      | use restriction                                                                     |
 | - [accessRights](#accessRights )                           | More than one type | access rights                                                                       |
-| - [conformsTo](#conformsTo )                               | More than one type | linked schemas                                                                      |
+| - [conformsTo](#conformsTo )                               | null or array      | linked schemas                                                                      |
 | - [description](#description )                             | null or string     | description                                                                         |
 | - [descriptionMap](#descriptionMap )                       | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
 | - [format](#format )                                       | More than one type | format                                                                              |
@@ -43,8 +43,8 @@ A file that distributes the dataset
 | - [rights](#rights )                                       | More than one type | rights                                                                              |
 | - [title](#title )                                         | null or string     | title                                                                               |
 | - [titleMap](#titleMap )                                   | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | More than one type | quality measurement                                                                 |
-| - [page](#page )                                           | More than one type | documentation                                                                       |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array      | quality measurement                                                                 |
+| - [page](#page )                                           | null or array      | documentation                                                                       |
 | - [image](#image )                                         | More than one type | image                                                                               |
 | - [checksum](#checksum )                                   | More than one type | checksum                                                                            |
 
@@ -70,20 +70,20 @@ The format in which an Distribution is released. This is different from the file
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                                      |
+| Any of(Option)                                                      |
 | ------------------------------------------------------------------- |
-| [Null allowed when not required](#representationTechnique_oneOf_i0) |
-| [Concept](#representationTechnique_oneOf_i1)                        |
-| [Link](#representationTechnique_oneOf_i2)                           |
+| [Null allowed when not required](#representationTechnique_anyOf_i0) |
+| [Concept](#representationTechnique_anyOf_i1)                        |
+| [Link](#representationTechnique_anyOf_i2)                           |
 
-### <a name="representationTechnique_oneOf_i0"></a>Property `Distribution > representationTechnique > oneOf > Null allowed when not required`
+### <a name="representationTechnique_anyOf_i0"></a>Property `Distribution > representationTechnique > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="representationTechnique_oneOf_i1"></a>Property `Distribution > representationTechnique > oneOf > Concept`
+### <a name="representationTechnique_anyOf_i1"></a>Property `Distribution > representationTechnique > anyOf > Concept`
 
 **Title:** Concept
 
@@ -94,7 +94,7 @@ inline description of Concept
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="representationTechnique_oneOf_i2"></a>Property `Distribution > representationTechnique > oneOf > Link`
+### <a name="representationTechnique_anyOf_i2"></a>Property `Distribution > representationTechnique > anyOf > Link`
 
 **Title:** Link
 
@@ -114,20 +114,20 @@ The status of the distribution in the context of maturity lifecycle
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                     |
+| Any of(Option)                                     |
 | -------------------------------------------------- |
-| [Null allowed when not required](#status_oneOf_i0) |
-| [Concept](#status_oneOf_i1)                        |
-| [Link](#status_oneOf_i2)                           |
+| [Null allowed when not required](#status_anyOf_i0) |
+| [Concept](#status_anyOf_i1)                        |
+| [Link](#status_anyOf_i2)                           |
 
-### <a name="status_oneOf_i0"></a>Property `Distribution > status > oneOf > Null allowed when not required`
+### <a name="status_anyOf_i0"></a>Property `Distribution > status > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="status_oneOf_i1"></a>Property `Distribution > status > oneOf > Concept`
+### <a name="status_anyOf_i1"></a>Property `Distribution > status > anyOf > Concept`
 
 **Title:** Concept
 
@@ -136,9 +136,9 @@ inline description of Concept
 | **Type**                  | `object`                                     |
 | ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
-| **Same definition as**    | [Concept](#representationTechnique_oneOf_i1) |
+| **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
 
-### <a name="status_oneOf_i2"></a>Property `Distribution > status > oneOf > Link`
+### <a name="status_anyOf_i2"></a>Property `Distribution > status > anyOf > Link`
 
 **Title:** Link
 
@@ -194,34 +194,14 @@ The list of character encodings of the Distribution, by using as value the chara
 
 A data service that gives access to the distribution of the dataset
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                            |
-| --------------------------------------------------------- |
-| [Null allowed when not required](#accessService_anyOf_i0) |
-| [List of data services](#accessService_anyOf_i1)          |
+| Each item of this array must be                    | Description |
+| -------------------------------------------------- | ----------- |
+| [DataService object or link](#accessService_items) | -           |
 
-### <a name="accessService_anyOf_i0"></a>Property `Distribution > accessService > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="accessService_anyOf_i1"></a>Property `Distribution > accessService > anyOf > List of data services`
-
-**Title:** List of data services
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                             | Description |
-| ----------------------------------------------------------- | ----------- |
-| [DataService object or link](#accessService_anyOf_i1_items) | -           |
-
-#### <a name="accessService_anyOf_i1_items"></a>Distribution > accessService > anyOf > List of data services > DataService object or link
+### <a name="accessService_items"></a>Distribution > accessService > DataService object or link
 
 **Title:** DataService object or link
 
@@ -229,12 +209,12 @@ A data service that gives access to the distribution of the dataset
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                        |
-| ----------------------------------------------------- |
-| [DataService](#accessService_anyOf_i1_items_oneOf_i0) |
-| [item 1](#accessService_anyOf_i1_items_oneOf_i1)      |
+| Any of(Option)                               |
+| -------------------------------------------- |
+| [DataService](#accessService_items_anyOf_i0) |
+| [Link](#accessService_items_anyOf_i1)        |
 
-##### <a name="accessService_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > accessService > anyOf > List of data services > DataService object or link > oneOf > DataService`
+#### <a name="accessService_items_anyOf_i0"></a>Property `Distribution > accessService > DataService object or link > anyOf > DataService`
 
 **Title:** DataService
 
@@ -245,7 +225,9 @@ inline description of DataService
 | **Additional properties** | Any type allowed                |
 | **Defined in**            | [Dataservice](./Dataservice.md) |
 
-##### <a name="accessService_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > accessService > anyOf > List of data services > DataService object or link > oneOf > item 1`
+#### <a name="accessService_items_anyOf_i1"></a>Property `Distribution > accessService > DataService object or link > anyOf > Link`
+
+**Title:** Link
 
 reference iri of DataService
 
@@ -304,31 +286,31 @@ The format of the file in which the data is contained in a compressed form, e.g.
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                             |
+| Any of(Option)                                             |
 | ---------------------------------------------------------- |
-| [Null allowed when not required](#compressFormat_oneOf_i0) |
-| [MediaType](#compressFormat_oneOf_i1)                      |
-| [Link](#compressFormat_oneOf_i2)                           |
+| [Null allowed when not required](#compressFormat_anyOf_i0) |
+| [MediaType](#compressFormat_anyOf_i1)                      |
+| [Link](#compressFormat_anyOf_i2)                           |
 
-### <a name="compressFormat_oneOf_i0"></a>Property `Distribution > compressFormat > oneOf > Null allowed when not required`
+### <a name="compressFormat_anyOf_i0"></a>Property `Distribution > compressFormat > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="compressFormat_oneOf_i1"></a>Property `Distribution > compressFormat > oneOf > MediaType`
+### <a name="compressFormat_anyOf_i1"></a>Property `Distribution > compressFormat > anyOf > MediaType`
 
 **Title:** MediaType
 
 inline description of MediaType
 
-| **Type**                  | `object`                                                                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                                                                 |
-| **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
+| **Type**                  | `object`                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                      |
+| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
 
-### <a name="compressFormat_oneOf_i2"></a>Property `Distribution > compressFormat > oneOf > Link`
+### <a name="compressFormat_anyOf_i2"></a>Property `Distribution > compressFormat > anyOf > Link`
 
 **Title:** Link
 
@@ -380,31 +362,31 @@ The media type of the Distribution as defined in the official register of media 
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                        |
+| Any of(Option)                                        |
 | ----------------------------------------------------- |
-| [Null allowed when not required](#mediaType_oneOf_i0) |
-| [MediaType](#mediaType_oneOf_i1)                      |
-| [Link](#mediaType_oneOf_i2)                           |
+| [Null allowed when not required](#mediaType_anyOf_i0) |
+| [MediaType](#mediaType_anyOf_i1)                      |
+| [Link](#mediaType_anyOf_i2)                           |
 
-### <a name="mediaType_oneOf_i0"></a>Property `Distribution > mediaType > oneOf > Null allowed when not required`
+### <a name="mediaType_anyOf_i0"></a>Property `Distribution > mediaType > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="mediaType_oneOf_i1"></a>Property `Distribution > mediaType > oneOf > MediaType`
+### <a name="mediaType_anyOf_i1"></a>Property `Distribution > mediaType > anyOf > MediaType`
 
 **Title:** MediaType
 
 inline description of MediaType
 
-| **Type**                  | `object`                                                                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                                                                 |
-| **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
+| **Type**                  | `object`                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                      |
+| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
 
-### <a name="mediaType_oneOf_i2"></a>Property `Distribution > mediaType > oneOf > Link`
+### <a name="mediaType_anyOf_i2"></a>Property `Distribution > mediaType > anyOf > Link`
 
 **Title:** Link
 
@@ -424,31 +406,31 @@ The format of the file in which one or more data files are grouped together, e.g
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                            |
+| Any of(Option)                                            |
 | --------------------------------------------------------- |
-| [Null allowed when not required](#packageFormat_oneOf_i0) |
-| [MediaType](#packageFormat_oneOf_i1)                      |
-| [Link](#packageFormat_oneOf_i2)                           |
+| [Null allowed when not required](#packageFormat_anyOf_i0) |
+| [MediaType](#packageFormat_anyOf_i1)                      |
+| [Link](#packageFormat_anyOf_i2)                           |
 
-### <a name="packageFormat_oneOf_i0"></a>Property `Distribution > packageFormat > oneOf > Null allowed when not required`
+### <a name="packageFormat_anyOf_i0"></a>Property `Distribution > packageFormat > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="packageFormat_oneOf_i1"></a>Property `Distribution > packageFormat > oneOf > MediaType`
+### <a name="packageFormat_anyOf_i1"></a>Property `Distribution > packageFormat > anyOf > MediaType`
 
 **Title:** MediaType
 
 inline description of MediaType
 
-| **Type**                  | `object`                                                                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                                                                 |
-| **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
+| **Type**                  | `object`                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                      |
+| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
 
-### <a name="packageFormat_oneOf_i2"></a>Property `Distribution > packageFormat > oneOf > Link`
+### <a name="packageFormat_anyOf_i2"></a>Property `Distribution > packageFormat > anyOf > Link`
 
 **Title:** Link
 
@@ -486,20 +468,20 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                           |
+| Any of(Option)                                           |
 | -------------------------------------------------------- |
-| [Null allowed when not required](#availability_oneOf_i0) |
-| [Concept](#availability_oneOf_i1)                        |
-| [Link](#availability_oneOf_i2)                           |
+| [Null allowed when not required](#availability_anyOf_i0) |
+| [Concept](#availability_anyOf_i1)                        |
+| [Link](#availability_anyOf_i2)                           |
 
-### <a name="availability_oneOf_i0"></a>Property `Distribution > availability > oneOf > Null allowed when not required`
+### <a name="availability_anyOf_i0"></a>Property `Distribution > availability > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="availability_oneOf_i1"></a>Property `Distribution > availability > oneOf > Concept`
+### <a name="availability_anyOf_i1"></a>Property `Distribution > availability > anyOf > Concept`
 
 **Title:** Concept
 
@@ -508,9 +490,9 @@ inline description of Concept
 | **Type**                  | `object`                                     |
 | ------------------------- | -------------------------------------------- |
 | **Additional properties** | Any type allowed                             |
-| **Same definition as**    | [Concept](#representationTechnique_oneOf_i1) |
+| **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
 
-### <a name="availability_oneOf_i2"></a>Property `Distribution > availability > oneOf > Link`
+### <a name="availability_anyOf_i2"></a>Property `Distribution > availability > anyOf > Link`
 
 **Title:** Link
 
@@ -526,34 +508,14 @@ reference iri of Concept
 
 List of access restrictions related to the distribution
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                                |
-| ------------------------------------------------------------- |
-| [Null allowed when not required](#accessRestriction_anyOf_i0) |
-| [List of restrictions](#accessRestriction_anyOf_i1)           |
+| Each item of this array must be                              | Description |
+| ------------------------------------------------------------ | ----------- |
+| [AccessRestriction object or link](#accessRestriction_items) | -           |
 
-### <a name="accessRestriction_anyOf_i0"></a>Property `Distribution > accessRestriction > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="accessRestriction_anyOf_i1"></a>Property `Distribution > accessRestriction > anyOf > List of restrictions`
-
-**Title:** List of restrictions
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                       | Description |
-| --------------------------------------------------------------------- | ----------- |
-| [AccessRestriction object or link](#accessRestriction_anyOf_i1_items) | -           |
-
-#### <a name="accessRestriction_anyOf_i1_items"></a>Distribution > accessRestriction > anyOf > List of restrictions > AccessRestriction object or link
+### <a name="accessRestriction_items"></a>Distribution > accessRestriction > AccessRestriction object or link
 
 **Title:** AccessRestriction object or link
 
@@ -561,23 +523,23 @@ List of access restrictions related to the distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                                  |
-| --------------------------------------------------------------- |
-| [AccessRestriction](#accessRestriction_anyOf_i1_items_oneOf_i0) |
-| [Link](#accessRestriction_anyOf_i1_items_oneOf_i1)              |
+| Any of(Option)                                         |
+| ------------------------------------------------------ |
+| [AccessRestriction](#accessRestriction_items_anyOf_i0) |
+| [Link](#accessRestriction_items_anyOf_i1)              |
 
-##### <a name="accessRestriction_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > accessRestriction > anyOf > List of restrictions > AccessRestriction object or link > oneOf > AccessRestriction`
+#### <a name="accessRestriction_items_anyOf_i0"></a>Property `Distribution > accessRestriction > AccessRestriction object or link > anyOf > AccessRestriction`
 
 **Title:** AccessRestriction
 
 inline description of AccessRestriction
 
-| **Type**                  | `object`                                                                                                                                                                   |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                           |
-| **Same definition as**    | [AccessRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRestriction_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                       |
+| **Same definition as**    | [AccessRestriction](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessRestriction_items_anyOf_i0) |
 
-##### <a name="accessRestriction_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > accessRestriction > anyOf > List of restrictions > AccessRestriction object or link > oneOf > Link`
+#### <a name="accessRestriction_items_anyOf_i1"></a>Property `Distribution > accessRestriction > AccessRestriction object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -597,31 +559,31 @@ Controlled Unclassified Information restriction related to the distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                             |
+| Any of(Option)                                             |
 | ---------------------------------------------------------- |
-| [Null allowed when not required](#cuiRestriction_oneOf_i0) |
-| [CUIRestriction](#cuiRestriction_oneOf_i1)                 |
-| [Link](#cuiRestriction_oneOf_i2)                           |
+| [Null allowed when not required](#cuiRestriction_anyOf_i0) |
+| [CUIRestriction](#cuiRestriction_anyOf_i1)                 |
+| [Link](#cuiRestriction_anyOf_i2)                           |
 
-### <a name="cuiRestriction_oneOf_i0"></a>Property `Distribution > cuiRestriction > oneOf > Null allowed when not required`
+### <a name="cuiRestriction_anyOf_i0"></a>Property `Distribution > cuiRestriction > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="cuiRestriction_oneOf_i1"></a>Property `Distribution > cuiRestriction > oneOf > CUIRestriction`
+### <a name="cuiRestriction_anyOf_i1"></a>Property `Distribution > cuiRestriction > anyOf > CUIRestriction`
 
 **Title:** CUIRestriction
 
 inline description of CUIRestriction
 
-| **Type**                  | `object`                                                                                                                                              |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                      |
-| **Same definition as**    | [CUIRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_cuiRestriction_oneOf_i1) |
+| **Type**                  | `object`                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                           |
+| **Same definition as**    | [CUIRestriction](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_cuiRestriction_anyOf_i1) |
 
-### <a name="cuiRestriction_oneOf_i2"></a>Property `Distribution > cuiRestriction > oneOf > Link`
+### <a name="cuiRestriction_anyOf_i2"></a>Property `Distribution > cuiRestriction > anyOf > Link`
 
 **Title:** Link
 
@@ -641,31 +603,31 @@ A distribution containing the Data Dictionary for this distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                          |
+| Any of(Option)                                          |
 | ------------------------------------------------------- |
-| [Null allowed when not required](#describedBy_oneOf_i0) |
-| [Distribution](#describedBy_oneOf_i1)                   |
-| [Link](#describedBy_oneOf_i2)                           |
+| [Null allowed when not required](#describedBy_anyOf_i0) |
+| [Distribution](#describedBy_anyOf_i1)                   |
+| [Link](#describedBy_anyOf_i2)                           |
 
-### <a name="describedBy_oneOf_i0"></a>Property `Distribution > describedBy > oneOf > Null allowed when not required`
+### <a name="describedBy_anyOf_i0"></a>Property `Distribution > describedBy > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="describedBy_oneOf_i1"></a>Property `Distribution > describedBy > oneOf > Distribution`
+### <a name="describedBy_anyOf_i1"></a>Property `Distribution > describedBy > anyOf > Distribution`
 
 **Title:** Distribution
 
 inline description of the data dictionary
 
-| **Type**                  | `object`                                                                                                                    |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                            |
-| **Same definition as**    | [Distribution](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                 |
+| **Same definition as**    | [Distribution](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0) |
 
-### <a name="describedBy_oneOf_i2"></a>Property `Distribution > describedBy > oneOf > Link`
+### <a name="describedBy_anyOf_i2"></a>Property `Distribution > describedBy > anyOf > Link`
 
 **Title:** Link
 
@@ -681,34 +643,14 @@ reference iri of the data dictionary
 
 Use restriction related to the distribution
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                             |
-| ---------------------------------------------------------- |
-| [Null allowed when not required](#useRestriction_anyOf_i0) |
-| [List of restrictions](#useRestriction_anyOf_i1)           |
+| Each item of this array must be                        | Description |
+| ------------------------------------------------------ | ----------- |
+| [UseRestriction object or link](#useRestriction_items) | -           |
 
-### <a name="useRestriction_anyOf_i0"></a>Property `Distribution > useRestriction > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="useRestriction_anyOf_i1"></a>Property `Distribution > useRestriction > anyOf > List of restrictions`
-
-**Title:** List of restrictions
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                 | Description |
-| --------------------------------------------------------------- | ----------- |
-| [UseRestriction object or link](#useRestriction_anyOf_i1_items) | -           |
-
-#### <a name="useRestriction_anyOf_i1_items"></a>Distribution > useRestriction > anyOf > List of restrictions > UseRestriction object or link
+### <a name="useRestriction_items"></a>Distribution > useRestriction > UseRestriction object or link
 
 **Title:** UseRestriction object or link
 
@@ -716,23 +658,23 @@ Use restriction related to the distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                            |
-| --------------------------------------------------------- |
-| [UseRestriction](#useRestriction_anyOf_i1_items_oneOf_i0) |
-| [Link](#useRestriction_anyOf_i1_items_oneOf_i1)           |
+| Any of(Option)                                   |
+| ------------------------------------------------ |
+| [UseRestriction](#useRestriction_items_anyOf_i0) |
+| [Link](#useRestriction_items_anyOf_i1)           |
 
-##### <a name="useRestriction_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > useRestriction > anyOf > List of restrictions > UseRestriction object or link > oneOf > UseRestriction`
+#### <a name="useRestriction_items_anyOf_i0"></a>Property `Distribution > useRestriction > UseRestriction object or link > anyOf > UseRestriction`
 
 **Title:** UseRestriction
 
 inline description of UseRestriction
 
-| **Type**                  | `object`                                                                                                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                     |
-| **Same definition as**    | [UseRestriction](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_useRestriction_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                 |
+| **Same definition as**    | [UseRestriction](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_useRestriction_items_anyOf_i0) |
 
-##### <a name="useRestriction_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > useRestriction > anyOf > List of restrictions > UseRestriction object or link > oneOf > Link`
+#### <a name="useRestriction_items_anyOf_i1"></a>Property `Distribution > useRestriction > UseRestriction object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -752,31 +694,31 @@ Information regarding access or restrictions based on privacy, security, or othe
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                           |
+| Any of(Option)                                           |
 | -------------------------------------------------------- |
-| [Null allowed when not required](#accessRights_oneOf_i0) |
-| [RightsStatement](#accessRights_oneOf_i1)                |
-| [Link](#accessRights_oneOf_i2)                           |
+| [Null allowed when not required](#accessRights_anyOf_i0) |
+| [RightsStatement](#accessRights_anyOf_i1)                |
+| [Link](#accessRights_anyOf_i2)                           |
 
-### <a name="accessRights_oneOf_i0"></a>Property `Distribution > accessRights > oneOf > Null allowed when not required`
+### <a name="accessRights_anyOf_i0"></a>Property `Distribution > accessRights > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_oneOf_i1"></a>Property `Distribution > accessRights > oneOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `Distribution > accessRights > anyOf > RightsStatement`
 
 **Title:** RightsStatement
 
 inline description of RightsStatement
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [RightsStatement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
+| **Type**                  | `object`                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [RightsStatement](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessRights_anyOf_i1) |
 
-### <a name="accessRights_oneOf_i2"></a>Property `Distribution > accessRights > oneOf > Link`
+### <a name="accessRights_anyOf_i2"></a>Property `Distribution > accessRights > anyOf > Link`
 
 **Title:** Link
 
@@ -792,34 +734,14 @@ reference iri of RightsStatement
 
 List of established schemas or reference systems to which the described Distribution conforms
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                         |
-| ------------------------------------------------------ |
-| [Null allowed when not required](#conformsTo_anyOf_i0) |
-| [List of standards](#conformsTo_anyOf_i1)              |
+| Each item of this array must be              | Description |
+| -------------------------------------------- | ----------- |
+| [Standard object or link](#conformsTo_items) | -           |
 
-### <a name="conformsTo_anyOf_i0"></a>Property `Distribution > conformsTo > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="conformsTo_anyOf_i1"></a>Property `Distribution > conformsTo > anyOf > List of standards`
-
-**Title:** List of standards
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                       | Description |
-| ----------------------------------------------------- | ----------- |
-| [Standard object or link](#conformsTo_anyOf_i1_items) | -           |
-
-#### <a name="conformsTo_anyOf_i1_items"></a>Distribution > conformsTo > anyOf > List of standards > Standard object or link
+### <a name="conformsTo_items"></a>Distribution > conformsTo > Standard object or link
 
 **Title:** Standard object or link
 
@@ -827,23 +749,23 @@ List of established schemas or reference systems to which the described Distribu
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                  |
-| ----------------------------------------------- |
-| [Standard](#conformsTo_anyOf_i1_items_oneOf_i0) |
-| [Link](#conformsTo_anyOf_i1_items_oneOf_i1)     |
+| Any of(Option)                         |
+| -------------------------------------- |
+| [Standard](#conformsTo_items_anyOf_i0) |
+| [Link](#conformsTo_items_anyOf_i1)     |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > conformsTo > anyOf > List of standards > Standard object or link > oneOf > Standard`
+#### <a name="conformsTo_items_anyOf_i0"></a>Property `Distribution > conformsTo > Standard object or link > anyOf > Standard`
 
 **Title:** Standard
 
 inline description of Standard
 
-| **Type**                  | `object`                                                                                                                                                   |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                           |
-| **Same definition as**    | [Standard](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_conformsTo_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                               |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                       |
+| **Same definition as**    | [Standard](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_conformsTo_items_anyOf_i0) |
 
-##### <a name="conformsTo_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > conformsTo > anyOf > List of standards > Standard object or link > oneOf > Link`
+#### <a name="conformsTo_items_anyOf_i1"></a>Property `Distribution > conformsTo > Standard object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -879,31 +801,31 @@ The file format of the Distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                     |
+| Any of(Option)                                     |
 | -------------------------------------------------- |
-| [Null allowed when not required](#format_oneOf_i0) |
-| [MediaType](#format_oneOf_i1)                      |
-| [Link](#format_oneOf_i2)                           |
+| [Null allowed when not required](#format_anyOf_i0) |
+| [MediaType](#format_anyOf_i1)                      |
+| [Link](#format_anyOf_i2)                           |
 
-### <a name="format_oneOf_i0"></a>Property `Distribution > format > oneOf > Null allowed when not required`
+### <a name="format_anyOf_i0"></a>Property `Distribution > format > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="format_oneOf_i1"></a>Property `Distribution > format > oneOf > MediaType`
+### <a name="format_anyOf_i1"></a>Property `Distribution > format > anyOf > MediaType`
 
 **Title:** MediaType
 
 inline description of the format
 
-| **Type**                  | `object`                                                                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                                                                 |
-| **Same definition as**    | [MediaType](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_compressFormat_oneOf_i1) |
+| **Type**                  | `object`                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                      |
+| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
 
-### <a name="format_oneOf_i2"></a>Property `Distribution > format > oneOf > Link`
+### <a name="format_anyOf_i2"></a>Property `Distribution > format > anyOf > Link`
 
 **Title:** Link
 
@@ -942,10 +864,10 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [Identifier](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+| **Type**                  | More than one type                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [Identifier](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_otherIdentifier_items_anyOf_i0) |
 
 ### <a name="identifier_anyOf_i2"></a>Property `Distribution > identifier > anyOf > Link`
 
@@ -989,10 +911,10 @@ A list of identifiers for the Distribution besides the main identifier, e.g. the
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [Identifier](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_otherIdentifier_items_anyOf_i0) |
+| **Type**                  | More than one type                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [Identifier](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_otherIdentifier_items_anyOf_i0) |
 
 #### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Distribution > otherIdentifier > Identifier object or link > anyOf > Link`
 
@@ -1017,7 +939,7 @@ The date of formal issuance (e.g., publication) of the Distribution
 | Any of(Option)                                     |
 | -------------------------------------------------- |
 | [Null allowed when not required](#issued_anyOf_i0) |
-| [item 1](#issued_anyOf_i1)                         |
+| [Date string](#issued_anyOf_i1)                    |
 
 ### <a name="issued_anyOf_i0"></a>Property `Distribution > issued > anyOf > Null allowed when not required`
 
@@ -1026,32 +948,34 @@ The date of formal issuance (e.g., publication) of the Distribution
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `Distribution > issued > anyOf > item 1`
+### <a name="issued_anyOf_i1"></a>Property `Distribution > issued > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [item 0](#issued_anyOf_i1_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_oneOf_i3) |
+| [item 0](#issued_anyOf_i1_anyOf_i0) |
+| [item 1](#issued_anyOf_i1_anyOf_i1) |
+| [item 2](#issued_anyOf_i1_anyOf_i2) |
+| [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `Distribution > issued > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `Distribution > issued > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `Distribution > issued > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -1062,7 +986,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Distribution > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `Distribution > issued > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -1139,31 +1063,31 @@ A license under which the Distribution is made available
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                      |
+| Any of(Option)                                      |
 | --------------------------------------------------- |
-| [Null allowed when not required](#license_oneOf_i0) |
-| [LicenseDocument](#license_oneOf_i1)                |
-| [Link](#license_oneOf_i2)                           |
+| [Null allowed when not required](#license_anyOf_i0) |
+| [LicenseDocument](#license_anyOf_i1)                |
+| [Link](#license_anyOf_i2)                           |
 
-### <a name="license_oneOf_i0"></a>Property `Distribution > license > oneOf > Null allowed when not required`
+### <a name="license_anyOf_i0"></a>Property `Distribution > license > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_oneOf_i1"></a>Property `Distribution > license > oneOf > LicenseDocument`
+### <a name="license_anyOf_i1"></a>Property `Distribution > license > anyOf > LicenseDocument`
 
 **Title:** LicenseDocument
 
 inline description of LicenseDocument
 
-| **Type**                  | `object`                                                                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                |
-| **Same definition as**    | [LicenseDocument](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_license_oneOf_i1) |
+| **Type**                  | `object`                                                                                                             |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                     |
+| **Same definition as**    | [LicenseDocument](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_license_anyOf_i1) |
 
-### <a name="license_oneOf_i2"></a>Property `Distribution > license > oneOf > Link`
+### <a name="license_anyOf_i2"></a>Property `Distribution > license > anyOf > Link`
 
 **Title:** Link
 
@@ -1186,7 +1110,7 @@ The most recent date on which the Distribution was changed or modified
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
-| [item 1](#modified_anyOf_i1)                         |
+| [Date string](#modified_anyOf_i1)                    |
 
 ### <a name="modified_anyOf_i0"></a>Property `Distribution > modified > anyOf > Null allowed when not required`
 
@@ -1195,32 +1119,34 @@ The most recent date on which the Distribution was changed or modified
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `Distribution > modified > anyOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `Distribution > modified > anyOf > Date string`
+
+**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                        |
+| Any of(Option)                        |
 | ------------------------------------- |
-| [item 0](#modified_anyOf_i1_oneOf_i0) |
-| [item 1](#modified_anyOf_i1_oneOf_i1) |
-| [item 2](#modified_anyOf_i1_oneOf_i2) |
-| [item 3](#modified_anyOf_i1_oneOf_i3) |
+| [item 0](#modified_anyOf_i1_anyOf_i0) |
+| [item 1](#modified_anyOf_i1_anyOf_i1) |
+| [item 2](#modified_anyOf_i1_anyOf_i2) |
+| [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `Distribution > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `Distribution > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `Distribution > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -1231,7 +1157,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `Distribution > modified > anyOf > item 1 > oneOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `Distribution > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -1252,31 +1178,31 @@ A statement that specifies rights associated with the Distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                     |
+| Any of(Option)                                     |
 | -------------------------------------------------- |
-| [Null allowed when not required](#rights_oneOf_i0) |
-| [RightsStatement](#rights_oneOf_i1)                |
-| [Link](#rights_oneOf_i2)                           |
+| [Null allowed when not required](#rights_anyOf_i0) |
+| [RightsStatement](#rights_anyOf_i1)                |
+| [Link](#rights_anyOf_i2)                           |
 
-### <a name="rights_oneOf_i0"></a>Property `Distribution > rights > oneOf > Null allowed when not required`
+### <a name="rights_anyOf_i0"></a>Property `Distribution > rights > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="rights_oneOf_i1"></a>Property `Distribution > rights > oneOf > RightsStatement`
+### <a name="rights_anyOf_i1"></a>Property `Distribution > rights > anyOf > RightsStatement`
 
 **Title:** RightsStatement
 
 inline description of RightsStatement
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [RightsStatement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_accessRights_oneOf_i1) |
+| **Type**                  | `object`                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                          |
+| **Same definition as**    | [RightsStatement](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessRights_anyOf_i1) |
 
-### <a name="rights_oneOf_i2"></a>Property `Distribution > rights > oneOf > Link`
+### <a name="rights_anyOf_i2"></a>Property `Distribution > rights > anyOf > Link`
 
 **Title:** Link
 
@@ -1308,34 +1234,14 @@ Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french word
 
 A list of quality measurements for the distribution
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                                    |
-| ----------------------------------------------------------------- |
-| [Null allowed when not required](#hasQualityMeasurement_anyOf_i0) |
-| [List of quality measurements](#hasQualityMeasurement_anyOf_i1)   |
+| Each item of this array must be                                   | Description |
+| ----------------------------------------------------------------- | ----------- |
+| [QualityMeasurement object or link](#hasQualityMeasurement_items) | -           |
 
-### <a name="hasQualityMeasurement_anyOf_i0"></a>Property `Distribution > hasQualityMeasurement > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="hasQualityMeasurement_anyOf_i1"></a>Property `Distribution > hasQualityMeasurement > anyOf > List of quality measurements`
-
-**Title:** List of quality measurements
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                            | Description |
-| -------------------------------------------------------------------------- | ----------- |
-| [QualityMeasurement object or link](#hasQualityMeasurement_anyOf_i1_items) | -           |
-
-#### <a name="hasQualityMeasurement_anyOf_i1_items"></a>Distribution > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link
+### <a name="hasQualityMeasurement_items"></a>Distribution > hasQualityMeasurement > QualityMeasurement object or link
 
 **Title:** QualityMeasurement object or link
 
@@ -1343,23 +1249,23 @@ A list of quality measurements for the distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                                       |
-| -------------------------------------------------------------------- |
-| [QualityMeasurement](#hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
-| [Link](#hasQualityMeasurement_anyOf_i1_items_oneOf_i1)               |
+| Any of(Option)                                              |
+| ----------------------------------------------------------- |
+| [QualityMeasurement](#hasQualityMeasurement_items_anyOf_i0) |
+| [Link](#hasQualityMeasurement_items_anyOf_i1)               |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link > oneOf > QualityMeasurement`
+#### <a name="hasQualityMeasurement_items_anyOf_i0"></a>Property `Distribution > hasQualityMeasurement > QualityMeasurement object or link > anyOf > QualityMeasurement`
 
 **Title:** QualityMeasurement
 
 inline description of QualityMeasurement
 
-| **Type**                  | `object`                                                                                                                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                                                |
-| **Same definition as**    | [QualityMeasurement](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_hasQualityMeasurement_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                                            |
+| **Same definition as**    | [QualityMeasurement](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_hasQualityMeasurement_items_anyOf_i0) |
 
-##### <a name="hasQualityMeasurement_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > hasQualityMeasurement > anyOf > List of quality measurements > QualityMeasurement object or link > oneOf > Link`
+#### <a name="hasQualityMeasurement_items_anyOf_i1"></a>Property `Distribution > hasQualityMeasurement > QualityMeasurement object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -1375,34 +1281,14 @@ reference iri of QualityMeasurement
 
 A page or document about this Distribution
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                   |
-| ------------------------------------------------ |
-| [Null allowed when not required](#page_anyOf_i0) |
-| [List of documents](#page_anyOf_i1)              |
+| Each item of this array must be        | Description |
+| -------------------------------------- | ----------- |
+| [Document object or link](#page_items) | -           |
 
-### <a name="page_anyOf_i0"></a>Property `Distribution > page > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="page_anyOf_i1"></a>Property `Distribution > page > anyOf > List of documents`
-
-**Title:** List of documents
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [Document object or link](#page_anyOf_i1_items) | -           |
-
-#### <a name="page_anyOf_i1_items"></a>Distribution > page > anyOf > List of documents > Document object or link
+### <a name="page_items"></a>Distribution > page > Document object or link
 
 **Title:** Document object or link
 
@@ -1410,23 +1296,23 @@ A page or document about this Distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [Document](#page_anyOf_i1_items_oneOf_i0) |
-| [Link](#page_anyOf_i1_items_oneOf_i1)     |
+| Any of(Option)                   |
+| -------------------------------- |
+| [Document](#page_items_anyOf_i0) |
+| [Link](#page_items_anyOf_i1)     |
 
-##### <a name="page_anyOf_i1_items_oneOf_i0"></a>Property `Distribution > page > anyOf > List of documents > Document object or link > oneOf > Document`
+#### <a name="page_items_anyOf_i0"></a>Property `Distribution > page > Document object or link > anyOf > Document`
 
 **Title:** Document
 
 inline description of Document
 
-| **Type**                  | `object`                                                                                                                                             |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                                     |
-| **Same definition as**    | [Document](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_page_anyOf_i1_items_oneOf_i0) |
+| **Type**                  | `object`                                                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                                 |
+| **Same definition as**    | [Document](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_page_items_anyOf_i0) |
 
-##### <a name="page_anyOf_i1_items_oneOf_i1"></a>Property `Distribution > page > anyOf > List of documents > Document object or link > oneOf > Link`
+#### <a name="page_items_anyOf_i1"></a>Property `Distribution > page > Document object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -1478,31 +1364,31 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                       |
+| Any of(Option)                                       |
 | ---------------------------------------------------- |
-| [Null allowed when not required](#checksum_oneOf_i0) |
-| [Checksum](#checksum_oneOf_i1)                       |
-| [Link](#checksum_oneOf_i2)                           |
+| [Null allowed when not required](#checksum_anyOf_i0) |
+| [Checksum](#checksum_anyOf_i1)                       |
+| [Link](#checksum_anyOf_i2)                           |
 
-### <a name="checksum_oneOf_i0"></a>Property `Distribution > checksum > oneOf > Null allowed when not required`
+### <a name="checksum_anyOf_i0"></a>Property `Distribution > checksum > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="checksum_oneOf_i1"></a>Property `Distribution > checksum > oneOf > Checksum`
+### <a name="checksum_anyOf_i1"></a>Property `Distribution > checksum > anyOf > Checksum`
 
 **Title:** Checksum
 
 inline description of Checksum
 
-| **Type**                  | `object`                                                                                                                                  |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                          |
-| **Same definition as**    | [Checksum](#accessService_anyOf_i1_items_oneOf_i0_servesDataset_anyOf_i1_items_oneOf_i0_sample_anyOf_i1_items_oneOf_i0_checksum_oneOf_i1) |
+| **Type**                  | `object`                                                                                                       |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                               |
+| **Same definition as**    | [Checksum](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_checksum_anyOf_i1) |
 
-### <a name="checksum_oneOf_i2"></a>Property `Distribution > checksum > oneOf > Link`
+### <a name="checksum_anyOf_i2"></a>Property `Distribution > checksum > anyOf > Link`
 
 **Title:** Link
 

@@ -72,26 +72,26 @@ The date on which the Concept Scheme was first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                       |
+| Any of(Option)                       |
 | ------------------------------------ |
-| [item 0](#created_anyOf_i1_oneOf_i0) |
-| [item 1](#created_anyOf_i1_oneOf_i1) |
-| [item 2](#created_anyOf_i1_oneOf_i2) |
-| [item 3](#created_anyOf_i1_oneOf_i3) |
+| [item 0](#created_anyOf_i1_anyOf_i0) |
+| [item 1](#created_anyOf_i1_anyOf_i1) |
+| [item 2](#created_anyOf_i1_anyOf_i2) |
+| [item 3](#created_anyOf_i1_anyOf_i3) |
 
-#### <a name="created_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 0`
+#### <a name="created_anyOf_i1_anyOf_i0"></a>Property `ConceptScheme > created > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="created_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 1`
+#### <a name="created_anyOf_i1_anyOf_i1"></a>Property `ConceptScheme > created > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="created_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 2`
+#### <a name="created_anyOf_i1_anyOf_i2"></a>Property `ConceptScheme > created > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -102,7 +102,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="created_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > created > anyOf > Date string > oneOf > item 3`
+#### <a name="created_anyOf_i1_anyOf_i3"></a>Property `ConceptScheme > created > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -159,26 +159,26 @@ The date of formal issuance (e.g., publication) of the concept scheme
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [item 0](#issued_anyOf_i1_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_oneOf_i3) |
+| [item 0](#issued_anyOf_i1_anyOf_i0) |
+| [item 1](#issued_anyOf_i1_anyOf_i1) |
+| [item 2](#issued_anyOf_i1_anyOf_i2) |
+| [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `ConceptScheme > issued > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `ConceptScheme > issued > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `ConceptScheme > issued > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -189,7 +189,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > issued > anyOf > Date string > oneOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `ConceptScheme > issued > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -230,26 +230,26 @@ The most recent date at which the concept scheme was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                        |
+| Any of(Option)                        |
 | ------------------------------------- |
-| [item 0](#modified_anyOf_i1_oneOf_i0) |
-| [item 1](#modified_anyOf_i1_oneOf_i1) |
-| [item 2](#modified_anyOf_i1_oneOf_i2) |
-| [item 3](#modified_anyOf_i1_oneOf_i3) |
+| [item 0](#modified_anyOf_i1_anyOf_i0) |
+| [item 1](#modified_anyOf_i1_anyOf_i1) |
+| [item 2](#modified_anyOf_i1_anyOf_i2) |
+| [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_oneOf_i0"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `ConceptScheme > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_oneOf_i1"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `ConceptScheme > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_oneOf_i2"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `ConceptScheme > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -260,7 +260,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_oneOf_i3"></a>Property `ConceptScheme > modified > anyOf > Date string > oneOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `ConceptScheme > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 

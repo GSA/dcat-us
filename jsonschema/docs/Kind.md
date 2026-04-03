@@ -8,18 +8,18 @@ Contact information for an individual or entity
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                   | Type               | Title/Description |
-| ------------------------------------------ | ------------------ | ----------------- |
-| - [@id](#@id )                             | string             | -                 |
-| - [@type](#@type )                         | string             | -                 |
-| - [address](#address )                     | More than one type | address           |
-| + [hasEmail](#hasEmail )                   | string             | Email             |
-| - [family-name](#family-name )             | null or string     | family name       |
-| + [fn](#fn )                               | string             | formatted name    |
-| - [given-name](#given-name )               | null or string     | given name        |
-| - [organization-name](#organization-name ) | null or string     | organization name |
-| - [tel](#tel )                             | null or string     | telephone         |
-| - [title](#title )                         | null or string     | position title    |
+| Property                                   | Type           | Title/Description |
+| ------------------------------------------ | -------------- | ----------------- |
+| - [@id](#@id )                             | string         | -                 |
+| - [@type](#@type )                         | string         | -                 |
+| - [address](#address )                     | null or array  | address           |
+| + [hasEmail](#hasEmail )                   | string         | Email             |
+| - [family-name](#family-name )             | null or string | family name       |
+| + [fn](#fn )                               | string         | formatted name    |
+| - [given-name](#given-name )               | null or string | given name        |
+| - [organization-name](#organization-name ) | null or string | organization name |
+| - [tel](#tel )                             | null or string | telephone         |
+| - [title](#title )                         | null or string | position title    |
 
 ## <a name="@id"></a>Property `Kind > @id`
 
@@ -39,45 +39,27 @@ Contact information for an individual or entity
 
 The address of the contact
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                      |
-| --------------------------------------------------- |
-| [Null allowed when not required](#address_anyOf_i0) |
-| [List of addresses](#address_anyOf_i1)              |
+| Each item of this array must be          | Description |
+| ---------------------------------------- | ----------- |
+| [Address object or link](#address_items) | -           |
 
-### <a name="address_anyOf_i0"></a>Property `Kind > address > anyOf > Null allowed when not required`
+### <a name="address_items"></a>Kind > address > Address object or link
 
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="address_anyOf_i1"></a>Property `Kind > address > anyOf > List of addresses`
-
-**Title:** List of addresses
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [item 1 items](#address_anyOf_i1_items) | -           |
-
-#### <a name="address_anyOf_i1_items"></a>Kind > address > anyOf > List of addresses > item 1 items
+**Title:** Address object or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                              |
-| ------------------------------------------- |
-| [Address](#address_anyOf_i1_items_oneOf_i0) |
-| [Link](#address_anyOf_i1_items_oneOf_i1)    |
+| Any of(Option)                     |
+| ---------------------------------- |
+| [Address](#address_items_anyOf_i0) |
+| [Link](#address_items_anyOf_i1)    |
 
-##### <a name="address_anyOf_i1_items_oneOf_i0"></a>Property `Kind > address > anyOf > List of addresses > item 1 items > oneOf > Address`
+#### <a name="address_items_anyOf_i0"></a>Property `Kind > address > Address object or link > anyOf > Address`
 
 **Title:** Address
 
@@ -88,7 +70,7 @@ inline address information
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
 
-##### <a name="address_anyOf_i1_items_oneOf_i1"></a>Property `Kind > address > anyOf > List of addresses > item 1 items > oneOf > Link`
+#### <a name="address_items_anyOf_i1"></a>Property `Kind > address > Address object or link > anyOf > Link`
 
 **Title:** Link
 

@@ -8,12 +8,12 @@ An entity that could be involved with a resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                 | Type               | Title/Description |
-| ------------------------ | ------------------ | ----------------- |
-| - [@id](#@id )           | string             | -                 |
-| - [@type](#@type )       | string             | -                 |
-| - [category](#category ) | More than one type | category          |
-| + [name](#name )         | string             | name              |
+| Property                 | Type          | Title/Description |
+| ------------------------ | ------------- | ----------------- |
+| - [@id](#@id )           | string        | -                 |
+| - [@type](#@type )       | string        | -                 |
+| - [category](#category ) | null or array | category          |
+| + [name](#name )         | string        | name              |
 
 ## <a name="@id"></a>Property `Agent > @id`
 
@@ -31,41 +31,42 @@ An entity that could be involved with a resource
 
 **Title:** category
 
-The type of the agent that makes the item available
+List of categories for the Agent
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be   | Description |
+| --------------------------------- | ----------- |
+| [category items](#category_items) | -           |
+
+### <a name="category_items"></a>Agent > category > category items
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#category_oneOf_i0) |
-| [Concept](#category_oneOf_i1)                        |
-| [Link](#category_oneOf_i2)                           |
+| Any of(Option)                      |
+| ----------------------------------- |
+| [Concept](#category_items_anyOf_i0) |
+| [Link](#category_items_anyOf_i1)    |
 
-### <a name="category_oneOf_i0"></a>Property `Agent > category > oneOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="category_oneOf_i1"></a>Property `Agent > category > oneOf > Concept`
+#### <a name="category_items_anyOf_i0"></a>Property `Agent > category > category items > anyOf > Concept`
 
 **Title:** Concept
 
-inline description of the agent type
+inline description of Concept
 
 | **Type**                  | `object`                |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="category_oneOf_i2"></a>Property `Agent > category > oneOf > Link`
+#### <a name="category_items_anyOf_i1"></a>Property `Agent > category > category items > anyOf > Link`
 
 **Title:** Link
 
-reference iri of the agent type
+reference iri of Concept
 
 | **Type**   | `string` |
 | ---------- | -------- |

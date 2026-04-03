@@ -8,20 +8,20 @@ A record in a catalog, describing the registration of a single resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                         | Type               | Title/Description                                                                   |
-| -------------------------------- | ------------------ | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                   | string             | -                                                                                   |
-| - [@type](#@type )               | string             | -                                                                                   |
-| - [status](#status )             | More than one type | change type                                                                         |
-| - [conformsTo](#conformsTo )     | More than one type | application profile                                                                 |
-| - [description](#description )   | More than one type | Descriptions                                                                        |
-| - [issued](#issued )             | More than one type | listing date                                                                        |
-| - [language](#language )         | More than one type | language                                                                            |
-| + [modified](#modified )         | More than one type | update/modification date                                                            |
-| - [source](#source )             | null or string     | source metadata                                                                     |
-| - [title](#title )               | null or string     | title                                                                               |
-| - [titleMap](#titleMap )         | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| + [primaryTopic](#primaryTopic ) | string             | primary topic                                                                       |
+| Property                         | Type                    | Title/Description                                                                   |
+| -------------------------------- | ----------------------- | ----------------------------------------------------------------------------------- |
+| - [@id](#@id )                   | string                  | -                                                                                   |
+| - [@type](#@type )               | string                  | -                                                                                   |
+| - [status](#status )             | More than one type      | change type                                                                         |
+| - [conformsTo](#conformsTo )     | More than one type      | application profile                                                                 |
+| - [description](#description )   | null or array of string | Descriptions                                                                        |
+| - [issued](#issued )             | null or array           | listing date                                                                        |
+| - [language](#language )         | More than one type      | language                                                                            |
+| + [modified](#modified )         | More than one type      | update/modification date                                                            |
+| - [source](#source )             | null or string          | source metadata                                                                     |
+| - [title](#title )               | null or string          | title                                                                               |
+| - [titleMap](#titleMap )         | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| + [primaryTopic](#primaryTopic ) | string                  | primary topic                                                                       |
 
 ## <a name="@id"></a>Property `CatalogRecord > @id`
 
@@ -45,20 +45,20 @@ The status of the catalog record in the context of editorial flow of the dataset
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                     |
+| Any of(Option)                                     |
 | -------------------------------------------------- |
-| [Null allowed when not required](#status_oneOf_i0) |
-| [Concept](#status_oneOf_i1)                        |
-| [Link](#status_oneOf_i2)                           |
+| [Null allowed when not required](#status_anyOf_i0) |
+| [Concept](#status_anyOf_i1)                        |
+| [Link](#status_anyOf_i2)                           |
 
-### <a name="status_oneOf_i0"></a>Property `CatalogRecord > status > oneOf > Null allowed when not required`
+### <a name="status_anyOf_i0"></a>Property `CatalogRecord > status > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="status_oneOf_i1"></a>Property `CatalogRecord > status > oneOf > Concept`
+### <a name="status_anyOf_i1"></a>Property `CatalogRecord > status > anyOf > Concept`
 
 **Title:** Concept
 
@@ -69,7 +69,7 @@ inline description of status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="status_oneOf_i2"></a>Property `CatalogRecord > status > oneOf > Link`
+### <a name="status_anyOf_i2"></a>Property `CatalogRecord > status > anyOf > Link`
 
 **Title:** Link
 
@@ -89,20 +89,20 @@ An Application Profile that the Catalog Record's metadata conforms to
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                         |
+| Any of(Option)                                         |
 | ------------------------------------------------------ |
-| [Null allowed when not required](#conformsTo_oneOf_i0) |
-| [Standard](#conformsTo_oneOf_i1)                       |
-| [Link](#conformsTo_oneOf_i2)                           |
+| [Null allowed when not required](#conformsTo_anyOf_i0) |
+| [Standard](#conformsTo_anyOf_i1)                       |
+| [Link](#conformsTo_anyOf_i2)                           |
 
-### <a name="conformsTo_oneOf_i0"></a>Property `CatalogRecord > conformsTo > oneOf > Null allowed when not required`
+### <a name="conformsTo_anyOf_i0"></a>Property `CatalogRecord > conformsTo > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="conformsTo_oneOf_i1"></a>Property `CatalogRecord > conformsTo > oneOf > Standard`
+### <a name="conformsTo_anyOf_i1"></a>Property `CatalogRecord > conformsTo > anyOf > Standard`
 
 **Title:** Standard
 
@@ -113,7 +113,7 @@ inline description of application profile
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
-### <a name="conformsTo_oneOf_i2"></a>Property `CatalogRecord > conformsTo > oneOf > Link`
+### <a name="conformsTo_anyOf_i2"></a>Property `CatalogRecord > conformsTo > anyOf > Link`
 
 **Title:** Link
 
@@ -129,34 +129,14 @@ reference iri of application profile
 
 A list of free-text accounts of the catalog record
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array of string` |
+| -------- | ------------------------- |
 
-| Any of(Option)                                          |
-| ------------------------------------------------------- |
-| [Null allowed when not required](#description_anyOf_i0) |
-| [Array of descriptions](#description_anyOf_i1)          |
+| Each item of this array must be          | Description |
+| ---------------------------------------- | ----------- |
+| [Description string](#description_items) | -           |
 
-### <a name="description_anyOf_i0"></a>Property `CatalogRecord > description > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="description_anyOf_i1"></a>Property `CatalogRecord > description > anyOf > Array of descriptions`
-
-**Title:** Array of descriptions
-
-| **Type** | `array of string` |
-| -------- | ----------------- |
-
-| Each item of this array must be                   | Description |
-| ------------------------------------------------- | ----------- |
-| [Description string](#description_anyOf_i1_items) | -           |
-
-#### <a name="description_anyOf_i1_items"></a>CatalogRecord > description > anyOf > Array of descriptions > Description string
+### <a name="description_items"></a>CatalogRecord > description > Description string
 
 **Title:** Description string
 
@@ -169,34 +149,14 @@ A list of free-text accounts of the catalog record
 
 List of dates on which the catalog record was included in the catalog
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#issued_anyOf_i0) |
-| [Array of dates](#issued_anyOf_i1)                 |
+| Each item of this array must be | Description |
+| ------------------------------- | ----------- |
+| [Date string](#issued_items)    | -           |
 
-### <a name="issued_anyOf_i0"></a>Property `CatalogRecord > issued > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="issued_anyOf_i1"></a>Property `CatalogRecord > issued > anyOf > Array of dates`
-
-**Title:** Array of dates
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be       | Description |
-| ------------------------------------- | ----------- |
-| [Date string](#issued_anyOf_i1_items) | -           |
-
-#### <a name="issued_anyOf_i1_items"></a>CatalogRecord > issued > anyOf > Array of dates > Date string
+### <a name="issued_items"></a>CatalogRecord > issued > Date string
 
 **Title:** Date string
 
@@ -204,26 +164,26 @@ List of dates on which the catalog record was included in the catalog
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#issued_anyOf_i1_items_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_items_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_items_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_items_oneOf_i3) |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#issued_items_anyOf_i0) |
+| [item 1](#issued_items_anyOf_i1) |
+| [item 2](#issued_items_anyOf_i2) |
+| [item 3](#issued_items_anyOf_i3) |
 
-##### <a name="issued_anyOf_i1_items_oneOf_i0"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 0`
+#### <a name="issued_items_anyOf_i0"></a>Property `CatalogRecord > issued > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-##### <a name="issued_anyOf_i1_items_oneOf_i1"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 1`
+#### <a name="issued_items_anyOf_i1"></a>Property `CatalogRecord > issued > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-##### <a name="issued_anyOf_i1_items_oneOf_i2"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 2`
+#### <a name="issued_items_anyOf_i2"></a>Property `CatalogRecord > issued > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -234,7 +194,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-##### <a name="issued_anyOf_i1_items_oneOf_i3"></a>Property `CatalogRecord > issued > anyOf > Array of dates > Date string > oneOf > item 3`
+#### <a name="issued_items_anyOf_i3"></a>Property `CatalogRecord > issued > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -312,26 +272,26 @@ The most recent date on which the catalog record was changed or modified
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)               |
+| Any of(Option)               |
 | ---------------------------- |
-| [item 0](#modified_oneOf_i0) |
-| [item 1](#modified_oneOf_i1) |
-| [item 2](#modified_oneOf_i2) |
-| [item 3](#modified_oneOf_i3) |
+| [item 0](#modified_anyOf_i0) |
+| [item 1](#modified_anyOf_i1) |
+| [item 2](#modified_anyOf_i2) |
+| [item 3](#modified_anyOf_i3) |
 
-### <a name="modified_oneOf_i0"></a>Property `CatalogRecord > modified > oneOf > item 0`
+### <a name="modified_anyOf_i0"></a>Property `CatalogRecord > modified > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-### <a name="modified_oneOf_i1"></a>Property `CatalogRecord > modified > oneOf > item 1`
+### <a name="modified_anyOf_i1"></a>Property `CatalogRecord > modified > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-### <a name="modified_oneOf_i2"></a>Property `CatalogRecord > modified > oneOf > item 2`
+### <a name="modified_anyOf_i2"></a>Property `CatalogRecord > modified > anyOf > item 2`
 
 A year in YYYY format
 
@@ -342,7 +302,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-### <a name="modified_oneOf_i3"></a>Property `CatalogRecord > modified > oneOf > item 3`
+### <a name="modified_anyOf_i3"></a>Property `CatalogRecord > modified > anyOf > item 3`
 
 A year and month in YYYY-MM format
 

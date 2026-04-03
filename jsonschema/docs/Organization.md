@@ -8,17 +8,17 @@ Information about an organization, including other organizations that it is part
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                   | Type               | Title/Description                                                                      |
-| ------------------------------------------ | ------------------ | -------------------------------------------------------------------------------------- |
-| - [@id](#@id )                             | string             | -                                                                                      |
-| - [@type](#@type )                         | string             | -                                                                                      |
-| + [name](#name )                           | string             | name                                                                                   |
-| - [subOrganizationOf](#subOrganizationOf ) | More than one type | suborganization of                                                                     |
-| - [altLabel](#altLabel )                   | null or string     | alternative label                                                                      |
-| - [altLabelMap](#altLabelMap )             | null or object     | Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [notation](#notation )                   | More than one type | notation                                                                               |
-| - [prefLabel](#prefLabel )                 | null or string     | preferred label                                                                        |
-| - [prefLabelMap](#prefLabelMap )           | null or object     | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
+| Property                                   | Type                    | Title/Description                                                                      |
+| ------------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------- |
+| - [@id](#@id )                             | string                  | -                                                                                      |
+| - [@type](#@type )                         | string                  | -                                                                                      |
+| + [name](#name )                           | string                  | name                                                                                   |
+| - [subOrganizationOf](#subOrganizationOf ) | null or array           | suborganization of                                                                     |
+| - [altLabel](#altLabel )                   | null or string          | alternative label                                                                      |
+| - [altLabelMap](#altLabelMap )             | null or object          | Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| - [notation](#notation )                   | null or array of string | notation                                                                               |
+| - [prefLabel](#prefLabel )                 | null or string          | preferred label                                                                        |
+| - [prefLabelMap](#prefLabelMap )           | null or object          | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
 
 ## <a name="@id"></a>Property `Organization > @id`
 
@@ -48,34 +48,14 @@ The full name of the Organization
 
 Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array` |
+| -------- | --------------- |
 
-| Any of(Option)                                                |
-| ------------------------------------------------------------- |
-| [Null allowed when not required](#subOrganizationOf_anyOf_i0) |
-| [List of organizations](#subOrganizationOf_anyOf_i1)          |
+| Each item of this array must be                         | Description |
+| ------------------------------------------------------- | ----------- |
+| [Organization object or link](#subOrganizationOf_items) | -           |
 
-### <a name="subOrganizationOf_anyOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="subOrganizationOf_anyOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations`
-
-**Title:** List of organizations
-
-| **Type** | `array` |
-| -------- | ------- |
-
-| Each item of this array must be                                  | Description |
-| ---------------------------------------------------------------- | ----------- |
-| [Organization object or link](#subOrganizationOf_anyOf_i1_items) | -           |
-
-#### <a name="subOrganizationOf_anyOf_i1_items"></a>Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link
+### <a name="subOrganizationOf_items"></a>Organization > subOrganizationOf > Organization object or link
 
 **Title:** Organization object or link
 
@@ -83,12 +63,12 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                                             |
-| ---------------------------------------------------------- |
-| [Organization](#subOrganizationOf_anyOf_i1_items_oneOf_i0) |
-| [Link](#subOrganizationOf_anyOf_i1_items_oneOf_i1)         |
+| Any of(Option)                                    |
+| ------------------------------------------------- |
+| [Organization](#subOrganizationOf_items_anyOf_i0) |
+| [Link](#subOrganizationOf_items_anyOf_i1)         |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i0"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link > oneOf > Organization`
+#### <a name="subOrganizationOf_items_anyOf_i0"></a>Property `Organization > subOrganizationOf > Organization object or link > anyOf > Organization`
 
 **Title:** Organization
 
@@ -99,7 +79,7 @@ inline description of Organization
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
-##### <a name="subOrganizationOf_anyOf_i1_items_oneOf_i1"></a>Property `Organization > subOrganizationOf > anyOf > List of organizations > Organization object or link > oneOf > Link`
+#### <a name="subOrganizationOf_items_anyOf_i1"></a>Property `Organization > subOrganizationOf > Organization object or link > anyOf > Link`
 
 **Title:** Link
 
@@ -131,34 +111,14 @@ Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french w
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array of string` |
+| -------- | ------------------------- |
 
-| Any of(Option)                                       |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#notation_anyOf_i0) |
-| [List of abbreviations](#notation_anyOf_i1)          |
+| Each item of this array must be | Description |
+| ------------------------------- | ----------- |
+| [Abbreviation](#notation_items) | -           |
 
-### <a name="notation_anyOf_i0"></a>Property `Organization > notation > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="notation_anyOf_i1"></a>Property `Organization > notation > anyOf > List of abbreviations`
-
-**Title:** List of abbreviations
-
-| **Type** | `array of string` |
-| -------- | ----------------- |
-
-| Each item of this array must be          | Description |
-| ---------------------------------------- | ----------- |
-| [Abbreviation](#notation_anyOf_i1_items) | -           |
-
-#### <a name="notation_anyOf_i1_items"></a>Organization > notation > anyOf > List of abbreviations > Abbreviation
+### <a name="notation_items"></a>Organization > notation > Abbreviation
 
 **Title:** Abbreviation
 

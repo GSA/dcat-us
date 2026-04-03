@@ -8,13 +8,13 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                                           | Type               | Title/Description                |
-| ------------------------------------------------------------------ | ------------------ | -------------------------------- |
-| - [@id](#@id )                                                     | string             | -                                |
-| - [@type](#@type )                                                 | string             | -                                |
-| + [cuiBannerMarking](#cuiBannerMarking )                           | string             | CUI banner marking               |
-| + [designationIndicator](#designationIndicator )                   | string             | CUI designation indicator        |
-| - [requiredIndicatorPerAuthority](#requiredIndicatorPerAuthority ) | More than one type | required indicator per authority |
+| Property                                                           | Type                    | Title/Description                |
+| ------------------------------------------------------------------ | ----------------------- | -------------------------------- |
+| - [@id](#@id )                                                     | string                  | -                                |
+| - [@type](#@type )                                                 | string                  | -                                |
+| + [cuiBannerMarking](#cuiBannerMarking )                           | string                  | CUI banner marking               |
+| + [designationIndicator](#designationIndicator )                   | string                  | CUI designation indicator        |
+| - [requiredIndicatorPerAuthority](#requiredIndicatorPerAuthority ) | null or array of string | required indicator per authority |
 
 ## <a name="@id"></a>Property `CUIRestriction > @id`
 
@@ -54,34 +54,14 @@ Designation Indicator shows which agency made the document CUI
 
 List of free text of the required indicator
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type** | `null or array of string` |
+| -------- | ------------------------- |
 
-| Any of(Option)                                                            |
-| ------------------------------------------------------------------------- |
-| [Null allowed when not required](#requiredIndicatorPerAuthority_anyOf_i0) |
-| [Array of indicators](#requiredIndicatorPerAuthority_anyOf_i1)            |
+| Each item of this array must be                          | Description |
+| -------------------------------------------------------- | ----------- |
+| [Indicator string](#requiredIndicatorPerAuthority_items) | -           |
 
-### <a name="requiredIndicatorPerAuthority_anyOf_i0"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="requiredIndicatorPerAuthority_anyOf_i1"></a>Property `CUIRestriction > requiredIndicatorPerAuthority > anyOf > Array of indicators`
-
-**Title:** Array of indicators
-
-| **Type** | `array of string` |
-| -------- | ----------------- |
-
-| Each item of this array must be                                   | Description |
-| ----------------------------------------------------------------- | ----------- |
-| [Indicator string](#requiredIndicatorPerAuthority_anyOf_i1_items) | -           |
-
-#### <a name="requiredIndicatorPerAuthority_anyOf_i1_items"></a>CUIRestriction > requiredIndicatorPerAuthority > anyOf > Array of indicators > Indicator string
+### <a name="requiredIndicatorPerAuthority_items"></a>CUIRestriction > requiredIndicatorPerAuthority > Indicator string
 
 **Title:** Indicator string
 
