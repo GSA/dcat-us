@@ -15,7 +15,7 @@ Information about a text document
 | - [accessURL](#accessURL )                         | More than one type | access URL                                                                          |
 | - [downloadURL](#downloadURL )                     | More than one type | download URL                                                                        |
 | - [creator](#creator )                             | null or array      | author                                                                              |
-| - [mediaType](#mediaType )                         | More than one type | media type                                                                          |
+| - [mediaType](#mediaType )                         | null or string     | media type                                                                          |
 | - [abstract](#abstract )                           | null or string     | abstract                                                                            |
 | - [abstractMap](#abstractMap )                     | null or object     | Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
 | - [bibliographicCitation](#bibliographicCitation ) | null or string     | bibliographic citation                                                              |
@@ -158,45 +158,10 @@ reference iri of author
 
 **Title:** media type
 
-The file format of the Document as defined in the official register of media types managed by IANA
+The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                        |
-| ----------------------------------------------------- |
-| [Null allowed when not required](#mediaType_anyOf_i0) |
-| [MediaType](#mediaType_anyOf_i1)                      |
-| [Link](#mediaType_anyOf_i2)                           |
-
-### <a name="mediaType_anyOf_i0"></a>Property `Document > mediaType > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="mediaType_anyOf_i1"></a>Property `Document > mediaType > anyOf > MediaType`
-
-**Title:** MediaType
-
-inline description of MediaType
-
-| **Type**                  | `object`                    |
-| ------------------------- | --------------------------- |
-| **Additional properties** | Any type allowed            |
-| **Defined in**            | [Mediatype](./Mediatype.md) |
-
-### <a name="mediaType_anyOf_i2"></a>Property `Document > mediaType > anyOf > Link`
-
-**Title:** Link
-
-reference iri of MediaType
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="abstract"></a>Property `Document > abstract`
 

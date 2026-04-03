@@ -55,7 +55,7 @@ Information about a set of data
 | + [publisher](#publisher )                                 | More than one type      | publisher                                                                           |
 | - [relation](#relation )                                   | null or array of string | related resource                                                                    |
 | - [replaces](#replaces )                                   | null or array           | replaces                                                                            |
-| - [rights](#rights )                                       | More than one type      | rights                                                                              |
+| - [rights](#rights )                                       | null or array           | rights                                                                              |
 | - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                                                                       |
 | - [source](#source )                                       | null or array           | data source                                                                         |
 | - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage                                                         |
@@ -875,7 +875,7 @@ reference iri of Distribution
 
 **Title:** liability statement
 
-A liability statement about the dataset
+A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -884,7 +884,7 @@ A liability statement about the dataset
 | Any of(Option)                                                 |
 | -------------------------------------------------------------- |
 | [Null allowed when not required](#liabilityStatement_anyOf_i0) |
-| [LiabilityStatement](#liabilityStatement_anyOf_i1)             |
+| [item 1](#liabilityStatement_anyOf_i1)                         |
 | [Link](#liabilityStatement_anyOf_i2)                           |
 
 ### <a name="liabilityStatement_anyOf_i0"></a>Property `Dataset > liabilityStatement > anyOf > Null allowed when not required`
@@ -894,22 +894,18 @@ A liability statement about the dataset
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="liabilityStatement_anyOf_i1"></a>Property `Dataset > liabilityStatement > anyOf > LiabilityStatement`
+### <a name="liabilityStatement_anyOf_i1"></a>Property `Dataset > liabilityStatement > anyOf > item 1`
 
-**Title:** LiabilityStatement
+Full text of the liability statement
 
-inline description of LiabilityStatement
-
-| **Type**                  | `object`                                                                                                                           |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                   |
-| **Same definition as**    | [LiabilityStatement](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_liabilityStatement_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="liabilityStatement_anyOf_i2"></a>Property `Dataset > liabilityStatement > anyOf > Link`
 
 **Title:** Link
 
-reference iri of LiabilityStatement
+reference iri of the liability statement
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -991,7 +987,7 @@ Information that indicates whether the Dataset is open data, has access restrict
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
 | [Null allowed when not required](#accessRights_anyOf_i0) |
-| [RightsStatement](#accessRights_anyOf_i1)                |
+| [item 1](#accessRights_anyOf_i1)                         |
 | [Link](#accessRights_anyOf_i2)                           |
 
 ### <a name="accessRights_anyOf_i0"></a>Property `Dataset > accessRights > anyOf > Null allowed when not required`
@@ -1001,22 +997,18 @@ Information that indicates whether the Dataset is open data, has access restrict
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_anyOf_i1"></a>Property `Dataset > accessRights > anyOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `Dataset > accessRights > anyOf > item 1`
 
-**Title:** RightsStatement
+Text description of the access rights
 
-inline description of RightsStatement
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_accessRights_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="accessRights_anyOf_i2"></a>Property `Dataset > accessRights > anyOf > Link`
 
 **Title:** Link
 
-reference iri of RightsStatement
+reference iri of the access rights
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -1646,44 +1638,40 @@ A year and month in YYYY-MM format
 
 **Title:** provenance
 
-List of statements about the lineage of a Dataset
+List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                  | Description |
-| ------------------------------------------------ | ----------- |
-| [ProvenanceStatement or link](#provenance_items) | -           |
+| Each item of this array must be                        | Description |
+| ------------------------------------------------------ | ----------- |
+| [Provenance statement text or link](#provenance_items) | -           |
 
-### <a name="provenance_items"></a>Dataset > provenance > ProvenanceStatement or link
+### <a name="provenance_items"></a>Dataset > provenance > Provenance statement text or link
 
-**Title:** ProvenanceStatement or link
+**Title:** Provenance statement text or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                    |
-| ------------------------------------------------- |
-| [ProvenanceStatement](#provenance_items_anyOf_i0) |
-| [Link](#provenance_items_anyOf_i1)                |
+| Any of(Option)                       |
+| ------------------------------------ |
+| [item 0](#provenance_items_anyOf_i0) |
+| [Link](#provenance_items_anyOf_i1)   |
 
-#### <a name="provenance_items_anyOf_i0"></a>Property `Dataset > provenance > ProvenanceStatement or link > anyOf > ProvenanceStatement`
+#### <a name="provenance_items_anyOf_i0"></a>Property `Dataset > provenance > Provenance statement text or link > anyOf > item 0`
 
-**Title:** ProvenanceStatement
+Full text of the provenance statement
 
-inline description of ProvenanceStatement
+| **Type** | `string` |
+| -------- | -------- |
 
-| **Type**                  | `object`                                                                                                                          |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                                  |
-| **Same definition as**    | [ProvenanceStatement](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_provenance_items_anyOf_i0) |
-
-#### <a name="provenance_items_anyOf_i1"></a>Property `Dataset > provenance > ProvenanceStatement or link > anyOf > Link`
+#### <a name="provenance_items_anyOf_i1"></a>Property `Dataset > provenance > Provenance statement text or link > anyOf > Link`
 
 **Title:** Link
 
-reference iri of ProvenanceStatement
+reference iri of the provenance statement
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -1800,41 +1788,40 @@ reference iri of Dataset
 
 **Title:** rights
 
-List of statements concerning all rights for the Dataset not addressed with license or accessRights, such as copyright statements
+A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be              | Description |
+| -------------------------------------------- | ----------- |
+| [Statement of rights or link](#rights_items) | -           |
+
+### <a name="rights_items"></a>Dataset > rights > Statement of rights or link
+
+**Title:** Statement of rights or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#rights_anyOf_i0) |
-| [RightsStatement](#rights_anyOf_i1)                |
-| [Link](#rights_anyOf_i2)                           |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#rights_items_anyOf_i0) |
+| [Link](#rights_items_anyOf_i1)   |
 
-### <a name="rights_anyOf_i0"></a>Property `Dataset > rights > anyOf > Null allowed when not required`
+#### <a name="rights_items_anyOf_i0"></a>Property `Dataset > rights > Statement of rights or link > anyOf > item 0`
 
-**Title:** Null allowed when not required
+Full text of a statement of rights
 
-| **Type** | `null` |
-| -------- | ------ |
+| **Type** | `string` |
+| -------- | -------- |
 
-### <a name="rights_anyOf_i1"></a>Property `Dataset > rights > anyOf > RightsStatement`
-
-**Title:** RightsStatement
-
-inline description of RightsStatement
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_accessRights_anyOf_i1) |
-
-### <a name="rights_anyOf_i2"></a>Property `Dataset > rights > anyOf > Link`
+#### <a name="rights_items_anyOf_i1"></a>Property `Dataset > rights > Statement of rights or link > anyOf > Link`
 
 **Title:** Link
 
-reference iri of RightsStatement
+reference iri of a statement of rights
 
 | **Type**   | `string` |
 | ---------- | -------- |

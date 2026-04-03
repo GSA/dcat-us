@@ -322,33 +322,29 @@ Information that indicates whether the Data Service is open data, has access res
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                            |
-| ----------------------------------------- |
-| [item 0](#accessRights_anyOf_i0)          |
-| [RightsStatement](#accessRights_anyOf_i1) |
-| [Link](#accessRights_anyOf_i2)            |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#accessRights_anyOf_i0) |
+| [item 1](#accessRights_anyOf_i1) |
+| [Link](#accessRights_anyOf_i2)   |
 
 ### <a name="accessRights_anyOf_i0"></a>Property `DataService > accessRights > anyOf > item 0`
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_anyOf_i1"></a>Property `DataService > accessRights > anyOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `DataService > accessRights > anyOf > item 1`
 
-**Title:** RightsStatement
+Text description of the access rights
 
-inline description of access rights
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="accessRights_anyOf_i2"></a>Property `DataService > accessRights > anyOf > Link`
 
 **Title:** Link
 
-reference iri of access rights
+reference iri of the access rights
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -680,7 +676,7 @@ Language or languages supported by the Data Service. This should be provided as 
 
 **Title:** license
 
-The license under which the Data Service is made available
+The license under which the Data Service is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -689,7 +685,7 @@ The license under which the Data Service is made available
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
-| [LicenseDocument](#license_anyOf_i1)                |
+| [item 1](#license_anyOf_i1)                         |
 | [Link](#license_anyOf_i2)                           |
 
 ### <a name="license_anyOf_i0"></a>Property `DataService > license > anyOf > Null allowed when not required`
@@ -699,22 +695,18 @@ The license under which the Data Service is made available
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_anyOf_i1"></a>Property `DataService > license > anyOf > LicenseDocument`
+### <a name="license_anyOf_i1"></a>Property `DataService > license > anyOf > item 1`
 
-**Title:** LicenseDocument
+Full text of the license
 
-inline description of LicenseDocument
-
-| **Type**                  | `object`                                                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                     |
-| **Same definition as**    | [LicenseDocument](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_license_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="license_anyOf_i2"></a>Property `DataService > license > anyOf > Link`
 
 **Title:** Link
 
-reference iri of LicenseDocument
+reference iri of the license
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -832,7 +824,7 @@ reference iri of Agent
 
 **Title:** rights
 
-A list of statements concerning all rights for the Data Service not addressed with license or accessRights, such as copyright statements
+A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -849,27 +841,23 @@ A list of statements concerning all rights for the Data Service not addressed wi
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                            |
-| ----------------------------------------- |
-| [RightsStatement](#rights_items_anyOf_i0) |
-| [Link](#rights_items_anyOf_i1)            |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#rights_items_anyOf_i0) |
+| [Link](#rights_items_anyOf_i1)   |
 
-#### <a name="rights_items_anyOf_i0"></a>Property `DataService > rights > RightsStatement object or link > anyOf > RightsStatement`
+#### <a name="rights_items_anyOf_i0"></a>Property `DataService > rights > RightsStatement object or link > anyOf > item 0`
 
-**Title:** RightsStatement
+Full text of a statement of rights
 
-inline description of RightsStatement
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 #### <a name="rights_items_anyOf_i1"></a>Property `DataService > rights > RightsStatement object or link > anyOf > Link`
 
 **Title:** Link
 
-reference iri of RightsStatement
+reference iri of a statement of rights
 
 | **Type**   | `string` |
 | ---------- | -------- |

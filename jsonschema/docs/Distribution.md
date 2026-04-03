@@ -18,10 +18,10 @@ A file that distributes the dataset
 | - [accessService](#accessService )                         | null or array      | access service                                                                      |
 | - [accessURL](#accessURL )                                 | More than one type | access URL                                                                          |
 | - [byteSize](#byteSize )                                   | null or string     | byte size                                                                           |
-| - [compressFormat](#compressFormat )                       | More than one type | compression format                                                                  |
+| - [compressFormat](#compressFormat )                       | null or string     | compression format                                                                  |
 | - [downloadURL](#downloadURL )                             | More than one type | download URL                                                                        |
-| - [mediaType](#mediaType )                                 | More than one type | media type                                                                          |
-| - [packageFormat](#packageFormat )                         | More than one type | packaging format                                                                    |
+| - [mediaType](#mediaType )                                 | null or string     | media type                                                                          |
+| - [packageFormat](#packageFormat )                         | null or string     | packaging format                                                                    |
 | - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string     | Spatial resolution (meters)                                                         |
 | - [temporalResolution](#temporalResolution )               | null or string     | termporal resolution                                                                |
 | - [availability](#availability )                           | More than one type | availability                                                                        |
@@ -33,14 +33,14 @@ A file that distributes the dataset
 | - [conformsTo](#conformsTo )                               | null or array      | linked schemas                                                                      |
 | - [description](#description )                             | null or string     | description                                                                         |
 | - [descriptionMap](#descriptionMap )                       | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [format](#format )                                       | More than one type | format                                                                              |
+| - [format](#format )                                       | null or string     | format                                                                              |
 | - [identifier](#identifier )                               | More than one type | identifier                                                                          |
 | - [otherIdentifier](#otherIdentifier )                     | null or array      | other identifier                                                                    |
 | - [issued](#issued )                                       | More than one type | release date                                                                        |
 | - [language](#language )                                   | More than one type | language                                                                            |
 | - [license](#license )                                     | More than one type | license                                                                             |
 | - [modified](#modified )                                   | More than one type | last modified                                                                       |
-| - [rights](#rights )                                       | More than one type | rights                                                                              |
+| - [rights](#rights )                                       | null or array      | rights                                                                              |
 | - [title](#title )                                         | null or string     | title                                                                               |
 | - [titleMap](#titleMap )                                   | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
 | - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array      | quality measurement                                                                 |
@@ -282,43 +282,8 @@ The size of a Distribution in bytes
 
 The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                             |
-| ---------------------------------------------------------- |
-| [Null allowed when not required](#compressFormat_anyOf_i0) |
-| [MediaType](#compressFormat_anyOf_i1)                      |
-| [Link](#compressFormat_anyOf_i2)                           |
-
-### <a name="compressFormat_anyOf_i0"></a>Property `Distribution > compressFormat > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="compressFormat_anyOf_i1"></a>Property `Distribution > compressFormat > anyOf > MediaType`
-
-**Title:** MediaType
-
-inline description of MediaType
-
-| **Type**                  | `object`                                                                                                              |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                      |
-| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
-
-### <a name="compressFormat_anyOf_i2"></a>Property `Distribution > compressFormat > anyOf > Link`
-
-**Title:** Link
-
-reference iri of MediaType
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="downloadURL"></a>Property `Distribution > downloadURL`
 
@@ -356,45 +321,10 @@ reference iri of Resource
 
 **Title:** media type
 
-The media type of the Distribution as defined in the official register of media types managed by IANA
+The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                        |
-| ----------------------------------------------------- |
-| [Null allowed when not required](#mediaType_anyOf_i0) |
-| [MediaType](#mediaType_anyOf_i1)                      |
-| [Link](#mediaType_anyOf_i2)                           |
-
-### <a name="mediaType_anyOf_i0"></a>Property `Distribution > mediaType > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="mediaType_anyOf_i1"></a>Property `Distribution > mediaType > anyOf > MediaType`
-
-**Title:** MediaType
-
-inline description of MediaType
-
-| **Type**                  | `object`                                                                                                              |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                      |
-| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
-
-### <a name="mediaType_anyOf_i2"></a>Property `Distribution > mediaType > anyOf > Link`
-
-**Title:** Link
-
-reference iri of MediaType
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="packageFormat"></a>Property `Distribution > packageFormat`
 
@@ -402,43 +332,8 @@ reference iri of MediaType
 
 The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                            |
-| --------------------------------------------------------- |
-| [Null allowed when not required](#packageFormat_anyOf_i0) |
-| [MediaType](#packageFormat_anyOf_i1)                      |
-| [Link](#packageFormat_anyOf_i2)                           |
-
-### <a name="packageFormat_anyOf_i0"></a>Property `Distribution > packageFormat > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="packageFormat_anyOf_i1"></a>Property `Distribution > packageFormat > anyOf > MediaType`
-
-**Title:** MediaType
-
-inline description of MediaType
-
-| **Type**                  | `object`                                                                                                              |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                      |
-| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
-
-### <a name="packageFormat_anyOf_i2"></a>Property `Distribution > packageFormat > anyOf > Link`
-
-**Title:** Link
-
-reference iri of MediaType
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="spatialResolutionInMeters"></a>Property `Distribution > spatialResolutionInMeters`
 
@@ -688,7 +583,7 @@ reference iri of UseRestriction
 
 **Title:** access rights
 
-Information regarding access or restrictions based on privacy, security, or other policies
+Information that indicates whether the Distribution is open data, has access restrictions or is not public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -697,7 +592,7 @@ Information regarding access or restrictions based on privacy, security, or othe
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
 | [Null allowed when not required](#accessRights_anyOf_i0) |
-| [RightsStatement](#accessRights_anyOf_i1)                |
+| [item 1](#accessRights_anyOf_i1)                         |
 | [Link](#accessRights_anyOf_i2)                           |
 
 ### <a name="accessRights_anyOf_i0"></a>Property `Distribution > accessRights > anyOf > Null allowed when not required`
@@ -707,22 +602,18 @@ Information regarding access or restrictions based on privacy, security, or othe
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_anyOf_i1"></a>Property `Distribution > accessRights > anyOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `Distribution > accessRights > anyOf > item 1`
 
-**Title:** RightsStatement
+Text description of the access rights
 
-inline description of RightsStatement
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessRights_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="accessRights_anyOf_i2"></a>Property `Distribution > accessRights > anyOf > Link`
 
 **Title:** Link
 
-reference iri of RightsStatement
+reference iri of the access rights
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -795,45 +686,10 @@ Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
 
 **Title:** format
 
-The file format of the Distribution
+A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#format_anyOf_i0) |
-| [MediaType](#format_anyOf_i1)                      |
-| [Link](#format_anyOf_i2)                           |
-
-### <a name="format_anyOf_i0"></a>Property `Distribution > format > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
-
-| **Type** | `null` |
-| -------- | ------ |
-
-### <a name="format_anyOf_i1"></a>Property `Distribution > format > anyOf > MediaType`
-
-**Title:** MediaType
-
-inline description of the format
-
-| **Type**                  | `object`                                                                                                              |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                      |
-| **Same definition as**    | [MediaType](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_compressFormat_anyOf_i1) |
-
-### <a name="format_anyOf_i2"></a>Property `Distribution > format > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the format
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type** | `null or string` |
+| -------- | ---------------- |
 
 ## <a name="identifier"></a>Property `Distribution > identifier`
 
@@ -1057,7 +913,7 @@ A language or languages used in the Distribution. This should be provided as an 
 
 **Title:** license
 
-A license under which the Distribution is made available
+The license under which the Distribution is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1066,7 +922,7 @@ A license under which the Distribution is made available
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
-| [LicenseDocument](#license_anyOf_i1)                |
+| [item 1](#license_anyOf_i1)                         |
 | [Link](#license_anyOf_i2)                           |
 
 ### <a name="license_anyOf_i0"></a>Property `Distribution > license > anyOf > Null allowed when not required`
@@ -1076,22 +932,18 @@ A license under which the Distribution is made available
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_anyOf_i1"></a>Property `Distribution > license > anyOf > LicenseDocument`
+### <a name="license_anyOf_i1"></a>Property `Distribution > license > anyOf > item 1`
 
-**Title:** LicenseDocument
+Full text of the license
 
-inline description of LicenseDocument
-
-| **Type**                  | `object`                                                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                     |
-| **Same definition as**    | [LicenseDocument](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_license_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="license_anyOf_i2"></a>Property `Distribution > license > anyOf > Link`
 
 **Title:** Link
 
-reference iri of LicenseDocument
+reference iri of the license
 
 | **Type**   | `string` |
 | ---------- | -------- |
@@ -1172,41 +1024,38 @@ A year and month in YYYY-MM format
 
 **Title:** rights
 
-A statement that specifies rights associated with the Distribution
+A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                | Description |
+| ---------------------------------------------- | ----------- |
+| [Rights statement text or link](#rights_items) | -           |
+
+### <a name="rights_items"></a>Distribution > rights > Rights statement text or link
+
+**Title:** Rights statement text or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#rights_anyOf_i0) |
-| [RightsStatement](#rights_anyOf_i1)                |
-| [Link](#rights_anyOf_i2)                           |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#rights_items_anyOf_i0) |
+| [item 1](#rights_items_anyOf_i1) |
 
-### <a name="rights_anyOf_i0"></a>Property `Distribution > rights > anyOf > Null allowed when not required`
+#### <a name="rights_items_anyOf_i0"></a>Property `Distribution > rights > Rights statement text or link > anyOf > item 0`
 
-**Title:** Null allowed when not required
+Full text of a statement of rights
 
-| **Type** | `null` |
-| -------- | ------ |
+| **Type** | `string` |
+| -------- | -------- |
 
-### <a name="rights_anyOf_i1"></a>Property `Distribution > rights > anyOf > RightsStatement`
+#### <a name="rights_items_anyOf_i1"></a>Property `Distribution > rights > Rights statement text or link > anyOf > item 1`
 
-**Title:** RightsStatement
-
-inline description of RightsStatement
-
-| **Type**                  | `object`                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                          |
-| **Same definition as**    | [RightsStatement](#accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessRights_anyOf_i1) |
-
-### <a name="rights_anyOf_i2"></a>Property `Distribution > rights > anyOf > Link`
-
-**Title:** Link
-
-reference iri of RightsStatement
+reference iri of a statement of rights
 
 | **Type**   | `string` |
 | ---------- | -------- |

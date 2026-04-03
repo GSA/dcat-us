@@ -34,7 +34,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 | - [license](#license )                           | More than one type      | license                                                                             |
 | - [modified](#modified )                         | More than one type      | update/modification date                                                            |
 | - [publisher](#publisher )                       | More than one type      | publisher                                                                           |
-| - [rights](#rights )                             | More than one type      | rights                                                                              |
+| - [rights](#rights )                             | null or array           | rights                                                                              |
 | - [rightsHolder](#rightsHolder )                 | null or array           | rights holder                                                                       |
 | - [spatial](#spatial )                           | null or array           | spatial/geographic coverage                                                         |
 | - [subject](#subject )                           | null or array           | subject                                                                             |
@@ -417,7 +417,7 @@ Information that indicates whether the Catalog is open data, has access restrict
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
 | [Null allowed when not required](#accessRights_anyOf_i0) |
-| [RightsStatement](#accessRights_anyOf_i1)                |
+| [item 1](#accessRights_anyOf_i1)                         |
 | [Link](#accessRights_anyOf_i2)                           |
 
 ### <a name="accessRights_anyOf_i0"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > Null allowed when not required`
@@ -427,16 +427,12 @@ Information that indicates whether the Catalog is open data, has access restrict
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_anyOf_i1"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > RightsStatement`
+### <a name="accessRights_anyOf_i1"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > item 1`
 
-**Title:** RightsStatement
+Text description of the access rights
 
-inline description of access rights
-
-| **Type**                  | `object`                                                                                                            |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                    |
-| **Same definition as**    | [RightsStatement](#dataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="accessRights_anyOf_i2"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > Link`
 
@@ -818,7 +814,7 @@ Language or languages used in the textual metadata describing titles, descriptio
 
 **Title:** license
 
-The license under which the Catalog can be used or reused
+The license under which the Catalog is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -827,7 +823,7 @@ The license under which the Catalog can be used or reused
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
-| [LicenseDocument](#license_anyOf_i1)                |
+| [item 1](#license_anyOf_i1)                         |
 | [Link](#license_anyOf_i2)                           |
 
 ### <a name="license_anyOf_i0"></a>Property `DCAT-US 3 Catalog > license > anyOf > Null allowed when not required`
@@ -837,16 +833,12 @@ The license under which the Catalog can be used or reused
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_anyOf_i1"></a>Property `DCAT-US 3 Catalog > license > anyOf > LicenseDocument`
+### <a name="license_anyOf_i1"></a>Property `DCAT-US 3 Catalog > license > anyOf > item 1`
 
-**Title:** LicenseDocument
+Full text of the license
 
-inline description of the license
-
-| **Type**                  | `object`                                                                                                       |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                               |
-| **Same definition as**    | [LicenseDocument](#dataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_license_anyOf_i1) |
+| **Type** | `string` |
+| -------- | -------- |
 
 ### <a name="license_anyOf_i2"></a>Property `DCAT-US 3 Catalog > license > anyOf > Link`
 
@@ -977,41 +969,40 @@ reference iri of the publisher
 
 **Title:** rights
 
-A statement that specifies rights associated with the catalog
+A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+
+| **Type** | `null or array` |
+| -------- | --------------- |
+
+| Each item of this array must be                | Description |
+| ---------------------------------------------- | ----------- |
+| [Rights statement text or link](#rights_items) | -           |
+
+### <a name="rights_items"></a>DCAT-US 3 Catalog > rights > Rights statement text or link
+
+**Title:** Rights statement text or link
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                     |
-| -------------------------------------------------- |
-| [Null allowed when not required](#rights_anyOf_i0) |
-| [RightsStatement](#rights_anyOf_i1)                |
-| [Link](#rights_anyOf_i2)                           |
+| Any of(Option)                   |
+| -------------------------------- |
+| [item 0](#rights_items_anyOf_i0) |
+| [Link](#rights_items_anyOf_i1)   |
 
-### <a name="rights_anyOf_i0"></a>Property `DCAT-US 3 Catalog > rights > anyOf > Null allowed when not required`
+#### <a name="rights_items_anyOf_i0"></a>Property `DCAT-US 3 Catalog > rights > Rights statement text or link > anyOf > item 0`
 
-**Title:** Null allowed when not required
+Full text of a statement of rights
 
-| **Type** | `null` |
-| -------- | ------ |
+| **Type** | `string` |
+| -------- | -------- |
 
-### <a name="rights_anyOf_i1"></a>Property `DCAT-US 3 Catalog > rights > anyOf > RightsStatement`
-
-**Title:** RightsStatement
-
-inline description of rights
-
-| **Type**                  | `object`                                                                                                            |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                    |
-| **Same definition as**    | [RightsStatement](#dataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_accessRights_anyOf_i1) |
-
-### <a name="rights_anyOf_i2"></a>Property `DCAT-US 3 Catalog > rights > anyOf > Link`
+#### <a name="rights_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > rights > Rights statement text or link > anyOf > Link`
 
 **Title:** Link
 
-reference iri of rights
+reference iri of a statement of rights
 
 | **Type**   | `string` |
 | ---------- | -------- |
