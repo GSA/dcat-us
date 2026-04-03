@@ -84,7 +84,10 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.csv",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.csv",
       "byteSize": "10485760",
-      "format": "CSV",
+      "format": {
+        "@type": "MediaType",
+        "label": "CSV (Comma-Separated Values)"
+      },
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
       "characterEncoding": [ "UTF-8" ],
@@ -99,7 +102,10 @@
       "accessURL": "https://example.gov/data/comprehensive-dataset.json",
       "downloadURL": "https://example.gov/downloads/comprehensive-dataset.json",
       "byteSize": "15728640",
-      "format": "JSON",
+      "format": {
+        "@type": "MediaType",
+        "label": "JSON (JavaScript Object Notation)"
+      },
       "description": "JSON distribution of the dataset"
     }
   ],
@@ -157,7 +163,10 @@
     "title": "Data Dictionary",
     "description": "Comprehensive data dictionary describing all fields",
     "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
-    "format": "PDF"
+    "format": {
+      "@type": "MediaType",
+      "label": "PDF (Portable Document Format)"
+    }
   },
   "geographicBoundingBox": [
     {
@@ -169,14 +178,7 @@
       "southBoundingLatitude": "24.396308"
     }
   ],
-  "liabilityStatement": {
-    "@id": "https://example.gov/statements/liability",
-    "@type": "LiabilityStatement",
-    "label": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
-    "labelMap": {
-      "es": "Este conjunto de datos se proporciona tal cual sin garantía."
-    }
-  },
+  "liabilityStatement": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
   "metadataDistribution": [
     {
       "@id": "https://example.gov/distributions/metadata-xml",
@@ -184,7 +186,10 @@
       "title": "Original ISO 19115 Metadata",
       "description": "The original metadata document in ISO 19115 format",
       "downloadURL": "https://example.gov/metadata/comprehensive-dataset.xml",
-      "format": "XML"
+      "format": {
+        "@type": "MediaType",
+        "label": "XML (Extensible Markup Language)"
+      }
     }
   ],
   "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
@@ -192,14 +197,7 @@
     "es": "Este conjunto de datos fue creado para demostrar todos los campos disponibles.",
     "fr": "Ce jeu de données a été créé pour démontrer tous les champs disponibles."
   },
-  "accessRights": {
-    "@id": "https://example.gov/rights/public-access",
-    "@type": "RightsStatement",
-    "attributionText": "This dataset is public domain and freely available for any use.",
-    "attributionTextMap": {
-      "es": "Este conjunto de datos es de dominio público."
-    }
-  },
+  "accessRights": "This dataset is public domain and freely available for any use.",
   "accrualPeriodicity": "monthly",
   "conformsTo": [
     {
@@ -237,16 +235,7 @@
   "issued": null,
   "language": [ "en", "es" ],
   "modified": null,
-  "provenance": [
-    {
-      "@id": "https://example.gov/provenance/collection-method",
-      "@type": "ProvenanceStatement",
-      "label": "Data was collected through automated sensors deployed across the continental United States.",
-      "labelMap": {
-        "es": "Los datos fueron recopilados a través de sensores automáticos."
-      }
-    }
-  ],
+  "provenance": "Data was collected through automated sensors deployed across the continental United States.",
   "relation": [
     "https://example.gov/datasets/supplementary-dataset",
     "https://example.gov/services/api-endpoint"
@@ -254,11 +243,9 @@
   "replaces": [
     "https://example.gov/datasets/legacy-comprehensive-dataset"
   ],
-  "rights": {
-    "@id": "https://example.gov/rights/copyright",
-    "@type": "RightsStatement",
-    "attributionText": "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
-  },
+  "rights": [
+    "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
+  ],
   "rightsHolder": [
     {
       "@id": "https://example.gov/organizations/rights-holder",
@@ -270,14 +257,6 @@
   "source": [
     "https://example.gov/datasets/raw-sensor-data"
   ],
-  "spatial": {
-    "@id": "https://example.gov/locations/conus",
-    "@type": "Location",
-    "prefLabel": "Continental United States",
-    "altLabel": "CONUS",
-    "identifier": "https://www.wikidata.org/wiki/Q578170",
-    "bbox": "POLYGON((-124.848974 24.396308, -66.885444 24.396308, -66.885444 49.384358, -124.848974 49.384358, -124.848974 24.396308))"
-  },
   "temporal": [
     {
       "@id": "https://example.gov/periods/data-coverage",

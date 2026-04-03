@@ -202,7 +202,7 @@ def main():
         except NoSuchResource:
             print(f"SKIP: No schema found for {schema_id} from {rel_path}")
             continue
-        validator = Draft202012Validator({"$ref": schema_id}, registry=registry)
+        validator = Draft202012Validator({"$ref": schema_id}, registry=registry, format_checker=Draft202012Validator.FORMAT_CHECKER)
 
         with open(example_file) as f:
             example = json.load(f)

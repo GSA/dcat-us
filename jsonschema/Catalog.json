@@ -170,8 +170,8 @@
           "title": "Null allowed when not required"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of access rights"
+          "type": "string",
+          "description": "Text description of the access rights"
         },
         {
           "type": "string",
@@ -346,15 +346,15 @@
     },
     "license": {
       "title": "license",
-      "description": "The license under which the Catalog can be used or reused",
+      "description": "The license under which the Catalog is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses",
       "anyOf": [
         {
           "type": "null",
           "title": "Null allowed when not required"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/licensedocument",
-          "description": "inline description of the license"
+          "type": "string",
+          "description": "Full text of the license"
         },
         {
           "type": "string",
@@ -419,23 +419,23 @@
     },
     "rights": {
       "title": "rights",
-      "description": "A statement that specifies rights associated with the catalog",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of rights"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of rights",
-          "format": "iri"
-        }
-      ]
+      "description": "A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
+      "type": ["null", "array"],
+      "items": {
+        "title": "Rights statement text or link",
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "Full text of a statement of rights"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of a statement of rights",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "rightsHolder": {
       "title": "rights holder",
