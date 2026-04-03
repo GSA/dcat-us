@@ -331,18 +331,18 @@
     },
     "liabilityStatement": {
       "title": "liability statement",
-      "description": "A liability statement about the dataset",
+      "description": "A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations",
       "anyOf": [
         {
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/liabilitystatement",
-          "description": "inline description of LiabilityStatement"
+          "type": "string",
+          "description": "Full text of the liability statement"
         },
         {
           "type": "string",
-          "description": "reference iri of LiabilityStatement",
+          "description": "reference iri of the liability statement",
           "format": "iri"
         }
       ]
@@ -382,12 +382,12 @@
           "type": "null"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of RightsStatement"
+          "type": "string",
+          "description": "Text description of the access rights"
         },
         {
           "type": "string",
-          "description": "reference iri of RightsStatement",
+          "description": "reference iri of the access rights",
           "format": "iri"
         }
       ]
@@ -662,21 +662,21 @@
     },
     "provenance": {
       "title": "provenance",
-      "description": "List of statements about the lineage of a Dataset",
-      "type": ["null", "array"],
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/provenancestatement",
-            "description": "inline description of ProvenanceStatement"
-          },
-          {
-            "type": "string",
-            "description": "reference iri of ProvenanceStatement",
-            "format": "iri"
-          }
-        ]
-      }
+      "description": "A provenance statement that describes the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "description": "Full text of the provenance statement"
+        },
+        {
+          "type": "string",
+          "description": "reference iri of the provenance statement",
+          "format": "iri"
+        }
+      ]
     },
     "publisher": {
       "title": "publisher",
@@ -723,21 +723,21 @@
     },
     "rights": {
       "title": "rights",
-      "description": "List of statements concerning all rights for the Dataset not addressed with license or accessRights, such as copyright statements",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/rightsstatement",
-          "description": "inline description of RightsStatement"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of RightsStatement",
-          "format": "iri"
-        }
-      ]
+      "description": "A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "Full text of a statement of rights"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of a statement of rights",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "rightsHolder": {
       "title": "rights holder",
