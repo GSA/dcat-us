@@ -16,7 +16,7 @@
     "isMeasurementOf": {
       "title": "is measurement of",
       "description": "The metric being observed",
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "/dcat-us/3.0.0/definitions/metric",
           "description": "inline description of Metric"

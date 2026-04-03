@@ -26,7 +26,7 @@
         "creator": {
           "title": "creator",
           "description": "the agency that manages the identifier scheme",
-          "oneOf": [
+          "anyOf": [
             {
               "type": "null"
             },
@@ -50,7 +50,7 @@
             },
             {
               "type": "string",
-              "oneOf": [
+              "anyOf": [
                 {
                   "format": "date-time"
                 },

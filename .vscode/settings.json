@@ -15,4 +15,15 @@
 		"js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
 		"js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
 		"js/ts.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+		"chat.tools.terminal.autoApprove": {
+			"/^cd /home/jbrown/data\\.gov/dcat-us/jsonschema && python test_json_schema\\.py$/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"npx prettier": true,
+			"/^cd /home/jbrown/data\\.gov/dcat-us/jsonschema && python test_json_schema\\.py && npx prettier --write \"examples/Location/\\*\\*/\\*\\.json\"$/": {
+				"approve": true,
+				"matchCommandLine": true
+			}
+		},
 }
