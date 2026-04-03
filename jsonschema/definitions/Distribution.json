@@ -16,7 +16,7 @@
     "representationTechnique": {
       "title": "representation technique",
       "description": "The format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -34,7 +34,7 @@
     "status": {
       "title": "lifecycle status",
       "description": "The status of the distribution in the context of maturity lifecycle",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -67,27 +67,20 @@
     "accessService": {
       "title": "access service",
       "description": "A data service that gives access to the distribution of the dataset",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/dataservice",
-                "description": "inline description of DataService"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of DataService",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/dataservice",
+            "description": "inline description of DataService"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of DataService",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "accessURL": {
       "title": "access URL",
@@ -111,7 +104,7 @@
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -143,7 +136,7 @@
     "mediaType": {
       "title": "media type",
       "description": "The media type of the Distribution as defined in the official register of media types managed by IANA",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -161,7 +154,7 @@
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -189,7 +182,7 @@
     "availability": {
       "title": "availability",
       "description": "An indication how long it is planned to keep the Distribution of the Dataset available",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -207,32 +200,25 @@
     "accessRestriction": {
       "title": "access restriction",
       "description": "List of access restrictions related to the distribution",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/accessrestriction",
-                "description": "inline description of AccessRestriction"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of AccessRestriction",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/accessrestriction",
+            "description": "inline description of AccessRestriction"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of AccessRestriction",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "cuiRestriction": {
       "title": "CUI restriction",
       "description": "Controlled Unclassified Information restriction related to the distribution",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -250,7 +236,7 @@
     "describedBy": {
       "title": "data dictionary",
       "description": "A distribution containing the Data Dictionary for this distribution",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -268,32 +254,25 @@
     "useRestriction": {
       "title": "use restriction",
       "description": "Use restriction related to the distribution",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/userestriction",
-                "description": "inline description of UseRestriction"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of UseRestriction",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/userestriction",
+            "description": "inline description of UseRestriction"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of UseRestriction",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "accessRights": {
       "title": "access rights",
       "description": "Information regarding access or restrictions based on privacy, security, or other policies",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -311,27 +290,20 @@
     "conformsTo": {
       "title": "linked schemas",
       "description": "List of established schemas or reference systems to which the described Distribution conforms",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/standard",
-                "description": "inline description of Standard"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Standard",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/standard",
+            "description": "inline description of Standard"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Standard",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "description": {
       "title": "description",
@@ -345,7 +317,7 @@
     "format": {
       "title": "format",
       "description": "The file format of the Distribution",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -405,7 +377,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -447,7 +419,7 @@
     "license": {
       "title": "license",
       "description": "A license under which the Distribution is made available",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -471,7 +443,7 @@
         },
         {
           "type": "string",
-          "oneOf": [
+          "anyOf": [
             {
               "format": "date-time"
             },
@@ -493,7 +465,7 @@
     "rights": {
       "title": "rights",
       "description": "A statement that specifies rights associated with the Distribution",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
@@ -520,52 +492,38 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "A list of quality measurements for the distribution",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
-                "description": "inline description of QualityMeasurement"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of QualityMeasurement",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
+            "description": "inline description of QualityMeasurement"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of QualityMeasurement",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "page": {
       "title": "documentation",
       "description": "A page or document about this Distribution",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "/dcat-us/3.0.0/definitions/document",
-                "description": "inline description of Document"
-              },
-              {
-                "type": "string",
-                "description": "reference iri of Document",
-                "format": "iri"
-              }
-            ]
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/document",
+            "description": "inline description of Document"
+          },
+          {
+            "type": "string",
+            "description": "reference iri of Document",
+            "format": "iri"
           }
-        }
-      ]
+        ]
+      }
     },
     "image": {
       "title": "image",
@@ -584,7 +542,7 @@
     "checksum": {
       "title": "checksum",
       "description": "A mechanism that can be used to verify that the contents of a distribution have not changed",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "null"
         },
