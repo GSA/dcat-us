@@ -329,24 +329,6 @@
         }
       ]
     },
-    "geographicBoundingBox": {
-      "title": "geographic bounding box",
-      "description": "List of WGS84 Geographic Bounding Boxes for this dataset",
-      "type": ["null", "array"],
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/geographicboundingbox",
-            "description": "inline description of GeographicBoundingBox"
-          },
-          {
-            "type": "string",
-            "description": "reference iri of GeographicBoundingBox",
-            "format": "iri"
-          }
-        ]
-      }
-    },
     "liabilityStatement": {
       "title": "liability statement",
       "description": "A liability statement about the dataset",
