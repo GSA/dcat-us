@@ -18,10 +18,6 @@
       "description": "Significant information pertaining to the use or reproduction of the data",
       "type": ["null", "string"]
     },
-    "restrictionNoteMap": {
-      "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "restrictionStatus": {
       "title": "restriction status",
       "description": "Indication of whether or not there are use restrictions on the archival materials",
