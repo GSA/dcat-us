@@ -63,10 +63,6 @@
       "description": "Text abstract of the Document",
       "type": ["null", "string"]
     },
-    "abstractMap": {
-      "description": "Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "bibliographicCitation": {
       "title": "bibliographic citation",
       "description": "Bibliographic citation as text",
@@ -92,10 +88,6 @@
       "title": "description",
       "description": "A free-text account of the Document",
       "type": ["null", "string"]
-    },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "identifier": {
       "title": "identifier",
@@ -163,10 +155,6 @@
       "title": "title",
       "description": "The title of the Document",
       "type": "string"
-    },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "category": {
       "title": "category",

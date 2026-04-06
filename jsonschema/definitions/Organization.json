@@ -31,10 +31,6 @@
       "description": "alternative name (trading name, colloquial name) for an organization",
       "type": ["null", "string"]
     },
-    "altLabelMap": {
-      "description": "Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "notation": {
       "title": "notation",
       "description": "List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
@@ -48,10 +44,6 @@
       "title": "preferred label",
       "description": "Preferred or legal name of the organization",
       "type": ["null", "string"]
-    },
-    "prefLabelMap": {
-      "description": "Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     }
   },
   "required": ["name"]

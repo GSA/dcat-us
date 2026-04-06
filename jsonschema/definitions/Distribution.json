@@ -214,10 +214,6 @@
       "description": "A free-text account of the Distribution",
       "type": ["null", "string"]
     },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "format": {
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
@@ -362,10 +358,6 @@
       "title": "title",
       "description": "A name given to the Distribution",
       "type": ["null", "string"]
-    },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
