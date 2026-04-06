@@ -417,26 +417,26 @@ Publication date of the Document
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                      |
+| Any of(Option)                      |
 | ----------------------------------- |
-| [item 0](#issued_anyOf_i1_oneOf_i0) |
-| [item 1](#issued_anyOf_i1_oneOf_i1) |
-| [item 2](#issued_anyOf_i1_oneOf_i2) |
-| [item 3](#issued_anyOf_i1_oneOf_i3) |
+| [item 0](#issued_anyOf_i1_anyOf_i0) |
+| [item 1](#issued_anyOf_i1_anyOf_i1) |
+| [item 2](#issued_anyOf_i1_anyOf_i2) |
+| [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_oneOf_i0"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `Document > issued > anyOf > item 1 > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_oneOf_i1"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `Document > issued > anyOf > item 1 > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_oneOf_i2"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `Document > issued > anyOf > item 1 > anyOf > item 2`
 
 A year in YYYY format
 
@@ -447,7 +447,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_oneOf_i3"></a>Property `Document > issued > anyOf > item 1 > oneOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `Document > issued > anyOf > item 1 > anyOf > item 3`
 
 A year and month in YYYY-MM format
 

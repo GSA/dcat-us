@@ -1936,7 +1936,7 @@ A geographic region or regions that are covered by the Dataset
 | [Null allowed when not required](#spatial_anyOf_i0) |
 | [Location](#spatial_anyOf_i1)                       |
 | [Link](#spatial_anyOf_i2)                           |
-| [List og geographic regions](#spatial_anyOf_i3)     |
+| [List of geographic regions](#spatial_anyOf_i3)     |
 
 ### <a name="spatial_anyOf_i0"></a>Property `Dataset > spatial > anyOf > Null allowed when not required`
 
@@ -1966,9 +1966,9 @@ reference iri of Location
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-### <a name="spatial_anyOf_i3"></a>Property `Dataset > spatial > anyOf > List og geographic regions`
+### <a name="spatial_anyOf_i3"></a>Property `Dataset > spatial > anyOf > List of geographic regions`
 
-**Title:** List og geographic regions
+**Title:** List of geographic regions
 
 | **Type** | `array` |
 | -------- | ------- |
@@ -1977,7 +1977,7 @@ reference iri of Location
 | ------------------------------------------- | ----------- |
 | [Location or link](#spatial_anyOf_i3_items) | -           |
 
-#### <a name="spatial_anyOf_i3_items"></a>Dataset > spatial > anyOf > List og geographic regions > Location or link
+#### <a name="spatial_anyOf_i3_items"></a>Dataset > spatial > anyOf > List of geographic regions > Location or link
 
 **Title:** Location or link
 
@@ -1990,7 +1990,7 @@ reference iri of Location
 | [Location](#spatial_anyOf_i3_items_anyOf_i0) |
 | [Link](#spatial_anyOf_i3_items_anyOf_i1)     |
 
-##### <a name="spatial_anyOf_i3_items_anyOf_i0"></a>Property `Dataset > spatial > anyOf > List og geographic regions > Location or link > anyOf > Location`
+##### <a name="spatial_anyOf_i3_items_anyOf_i0"></a>Property `Dataset > spatial > anyOf > List of geographic regions > Location or link > anyOf > Location`
 
 **Title:** Location
 
@@ -2001,7 +2001,7 @@ inline description of Location
 | **Additional properties** | Any type allowed                                                                                                                            |
 | **Same definition as**    | [Location](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_inSeries_items_anyOf_i0_spatial_items_anyOf_i0) |
 
-##### <a name="spatial_anyOf_i3_items_anyOf_i1"></a>Property `Dataset > spatial > anyOf > List og geographic regions > Location or link > anyOf > Link`
+##### <a name="spatial_anyOf_i3_items_anyOf_i1"></a>Property `Dataset > spatial > anyOf > List of geographic regions > Location or link > anyOf > Link`
 
 **Title:** Link
 

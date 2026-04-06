@@ -95,12 +95,12 @@ Concept scheme defining this concept
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| One of(Option)                               |
+| Any of(Option)                               |
 | -------------------------------------------- |
-| [ConceptScheme](#anyOf_i1_inScheme_oneOf_i0) |
-| [item 1](#anyOf_i1_inScheme_oneOf_i1)        |
+| [ConceptScheme](#anyOf_i1_inScheme_anyOf_i0) |
+| [item 1](#anyOf_i1_inScheme_anyOf_i1)        |
 
-#### <a name="anyOf_i1_inScheme_oneOf_i0"></a>Property `Concept > anyOf > item 1 > inScheme > oneOf > ConceptScheme`
+#### <a name="anyOf_i1_inScheme_anyOf_i0"></a>Property `Concept > anyOf > item 1 > inScheme > anyOf > ConceptScheme`
 
 **Title:** ConceptScheme
 
@@ -111,7 +111,7 @@ inline description of ConceptScheme
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-#### <a name="anyOf_i1_inScheme_oneOf_i1"></a>Property `Concept > anyOf > item 1 > inScheme > oneOf > item 1`
+#### <a name="anyOf_i1_inScheme_anyOf_i1"></a>Property `Concept > anyOf > item 1 > inScheme > anyOf > item 1`
 
 reference iri of ConceptScheme
 

@@ -392,7 +392,7 @@ inline description of ConceptScheme
 | **Type**                  | `object`                                                                                                                   |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                                           |
-| **Same definition as**    | [ConceptScheme](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1_anyOf_i1_inScheme_oneOf_i0) |
+| **Same definition as**    | [ConceptScheme](#dataset_items_anyOf_i0_sample_items_anyOf_i0_representationTechnique_anyOf_i1_anyOf_i1_inScheme_anyOf_i0) |
 
 #### <a name="themeTaxonomy_items_anyOf_i1"></a>Property `DCAT-US 3 Catalog > themeTaxonomy > themeTaxonomy items > anyOf > Link`
 
