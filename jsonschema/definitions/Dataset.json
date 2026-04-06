@@ -876,7 +876,7 @@
         },
         {
           "type": "array",
-          "title": "List og geographic regions",
+          "title": "List of geographic regions",
           "items": {
             "title": "Location or link",
             "anyOf": [

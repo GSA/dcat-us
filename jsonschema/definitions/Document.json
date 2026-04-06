@@ -182,7 +182,7 @@
           "title": "Null allowed when not required"
         },
         {
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string",
               "format": "date-time"
