@@ -78,8 +78,5 @@
       ]
     }
   },
-  "anyOf": [
-    { "required": ["startDate"] },
-    { "required": ["endDate"] }
-  ]
+  "anyOf": [{ "required": ["startDate"] }, { "required": ["endDate"] }]
 }
