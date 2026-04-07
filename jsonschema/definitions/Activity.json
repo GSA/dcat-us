@@ -15,21 +15,22 @@
     },
     "category": {
       "title": "category",
-      "description": "The category of the Activity",
-      "anyOf": [
-        {
-          "type": "null"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/concept",
-          "description": "inline description of the category"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of the category",
-          "format": "iri"
-        }
-      ]
+      "description": "List of categories for the Activity",
+      "type": ["null", "array"],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "/dcat-us/3.0.0/definitions/concept",
+            "description": "inline description of Concept"
+          },
+          {
+            "type": "string",
+            "title": "Link",
+            "description": "reference iri of Concept",
+            "format": "iri"
+          }
+        ]
+      }
     },
     "label": {
       "title": "label",

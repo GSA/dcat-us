@@ -23,22 +23,27 @@
       "description": "The date on which the Concept Scheme was first created",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
-          "type": "string",
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -60,22 +65,27 @@
       "description": "The date of formal issuance (e.g., publication) of the concept scheme",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
-          "type": "string",
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }
@@ -88,22 +98,27 @@
       "description": "The most recent date at which the concept scheme was changed or modified",
       "anyOf": [
         {
-          "type": "null"
+          "type": "null",
+          "title": "Null allowed when not required"
         },
         {
-          "type": "string",
-          "oneOf": [
+          "title": "Date string",
+          "anyOf": [
             {
+              "type": "string",
               "format": "date-time"
             },
             {
+              "type": "string",
               "format": "date"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}$",
               "description": "A year in YYYY format"
             },
             {
+              "type": "string",
               "pattern": "^[0-9]{4}-[0-9]{2}$",
               "description": "A year and month in YYYY-MM format"
             }

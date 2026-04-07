@@ -41,7 +41,7 @@
         "inScheme": {
           "title": "in scheme",
           "description": "Concept scheme defining this concept",
-          "oneOf": [
+          "anyOf": [
             {
               "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
               "description": "inline description of ConceptScheme"

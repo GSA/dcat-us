@@ -1,0 +1,28 @@
+name: Check docs are up to date
+
+on:
+  pull_request:
+    paths:
+      - 'jsonschema/**'
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v3
+
+      - name: Install dependencies
+        working-directory: ./jsonschema
+        run: poetry install
+
+      - name: Check docs are up-to-date
+        working-directory: ./jsonschema
+        run: poetry run python generate_schema_docs.py --check
