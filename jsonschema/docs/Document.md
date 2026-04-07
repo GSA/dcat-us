@@ -8,28 +8,25 @@ Information about a text document
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                           | Type               | Title/Description                                                                   |
-| -------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                                     | string             | -                                                                                   |
-| - [@type](#@type )                                 | string             | -                                                                                   |
-| - [accessURL](#accessURL )                         | More than one type | access URL                                                                          |
-| - [downloadURL](#downloadURL )                     | More than one type | download URL                                                                        |
-| - [creator](#creator )                             | null or array      | author                                                                              |
-| - [mediaType](#mediaType )                         | null or string     | media type                                                                          |
-| - [abstract](#abstract )                           | null or string     | abstract                                                                            |
-| - [abstractMap](#abstractMap )                     | null or object     | Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [bibliographicCitation](#bibliographicCitation ) | null or string     | bibliographic citation                                                              |
-| - [conformsTo](#conformsTo )                       | null or array      | conforms to                                                                         |
-| - [corporateCreator](#corporateCreator )           | null or array      | corporate author                                                                    |
-| - [description](#description )                     | null or string     | description                                                                         |
-| - [descriptionMap](#descriptionMap )               | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [identifier](#identifier )                       | More than one type | identifier                                                                          |
-| - [otherIdentifier](#otherIdentifier )             | null or array      | other identifier                                                                    |
-| - [issued](#issued )                               | More than one type | publication date                                                                    |
-| - [publisher](#publisher )                         | null or array      | publisher                                                                           |
-| + [title](#title )                                 | string             | title                                                                               |
-| - [titleMap](#titleMap )                           | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [category](#category )                           | null or array      | category                                                                            |
+| Property                                           | Type               | Title/Description      |
+| -------------------------------------------------- | ------------------ | ---------------------- |
+| - [@id](#@id )                                     | string             | -                      |
+| - [@type](#@type )                                 | string             | -                      |
+| - [accessURL](#accessURL )                         | More than one type | access URL             |
+| - [downloadURL](#downloadURL )                     | More than one type | download URL           |
+| - [creator](#creator )                             | null or array      | author                 |
+| - [mediaType](#mediaType )                         | null or string     | media type             |
+| - [abstract](#abstract )                           | null or string     | abstract               |
+| - [bibliographicCitation](#bibliographicCitation ) | null or string     | bibliographic citation |
+| - [conformsTo](#conformsTo )                       | null or array      | conforms to            |
+| - [corporateCreator](#corporateCreator )           | null or array      | corporate author       |
+| - [description](#description )                     | null or string     | description            |
+| - [identifier](#identifier )                       | More than one type | identifier             |
+| - [otherIdentifier](#otherIdentifier )             | null or array      | other identifier       |
+| - [issued](#issued )                               | More than one type | publication date       |
+| - [publisher](#publisher )                         | null or array      | publisher              |
+| + [title](#title )                                 | string             | title                  |
+| - [category](#category )                           | null or array      | category               |
 
 ## <a name="@id"></a>Property `Document > @id`
 
@@ -149,13 +146,6 @@ Text abstract of the Document
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="abstractMap"></a>Property `Document > abstractMap`
-
-Language map for abstract. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ## <a name="bibliographicCitation"></a>Property `Document > bibliographicCitation`
 
 **Title:** bibliographic citation
@@ -220,13 +210,6 @@ Information about an organization, including other organizations that it is part
 A free-text account of the Document
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="descriptionMap"></a>Property `Document > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="identifier"></a>Property `Document > identifier`
@@ -388,13 +371,6 @@ The title of the Document
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="titleMap"></a>Property `Document > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="category"></a>Property `Document > category`
 

@@ -8,13 +8,12 @@ An activity which a resource could be related to
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                 | Type           | Title/Description                                                              |
-| ------------------------ | -------------- | ------------------------------------------------------------------------------ |
-| - [@id](#@id )           | string         | -                                                                              |
-| - [@type](#@type )       | string         | -                                                                              |
-| - [category](#category ) | null or array  | category                                                                       |
-| + [label](#label )       | string         | label                                                                          |
-| - [labelMap](#labelMap ) | null or object | Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| Property                 | Type          | Title/Description |
+| ------------------------ | ------------- | ----------------- |
+| - [@id](#@id )           | string        | -                 |
+| - [@type](#@type )       | string        | -                 |
+| - [category](#category ) | null or array | category          |
+| + [label](#label )       | string        | label             |
 
 ## <a name="@id"></a>Property `Activity > @id`
 
@@ -61,11 +60,4 @@ A human-readable label for the activity
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="labelMap"></a>Property `Activity > labelMap`
-
-Language map for the label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 

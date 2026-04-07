@@ -8,17 +8,15 @@ Information about an organization, including other organizations that it is part
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                   | Type                    | Title/Description                                                                      |
-| ------------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------- |
-| - [@id](#@id )                             | string                  | -                                                                                      |
-| - [@type](#@type )                         | string                  | -                                                                                      |
-| + [name](#name )                           | string                  | name                                                                                   |
-| - [subOrganizationOf](#subOrganizationOf ) | null or array           | suborganization of                                                                     |
-| - [altLabel](#altLabel )                   | null or string          | alternative label                                                                      |
-| - [altLabelMap](#altLabelMap )             | null or object          | Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [notation](#notation )                   | null or array of string | notation                                                                               |
-| - [prefLabel](#prefLabel )                 | null or string          | preferred label                                                                        |
-| - [prefLabelMap](#prefLabelMap )           | null or object          | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}   |
+| Property                                   | Type                    | Title/Description  |
+| ------------------------------------------ | ----------------------- | ------------------ |
+| - [@id](#@id )                             | string                  | -                  |
+| - [@type](#@type )                         | string                  | -                  |
+| + [name](#name )                           | string                  | name               |
+| - [subOrganizationOf](#subOrganizationOf ) | null or array           | suborganization of |
+| - [altLabel](#altLabel )                   | null or string          | alternative label  |
+| - [notation](#notation )                   | null or array of string | notation           |
+| - [prefLabel](#prefLabel )                 | null or string          | preferred label    |
 
 ## <a name="@id"></a>Property `Organization > @id`
 
@@ -75,13 +73,6 @@ alternative name (trading name, colloquial name) for an organization
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="altLabelMap"></a>Property `Organization > altLabelMap`
-
-Language map for alternative label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ## <a name="notation"></a>Property `Organization > notation`
 
 **Title:** notation
@@ -109,12 +100,5 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 Preferred or legal name of the organization
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="prefLabelMap"></a>Property `Organization > prefLabelMap`
-
-Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
