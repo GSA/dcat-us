@@ -2,15 +2,7 @@
   "@id": "https://example.gov/concept-schemes/data-classification",
   "@type": "ConceptScheme",
   "title": "Federal Data Classification Scheme",
-  "titleMap": {
-    "es": "Esquema de Clasificación de Datos Federales",
-    "fr": "Schéma de Classification des Données Fédérales"
-  },
   "description": "A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements.",
-  "descriptionMap": {
-    "es": "Un vocabulario controlado para clasificar activos de datos del gobierno federal.",
-    "fr": "Un vocabulaire contrôlé pour classer les actifs de données du gouvernement fédéral."
-  },
   "version": "2.0.1",
   "created": "2020",
   "issued": "2020",

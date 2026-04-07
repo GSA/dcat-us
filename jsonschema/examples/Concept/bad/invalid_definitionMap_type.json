@@ -1,6 +1,0 @@
-{
-  "_comment": "INVALID: 'definitionMap' must be null or an object, not a number",
-  "@type": "Concept",
-  "prefLabel": "Environment",
-  "definitionMap": 42
-}
