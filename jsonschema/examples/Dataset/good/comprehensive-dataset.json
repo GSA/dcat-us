@@ -2,15 +2,7 @@
   "@id": "https://example.gov/datasets/comprehensive-example-001",
   "@type": "Dataset",
   "title": "Comprehensive DCAT-US Dataset Example",
-  "titleMap": {
-    "es": "Ejemplo de conjunto de datos DCAT-US completo",
-    "fr": "Exemple de jeu de données DCAT-US complet"
-  },
   "description": "This is a comprehensive example dataset demonstrating all available fields in the DCAT-US 3.0 schema, except for Concept references which are excluded. Note: Date fields are set to null due to a schema validation issue where dates match multiple oneOf alternatives.",
-  "descriptionMap": {
-    "es": "Este es un conjunto de datos de ejemplo completo que demuestra todos los campos disponibles.",
-    "fr": "Ceci est un exemple de jeu de données complet démontrant tous les champs disponibles."
-  },
   "identifier": "dataset-comprehensive-001",
   "publisher": {
     "@id": "https://example.gov/organizations/sample-agency",
@@ -18,7 +10,7 @@
     "name": "Sample Government Agency",
     "altLabel": "SGA",
     "prefLabel": "Sample Government Agency",
-    "notation": ["SGA", "SAMPLE-GOV"],
+    "notation": [ "SGA", "SAMPLE-GOV" ],
     "subOrganizationOf": [
       {
         "@id": "https://example.gov/organizations/parent-department",
@@ -51,15 +43,7 @@
       "description": "A sample CSV file for preview"
     }
   ],
-  "supportedSchema": {
-    "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
-    "title": "Dataset One",
-    "contactPoint": {
-      "hasEmail": "mailto:example@example.gov",
-      "fn": "Example contact"
-    }
-  },
+  "supportedSchema": "https://example.gov/schemas/data-schema-v1",
   "versionNotes": "Initial release of the comprehensive example dataset with all fields populated.",
   "contactPoint": [
     {
@@ -95,7 +79,7 @@
       "format": "CSV (Comma-Separated Values)",
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
-      "characterEncoding": ["UTF-8"],
+      "characterEncoding": [ "UTF-8" ],
       "spatialResolutionInMeters": "100",
       "temporalResolution": "P1D",
       "issued": null,
@@ -111,34 +95,10 @@
       "description": "JSON distribution of the dataset"
     }
   ],
-  "first": {
-    "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
-    "title": "Dataset One",
-    "contactPoint": {
-      "hasEmail": "mailto:example@example.gov",
-      "fn": "Example contact"
-    }
-  },
-  "hasCurrentVersion": {
-    "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
-    "title": "Dataset One",
-    "contactPoint": {
-      "hasEmail": "mailto:example@example.gov",
-      "fn": "Example contact"
-    }
-  },
+  "first": "https://example.gov/datasets/comprehensive-example-first",
+  "hasCurrentVersion": "https://example.gov/datasets/comprehensive-example-001",
   "hasVersion": [
-    {
-      "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
-      "title": "Dataset One",
-      "contactPoint": {
-        "hasEmail": "mailto:example@example.gov",
-        "fn": "Example contact"
-      }
-    }
+    "https://example.gov/datasets/comprehensive-example-v0.9"
   ],
   "inSeries": [
     {
@@ -154,54 +114,20 @@
           "hasEmail": "mailto:series@example.gov"
         }
       ],
-      "first": {
-        "description": "A minimal dataset",
-        "publisher": { "name": "The Minimal Organization" },
-        "title": "Dataset One",
-        "contactPoint": {
-          "hasEmail": "mailto:example@example.gov",
-          "fn": "Example contact"
-        }
-      },
-      "last": {
-        "description": "A minimal dataset",
-        "publisher": { "name": "The Minimal Organization" },
-        "title": "Dataset One",
-        "contactPoint": {
-          "hasEmail": "mailto:example@example.gov",
-          "fn": "Example contact"
-        }
-      }
+      "first": "https://example.gov/datasets/comprehensive-example-first",
+      "last": "https://example.gov/datasets/comprehensive-example-001"
     }
   ],
-  "keyword": [
-    "government",
-    "open data",
-    "comprehensive example",
-    "DCAT-US",
-    "metadata"
-  ],
-  "keywordMap": {
-    "es": ["gobierno", "datos abiertos", "ejemplo completo"],
-    "fr": ["gouvernement", "données ouvertes", "exemple complet"]
-  },
+  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
     "title": "Comprehensive Dataset Landing Page",
     "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example",
-    "creators": ["Sample Government Agency"],
+    "creators": [ "Sample Government Agency" ],
     "publishers": "Sample Government Agency"
   },
-  "previousVersion": {
-    "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
-    "title": "Dataset One",
-    "contactPoint": {
-      "hasEmail": "mailto:example@example.gov",
-      "fn": "Example contact"
-    }
-  },
+  "previousVersion": "https://example.gov/datasets/comprehensive-example-v0.9",
   "qualifiedRelation": [
     {
       "@id": "https://example.gov/relationships/related-dataset-rel",
@@ -243,10 +169,6 @@
     }
   ],
   "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
-  "purposeMap": {
-    "es": "Este conjunto de datos fue creado para demostrar todos los campos disponibles.",
-    "fr": "Ce jeu de données a été créé pour démontrer tous les champs disponibles."
-  },
   "accessRights": "This dataset is public domain and freely available for any use.",
   "accrualPeriodicity": "monthly",
   "conformsTo": [
@@ -275,22 +197,15 @@
     "name": "Original Dataset Creator"
   },
   "hasPart": [
-    {
-      "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
-      "title": "Dataset One",
-      "contactPoint": {
-        "hasEmail": "mailto:example@example.gov",
-        "fn": "Example contact"
-      }
-    }
+    "https://example.gov/datasets/comprehensive-part-1",
+    "https://example.gov/datasets/comprehensive-part-2"
   ],
   "isReferencedBy": [
     "https://example.gov/publications/annual-report-2024",
     "https://example.gov/publications/data-quality-study"
   ],
   "issued": null,
-  "language": ["en", "es"],
+  "language": [ "en", "es" ],
   "modified": null,
   "provenance": [
     "Data was collected through automated sensors deployed across the continental United States."
@@ -300,15 +215,7 @@
     "https://example.gov/services/api-endpoint"
   ],
   "replaces": [
-    {
-      "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
-      "title": "Dataset One",
-      "contactPoint": {
-        "hasEmail": "mailto:example@example.gov",
-        "fn": "Example contact"
-      }
-    }
+    "https://example.gov/datasets/legacy-comprehensive-dataset"
   ],
   "rights": [
     "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
@@ -322,15 +229,7 @@
     }
   ],
   "source": [
-    {
-      "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
-      "title": "Dataset One",
-      "contactPoint": {
-        "hasEmail": "mailto:example@example.gov",
-        "fn": "Example contact"
-      }
-    }
+    "https://example.gov/datasets/raw-sensor-data"
   ],
   "temporal": [
     {
@@ -361,7 +260,7 @@
       "@type": "Document",
       "title": "User Guide",
       "abstract": "A comprehensive guide for using this dataset",
-      "creators": ["Documentation Team"],
+      "creators": [ "Documentation Team" ],
       "publishers": "Sample Government Agency",
       "bibliographicCitation": "Sample Government Agency. (2024). Comprehensive Dataset User Guide."
     }
@@ -389,26 +288,16 @@
     {
       "@id": "https://example.gov/activities/data-collection",
       "@type": "Activity",
-      "label": "2024 Data Collection Campaign",
-      "labelMap": {
-        "es": "Campaña de recopilación de datos 2024"
-      }
+      "label": "2024 Data Collection Campaign"
     }
   ],
   "wasUsedBy": [
     {
       "@id": "https://example.gov/activities/annual-analysis",
       "@type": "Activity",
-      "label": "Annual Data Analysis Project",
-      "labelMap": {
-        "es": "Proyecto de análisis de datos anual"
-      }
+      "label": "Annual Data Analysis Project"
     }
   ],
   "image": "https://example.gov/images/dataset-thumbnail.png",
-  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields.",
-  "scopeNoteMap": {
-    "es": "Este conjunto de datos debe utilizarse solo para fines de demostración y prueba.",
-    "fr": "Ce jeu de données doit être utilisé uniquement à des fins de démonstration et de test."
-  }
+  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields."
 }

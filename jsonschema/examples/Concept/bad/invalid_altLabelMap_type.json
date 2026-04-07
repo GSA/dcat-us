@@ -1,6 +1,0 @@
-{
-  "_comment": "INVALID: 'altLabelMap' must be null or an object, not a string",
-  "@type": "Concept",
-  "prefLabel": "Environment",
-  "altLabelMap": "en: Ecology"
-}

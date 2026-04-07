@@ -2,24 +2,9 @@
   "@id": "https://example.gov/concepts/environment",
   "@type": "Concept",
   "prefLabel": "Environment",
-  "prefLabelMap": {
-    "en": "Environment",
-    "es": "Medio Ambiente",
-    "fr": "Environnement"
-  },
   "altLabel": "Ecology",
-  "altLabelMap": {
-    "en": "Ecology",
-    "es": "Ecología",
-    "fr": "Écologie"
-  },
   "definition": "The natural world, including air, water, land, plants, and animals, especially as affected by human activity.",
-  "definitionMap": {
-    "en": "The natural world, including air, water, land, plants, and animals, especially as affected by human activity.",
-    "es": "El mundo natural, incluidos el aire, el agua, la tierra, las plantas y los animales, especialmente afectados por la actividad humana.",
-    "fr": "Le monde naturel, y compris l'air, l'eau, la terre, les plantes et les animaux, en particulier ceux affectés par l'activité humaine."
-  },
-  "notation": ["ENV", "E01", "ENVI"],
+  "notation": [ "ENV", "E01", "ENVI" ],
   "inScheme": {
     "@id": "https://example.gov/concept-schemes/data-themes",
     "@type": "ConceptScheme",

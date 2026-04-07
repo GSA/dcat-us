@@ -2,16 +2,7 @@
   "@id": "https://example.gov/locations/washington-dc",
   "@type": "Location",
   "prefLabel": "Washington, D.C.",
-  "prefLabelMap": {
-    "en": "Washington, D.C.",
-    "es": "Washington D.C.",
-    "fr": "Washington"
-  },
   "altLabel": "DC",
-  "altLabelMap": {
-    "en": "DC",
-    "es": "Distrito de Columbia"
-  },
   "identifier": {
     "@id": "https://example.gov/identifiers/geonames-4140963",
     "@type": "Identifier",
