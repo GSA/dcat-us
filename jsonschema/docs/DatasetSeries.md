@@ -8,24 +8,22 @@ An ordered series of datasets
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                     | Type               | Title/Description                                                                   |
-| -------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                               | string             | -                                                                                   |
-| - [@type](#@type )                           | string             | -                                                                                   |
-| - [contactPoint](#contactPoint )             | null or array      | contact point                                                                       |
-| - [first](#first )                           | More than one type | first                                                                               |
-| - [last](#last )                             | More than one type | last                                                                                |
-| - [seriesMember](#seriesMember )             | null or array      | series member                                                                       |
-| - [accrualPeriodicity](#accrualPeriodicity ) | More than one type | frequency                                                                           |
-| + [description](#description )               | string             | description                                                                         |
-| - [descriptionMap](#descriptionMap )         | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [issued](#issued )                         | More than one type | release date                                                                        |
-| - [modified](#modified )                     | More than one type | update/modification date                                                            |
-| - [publisher](#publisher )                   | More than one type | publisher                                                                           |
-| - [spatial](#spatial )                       | null or array      | spatial/geographic coverage                                                         |
-| - [temporal](#temporal )                     | null or array      | temporal coverage                                                                   |
-| + [title](#title )                           | string             | title                                                                               |
-| - [titleMap](#titleMap )                     | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| Property                                     | Type               | Title/Description           |
+| -------------------------------------------- | ------------------ | --------------------------- |
+| - [@id](#@id )                               | string             | -                           |
+| - [@type](#@type )                           | string             | -                           |
+| - [contactPoint](#contactPoint )             | null or array      | contact point               |
+| - [first](#first )                           | More than one type | first                       |
+| - [last](#last )                             | More than one type | last                        |
+| - [seriesMember](#seriesMember )             | null or array      | series member               |
+| - [accrualPeriodicity](#accrualPeriodicity ) | More than one type | frequency                   |
+| + [description](#description )               | string             | description                 |
+| - [issued](#issued )                         | More than one type | release date                |
+| - [modified](#modified )                     | More than one type | update/modification date    |
+| - [publisher](#publisher )                   | More than one type | publisher                   |
+| - [spatial](#spatial )                       | null or array      | spatial/geographic coverage |
+| - [temporal](#temporal )                     | null or array      | temporal coverage           |
+| + [title](#title )                           | string             | title                       |
 
 ## <a name="@id"></a>Property `DatasetSeries > @id`
 
@@ -312,13 +310,6 @@ A free-text account of the Dataset Series
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="descriptionMap"></a>Property `DatasetSeries > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="issued"></a>Property `DatasetSeries > issued`
 
@@ -609,11 +600,4 @@ A name given to the Dataset Series
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="titleMap"></a>Property `DatasetSeries > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 

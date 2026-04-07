@@ -8,18 +8,16 @@ A system for specifying approved values for a single concept
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                             | Type               | Title/Description                                                                   |
-| ------------------------------------ | ------------------ | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                       | string             | -                                                                                   |
-| - [@type](#@type )                   | string             | -                                                                                   |
-| - [version](#version )               | null or string     | version info                                                                        |
-| - [created](#created )               | More than one type | creation date                                                                       |
-| - [description](#description )       | null or string     | description                                                                         |
-| - [descriptionMap](#descriptionMap ) | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [issued](#issued )                 | More than one type | publication date                                                                    |
-| - [modified](#modified )             | More than one type | update/modification date                                                            |
-| + [title](#title )                   | string             | title                                                                               |
-| - [titleMap](#titleMap )             | null or object     | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| Property                       | Type               | Title/Description        |
+| ------------------------------ | ------------------ | ------------------------ |
+| - [@id](#@id )                 | string             | -                        |
+| - [@type](#@type )             | string             | -                        |
+| - [version](#version )         | null or string     | version info             |
+| - [created](#created )         | More than one type | creation date            |
+| - [description](#description ) | null or string     | description              |
+| - [issued](#issued )           | More than one type | publication date         |
+| - [modified](#modified )       | More than one type | update/modification date |
+| + [title](#title )             | string             | title                    |
 
 ## <a name="@id"></a>Property `ConceptScheme > @id`
 
@@ -120,13 +118,6 @@ A year and month in YYYY-MM format
 A description of the concept scheme
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="descriptionMap"></a>Property `ConceptScheme > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="issued"></a>Property `ConceptScheme > issued`
@@ -280,11 +271,4 @@ The title of the concept scheme
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="titleMap"></a>Property `ConceptScheme > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
