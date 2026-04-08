@@ -25,18 +25,7 @@
     "restrictionStatus": {
       "title": "restriction status",
       "description": "The indication of whether or not there are access restrictions on the item",
-      "anyOf": [
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/concept",
-          "description": "inline description of restriction status"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of restriction status",
-          "format": "iri"
-        }
-      ]
+      "$ref": "/dcat-us/3.0.0/definitions/concept"
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -49,12 +38,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of the specific restriction"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the specific restriction",
-          "format": "iri"
         }
       ]
     }

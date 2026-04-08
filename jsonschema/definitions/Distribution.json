@@ -24,12 +24,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of Concept"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Concept",
-          "format": "iri"
         }
       ]
     },
@@ -44,12 +38,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of Concept"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Concept",
-          "format": "iri"
         }
       ]
     },
@@ -76,19 +64,7 @@
       "description": "A data service that gives access to the distribution of the dataset",
       "type": ["null", "array"],
       "items": {
-        "title": "DataService object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/dataservice",
-            "description": "inline description of DataService"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of DataService",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       }
     },
     "accessURL": {
@@ -164,12 +140,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of Concept"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Concept",
-          "format": "iri"
         }
       ]
     },
@@ -178,19 +148,7 @@
       "description": "List of access restrictions related to the distribution",
       "type": ["null", "array"],
       "items": {
-        "title": "AccessRestriction object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/accessrestriction",
-            "description": "inline description of AccessRestriction"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of AccessRestriction",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       }
     },
     "cuiRestriction": {
@@ -204,12 +162,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/cuirestriction",
           "description": "inline description of CUIRestriction"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of CUIRestriction",
-          "format": "iri"
         }
       ]
     },
@@ -224,12 +176,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/distribution",
           "description": "inline description of the data dictionary"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the data dictionary",
-          "format": "iri"
         }
       ]
     },
@@ -238,19 +184,7 @@
       "description": "Use restriction related to the distribution",
       "type": ["null", "array"],
       "items": {
-        "title": "UseRestriction object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/userestriction",
-            "description": "inline description of UseRestriction"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of UseRestriction",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       }
     },
     "accessRights": {
@@ -264,12 +198,6 @@
         {
           "type": "string",
           "description": "Text description of the access rights"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the access rights",
-          "format": "iri"
         }
       ]
     },
@@ -278,19 +206,7 @@
       "description": "List of established schemas or reference systems to which the described Distribution conforms",
       "type": ["null", "array"],
       "items": {
-        "title": "Standard object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/standard",
-            "description": "inline description of Standard"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Standard",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/standard"
       }
     },
     "description": {
@@ -318,12 +234,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Identifier",
-          "format": "iri"
         }
       ]
     },
@@ -332,19 +242,7 @@
       "description": "A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "type": ["null", "array"],
       "items": {
-        "title": "Identifier object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/identifier",
-            "description": "inline description of Identifier"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Identifier",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
     },
     "issued": {
@@ -415,12 +313,6 @@
         {
           "type": "string",
           "description": "Full text of the license"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the license",
-          "format": "iri"
         }
       ]
     },
@@ -462,18 +354,8 @@
       "description": "A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
       "type": ["null", "array"],
       "items": {
-        "title": "Rights statement text or link",
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "Full text of a statement of rights"
-          },
-          {
-            "type": "string",
-            "description": "reference iri of a statement of rights",
-            "format": "iri"
-          }
-        ]
+        "type": "string",
+        "description": "Full text of a statement of rights"
       }
     },
     "title": {
@@ -490,19 +372,7 @@
       "description": "A list of quality measurements for the distribution",
       "type": ["null", "array"],
       "items": {
-        "title": "QualityMeasurement object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement",
-            "description": "inline description of QualityMeasurement"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of QualityMeasurement",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       }
     },
     "page": {
@@ -510,19 +380,7 @@
       "description": "A page or document about this Distribution",
       "type": ["null", "array"],
       "items": {
-        "title": "Document object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/document",
-            "description": "inline description of Document"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Document",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/document"
       }
     },
     "image": {
@@ -552,12 +410,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/checksum",
           "description": "inline description of Checksum"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Checksum",
-          "format": "iri"
         }
       ]
     }

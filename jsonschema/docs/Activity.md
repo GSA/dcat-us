@@ -37,41 +37,20 @@ List of categories for the Activity
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be   | Description |
-| --------------------------------- | ----------- |
-| [category items](#category_items) | -           |
+| Each item of this array must be | Description                                                 |
+| ------------------------------- | ----------------------------------------------------------- |
+| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
 
-### <a name="category_items"></a>Activity > category > category items
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [Concept](#category_items_anyOf_i0) |
-| [Link](#category_items_anyOf_i1)    |
-
-#### <a name="category_items_anyOf_i0"></a>Property `Activity > category > category items > anyOf > Concept`
+### <a name="category_items"></a>Activity > category > Concept
 
 **Title:** Concept
 
-inline description of Concept
+A labeled value from an optionally specified concept scheme
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
-
-#### <a name="category_items_anyOf_i1"></a>Property `Activity > category > category items > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Concept
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="label"></a>Property `Activity > label`
 

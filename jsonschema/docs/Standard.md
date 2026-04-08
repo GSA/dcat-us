@@ -137,7 +137,6 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
 | [Identifier](#identifier_anyOf_i1)                     |
-| [Link](#identifier_anyOf_i2)                           |
 
 ### <a name="identifier_anyOf_i0"></a>Property `Standard > identifier > anyOf > Null allowed when not required`
 
@@ -157,16 +156,6 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-### <a name="identifier_anyOf_i2"></a>Property `Standard > identifier > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
 ## <a name="otherIdentifier"></a>Property `Standard > otherIdentifier`
 
 **Title:** other identifier
@@ -176,41 +165,20 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [otherIdentifier items](#otherIdentifier_items) | -           |
+| Each item of this array must be      | Description                                                                   |
+| ------------------------------------ | ----------------------------------------------------------------------------- |
+| [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
 
-### <a name="otherIdentifier_items"></a>Standard > otherIdentifier > otherIdentifier items
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                |
-| --------------------------------------------- |
-| [Identifier](#otherIdentifier_items_anyOf_i0) |
-| [Link](#otherIdentifier_items_anyOf_i1)       |
-
-#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+### <a name="otherIdentifier_items"></a>Standard > otherIdentifier > Identifier
 
 **Title:** Identifier
 
-inline description of Identifier
+A unique identifier and optionally it's scheme and other relevant information
 
 | **Type**                  | More than one type                 |
 | ------------------------- | ---------------------------------- |
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
-
-#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Standard > otherIdentifier > otherIdentifier items > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="issued"></a>Property `Standard > issued`
 
@@ -379,43 +347,20 @@ List of categories for the Standard
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description |
-| ----------------------------------- | ----------- |
-| [Category or link](#category_items) | -           |
+| Each item of this array must be | Description                                                 |
+| ------------------------------- | ----------------------------------------------------------- |
+| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
 
-### <a name="category_items"></a>Standard > category > Category or link
-
-**Title:** Category or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [Concept](#category_items_anyOf_i0) |
-| [Link](#category_items_anyOf_i1)    |
-
-#### <a name="category_items_anyOf_i0"></a>Property `Standard > category > Category or link > anyOf > Concept`
+### <a name="category_items"></a>Standard > category > Concept
 
 **Title:** Concept
 
-inline description of Concept
+A labeled value from an optionally specified concept scheme
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
-
-#### <a name="category_items_anyOf_i1"></a>Property `Standard > category > Category or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Concept
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="inScheme"></a>Property `Standard > inScheme`
 
@@ -431,7 +376,6 @@ The reference register to which the Standard belongs
 | ---------------------------------------------------- |
 | [Null allowed when not required](#inScheme_anyOf_i0) |
 | [ConceptScheme](#inScheme_anyOf_i1)                  |
-| [Link](#inScheme_anyOf_i2)                           |
 
 ### <a name="inScheme_anyOf_i0"></a>Property `Standard > inScheme > anyOf > Null allowed when not required`
 
@@ -446,18 +390,8 @@ The reference register to which the Standard belongs
 
 inline description of ConceptScheme
 
-| **Type**                  | `object`                                                             |
-| ------------------------- | -------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                     |
-| **Same definition as**    | [ConceptScheme](#category_items_anyOf_i0_anyOf_i1_inScheme_anyOf_i0) |
-
-### <a name="inScheme_anyOf_i2"></a>Property `Standard > inScheme > anyOf > Link`
-
-**Title:** Link
-
-reference iri of ConceptScheme
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                      |
+| ------------------------- | --------------------------------------------- |
+| **Additional properties** | Any type allowed                              |
+| **Same definition as**    | [inScheme](#category_items_anyOf_i1_inScheme) |
 

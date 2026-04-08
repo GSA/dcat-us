@@ -73,7 +73,6 @@ the agency that manages the identifier scheme
 | ------------------------------------------------------------ |
 | [Null allowed when not required](#anyOf_i1_creator_anyOf_i0) |
 | [Organization](#anyOf_i1_creator_anyOf_i1)                   |
-| [Link](#anyOf_i1_creator_anyOf_i2)                           |
 
 #### <a name="anyOf_i1_creator_anyOf_i0"></a>Property `Identifier > anyOf > Identifier as a complex object > creator > anyOf > Null allowed when not required`
 
@@ -92,16 +91,6 @@ inline description of the creator
 | ------------------------- | --------------------------------- |
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
-
-#### <a name="anyOf_i1_creator_anyOf_i2"></a>Property `Identifier > anyOf > Identifier as a complex object > creator > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the creator
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ### <a name="anyOf_i1_issued"></a>Property `Identifier > anyOf > Identifier as a complex object > issued`
 

@@ -42,43 +42,20 @@ The address of the contact
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be          | Description |
-| ---------------------------------------- | ----------- |
-| [Address object or link](#address_items) | -           |
+| Each item of this array must be | Description               |
+| ------------------------------- | ------------------------- |
+| [Address](#address_items)       | A single physical address |
 
-### <a name="address_items"></a>Kind > address > Address object or link
-
-**Title:** Address object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                     |
-| ---------------------------------- |
-| [Address](#address_items_anyOf_i0) |
-| [Link](#address_items_anyOf_i1)    |
-
-#### <a name="address_items_anyOf_i0"></a>Property `Kind > address > Address object or link > anyOf > Address`
+### <a name="address_items"></a>Kind > address > Address
 
 **Title:** Address
 
-inline address information
+A single physical address
 
 | **Type**                  | `object`                |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
-
-#### <a name="address_items_anyOf_i1"></a>Property `Kind > address > Address object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Address
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="hasEmail"></a>Property `Kind > hasEmail`
 
