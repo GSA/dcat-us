@@ -3,5 +3,5 @@
   "@type": "Location",
   "prefLabel": "New York City",
   "identifier": "https://www.geonames.org/5128581/",
-  "inScheme": "https://www.geonames.org/"
+  "inScheme": { "title": "Minimal concept scheme" }
 }
