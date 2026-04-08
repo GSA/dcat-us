@@ -18,19 +18,7 @@
       "description": "List of related catalogs whose contents are of interest in the context of this catalog",
       "type": ["null", "array"],
       "items": {
-        "title": "Catalog or a link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/catalog",
-            "description": "inline description of Catalog"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Catalog",
-            "format": "iri"
-          }
-        ]
+        "$ref": "#"
       }
     },
     "contactPoint": {
@@ -38,19 +26,7 @@
       "description": "Contact information that can be used for sending comments about the Catalog",
       "type": ["null", "array"],
       "items": {
-        "title": "Contact point or a link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/kind",
-            "description": "inline value for contact point"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of contact point",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/kind"
       }
     },
     "dataset": {
@@ -58,18 +34,7 @@
       "description": "List of Datasets that are part of the Catalog",
       "type": "array",
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/dataset",
-            "description": "inline description of Dataset"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Dataset",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/dataset"
       }
     },
     "keyword": {
@@ -90,18 +55,7 @@
       "description": "A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/catalogrecord",
-            "description": "inline description of the record"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the record",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/catalogrecord"
       }
     },
     "service": {
@@ -109,18 +63,7 @@
       "description": "List of data services that are listed in the Catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/dataservice",
-            "description": "inline description of the service"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the service",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       }
     },
     "theme": {
@@ -128,18 +71,7 @@
       "description": "A list of categories for the Catalog. A Catalog may be associated with multiple themes",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/concept",
-            "description": "inline description of the theme"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the theme",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
     },
     "themeTaxonomy": {
@@ -147,18 +79,7 @@
       "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
-            "description": "inline description of ConceptScheme"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of ConceptScheme",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
       }
     },
     "accessRights": {
@@ -172,12 +93,6 @@
         {
           "type": "string",
           "description": "Text description of the access rights"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the access rights",
-          "format": "iri"
         }
       ]
     },
@@ -190,14 +105,7 @@
           "title": "Null allowed when not required"
         },
         {
-          "$ref": "/dcat-us/3.0.0/definitions/standard",
-          "description": "inline description of Standard"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Standard",
-          "format": "iri"
+          "$ref": "/dcat-us/3.0.0/definitions/standard"
         }
       ]
     },
@@ -206,18 +114,7 @@
       "description": "The entity responsible for creating the resource",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/agent",
-            "description": "inline description of creator"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of creator",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/agent"
       }
     },
     "description": {
@@ -234,18 +131,7 @@
       "description": "A list of related catalogs that are part of the described catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "#",
-            "description": "inline description of the related catalog"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the related catalog",
-            "format": "iri"
-          }
-        ]
+        "$ref": "#"
       }
     },
     "identifier": {
@@ -259,12 +145,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Identifier",
-          "format": "iri"
         }
       ]
     },
@@ -273,18 +153,7 @@
       "description": "A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/identifier",
-            "description": "inline description of Identifier"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Identifier",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
     },
     "issued": {
@@ -355,12 +224,6 @@
         {
           "type": "string",
           "description": "Full text of the license"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the license",
-          "format": "iri"
         }
       ]
     },
@@ -408,12 +271,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/agent",
           "description": "inline description of the publisher"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the publisher",
-          "format": "iri"
         }
       ]
     },
@@ -422,19 +279,8 @@
       "description": "A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
       "type": ["null", "array"],
       "items": {
-        "title": "Rights statement text or link",
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "Full text of a statement of rights"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of a statement of rights",
-            "format": "iri"
-          }
-        ]
+        "type": "string",
+        "description": "Full text of a statement of rights"
       }
     },
     "rightsHolder": {
@@ -442,18 +288,7 @@
       "description": "List of organizations holding rights on the catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/organization",
-            "description": "inline description of rights holder"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of rights holder",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/organization"
       }
     },
     "spatial": {
@@ -461,18 +296,7 @@
       "description": "The geographical area covered by the catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/location",
-            "description": "inline description of geographical coverage"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of geographical coverage",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/location"
       }
     },
     "subject": {
@@ -480,18 +304,7 @@
       "description": "List of subjects of the catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/concept",
-            "description": "inline description of the subject"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the subject",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
     },
     "temporal": {
@@ -499,18 +312,7 @@
       "description": "List of temporal periods that the Catalog covers",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/periodoftime",
-            "description": "inline description of the temporal coverage"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of the temporal coverage",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       }
     },
     "title": {
@@ -527,18 +329,7 @@
       "description": "List of categories for the Catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/concept",
-            "description": "inline description of Concept"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Concept",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
     },
     "homepage": {
@@ -552,12 +343,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/document",
           "description": "inline description of the home page"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of the home page",
-          "format": "iri"
         }
       ]
     },
@@ -566,18 +351,7 @@
       "description": "A list of agents having some form of responsibility for the catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/attribution",
-            "description": "inline description of Attribution"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Attribution",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/attribution"
       }
     }
   },

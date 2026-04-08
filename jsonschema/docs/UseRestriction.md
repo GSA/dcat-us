@@ -14,7 +14,7 @@ A restriction on usage of another item
 | - [@type](#@type )                             | string             | -                                                                                         |
 | - [restrictionNote](#restrictionNote )         | null or string     | restriction note                                                                          |
 | - [restrictionNoteMap](#restrictionNoteMap )   | null or object     | Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status                                                                        |
+| + [restrictionStatus](#restrictionStatus )     | object             | restriction status                                                                        |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction                                                                      |
 
 ## <a name="@id"></a>Property `UseRestriction > @id`
@@ -51,36 +51,11 @@ Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'frenc
 
 Indication of whether or not there are use restrictions on the archival materials
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Required**              | Yes                |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                         |
-| -------------------------------------- |
-| [Concept](#restrictionStatus_anyOf_i0) |
-| [Link](#restrictionStatus_anyOf_i1)    |
-
-### <a name="restrictionStatus_anyOf_i0"></a>Property `UseRestriction > restrictionStatus > anyOf > Concept`
-
-**Title:** Concept
-
-inline description of restriction status
-
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
+| **Required**              | Yes                     |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
-
-### <a name="restrictionStatus_anyOf_i1"></a>Property `UseRestriction > restrictionStatus > anyOf > Link`
-
-**Title:** Link
-
-reference iri of restriction status
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="specificRestriction"></a>Property `UseRestriction > specificRestriction`
 
@@ -96,7 +71,6 @@ The specific NARA restriction associated with the use restriction
 | --------------------------------------------------------------- |
 | [Null allowed when not required](#specificRestriction_anyOf_i0) |
 | [Concept](#specificRestriction_anyOf_i1)                        |
-| [Link](#specificRestriction_anyOf_i2)                           |
 
 ### <a name="specificRestriction_anyOf_i0"></a>Property `UseRestriction > specificRestriction > anyOf > Null allowed when not required`
 
@@ -111,18 +85,8 @@ The specific NARA restriction associated with the use restriction
 
 inline description of the specific restriction
 
-| **Type**                  | More than one type                     |
-| ------------------------- | -------------------------------------- |
-| **Additional properties** | Any type allowed                       |
-| **Same definition as**    | [Concept](#restrictionStatus_anyOf_i0) |
-
-### <a name="specificRestriction_anyOf_i2"></a>Property `UseRestriction > specificRestriction > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the specific restriction
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | More than one type                      |
+| ------------------------- | --------------------------------------- |
+| **Additional properties** | Any type allowed                        |
+| **Same definition as**    | [restrictionStatus](#restrictionStatus) |
 

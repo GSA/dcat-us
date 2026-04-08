@@ -16,18 +16,7 @@
     "isMeasurementOf": {
       "title": "is measurement of",
       "description": "The metric being observed",
-      "anyOf": [
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/metric",
-          "description": "inline description of Metric"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Metric",
-          "format": "iri"
-        }
-      ]
+      "$ref": "/dcat-us/3.0.0/definitions/metric"
     },
     "value": {
       "title": "value",

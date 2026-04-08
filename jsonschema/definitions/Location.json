@@ -82,11 +82,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of Identifier",
-          "format": "iri"
         }
       ]
     },
@@ -95,17 +90,7 @@
       "description": "A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/identifier",
-            "description": "inline description of Identifier"
-          },
-          {
-            "type": "string",
-            "description": "reference iri of Identifier",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
     },
     "geometry": {
@@ -136,11 +121,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
           "description": "inline description of the gazetteer"
-        },
-        {
-          "type": "string",
-          "description": "reference iri of the gazetteer",
-          "format": "iri"
         }
       ]
     },

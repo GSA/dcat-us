@@ -36,12 +36,6 @@
             {
               "$ref": "/dcat-us/3.0.0/definitions/organization",
               "description": "inline description of the creator"
-            },
-            {
-              "type": "string",
-              "title": "Link",
-              "description": "reference iri of the creator",
-              "format": "iri"
             }
           ]
         },
