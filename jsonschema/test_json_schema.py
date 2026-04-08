@@ -54,24 +54,24 @@ def find_meaningful_errors(errors):
 def summarize_error(error, prefix=""):
     """Summarize a single error into a human-readable string."""
     path = format_path(error.path)
-    
+
     # Handle anyOf/oneOf errors by finding meaningful sub-errors
     if error.validator in ("anyOf", "oneOf") and error.context:
         meaningful = find_meaningful_errors(error.context)
-        
+
         # If all sub-errors are null-type, we have a different problem
         if not meaningful:
             return f"{prefix}{path}: field is not null and does not match any allowed type"
-        
+
         # Check if it's a simple "not null and wrong type" case
         has_null_alternative = any(is_null_type_error(e) for e in error.context)
-        
+
         summaries = []
         for sub_error in meaningful:
             sub_summary = summarize_error(sub_error, prefix="")
             if sub_summary:
                 summaries.append(sub_summary)
-        
+
         if has_null_alternative and summaries:
             intro = f"{path}: field is not null and "
             if len(summaries) == 1:
@@ -87,7 +87,7 @@ def summarize_error(error, prefix=""):
                 return f"{prefix}{path}: does not match any alternative:\n" + "\n".join(
                     f"{prefix}    - {s}" for s in summaries
                 )
-    
+
     # Handle $ref errors - find the expected class
     if "$ref" in error.schema:
         class_name = extract_schema_name(error.schema)
@@ -103,7 +103,7 @@ def summarize_error(error, prefix=""):
                     return "; ".join(sub_summaries)
         if class_name:
             return f"does not conform to {class_name}"
-    
+
     # Handle required field errors
     if error.validator == "required":
         missing = error.validator_value
@@ -116,26 +116,26 @@ def summarize_error(error, prefix=""):
             field = error.message.split("'")[1]
             return f"missing required field '{field}'"
         return error.message
-    
+
     # Handle type errors
     if error.validator == "type":
         expected = error.validator_value
         if isinstance(expected, list):
             expected = " or ".join(expected)
-        return f"expected type '{expected}'"
-    
+        return f"{prefix}{path}: expected type '{expected}'"
+
     # Handle enum errors
     if error.validator == "enum":
         return f"value not in allowed values: {error.validator_value}"
-    
+
     # Handle pattern errors
     if error.validator == "pattern":
         return f"does not match pattern '{error.validator_value}'"
-    
+
     # Handle format errors
     if error.validator == "format":
         return f"invalid format, expected '{error.validator_value}'"
-    
+
     # Default: use the message
     return error.message
 
@@ -144,13 +144,13 @@ def format_validation_errors(errors, indent=0):
     """Format validation errors with summarization and clear nesting."""
     output = []
     prefix = "  " * indent
-    
+
     # Group errors by their root path for cleaner output
     for error in sorted(errors, key=lambda e: list(e.path)):
         summary = summarize_error(error, prefix=prefix)
         if summary:
             output.append(summary)
-    
+
     return "\n".join(output)
 
 def load_schema_registry(script_dir):

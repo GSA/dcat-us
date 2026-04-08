@@ -51,7 +51,15 @@
       "description": "A sample CSV file for preview"
     }
   ],
-  "supportedSchema": "https://example.gov/schemas/data-schema-v1",
+  "supportedSchema": {
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
+    "contactPoint": {
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
+  },
   "versionNotes": "Initial release of the comprehensive example dataset with all fields populated.",
   "contactPoint": [
     {
@@ -103,9 +111,35 @@
       "description": "JSON distribution of the dataset"
     }
   ],
-  "first": "https://example.gov/datasets/comprehensive-example-first",
-  "hasCurrentVersion": "https://example.gov/datasets/comprehensive-example-001",
-  "hasVersion": ["https://example.gov/datasets/comprehensive-example-v0.9"],
+  "first": {
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
+    "contactPoint": {
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
+  },
+  "hasCurrentVersion": {
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
+    "contactPoint": {
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
+  },
+  "hasVersion": [
+    {
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
+      "contactPoint": {
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
+    }
+  ],
   "inSeries": [
     {
       "@id": "https://example.gov/series/comprehensive-series",
@@ -120,8 +154,24 @@
           "hasEmail": "mailto:series@example.gov"
         }
       ],
-      "first": "https://example.gov/datasets/comprehensive-example-first",
-      "last": "https://example.gov/datasets/comprehensive-example-001"
+      "first": {
+        "description": "A minimal dataset",
+        "publisher": { "name": "The Minimal Organization" },
+        "title": "Dataset One",
+        "contactPoint": {
+          "hasEmail": "mailto:example@example.gov",
+          "fn": "Example contact"
+        }
+      },
+      "last": {
+        "description": "A minimal dataset",
+        "publisher": { "name": "The Minimal Organization" },
+        "title": "Dataset One",
+        "contactPoint": {
+          "hasEmail": "mailto:example@example.gov",
+          "fn": "Example contact"
+        }
+      }
     }
   ],
   "keyword": [
@@ -139,9 +189,19 @@
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
     "title": "Comprehensive Dataset Landing Page",
-    "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example"
+    "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example",
+    "creators": ["Sample Government Agency"],
+    "publishers": "Sample Government Agency"
   },
-  "previousVersion": "https://example.gov/datasets/comprehensive-example-v0.9",
+  "previousVersion": {
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
+    "contactPoint": {
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
+  },
   "qualifiedRelation": [
     {
       "@id": "https://example.gov/relationships/related-dataset-rel",
@@ -161,6 +221,16 @@
     "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
     "format": "PDF (Portable Document Format)"
   },
+  "geographicBoundingBox": [
+    {
+      "@id": "https://example.gov/bboxes/conus",
+      "@type": "GeographicBoundingBox",
+      "westBoundingLongitude": "-124.848974",
+      "eastBoundingLongitude": "-66.885444",
+      "northBoundingLatitude": "49.384358",
+      "southBoundingLatitude": "24.396308"
+    }
+  ],
   "liabilityStatement": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
   "metadataDistribution": [
     {
@@ -205,8 +275,15 @@
     "name": "Original Dataset Creator"
   },
   "hasPart": [
-    "https://example.gov/datasets/comprehensive-part-1",
-    "https://example.gov/datasets/comprehensive-part-2"
+    {
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
+      "contactPoint": {
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
+    }
   ],
   "isReferencedBy": [
     "https://example.gov/publications/annual-report-2024",
@@ -222,7 +299,17 @@
     "https://example.gov/datasets/supplementary-dataset",
     "https://example.gov/services/api-endpoint"
   ],
-  "replaces": ["https://example.gov/datasets/legacy-comprehensive-dataset"],
+  "replaces": [
+    {
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
+      "contactPoint": {
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
+    }
+  ],
   "rights": [
     "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
   ],
@@ -234,7 +321,17 @@
       "prefLabel": "Sample Government Agency"
     }
   ],
-  "source": ["https://example.gov/datasets/raw-sensor-data"],
+  "source": [
+    {
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
+      "contactPoint": {
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
+    }
+  ],
   "temporal": [
     {
       "@id": "https://example.gov/periods/data-coverage",
@@ -264,6 +361,8 @@
       "@type": "Document",
       "title": "User Guide",
       "abstract": "A comprehensive guide for using this dataset",
+      "creators": ["Documentation Team"],
+      "publishers": "Sample Government Agency",
       "bibliographicCitation": "Sample Government Agency. (2024). Comprehensive Dataset User Guide."
     }
   ],
