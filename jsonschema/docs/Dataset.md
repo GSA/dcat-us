@@ -195,10 +195,10 @@ supported schema for this dataset
 
 inline description of the supported schema
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="versionNotes"></a>Property `Dataset > versionNotes`
 
@@ -231,10 +231,10 @@ A single contact point or list of contact information that can be used for sendi
 
 inline description of Kind
 
-| **Type**                  | `object`                                                              |
-| ------------------------- | --------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                      |
-| **Same definition as**    | [Kind](#sample_items_accessService_items_anyOf_i0_contactPoint_items) |
+| **Type**                  | `object`                                                     |
+| ------------------------- | ------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                             |
+| **Same definition as**    | [Kind](#sample_items_accessService_items_contactPoint_items) |
 
 ### <a name="contactPoint_anyOf_i1"></a>Property `Dataset > contactPoint > anyOf > List of contacts`
 
@@ -253,10 +253,10 @@ inline description of Kind
 
 Contact information for an individual or entity
 
-| **Type**                  | `object`                                                              |
-| ------------------------- | --------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                      |
-| **Same definition as**    | [Kind](#sample_items_accessService_items_anyOf_i0_contactPoint_items) |
+| **Type**                  | `object`                                                     |
+| ------------------------- | ------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                             |
+| **Same definition as**    | [Kind](#sample_items_accessService_items_contactPoint_items) |
 
 ## <a name="distribution"></a>Property `Dataset > distribution`
 
@@ -310,10 +310,10 @@ the first item of the sequence the dataset belongs to
 
 inline description of Dataset
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="hasCurrentVersion"></a>Property `Dataset > hasCurrentVersion`
 
@@ -343,10 +343,10 @@ reference to the current (latest) version of a dataset
 
 inline description of Dataset
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="hasVersion"></a>Property `Dataset > hasVersion`
 
@@ -367,10 +367,10 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 
 Information about a set of data
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="inSeries"></a>Property `Dataset > inSeries`
 
@@ -391,10 +391,10 @@ List of Dataset Series this dataset belongs to
 
 An ordered series of datasets
 
-| **Type**                  | `object`                                                                                       |
-| ------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                               |
-| **Same definition as**    | [DatasetSeries](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items) |
+| **Type**                  | `object`                                                                              |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                      |
+| **Same definition as**    | [DatasetSeries](#sample_items_accessService_items_servesDataset_items_inSeries_items) |
 
 ## <a name="keyword"></a>Property `Dataset > keyword`
 
@@ -455,10 +455,10 @@ A web page that provides access to the Dataset, its Distributions and/or additio
 
 inline description of Document
 
-| **Type**                  | `object`                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                |
-| **Same definition as**    | [Document](#sample_items_accessService_items_anyOf_i0_servesDataset_items_landingPage_anyOf_i1) |
+| **Type**                  | `object`                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                       |
+| **Same definition as**    | [Document](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1) |
 
 ## <a name="previousVersion"></a>Property `Dataset > previousVersion`
 
@@ -488,10 +488,10 @@ reference to the previous dataset version
 
 inline description of Dataset
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="qualifiedRelation"></a>Property `Dataset > qualifiedRelation`
 
@@ -512,10 +512,10 @@ Qualified relationship with role of the dataset with another resource
 
 Information about an item or entity that has some relationship to a dataset and the nature of the relationship
 
-| **Type**                  | `object`                                                                                               |
-| ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                       |
-| **Same definition as**    | [Relationship](#sample_items_accessService_items_anyOf_i0_servesDataset_items_qualifiedRelation_items) |
+| **Type**                  | `object`                                                                                      |
+| ------------------------- | --------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                              |
+| **Same definition as**    | [Relationship](#sample_items_accessService_items_servesDataset_items_qualifiedRelation_items) |
 
 ## <a name="spatialResolutionInMeters"></a>Property `Dataset > spatialResolutionInMeters`
 
@@ -800,10 +800,10 @@ List of standards to which the described Dataset conforms
 
 Information about a particular standard that another item conforms to
 
-| **Type**                  | `object`                                                                                                         |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                 |
-| **Same definition as**    | [Standard](#sample_items_accessService_items_anyOf_i0_servesDataset_items_landingPage_anyOf_i1_conformsTo_items) |
+| **Type**                  | `object`                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [Standard](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1_conformsTo_items) |
 
 ## <a name="contributor"></a>Property `Dataset > contributor`
 
@@ -824,10 +824,10 @@ List of agents contributing to the Dataset
 
 An entity that could be involved with a resource
 
-| **Type**                  | `object`                                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                          |
-| **Same definition as**    | [Agent](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
+| **Type**                  | `object`                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                 |
+| **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
 ## <a name="created"></a>Property `Dataset > created`
 
@@ -928,10 +928,10 @@ An entity responsible for producing the dataset
 
 inline description of Agent
 
-| **Type**                  | `object`                                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                          |
-| **Same definition as**    | [Agent](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
+| **Type**                  | `object`                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                 |
+| **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
 ## <a name="description"></a>Property `Dataset > description`
 
@@ -969,10 +969,10 @@ List of related datasets that are part of the described dataset
 
 Information about a set of data
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="identifier"></a>Property `Dataset > identifier`
 
@@ -1302,10 +1302,10 @@ List of Datasets replaced by this Dataset
 
 Information about a set of data
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="rights"></a>Property `Dataset > rights`
 
@@ -1370,10 +1370,10 @@ List of related Datasets from which the described Dataset is derived
 
 Information about a set of data
 
-| **Type**                  | `object`                                                                  |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                          |
-| **Same definition as**    | [Dataset](#sample_items_accessService_items_anyOf_i0_servesDataset_items) |
+| **Type**                  | `object`                                                         |
+| ------------------------- | ---------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                 |
+| **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
 ## <a name="spatial"></a>Property `Dataset > spatial`
 
@@ -1404,10 +1404,10 @@ A geographic region or regions that are covered by the Dataset
 
 inline description of Location
 
-| **Type**                  | `object`                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                        |
-| **Same definition as**    | [Location](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_spatial_items) |
+| **Type**                  | `object`                                                                                       |
+| ------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                               |
+| **Same definition as**    | [Location](#sample_items_accessService_items_servesDataset_items_inSeries_items_spatial_items) |
 
 ### <a name="spatial_anyOf_i2"></a>Property `Dataset > spatial > anyOf > List of geographic regions`
 
@@ -1426,10 +1426,10 @@ inline description of Location
 
 Information about a specific geographic location
 
-| **Type**                  | `object`                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                        |
-| **Same definition as**    | [Location](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_spatial_items) |
+| **Type**                  | `object`                                                                                       |
+| ------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                               |
+| **Same definition as**    | [Location](#sample_items_accessService_items_servesDataset_items_inSeries_items_spatial_items) |
 
 ## <a name="subject"></a>Property `Dataset > subject`
 
@@ -1474,10 +1474,10 @@ List of temporal periods that the dataset covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                                             |
-| **Same definition as**    | [PeriodOfTime](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_temporal_items) |
+| **Type**                  | `object`                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                    |
+| **Same definition as**    | [PeriodOfTime](#sample_items_accessService_items_servesDataset_items_inSeries_items_temporal_items) |
 
 ## <a name="title"></a>Property `Dataset > title`
 
@@ -1539,10 +1539,10 @@ List of quality measurements for the dataset
 
 A single measurement of one metric
 
-| **Type**                  | `object`                                                                                                         |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                 |
-| **Same definition as**    | [QualityMeasurement](#sample_items_accessService_items_anyOf_i0_servesDataset_items_hasQualityMeasurement_items) |
+| **Type**                  | `object`                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [QualityMeasurement](#sample_items_accessService_items_servesDataset_items_hasQualityMeasurement_items) |
 
 ## <a name="page"></a>Property `Dataset > page`
 
@@ -1563,10 +1563,10 @@ List of pages or documents about this dataset
 
 Information about a text document
 
-| **Type**                  | `object`                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                |
-| **Same definition as**    | [Document](#sample_items_accessService_items_anyOf_i0_servesDataset_items_landingPage_anyOf_i1) |
+| **Type**                  | `object`                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                       |
+| **Same definition as**    | [Document](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1) |
 
 ## <a name="qualifiedAttribution"></a>Property `Dataset > qualifiedAttribution`
 
@@ -1587,10 +1587,10 @@ List of agents having some form of responsibility for the dataset
 
 An attribution that an agent plays some role
 
-| **Type**                  | `object`                                                                                                 |
-| ------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                         |
-| **Same definition as**    | [Attribution](#sample_items_accessService_items_anyOf_i0_servesDataset_items_qualifiedAttribution_items) |
+| **Type**                  | `object`                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                |
+| **Same definition as**    | [Attribution](#sample_items_accessService_items_servesDataset_items_qualifiedAttribution_items) |
 
 ## <a name="wasAttributedTo"></a>Property `Dataset > wasAttributedTo`
 
@@ -1611,10 +1611,10 @@ List of agents attributed to this dataset
 
 An entity that could be involved with a resource
 
-| **Type**                  | `object`                                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                          |
-| **Same definition as**    | [Agent](#sample_items_accessService_items_anyOf_i0_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
+| **Type**                  | `object`                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                                 |
+| **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
 ## <a name="wasGeneratedBy"></a>Property `Dataset > wasGeneratedBy`
 
@@ -1635,10 +1635,10 @@ List of activities that generated, or provide the business context for the creat
 
 An activity which a resource could be related to
 
-| **Type**                  | `object`                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                |
-| **Same definition as**    | [Activity](#sample_items_accessService_items_anyOf_i0_servesDataset_items_wasGeneratedBy_items) |
+| **Type**                  | `object`                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                       |
+| **Same definition as**    | [Activity](#sample_items_accessService_items_servesDataset_items_wasGeneratedBy_items) |
 
 ## <a name="wasUsedBy"></a>Property `Dataset > wasUsedBy`
 
@@ -1659,10 +1659,10 @@ List of activities that used the Dataset
 
 An activity which a resource could be related to
 
-| **Type**                  | `object`                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                |
-| **Same definition as**    | [Activity](#sample_items_accessService_items_anyOf_i0_servesDataset_items_wasGeneratedBy_items) |
+| **Type**                  | `object`                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                       |
+| **Same definition as**    | [Activity](#sample_items_accessService_items_servesDataset_items_wasGeneratedBy_items) |
 
 ## <a name="image"></a>Property `Dataset > image`
 

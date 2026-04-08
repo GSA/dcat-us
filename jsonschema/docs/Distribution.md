@@ -175,27 +175,15 @@ A data service that gives access to the distribution of the dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                    | Description |
-| -------------------------------------------------- | ----------- |
-| [DataService object or link](#accessService_items) | -           |
+| Each item of this array must be     | Description                                   |
+| ----------------------------------- | --------------------------------------------- |
+| [DataService](#accessService_items) | A service for providing data at a URL or URLs |
 
-### <a name="accessService_items"></a>Distribution > accessService > DataService object or link
-
-**Title:** DataService object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                               |
-| -------------------------------------------- |
-| [DataService](#accessService_items_anyOf_i0) |
-
-#### <a name="accessService_items_anyOf_i0"></a>Property `Distribution > accessService > DataService object or link > anyOf > DataService`
+### <a name="accessService_items"></a>Distribution > accessService > DataService
 
 **Title:** DataService
 
-inline description of DataService
+A service for providing data at a URL or URLs
 
 | **Type**                  | `object`                        |
 | ------------------------- | ------------------------------- |
@@ -372,10 +360,10 @@ List of access restrictions related to the distribution
 
 A restriction on the permitted access to a resource
 
-| **Type**                  | `object`                                                                                                    |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                            |
-| **Same definition as**    | [AccessRestriction](#accessService_items_anyOf_i0_servesDataset_items_sample_items_accessRestriction_items) |
+| **Type**                  | `object`                                                                                           |
+| ------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                   |
+| **Same definition as**    | [AccessRestriction](#accessService_items_servesDataset_items_sample_items_accessRestriction_items) |
 
 ## <a name="cuiRestriction"></a>Property `Distribution > cuiRestriction`
 
@@ -405,10 +393,10 @@ Controlled Unclassified Information restriction related to the distribution
 
 inline description of CUIRestriction
 
-| **Type**                  | `object`                                                                                                 |
-| ------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                         |
-| **Same definition as**    | [CUIRestriction](#accessService_items_anyOf_i0_servesDataset_items_sample_items_cuiRestriction_anyOf_i1) |
+| **Type**                  | `object`                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                |
+| **Same definition as**    | [CUIRestriction](#accessService_items_servesDataset_items_sample_items_cuiRestriction_anyOf_i1) |
 
 ## <a name="describedBy"></a>Property `Distribution > describedBy`
 
@@ -438,10 +426,10 @@ A distribution containing the Data Dictionary for this distribution
 
 inline description of the data dictionary
 
-| **Type**                  | `object`                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                               |
-| **Same definition as**    | [Distribution](#accessService_items_anyOf_i0_servesDataset_items_sample_items) |
+| **Type**                  | `object`                                                              |
+| ------------------------- | --------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                      |
+| **Same definition as**    | [Distribution](#accessService_items_servesDataset_items_sample_items) |
 
 ## <a name="useRestriction"></a>Property `Distribution > useRestriction`
 
@@ -462,10 +450,10 @@ Use restriction related to the distribution
 
 A restriction on usage of another item
 
-| **Type**                  | `object`                                                                                              |
-| ------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                      |
-| **Same definition as**    | [UseRestriction](#accessService_items_anyOf_i0_servesDataset_items_sample_items_useRestriction_items) |
+| **Type**                  | `object`                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                             |
+| **Same definition as**    | [UseRestriction](#accessService_items_servesDataset_items_sample_items_useRestriction_items) |
 
 ## <a name="accessRights"></a>Property `Distribution > accessRights`
 
@@ -515,10 +503,10 @@ List of established schemas or reference systems to which the described Distribu
 
 Information about a particular standard that another item conforms to
 
-| **Type**                  | `object`                                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                            |
-| **Same definition as**    | [Standard](#accessService_items_anyOf_i0_servesDataset_items_sample_items_conformsTo_items) |
+| **Type**                  | `object`                                                                           |
+| ------------------------- | ---------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                   |
+| **Same definition as**    | [Standard](#accessService_items_servesDataset_items_sample_items_conformsTo_items) |
 
 ## <a name="description"></a>Property `Distribution > description`
 
@@ -573,10 +561,10 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                      |
-| **Same definition as**    | [Identifier](#accessService_items_anyOf_i0_servesDataset_items_otherIdentifier_items) |
+| **Type**                  | More than one type                                                           |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                             |
+| **Same definition as**    | [Identifier](#accessService_items_servesDataset_items_otherIdentifier_items) |
 
 ## <a name="otherIdentifier"></a>Property `Distribution > otherIdentifier`
 
@@ -597,10 +585,10 @@ A list of identifiers for the Distribution besides the main identifier, e.g. the
 
 A unique identifier and optionally it's scheme and other relevant information
 
-| **Type**                  | More than one type                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                      |
-| **Same definition as**    | [Identifier](#accessService_items_anyOf_i0_servesDataset_items_otherIdentifier_items) |
+| **Type**                  | More than one type                                                           |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                             |
+| **Same definition as**    | [Identifier](#accessService_items_servesDataset_items_otherIdentifier_items) |
 
 ## <a name="issued"></a>Property `Distribution > issued`
 
@@ -884,10 +872,10 @@ A list of quality measurements for the distribution
 
 A single measurement of one metric
 
-| **Type**                  | `object`                                                                                                         |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                 |
-| **Same definition as**    | [QualityMeasurement](#accessService_items_anyOf_i0_servesDataset_items_sample_items_hasQualityMeasurement_items) |
+| **Type**                  | `object`                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [QualityMeasurement](#accessService_items_servesDataset_items_sample_items_hasQualityMeasurement_items) |
 
 ## <a name="page"></a>Property `Distribution > page`
 
@@ -908,10 +896,10 @@ A page or document about this Distribution
 
 Information about a text document
 
-| **Type**                  | `object`                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                      |
-| **Same definition as**    | [Document](#accessService_items_anyOf_i0_servesDataset_items_sample_items_page_items) |
+| **Type**                  | `object`                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                             |
+| **Same definition as**    | [Document](#accessService_items_servesDataset_items_sample_items_page_items) |
 
 ## <a name="image"></a>Property `Distribution > image`
 
@@ -973,8 +961,8 @@ A mechanism that can be used to verify that the contents of a distribution have 
 
 inline description of Checksum
 
-| **Type**                  | `object`                                                                                     |
-| ------------------------- | -------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                             |
-| **Same definition as**    | [Checksum](#accessService_items_anyOf_i0_servesDataset_items_sample_items_checksum_anyOf_i1) |
+| **Type**                  | `object`                                                                            |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                    |
+| **Same definition as**    | [Checksum](#accessService_items_servesDataset_items_sample_items_checksum_anyOf_i1) |
 

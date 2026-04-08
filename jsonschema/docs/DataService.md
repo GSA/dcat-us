@@ -266,10 +266,10 @@ List of general standards or specifications that the Data Service endpoints impl
 
 Information about a particular standard that another item conforms to
 
-| **Type**                  | `object`                                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                            |
-| **Same definition as**    | [Standard](#servesDataset_items_sample_items_accessService_items_anyOf_i0_conformsTo_items) |
+| **Type**                  | `object`                                                                           |
+| ------------------------- | ---------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                   |
+| **Same definition as**    | [Standard](#servesDataset_items_sample_items_accessService_items_conformsTo_items) |
 
 ## <a name="created"></a>Property `DataService > created`
 
@@ -359,10 +359,10 @@ List of agents primarily responsible for producing the Data Service
 
 An entity that could be involved with a resource
 
-| **Type**                  | `object`                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                      |
-| **Same definition as**    | [Agent](#servesDataset_items_sample_items_accessService_items_anyOf_i0_creator_items) |
+| **Type**                  | `object`                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                             |
+| **Same definition as**    | [Agent](#servesDataset_items_sample_items_accessService_items_creator_items) |
 
 ## <a name="description"></a>Property `DataService > description`
 
@@ -664,10 +664,10 @@ A geographic region that is covered by the Data Service
 
 Information about a specific geographic location
 
-| **Type**                  | `object`                                                                                 |
-| ------------------------- | ---------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [Location](#servesDataset_items_sample_items_accessService_items_anyOf_i0_spatial_items) |
+| **Type**                  | `object`                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                |
+| **Same definition as**    | [Location](#servesDataset_items_sample_items_accessService_items_spatial_items) |
 
 ## <a name="temporal"></a>Property `DataService > temporal`
 
@@ -688,10 +688,10 @@ A list of temporal periods that the DataService covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                      |
-| ------------------------- | --------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                              |
-| **Same definition as**    | [PeriodOfTime](#servesDataset_items_sample_items_accessService_items_anyOf_i0_temporal_items) |
+| **Type**                  | `object`                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                                     |
+| **Same definition as**    | [PeriodOfTime](#servesDataset_items_sample_items_accessService_items_temporal_items) |
 
 ## <a name="title"></a>Property `DataService > title`
 
@@ -753,10 +753,10 @@ Refers to the performed quality measurements
 
 A single measurement of one metric
 
-| **Type**                  | `object`                                                                                                         |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                                 |
-| **Same definition as**    | [QualityMeasurement](#servesDataset_items_sample_items_accessService_items_anyOf_i0_hasQualityMeasurement_items) |
+| **Type**                  | `object`                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                        |
+| **Same definition as**    | [QualityMeasurement](#servesDataset_items_sample_items_accessService_items_hasQualityMeasurement_items) |
 
 ## <a name="qualifiedAttribution"></a>Property `DataService > qualifiedAttribution`
 
@@ -777,10 +777,10 @@ List of agents having some form of responsibility for the Data Service
 
 An attribution that an agent plays some role
 
-| **Type**                  | `object`                                                                                                 |
-| ------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                         |
-| **Same definition as**    | [Attribution](#servesDataset_items_sample_items_accessService_items_anyOf_i0_qualifiedAttribution_items) |
+| **Type**                  | `object`                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                                |
+| **Same definition as**    | [Attribution](#servesDataset_items_sample_items_accessService_items_qualifiedAttribution_items) |
 
 ## <a name="wasUsedBy"></a>Property `DataService > wasUsedBy`
 
@@ -801,8 +801,8 @@ List of activities that used the Data Service
 
 An activity which a resource could be related to
 
-| **Type**                  | `object`                                                                                   |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                           |
-| **Same definition as**    | [Activity](#servesDataset_items_sample_items_accessService_items_anyOf_i0_wasUsedBy_items) |
+| **Type**                  | `object`                                                                          |
+| ------------------------- | --------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                  |
+| **Same definition as**    | [Activity](#servesDataset_items_sample_items_accessService_items_wasUsedBy_items) |
 

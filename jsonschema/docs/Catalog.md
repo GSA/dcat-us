@@ -202,10 +202,10 @@ List of data services that are listed in the Catalog
 
 A service for providing data at a URL or URLs
 
-| **Type**                  | `object`                                                                |
-| ------------------------- | ----------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                        |
-| **Same definition as**    | [DataService](#dataset_items_sample_items_accessService_items_anyOf_i0) |
+| **Type**                  | `object`                                                       |
+| ------------------------- | -------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                               |
+| **Same definition as**    | [DataService](#dataset_items_sample_items_accessService_items) |
 
 ## <a name="theme"></a>Property `DCAT-US 3 Catalog > theme`
 
@@ -312,10 +312,10 @@ An established standard to which the described catalog conforms
 
 Information about a particular standard that another item conforms to
 
-| **Type**                  | `object`                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                      |
-| **Same definition as**    | [Standard](#dataset_items_sample_items_accessService_items_anyOf_i0_conformsTo_items) |
+| **Type**                  | `object`                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                             |
+| **Same definition as**    | [Standard](#dataset_items_sample_items_accessService_items_conformsTo_items) |
 
 ## <a name="creator"></a>Property `DCAT-US 3 Catalog > creator`
 
@@ -336,10 +336,10 @@ The entity responsible for creating the resource
 
 An entity that could be involved with a resource
 
-| **Type**                  | `object`                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                |
-| **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_anyOf_i0_creator_items) |
+| **Type**                  | `object`                                                               |
+| ------------------------- | ---------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                       |
+| **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_creator_items) |
 
 ## <a name="description"></a>Property `DCAT-US 3 Catalog > description`
 
@@ -693,10 +693,10 @@ Agent responsible for making the catalog available
 
 inline description of the publisher
 
-| **Type**                  | `object`                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                |
-| **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_anyOf_i0_creator_items) |
+| **Type**                  | `object`                                                               |
+| ------------------------- | ---------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                       |
+| **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_creator_items) |
 
 ## <a name="rights"></a>Property `DCAT-US 3 Catalog > rights`
 
@@ -761,10 +761,10 @@ The geographical area covered by the catalog
 
 Information about a specific geographic location
 
-| **Type**                  | `object`                                                                           |
-| ------------------------- | ---------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                   |
-| **Same definition as**    | [Location](#dataset_items_sample_items_accessService_items_anyOf_i0_spatial_items) |
+| **Type**                  | `object`                                                                  |
+| ------------------------- | ------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                          |
+| **Same definition as**    | [Location](#dataset_items_sample_items_accessService_items_spatial_items) |
 
 ## <a name="subject"></a>Property `DCAT-US 3 Catalog > subject`
 
@@ -809,10 +809,10 @@ List of temporal periods that the Catalog covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                |
-| ------------------------- | --------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                        |
-| **Same definition as**    | [PeriodOfTime](#dataset_items_sample_items_accessService_items_anyOf_i0_temporal_items) |
+| **Type**                  | `object`                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                               |
+| **Same definition as**    | [PeriodOfTime](#dataset_items_sample_items_accessService_items_temporal_items) |
 
 ## <a name="title"></a>Property `DCAT-US 3 Catalog > title`
 
@@ -906,8 +906,8 @@ A list of agents having some form of responsibility for the catalog
 
 An attribution that an agent plays some role
 
-| **Type**                  | `object`                                                                                           |
-| ------------------------- | -------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                   |
-| **Same definition as**    | [Attribution](#dataset_items_sample_items_accessService_items_anyOf_i0_qualifiedAttribution_items) |
+| **Type**                  | `object`                                                                                  |
+| ------------------------- | ----------------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                          |
+| **Same definition as**    | [Attribution](#dataset_items_sample_items_accessService_items_qualifiedAttribution_items) |
 
