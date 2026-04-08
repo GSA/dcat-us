@@ -422,10 +422,10 @@ An entity (organization) responsible for ensuring the coherency of the Dataset S
 
 inline description of publisher
 
-| **Type**                  | `object`                                                                         |
-| ------------------------- | -------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                 |
-| **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_anyOf_i0_creator_items) |
+| **Type**                  | `object`                                                                |
+| ------------------------- | ----------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                        |
+| **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_creator_items) |
 
 ## <a name="spatial"></a>Property `DatasetSeries > spatial`
 
@@ -446,10 +446,10 @@ A geographic region that is covered by the Dataset Series
 
 Information about a specific geographic location
 
-| **Type**                  | `object`                                                                            |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                    |
-| **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_anyOf_i0_spatial_items) |
+| **Type**                  | `object`                                                                   |
+| ------------------------- | -------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                           |
+| **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_spatial_items) |
 
 ## <a name="temporal"></a>Property `DatasetSeries > temporal`
 
@@ -470,10 +470,10 @@ A list of temporal periods that the Dataset Series covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                 |
-| ------------------------- | ---------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_anyOf_i0_temporal_items) |
+| **Type**                  | `object`                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                |
+| **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_temporal_items) |
 
 ## <a name="title"></a>Property `DatasetSeries > title`
 
