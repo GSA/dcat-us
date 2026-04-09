@@ -1,5 +1,5 @@
 {
   "@type": "Metric",
   "expectedDataType": "xsd:boolean",
-  "inDimension": "https://www.w3.org/TR/vocab-dqv/#dqv:completeness"
+  "inDimension": "height"
 }

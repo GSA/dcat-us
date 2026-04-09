@@ -20,9 +20,8 @@
     },
     "relation": {
       "title": "relation",
-      "description": "Link to the entity related to the dataset",
-      "type": "string",
-      "format": "iri"
+      "description": "The entity related to the dataset. This string should unambiguously identify the related resource using an appropriate identifier.",
+      "type": "string"
     }
   },
   "required": ["hadRole", "relation"]
