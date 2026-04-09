@@ -41,10 +41,9 @@ The function of an entity or agent with respect to a dataset
 
 **Title:** relation
 
-Link to the entity related to the dataset
+The entity related to the dataset. This string should unambiguously identify the related resource using an appropriate identifier.
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-| **Format**   | `iri`    |
 
