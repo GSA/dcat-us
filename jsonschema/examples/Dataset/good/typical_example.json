@@ -1,0 +1,16 @@
+{
+  "@type": "Dataset",
+  "title": "Daily Climate Observations 2024",
+  "description": "Daily temperature, precipitation, and wind measurements from monitoring stations across the United States.",
+  "contactPoint": {
+    "fn": "Climate Data Support",
+    "hasEmail": "mailto:climate@example.gov"
+  },
+  "publisher": {
+    "name": "National Climate Data Center"
+  },
+  "keyword": [ "climate", "weather", "temperature", "precipitation" ],
+  "issued": "2024-01-15",
+  "accrualPeriodicity": "daily",
+  "spatial": [ "https://example.gov/locations/usa" ]
+}

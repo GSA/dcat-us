@@ -1,0 +1,10 @@
+{
+  "@type": "DatasetSeries",
+  "title": "Annual Climate Observations",
+  "description": "A series of annual climate observation datasets from monitoring stations.",
+  "accrualPeriodicity": "annually",
+  "publisher": {
+    "name": "National Climate Data Center"
+  },
+  "issued": "2000-01-15"
+}

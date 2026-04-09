@@ -1,0 +1,16 @@
+{
+  "@type": "DataService",
+  "title": "Climate Data API",
+  "description": "RESTful API providing access to historical climate observations.",
+  "endpointURL": [ "https://api.example.gov/climate/v1" ],
+  "contactPoint": [
+    {
+      "fn": "API Support Team",
+      "hasEmail": "mailto:api-support@example.gov"
+    }
+  ],
+  "publisher": {
+    "name": "National Climate Data Center"
+  },
+  "keyword": [ "climate", "weather", "API" ]
+}

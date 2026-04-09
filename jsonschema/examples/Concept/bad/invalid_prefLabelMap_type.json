@@ -2,5 +2,5 @@
   "_comment": "INVALID: 'prefLabelMap' must be null or an object, not an array",
   "@type": "Concept",
   "prefLabel": "Environment",
-  "prefLabelMap": [ "English", "Spanish", "French" ]
+  "prefLabelMap": ["English", "Spanish", "French"]
 }

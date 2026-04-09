@@ -19,7 +19,7 @@
     "es": "El mundo natural, incluidos el aire, el agua, la tierra, las plantas y los animales, especialmente afectados por la actividad humana.",
     "fr": "Le monde naturel, y compris l'air, l'eau, la terre, les plantes et les animaux, en particulier ceux affectés par l'activité humaine."
   },
-  "notation": [ "ENV", "E01", "ENVI" ],
+  "notation": ["ENV", "E01", "ENVI"],
   "inScheme": {
     "@id": "https://example.gov/concept-schemes/data-themes",
     "@type": "ConceptScheme",

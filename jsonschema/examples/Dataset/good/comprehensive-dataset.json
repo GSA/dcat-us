@@ -18,7 +18,7 @@
     "name": "Sample Government Agency",
     "altLabel": "SGA",
     "prefLabel": "Sample Government Agency",
-    "notation": [ "SGA", "SAMPLE-GOV" ],
+    "notation": ["SGA", "SAMPLE-GOV"],
     "subOrganizationOf": [
       {
         "@id": "https://example.gov/organizations/parent-department",
@@ -87,7 +87,7 @@
       "format": "CSV (Comma-Separated Values)",
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
-      "characterEncoding": [ "UTF-8" ],
+      "characterEncoding": ["UTF-8"],
       "spatialResolutionInMeters": "100",
       "temporalResolution": "P1D",
       "issued": null,
@@ -105,9 +105,7 @@
   ],
   "first": "https://example.gov/datasets/comprehensive-example-first",
   "hasCurrentVersion": "https://example.gov/datasets/comprehensive-example-001",
-  "hasVersion": [
-    "https://example.gov/datasets/comprehensive-example-v0.9"
-  ],
+  "hasVersion": ["https://example.gov/datasets/comprehensive-example-v0.9"],
   "inSeries": [
     {
       "@id": "https://example.gov/series/comprehensive-series",
@@ -126,17 +124,23 @@
       "last": "https://example.gov/datasets/comprehensive-example-001"
     }
   ],
-  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
+  "keyword": [
+    "government",
+    "open data",
+    "comprehensive example",
+    "DCAT-US",
+    "metadata"
+  ],
   "keywordMap": {
-    "es": [ "gobierno", "datos abiertos", "ejemplo completo" ],
-    "fr": [ "gouvernement", "données ouvertes", "exemple complet" ]
+    "es": ["gobierno", "datos abiertos", "ejemplo completo"],
+    "fr": ["gouvernement", "données ouvertes", "exemple complet"]
   },
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
     "title": "Comprehensive Dataset Landing Page",
     "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example",
-    "creators": [ "Sample Government Agency" ],
+    "creators": ["Sample Government Agency"],
     "publishers": "Sample Government Agency"
   },
   "previousVersion": "https://example.gov/datasets/comprehensive-example-v0.9",
@@ -221,7 +225,7 @@
     "https://example.gov/publications/data-quality-study"
   ],
   "issued": null,
-  "language": [ "en", "es" ],
+  "language": ["en", "es"],
   "modified": null,
   "provenance": [
     "Data was collected through automated sensors deployed across the continental United States."
@@ -230,9 +234,7 @@
     "https://example.gov/datasets/supplementary-dataset",
     "https://example.gov/services/api-endpoint"
   ],
-  "replaces": [
-    "https://example.gov/datasets/legacy-comprehensive-dataset"
-  ],
+  "replaces": ["https://example.gov/datasets/legacy-comprehensive-dataset"],
   "rights": [
     "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
   ],
@@ -244,9 +246,7 @@
       "prefLabel": "Sample Government Agency"
     }
   ],
-  "source": [
-    "https://example.gov/datasets/raw-sensor-data"
-  ],
+  "source": ["https://example.gov/datasets/raw-sensor-data"],
   "temporal": [
     {
       "@id": "https://example.gov/periods/data-coverage",
@@ -276,7 +276,7 @@
       "@type": "Document",
       "title": "User Guide",
       "abstract": "A comprehensive guide for using this dataset",
-      "creators": [ "Documentation Team" ],
+      "creators": ["Documentation Team"],
       "publishers": "Sample Government Agency",
       "bibliographicCitation": "Sample Government Agency. (2024). Comprehensive Dataset User Guide."
     }

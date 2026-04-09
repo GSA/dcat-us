@@ -1,0 +1,6 @@
+{
+  "@type": "CUIRestriction",
+  "cuiBannerMarking": "CUI//SP-CTI",
+  "designationIndicator": "https://example.gov/cui/sp-cti",
+  "cuiCategory": "Critical Infrastructure"
+}

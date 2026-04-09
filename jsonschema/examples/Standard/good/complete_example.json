@@ -1,0 +1,30 @@
+{
+  "@id": "https://example.gov/standards/dcat-us-3",
+  "@type": "Standard",
+  "title": "DCAT-US 3.0 - Data Catalog Vocabulary United States Profile",
+  "titleMap": {
+    "es": "DCAT-US 3.0 - Vocabulario de Catálogo de Datos Perfil de Estados Unidos",
+    "fr": "DCAT-US 3.0 - Vocabulaire de Catalogue de Données Profil États-Unis"
+  },
+  "description": "The DCAT-US 3.0 schema defines a standard metadata format for data catalogs in the United States government, based on W3C DCAT.",
+  "descriptionMap": {
+    "es": "El esquema DCAT-US 3.0 define un formato de metadatos estándar para catálogos de datos del gobierno de los Estados Unidos.",
+    "fr": "Le schéma DCAT-US 3.0 définit un format de métadonnées standard pour les catalogues de données du gouvernement américain."
+  },
+  "created": "2023-01-01",
+  "issued": "2024-01-15",
+  "modified": "2024-06-01",
+  "identifier": {
+    "@type": "Identifier",
+    "schemaAgency": "resources.data.gov",
+    "notation": "DCAT-US-3.0",
+    "version": "3.0.0"
+  },
+  "otherIdentifier": [
+    {
+      "@type": "Identifier",
+      "schemaAgency": "W3C",
+      "notation": "DCAT-3.0-US-Profile"
+    }
+  ]
+}
