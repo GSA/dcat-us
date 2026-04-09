@@ -2090,7 +2090,7 @@ List of temporal periods that the dataset covers
 
 inline description of PeriodOfTime
 
-| **Type**                  | `object`                                                                                                                                         |
+| **Type**                  | More than one type                                                                                                                               |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                                                 |
 | **Same definition as**    | [PeriodOfTime](#sample_items_anyOf_i0_accessService_items_anyOf_i0_servesDataset_items_anyOf_i0_inSeries_items_anyOf_i0_temporal_items_anyOf_i0) |

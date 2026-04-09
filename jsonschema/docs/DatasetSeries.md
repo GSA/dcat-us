@@ -585,7 +585,7 @@ A list of temporal periods that the Dataset Series covers
 
 inline description of PeriodOfTime
 
-| **Type**                  | `object`                                                                                                   |
+| **Type**                  | More than one type                                                                                         |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                           |
 | **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_anyOf_i0_accessService_items_anyOf_i0_temporal_items_anyOf_i0) |
