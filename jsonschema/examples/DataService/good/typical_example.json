@@ -3,6 +3,7 @@
   "title": "Climate Data API",
   "description": "RESTful API providing access to historical climate observations.",
   "endpointURL": ["https://api.example.gov/climate/v1"],
+  "endpointDescription": ["https://api.example.gov/climate/v1/openapi.json"],
   "contactPoint": [
     {
       "fn": "API Support Team",
@@ -12,5 +13,7 @@
   "publisher": {
     "name": "National Climate Data Center"
   },
-  "keyword": ["climate", "weather", "API"]
+  "keyword": ["climate", "weather", "API"],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "servesDataset": ["https://example.gov/datasets/climate-observations-2024"]
 }

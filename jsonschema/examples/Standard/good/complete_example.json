@@ -26,5 +26,13 @@
       "schemaAgency": "W3C",
       "notation": "DCAT-3.0-US-Profile"
     }
-  ]
+  ],
+  "category": [
+    {
+      "@type": "Concept",
+      "prefLabel": "Metadata Standards",
+      "inScheme": "https://example.gov/vocabularies/standard-categories"
+    }
+  ],
+  "inScheme": "https://resources.data.gov/standards-register"
 }

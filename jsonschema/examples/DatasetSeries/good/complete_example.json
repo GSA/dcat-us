@@ -54,11 +54,6 @@
     {
       "@id": "https://example.gov/locations/usa-coverage",
       "@type": "Location",
-      "label": "United States of America",
-      "labelMap": {
-        "es": "Estados Unidos de América",
-        "fr": "États-Unis d'Amérique"
-      },
       "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
     }
   ],

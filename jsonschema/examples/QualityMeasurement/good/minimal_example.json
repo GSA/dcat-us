@@ -1,6 +1,5 @@
 {
   "isMeasurementOf": {
-    "label": "Completeness",
     "expectedDataType": "xsd:decimal",
     "inDimension": "https://example.gov/concepts/completeness-dimension"
   },

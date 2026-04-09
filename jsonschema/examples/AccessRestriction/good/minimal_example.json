@@ -1,5 +1,3 @@
 {
-  "restrictionStatus": {
-    "prefLabel": "Restricted"
-  }
+  "restrictionStatus": "Restricted"
 }

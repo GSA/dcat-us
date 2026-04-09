@@ -4,11 +4,6 @@
   "isMeasurementOf": {
     "@id": "https://example.gov/metrics/data-completeness-001",
     "@type": "Metric",
-    "label": "Data Completeness",
-    "labelMap": {
-      "es": "Completitud de Datos",
-      "fr": "Complétude des Données"
-    },
     "definition": "The percentage of expected data values that are present in the dataset.",
     "expectedDataType": "xsd:decimal",
     "inDimension": "https://example.gov/concepts/completeness-dimension"

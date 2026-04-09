@@ -37,16 +37,14 @@
     {
       "@id": "https://example.gov/organizations/ncdc",
       "@type": "Organization",
-      "name": "National Climate Data Center",
-      "description": "The world's largest archive of weather data."
+      "name": "National Climate Data Center"
     }
   ],
   "publisher": [
     {
       "@id": "https://example.gov/organizations/noaa",
       "@type": "Organization",
-      "name": "National Oceanic and Atmospheric Administration",
-      "description": "U.S. federal agency focused on the conditions of the oceans, major waterways, and the atmosphere."
+      "name": "National Oceanic and Atmospheric Administration"
     }
   ],
   "conformsTo": [

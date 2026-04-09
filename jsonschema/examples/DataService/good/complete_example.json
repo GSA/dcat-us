@@ -15,7 +15,7 @@
     "https://api.example.gov/climate/v1",
     "https://api.example.gov/climate/v2"
   ],
-  "endpointDescription": ["https://api.example.gov/climate/docs/openapi.json"],
+  "endpointDescription": [ "https://api.example.gov/climate/docs/openapi.json" ],
   "contactPoint": [
     {
       "@id": "https://example.gov/contacts/climate-team-001",
@@ -67,10 +67,10 @@
       }
     }
   ],
-  "keyword": ["climate", "weather", "temperature", "API", "REST"],
+  "keyword": [ "climate", "weather", "temperature", "API", "REST" ],
   "keywordMap": {
-    "es": ["clima", "tiempo", "temperatura", "API", "REST"],
-    "fr": ["climat", "météo", "température", "API", "REST"]
+    "es": [ "clima", "tiempo", "temperatura", "API", "REST" ],
+    "fr": [ "climat", "météo", "température", "API", "REST" ]
   },
   "theme": [
     {
@@ -89,7 +89,7 @@
       "description": "OGC standard for accessing geospatial features via a Web API."
     }
   ],
-  "language": ["en", "es"],
+  "language": [ "en", "es" ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "accessRights": "Public access with no restrictions",
   "created": "2020-01-15",
@@ -100,7 +100,6 @@
     {
       "@id": "https://example.gov/locations/usa",
       "@type": "Location",
-      "label": "United States of America",
       "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
     }
   ],
