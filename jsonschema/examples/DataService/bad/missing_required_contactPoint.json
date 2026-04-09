@@ -2,7 +2,7 @@
   "@id": "https://example.gov/data-services/invalid",
   "@type": "DataService",
   "title": "Invalid Service",
-  "endpointURL": [ "https://api.example.gov/invalid" ],
+  "endpointURL": ["https://api.example.gov/invalid"],
   "publisher": {
     "name": "Example Agency"
   }

@@ -18,12 +18,12 @@
   "byteSize": "15728640",
   "compressFormat": "application/gzip",
   "packageFormat": "application/zip",
-  "characterEncoding": [ "UTF-8" ],
+  "characterEncoding": ["UTF-8"],
   "spatialResolutionInMeters": "1000",
   "temporalResolution": "P1D",
   "issued": "2023-06-01",
   "modified": "2024-01-15",
-  "language": [ "en" ],
+  "language": ["en"],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "accessRights": "Public access without restrictions",
   "rights": [
@@ -71,7 +71,7 @@
       "@id": "https://example.gov/data-services/climate-api",
       "@type": "DataService",
       "title": "Climate Data API",
-      "endpointURL": [ "https://api.example.gov/climate/v1" ],
+      "endpointURL": ["https://api.example.gov/climate/v1"],
       "contactPoint": [
         {
           "fn": "Climate Support",

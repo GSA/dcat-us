@@ -1,7 +1,7 @@
 {
   "@id": "https://example.gov/data-services/invalid",
   "@type": "DataService",
-  "endpointURL": [ "https://api.example.gov/invalid" ],
+  "endpointURL": ["https://api.example.gov/invalid"],
   "contactPoint": [
     {
       "fn": "Support Team",

@@ -12,7 +12,7 @@
     "prefLabel": "Restricted - Commercial Use",
     "altLabel": "Commercial Restriction",
     "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
-    "notation": [ "RST-COM" ],
+    "notation": ["RST-COM"],
     "inScheme": "https://example.gov/concept-schemes/restriction-status"
   },
   "specificRestriction": {
@@ -20,7 +20,7 @@
     "@type": "Concept",
     "prefLabel": "Copyright Restriction",
     "definition": "Materials protected by copyright with limited use permissions.",
-    "notation": [ "CR" ],
+    "notation": ["CR"],
     "inScheme": "https://example.gov/concept-schemes/nara-restrictions"
   }
 }

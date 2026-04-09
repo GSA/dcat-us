@@ -9,8 +9,15 @@
   "publisher": {
     "name": "National Climate Data Center"
   },
-  "keyword": [ "climate", "weather", "temperature", "precipitation" ],
+  "keyword": ["climate", "weather", "temperature", "precipitation"],
   "issued": "2024-01-15",
   "accrualPeriodicity": "daily",
-  "spatial": [ "https://example.gov/locations/usa" ]
+  "spatial": ["https://example.gov/locations/usa"],
+  "distribution": [
+    {
+      "title": "Climate Data CSV",
+      "downloadURL": "https://example.gov/downloads/climate-2024.csv",
+      "mediaType": "text/csv"
+    }
+  ]
 }

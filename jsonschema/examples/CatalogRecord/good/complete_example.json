@@ -10,9 +10,9 @@
     "This catalog record describes the registration of the Climate Data 2023 dataset.",
     "Contains metadata about when the dataset was added and last updated."
   ],
-  "issued": [ "2023-06-01" ],
+  "issued": ["2023-06-01"],
   "modified": "2024-01-15T10:30:00Z",
-  "language": [ "en", "es" ],
+  "language": ["en", "es"],
   "source": "Original metadata harvested from NOAA data portal",
   "status": {
     "@id": "https://example.gov/concepts/status-published",

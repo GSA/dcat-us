@@ -1,6 +1,6 @@
 {
   "title": "Climate Data API",
-  "endpointURL": [ "https://api.example.gov/climate/v1" ],
+  "endpointURL": ["https://api.example.gov/climate/v1"],
   "contactPoint": [
     {
       "fn": "Climate Data Support Team",
