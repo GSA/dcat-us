@@ -23,7 +23,7 @@
     "name": "National Climate Data Center",
     "altLabel": "NCDC",
     "prefLabel": "National Climate Data Center",
-    "notation": [ "NCDC" ]
+    "notation": ["NCDC"]
   },
   "contactPoint": [
     {
@@ -65,7 +65,7 @@
       "mediaType": "text/csv",
       "format": "CSV",
       "byteSize": "524288000",
-      "characterEncoding": [ "UTF-8" ],
+      "characterEncoding": ["UTF-8"],
       "issued": "2024-01-15",
       "modified": "2024-06-01"
     },
@@ -126,7 +126,7 @@
       "prefLabel": "Climate Science",
       "altLabel": "Climatology",
       "definition": "The scientific study of climate, including patterns, variability, and change over time.",
-      "notation": [ "CLIM-SCI" ],
+      "notation": ["CLIM-SCI"],
       "inScheme": "https://example.gov/concept-schemes/science-domains"
     },
     {
@@ -190,7 +190,7 @@
   "issued": "2024-01-15",
   "modified": "2024-06-01",
   "created": "2024-01-01",
-  "language": [ "en" ],
+  "language": ["en"],
   "accessRights": "Public access with no restrictions. Data is freely available for download and use.",
   "rights": [
     "This data is in the public domain and may be used without restriction."
@@ -300,8 +300,8 @@
       "accessURL": "https://example.gov/docs/climate-user-guide"
     }
   ],
-  "isReferencedBy": [ "https://example.gov/publications/climate-trends-2024" ],
-  "relation": [ "https://example.gov/datasets/historical-climate-averages" ],
+  "isReferencedBy": ["https://example.gov/publications/climate-trends-2024"],
+  "relation": ["https://example.gov/datasets/historical-climate-averages"],
   "scopeNote": "This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets.",
   "scopeNoteMap": {
     "es": "Este conjunto de datos contiene datos de observación sin procesar. Para productos derivados, consulte los conjuntos de datos relacionados."
