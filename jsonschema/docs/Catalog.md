@@ -792,7 +792,7 @@ List of temporal periods that the Catalog covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                       |
+| **Type**                  | More than one type                                                             |
 | ------------------------- | ------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                               |
 | **Same definition as**    | [PeriodOfTime](#dataset_items_sample_items_accessService_items_temporal_items) |

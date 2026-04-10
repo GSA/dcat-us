@@ -168,7 +168,13 @@
       }
     }
   ],
-  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
+  "keyword": [
+    "government",
+    "open data",
+    "comprehensive example",
+    "DCAT-US",
+    "metadata"
+  ],
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
