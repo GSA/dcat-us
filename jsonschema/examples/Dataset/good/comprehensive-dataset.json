@@ -2,15 +2,7 @@
   "@id": "https://example.gov/datasets/comprehensive-example-001",
   "@type": "Dataset",
   "title": "Comprehensive DCAT-US Dataset Example",
-  "titleMap": {
-    "es": "Ejemplo de conjunto de datos DCAT-US completo",
-    "fr": "Exemple de jeu de données DCAT-US complet"
-  },
   "description": "This is a comprehensive example dataset demonstrating all available fields in the DCAT-US 3.0 schema, except for Concept references which are excluded. Note: Date fields are set to null due to a schema validation issue where dates match multiple oneOf alternatives.",
-  "descriptionMap": {
-    "es": "Este es un conjunto de datos de ejemplo completo que demuestra todos los campos disponibles.",
-    "fr": "Ceci est un exemple de jeu de données complet démontrant tous les champs disponibles."
-  },
   "identifier": "dataset-comprehensive-001",
   "publisher": {
     "@id": "https://example.gov/organizations/sample-agency",
@@ -174,17 +166,7 @@
       }
     }
   ],
-  "keyword": [
-    "government",
-    "open data",
-    "comprehensive example",
-    "DCAT-US",
-    "metadata"
-  ],
-  "keywordMap": {
-    "es": ["gobierno", "datos abiertos", "ejemplo completo"],
-    "fr": ["gouvernement", "données ouvertes", "exemple complet"]
-  },
+  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
@@ -243,10 +225,6 @@
     }
   ],
   "purpose": "This dataset was created to demonstrate all available fields in the DCAT-US 3.0 schema and serve as a reference implementation.",
-  "purposeMap": {
-    "es": "Este conjunto de datos fue creado para demostrar todos los campos disponibles.",
-    "fr": "Ce jeu de données a été créé pour démontrer tous les champs disponibles."
-  },
   "accessRights": "This dataset is public domain and freely available for any use.",
   "accrualPeriodicity": "monthly",
   "conformsTo": [
@@ -389,26 +367,16 @@
     {
       "@id": "https://example.gov/activities/data-collection",
       "@type": "Activity",
-      "label": "2024 Data Collection Campaign",
-      "labelMap": {
-        "es": "Campaña de recopilación de datos 2024"
-      }
+      "label": "2024 Data Collection Campaign"
     }
   ],
   "wasUsedBy": [
     {
       "@id": "https://example.gov/activities/annual-analysis",
       "@type": "Activity",
-      "label": "Annual Data Analysis Project",
-      "labelMap": {
-        "es": "Proyecto de análisis de datos anual"
-      }
+      "label": "Annual Data Analysis Project"
     }
   ],
   "image": "https://example.gov/images/dataset-thumbnail.png",
-  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields.",
-  "scopeNoteMap": {
-    "es": "Este conjunto de datos debe utilizarse solo para fines de demostración y prueba.",
-    "fr": "Ce jeu de données doit être utilisé uniquement à des fins de démonstration et de test."
-  }
+  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields."
 }

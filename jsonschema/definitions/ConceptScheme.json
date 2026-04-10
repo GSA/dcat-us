@@ -56,10 +56,6 @@
       "description": "A description of the concept scheme",
       "type": ["null", "string"]
     },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "issued": {
       "title": "publication date",
       "description": "The date of formal issuance (e.g., publication) of the concept scheme",
@@ -130,10 +126,6 @@
       "title": "title",
       "description": "The title of the concept scheme",
       "type": "string"
-    },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     }
   },
   "required": ["title"]

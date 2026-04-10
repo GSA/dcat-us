@@ -28,18 +28,15 @@ The value of the concept, expressed as a string. This is only used when the conc
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                    | Type               | Title/Description                                                                    |
-| ------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| - [@id](#anyOf_i1_@id )                     | string             | -                                                                                    |
-| - [@type](#anyOf_i1_@type )                 | string             | -                                                                                    |
-| - [altLabel](#anyOf_i1_altLabel )           | null or string     | alternate label                                                                      |
-| - [altLabelMap](#anyOf_i1_altLabelMap )     | null or object     | Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [definition](#anyOf_i1_definition )       | null or string     | definition                                                                           |
-| - [definitionMap](#anyOf_i1_definitionMap ) | null or object     | Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
-| - [inScheme](#anyOf_i1_inScheme )           | object             | in scheme                                                                            |
-| - [notation](#anyOf_i1_notation )           | More than one type | notation                                                                             |
-| + [prefLabel](#anyOf_i1_prefLabel )         | string             | preferred label                                                                      |
-| - [prefLabelMap](#anyOf_i1_prefLabelMap )   | null or object     | Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| Property                              | Type               | Title/Description |
+| ------------------------------------- | ------------------ | ----------------- |
+| - [@id](#anyOf_i1_@id )               | string             | -                 |
+| - [@type](#anyOf_i1_@type )           | string             | -                 |
+| - [altLabel](#anyOf_i1_altLabel )     | null or string     | alternate label   |
+| - [definition](#anyOf_i1_definition ) | null or string     | definition        |
+| - [inScheme](#anyOf_i1_inScheme )     | More than one type | in scheme         |
+| - [notation](#anyOf_i1_notation )     | More than one type | notation          |
+| + [prefLabel](#anyOf_i1_prefLabel )   | string             | preferred label   |
 
 ### <a name="anyOf_i1_@id"></a>Property `Concept > anyOf > item 1 > @id`
 
@@ -62,13 +59,6 @@ Alternative label for a concept
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-### <a name="anyOf_i1_altLabelMap"></a>Property `Concept > anyOf > item 1 > altLabelMap`
-
-Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ### <a name="anyOf_i1_definition"></a>Property `Concept > anyOf > item 1 > definition`
 
 **Title:** definition
@@ -76,13 +66,6 @@ Language map for alternate label. E.g. {'es': 'spanish words', 'fr': 'french wor
 Definition of the controlled vocabulary term
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-### <a name="anyOf_i1_definitionMap"></a>Property `Concept > anyOf > item 1 > definitionMap`
-
-Language map for definition. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ### <a name="anyOf_i1_inScheme"></a>Property `Concept > anyOf > item 1 > inScheme`
@@ -139,11 +122,4 @@ Preferred label for the term
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-### <a name="anyOf_i1_prefLabelMap"></a>Property `Concept > anyOf > item 1 > prefLabelMap`
-
-Language map for preferred label. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 

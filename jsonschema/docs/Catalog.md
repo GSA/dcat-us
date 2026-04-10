@@ -8,42 +8,39 @@ The main item defined by DCAT-US 3 is the Catalog class
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                         | Type                    | Title/Description                                                                   |
-| ------------------------------------------------ | ----------------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                                   | string                  | -                                                                                   |
-| - [@type](#@type )                               | string                  | -                                                                                   |
-| - [catalog](#catalog )                           | null or array           | Related catalogs                                                                    |
-| - [contactPoint](#contactPoint )                 | null or array           | Contact points                                                                      |
-| + [dataset](#dataset )                           | array                   | dataset                                                                             |
-| - [keyword](#keyword )                           | null or array of string | keyword/tag                                                                         |
-| - [keywordMap](#keywordMap )                     | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}        |
-| - [record](#record )                             | null or array           | catalog record                                                                      |
-| - [service](#service )                           | null or array           | service                                                                             |
-| - [theme](#theme )                               | null or array           | theme/category                                                                      |
-| - [themeTaxonomy](#themeTaxonomy )               | null or array           | themes                                                                              |
-| - [accessRights](#accessRights )                 | More than one type      | access rights                                                                       |
-| - [conformsTo](#conformsTo )                     | More than one type      | schema version                                                                      |
-| - [creator](#creator )                           | null or array           | creator                                                                             |
-| - [description](#description )                   | null or string          | description                                                                         |
-| - [descriptionMap](#descriptionMap )             | null or object          | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [hasPart](#hasPart )                           | null or array           | has part                                                                            |
-| - [identifier](#identifier )                     | More than one type      | identifier                                                                          |
-| - [otherIdentifier](#otherIdentifier )           | null or array           | other identifier                                                                    |
-| - [issued](#issued )                             | More than one type      | release date                                                                        |
-| - [language](#language )                         | More than one type      | language                                                                            |
-| - [license](#license )                           | More than one type      | license                                                                             |
-| - [modified](#modified )                         | More than one type      | update/modification date                                                            |
-| - [publisher](#publisher )                       | More than one type      | publisher                                                                           |
-| - [rights](#rights )                             | null or array of string | rights                                                                              |
-| - [rightsHolder](#rightsHolder )                 | null or array           | rights holder                                                                       |
-| - [spatial](#spatial )                           | null or array           | spatial/geographic coverage                                                         |
-| - [subject](#subject )                           | null or array           | subject                                                                             |
-| - [temporal](#temporal )                         | null or array           | temporal coverage                                                                   |
-| - [title](#title )                               | null or string          | title                                                                               |
-| - [titleMap](#titleMap )                         | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [category](#category )                         | null or array           | category                                                                            |
-| - [homepage](#homepage )                         | More than one type      | homepage                                                                            |
-| - [qualifiedAttribution](#qualifiedAttribution ) | null or array           | qualified attribution                                                               |
+| Property                                         | Type                    | Title/Description           |
+| ------------------------------------------------ | ----------------------- | --------------------------- |
+| - [@id](#@id )                                   | string                  | -                           |
+| - [@type](#@type )                               | string                  | -                           |
+| - [catalog](#catalog )                           | null or array           | Related catalogs            |
+| - [contactPoint](#contactPoint )                 | null or array           | Contact points              |
+| + [dataset](#dataset )                           | array                   | dataset                     |
+| - [keyword](#keyword )                           | null or array of string | keyword/tag                 |
+| - [record](#record )                             | null or array           | catalog record              |
+| - [service](#service )                           | null or array           | service                     |
+| - [theme](#theme )                               | null or array           | theme/category              |
+| - [themeTaxonomy](#themeTaxonomy )               | null or array           | themes                      |
+| - [accessRights](#accessRights )                 | More than one type      | access rights               |
+| - [conformsTo](#conformsTo )                     | More than one type      | schema version              |
+| - [creator](#creator )                           | null or array           | creator                     |
+| - [description](#description )                   | null or string          | description                 |
+| - [hasPart](#hasPart )                           | null or array           | has part                    |
+| - [identifier](#identifier )                     | More than one type      | identifier                  |
+| - [otherIdentifier](#otherIdentifier )           | null or array           | other identifier            |
+| - [issued](#issued )                             | More than one type      | release date                |
+| - [language](#language )                         | More than one type      | language                    |
+| - [license](#license )                           | More than one type      | license                     |
+| - [modified](#modified )                         | More than one type      | update/modification date    |
+| - [publisher](#publisher )                       | More than one type      | publisher                   |
+| - [rights](#rights )                             | null or array           | rights                      |
+| - [rightsHolder](#rightsHolder )                 | null or array           | rights holder               |
+| - [spatial](#spatial )                           | null or array           | spatial/geographic coverage |
+| - [subject](#subject )                           | null or array           | subject                     |
+| - [temporal](#temporal )                         | null or array           | temporal coverage           |
+| - [title](#title )                               | null or string          | title                       |
+| - [category](#category )                         | null or array           | category                    |
+| - [homepage](#homepage )                         | More than one type      | homepage                    |
+| - [qualifiedAttribution](#qualifiedAttribution ) | null or array           | qualified attribution       |
 
 ## <a name="@id"></a>Property `DCAT-US 3 Catalog > @id`
 
@@ -151,13 +148,6 @@ List of keywords or tags describing the Catalog
 | Restrictions   |   |
 | -------------- | - |
 | **Min length** | 1 |
-
-## <a name="keywordMap"></a>Property `DCAT-US 3 Catalog > keywordMap`
-
-Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="record"></a>Property `DCAT-US 3 Catalog > record`
 
@@ -348,13 +338,6 @@ An entity that could be involved with a resource
 Free-text description of the catalog (in the language indicated in the language property)
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="descriptionMap"></a>Property `DCAT-US 3 Catalog > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="hasPart"></a>Property `DCAT-US 3 Catalog > hasPart`
@@ -821,13 +804,6 @@ Information about a specific time period with a start- and/or end-time
 The title of the catalog in the indicated language
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="titleMap"></a>Property `DCAT-US 3 Catalog > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="category"></a>Property `DCAT-US 3 Catalog > category`

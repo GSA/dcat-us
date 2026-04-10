@@ -50,10 +50,6 @@
         "minLength": 1
       }
     },
-    "keywordMap": {
-      "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "servesDataset": {
       "title": "serves dataset",
       "description": "List of datasets that are served by this data service",
@@ -145,10 +141,6 @@
       "title": "description",
       "description": "A free-text account of the Data Service",
       "type": ["null", "string"]
-    },
-    "descriptionMap": {
-      "description": "Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "identifier": {
       "title": "identifier",
@@ -283,10 +275,6 @@
       "title": "title",
       "description": "The title of the data service in the indicated language",
       "type": "string"
-    },
-    "titleMap": {
-      "description": "Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "category": {
       "title": "category",

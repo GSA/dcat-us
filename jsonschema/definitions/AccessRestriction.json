@@ -18,10 +18,6 @@
       "description": "A note related to the access restriction",
       "type": ["null", "string"]
     },
-    "restrictionNoteMap": {
-      "description": "Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "restrictionStatus": {
       "title": "restriction status",
       "description": "The indication of whether or not there are access restrictions on the item",

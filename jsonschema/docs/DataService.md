@@ -8,41 +8,38 @@ A service for providing data at a URL or URLs
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                                   | Type                    | Title/Description                                                                    |
-| ---------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------ |
-| - [@id](#@id )                                             | string                  | -                                                                                    |
-| - [@type](#@type )                                         | string                  | -                                                                                    |
-| + [contactPoint](#contactPoint )                           | array                   | contact point                                                                        |
-| - [endpointDescription](#endpointDescription )             | null or array of string | endpoint description                                                                 |
-| + [endpointURL](#endpointURL )                             | array of string         | endpoint URL                                                                         |
-| - [keyword](#keyword )                                     | null or array of string | keyword/tag                                                                          |
-| - [keywordMap](#keywordMap )                               | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}         |
-| - [servesDataset](#servesDataset )                         | null or array           | serves dataset                                                                       |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | spatial resolution in meters                                                         |
-| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution                                                                  |
-| - [theme](#theme )                                         | null or array           | theme/category                                                                       |
-| - [accessRights](#accessRights )                           | More than one type      | access rights                                                                        |
-| - [conformsTo](#conformsTo )                               | null or array           | conforms to                                                                          |
-| - [created](#created )                                     | More than one type      | creation date                                                                        |
-| - [creator](#creator )                                     | null or array           | creator                                                                              |
-| - [description](#description )                             | null or string          | description                                                                          |
-| - [descriptionMap](#descriptionMap )                       | null or object          | Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [identifier](#identifier )                               | More than one type      | identifier                                                                           |
-| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier                                                                     |
-| - [language](#language )                                   | More than one type      | language                                                                             |
-| - [license](#license )                                     | More than one type      | license                                                                              |
-| - [modified](#modified )                                   | More than one type      | update/modification date                                                             |
-| + [publisher](#publisher )                                 | object                  | publisher                                                                            |
-| - [rights](#rights )                                       | null or array of string | rights                                                                               |
-| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                                                                        |
-| - [spatial](#spatial )                                     | null or array           | spatial/geographic coverage                                                          |
-| - [temporal](#temporal )                                   | null or array           | temporal coverage                                                                    |
-| + [title](#title )                                         | string                  | title                                                                                |
-| - [titleMap](#titleMap )                                   | null or object          | Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )                                   | null or array           | category                                                                             |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement                                                                  |
-| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution                                                                |
-| - [wasUsedBy](#wasUsedBy )                                 | null or array           | was used by                                                                          |
+| Property                                                   | Type                    | Title/Description            |
+| ---------------------------------------------------------- | ----------------------- | ---------------------------- |
+| - [@id](#@id )                                             | string                  | -                            |
+| - [@type](#@type )                                         | string                  | -                            |
+| + [contactPoint](#contactPoint )                           | array                   | contact point                |
+| - [endpointDescription](#endpointDescription )             | null or array           | endpoint description         |
+| + [endpointURL](#endpointURL )                             | array of string         | endpoint URL                 |
+| - [keyword](#keyword )                                     | null or array of string | keyword/tag                  |
+| - [servesDataset](#servesDataset )                         | null or array           | serves dataset               |
+| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | spatial resolution in meters |
+| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution          |
+| - [theme](#theme )                                         | null or array           | theme/category               |
+| - [accessRights](#accessRights )                           | More than one type      | access rights                |
+| - [conformsTo](#conformsTo )                               | null or array           | conforms to                  |
+| - [created](#created )                                     | More than one type      | creation date                |
+| - [creator](#creator )                                     | null or array           | creator                      |
+| - [description](#description )                             | null or string          | description                  |
+| - [identifier](#identifier )                               | More than one type      | identifier                   |
+| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier             |
+| - [language](#language )                                   | More than one type      | language                     |
+| - [license](#license )                                     | More than one type      | license                      |
+| - [modified](#modified )                                   | More than one type      | update/modification date     |
+| + [publisher](#publisher )                                 | More than one type      | publisher                    |
+| - [rights](#rights )                                       | null or array           | rights                       |
+| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                |
+| - [spatial](#spatial )                                     | null or array           | spatial/geographic coverage  |
+| - [temporal](#temporal )                                   | null or array           | temporal coverage            |
+| + [title](#title )                                         | string                  | title                        |
+| - [category](#category )                                   | null or array           | category                     |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement          |
+| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution        |
+| - [wasUsedBy](#wasUsedBy )                                 | null or array           | was used by                  |
 
 ## <a name="@id"></a>Property `DataService > @id`
 
@@ -146,13 +143,6 @@ List of keywords or tags describing the Data Service
 | Restrictions   |   |
 | -------------- | - |
 | **Min length** | 1 |
-
-## <a name="keywordMap"></a>Property `DataService > keywordMap`
-
-Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="servesDataset"></a>Property `DataService > servesDataset`
 
@@ -371,13 +361,6 @@ An entity that could be involved with a resource
 A free-text account of the Data Service
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="descriptionMap"></a>Property `DataService > descriptionMap`
-
-Language map for the description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="identifier"></a>Property `DataService > identifier`
@@ -702,13 +685,6 @@ The title of the data service in the indicated language
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="titleMap"></a>Property `DataService > titleMap`
-
-Language map for the title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="category"></a>Property `DataService > category`
 

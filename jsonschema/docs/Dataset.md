@@ -8,71 +8,66 @@ Information about a set of data
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                                   | Type                    | Title/Description                                                                   |
-| ---------------------------------------------------------- | ----------------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                                             | string                  | -                                                                                   |
-| - [@type](#@type )                                         | string                  | -                                                                                   |
-| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier                                                                    |
-| - [sample](#sample )                                       | null or array           | sample                                                                              |
-| - [status](#status )                                       | More than one type      | lifecycle status                                                                    |
-| - [supportedSchema](#supportedSchema )                     | More than one type      | supported schema                                                                    |
-| - [versionNotes](#versionNotes )                           | null or string          | version notes                                                                       |
-| + [contactPoint](#contactPoint )                           | More than one type      | contact point                                                                       |
-| - [distribution](#distribution )                           | null or array           | dataset distribution                                                                |
-| - [first](#first )                                         | More than one type      | first                                                                               |
-| - [hasCurrentVersion](#hasCurrentVersion )                 | More than one type      | current version                                                                     |
-| - [hasVersion](#hasVersion )                               | null or array           | has version                                                                         |
-| - [inSeries](#inSeries )                                   | null or array           | in series                                                                           |
-| - [keyword](#keyword )                                     | null or array of string | keyword/tag                                                                         |
-| - [keywordMap](#keywordMap )                               | null or object          | Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}        |
-| - [landingPage](#landingPage )                             | More than one type      | landing page                                                                        |
-| - [previousVersion](#previousVersion )                     | More than one type      | previous version                                                                    |
-| - [qualifiedRelation](#qualifiedRelation )                 | null or array           | qualified relation                                                                  |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | Spatial resolution (meters)                                                         |
-| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution                                                                 |
-| - [theme](#theme )                                         | null or array           | theme/category                                                                      |
-| - [version](#version )                                     | null or string          | version                                                                             |
-| - [describedBy](#describedBy )                             | More than one type      | data dictionary                                                                     |
-| - [liabilityStatement](#liabilityStatement )               | More than one type      | liability statement                                                                 |
-| - [metadataDistribution](#metadataDistribution )           | null or array           | metadata distribution                                                               |
-| - [purpose](#purpose )                                     | null or string          | purpose                                                                             |
-| - [purposeMap](#purposeMap )                               | null or object          | Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}        |
-| - [accessRights](#accessRights )                           | More than one type      | access rights                                                                       |
-| - [accrualPeriodicity](#accrualPeriodicity )               | More than one type      | frequency                                                                           |
-| - [conformsTo](#conformsTo )                               | null or array           | conforms to                                                                         |
-| - [contributor](#contributor )                             | null or array           | contributor                                                                         |
-| - [created](#created )                                     | More than one type      | creation date                                                                       |
-| - [creator](#creator )                                     | More than one type      | creator                                                                             |
-| + [description](#description )                             | string                  | description                                                                         |
-| - [descriptionMap](#descriptionMap )                       | null or object          | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}    |
-| - [hasPart](#hasPart )                                     | null or array           | has part                                                                            |
-| - [identifier](#identifier )                               | More than one type      | identifier                                                                          |
-| - [isReferencedBy](#isReferencedBy )                       | null or array of string | is referenced by                                                                    |
-| - [issued](#issued )                                       | More than one type      | release date                                                                        |
-| - [language](#language )                                   | More than one type      | language                                                                            |
-| - [modified](#modified )                                   | More than one type      | last modified                                                                       |
-| - [provenance](#provenance )                               | null or array of string | provenance                                                                          |
-| + [publisher](#publisher )                                 | object                  | publisher                                                                           |
-| - [relation](#relation )                                   | null or array of string | related resource                                                                    |
-| - [replaces](#replaces )                                   | null or array           | replaces                                                                            |
-| - [rights](#rights )                                       | null or array of string | rights                                                                              |
-| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                                                                       |
-| - [source](#source )                                       | null or array           | data source                                                                         |
-| - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage                                                         |
-| - [subject](#subject )                                     | null or array           | subject                                                                             |
-| - [temporal](#temporal )                                   | null or array           | temporal coverage                                                                   |
-| + [title](#title )                                         | string                  | title                                                                               |
-| - [titleMap](#titleMap )                                   | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [category](#category )                                   | null or array           | category                                                                            |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement                                                                 |
-| - [page](#page )                                           | null or array           | documentation                                                                       |
-| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution                                                               |
-| - [wasAttributedTo](#wasAttributedTo )                     | null or array           | attribution                                                                         |
-| - [wasGeneratedBy](#wasGeneratedBy )                       | null or array           | was generated by                                                                    |
-| - [wasUsedBy](#wasUsedBy )                                 | null or array           | used by                                                                             |
-| - [image](#image )                                         | More than one type      | image                                                                               |
-| - [scopeNote](#scopeNote )                                 | null or string          | usage note                                                                          |
-| - [scopeNoteMap](#scopeNoteMap )                           | null or object          | Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'} |
+| Property                                                   | Type                    | Title/Description           |
+| ---------------------------------------------------------- | ----------------------- | --------------------------- |
+| - [@id](#@id )                                             | string                  | -                           |
+| - [@type](#@type )                                         | string                  | -                           |
+| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier            |
+| - [sample](#sample )                                       | null or array           | sample                      |
+| - [status](#status )                                       | More than one type      | lifecycle status            |
+| - [supportedSchema](#supportedSchema )                     | More than one type      | supported schema            |
+| - [versionNotes](#versionNotes )                           | null or string          | version notes               |
+| + [contactPoint](#contactPoint )                           | More than one type      | contact point               |
+| - [distribution](#distribution )                           | null or array           | dataset distribution        |
+| - [first](#first )                                         | More than one type      | first                       |
+| - [hasCurrentVersion](#hasCurrentVersion )                 | More than one type      | current version             |
+| - [hasVersion](#hasVersion )                               | null or array           | has version                 |
+| - [inSeries](#inSeries )                                   | null or array           | in series                   |
+| - [keyword](#keyword )                                     | null or array of string | keyword/tag                 |
+| - [landingPage](#landingPage )                             | More than one type      | landing page                |
+| - [previousVersion](#previousVersion )                     | More than one type      | previous version            |
+| - [qualifiedRelation](#qualifiedRelation )                 | null or array           | qualified relation          |
+| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | Spatial resolution (meters) |
+| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution         |
+| - [theme](#theme )                                         | null or array           | theme/category              |
+| - [version](#version )                                     | null or string          | version                     |
+| - [describedBy](#describedBy )                             | More than one type      | data dictionary             |
+| - [liabilityStatement](#liabilityStatement )               | More than one type      | liability statement         |
+| - [metadataDistribution](#metadataDistribution )           | null or array           | metadata distribution       |
+| - [purpose](#purpose )                                     | null or string          | purpose                     |
+| - [accessRights](#accessRights )                           | More than one type      | access rights               |
+| - [accrualPeriodicity](#accrualPeriodicity )               | More than one type      | frequency                   |
+| - [conformsTo](#conformsTo )                               | null or array           | conforms to                 |
+| - [contributor](#contributor )                             | null or array           | contributor                 |
+| - [created](#created )                                     | More than one type      | creation date               |
+| - [creator](#creator )                                     | More than one type      | creator                     |
+| + [description](#description )                             | string                  | description                 |
+| - [hasPart](#hasPart )                                     | null or array           | has part                    |
+| - [identifier](#identifier )                               | More than one type      | identifier                  |
+| - [isReferencedBy](#isReferencedBy )                       | null or array of string | is referenced by            |
+| - [issued](#issued )                                       | More than one type      | release date                |
+| - [language](#language )                                   | More than one type      | language                    |
+| - [modified](#modified )                                   | More than one type      | last modified               |
+| - [provenance](#provenance )                               | null or array           | provenance                  |
+| + [publisher](#publisher )                                 | More than one type      | publisher                   |
+| - [relation](#relation )                                   | null or array of string | related resource            |
+| - [replaces](#replaces )                                   | null or array           | replaces                    |
+| - [rights](#rights )                                       | null or array           | rights                      |
+| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder               |
+| - [source](#source )                                       | null or array           | data source                 |
+| - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage |
+| - [subject](#subject )                                     | null or array           | subject                     |
+| - [temporal](#temporal )                                   | null or array           | temporal coverage           |
+| + [title](#title )                                         | string                  | title                       |
+| - [category](#category )                                   | null or array           | category                    |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement         |
+| - [page](#page )                                           | null or array           | documentation               |
+| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution       |
+| - [wasAttributedTo](#wasAttributedTo )                     | null or array           | attribution                 |
+| - [wasGeneratedBy](#wasGeneratedBy )                       | null or array           | was generated by            |
+| - [wasUsedBy](#wasUsedBy )                                 | null or array           | used by                     |
+| - [image](#image )                                         | More than one type      | image                       |
+| - [scopeNote](#scopeNote )                                 | null or string          | usage note                  |
 
 ## <a name="@id"></a>Property `Dataset > @id`
 
@@ -420,13 +415,6 @@ List of keywords or tags describing the Dataset
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="keywordMap"></a>Property `Dataset > keywordMap`
-
-Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ## <a name="landingPage"></a>Property `Dataset > landingPage`
 
 **Title:** landing page
@@ -661,13 +649,6 @@ A file that distributes the dataset
 The purpose of the dataset
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="purposeMap"></a>Property `Dataset > purposeMap`
-
-Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="accessRights"></a>Property `Dataset > accessRights`
@@ -942,13 +923,6 @@ A free-text account of the Dataset
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-
-## <a name="descriptionMap"></a>Property `Dataset > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
 
 ## <a name="hasPart"></a>Property `Dataset > hasPart`
 
@@ -1489,13 +1463,6 @@ A name given to the Dataset
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="titleMap"></a>Property `Dataset > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ## <a name="category"></a>Property `Dataset > category`
 
 **Title:** category
@@ -1703,12 +1670,5 @@ The link to the image
 usage note for the dataset
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="scopeNoteMap"></a>Property `Dataset > scopeNoteMap`
-
-Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 

@@ -51,10 +51,6 @@
       "description": "A free-text account of the Standard",
       "type": ["null", "string"]
     },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "identifier": {
       "title": "identifier",
       "description": "The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog",
@@ -147,10 +143,6 @@
       "title": "title",
       "description": "A name given to the Standard",
       "type": ["null", "string"]
-    },
-    "titleMap": {
-      "description": "Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "category": {
       "title": "category",
