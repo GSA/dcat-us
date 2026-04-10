@@ -8,21 +8,19 @@ Information about a particular standard that another item conforms to
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                               | Type               | Title/Description                                                                |
-| -------------------------------------- | ------------------ | -------------------------------------------------------------------------------- |
-| - [@id](#@id )                         | string             | -                                                                                |
-| - [@type](#@type )                     | string             | -                                                                                |
-| - [created](#created )                 | More than one type | creation date                                                                    |
-| - [description](#description )         | null or string     | description                                                                      |
-| - [descriptionMap](#descriptionMap )   | null or object     | Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [identifier](#identifier )           | More than one type | identifier                                                                       |
-| - [otherIdentifier](#otherIdentifier ) | null or array      | other identifier                                                                 |
-| - [issued](#issued )                   | More than one type | issued                                                                           |
-| - [modified](#modified )               | More than one type | last modified                                                                    |
-| - [title](#title )                     | null or string     | title                                                                            |
-| - [titleMap](#titleMap )               | null or object     | Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}       |
-| - [category](#category )               | null or array      | category                                                                         |
-| - [inScheme](#inScheme )               | More than one type | in scheme                                                                        |
+| Property                               | Type               | Title/Description |
+| -------------------------------------- | ------------------ | ----------------- |
+| - [@id](#@id )                         | string             | -                 |
+| - [@type](#@type )                     | string             | -                 |
+| - [created](#created )                 | More than one type | creation date     |
+| - [description](#description )         | null or string     | description       |
+| - [identifier](#identifier )           | More than one type | identifier        |
+| - [otherIdentifier](#otherIdentifier ) | null or array      | other identifier  |
+| - [issued](#issued )                   | More than one type | issued            |
+| - [modified](#modified )               | More than one type | last modified     |
+| - [title](#title )                     | null or string     | title             |
+| - [category](#category )               | null or array      | category          |
+| - [inScheme](#inScheme )               | More than one type | in scheme         |
 
 ## <a name="@id"></a>Property `Standard > @id`
 
@@ -114,13 +112,6 @@ A year and month in YYYY-MM format
 A free-text account of the Standard
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="descriptionMap"></a>Property `Standard > descriptionMap`
-
-Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="identifier"></a>Property `Standard > identifier`
@@ -361,13 +352,6 @@ A year and month in YYYY-MM format
 A name given to the Standard
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="titleMap"></a>Property `Standard > titleMap`
-
-Language map for title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="category"></a>Property `Standard > category`

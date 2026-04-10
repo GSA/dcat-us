@@ -81,10 +81,6 @@
         "minLength": 1
       }
     },
-    "keywordMap": {
-      "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "record": {
       "title": "catalog record",
       "description": "A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog",
@@ -224,10 +220,6 @@
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
       "type": ["null", "string"]
-    },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "hasPart": {
       "title": "has part",
@@ -517,10 +509,6 @@
       "title": "title",
       "description": "The title of the catalog in the indicated language",
       "type": ["null", "string"]
-    },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "category": {
       "title": "category",

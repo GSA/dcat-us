@@ -149,18 +149,10 @@
       "description": "An alternative label or name for a location",
       "type": ["null", "string"]
     },
-    "altLabelMap": {
-      "description": "Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "prefLabel": {
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
       "type": ["null", "string"]
-    },
-    "prefLabelMap": {
-      "description": "Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     }
   },
   "required": []

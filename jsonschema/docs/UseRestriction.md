@@ -8,14 +8,13 @@ A restriction on usage of another item
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                       | Type               | Title/Description                                                                         |
-| ---------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------- |
-| - [@id](#@id )                                 | string             | -                                                                                         |
-| - [@type](#@type )                             | string             | -                                                                                         |
-| - [restrictionNote](#restrictionNote )         | null or string     | restriction note                                                                          |
-| - [restrictionNoteMap](#restrictionNoteMap )   | null or object     | Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status                                                                        |
-| - [specificRestriction](#specificRestriction ) | More than one type | specific restriction                                                                      |
+| Property                                       | Type               | Title/Description    |
+| ---------------------------------------------- | ------------------ | -------------------- |
+| - [@id](#@id )                                 | string             | -                    |
+| - [@type](#@type )                             | string             | -                    |
+| - [restrictionNote](#restrictionNote )         | null or string     | restriction note     |
+| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status   |
+| - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
 ## <a name="@id"></a>Property `UseRestriction > @id`
 
@@ -36,13 +35,6 @@ A restriction on usage of another item
 Significant information pertaining to the use or reproduction of the data
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="restrictionNoteMap"></a>Property `UseRestriction > restrictionNoteMap`
-
-Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="restrictionStatus"></a>Property `UseRestriction > restrictionStatus`

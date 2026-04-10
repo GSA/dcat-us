@@ -8,20 +8,18 @@ Information about a specific geographic location
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                               | Type               | Title/Description                                                                         |
-| -------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------- |
-| - [@id](#@id )                         | string             | -                                                                                         |
-| - [@type](#@type )                     | string             | -                                                                                         |
-| - [bbox](#bbox )                       | More than one type | bounding box                                                                              |
-| - [centroid](#centroid )               | More than one type | centroid                                                                                  |
-| - [identifier](#identifier )           | More than one type | identifier                                                                                |
-| - [otherIdentifier](#otherIdentifier ) | null or array      | other identifier                                                                          |
-| - [geometry](#geometry )               | More than one type | geometry                                                                                  |
-| - [inScheme](#inScheme )               | More than one type | gazetteer                                                                                 |
-| - [altLabel](#altLabel )               | null or string     | alternative name                                                                          |
-| - [altLabelMap](#altLabelMap )         | null or object     | Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| - [prefLabel](#prefLabel )             | null or string     | geographic name                                                                           |
-| - [prefLabelMap](#prefLabelMap )       | null or object     | Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}      |
+| Property                               | Type               | Title/Description |
+| -------------------------------------- | ------------------ | ----------------- |
+| - [@id](#@id )                         | string             | -                 |
+| - [@type](#@type )                     | string             | -                 |
+| - [bbox](#bbox )                       | More than one type | bounding box      |
+| - [centroid](#centroid )               | More than one type | centroid          |
+| - [identifier](#identifier )           | More than one type | identifier        |
+| - [otherIdentifier](#otherIdentifier ) | null or array      | other identifier  |
+| - [geometry](#geometry )               | More than one type | geometry          |
+| - [inScheme](#inScheme )               | More than one type | gazetteer         |
+| - [altLabel](#altLabel )               | null or string     | alternative name  |
+| - [prefLabel](#prefLabel )             | null or string     | geographic name   |
 
 ## <a name="@id"></a>Property `Location > @id`
 
@@ -326,13 +324,6 @@ An alternative label or name for a location
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="altLabelMap"></a>Property `Location > altLabelMap`
-
-Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
-| -------- | ---------------- |
-
 ## <a name="prefLabel"></a>Property `Location > prefLabel`
 
 **Title:** geographic name
@@ -340,12 +331,5 @@ Language map for the alternative name. E.g. {'es': 'spanish words', 'fr': 'frenc
 Preferred label or name of the Location
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="prefLabelMap"></a>Property `Location > prefLabelMap`
-
-Language map for geographic name. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 

@@ -8,20 +8,19 @@ A record in a catalog, describing the registration of a single resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                         | Type                    | Title/Description                                                                   |
-| -------------------------------- | ----------------------- | ----------------------------------------------------------------------------------- |
-| - [@id](#@id )                   | string                  | -                                                                                   |
-| - [@type](#@type )               | string                  | -                                                                                   |
-| - [status](#status )             | More than one type      | change type                                                                         |
-| - [conformsTo](#conformsTo )     | More than one type      | application profile                                                                 |
-| - [description](#description )   | null or array of string | Descriptions                                                                        |
-| - [issued](#issued )             | null or array           | listing date                                                                        |
-| - [language](#language )         | More than one type      | language                                                                            |
-| + [modified](#modified )         | More than one type      | update/modification date                                                            |
-| - [source](#source )             | null or string          | source metadata                                                                     |
-| - [title](#title )               | null or string          | title                                                                               |
-| - [titleMap](#titleMap )         | null or object          | Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| + [primaryTopic](#primaryTopic ) | string                  | primary topic                                                                       |
+| Property                         | Type                    | Title/Description        |
+| -------------------------------- | ----------------------- | ------------------------ |
+| - [@id](#@id )                   | string                  | -                        |
+| - [@type](#@type )               | string                  | -                        |
+| - [status](#status )             | More than one type      | change type              |
+| - [conformsTo](#conformsTo )     | More than one type      | application profile      |
+| - [description](#description )   | null or array of string | Descriptions             |
+| - [issued](#issued )             | null or array           | listing date             |
+| - [language](#language )         | More than one type      | language                 |
+| + [modified](#modified )         | More than one type      | update/modification date |
+| - [source](#source )             | null or string          | source metadata          |
+| - [title](#title )               | null or string          | title                    |
+| + [primaryTopic](#primaryTopic ) | string                  | primary topic            |
 
 ## <a name="@id"></a>Property `CatalogRecord > @id`
 
@@ -329,13 +328,6 @@ The original metadata that was used in creating metadata for the items in the ca
 A name given to the Catalog Record
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="titleMap"></a>Property `CatalogRecord > titleMap`
-
-Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="primaryTopic"></a>Property `CatalogRecord > primaryTopic`

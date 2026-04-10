@@ -148,10 +148,6 @@
       "description": "A name given to the Catalog Record",
       "type": ["null", "string"]
     },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "primaryTopic": {
       "title": "primary topic",
       "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record",

@@ -242,10 +242,6 @@
         "minLength": 1
       }
     },
-    "keywordMap": {
-      "description": "Language map for keyword. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "landingPage": {
       "title": "landing page",
       "description": "A web page that provides access to the Dataset, its Distributions and/or additional information",
@@ -405,10 +401,6 @@
       "title": "purpose",
       "description": "The purpose of the dataset",
       "type": ["null", "string"]
-    },
-    "purposeMap": {
-      "description": "Language map for purpose. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "accessRights": {
       "title": "access rights",
@@ -583,10 +575,6 @@
       "title": "description",
       "description": "A free-text account of the Dataset",
       "type": "string"
-    },
-    "descriptionMap": {
-      "description": "Language map for description. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     },
     "hasPart": {
       "title": "has part",
@@ -940,10 +928,6 @@
       "description": "A name given to the Dataset",
       "type": "string"
     },
-    "titleMap": {
-      "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
-    },
     "category": {
       "title": "category",
       "description": "List of categories for the Dataset",
@@ -1103,10 +1087,6 @@
       "title": "usage note",
       "description": "usage note for the dataset",
       "type": ["null", "string"]
-    },
-    "scopeNoteMap": {
-      "description": "Language map for the scope note. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-      "type": ["null", "object"]
     }
   },
   "required": ["description", "publisher", "title", "contactPoint"]

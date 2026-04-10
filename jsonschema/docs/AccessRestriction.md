@@ -8,14 +8,13 @@ A restriction on the permitted access to a resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                       | Type               | Title/Description                                                                         |
-| ---------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------- |
-| - [@id](#@id )                                 | string             | -                                                                                         |
-| - [@type](#@type )                             | string             | -                                                                                         |
-| - [restrictionNote](#restrictionNote )         | null or string     | restriction note                                                                          |
-| - [restrictionNoteMap](#restrictionNoteMap )   | null or object     | Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'} |
-| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status                                                                        |
-| - [specificRestriction](#specificRestriction ) | More than one type | specific restriction                                                                      |
+| Property                                       | Type               | Title/Description    |
+| ---------------------------------------------- | ------------------ | -------------------- |
+| - [@id](#@id )                                 | string             | -                    |
+| - [@type](#@type )                             | string             | -                    |
+| - [restrictionNote](#restrictionNote )         | null or string     | restriction note     |
+| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status   |
+| - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
 ## <a name="@id"></a>Property `AccessRestriction > @id`
 
@@ -36,13 +35,6 @@ A restriction on the permitted access to a resource
 A note related to the access restriction
 
 | **Type** | `null or string` |
-| -------- | ---------------- |
-
-## <a name="restrictionNoteMap"></a>Property `AccessRestriction > restrictionNoteMap`
-
-Language map for the restriction note. E.g. {'es': 'spanish words', 'fr': 'french words'}
-
-| **Type** | `null or object` |
 | -------- | ---------------- |
 
 ## <a name="restrictionStatus"></a>Property `AccessRestriction > restrictionStatus`

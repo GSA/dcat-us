@@ -3,15 +3,7 @@
   "@type": "Organization",
   "name": "U.S. Census Bureau",
   "prefLabel": "United States Census Bureau",
-  "prefLabelMap": {
-    "es": "Oficina del Censo de los Estados Unidos",
-    "fr": "Bureau du recensement des États-Unis"
-  },
   "altLabel": "Census Bureau",
-  "altLabelMap": {
-    "es": "Oficina del Censo",
-    "fr": "Bureau du recensement"
-  },
   "notation": [ "USCB", "CB" ],
   "subOrganizationOf": [
     {
