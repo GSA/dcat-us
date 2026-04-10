@@ -2,7 +2,6 @@
   "accrualPeriodicity": null,
   "contactPoint": null,
   "description": "",
-  "descriptionMap": null,
   "first": null,
   "issued": null,
   "last": null,
@@ -11,6 +10,5 @@
   "seriesMember": null,
   "spatial": null,
   "temporal": null,
-  "title": "",
-  "titleMap": null
+  "title": ""
 }

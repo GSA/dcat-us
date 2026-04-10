@@ -15,8 +15,17 @@
   "modified": "2024-06-01",
   "accrualPeriodicity": "daily",
   "accessRights": "public",
-  "landingPage": "https://example.gov/climate-data",
-  "describedBy": "https://example.gov/climate-data/data-dictionary",
+  "landingPage": {
+    "@id": "https://example.gov/climate-data",
+    "@type": "Document",
+    "title": "Climate Data Landing Page"
+  },
+  "describedBy": {
+    "@id": "https://example.gov/climate-data/data-dictionary",
+    "@type": "Distribution",
+    "title": "Data Dictionary",
+    "mediaType": "application/pdf"
+  },
   "spatial": {
     "@type": "Location",
     "bbox": {

@@ -12,7 +12,6 @@
   "cuiRestriction": null,
   "describedBy": null,
   "description": null,
-  "descriptionMap": null,
   "downloadURL": null,
   "format": null,
   "hasQualityMeasurement": null,
@@ -32,6 +31,5 @@
   "status": null,
   "temporalResolution": null,
   "title": null,
-  "titleMap": null,
   "useRestriction": null
 }

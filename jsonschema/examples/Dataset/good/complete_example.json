@@ -2,15 +2,7 @@
   "@id": "https://example.gov/datasets/national-climate-observations-2024",
   "@type": "Dataset",
   "title": "National Climate Observations 2024",
-  "titleMap": {
-    "es": "Observaciones Climáticas Nacionales 2024",
-    "fr": "Observations Climatiques Nationales 2024"
-  },
   "description": "Comprehensive daily climate observations collected from monitoring stations across the United States, including temperature, precipitation, humidity, and wind measurements.",
-  "descriptionMap": {
-    "es": "Observaciones climáticas diarias completas recopiladas de estaciones de monitoreo en todo Estados Unidos.",
-    "fr": "Observations climatiques quotidiennes complètes collectées à partir de stations de surveillance à travers les États-Unis."
-  },
   "identifier": {
     "@type": "Identifier",
     "schemaAgency": "National Climate Data Center",
@@ -101,24 +93,6 @@
     "wind",
     "meteorology"
   ],
-  "keywordMap": {
-    "es": [
-      "clima",
-      "tiempo",
-      "temperatura",
-      "precipitación",
-      "humedad",
-      "viento"
-    ],
-    "fr": [
-      "climat",
-      "météo",
-      "température",
-      "précipitation",
-      "humidité",
-      "vent"
-    ]
-  },
   "theme": [
     {
       "@id": "https://example.gov/concepts/climate-science",
@@ -127,14 +101,22 @@
       "altLabel": "Climatology",
       "definition": "The scientific study of climate, including patterns, variability, and change over time.",
       "notation": ["CLIM-SCI"],
-      "inScheme": "https://example.gov/concept-schemes/science-domains"
+      "inScheme": {
+        "@id": "https://example.gov/concept-schemes/science-domains",
+        "@type": "ConceptScheme",
+        "title": "Science Domains"
+      }
     },
     {
       "@id": "https://example.gov/concepts/environmental-monitoring",
       "@type": "Concept",
       "prefLabel": "Environmental Monitoring",
       "definition": "Systematic collection of environmental data to assess conditions and detect changes.",
-      "inScheme": "https://example.gov/concept-schemes/science-domains"
+      "inScheme": {
+        "@id": "https://example.gov/concept-schemes/science-domains",
+        "@type": "ConceptScheme",
+        "title": "Science Domains"
+      }
     }
   ],
   "status": {
@@ -142,7 +124,11 @@
     "@type": "Concept",
     "prefLabel": "Published",
     "definition": "The dataset has been officially published and is available for public access.",
-    "inScheme": "https://example.gov/concept-schemes/lifecycle-status"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/lifecycle-status",
+      "@type": "ConceptScheme",
+      "title": "Lifecycle Status"
+    }
   },
   "landingPage": {
     "@id": "https://example.gov/datasets/climate-2024/landing",
@@ -204,7 +190,11 @@
         "@id": "https://example.gov/concepts/research-team",
         "@type": "Concept",
         "prefLabel": "Research Team",
-        "inScheme": "https://example.gov/concept-schemes/organization-types"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/organization-types",
+          "@type": "ConceptScheme",
+          "title": "Organization Types"
+        }
       }
     ]
   },
@@ -228,10 +218,6 @@
     "Quality control procedures applied according to WMO guidelines."
   ],
   "purpose": "To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate.",
-  "purposeMap": {
-    "es": "Proporcionar observaciones climáticas completas y de alta calidad para investigación y toma de decisiones.",
-    "fr": "Fournir des observations climatiques complètes et de haute qualité pour la recherche et la prise de décision."
-  },
   "liabilityStatement": "This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use.",
   "inSeries": [
     {
@@ -241,7 +227,17 @@
       "description": "An annual series of national climate observations datasets."
     }
   ],
-  "previousVersion": "https://example.gov/datasets/national-climate-observations-2023",
+  "previousVersion": {
+    "@id": "https://example.gov/datasets/national-climate-observations-2023",
+    "@type": "Dataset",
+    "title": "National Climate Observations 2023",
+    "description": "Previous year climate observations.",
+    "contactPoint": {
+      "fn": "Climate Support",
+      "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": { "name": "National Climate Data Center" }
+  },
   "qualifiedRelation": [
     {
       "@id": "https://example.gov/relationships/climate-model-input",
@@ -272,7 +268,11 @@
           "@id": "https://example.gov/concepts/data-collection",
           "@type": "Concept",
           "prefLabel": "Data Collection",
-          "inScheme": "https://example.gov/concept-schemes/activity-types"
+          "inScheme": {
+            "@id": "https://example.gov/concept-schemes/activity-types",
+            "@type": "ConceptScheme",
+            "title": "Activity Types"
+          }
         }
       ]
     }
@@ -302,8 +302,5 @@
   ],
   "isReferencedBy": ["https://example.gov/publications/climate-trends-2024"],
   "relation": ["https://example.gov/datasets/historical-climate-averages"],
-  "scopeNote": "This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets.",
-  "scopeNoteMap": {
-    "es": "Este conjunto de datos contiene datos de observación sin procesar. Para productos derivados, consulte los conjuntos de datos relacionados."
-  }
+  "scopeNote": "This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets."
 }

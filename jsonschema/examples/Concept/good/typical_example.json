@@ -2,5 +2,9 @@
   "@type": "Concept",
   "prefLabel": "Climate Science",
   "definition": "The scientific study of climate patterns and change.",
-  "inScheme": "https://example.gov/concept-schemes/science-domains"
+  "inScheme": {
+    "@id": "https://example.gov/concept-schemes/science-domains",
+    "@type": "ConceptScheme",
+    "title": "Science Domains"
+  }
 }

@@ -2,15 +2,7 @@
   "@id": "https://example.gov/data-services/climate-api-001",
   "@type": "DataService",
   "title": "Climate Data REST API",
-  "titleMap": {
-    "es": "API REST de Datos Climáticos",
-    "fr": "API REST des Données Climatiques"
-  },
   "description": "A RESTful API providing access to historical and real-time climate data including temperature, precipitation, and atmospheric conditions.",
-  "descriptionMap": {
-    "es": "Una API RESTful que proporciona acceso a datos climáticos históricos y en tiempo real.",
-    "fr": "Une API RESTful fournissant l'accès aux données climatiques historiques et en temps réel."
-  },
   "endpointURL": [
     "https://api.example.gov/climate/v1",
     "https://api.example.gov/climate/v2"
@@ -46,7 +38,11 @@
         "@type": "Concept",
         "prefLabel": "Federal Agency",
         "definition": "An agency of the federal government of the United States.",
-        "inScheme": "https://example.gov/concept-schemes/organization-types"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/organization-types",
+          "@type": "ConceptScheme",
+          "title": "Organization Types"
+        }
       }
     ]
   },
@@ -68,17 +64,17 @@
     }
   ],
   "keyword": ["climate", "weather", "temperature", "API", "REST"],
-  "keywordMap": {
-    "es": ["clima", "tiempo", "temperatura", "API", "REST"],
-    "fr": ["climat", "météo", "température", "API", "REST"]
-  },
   "theme": [
     {
       "@id": "https://example.gov/concepts/climate-science",
       "@type": "Concept",
       "prefLabel": "Climate Science",
       "definition": "The scientific study of climate and climate change.",
-      "inScheme": "https://example.gov/concept-schemes/science-domains"
+      "inScheme": {
+        "@id": "https://example.gov/concept-schemes/science-domains",
+        "@type": "ConceptScheme",
+        "title": "Science Domains"
+      }
     }
   ],
   "conformsTo": [

@@ -2,10 +2,6 @@
   "@id": "https://example.gov/restrictions/use-restriction-001",
   "@type": "UseRestriction",
   "restrictionNote": "This data may be used for research purposes. Commercial use requires written permission from the data steward.",
-  "restrictionNoteMap": {
-    "es": "Estos datos pueden ser utilizados con fines de investigación. El uso comercial requiere permiso escrito del administrador de datos.",
-    "fr": "Ces données peuvent être utilisées à des fins de recherche. L'utilisation commerciale nécessite l'autorisation écrite du gestionnaire des données."
-  },
   "restrictionStatus": {
     "@id": "https://example.gov/concepts/restricted-commercial",
     "@type": "Concept",
@@ -13,7 +9,11 @@
     "altLabel": "Commercial Restriction",
     "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
     "notation": ["RST-COM"],
-    "inScheme": "https://example.gov/concept-schemes/restriction-status"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/restriction-status",
+      "@type": "ConceptScheme",
+      "title": "Restriction Status"
+    }
   },
   "specificRestriction": {
     "@id": "https://example.gov/concepts/nara-restriction-copyright",
@@ -21,6 +21,10 @@
     "prefLabel": "Copyright Restriction",
     "definition": "Materials protected by copyright with limited use permissions.",
     "notation": ["CR"],
-    "inScheme": "https://example.gov/concept-schemes/nara-restrictions"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/nara-restrictions",
+      "@type": "ConceptScheme",
+      "title": "NARA Restrictions"
+    }
   }
 }

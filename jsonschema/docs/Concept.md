@@ -74,33 +74,10 @@ Definition of the controlled vocabulary term
 
 Concept scheme defining this concept
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| One of(Option)                               |
-| -------------------------------------------- |
-| [ConceptScheme](#anyOf_i1_inScheme_oneOf_i0) |
-| [item 1](#anyOf_i1_inScheme_oneOf_i1)        |
-
-#### <a name="anyOf_i1_inScheme_oneOf_i0"></a>Property `Concept > anyOf > item 1 > inScheme > oneOf > ConceptScheme`
-
-**Title:** ConceptScheme
-
-inline description of ConceptScheme
-
 | **Type**                  | `object`                            |
 | ------------------------- | ----------------------------------- |
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
-
-#### <a name="anyOf_i1_inScheme_oneOf_i1"></a>Property `Concept > anyOf > item 1 > inScheme > oneOf > item 1`
-
-reference iri of ConceptScheme
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ### <a name="anyOf_i1_notation"></a>Property `Concept > anyOf > item 1 > notation`
 

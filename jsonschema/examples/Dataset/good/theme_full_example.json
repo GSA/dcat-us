@@ -15,7 +15,11 @@
       "prefLabel": "Water",
       "definition": "Topics related to water resources, water quality, and aquatic ecosystems",
       "notation": ["006"],
-      "inScheme": "https://example.gov/themes"
+      "inScheme": {
+        "@id": "https://example.gov/themes",
+        "@type": "ConceptScheme",
+        "title": "Themes"
+      }
     },
     {
       "@type": "Concept",
@@ -23,7 +27,11 @@
       "altLabel": "Environmental Protection",
       "definition": "Topics related to environmental monitoring, protection, and conservation",
       "notation": ["012"],
-      "inScheme": "https://example.gov/themes"
+      "inScheme": {
+        "@id": "https://example.gov/themes",
+        "@type": "ConceptScheme",
+        "title": "Themes"
+      }
     }
   ]
 }

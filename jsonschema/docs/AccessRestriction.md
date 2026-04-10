@@ -43,36 +43,11 @@ A note related to the access restriction
 
 The indication of whether or not there are access restrictions on the item
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Required**              | Yes                |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                         |
-| -------------------------------------- |
-| [Concept](#restrictionStatus_anyOf_i0) |
-| [Link](#restrictionStatus_anyOf_i1)    |
-
-### <a name="restrictionStatus_anyOf_i0"></a>Property `AccessRestriction > restrictionStatus > anyOf > Concept`
-
-**Title:** Concept
-
-inline description of restriction status
-
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
+| **Required**              | Yes                     |
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
-
-### <a name="restrictionStatus_anyOf_i1"></a>Property `AccessRestriction > restrictionStatus > anyOf > Link`
-
-**Title:** Link
-
-reference iri of restriction status
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="specificRestriction"></a>Property `AccessRestriction > specificRestriction`
 
@@ -88,7 +63,6 @@ The specific NARA restriction associated with this restriction
 | --------------------------------------------------------------- |
 | [Null allowed when not required](#specificRestriction_anyOf_i0) |
 | [Concept](#specificRestriction_anyOf_i1)                        |
-| [Link](#specificRestriction_anyOf_i2)                           |
 
 ### <a name="specificRestriction_anyOf_i0"></a>Property `AccessRestriction > specificRestriction > anyOf > Null allowed when not required`
 
@@ -103,18 +77,8 @@ The specific NARA restriction associated with this restriction
 
 inline description of the specific restriction
 
-| **Type**                  | More than one type                     |
-| ------------------------- | -------------------------------------- |
-| **Additional properties** | Any type allowed                       |
-| **Same definition as**    | [Concept](#restrictionStatus_anyOf_i0) |
-
-### <a name="specificRestriction_anyOf_i2"></a>Property `AccessRestriction > specificRestriction > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the specific restriction
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | More than one type                      |
+| ------------------------- | --------------------------------------- |
+| **Additional properties** | Any type allowed                        |
+| **Same definition as**    | [restrictionStatus](#restrictionStatus) |
 

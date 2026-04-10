@@ -2,15 +2,7 @@
   "@id": "https://example.gov/series/annual-climate-observations",
   "@type": "DatasetSeries",
   "title": "Annual National Climate Observations Series",
-  "titleMap": {
-    "es": "Serie Anual de Observaciones Climáticas Nacionales",
-    "fr": "Série Annuelle des Observations Climatiques Nationales"
-  },
   "description": "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations.",
-  "descriptionMap": {
-    "es": "Una serie anual de conjuntos de datos de observaciones climáticas completas recopiladas de estaciones de monitoreo en todo Estados Unidos.",
-    "fr": "Une série annuelle d'ensembles de données d'observations climatiques complètes collectées à partir de stations de surveillance à travers les États-Unis."
-  },
   "accrualPeriodicity": "annually",
   "issued": "2000-01-15",
   "modified": "2024-06-01",
@@ -24,7 +16,11 @@
         "@type": "Concept",
         "prefLabel": "Federal Agency",
         "definition": "An agency of the federal government of the United States.",
-        "inScheme": "https://example.gov/concept-schemes/organization-types"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/organization-types",
+          "@type": "ConceptScheme",
+          "title": "Organization Types"
+        }
       }
     ]
   },

@@ -12,7 +12,11 @@
         "@type": "Concept",
         "prefLabel": "Government Office",
         "definition": "A subdivision of a government agency responsible for specific functions.",
-        "inScheme": "https://example.gov/concept-schemes/organization-types"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/organization-types",
+          "@type": "ConceptScheme",
+          "title": "Organization Types"
+        }
       }
     ]
   }

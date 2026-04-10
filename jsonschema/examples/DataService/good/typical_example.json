@@ -15,5 +15,17 @@
   },
   "keyword": ["climate", "weather", "API"],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "servesDataset": ["https://example.gov/datasets/climate-observations-2024"]
+  "servesDataset": [
+    {
+      "@id": "https://example.gov/datasets/climate-observations-2024",
+      "@type": "Dataset",
+      "title": "Climate Observations 2024",
+      "description": "Annual climate observation data.",
+      "contactPoint": {
+        "fn": "Climate Support",
+        "hasEmail": "mailto:climate@example.gov"
+      },
+      "publisher": { "name": "National Climate Data Center" }
+    }
+  ]
 }

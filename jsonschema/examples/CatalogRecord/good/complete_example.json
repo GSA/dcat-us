@@ -2,10 +2,6 @@
   "@id": "https://example.gov/catalog-records/climate-dataset-record-001",
   "@type": "CatalogRecord",
   "title": "Climate Data 2023 Catalog Record",
-  "titleMap": {
-    "es": "Registro de Catálogo de Datos Climáticos 2023",
-    "fr": "Enregistrement du Catalogue des Données Climatiques 2023"
-  },
   "description": [
     "This catalog record describes the registration of the Climate Data 2023 dataset.",
     "Contains metadata about when the dataset was added and last updated."
@@ -19,7 +15,11 @@
     "@type": "Concept",
     "prefLabel": "Published",
     "definition": "The catalog record has been published and is publicly available.",
-    "inScheme": "https://example.gov/concept-schemes/record-status"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/record-status",
+      "@type": "ConceptScheme",
+      "title": "Record Status"
+    }
   },
   "conformsTo": {
     "@id": "https://example.gov/standards/dcat-us-3",

@@ -6,13 +6,11 @@
   "created": null,
   "creator": null,
   "description": null,
-  "descriptionMap": null,
   "endpointDescription": null,
   "endpointURL": [],
   "hasQualityMeasurement": null,
   "identifier": null,
   "keyword": null,
-  "keywordMap": null,
   "language": null,
   "license": null,
   "modified": null,
@@ -30,6 +28,5 @@
   "temporalResolution": null,
   "theme": null,
   "title": "",
-  "titleMap": null,
   "wasUsedBy": null
 }

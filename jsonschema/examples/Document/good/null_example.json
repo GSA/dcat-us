@@ -1,6 +1,5 @@
 {
   "abstract": null,
-  "abstractMap": null,
   "accessURL": null,
   "bibliographicCitation": null,
   "category": null,
@@ -8,13 +7,11 @@
   "corporateCreator": null,
   "creator": null,
   "description": null,
-  "descriptionMap": null,
   "downloadURL": null,
   "identifier": null,
   "issued": null,
   "mediaType": null,
   "otherIdentifier": null,
   "publisher": null,
-  "title": "",
-  "titleMap": null
+  "title": ""
 }

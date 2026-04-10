@@ -10,7 +10,7 @@
     "name": "Sample Government Agency",
     "altLabel": "SGA",
     "prefLabel": "Sample Government Agency",
-    "notation": [ "SGA", "SAMPLE-GOV" ],
+    "notation": ["SGA", "SAMPLE-GOV"],
     "subOrganizationOf": [
       {
         "@id": "https://example.gov/organizations/parent-department",
@@ -43,7 +43,17 @@
       "description": "A sample CSV file for preview"
     }
   ],
-  "supportedSchema": "https://example.gov/schemas/data-schema-v1",
+  "supportedSchema": {
+    "@id": "https://example.gov/schemas/data-schema-v1",
+    "@type": "Dataset",
+    "title": "Data Schema v1",
+    "description": "Schema definition for the comprehensive dataset format.",
+    "contactPoint": {
+      "fn": "Schema Support",
+      "hasEmail": "mailto:schema@example.gov"
+    },
+    "publisher": { "name": "Sample Government Agency" }
+  },
   "versionNotes": "Initial release of the comprehensive example dataset with all fields populated.",
   "contactPoint": [
     {
@@ -79,7 +89,7 @@
       "format": "CSV (Comma-Separated Values)",
       "description": "Main CSV distribution of the dataset",
       "title": "Comprehensive Dataset CSV",
-      "characterEncoding": [ "UTF-8" ],
+      "characterEncoding": ["UTF-8"],
       "spatialResolutionInMeters": "100",
       "temporalResolution": "P1D",
       "issued": null,
@@ -95,10 +105,40 @@
       "description": "JSON distribution of the dataset"
     }
   ],
-  "first": "https://example.gov/datasets/comprehensive-example-first",
-  "hasCurrentVersion": "https://example.gov/datasets/comprehensive-example-001",
+  "first": {
+    "@id": "https://example.gov/datasets/comprehensive-example-first",
+    "@type": "Dataset",
+    "title": "Comprehensive Example First",
+    "description": "First version of comprehensive example.",
+    "contactPoint": {
+      "fn": "Data Support",
+      "hasEmail": "mailto:data@example.gov"
+    },
+    "publisher": { "name": "Sample Government Agency" }
+  },
+  "hasCurrentVersion": {
+    "@id": "https://example.gov/datasets/comprehensive-example-001",
+    "@type": "Dataset",
+    "title": "Comprehensive Example v1",
+    "description": "Current version of comprehensive example.",
+    "contactPoint": {
+      "fn": "Data Support",
+      "hasEmail": "mailto:data@example.gov"
+    },
+    "publisher": { "name": "Sample Government Agency" }
+  },
   "hasVersion": [
-    "https://example.gov/datasets/comprehensive-example-v0.9"
+    {
+      "@id": "https://example.gov/datasets/comprehensive-example-v0.9",
+      "@type": "Dataset",
+      "title": "Comprehensive Example v0.9",
+      "description": "Previous version of comprehensive example.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:data@example.gov"
+      },
+      "publisher": { "name": "Sample Government Agency" }
+    }
   ],
   "inSeries": [
     {
@@ -114,20 +154,54 @@
           "hasEmail": "mailto:series@example.gov"
         }
       ],
-      "first": "https://example.gov/datasets/comprehensive-example-first",
-      "last": "https://example.gov/datasets/comprehensive-example-001"
+      "first": {
+        "@id": "https://example.gov/datasets/comprehensive-example-first",
+        "@type": "Dataset",
+        "title": "Comprehensive Example First",
+        "description": "First in series.",
+        "contactPoint": {
+          "fn": "Data Support",
+          "hasEmail": "mailto:data@example.gov"
+        },
+        "publisher": { "name": "Sample Government Agency" }
+      },
+      "last": {
+        "@id": "https://example.gov/datasets/comprehensive-example-001",
+        "@type": "Dataset",
+        "title": "Comprehensive Example v1",
+        "description": "Latest in series.",
+        "contactPoint": {
+          "fn": "Data Support",
+          "hasEmail": "mailto:data@example.gov"
+        },
+        "publisher": { "name": "Sample Government Agency" }
+      }
     }
   ],
-  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
+  "keyword": [
+    "government",
+    "open data",
+    "comprehensive example",
+    "DCAT-US",
+    "metadata"
+  ],
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
     "title": "Comprehensive Dataset Landing Page",
-    "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example",
-    "creators": [ "Sample Government Agency" ],
-    "publishers": "Sample Government Agency"
+    "abstract": "The official landing page for the Comprehensive DCAT-US Dataset Example"
   },
-  "previousVersion": "https://example.gov/datasets/comprehensive-example-v0.9",
+  "previousVersion": {
+    "@id": "https://example.gov/datasets/comprehensive-example-v0.9",
+    "@type": "Dataset",
+    "title": "Comprehensive Example v0.9",
+    "description": "Previous version.",
+    "contactPoint": {
+      "fn": "Data Support",
+      "hasEmail": "mailto:data@example.gov"
+    },
+    "publisher": { "name": "Sample Government Agency" }
+  },
   "qualifiedRelation": [
     {
       "@id": "https://example.gov/relationships/related-dataset-rel",
@@ -147,16 +221,6 @@
     "downloadURL": "https://example.gov/downloads/data-dictionary.pdf",
     "format": "PDF (Portable Document Format)"
   },
-  "geographicBoundingBox": [
-    {
-      "@id": "https://example.gov/bboxes/conus",
-      "@type": "GeographicBoundingBox",
-      "westBoundingLongitude": "-124.848974",
-      "eastBoundingLongitude": "-66.885444",
-      "northBoundingLatitude": "49.384358",
-      "southBoundingLatitude": "24.396308"
-    }
-  ],
   "liabilityStatement": "This dataset is provided as-is without warranty. The publishing agency is not liable for any damages arising from its use.",
   "metadataDistribution": [
     {
@@ -197,15 +261,35 @@
     "name": "Original Dataset Creator"
   },
   "hasPart": [
-    "https://example.gov/datasets/comprehensive-part-1",
-    "https://example.gov/datasets/comprehensive-part-2"
+    {
+      "@id": "https://example.gov/datasets/comprehensive-part-1",
+      "@type": "Dataset",
+      "title": "Comprehensive Dataset Part 1",
+      "description": "First part of the comprehensive dataset.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:data@example.gov"
+      },
+      "publisher": { "name": "Sample Government Agency" }
+    },
+    {
+      "@id": "https://example.gov/datasets/comprehensive-part-2",
+      "@type": "Dataset",
+      "title": "Comprehensive Dataset Part 2",
+      "description": "Second part of the comprehensive dataset.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:data@example.gov"
+      },
+      "publisher": { "name": "Sample Government Agency" }
+    }
   ],
   "isReferencedBy": [
     "https://example.gov/publications/annual-report-2024",
     "https://example.gov/publications/data-quality-study"
   ],
   "issued": null,
-  "language": [ "en", "es" ],
+  "language": ["en", "es"],
   "modified": null,
   "provenance": [
     "Data was collected through automated sensors deployed across the continental United States."
@@ -215,7 +299,17 @@
     "https://example.gov/services/api-endpoint"
   ],
   "replaces": [
-    "https://example.gov/datasets/legacy-comprehensive-dataset"
+    {
+      "@id": "https://example.gov/datasets/legacy-comprehensive-dataset",
+      "@type": "Dataset",
+      "title": "Legacy Comprehensive Dataset",
+      "description": "The previous version of this dataset that has been replaced.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:data@example.gov"
+      },
+      "publisher": { "name": "Sample Government Agency" }
+    }
   ],
   "rights": [
     "Copyright 2024 Sample Government Agency. Released under CC0 1.0 Universal."
@@ -229,7 +323,17 @@
     }
   ],
   "source": [
-    "https://example.gov/datasets/raw-sensor-data"
+    {
+      "@id": "https://example.gov/datasets/raw-sensor-data",
+      "@type": "Dataset",
+      "title": "Raw Sensor Data",
+      "description": "The original raw sensor data used as source for this dataset.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:data@example.gov"
+      },
+      "publisher": { "name": "Sample Government Agency" }
+    }
   ],
   "temporal": [
     {
@@ -260,8 +364,6 @@
       "@type": "Document",
       "title": "User Guide",
       "abstract": "A comprehensive guide for using this dataset",
-      "creators": [ "Documentation Team" ],
-      "publishers": "Sample Government Agency",
       "bibliographicCitation": "Sample Government Agency. (2024). Comprehensive Dataset User Guide."
     }
   ],

@@ -2,15 +2,7 @@
   "@id": "https://example.gov/distributions/climate-data-csv-001",
   "@type": "Distribution",
   "title": "Climate Data CSV Distribution",
-  "titleMap": {
-    "es": "Distribución CSV de Datos Climáticos",
-    "fr": "Distribution CSV des Données Climatiques"
-  },
   "description": "A CSV file containing historical climate data including daily temperature and precipitation readings.",
-  "descriptionMap": {
-    "es": "Un archivo CSV que contiene datos climáticos históricos.",
-    "fr": "Un fichier CSV contenant des données climatiques historiques."
-  },
   "accessURL": "https://example.gov/data/climate/access",
   "downloadURL": "https://example.gov/data/climate/climate-data-2023.csv",
   "mediaType": "text/csv",
@@ -34,21 +26,33 @@
     "@type": "Concept",
     "prefLabel": "Tabular Data",
     "definition": "Data organized in rows and columns.",
-    "inScheme": "https://example.gov/concept-schemes/data-formats"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/data-formats",
+      "@type": "ConceptScheme",
+      "title": "Data Formats"
+    }
   },
   "status": {
     "@id": "https://example.gov/concepts/status-completed",
     "@type": "Concept",
     "prefLabel": "Completed",
     "definition": "The distribution is complete and final.",
-    "inScheme": "https://example.gov/concept-schemes/lifecycle-status"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/lifecycle-status",
+      "@type": "ConceptScheme",
+      "title": "Lifecycle Status"
+    }
   },
   "availability": {
     "@id": "https://example.gov/concepts/available-stable",
     "@type": "Concept",
     "prefLabel": "Stable",
     "definition": "The distribution is intended to be available for the long term.",
-    "inScheme": "https://example.gov/concept-schemes/availability"
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/availability",
+      "@type": "ConceptScheme",
+      "title": "Availability"
+    }
   },
   "conformsTo": [
     {
@@ -93,7 +97,11 @@
         "@type": "Concept",
         "prefLabel": "Unrestricted",
         "definition": "No restrictions on access.",
-        "inScheme": "https://example.gov/concept-schemes/restriction-status"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
       }
     }
   ],
@@ -107,7 +115,11 @@
         "@type": "Concept",
         "prefLabel": "Unrestricted",
         "definition": "No restrictions on use.",
-        "inScheme": "https://example.gov/concept-schemes/restriction-status"
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
       }
     }
   ],
