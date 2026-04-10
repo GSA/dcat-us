@@ -49,43 +49,20 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                         | Description |
-| ------------------------------------------------------- | ----------- |
-| [Organization object or link](#subOrganizationOf_items) | -           |
+| Each item of this array must be          | Description                                                                         |
+| ---------------------------------------- | ----------------------------------------------------------------------------------- |
+| [Organization](#subOrganizationOf_items) | Information about an organization, including other organizations that it is part of |
 
-### <a name="subOrganizationOf_items"></a>Organization > subOrganizationOf > Organization object or link
-
-**Title:** Organization object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                    |
-| ------------------------------------------------- |
-| [Organization](#subOrganizationOf_items_anyOf_i0) |
-| [Link](#subOrganizationOf_items_anyOf_i1)         |
-
-#### <a name="subOrganizationOf_items_anyOf_i0"></a>Property `Organization > subOrganizationOf > Organization object or link > anyOf > Organization`
+### <a name="subOrganizationOf_items"></a>Organization > subOrganizationOf > Organization
 
 **Title:** Organization
 
-inline description of Organization
+Information about an organization, including other organizations that it is part of
 
 | **Type**                  | `object`              |
 | ------------------------- | --------------------- |
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
-
-#### <a name="subOrganizationOf_items_anyOf_i1"></a>Property `Organization > subOrganizationOf > Organization object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Organization
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="altLabel"></a>Property `Organization > altLabel`
 

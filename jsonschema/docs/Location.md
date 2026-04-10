@@ -166,7 +166,6 @@ The unique geographic identifier for the Location, e.g., the URI or other unique
 | ---------------------------------- |
 | [item 0](#identifier_anyOf_i0)     |
 | [Identifier](#identifier_anyOf_i1) |
-| [item 2](#identifier_anyOf_i2)     |
 
 ### <a name="identifier_anyOf_i0"></a>Property `Location > identifier > anyOf > item 0`
 
@@ -184,14 +183,6 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-### <a name="identifier_anyOf_i2"></a>Property `Location > identifier > anyOf > item 2`
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
 ## <a name="otherIdentifier"></a>Property `Location > otherIdentifier`
 
 **Title:** other identifier
@@ -201,39 +192,20 @@ A list of geographic identifiers for the Location besides the main identifier, e
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [otherIdentifier items](#otherIdentifier_items) | -           |
+| Each item of this array must be      | Description                                                                   |
+| ------------------------------------ | ----------------------------------------------------------------------------- |
+| [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
 
-### <a name="otherIdentifier_items"></a>Location > otherIdentifier > otherIdentifier items
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                |
-| --------------------------------------------- |
-| [Identifier](#otherIdentifier_items_anyOf_i0) |
-| [item 1](#otherIdentifier_items_anyOf_i1)     |
-
-#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Location > otherIdentifier > otherIdentifier items > anyOf > Identifier`
+### <a name="otherIdentifier_items"></a>Location > otherIdentifier > Identifier
 
 **Title:** Identifier
 
-inline description of Identifier
+A unique identifier and optionally it's scheme and other relevant information
 
 | **Type**                  | More than one type                 |
 | ------------------------- | ---------------------------------- |
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
-
-#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Location > otherIdentifier > otherIdentifier items > anyOf > item 1`
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="geometry"></a>Property `Location > geometry`
 
@@ -289,7 +261,6 @@ The gazetteer to which the location belongs
 | ----------------------------------- |
 | [item 0](#inScheme_anyOf_i0)        |
 | [ConceptScheme](#inScheme_anyOf_i1) |
-| [item 2](#inScheme_anyOf_i2)        |
 
 ### <a name="inScheme_anyOf_i0"></a>Property `Location > inScheme > anyOf > item 0`
 
@@ -306,14 +277,6 @@ inline description of the gazetteer
 | ------------------------- | ----------------------------------- |
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
-
-### <a name="inScheme_anyOf_i2"></a>Property `Location > inScheme > anyOf > item 2`
-
-reference iri of the gazetteer
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="altLabel"></a>Property `Location > altLabel`
 

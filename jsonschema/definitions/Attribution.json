@@ -21,18 +21,7 @@
     "agent": {
       "title": "agent",
       "description": "The agent that plays a role in the resource",
-      "anyOf": [
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/agent",
-          "description": "inline description of Agent"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Agent",
-          "format": "iri"
-        }
-      ]
+      "$ref": "/dcat-us/3.0.0/definitions/agent"
     }
   },
   "required": ["hadRole", "agent"]

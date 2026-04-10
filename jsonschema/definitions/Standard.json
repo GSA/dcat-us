@@ -62,12 +62,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of Identifier",
-          "format": "iri"
         }
       ]
     },
@@ -76,18 +70,7 @@
       "description": "A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
       "type": ["null", "array"],
       "items": {
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/identifier",
-            "description": "inline description of Identifier"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Identifier",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
     },
     "issued": {
@@ -166,19 +149,7 @@
       "description": "List of categories for the Standard",
       "type": ["null", "array"],
       "items": {
-        "title": "Category or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/concept",
-            "description": "inline description of Concept"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Concept",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
     },
     "inScheme": {
@@ -192,12 +163,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
           "description": "inline description of ConceptScheme"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of ConceptScheme",
-          "format": "iri"
         }
       ]
     }

@@ -48,7 +48,6 @@ The status of the catalog record in the context of editorial flow of the dataset
 | -------------------------------------------------- |
 | [Null allowed when not required](#status_anyOf_i0) |
 | [Concept](#status_anyOf_i1)                        |
-| [Link](#status_anyOf_i2)                           |
 
 ### <a name="status_anyOf_i0"></a>Property `CatalogRecord > status > anyOf > Null allowed when not required`
 
@@ -68,16 +67,6 @@ inline description of status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-### <a name="status_anyOf_i2"></a>Property `CatalogRecord > status > anyOf > Link`
-
-**Title:** Link
-
-reference iri of status
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
 ## <a name="conformsTo"></a>Property `CatalogRecord > conformsTo`
 
 **Title:** application profile
@@ -92,7 +81,6 @@ An Application Profile that the Catalog Record's metadata conforms to
 | ------------------------------------------------------ |
 | [Null allowed when not required](#conformsTo_anyOf_i0) |
 | [Standard](#conformsTo_anyOf_i1)                       |
-| [Link](#conformsTo_anyOf_i2)                           |
 
 ### <a name="conformsTo_anyOf_i0"></a>Property `CatalogRecord > conformsTo > anyOf > Null allowed when not required`
 
@@ -111,16 +99,6 @@ inline description of application profile
 | ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
-
-### <a name="conformsTo_anyOf_i2"></a>Property `CatalogRecord > conformsTo > anyOf > Link`
-
-**Title:** Link
-
-reference iri of application profile
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="description"></a>Property `CatalogRecord > description`
 

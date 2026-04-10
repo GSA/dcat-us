@@ -46,43 +46,20 @@ List of contacts that can be used for sending comments about the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be            | Description |
-| ------------------------------------------ | ----------- |
-| [Kind object or link](#contactPoint_items) | -           |
+| Each item of this array must be | Description                                     |
+| ------------------------------- | ----------------------------------------------- |
+| [Kind](#contactPoint_items)     | Contact information for an individual or entity |
 
-### <a name="contactPoint_items"></a>DatasetSeries > contactPoint > Kind object or link
-
-**Title:** Kind object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                       |
-| ------------------------------------ |
-| [Kind](#contactPoint_items_anyOf_i0) |
-| [Link](#contactPoint_items_anyOf_i1) |
-
-#### <a name="contactPoint_items_anyOf_i0"></a>Property `DatasetSeries > contactPoint > Kind object or link > anyOf > Kind`
+### <a name="contactPoint_items"></a>DatasetSeries > contactPoint > Kind
 
 **Title:** Kind
 
-inline description of the contact
+Contact information for an individual or entity
 
 | **Type**                  | `object`          |
 | ------------------------- | ----------------- |
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
-
-#### <a name="contactPoint_items_anyOf_i1"></a>Property `DatasetSeries > contactPoint > Kind object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the contact
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="first"></a>Property `DatasetSeries > first`
 
@@ -98,7 +75,6 @@ The first dataset in an ordered dataset series
 | ------------------------------------------------- |
 | [Null allowed when not required](#first_anyOf_i0) |
 | [Dataset](#first_anyOf_i1)                        |
-| [Link](#first_anyOf_i2)                           |
 
 ### <a name="first_anyOf_i0"></a>Property `DatasetSeries > first > anyOf > Null allowed when not required`
 
@@ -118,16 +94,6 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-### <a name="first_anyOf_i2"></a>Property `DatasetSeries > first > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the first dataset
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
 ## <a name="last"></a>Property `DatasetSeries > last`
 
 **Title:** last
@@ -142,7 +108,6 @@ The last dataset in an ordered dataset series
 | ------------------------------------------------ |
 | [Null allowed when not required](#last_anyOf_i0) |
 | [Dataset](#last_anyOf_i1)                        |
-| [Link](#last_anyOf_i2)                           |
 
 ### <a name="last_anyOf_i0"></a>Property `DatasetSeries > last > anyOf > Null allowed when not required`
 
@@ -162,16 +127,6 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-### <a name="last_anyOf_i2"></a>Property `DatasetSeries > last > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the last dataset
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
-
 ## <a name="seriesMember"></a>Property `DatasetSeries > seriesMember`
 
 **Title:** series member
@@ -181,43 +136,20 @@ List of members of the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be               | Description |
-| --------------------------------------------- | ----------- |
-| [Dataset object or link](#seriesMember_items) | -           |
+| Each item of this array must be | Description                     |
+| ------------------------------- | ------------------------------- |
+| [Dataset](#seriesMember_items)  | Information about a set of data |
 
-### <a name="seriesMember_items"></a>DatasetSeries > seriesMember > Dataset object or link
-
-**Title:** Dataset object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                          |
-| --------------------------------------- |
-| [Dataset](#seriesMember_items_anyOf_i0) |
-| [Link](#seriesMember_items_anyOf_i1)    |
-
-#### <a name="seriesMember_items_anyOf_i0"></a>Property `DatasetSeries > seriesMember > Dataset object or link > anyOf > Dataset`
+### <a name="seriesMember_items"></a>DatasetSeries > seriesMember > Dataset
 
 **Title:** Dataset
 
-inline description of the member dataset
+Information about a set of data
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
-
-#### <a name="seriesMember_items_anyOf_i1"></a>Property `DatasetSeries > seriesMember > Dataset object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of the member dataset
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="accrualPeriodicity"></a>Property `DatasetSeries > accrualPeriodicity`
 
@@ -467,7 +399,6 @@ An entity (organization) responsible for ensuring the coherency of the Dataset S
 | ----------------------------------------------------- |
 | [Null allowed when not required](#publisher_anyOf_i0) |
 | [Agent](#publisher_anyOf_i1)                          |
-| [Link](#publisher_anyOf_i2)                           |
 
 ### <a name="publisher_anyOf_i0"></a>Property `DatasetSeries > publisher > anyOf > Null allowed when not required`
 
@@ -482,20 +413,10 @@ An entity (organization) responsible for ensuring the coherency of the Dataset S
 
 inline description of publisher
 
-| **Type**                  | `object`                                                                                           |
-| ------------------------- | -------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                   |
-| **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_anyOf_i0_accessService_items_anyOf_i0_creator_items_anyOf_i0) |
-
-### <a name="publisher_anyOf_i2"></a>Property `DatasetSeries > publisher > anyOf > Link`
-
-**Title:** Link
-
-reference iri of publisher
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                                                |
+| ------------------------- | ----------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                        |
+| **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_creator_items) |
 
 ## <a name="spatial"></a>Property `DatasetSeries > spatial`
 
@@ -506,43 +427,20 @@ A geographic region that is covered by the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be           | Description |
-| ----------------------------------------- | ----------- |
-| [Location object or link](#spatial_items) | -           |
+| Each item of this array must be | Description                                      |
+| ------------------------------- | ------------------------------------------------ |
+| [Location](#spatial_items)      | Information about a specific geographic location |
 
-### <a name="spatial_items"></a>DatasetSeries > spatial > Location object or link
-
-**Title:** Location object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [Location](#spatial_items_anyOf_i0) |
-| [Link](#spatial_items_anyOf_i1)     |
-
-#### <a name="spatial_items_anyOf_i0"></a>Property `DatasetSeries > spatial > Location object or link > anyOf > Location`
+### <a name="spatial_items"></a>DatasetSeries > spatial > Location
 
 **Title:** Location
 
-inline description of Location
+Information about a specific geographic location
 
-| **Type**                  | `object`                                                                                              |
-| ------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                      |
-| **Same definition as**    | [Location](#first_anyOf_i1_sample_items_anyOf_i0_accessService_items_anyOf_i0_spatial_items_anyOf_i0) |
-
-#### <a name="spatial_items_anyOf_i1"></a>Property `DatasetSeries > spatial > Location object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Location
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                                                   |
+| ------------------------- | -------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                           |
+| **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_spatial_items) |
 
 ## <a name="temporal"></a>Property `DatasetSeries > temporal`
 
@@ -553,43 +451,20 @@ A list of temporal periods that the Dataset Series covers
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                | Description |
-| ---------------------------------------------- | ----------- |
-| [PeriodOfTime object or link](#temporal_items) | -           |
+| Each item of this array must be | Description                                                            |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| [PeriodOfTime](#temporal_items) | Information about a specific time period with a start- and/or end-time |
 
-### <a name="temporal_items"></a>DatasetSeries > temporal > PeriodOfTime object or link
-
-**Title:** PeriodOfTime object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                           |
-| ---------------------------------------- |
-| [PeriodOfTime](#temporal_items_anyOf_i0) |
-| [Link](#temporal_items_anyOf_i1)         |
-
-#### <a name="temporal_items_anyOf_i0"></a>Property `DatasetSeries > temporal > PeriodOfTime object or link > anyOf > PeriodOfTime`
+### <a name="temporal_items"></a>DatasetSeries > temporal > PeriodOfTime
 
 **Title:** PeriodOfTime
 
-inline description of PeriodOfTime
+Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                                   |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                           |
-| **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_anyOf_i0_accessService_items_anyOf_i0_temporal_items_anyOf_i0) |
-
-#### <a name="temporal_items_anyOf_i1"></a>Property `DatasetSeries > temporal > PeriodOfTime object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of PeriodOfTime
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                |
+| **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_temporal_items) |
 
 ## <a name="title"></a>Property `DatasetSeries > title`
 

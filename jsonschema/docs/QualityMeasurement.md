@@ -8,13 +8,13 @@ A single measurement of one metric
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                               | Type               | Title/Description |
-| -------------------------------------- | ------------------ | ----------------- |
-| - [@id](#@id )                         | string             | -                 |
-| - [@type](#@type )                     | string             | -                 |
-| + [isMeasurementOf](#isMeasurementOf ) | More than one type | is measurement of |
-| + [value](#value )                     | string             | value             |
-| - [unitMeasure](#unitMeasure )         | null or string     | unit of measure   |
+| Property                               | Type           | Title/Description |
+| -------------------------------------- | -------------- | ----------------- |
+| - [@id](#@id )                         | string         | -                 |
+| - [@type](#@type )                     | string         | -                 |
+| + [isMeasurementOf](#isMeasurementOf ) | object         | is measurement of |
+| + [value](#value )                     | string         | value             |
+| - [unitMeasure](#unitMeasure )         | null or string | unit of measure   |
 
 ## <a name="@id"></a>Property `QualityMeasurement > @id`
 
@@ -34,36 +34,11 @@ A single measurement of one metric
 
 The metric being observed
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Required**              | Yes                |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [Metric](#isMeasurementOf_anyOf_i0) |
-| [Link](#isMeasurementOf_anyOf_i1)   |
-
-### <a name="isMeasurementOf_anyOf_i0"></a>Property `QualityMeasurement > isMeasurementOf > anyOf > Metric`
-
-**Title:** Metric
-
-inline description of Metric
-
 | **Type**                  | `object`              |
 | ------------------------- | --------------------- |
+| **Required**              | Yes                   |
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
-
-### <a name="isMeasurementOf_anyOf_i1"></a>Property `QualityMeasurement > isMeasurementOf > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Metric
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="value"></a>Property `QualityMeasurement > value`
 

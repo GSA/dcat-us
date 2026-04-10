@@ -24,12 +24,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of status"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of status",
-          "format": "iri"
         }
       ]
     },
@@ -44,12 +38,6 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/standard",
           "description": "inline description of application profile"
-        },
-        {
-          "type": "string",
-          "title": "Link",
-          "description": "reference iri of application profile",
-          "format": "iri"
         }
       ]
     },

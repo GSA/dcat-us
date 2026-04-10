@@ -34,7 +34,7 @@ The value of the concept, expressed as a string. This is only used when the conc
 | - [@type](#anyOf_i1_@type )           | string             | -                 |
 | - [altLabel](#anyOf_i1_altLabel )     | null or string     | alternate label   |
 | - [definition](#anyOf_i1_definition ) | null or string     | definition        |
-| - [inScheme](#anyOf_i1_inScheme )     | More than one type | in scheme         |
+| - [inScheme](#anyOf_i1_inScheme )     | object             | in scheme         |
 | - [notation](#anyOf_i1_notation )     | More than one type | notation          |
 | + [prefLabel](#anyOf_i1_prefLabel )   | string             | preferred label   |
 
@@ -74,33 +74,10 @@ Definition of the controlled vocabulary term
 
 Concept scheme defining this concept
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                               |
-| -------------------------------------------- |
-| [ConceptScheme](#anyOf_i1_inScheme_anyOf_i0) |
-| [item 1](#anyOf_i1_inScheme_anyOf_i1)        |
-
-#### <a name="anyOf_i1_inScheme_anyOf_i0"></a>Property `Concept > anyOf > item 1 > inScheme > anyOf > ConceptScheme`
-
-**Title:** ConceptScheme
-
-inline description of ConceptScheme
-
 | **Type**                  | `object`                            |
 | ------------------------- | ----------------------------------- |
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
-
-#### <a name="anyOf_i1_inScheme_anyOf_i1"></a>Property `Concept > anyOf > item 1 > inScheme > anyOf > item 1`
-
-reference iri of ConceptScheme
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ### <a name="anyOf_i1_notation"></a>Property `Concept > anyOf > item 1 > notation`
 

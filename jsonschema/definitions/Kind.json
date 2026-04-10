@@ -18,19 +18,7 @@
       "description": "The address of the contact",
       "type": ["null", "array"],
       "items": {
-        "title": "Address object or link",
-        "anyOf": [
-          {
-            "$ref": "/dcat-us/3.0.0/definitions/address",
-            "description": "inline address information"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Address",
-            "format": "iri"
-          }
-        ]
+        "$ref": "/dcat-us/3.0.0/definitions/address"
       }
     },
     "hasEmail": {

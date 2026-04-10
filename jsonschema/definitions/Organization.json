@@ -23,19 +23,7 @@
       "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization",
       "type": ["null", "array"],
       "items": {
-        "title": "Organization object or link",
-        "anyOf": [
-          {
-            "$ref": "#",
-            "description": "inline description of Organization"
-          },
-          {
-            "type": "string",
-            "title": "Link",
-            "description": "reference iri of Organization",
-            "format": "iri"
-          }
-        ]
+        "$ref": "#"
       }
     },
     "altLabel": {

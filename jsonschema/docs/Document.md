@@ -113,43 +113,20 @@ The individual(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description |
-| ------------------------------- | ----------- |
-| [Kind or link](#creator_items)  | -           |
+| Each item of this array must be | Description                                     |
+| ------------------------------- | ----------------------------------------------- |
+| [Kind](#creator_items)          | Contact information for an individual or entity |
 
-### <a name="creator_items"></a>Document > creator > Kind or link
-
-**Title:** Kind or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                  |
-| ------------------------------- |
-| [Kind](#creator_items_anyOf_i0) |
-| [Link](#creator_items_anyOf_i1) |
-
-#### <a name="creator_items_anyOf_i0"></a>Property `Document > creator > Kind or link > anyOf > Kind`
+### <a name="creator_items"></a>Document > creator > Kind
 
 **Title:** Kind
 
-inline description of author
+Contact information for an individual or entity
 
 | **Type**                  | `object`          |
 | ------------------------- | ----------------- |
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
-
-#### <a name="creator_items_anyOf_i1"></a>Property `Document > creator > Kind or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of author
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="mediaType"></a>Property `Document > mediaType`
 
@@ -187,43 +164,20 @@ List of standards that the Document conforms to
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be              | Description |
-| -------------------------------------------- | ----------- |
-| [Standard object or link](#conformsTo_items) | -           |
+| Each item of this array must be | Description                                                           |
+| ------------------------------- | --------------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
 
-### <a name="conformsTo_items"></a>Document > conformsTo > Standard object or link
-
-**Title:** Standard object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                         |
-| -------------------------------------- |
-| [Standard](#conformsTo_items_anyOf_i0) |
-| [Link](#conformsTo_items_anyOf_i1)     |
-
-#### <a name="conformsTo_items_anyOf_i0"></a>Property `Document > conformsTo > Standard object or link > anyOf > Standard`
+### <a name="conformsTo_items"></a>Document > conformsTo > Standard
 
 **Title:** Standard
 
-inline description of Standard
+Information about a particular standard that another item conforms to
 
 | **Type**                  | `object`                  |
 | ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
-
-#### <a name="conformsTo_items_anyOf_i1"></a>Property `Document > conformsTo > Standard object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Standard
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
 
 ## <a name="corporateCreator"></a>Property `Document > corporateCreator`
 
@@ -234,43 +188,20 @@ The corporate organization(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [Organization or link](#corporateCreator_items) | -           |
+| Each item of this array must be         | Description                                                                         |
+| --------------------------------------- | ----------------------------------------------------------------------------------- |
+| [Organization](#corporateCreator_items) | Information about an organization, including other organizations that it is part of |
 
-### <a name="corporateCreator_items"></a>Document > corporateCreator > Organization or link
-
-**Title:** Organization or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                   |
-| ------------------------------------------------ |
-| [Organization](#corporateCreator_items_anyOf_i0) |
-| [Link](#corporateCreator_items_anyOf_i1)         |
-
-#### <a name="corporateCreator_items_anyOf_i0"></a>Property `Document > corporateCreator > Organization or link > anyOf > Organization`
+### <a name="corporateCreator_items"></a>Document > corporateCreator > Organization
 
 **Title:** Organization
 
-inline description of corporate author
+Information about an organization, including other organizations that it is part of
 
-| **Type**                  | `object`                                                                                 |
-| ------------------------- | ---------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
-
-#### <a name="corporateCreator_items_anyOf_i1"></a>Property `Document > corporateCreator > Organization or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of corporate author
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                |
+| **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
 ## <a name="description"></a>Property `Document > description`
 
@@ -295,7 +226,6 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
 | [Identifier](#identifier_anyOf_i1)                     |
-| [Link](#identifier_anyOf_i2)                           |
 
 ### <a name="identifier_anyOf_i0"></a>Property `Document > identifier > anyOf > Null allowed when not required`
 
@@ -310,20 +240,10 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                           |
-| ------------------------- | ------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                             |
-| **Same definition as**    | [Identifier](#conformsTo_items_anyOf_i0_identifier_anyOf_i1) |
-
-### <a name="identifier_anyOf_i2"></a>Property `Document > identifier > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | More than one type                                  |
+| ------------------------- | --------------------------------------------------- |
+| **Additional properties** | Any type allowed                                    |
+| **Same definition as**    | [Identifier](#conformsTo_items_identifier_anyOf_i1) |
 
 ## <a name="otherIdentifier"></a>Property `Document > otherIdentifier`
 
@@ -334,43 +254,20 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                     | Description |
-| --------------------------------------------------- | ----------- |
-| [Identifier object or link](#otherIdentifier_items) | -           |
+| Each item of this array must be      | Description                                                                   |
+| ------------------------------------ | ----------------------------------------------------------------------------- |
+| [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
 
-### <a name="otherIdentifier_items"></a>Document > otherIdentifier > Identifier object or link
-
-**Title:** Identifier object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                                |
-| --------------------------------------------- |
-| [Identifier](#otherIdentifier_items_anyOf_i0) |
-| [Link](#otherIdentifier_items_anyOf_i1)       |
-
-#### <a name="otherIdentifier_items_anyOf_i0"></a>Property `Document > otherIdentifier > Identifier object or link > anyOf > Identifier`
+### <a name="otherIdentifier_items"></a>Document > otherIdentifier > Identifier
 
 **Title:** Identifier
 
-inline description of Identifier
+A unique identifier and optionally it's scheme and other relevant information
 
-| **Type**                  | More than one type                                           |
-| ------------------------- | ------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                             |
-| **Same definition as**    | [Identifier](#conformsTo_items_anyOf_i0_identifier_anyOf_i1) |
-
-#### <a name="otherIdentifier_items_anyOf_i1"></a>Property `Document > otherIdentifier > Identifier object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Identifier
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | More than one type                                  |
+| ------------------------- | --------------------------------------------------- |
+| **Additional properties** | Any type allowed                                    |
+| **Same definition as**    | [Identifier](#conformsTo_items_identifier_anyOf_i1) |
 
 ## <a name="issued"></a>Property `Document > issued`
 
@@ -450,43 +347,20 @@ The organization(s) that published the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                 | Description |
-| ----------------------------------------------- | ----------- |
-| [Organization object or link](#publisher_items) | -           |
+| Each item of this array must be  | Description                                                                         |
+| -------------------------------- | ----------------------------------------------------------------------------------- |
+| [Organization](#publisher_items) | Information about an organization, including other organizations that it is part of |
 
-### <a name="publisher_items"></a>Document > publisher > Organization object or link
-
-**Title:** Organization object or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                            |
-| ----------------------------------------- |
-| [Organization](#publisher_items_anyOf_i0) |
-| [Link](#publisher_items_anyOf_i1)         |
-
-#### <a name="publisher_items_anyOf_i0"></a>Property `Document > publisher > Organization object or link > anyOf > Organization`
+### <a name="publisher_items"></a>Document > publisher > Organization
 
 **Title:** Organization
 
-inline description of publisher
+Information about an organization, including other organizations that it is part of
 
-| **Type**                  | `object`                                                                                 |
-| ------------------------- | ---------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                         |
-| **Same definition as**    | [Organization](#conformsTo_items_anyOf_i0_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
-
-#### <a name="publisher_items_anyOf_i1"></a>Property `Document > publisher > Organization object or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of publisher
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | `object`                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                                                |
+| **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
 ## <a name="title"></a>Property `Document > title`
 
@@ -507,41 +381,18 @@ List of categories/genres for the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description |
-| ----------------------------------- | ----------- |
-| [Category or link](#category_items) | -           |
+| Each item of this array must be | Description                                                 |
+| ------------------------------- | ----------------------------------------------------------- |
+| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
 
-### <a name="category_items"></a>Document > category > Category or link
-
-**Title:** Category or link
-
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
-
-| Any of(Option)                      |
-| ----------------------------------- |
-| [Concept](#category_items_anyOf_i0) |
-| [Link](#category_items_anyOf_i1)    |
-
-#### <a name="category_items_anyOf_i0"></a>Property `Document > category > Category or link > anyOf > Concept`
+### <a name="category_items"></a>Document > category > Concept
 
 **Title:** Concept
 
-inline description of Concept
+A labeled value from an optionally specified concept scheme
 
-| **Type**                  | More than one type                                            |
-| ------------------------- | ------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                              |
-| **Same definition as**    | [Concept](#conformsTo_items_anyOf_i0_category_items_anyOf_i0) |
-
-#### <a name="category_items_anyOf_i1"></a>Property `Document > category > Category or link > anyOf > Link`
-
-**Title:** Link
-
-reference iri of Concept
-
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+| **Type**                  | More than one type                          |
+| ------------------------- | ------------------------------------------- |
+| **Additional properties** | Any type allowed                            |
+| **Same definition as**    | [Concept](#conformsTo_items_category_items) |
 

@@ -33,17 +33,7 @@
         "inScheme": {
           "title": "in scheme",
           "description": "Concept scheme defining this concept",
-          "anyOf": [
-            {
-              "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
-              "description": "inline description of ConceptScheme"
-            },
-            {
-              "type": "string",
-              "description": "reference iri of ConceptScheme",
-              "format": "iri"
-            }
-          ]
+          "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
         },
         "notation": {
           "title": "notation",
