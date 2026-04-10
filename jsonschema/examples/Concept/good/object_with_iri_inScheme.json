@@ -3,6 +3,6 @@
   "@type": "Concept",
   "prefLabel": "Transportation",
   "definition": "Data related to the movement of people and goods via various modes of transport.",
-  "notation": [ "TRANS", "T01" ],
+  "notation": ["TRANS", "T01"],
   "inScheme": "https://example.gov/concept-schemes/data-themes"
 }

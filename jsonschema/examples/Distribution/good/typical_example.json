@@ -1,0 +1,9 @@
+{
+  "@type": "Distribution",
+  "title": "Climate Data CSV",
+  "description": "Daily climate observations in CSV format.",
+  "accessURL": "https://example.gov/data/climate",
+  "downloadURL": "https://example.gov/downloads/climate-2024.csv",
+  "mediaType": "text/csv",
+  "byteSize": "52428800"
+}

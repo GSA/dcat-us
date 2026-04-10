@@ -1,0 +1,135 @@
+{
+  "@id": "https://example.gov/series/annual-climate-observations",
+  "@type": "DatasetSeries",
+  "title": "Annual National Climate Observations Series",
+  "titleMap": {
+    "es": "Serie Anual de Observaciones Climáticas Nacionales",
+    "fr": "Série Annuelle des Observations Climatiques Nationales"
+  },
+  "description": "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations.",
+  "descriptionMap": {
+    "es": "Una serie anual de conjuntos de datos de observaciones climáticas completas recopiladas de estaciones de monitoreo en todo Estados Unidos.",
+    "fr": "Une série annuelle d'ensembles de données d'observations climatiques complètes collectées à partir de stations de surveillance à travers les États-Unis."
+  },
+  "accrualPeriodicity": "annually",
+  "issued": "2000-01-15",
+  "modified": "2024-06-01",
+  "publisher": {
+    "@id": "https://example.gov/agents/ncdc",
+    "@type": "Agent",
+    "name": "National Climate Data Center",
+    "category": [
+      {
+        "@id": "https://example.gov/concepts/federal-agency",
+        "@type": "Concept",
+        "prefLabel": "Federal Agency",
+        "definition": "An agency of the federal government of the United States.",
+        "inScheme": "https://example.gov/concept-schemes/organization-types"
+      }
+    ]
+  },
+  "contactPoint": [
+    {
+      "@id": "https://example.gov/contacts/series-manager",
+      "@type": "Kind",
+      "fn": "Climate Series Data Manager",
+      "hasEmail": "mailto:climate-series@example.gov",
+      "organization-name": "National Climate Data Center",
+      "tel": "+1-555-123-4567",
+      "title": "Series Data Manager",
+      "address": [
+        {
+          "@id": "https://example.gov/addresses/ncdc-main",
+          "@type": "Address",
+          "street-address": "151 Patton Avenue",
+          "locality": "Asheville",
+          "region": "NC",
+          "postal-code": "28801",
+          "country-name": "United States"
+        }
+      ]
+    }
+  ],
+  "spatial": [
+    {
+      "@id": "https://example.gov/locations/usa-coverage",
+      "@type": "Location",
+      "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+    }
+  ],
+  "temporal": [
+    {
+      "@id": "https://example.gov/periods/series-coverage",
+      "@type": "PeriodOfTime",
+      "startDate": "2000-01-01",
+      "endDate": "2024-12-31"
+    }
+  ],
+  "first": {
+    "@id": "https://example.gov/datasets/climate-observations-2000",
+    "@type": "Dataset",
+    "title": "National Climate Observations 2000",
+    "description": "The first dataset in the annual climate observations series, covering calendar year 2000.",
+    "contactPoint": {
+      "fn": "Climate Data Support",
+      "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+      "name": "National Climate Data Center"
+    }
+  },
+  "last": {
+    "@id": "https://example.gov/datasets/climate-observations-2024",
+    "@type": "Dataset",
+    "title": "National Climate Observations 2024",
+    "description": "The most recent dataset in the annual climate observations series, covering calendar year 2024.",
+    "contactPoint": {
+      "fn": "Climate Data Support",
+      "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+      "name": "National Climate Data Center"
+    }
+  },
+  "seriesMember": [
+    {
+      "@id": "https://example.gov/datasets/climate-observations-2022",
+      "@type": "Dataset",
+      "title": "National Climate Observations 2022",
+      "description": "Climate observations for calendar year 2022.",
+      "contactPoint": {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+      },
+      "publisher": {
+        "name": "National Climate Data Center"
+      }
+    },
+    {
+      "@id": "https://example.gov/datasets/climate-observations-2023",
+      "@type": "Dataset",
+      "title": "National Climate Observations 2023",
+      "description": "Climate observations for calendar year 2023.",
+      "contactPoint": {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+      },
+      "publisher": {
+        "name": "National Climate Data Center"
+      }
+    },
+    {
+      "@id": "https://example.gov/datasets/climate-observations-2024",
+      "@type": "Dataset",
+      "title": "National Climate Observations 2024",
+      "description": "Climate observations for calendar year 2024.",
+      "contactPoint": {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+      },
+      "publisher": {
+        "name": "National Climate Data Center"
+      }
+    }
+  ]
+}

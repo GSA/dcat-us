@@ -1,0 +1,41 @@
+{
+  "@type": "DatasetSeries",
+  "title": "Annual Climate Observations",
+  "description": "A series of annual climate observation datasets from monitoring stations.",
+  "contactPoint": [
+    {
+      "fn": "Climate Data Support",
+      "hasEmail": "mailto:climate@example.gov"
+    }
+  ],
+  "publisher": {
+    "name": "National Climate Data Center"
+  },
+  "accrualPeriodicity": "annually",
+  "issued": "2000-01-15",
+  "modified": "2024-12-01",
+  "first": "https://example.gov/datasets/climate-observations-2000",
+  "last": "https://example.gov/datasets/climate-observations-2024",
+  "seriesMember": [
+    "https://example.gov/datasets/climate-observations-2022",
+    "https://example.gov/datasets/climate-observations-2023",
+    "https://example.gov/datasets/climate-observations-2024"
+  ],
+  "spatial": [
+    {
+      "@type": "Location",
+      "bbox": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-125.0, 24.0],
+            [-66.0, 24.0],
+            [-66.0, 50.0],
+            [-125.0, 50.0],
+            [-125.0, 24.0]
+          ]
+        ]
+      }
+    }
+  ]
+}

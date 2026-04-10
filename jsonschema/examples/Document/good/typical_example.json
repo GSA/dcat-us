@@ -1,0 +1,7 @@
+{
+  "@type": "Document",
+  "title": "Climate Data User Guide",
+  "description": "A guide for accessing and using the National Climate Data Center's data products.",
+  "accessURL": "https://example.gov/docs/climate-user-guide",
+  "mediaType": "application/pdf"
+}

@@ -12,7 +12,7 @@
     "es": "Oficina del Censo",
     "fr": "Bureau du recensement"
   },
-  "notation": [ "USCB", "CB" ],
+  "notation": ["USCB", "CB"],
   "subOrganizationOf": [
     {
       "@id": "https://example.gov/organizations/doc",

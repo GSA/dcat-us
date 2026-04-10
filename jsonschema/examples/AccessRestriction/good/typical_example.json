@@ -1,0 +1,5 @@
+{
+  "@type": "AccessRestriction",
+  "restrictionStatus": "https://example.gov/concepts/restricted",
+  "restrictionNote": "Access restricted to authorized personnel only."
+}

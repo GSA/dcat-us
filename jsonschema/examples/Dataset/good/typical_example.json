@@ -1,0 +1,43 @@
+{
+  "@type": "Dataset",
+  "title": "Daily Climate Observations 2024",
+  "description": "Daily temperature, precipitation, and wind measurements from monitoring stations across the United States.",
+  "identifier": "https://example.gov/datasets/climate-observations-2024",
+  "contactPoint": {
+    "fn": "Climate Data Support",
+    "hasEmail": "mailto:climate@example.gov"
+  },
+  "publisher": {
+    "name": "National Climate Data Center"
+  },
+  "keyword": ["climate", "weather", "temperature", "precipitation"],
+  "issued": "2024-01-15",
+  "modified": "2024-06-01",
+  "accrualPeriodicity": "daily",
+  "accessRights": "public",
+  "landingPage": "https://example.gov/climate-data",
+  "describedBy": "https://example.gov/climate-data/data-dictionary",
+  "spatial": {
+    "@type": "Location",
+    "bbox": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [-125.0, 24.0],
+          [-66.0, 24.0],
+          [-66.0, 50.0],
+          [-125.0, 50.0],
+          [-125.0, 24.0]
+        ]
+      ]
+    }
+  },
+  "theme": ["Climate Science"],
+  "distribution": [
+    {
+      "title": "Climate Data CSV",
+      "downloadURL": "https://example.gov/downloads/climate-2024.csv",
+      "mediaType": "text/csv"
+    }
+  ]
+}
