@@ -13,7 +13,7 @@ A service for providing data at a URL or URLs
 | - [@id](#@id )                                             | string                  | -                            |
 | - [@type](#@type )                                         | string                  | -                            |
 | + [contactPoint](#contactPoint )                           | array                   | contact point                |
-| - [endpointDescription](#endpointDescription )             | null or array           | endpoint description         |
+| - [endpointDescription](#endpointDescription )             | null or array of string | endpoint description         |
 | + [endpointURL](#endpointURL )                             | array of string         | endpoint URL                 |
 | - [keyword](#keyword )                                     | null or array of string | keyword/tag                  |
 | - [servesDataset](#servesDataset )                         | null or array           | serves dataset               |
@@ -30,8 +30,8 @@ A service for providing data at a URL or URLs
 | - [language](#language )                                   | More than one type      | language                     |
 | - [license](#license )                                     | More than one type      | license                      |
 | - [modified](#modified )                                   | More than one type      | update/modification date     |
-| + [publisher](#publisher )                                 | More than one type      | publisher                    |
-| - [rights](#rights )                                       | null or array           | rights                       |
+| + [publisher](#publisher )                                 | object                  | publisher                    |
+| - [rights](#rights )                                       | null or array of string | rights                       |
 | - [rightsHolder](#rightsHolder )                           | null or array           | rights holder                |
 | - [spatial](#spatial )                                     | null or array           | spatial/geographic coverage  |
 | - [temporal](#temporal )                                   | null or array           | temporal coverage            |

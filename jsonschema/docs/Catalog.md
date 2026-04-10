@@ -32,7 +32,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 | - [license](#license )                           | More than one type      | license                     |
 | - [modified](#modified )                         | More than one type      | update/modification date    |
 | - [publisher](#publisher )                       | More than one type      | publisher                   |
-| - [rights](#rights )                             | null or array           | rights                      |
+| - [rights](#rights )                             | null or array of string | rights                      |
 | - [rightsHolder](#rightsHolder )                 | null or array           | rights holder               |
 | - [spatial](#spatial )                           | null or array           | spatial/geographic coverage |
 | - [subject](#subject )                           | null or array           | subject                     |
