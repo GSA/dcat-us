@@ -48,11 +48,11 @@ Information about a set of data
 | - [issued](#issued )                                       | More than one type      | release date                |
 | - [language](#language )                                   | More than one type      | language                    |
 | - [modified](#modified )                                   | More than one type      | last modified               |
-| - [provenance](#provenance )                               | null or array           | provenance                  |
-| + [publisher](#publisher )                                 | More than one type      | publisher                   |
+| - [provenance](#provenance )                               | null or array of string | provenance                  |
+| + [publisher](#publisher )                                 | object                  | publisher                   |
 | - [relation](#relation )                                   | null or array of string | related resource            |
 | - [replaces](#replaces )                                   | null or array           | replaces                    |
-| - [rights](#rights )                                       | null or array           | rights                      |
+| - [rights](#rights )                                       | null or array of string | rights                      |
 | - [rightsHolder](#rightsHolder )                           | null or array           | rights holder               |
 | - [source](#source )                                       | null or array           | data source                 |
 | - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage |

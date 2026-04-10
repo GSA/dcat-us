@@ -8,43 +8,43 @@ A file that distributes the dataset
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-| Property                                                   | Type               | Title/Description           |
-| ---------------------------------------------------------- | ------------------ | --------------------------- |
-| - [@id](#@id )                                             | string             | -                           |
-| - [@type](#@type )                                         | string             | -                           |
-| - [representationTechnique](#representationTechnique )     | More than one type | representation technique    |
-| - [status](#status )                                       | More than one type | lifecycle status            |
-| - [characterEncoding](#characterEncoding )                 | More than one type | character encoding          |
-| - [accessService](#accessService )                         | null or array      | access service              |
-| - [accessURL](#accessURL )                                 | More than one type | access URL                  |
-| - [byteSize](#byteSize )                                   | null or string     | byte size                   |
-| - [compressFormat](#compressFormat )                       | null or string     | compression format          |
-| - [downloadURL](#downloadURL )                             | More than one type | download URL                |
-| - [mediaType](#mediaType )                                 | null or string     | media type                  |
-| - [packageFormat](#packageFormat )                         | null or string     | packaging format            |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string     | Spatial resolution (meters) |
-| - [temporalResolution](#temporalResolution )               | null or string     | termporal resolution        |
-| - [availability](#availability )                           | More than one type | availability                |
-| - [accessRestriction](#accessRestriction )                 | null or array      | access restriction          |
-| - [cuiRestriction](#cuiRestriction )                       | More than one type | CUI restriction             |
-| - [describedBy](#describedBy )                             | More than one type | data dictionary             |
-| - [useRestriction](#useRestriction )                       | null or array      | use restriction             |
-| - [accessRights](#accessRights )                           | More than one type | access rights               |
-| - [conformsTo](#conformsTo )                               | null or array      | linked schemas              |
-| - [description](#description )                             | null or string     | description                 |
-| - [format](#format )                                       | null or string     | format                      |
-| - [identifier](#identifier )                               | More than one type | identifier                  |
-| - [otherIdentifier](#otherIdentifier )                     | null or array      | other identifier            |
-| - [issued](#issued )                                       | More than one type | release date                |
-| - [language](#language )                                   | More than one type | language                    |
-| - [license](#license )                                     | More than one type | license                     |
-| - [modified](#modified )                                   | More than one type | last modified               |
-| - [rights](#rights )                                       | null or array      | rights                      |
-| - [title](#title )                                         | null or string     | title                       |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array      | quality measurement         |
-| - [page](#page )                                           | null or array      | documentation               |
-| - [image](#image )                                         | More than one type | image                       |
-| - [checksum](#checksum )                                   | More than one type | checksum                    |
+| Property                                                   | Type                    | Title/Description           |
+| ---------------------------------------------------------- | ----------------------- | --------------------------- |
+| - [@id](#@id )                                             | string                  | -                           |
+| - [@type](#@type )                                         | string                  | -                           |
+| - [representationTechnique](#representationTechnique )     | More than one type      | representation technique    |
+| - [status](#status )                                       | More than one type      | lifecycle status            |
+| - [characterEncoding](#characterEncoding )                 | More than one type      | character encoding          |
+| - [accessService](#accessService )                         | null or array           | access service              |
+| - [accessURL](#accessURL )                                 | More than one type      | access URL                  |
+| - [byteSize](#byteSize )                                   | null or string          | byte size                   |
+| - [compressFormat](#compressFormat )                       | null or string          | compression format          |
+| - [downloadURL](#downloadURL )                             | More than one type      | download URL                |
+| - [mediaType](#mediaType )                                 | null or string          | media type                  |
+| - [packageFormat](#packageFormat )                         | null or string          | packaging format            |
+| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | Spatial resolution (meters) |
+| - [temporalResolution](#temporalResolution )               | null or string          | termporal resolution        |
+| - [availability](#availability )                           | More than one type      | availability                |
+| - [accessRestriction](#accessRestriction )                 | null or array           | access restriction          |
+| - [cuiRestriction](#cuiRestriction )                       | More than one type      | CUI restriction             |
+| - [describedBy](#describedBy )                             | More than one type      | data dictionary             |
+| - [useRestriction](#useRestriction )                       | null or array           | use restriction             |
+| - [accessRights](#accessRights )                           | More than one type      | access rights               |
+| - [conformsTo](#conformsTo )                               | null or array           | linked schemas              |
+| - [description](#description )                             | null or string          | description                 |
+| - [format](#format )                                       | null or string          | format                      |
+| - [identifier](#identifier )                               | More than one type      | identifier                  |
+| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier            |
+| - [issued](#issued )                                       | More than one type      | release date                |
+| - [language](#language )                                   | More than one type      | language                    |
+| - [license](#license )                                     | More than one type      | license                     |
+| - [modified](#modified )                                   | More than one type      | last modified               |
+| - [rights](#rights )                                       | null or array of string | rights                      |
+| - [title](#title )                                         | null or string          | title                       |
+| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement         |
+| - [page](#page )                                           | null or array           | documentation               |
+| - [image](#image )                                         | More than one type      | image                       |
+| - [checksum](#checksum )                                   | More than one type      | checksum                    |
 
 ## <a name="@id"></a>Property `Distribution > @id`
 

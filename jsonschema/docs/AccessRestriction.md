@@ -13,7 +13,7 @@ A restriction on the permitted access to a resource
 | - [@id](#@id )                                 | string             | -                    |
 | - [@type](#@type )                             | string             | -                    |
 | - [restrictionNote](#restrictionNote )         | null or string     | restriction note     |
-| + [restrictionStatus](#restrictionStatus )     | More than one type | restriction status   |
+| + [restrictionStatus](#restrictionStatus )     | object             | restriction status   |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
 ## <a name="@id"></a>Property `AccessRestriction > @id`
