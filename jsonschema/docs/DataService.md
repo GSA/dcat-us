@@ -989,7 +989,7 @@ A list of temporal periods that the DataService covers
 
 inline description of PeriodOfTime
 
-| **Type**                  | `object`                                                                                                                 |
+| **Type**                  | More than one type                                                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                         |
 | **Same definition as**    | [PeriodOfTime](#servesDataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_temporal_items_anyOf_i0) |

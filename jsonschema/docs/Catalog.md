@@ -1173,7 +1173,7 @@ List of temporal periods that the Catalog covers
 
 inline description of the temporal coverage
 
-| **Type**                  | `object`                                                                                                           |
+| **Type**                  | More than one type                                                                                                 |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                                   |
 | **Same definition as**    | [PeriodOfTime](#dataset_items_anyOf_i0_sample_items_anyOf_i0_accessService_items_anyOf_i0_temporal_items_anyOf_i0) |
