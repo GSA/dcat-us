@@ -106,38 +106,32 @@
     }
   ],
   "first": {
-    "@id": "https://example.gov/datasets/comprehensive-example-first",
-    "@type": "Dataset",
-    "title": "Comprehensive Example First",
-    "description": "First version of comprehensive example.",
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
     "contactPoint": {
-      "fn": "Data Support",
-      "hasEmail": "mailto:data@example.gov"
-    },
-    "publisher": { "name": "Sample Government Agency" }
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
   },
   "hasCurrentVersion": {
-    "@id": "https://example.gov/datasets/comprehensive-example-001",
-    "@type": "Dataset",
-    "title": "Comprehensive Example v1",
-    "description": "Current version of comprehensive example.",
+    "description": "A minimal dataset",
+    "publisher": { "name": "The Minimal Organization" },
+    "title": "Dataset One",
     "contactPoint": {
-      "fn": "Data Support",
-      "hasEmail": "mailto:data@example.gov"
-    },
-    "publisher": { "name": "Sample Government Agency" }
+      "hasEmail": "mailto:example@example.gov",
+      "fn": "Example contact"
+    }
   },
   "hasVersion": [
     {
-      "@id": "https://example.gov/datasets/comprehensive-example-v0.9",
-      "@type": "Dataset",
-      "title": "Comprehensive Example v0.9",
-      "description": "Previous version of comprehensive example.",
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
       "contactPoint": {
-        "fn": "Data Support",
-        "hasEmail": "mailto:data@example.gov"
-      },
-      "publisher": { "name": "Sample Government Agency" }
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
     }
   ],
   "inSeries": [
@@ -155,36 +149,26 @@
         }
       ],
       "first": {
-        "@id": "https://example.gov/datasets/comprehensive-example-first",
-        "@type": "Dataset",
-        "title": "Comprehensive Example First",
-        "description": "First in series.",
+        "description": "A minimal dataset",
+        "publisher": { "name": "The Minimal Organization" },
+        "title": "Dataset One",
         "contactPoint": {
-          "fn": "Data Support",
-          "hasEmail": "mailto:data@example.gov"
-        },
-        "publisher": { "name": "Sample Government Agency" }
+          "hasEmail": "mailto:example@example.gov",
+          "fn": "Example contact"
+        }
       },
       "last": {
-        "@id": "https://example.gov/datasets/comprehensive-example-001",
-        "@type": "Dataset",
-        "title": "Comprehensive Example v1",
-        "description": "Latest in series.",
+        "description": "A minimal dataset",
+        "publisher": { "name": "The Minimal Organization" },
+        "title": "Dataset One",
         "contactPoint": {
-          "fn": "Data Support",
-          "hasEmail": "mailto:data@example.gov"
-        },
-        "publisher": { "name": "Sample Government Agency" }
+          "hasEmail": "mailto:example@example.gov",
+          "fn": "Example contact"
+        }
       }
     }
   ],
-  "keyword": [
-    "government",
-    "open data",
-    "comprehensive example",
-    "DCAT-US",
-    "metadata"
-  ],
+  "keyword": [ "government", "open data", "comprehensive example", "DCAT-US", "metadata" ],
   "landingPage": {
     "@id": "https://example.gov/datasets/comprehensive-example-001/landing",
     "@type": "Document",
@@ -262,26 +246,13 @@
   },
   "hasPart": [
     {
-      "@id": "https://example.gov/datasets/comprehensive-part-1",
-      "@type": "Dataset",
-      "title": "Comprehensive Dataset Part 1",
-      "description": "First part of the comprehensive dataset.",
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
       "contactPoint": {
-        "fn": "Data Support",
-        "hasEmail": "mailto:data@example.gov"
-      },
-      "publisher": { "name": "Sample Government Agency" }
-    },
-    {
-      "@id": "https://example.gov/datasets/comprehensive-part-2",
-      "@type": "Dataset",
-      "title": "Comprehensive Dataset Part 2",
-      "description": "Second part of the comprehensive dataset.",
-      "contactPoint": {
-        "fn": "Data Support",
-        "hasEmail": "mailto:data@example.gov"
-      },
-      "publisher": { "name": "Sample Government Agency" }
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
     }
   ],
   "isReferencedBy": [
@@ -300,15 +271,13 @@
   ],
   "replaces": [
     {
-      "@id": "https://example.gov/datasets/legacy-comprehensive-dataset",
-      "@type": "Dataset",
-      "title": "Legacy Comprehensive Dataset",
-      "description": "The previous version of this dataset that has been replaced.",
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
       "contactPoint": {
-        "fn": "Data Support",
-        "hasEmail": "mailto:data@example.gov"
-      },
-      "publisher": { "name": "Sample Government Agency" }
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
     }
   ],
   "rights": [
@@ -324,15 +293,13 @@
   ],
   "source": [
     {
-      "@id": "https://example.gov/datasets/raw-sensor-data",
-      "@type": "Dataset",
-      "title": "Raw Sensor Data",
-      "description": "The original raw sensor data used as source for this dataset.",
+      "description": "A minimal dataset",
+      "publisher": { "name": "The Minimal Organization" },
+      "title": "Dataset One",
       "contactPoint": {
-        "fn": "Data Support",
-        "hasEmail": "mailto:data@example.gov"
-      },
-      "publisher": { "name": "Sample Government Agency" }
+        "hasEmail": "mailto:example@example.gov",
+        "fn": "Example contact"
+      }
     }
   ],
   "temporal": [
