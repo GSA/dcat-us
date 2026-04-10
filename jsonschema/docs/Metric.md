@@ -45,7 +45,6 @@ Represents the dimensions a quality metric, certificate and annotation allow a m
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
-| **Format**   | `iri`    |
 
 ## <a name="definition"></a>Property `Metric > definition`
 
