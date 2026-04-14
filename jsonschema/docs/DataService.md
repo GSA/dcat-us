@@ -671,7 +671,7 @@ A list of temporal periods that the DataService covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                             |
+| **Type**                  | More than one type                                                                   |
 | ------------------------- | ------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                     |
 | **Same definition as**    | [PeriodOfTime](#servesDataset_items_sample_items_accessService_items_temporal_items) |

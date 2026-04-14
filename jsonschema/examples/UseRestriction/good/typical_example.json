@@ -1,0 +1,5 @@
+{
+  "@type": "UseRestriction",
+  "restrictionStatus": "https://example.gov/concepts/unrestricted",
+  "restrictionNote": "This data may be used for any purpose without restriction."
+}

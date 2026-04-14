@@ -1448,7 +1448,7 @@ List of temporal periods that the dataset covers
 
 Information about a specific time period with a start- and/or end-time
 
-| **Type**                  | `object`                                                                                            |
+| **Type**                  | More than one type                                                                                  |
 | ------------------------- | --------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                    |
 | **Same definition as**    | [PeriodOfTime](#sample_items_accessService_items_servesDataset_items_inSeries_items_temporal_items) |

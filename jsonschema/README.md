@@ -163,12 +163,12 @@ To install Prettier, run `npm ci` in this directory. To check the format we
 run
 
 ```bash
-npx prettier --check Catalog.json definitions/*.json
+npx prettier --check Catalog.json definitions/*.json examples/
 ```
 
 and if that fails, the correct format can be applied automatically with the
 `--write` option
 
 ```bash
-npx prettier --write Catalog.json definitions/*.json
+npx prettier --write Catalog.json definitions/*.json examples/
 ```
