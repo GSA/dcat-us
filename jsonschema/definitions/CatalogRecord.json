@@ -58,10 +58,7 @@
     "description": {
       "title": "Descriptions",
       "description": "A list of free-text accounts of the catalog record",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "title": "Description string",
         "type": "string"
@@ -77,10 +74,7 @@
     "issued": {
       "title": "listing date",
       "description": "List of dates on which the catalog record was included in the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "title": "Date string",
         "anyOf": [
@@ -178,10 +172,7 @@
     "source": {
       "title": "source metadata",
       "description": "The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -193,10 +184,7 @@
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -220,10 +208,7 @@
       }
     }
   },
-  "required": [
-    "modified",
-    "primaryTopic"
-  ],
+  "required": ["modified", "primaryTopic"],
   "oldDocs": {
     "rdfClass": "dcat:CatalogRecord",
     "definition": "A record in a catalog, describing the registration of a single dcat:Resource.",

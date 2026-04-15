@@ -16,10 +16,7 @@
     "catalog": {
       "title": "Related catalogs",
       "description": "List of related catalogs whose contents are of interest in the context of this catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "#"
       },
@@ -34,10 +31,7 @@
     "contactPoint": {
       "title": "Contact points",
       "description": "Contact information that can be used for sending comments about the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -68,10 +62,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "minLength": 1
@@ -87,10 +78,7 @@
     "record": {
       "title": "catalog record",
       "description": "A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/catalogrecord"
       },
@@ -105,10 +93,7 @@
     "service": {
       "title": "service",
       "description": "List of data services that are listed in the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
@@ -123,10 +108,7 @@
     "theme": {
       "title": "theme/category",
       "description": "A list of categories for the Catalog. A Catalog may be associated with multiple themes",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -141,10 +123,7 @@
     "themeTaxonomy": {
       "title": "themes",
       "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
       },
@@ -201,10 +180,7 @@
     "creator": {
       "title": "creator",
       "description": "The entity responsible for creating the resource",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -220,10 +196,7 @@
     "description": {
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Mandatory",
         "cardinality": "1..n",
@@ -236,10 +209,7 @@
     "hasPart": {
       "title": "has part",
       "description": "A list of related catalogs that are part of the described catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "#"
       },
@@ -275,10 +245,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -441,10 +408,7 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -460,10 +424,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of organizations holding rights on the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -478,10 +439,7 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "The geographical area covered by the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
@@ -496,10 +454,7 @@
     "subject": {
       "title": "subject",
       "description": "List of subjects of the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -513,10 +468,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "List of temporal periods that the Catalog covers",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -531,10 +483,7 @@
     "title": {
       "title": "title",
       "description": "The title of the catalog in the indicated language",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Mandatory",
         "cardinality": "1..n",
@@ -546,10 +495,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -585,10 +531,7 @@
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "A list of agents having some form of responsibility for the catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
@@ -601,9 +544,7 @@
       }
     }
   },
-  "required": [
-    "dataset"
-  ],
+  "required": ["dataset"],
   "oldDocs": {
     "rdfClass": "dcat:Catalog",
     "definition": "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)",

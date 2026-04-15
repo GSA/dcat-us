@@ -84,10 +84,7 @@
     "accessService": {
       "title": "access service",
       "description": "A data service that gives access to the distribution of the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
@@ -125,10 +122,7 @@
     "byteSize": {
       "title": "byte size",
       "description": "The size of a Distribution in bytes",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -141,10 +135,7 @@
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -179,10 +170,7 @@
     "mediaType": {
       "title": "media type",
       "description": "The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -195,10 +183,7 @@
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -210,10 +195,7 @@
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -225,10 +207,7 @@
     "temporalResolution": {
       "title": "termporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -254,10 +233,7 @@
     "accessRestriction": {
       "title": "access restriction",
       "description": "List of access restrictions related to the distribution",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       },
@@ -314,10 +290,7 @@
     "useRestriction": {
       "title": "use restriction",
       "description": "Use restriction related to the distribution",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       },
@@ -353,10 +326,7 @@
     "conformsTo": {
       "title": "linked schemas",
       "description": "List of established schemas or reference systems to which the described Distribution conforms",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -372,10 +342,7 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Distribution",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -387,10 +354,7 @@
     "format": {
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..1",
@@ -423,10 +387,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -567,10 +528,7 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -586,10 +544,7 @@
     "title": {
       "title": "title",
       "description": "A name given to the Distribution",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -601,10 +556,7 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "A list of quality measurements for the distribution",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -620,10 +572,7 @@
     "page": {
       "title": "documentation",
       "description": "A page or document about this Distribution",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },

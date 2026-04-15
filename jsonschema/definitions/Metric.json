@@ -39,10 +39,7 @@
     "definition": {
       "title": "definition",
       "description": "Definition of the metric.",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -52,10 +49,7 @@
       }
     }
   },
-  "required": [
-    "expectedDataType",
-    "inDimension"
-  ],
+  "required": ["expectedDataType", "inDimension"],
   "oldDocs": {
     "rdfClass": "dqv:Metric",
     "definition": "Represents a standard to measure a quality dimension. An observation (instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.",

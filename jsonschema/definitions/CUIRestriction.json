@@ -41,10 +41,7 @@
     "requiredIndicatorPerAuthority": {
       "title": "required indicator per authority",
       "description": "List of free text of the required indicator",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "title": "Indicator string",
         "type": "string"
@@ -58,10 +55,7 @@
       }
     }
   },
-  "required": [
-    "cuiBannerMarking",
-    "designationIndicator"
-  ],
+  "required": ["cuiBannerMarking", "designationIndicator"],
   "oldDocs": {
     "rdfClass": "dcat-us:CuiRestriction",
     "definition": "Represents Controlled Unclassified Information (CUI), which is information that requires safeguarding or dissemination controls in accordance with applicable laws, regulations, and government-wide policies but is not classified as confidential.",

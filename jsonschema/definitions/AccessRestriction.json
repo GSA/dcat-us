@@ -16,10 +16,7 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "A note related to the access restriction",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -62,9 +59,7 @@
       }
     }
   },
-  "required": [
-    "restrictionStatus"
-  ],
+  "required": ["restrictionStatus"],
   "oldDocs": {
     "rdfClass": "dcat-us:AccessRestriction",
     "definition": "The \"AccessRestriction\" class used by NARA represents limitations placed on accessing specific records or information within their archives, ensuring controlled and responsible access based on legal, ethical, or security considerations.",

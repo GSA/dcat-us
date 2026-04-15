@@ -48,10 +48,7 @@
     "creator": {
       "title": "author",
       "description": "The individual(s) responsible for creating the Document",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -65,10 +62,7 @@
     "mediaType": {
       "title": "media type",
       "description": "The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -80,10 +74,7 @@
     "abstract": {
       "title": "abstract",
       "description": "Text abstract of the Document",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -94,10 +85,7 @@
     "bibliographicCitation": {
       "title": "bibliographic citation",
       "description": "Bibliographic citation as text",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..1",
@@ -108,10 +96,7 @@
     "conformsTo": {
       "title": "conforms to",
       "description": "List of standards that the Document conforms to",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -126,10 +111,7 @@
     "corporateCreator": {
       "title": "corporate author",
       "description": "The corporate organization(s) responsible for creating the Document",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       }
@@ -137,10 +119,7 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Document",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -172,10 +151,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -221,10 +197,7 @@
     "publisher": {
       "title": "publisher",
       "description": "The organization(s) that published the Document",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -250,18 +223,13 @@
     "category": {
       "title": "category",
       "description": "List of categories/genres for the Document",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
     }
   },
-  "required": [
-    "title"
-  ],
+  "required": ["title"],
   "oldDocs": {
     "rdfClass": "foaf:Document",
     "definition": "A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.",

@@ -40,10 +40,7 @@
     "unitMeasure": {
       "title": "unit of measure",
       "description": "Unit of measure associated with the value",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -53,10 +50,7 @@
       }
     }
   },
-  "required": [
-    "isMeasurementOf",
-    "value"
-  ],
+  "required": ["isMeasurementOf", "value"],
   "oldDocs": {
     "rdfClass": "dqv:QualityMeasurement",
     "definition": "Represents the evaluation of a given dataset (or dataset distribution) against a specific quality metric.",

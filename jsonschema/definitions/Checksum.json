@@ -38,10 +38,7 @@
       }
     }
   },
-  "required": [
-    "algorithm",
-    "checksumValue"
-  ],
+  "required": ["algorithm", "checksumValue"],
   "oldDocs": {
     "rdfClass": "spdx:Checksum",
     "definition": "A Checksum is a value that allows to check the integrity of the contents of a file. Even small changes to the content of the file will change its checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented [[SPDX]].",

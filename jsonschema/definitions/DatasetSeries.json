@@ -16,10 +16,7 @@
     "contactPoint": {
       "title": "contact point",
       "description": "List of contacts that can be used for sending comments about the Dataset Series",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -76,10 +73,7 @@
     "seriesMember": {
       "title": "series member",
       "description": "List of members of the Dataset Series",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -270,10 +264,7 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Dataset Series",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
@@ -288,10 +279,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the Dataset Series covers",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -316,10 +304,7 @@
       }
     }
   },
-  "required": [
-    "description",
-    "title"
-  ],
+  "required": ["description", "title"],
   "oldDocs": {
     "rdfClass": "dcat:DatasetSeries",
     "definition": "A collection of datasets that are published separately, but share some characteristics that group them.",

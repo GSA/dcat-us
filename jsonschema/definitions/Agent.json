@@ -16,10 +16,7 @@
     "category": {
       "title": "category",
       "description": "The type of the agent that makes the item available",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
@@ -37,9 +34,7 @@
       }
     }
   },
-  "required": [
-    "name"
-  ],
+  "required": ["name"],
   "oldDocs": {
     "rdfClass": "foaf:Agent",
     "definition": "An entity that acts on something (eg. person, group, software or physical artifact).",

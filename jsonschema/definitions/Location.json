@@ -36,10 +36,7 @@
               "const": "Polygon"
             }
           },
-          "required": [
-            "type",
-            "coordinates"
-          ]
+          "required": ["type", "coordinates"]
         }
       ],
       "oldDocs": {
@@ -79,10 +76,7 @@
               "const": "Point"
             }
           },
-          "required": [
-            "type",
-            "coordinates"
-          ]
+          "required": ["type", "coordinates"]
         }
       ],
       "oldDocs": {
@@ -116,10 +110,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -138,10 +129,7 @@
         {
           "type": "object",
           "description": "Geometry represented in GeoJSON format",
-          "required": [
-            "type",
-            "coordinates"
-          ]
+          "required": ["type", "coordinates"]
         }
       ],
       "oldDocs": {
@@ -175,10 +163,7 @@
     "altLabel": {
       "title": "alternative name",
       "description": "An alternative label or name for a location",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -190,10 +175,7 @@
     "prefLabel": {
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",

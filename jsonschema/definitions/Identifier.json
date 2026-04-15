@@ -23,10 +23,7 @@
         "schemaAgency": {
           "title": "schema agency",
           "description": "The name of the agency that issued the identifier",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "creator": {
           "title": "creator",
@@ -78,18 +75,12 @@
         "version": {
           "title": "version",
           "description": "version of the identifier scheme",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "notation": {
           "title": "notation",
           "description": "abbreviation or code from code lists for an identifier",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         }
       },
       "required": []

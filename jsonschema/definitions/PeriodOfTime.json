@@ -94,14 +94,10 @@
   },
   "anyOf": [
     {
-      "required": [
-        "startDate"
-      ]
+      "required": ["startDate"]
     },
     {
-      "required": [
-        "endDate"
-      ]
+      "required": ["endDate"]
     }
   ],
   "oldDocs": {

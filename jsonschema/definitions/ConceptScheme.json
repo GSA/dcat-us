@@ -16,10 +16,7 @@
     "version": {
       "title": "version info",
       "description": "A version number or other version designation of the concept scheme",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..1",
@@ -71,10 +68,7 @@
     "description": {
       "title": "description",
       "description": "A description of the concept scheme",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -178,9 +172,7 @@
       }
     }
   },
-  "required": [
-    "title"
-  ],
+  "required": ["title"],
   "oldDocs": {
     "rdfClass": "skos:ConceptScheme",
     "definition": "A concept collection (e.g. controlled vocabulary) in which a concept is defined.",

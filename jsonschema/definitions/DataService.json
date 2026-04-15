@@ -32,10 +32,7 @@
     "endpointDescription": {
       "title": "endpoint description",
       "description": "A list of descriptions of the services available via the end-points, including their operations, parameters etc",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string"
       },
@@ -69,10 +66,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "title": "Non-empty strings",
         "type": "string",
@@ -89,10 +83,7 @@
     "servesDataset": {
       "title": "serves dataset",
       "description": "List of datasets that are served by this data service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -108,10 +99,7 @@
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -123,10 +111,7 @@
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -138,10 +123,7 @@
     "theme": {
       "title": "theme/category",
       "description": "A list of themes of the Data Service. A Data Service may be associated with multiple themes",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -178,10 +160,7 @@
     "conformsTo": {
       "title": "conforms to",
       "description": "List of general standards or specifications that the Data Service endpoints implement",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -235,10 +214,7 @@
     "creator": {
       "title": "creator",
       "description": "List of agents primarily responsible for producing the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -253,10 +229,7 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Data Service",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -289,10 +262,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -407,10 +377,7 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string"
       },
@@ -425,10 +392,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "A list of Agents (organizations) holding rights on the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -443,10 +407,7 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
@@ -462,10 +423,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the DataService covers",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -492,10 +450,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -511,10 +466,7 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "Refers to the performed quality measurements",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -530,10 +482,7 @@
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents having some form of responsibility for the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
@@ -548,10 +497,7 @@
     "wasUsedBy": {
       "title": "was used by",
       "description": "List of activities that used the Data Service",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
@@ -565,12 +511,7 @@
       }
     }
   },
-  "required": [
-    "contactPoint",
-    "endpointURL",
-    "publisher",
-    "title"
-  ],
+  "required": ["contactPoint", "endpointURL", "publisher", "title"],
   "oldDocs": {
     "rdfClass": "dcat:DataService",
     "definition": "A collection of operations that provides access to one or more datasets or data processing functions.",

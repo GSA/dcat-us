@@ -38,10 +38,7 @@
       }
     }
   },
-  "required": [
-    "hadRole",
-    "agent"
-  ],
+  "required": ["hadRole", "agent"],
   "oldDocs": {
     "rdfClass": "prov:Attribution",
     "definition": "A responsibility of an Agent for a resource.",

@@ -56,10 +56,7 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Standard",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -92,10 +89,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -183,10 +177,7 @@
     "title": {
       "title": "title",
       "description": "A name given to the Standard",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
         "cardinality": "0..n",
@@ -198,10 +189,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Standard",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       }

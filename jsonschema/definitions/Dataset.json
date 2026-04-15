@@ -16,10 +16,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -33,10 +30,7 @@
     "sample": {
       "title": "sample",
       "description": "List of links to samples of a Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -86,10 +80,7 @@
     "versionNotes": {
       "title": "version notes",
       "description": "version notes for this dataset",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -125,10 +116,7 @@
     "distribution": {
       "title": "dataset distribution",
       "description": "List of available distributions for the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -171,10 +159,7 @@
     "hasVersion": {
       "title": "has version",
       "description": "List of related Datasets that are a version, edition, or adaptation of the described Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -187,10 +172,7 @@
     "inSeries": {
       "title": "in series",
       "description": "List of Dataset Series this dataset belongs to",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
       },
@@ -205,10 +187,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "title": "Non-empty string",
         "type": "string",
@@ -260,10 +239,7 @@
     "qualifiedRelation": {
       "title": "qualified relation",
       "description": "Qualified relationship with role of the dataset with another resource",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/relationship"
       },
@@ -278,10 +254,7 @@
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "Spatial resolution in meters",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -293,10 +266,7 @@
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "Temporal resolution using xsd:duration syntax",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -308,10 +278,7 @@
     "theme": {
       "title": "theme/category",
       "description": "List of themes of the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -326,10 +293,7 @@
     "version": {
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -383,10 +347,7 @@
     "metadataDistribution": {
       "title": "metadata distribution",
       "description": "Distribution to \"original\" metadata document",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -402,10 +363,7 @@
     "purpose": {
       "title": "purpose",
       "description": "The purpose of the dataset",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -501,10 +459,7 @@
     "conformsTo": {
       "title": "conforms to",
       "description": "List of standards to which the described Dataset conforms",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -519,10 +474,7 @@
     "contributor": {
       "title": "contributor",
       "description": "List of agents contributing to the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -604,10 +556,7 @@
     "hasPart": {
       "title": "has part",
       "description": "List of related datasets that are part of the described dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       }
@@ -636,10 +585,7 @@
     "isReferencedBy": {
       "title": "is referenced by",
       "description": "List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "title": "Link",
@@ -768,10 +714,7 @@
     "provenance": {
       "title": "provenance",
       "description": "List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of the provenance statement"
@@ -799,10 +742,7 @@
     "relation": {
       "title": "related resource",
       "description": "List of references to a related resource",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "title": "Link",
@@ -820,10 +760,7 @@
     "replaces": {
       "title": "replaces",
       "description": "List of Datasets replaced by this Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       }
@@ -831,10 +768,7 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -850,10 +784,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of agents (organizations) holding rights on the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       }
@@ -861,10 +792,7 @@
     "source": {
       "title": "data source",
       "description": "List of related Datasets from which the described Dataset is derived",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -907,10 +835,7 @@
     "subject": {
       "title": "subject",
       "description": "List of primary subjects of the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -926,10 +851,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "List of temporal periods that the dataset covers",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -957,10 +879,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -975,10 +894,7 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "List of quality measurements for the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -994,10 +910,7 @@
     "page": {
       "title": "documentation",
       "description": "List of pages or documents about this dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
@@ -1012,10 +925,7 @@
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents having some form of responsibility for the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
@@ -1030,10 +940,7 @@
     "wasAttributedTo": {
       "title": "attribution",
       "description": "List of agents attributed to this dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       }
@@ -1041,10 +948,7 @@
     "wasGeneratedBy": {
       "title": "was generated by",
       "description": "List of activities that generated, or provide the business context for the creation of the dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
@@ -1059,10 +963,7 @@
     "wasUsedBy": {
       "title": "used by",
       "description": "List of activities that used the Dataset",
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       }
@@ -1094,10 +995,7 @@
     "scopeNote": {
       "title": "usage note",
       "description": "usage note for the dataset",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
         "cardinality": "0..n",
@@ -1105,12 +1003,7 @@
       }
     }
   },
-  "required": [
-    "description",
-    "publisher",
-    "title",
-    "contactPoint"
-  ],
+  "required": ["description", "publisher", "title", "contactPoint"],
   "oldDocs": {
     "rdfClass": "dcat:Dataset",
     "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more representations.",

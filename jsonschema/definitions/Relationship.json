@@ -37,10 +37,7 @@
       }
     }
   },
-  "required": [
-    "hadRole",
-    "relation"
-  ],
+  "required": ["hadRole", "relation"],
   "oldDocs": {
     "rdfClass": "dcat:Relationship",
     "definition": "An association class for attaching additional information to a relationship between DCAT Resources",
