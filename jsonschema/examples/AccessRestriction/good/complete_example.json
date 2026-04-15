@@ -1,0 +1,29 @@
+{
+  "@id": "https://example.gov/restrictions/access-restriction-001",
+  "@type": "AccessRestriction",
+  "restrictionNote": "Access restricted to authorized personnel only.",
+  "restrictionStatus": {
+    "@id": "https://example.gov/concepts/restricted-partly",
+    "@type": "Concept",
+    "prefLabel": "Restricted - Partly",
+    "definition": "The resource contains microdata including highly sensitive Personally Identifiable Information (PII). Access is restricted to those with Special Sworn Status (SSS).",
+    "notation": ["RST-P"],
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/restriction-status",
+      "@type": "ConceptScheme",
+      "title": "Restriction Status"
+    }
+  },
+  "specificRestriction": {
+    "@id": "https://example.gov/concepts/nara-restriction-pii",
+    "@type": "Concept",
+    "prefLabel": "Personal Information Restriction",
+    "definition": "An access restriction placed on archival materials with personal information that invades the privacy of living individuals.",
+    "notation": ["FOIA (b)(6) Personal Information"],
+    "inScheme": {
+      "@id": "https://example.gov/concept-schemes/nara-restrictions",
+      "@type": "ConceptScheme",
+      "title": "NARA Restrictions"
+    }
+  }
+}

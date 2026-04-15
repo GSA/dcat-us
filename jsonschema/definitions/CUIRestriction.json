@@ -2,7 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/cuirestriction",
   "title": "CUIRestriction",
-  "description": "A specific restriction on handling Controlled Unclassified Information (CUI)",
+  "description": "A specific restriction on handling Controlled Unclassified Information (CUI) that describes the handling and dissemination controls for NARA assets that involve CUI, as mandated by law",
+  "$comment": "Controlled Unclassified Information (CUI) is information that requires safeguarding or dissemination controls pursuant to and consistent with applicable law, regulations, and government-wide policies but which is not classified; see https://www.archives.gov/cui for more info",
   "type": "object",
   "properties": {
     "@id": {
@@ -15,23 +16,46 @@
     },
     "cuiBannerMarking": {
       "title": "CUI banner marking",
-      "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection",
-      "type": "string"
+      "description": "Required for any unclassified information that is deemed sensitive and requires protection; see https://www.archives.gov/cui/registry/category-marking-list for a table of CUI categories and markings",
+      "type": "string",
+      "_reqLevel": "mandatory"
     },
     "designationIndicator": {
       "title": "CUI designation indicator",
-      "description": "Designation Indicator shows which agency made the document CUI",
-      "type": "string"
+      "description": "Shows which agency made the document CUI",
+      "$comment": "While free-text, metadata providers should attempt to adhere to guidelines in the NARA Marking Guidebook (https://www.archives.gov/files/cui/documents/20161206-cui-marking-handbook-v1-1-20190524.pdf) and DODI 5200.48 (https://www.dodcui.mil/Portals/109/Documents/Policy%20Docs/DoDI%205200.48%20CUI.pdf)",
+      "type": "string",
+      "_reqLevel": "mandatory"
     },
     "requiredIndicatorPerAuthority": {
       "title": "required indicator per authority",
-      "description": "List of free text of the required indicator",
+      "description": "List of free text that may offer additional information or context about the CUI restriction",
       "type": ["null", "array"],
       "items": {
         "title": "Indicator string",
         "type": "string"
-      }
+      },
+      "_reqLevel": "optional"
     }
   },
-  "required": ["cuiBannerMarking", "designationIndicator"]
+  "required": ["cuiBannerMarking", "designationIndicator"],
+  "examples": [
+    {
+      "$comment": "A complete/thorough example of an instance of the CUIRestriction class",
+      "@id": "https://example.gov/cui-restrictions/dataset-001",
+      "@type": "CUIRestriction",
+      "cuiBannerMarking": "CUI//SP-PRVCY//SP-LEGAL",
+      "designationIndicator": "DOC",
+      "requiredIndicatorPerAuthority": [
+        "Privacy Act of 1974",
+        "Federal Records Act"
+      ]
+    },
+    {
+      "$comment": "A typical example of an instance of the CUIRestriction class",
+      "@type": "CUIRestriction",
+      "cuiBannerMarking": "CUI//SP-CTI",
+      "designationIndicator": "Agency XYZ"
+    }
+  ]
 }

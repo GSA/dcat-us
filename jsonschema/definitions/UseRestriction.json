@@ -2,7 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/userestriction",
   "title": "UseRestriction",
-  "description": "A restriction on usage of another item",
+  "description": "A restriction on the usage of a resource, specifying a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized",
+  "$comment": "Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards",
   "type": "object",
   "properties": {
     "@id": {
@@ -13,19 +14,17 @@
       "type": "string",
       "default": "UseRestriction"
     },
-    "restrictionNote": {
-      "title": "restriction note",
-      "description": "Significant information pertaining to the use or reproduction of the data",
-      "type": ["null", "string"]
-    },
     "restrictionStatus": {
       "title": "restriction status",
-      "description": "Indication of whether or not there are use restrictions on the archival materials",
-      "$ref": "/dcat-us/3.0.0/definitions/concept"
+      "description": "Indication of whether or not there are use restrictions on the data",
+      "$comment": "Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices; see https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status for a list of NARA Use Restriction Status Authorities",
+      "$ref": "/dcat-us/3.0.0/definitions/concept",
+      "_reqLevel": "mandatory"
     },
     "specificRestriction": {
       "title": "specific restriction",
-      "description": "The specific NARA restriction associated with the use restriction",
+      "description": "The identification of the type of use restriction (e.g., the specific NARA restriction) on the data, based on copyright, donor, or statutory provisions",
+      "$comment": "Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices; see https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction for a list of NARA Specific Use Restriction Authorities",
       "anyOf": [
         {
           "type": "null",
@@ -35,8 +34,59 @@
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of the specific restriction"
         }
-      ]
+      ],
+      "_reqLevel": "recommended"
+    },
+    "restrictionNote": {
+      "title": "restriction note",
+      "description": "Significant information pertaining to the use or reproduction of the data",
+      "$comment": "May include additional context or annotations about restrictions; its use depends on the 'restrictionStatus' property, and certain terms from the authority lists may require its application",
+      "type": ["null", "string"],
+      "_reqLevel": "optional"
     }
   },
-  "required": ["restrictionStatus"]
+  "required": ["restrictionStatus"],
+  "examples": [
+    {
+      "$comment": "A complete/thorough example of an instance of the UseRestriction class",
+      "@id": "https://example.gov/restrictions/use-restriction-001",
+      "@type": "UseRestriction",
+      "restrictionNote": "This data may be used for research purposes. Commercial use requires written permission from the data steward.",
+      "restrictionStatus": {
+        "@id": "https://example.gov/concepts/restricted-commercial",
+        "@type": "Concept",
+        "prefLabel": "Restricted - Commercial Use",
+        "altLabel": "Commercial Restriction",
+        "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
+        "notation": ["RST-COM"],
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
+      },
+      "specificRestriction": {
+        "@id": "https://example.gov/concepts/nara-restriction-copyright",
+        "@type": "Concept",
+        "prefLabel": "Copyright Restriction",
+        "definition": "Materials protected by copyright with limited use permissions.",
+        "notation": ["CR"],
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/nara-restrictions",
+          "@type": "ConceptScheme",
+          "title": "NARA Restrictions"
+        }
+      }
+    },
+    {
+      "$comment": "A typical example of an instance of the UseRestriction class",
+      "@type": "UseRestriction",
+      "restrictionStatus": "https://example.gov/concepts/unrestricted",
+      "restrictionNote": "This data may be used for any purpose without restriction."
+    },
+    {
+      "$comment": "A minimal example of an instance of the UseRestriction class",
+      "restrictionStatus": "Unrestricted"
+    }
+  ]
 }

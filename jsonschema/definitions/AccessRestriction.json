@@ -3,6 +3,7 @@
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/accessrestriction",
   "title": "AccessRestriction",
   "description": "A restriction on the permitted access to a resource",
+  "$comment": "Access restrictions are employed to regulate and control access to sensitive or confidential content based on legal, ethical, security, or other relevant considerations, and may pertain to who can access the information, the purposes for which it can be accessed, and the conditions under which it can be utilized",
   "type": "object",
   "properties": {
     "@id": {
@@ -13,19 +14,17 @@
       "type": "string",
       "default": "AccessRestriction"
     },
-    "restrictionNote": {
-      "title": "restriction note",
-      "description": "A note related to the access restriction",
-      "type": ["null", "string"]
-    },
     "restrictionStatus": {
       "title": "restriction status",
-      "description": "The indication of whether or not there are access restrictions on the item",
-      "$ref": "/dcat-us/3.0.0/definitions/concept"
+      "description": "Indication of whether or not there are access restrictions on the data",
+      "$comment": "Adherence to NARA guidelines and standards should be a priority when defining access restrictions, ensuring responsible access to sensitive historical records; see https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status for a list of NARA Access Restriction Status Authorities",
+      "$ref": "/dcat-us/3.0.0/definitions/concept",
+      "_reqLevel": "mandatory"
     },
     "specificRestriction": {
       "title": "specific restriction",
-      "description": "The specific NARA restriction associated with this restriction",
+      "description": "Identifies the type/authority of the access restriction (e.g., the specific NARA restriction) on the data",
+      "$comment": "Adherence to NARA guidelines and standards should be a priority when defining access restrictions, ensuring responsible access to sensitive historical records; see https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction for a list of NARA Specific Access Restriction Authorities",
       "anyOf": [
         {
           "type": "null",
@@ -35,8 +34,58 @@
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of the specific restriction"
         }
-      ]
+      ],
+      "_reqLevel": "recommended"
+    },
+    "restrictionNote": {
+      "title": "restriction note",
+      "description": "A note related to the access restriction that may include additional context or annotations",
+      "$comment": "Its use depends on the 'restrictionStatus' property, and certain terms from the authority lists may require its application (e.g., it may clarify complex access restrictions, explain multiple levels of security classifications, identify restricting statutes, or explain access restrictions not covered by the authority lists)",
+      "type": ["null", "string"],
+      "_reqLevel": "optional"
     }
   },
-  "required": ["restrictionStatus"]
+  "required": ["restrictionStatus"],
+  "examples": [
+    {
+      "$comment": "A complete/thorough example of an instance of the AccessRestriction class",
+      "@id": "https://example.gov/restrictions/access-restriction-001",
+      "@type": "AccessRestriction",
+      "restrictionNote": "Access restricted to authorized personnel only.",
+      "restrictionStatus": {
+        "@id": "https://example.gov/concepts/restricted-partly",
+        "@type": "Concept",
+        "prefLabel": "Restricted - Partly",
+        "definition": "The resource contains microdata including highly sensitive Personally Identifiable Information (PII). Access is restricted to those with Special Sworn Status (SSS).",
+        "notation": ["RST-P"],
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
+      },
+      "specificRestriction": {
+        "@id": "https://example.gov/concepts/nara-restriction-pii",
+        "@type": "Concept",
+        "prefLabel": "Personal Information Restriction",
+        "definition": "An access restriction placed on archival materials with personal information that invades the privacy of living individuals.",
+        "notation": ["FOIA (b)(6) Personal Information"],
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/nara-restrictions",
+          "@type": "ConceptScheme",
+          "title": "NARA Restrictions"
+        }
+      }
+    },
+    {
+      "$comment": "A typical example of an instance of the AccessRestriction class",
+      "@type": "AccessRestriction",
+      "restrictionStatus": "https://example.gov/concepts/restricted",
+      "restrictionNote": "Access restricted to authorized personnel only."
+    },
+    {
+      "$comment": "A minimal example of an instance of the AccessRestriction class",
+      "restrictionStatus": "Restricted"
+    }
+  ]
 }
