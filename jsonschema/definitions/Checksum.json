@@ -16,13 +16,33 @@
     "algorithm": {
       "title": "algorithm",
       "description": "The algorithm used to produce the checksum",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..1",
+        "uri": "spdx:algorithm",
+        "range": "spdx:ChecksumAlgorithm",
+        "definition": "The algorithm used to produce the subject Checksum."
+      }
     },
     "checksumValue": {
       "title": "checksum value",
       "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..1",
+        "uri": "spdx:checksumValue",
+        "range": "xsd:hexBinary",
+        "definition": "A lower case hexadecimal encoded digest value produced using a specific algorithm."
+      }
     }
   },
-  "required": ["algorithm", "checksumValue"]
+  "required": ["algorithm", "checksumValue"],
+  "oldDocs": {
+    "rdfClass": "spdx:Checksum",
+    "definition": "A Checksum is a value that allows to check the integrity of the contents of a file. Even small changes to the content of the file will change its checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented [[SPDX]].",
+    "usageNote": "The Checksum includes the algorithm (spdx:algorithm) and value (spdx:checksumValue) that allows the integrity of a file to be verified to ensure no errors occurred in transmission or storage.",
+    "rationale": "Introducing the spdx:Checksum class in DCAT-US bolsters data integrity and trust by ensuring datasets remain unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools."
+  }
 }

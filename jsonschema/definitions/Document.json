@@ -51,22 +51,47 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:creator",
+        "range": "org:Organization"
       }
     },
     "mediaType": {
       "title": "media type",
       "description": "The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:mediaType",
+        "range": "dcterms:MediaType",
+        "usageNote": "An implementing rule or other specification."
+      }
     },
     "abstract": {
       "title": "abstract",
       "description": "Text abstract of the Document",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:abstract",
+        "range": "rdfs:Literal"
+      }
     },
     "bibliographicCitation": {
       "title": "bibliographic citation",
       "description": "Bibliographic citation as text",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcterms:bibliographicCitation",
+        "range": "rdfs:Literal"
+      }
     },
     "conformsTo": {
       "title": "conforms to",
@@ -74,6 +99,13 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:identifier",
+        "range": "dcterms:Standard",
+        "usageNote": "An implementing rule or other specification."
       }
     },
     "corporateCreator": {
@@ -87,7 +119,14 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Document",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcterms:description",
+        "range": "rdfs:Literal",
+        "definition": "Description of the document."
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -101,7 +140,13 @@
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcterms:identifier",
+        "range": "rdfs:Literal"
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -141,7 +186,13 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcterms:issued",
+        "range": "rdfs:Literal"
+      }
     },
     "publisher": {
       "title": "publisher",
@@ -149,12 +200,25 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
+      },
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dc:publisher",
+        "range": "rdfs:Literal",
+        "usageNote": "Use this property to represent publisher as literal string and not structured data."
       }
     },
     "title": {
       "title": "title",
       "description": "The title of the Document",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..n",
+        "uri": "dcterms:title",
+        "range": "rdfs:Literal"
+      }
     },
     "category": {
       "title": "category",
@@ -165,5 +229,11 @@
       }
     }
   },
-  "required": ["title"]
+  "required": ["title"],
+  "oldDocs": {
+    "rdfClass": "foaf:Document",
+    "definition": "A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.",
+    "usageNote": "Depending on whether a catalog supports or not publications as first-class citizens, a publication can be fully described, or simply denoted by its URI.",
+    "rationale": "The introduction of foaf:Document significantly improves the representation of documents within the DCAT-US profile. It ensures that metadata about documents, such as title, format, language, and access options, are clearly defined and standardized. This alignment with global data standards fosters interoperability and eases document integration into various data ecosystems, benefiting both publishers and consumers."
+  }
 }

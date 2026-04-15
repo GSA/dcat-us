@@ -24,8 +24,21 @@
     "name": {
       "title": "name",
       "description": "The name of the agent",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "foaf:name",
+        "range": "xsd:string",
+        "definition": "The name of the software agent"
+      }
     }
   },
-  "required": ["name"]
+  "required": ["name"],
+  "oldDocs": {
+    "rdfClass": "foaf:Agent",
+    "definition": "An entity that acts on something (eg. person, group, software or physical artifact).",
+    "usageNote": "Use this class when refering to a software agent that is associated with Catalogs, Catalog Records, Data Services, or Datasets. If the Agent is an organization, the use of the org:Organization is recommended. If the Agent is a person, the use of foaf:Person is recommended",
+    "rationale": "The addition of the foaf:Agent class in DCAT-US 3.0 serves a dual purpose. Firstly, it allows for the representation of software agents, aligning with modern data automation needs. Secondly, it acts as an abstract class for both foaf:Person and org:Organization, promoting consistency and interoperability while simplifying resource descriptions within the dataset catalog."
+  }
 }

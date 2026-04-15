@@ -10,7 +10,8 @@ requires-python = ">=3.13,<4.0"
 dependencies = [
     "jsonschema[format] (>=4.26.0,<5.0.0)",
     "json-schema-for-humans (>=1.5.1,<2.0.0)",
-    "click (>=8.3.1,<9.0.0)"
+    "click (>=8.3.1,<9.0.0)",
+    "beautifulsoup4 (>=4.12.0,<5.0.0)"
 ]
 
 

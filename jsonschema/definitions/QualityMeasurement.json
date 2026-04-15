@@ -16,18 +16,45 @@
     "isMeasurementOf": {
       "title": "is measurement of",
       "description": "The metric being observed",
-      "$ref": "/dcat-us/3.0.0/definitions/metric"
+      "$ref": "/dcat-us/3.0.0/definitions/metric",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "dqv:isMeasurementOf",
+        "range": "dqv:Metric",
+        "definition": "Indicates the metric being observed."
+      }
     },
     "value": {
       "title": "value",
       "description": "The value computed by metric",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "dqv:value",
+        "range": "rdfs:Literal",
+        "definition": "Refers to values computed by metric."
+      }
     },
     "unitMeasure": {
       "title": "unit of measure",
       "description": "Unit of measure associated with the value",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "sdmx-attribute:unitMeasure",
+        "range": "rdfs:Resource",
+        "definition": "Unit of measure associated with the value"
+      }
     }
   },
-  "required": ["isMeasurementOf", "value"]
+  "required": ["isMeasurementOf", "value"],
+  "oldDocs": {
+    "rdfClass": "dqv:QualityMeasurement",
+    "definition": "Represents the evaluation of a given dataset (or dataset distribution) against a specific quality metric.",
+    "usageNote": "Represents the evaluation of a given resource (as a Data Service, Dataset, or Distribution) against a specific quality metric, such as spatial resolution in scale, angle or metric.",
+    "rationale": "The inclusion of dqv:QualityMeasurement in DCAT-US assists end-users in better evaluating the fitness of use of resources. This optional class enhances data quality assessment, aligns with international standards (DQV), and enables more precise evaluation against specific quality metrics, ultimately improving data usability and adherence to recognized quality assessment practices."
+  }
 }

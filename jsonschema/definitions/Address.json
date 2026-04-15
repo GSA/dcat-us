@@ -16,28 +16,69 @@
     "country-name": {
       "title": "country",
       "description": "The country of the Address",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "vcard:country-name",
+        "range": "rdfs:Literal",
+        "usageNote": "The country of an Address of the Kind."
+      }
     },
     "locality": {
       "title": "locality",
       "description": "The city of the Address",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "vcard:locality",
+        "range": "rdfs:Literal",
+        "usageNote": "The city of an Address of the Kind."
+      }
     },
     "postal-code": {
       "title": "postal code",
       "description": "The postal code of the Address",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "vcard:postal-code",
+        "range": "rdfs:Literal",
+        "usageNote": "The postal code of an Address of the Kind."
+      }
     },
     "region": {
       "title": "administrative area",
       "description": "The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "vcard:region",
+        "range": "rdfs:Literal",
+        "usageNote": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state."
+      }
     },
     "street-address": {
       "title": "street address",
       "description": "The street name and civic number of an Address",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "vcard:street-address",
+        "range": "rdfs:Literal",
+        "usageNote": "The street name and civic number of an Address of the Kind."
+      }
     }
   },
-  "required": []
+  "required": [],
+  "oldDocs": {
+    "rdfClass": "locn:Address",
+    "definition": "The address of a location.",
+    "usageNote": "This class is used to define a location defined by an address. It should be used only with the property dcterms:spatial, not the contact point address property.",
+    "rationale": "Incorporating locn:Address from the W3C Location ontology [[LOCN]] into DCAT-US provides a standardized, structured, and extensible format to represent physical addresses, facilitating consistent, interoperable, and precise sharing of location information across various datasets and digital platforms."
+  }
 }
