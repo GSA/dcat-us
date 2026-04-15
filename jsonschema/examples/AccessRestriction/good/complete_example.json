@@ -6,7 +6,7 @@
     "@id": "https://example.gov/concepts/restricted-partly",
     "@type": "Concept",
     "prefLabel": "Restricted - Partly",
-    "definition": "The resource contains microdata including highly sensitive Personally Identifiable Information (PII). Access is restricted to those with Special Sworn Status (SSS).",
+    "definition": "The resource is partially restricted and has additional conditions/requirements for access.",
     "notation": ["RST-P"],
     "inScheme": {
       "@id": "https://example.gov/concept-schemes/restriction-status",
