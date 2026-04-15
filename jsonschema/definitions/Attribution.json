@@ -16,13 +16,36 @@
     "hadRole": {
       "title": "role",
       "description": "The function of an entity or agent with respect to another entity or resource",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "dcat:hadRole",
+        "range": "dcat:Role",
+        "definition": "The function of an entity or agent with respect to another entity or resource."
+      }
     },
     "agent": {
       "title": "agent",
       "description": "The agent that plays a role in the resource",
-      "$ref": "/dcat-us/3.0.0/definitions/agent"
+      "$ref": "/dcat-us/3.0.0/definitions/agent",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "prov:agent",
+        "range": "foaf:Agent",
+        "definition": "The prov:agent property references an Agent that plays a role in the resource"
+      }
     }
   },
-  "required": ["hadRole", "agent"]
+  "required": [
+    "hadRole",
+    "agent"
+  ],
+  "oldDocs": {
+    "rdfClass": "prov:Attribution",
+    "definition": "A responsibility of an Agent for a resource.",
+    "usageNote": "Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [[DCTERMS]] properties (dcterms:creator, dcterms:contributor, dcterms:rightsHolder, and dcterms:publisher). Use dcat:hadRole on the prov:Attribution to capture the responsibility of the Agent with respect to the Resource.",
+    "rationale": "The inclusion of prov:Attribution in the DCAT profile enables clear data source attribution, promoting responsible data sharing and proper citation practices. It aligns the profile with data provenance best practices for accurate attribution in data sharing."
+  }
 }

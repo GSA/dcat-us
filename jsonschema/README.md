@@ -6,18 +6,47 @@ This directory contains JSON Schema definitions for validating DCAT-US 3.0 metad
 
 ```
 jsonschema/
-├── dcat_us_3.0.0_schema.json    # Main schema with all definitions referenced
+├── Catalog.json                  # Root catalog schema
 ├── definitions/                  # Individual schema definitions
+│   ├── AccessRestriction.json
+│   ├── Activity.json
+│   ├── Address.json
 │   ├── Agent.json
-│   ├── Catalog.json
+│   ├── Attribution.json
+│   ├── CatalogRecord.json
+│   ├── Checksum.json
+│   ├── Concept.json
+│   ├── ConceptScheme.json
+│   ├── CUIRestriction.json
+│   ├── DataService.json
 │   ├── Dataset.json
+│   ├── DatasetSeries.json
 │   ├── Distribution.json
-│   └── ...
+│   ├── Document.json
+│   ├── Identifier.json
+│   ├── Kind.json
+│   ├── Location.json
+│   ├── Metric.json
+│   ├── Organization.json
+│   ├── PeriodOfTime.json
+│   ├── QualityMeasurement.json
+│   ├── Relationship.json
+│   ├── Standard.json
+│   └── UseRestriction.json
 ├── examples/                     # Test examples organized by schema
 │   └── {SchemaName}/
 │       ├── good/                 # Valid examples (should pass validation)
 │       └── bad/                  # Invalid examples (should fail validation)
-└── test_json_schema.py          # Validation test script
+├── docs/                         # Generated markdown documentation
+├── doc_templates/                # Templates for documentation generation
+├── test_json_schema.py          # Validation test script
+├── generate_schema_docs.py      # Documentation generator
+├── parse_old_docs.py            # DCAT-US HTML documentation parser
+├── check_missing_olddocs.py     # Check for missing oldDocs sections
+├── check_undefined_fields.py    # Check for undefined fields in examples
+├── create_null_examples.py      # Generate null-value test examples
+├── pyproject.toml               # Python dependencies (Poetry)
+└── package.json                 # Node.js dependencies (Prettier)
 ```
 
 ## Schema Definitions
@@ -26,16 +55,16 @@ The `definitions/` folder contains individual JSON Schema files for each DCAT-US
 
 | Schema | Description |
 |--------|-------------|
-| AccessRestriction | Access restriction information |
+| AccessRestriction | Access restriction information (NARA) |
 | Activity | Provenance activity |
 | Address | Physical or mailing address |
 | Agent | Entity responsible for resources |
 | Attribution | Attribution information |
-| Catalog | Collection of datasets |
 | CatalogRecord | Metadata about a catalog entry |
 | Checksum | Checksum for data integrity |
 | Concept | SKOS concept for controlled vocabularies |
 | ConceptScheme | SKOS concept scheme |
+| CUIRestriction | Controlled Unclassified Information restriction |
 | DataService | API or service providing data access |
 | Dataset | A dataset resource |
 | DatasetSeries | A series of related datasets |
@@ -43,35 +72,43 @@ The `definitions/` folder contains individual JSON Schema files for each DCAT-US
 | Document | A document resource |
 | Identifier | Identifier with scheme information |
 | Kind | Contact information (vCard) |
-| LiabilityStatement | Liability disclaimer |
-| LicenseDocument | License information |
 | Location | Geographic location |
-| MediaType | IANA media type |
 | Metric | Quality metric definition |
 | Organization | An organization entity |
 | PeriodOfTime | Temporal coverage |
-| ProvenanceStatement | Provenance information |
 | QualityMeasurement | Quality measurement result |
 | Relationship | Relationship between resources |
-| RightsStatement | Rights information |
 | Standard | A standard or specification |
 | UseRestriction | Use restriction information |
 
-## Running Tests
+The root-level `Catalog.json` defines the collection of datasets.
+
+## Setup
 
 ### Prerequisites
 
-Install the required Python package:
+This project uses [Poetry](https://python-poetry.org/) for Python dependency management and Node.js for formatting tools.
+
+**Python 3.13+** is required.
+
+### Install Dependencies
 
 ```bash
-pip install jsonschema
+# Install Python dependencies
+poetry install
+
+# Install Node.js dependencies (for Prettier)
+npm ci
 ```
 
-### Execute Tests
+## Available Scripts
+
+### Running Tests
+
+Validate all example files against their schemas:
 
 ```bash
-cd jsonschema
-python test_json_schema.py
+poetry run python test_json_schema.py
 ```
 
 The script will output results for each example:
@@ -83,7 +120,53 @@ PASS: Agent/bad/missing_required_name.json
 All tests passed
 ```
 
-If any test fails unexpectedly, the script exits with code 1.
+### Generate Documentation
+
+Generate markdown documentation from the JSON schema files:
+
+```bash
+# Generate docs
+poetry run python generate_schema_docs.py
+
+# Check if docs are up to date (useful for CI)
+poetry run python generate_schema_docs.py --check
+```
+
+### Parse Old Documentation
+
+Parse the DCAT-US HTML documentation and add `oldDocs` metadata to schemas:
+
+```bash
+# Preview changes without modifying files
+poetry run python parse_old_docs.py --dry-run --verbose
+
+# Apply changes
+poetry run python parse_old_docs.py
+```
+
+### Check for Missing oldDocs
+
+Report schema properties that don't have `oldDocs` sections:
+
+```bash
+poetry run python check_missing_olddocs.py
+```
+
+### Check for Undefined Fields
+
+Validate that example files only use fields defined in their schemas:
+
+```bash
+poetry run python check_undefined_fields.py
+```
+
+### Generate Null Examples
+
+Create test examples with `null` values for all non-required properties:
+
+```bash
+poetry run python create_null_examples.py
+```
 
 ## Adding New Test Examples
 
@@ -120,16 +203,38 @@ examples/Agent/
 
 ### Validating Data Programmatically
 
+The schemas use JSON Schema 2020-12 draft. Here's an example using Python:
+
 ```python
 import json
-from jsonschema import Draft7Validator
+from pathlib import Path
+from jsonschema import Draft202012Validator
+from referencing import Registry, Resource
 
-# Load the main schema
-with open("dcat_us_3.0.0_schema.json") as f:
-    schema = json.load(f)
+# Build a registry of all schema definitions
+schema_dir = Path(".")
+registry = Registry()
 
-# Create validator
-validator = Draft7Validator(schema)
+# Load Catalog.json
+with open(schema_dir / "Catalog.json") as f:
+    catalog_schema = json.load(f)
+    registry = registry.with_resource(
+        catalog_schema["$id"],
+        Resource.from_contents(catalog_schema)
+    )
+
+# Load all definitions
+for schema_file in (schema_dir / "definitions").glob("*.json"):
+    with open(schema_file) as f:
+        schema = json.load(f)
+        registry = registry.with_resource(
+            schema["$id"],
+            Resource.from_contents(schema)
+        )
+
+# Create validator for Dataset
+dataset_schema = json.load(open("definitions/Dataset.json"))
+validator = Draft202012Validator(dataset_schema, registry=registry)
 
 # Validate your data
 data = {"@type": "Dataset", "title": "My Dataset", ...}
@@ -142,33 +247,39 @@ else:
     print("Valid!")
 ```
 
-### Using Individual Definitions
-
-When using individual definition files, the other definitions should be
-referred to correctly by their relative-URI `$id` values, but your system will
-have its own way of loading the related schema files according to those `$id`
-values.  `test_json_schema.py` has an example of how to do it with the Python
-`jsonschema` and `referencing` libraries.
+See `test_json_schema.py` for a complete working example using the `jsonschema` and `referencing` libraries.
 
 ## Formatting
 
-For consistency, we format all of our schema files with Prettier, an
-opinionated code formatter. With formatters like this, we don't apply manual
-formatting decisions to our files, we simply run the formatter over the code
-and use its decision on what format to apply. As a best practice then we
-check that all of the files have the suggested format in a CI/CD job and fail
-the test if they are not formatted correctly.
+For consistency, we format all JSON schema files with [Prettier](https://prettier.io/). As a best practice, we check formatting in CI/CD and fail if files aren't formatted correctly.
 
-To install Prettier, run `npm ci` in this directory. To check the format we
-run
+Check formatting:
 
 ```bash
 npx prettier --check Catalog.json definitions/*.json examples/
 ```
 
-and if that fails, the correct format can be applied automatically with the
-`--write` option
+Apply formatting:
 
 ```bash
 npx prettier --write Catalog.json definitions/*.json examples/
 ```
+
+## Schema Metadata (oldDocs)
+
+Each schema and property can include an `oldDocs` object containing metadata extracted from the [DCAT-US HTML documentation](https://infopolicy.github.io/dcat-us/). This includes:
+
+- `rdfClass` / `uri` - The RDF class or property URI
+- `definition` - The formal definition
+- `usageNote` - Usage guidance
+- `rationale` - Rationale for inclusion
+- `requirementLevel` - Mandatory/Recommended/Optional
+- `cardinality` - Allowed occurrences (e.g., `1..n`, `0..1`)
+- `range` - Expected value type
+
+To update `oldDocs` metadata from the latest HTML documentation:
+
+```bash
+poetry run python parse_old_docs.py
+```
+

@@ -44,12 +44,29 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:created",
+        "range": "xsd:date",
+        "definition": "This property contains the date on which the Standard has been first created."
+      }
     },
     "description": {
       "title": "description",
       "description": "A free-text account of the Standard",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcterms:description",
+        "range": "rdfs:Literal",
+        "definition": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description - see Multilinguism"
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -63,12 +80,22 @@
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcterms:identifier",
+        "range": "xsd:string",
+        "definition": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog, or of a reference register"
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -104,7 +131,14 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcterms:issued",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
+        "definition": "This property contains the date of formal issuance (e.g., publication) of the Standard."
+      }
     },
     "modified": {
       "title": "last modified",
@@ -137,17 +171,37 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:modified",
+        "range": "xsd:date",
+        "definition": "This property contains the most recent date on which the Standard was changed or modified."
+      }
     },
     "title": {
       "title": "title",
       "description": "A name given to the Standard",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcterms:title",
+        "range": "xsd:string",
+        "definition": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name."
+      }
     },
     "category": {
       "title": "category",
       "description": "List of categories for the Standard",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       }
@@ -164,8 +218,21 @@
           "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
           "description": "inline description of ConceptScheme"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "skos:inScheme",
+        "range": "skos:ConceptScheme",
+        "definition": "This property MAY be used to specify the reference register to which the Standard belongs."
+      }
     }
   },
-  "required": []
+  "required": [],
+  "oldDocs": {
+    "rdfClass": "dcterms:Standard",
+    "definition": "A standard or other specification to which a Dataset or Distribution conforms.",
+    "usageNote": "A standard or other specification to which a Catalog, Catalog Record, Data Service, Dataset, or Distribution conforms",
+    "rationale": "The inclusion of dcterms:Standard in DCAT-US accommodates standard references through URLs or custom, detailed descriptions when specific standards are not available, promoting flexibility and completeness in resource metadata."
+  }
 }

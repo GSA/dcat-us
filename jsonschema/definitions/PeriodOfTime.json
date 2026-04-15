@@ -43,7 +43,14 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcat:endDate",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
+        "definition": "The end date of the period of time"
+      }
     },
     "startDate": {
       "title": "start date",
@@ -75,8 +82,32 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcat:startDate",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
+        "definition": "The start date of the period of time"
+      }
     }
   },
-  "anyOf": [{ "required": ["startDate"] }, { "required": ["endDate"] }]
+  "anyOf": [
+    {
+      "required": [
+        "startDate"
+      ]
+    },
+    {
+      "required": [
+        "endDate"
+      ]
+    }
+  ],
+  "oldDocs": {
+    "rdfClass": "dcterms:PeriodOfTime",
+    "definition": "PeriodOfTime represents a period of time with a start date and an end.",
+    "usageNote": "The start and end of the interval SHOULD be given by using properties dcat:startDate, and dcat:endDate, respectively. The interval can also be open - i.e., it can have just a start or just an end.",
+    "rationale": "The introduction of dcterms:PeriodOfTime in DCAT-US 3.0 is pivotal for harmonizing with international standards and rectifying the inconsistency with DCAT 1. In DCAT-US 1.1, [[ISO8601-1]] was used for interval representation in dcterms:temporal, diverging from DCAT 1's requirement of dcterms:PeriodOfTime. This alignment with DCAT 3 standards in DCAT-US 3.0 not only resolves discrepancies but also streamlines data processing, simplifying parsing and indexing of time intervals. By adopting dcterms:PeriodOfTime, DCAT-US 3.0 promotes ease of implementation, ensuring uniformity, flexibility, accuracy, and enhanced interoperability in handling time-related data, ultimately benefiting data usability and exchange."
+  }
 }

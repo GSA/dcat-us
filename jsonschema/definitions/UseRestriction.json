@@ -16,12 +16,29 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "Significant information pertaining to the use or reproduction of the data",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcat-us:restrictionNote",
+        "range": "rdfs:Literal",
+        "definition": "Significant information pertaining to the use or reproduction of the data."
+      }
     },
     "restrictionStatus": {
       "title": "restriction status",
       "description": "Indication of whether or not there are use restrictions on the archival materials",
-      "$ref": "/dcat-us/3.0.0/definitions/concept"
+      "$ref": "/dcat-us/3.0.0/definitions/concept",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "dcat-us:restrictionStatus",
+        "range": "skos:Concept",
+        "definition": "Indication of whether or not there are use restrictions on the archival materials"
+      }
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -35,8 +52,23 @@
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of the specific restriction"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcat-us:specificRestriction",
+        "range": "skos:Concept",
+        "definition": "The identification of the type of use restrictions, based on copyright, donor, or statutory provisions, on the archival materials."
+      }
     }
   },
-  "required": ["restrictionStatus"]
+  "required": [
+    "restrictionStatus"
+  ],
+  "oldDocs": {
+    "rdfClass": "dcat-us:UseRestriction",
+    "definition": "A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.",
+    "usageNote": "When utilizing the dcat-us:UseRestriction class, data publishers are encouraged to provide comprehensive and precise details regarding the specific use restrictions applied to a resource. This may include information on access limitations, distribution rules, reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices. By offering clear and concise use restriction information, data consumers can make informed decisions about the utilization of these resources while complying with NARA's requirements.",
+    "rationale": "The introduction of dcat-us:UseRestriction in DCAT-US 3.0, aligned with NARA (National Archives and Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data management practices within the DCAT-US framework."
+  }
 }

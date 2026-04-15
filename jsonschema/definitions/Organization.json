@@ -16,35 +16,91 @@
     "name": {
       "title": "name",
       "description": "The full name of the Organization",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1",
+        "uri": "foaf:name",
+        "range": "xsd:string",
+        "definition": "The name of the Organization"
+      }
     },
     "subOrganizationOf": {
       "title": "suborganization of",
       "description": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "#"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "org:subOrganizationOf",
+        "range": "org:Organization",
+        "definition": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization."
       }
     },
     "altLabel": {
       "title": "alternative label",
       "description": "alternative name (trading name, colloquial name) for an organization",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "skos:altLabel",
+        "range": "xsd:string",
+        "definition": "alternative names (trading names, colloquial names) for an organization"
+      }
     },
     "notation": {
       "title": "notation",
       "description": "List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "title": "Abbreviation",
         "type": "string"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "skos:notation",
+        "range": "xsd:string",
+        "definition": "abbreviations or codes from code lists for an organization (e.g. DOI, DOD)"
       }
     },
     "prefLabel": {
       "title": "preferred label",
       "description": "Preferred or legal name of the organization",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "skos:prefLabel",
+        "range": "xsd:string",
+        "definition": "The legal name or preferred name of the Organization"
+      }
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ],
+  "oldDocs": {
+    "rdfClass": "org:Organization",
+    "definition": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.",
+    "usageNote": "When utilizing the org:Organization class in DCAT-US 3.0, data publishers are encouraged to provide the preferred label (skos:prefLabel) for the organization, along with any relevant alternative labels (skos:altLabel) and abbreviations skos:notation. This usage is consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures comprehensive and flexible organization identification, improving data discoverability and search accuracy. Data publishers should strive to maintain consistency in naming conventions while considering variations and common aliases used to refer to organizations. By providing a well-rounded representation of organizations, DCAT-US 3.0 enhances data usability and transparency, facilitating efficient data search and retrieval.",
+    "rationale": "Improving the org:Organization class in DCAT-US 3.0 by supporting prefLabel, alternative labels, and abbreviations is essential to enhance organization representation. This enhancement accommodates variations in organization naming, promotes data interoperability, and improves discoverability within datasets. By incorporating these features, DCAT-US 3.0 aligns with best practices in data representation, enhances data search and transparency, and optimizes the overall usability of data resources.",
+    "subclassOf": "foaf:Agent"
+  }
 }

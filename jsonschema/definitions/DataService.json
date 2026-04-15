@@ -19,14 +19,33 @@
       "type": "array",
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
+      },
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..n",
+        "uri": "dcat:contactPoint",
+        "range": "vcard:Kind",
+        "definition": "This property contains contact information that can be used for sending comments about the Data Service.",
+        "usageNote": "This property MUST contain an email address that is continuously monitored by the data publisher. If there are several contributors involved in the publication of the Dataset, the property can be used multiple times."
       }
     },
     "endpointDescription": {
       "title": "endpoint description",
       "description": "A list of descriptions of the services available via the end-points, including their operations, parameters etc",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
+      },
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcat:endpointDescription",
+        "range": "rdfs:Resource",
+        "definition": "A description of the services available via the end-points, including their operations, parameters etc.",
+        "usageNote": "The endpoint description gives specific details of the actual endpoint instances, while dcterms:conformsTo is used to indicate the general standard or specification that the endpoints implement. An endpoint description may be expressed in a machine-readable form, such as an OpenAPI (Swagger) description [[?OpenAPI]], an OGC GetCapabilities response [[?WFS]], [[?ISO-19142]], [[?WMS]], [[?ISO-19128]], a SPARQL Service Description [[?SPARQL11-SERVICE-DESCRIPTION]], an [[?OpenSearch]] or [[?WSDL20]] document, a Hydra API description [[?HYDRA]], else in text or some other informal mode if a formal representation is not possible."
       }
     },
     "endpointURL": {
@@ -38,42 +57,101 @@
         "title": "URLs",
         "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
         "format": "iri"
+      },
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..n",
+        "uri": "dcat:endpointURL",
+        "range": "rdfs:Resource",
+        "usageNote": "The root location or primary endpoint of the service (a Web-resolvable IRI)"
       }
     },
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "title": "Non-empty strings",
         "type": "string",
         "minLength": 1
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcat:keyword",
+        "range": "rdfs:Literal",
+        "definition": "This property contains a keyword or tag describing the Data Service."
       }
     },
     "servesDataset": {
       "title": "serves dataset",
       "description": "List of datasets that are served by this data service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
+      },
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "uri": "dcat:servesDataset",
+        "range": "dcat:Dataset",
+        "definition": "The Dataset that is served by this data service.",
+        "usageNote": "This property refers to a collection of data that this data service can distribute."
       }
     },
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcat:spatialResolutionInMeters",
+        "range": "rdfs:Literal typed as xsd:decimal",
+        "definition": "This property refers to the minimum spatial separation resolvable in a Data Service, measured in meters."
+      }
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcat:temporalResolution",
+        "range": "rdfs:Literal typed as xsd:duration",
+        "definition": "The minimum time period resolvable by the Data Service."
+      }
     },
     "theme": {
       "title": "theme/category",
       "description": "A list of themes of the Data Service. A Data Service may be associated with multiple themes",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcat:theme",
+        "range": "skos:Concept",
+        "definition": "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.",
+        "usageNote": "CV to be used: [[?DATA-GOV-THEME]]"
       }
     },
     "accessRights": {
@@ -87,14 +165,32 @@
           "type": "string",
           "description": "Text description of the access rights"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:accessRights",
+        "range": "dcterms:RightsStatement",
+        "definition": "This property MAY include information regarding access or restrictions based on privacy, security, or other policies.",
+        "usageNote": "CV must be used: [[?DATA-GOV-AR]]"
+      }
     },
     "conformsTo": {
       "title": "conforms to",
       "description": "List of general standards or specifications that the Data Service endpoints implement",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:conformsTo",
+        "range": "dcterms:Standard",
+        "definition": "This property is used to indicate the general standard or specification that the Data Service endpoints implement."
       }
     },
     "created": {
@@ -127,20 +223,48 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:created",
+        "range": "rdfs:Literal typed as xsd:date or xsd:dateTime",
+        "definition": "This property contains the date on which the Data Service has been first created."
+      }
     },
     "creator": {
       "title": "creator",
       "description": "List of agents primarily responsible for producing the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:creator",
+        "range": "foaf:Agent",
+        "usageNote": "This property refers to the Agent primarily responsible for producing the Data Service."
       }
     },
     "description": {
       "title": "description",
       "description": "A free-text account of the Data Service",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:description",
+        "range": "rdfs:Literal",
+        "definition": "This property contains a free-text account of the Data Service.",
+        "usageNote": "This property can be repeated for parallel language versions of the description (see ). On the user interface of data portals, the content of the element whose language corresponds to the display language selected by the user is displayed."
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -153,12 +277,22 @@
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:identifier",
+        "range": "rdfs:Literal",
+        "definition": "This property contains the main identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog."
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -185,7 +319,15 @@
             "maxLength": 2
           }
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:language",
+        "range": "dcterms:LinguisticSystem",
+        "definition": "This property refers to a language supported by the Data Service. This property can be repeated if multiple languages are supported in the Data Service.",
+        "usageNote": "Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used. This property can be repeated if the service is provided in multiple languages. (e.g. map service rendering maps in spanish or english)"
+      }
     },
     "license": {
       "title": "license",
@@ -199,7 +341,15 @@
           "type": "string",
           "description": "Full text of the license"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcterms:license",
+        "range": "dcterms:LicenseDocument",
+        "definition": "This property refers to the license under which the Data Service is made available.",
+        "usageNote": "CV to used: [[?DATA-GOV-LICENSE]]"
+      }
     },
     "modified": {
       "title": "update/modification date",
@@ -232,82 +382,200 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:modified",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
+        "definition": "This property contains the most recent date on which the Data Service was changed or modified."
+      }
     },
     "publisher": {
       "title": "publisher",
       "description": "An entity (organization) responsible for making the Data Service available",
-      "$ref": "/dcat-us/3.0.0/definitions/agent"
+      "$ref": "/dcat-us/3.0.0/definitions/agent",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..1",
+        "uri": "dcterms:publisher",
+        "range": "foaf:Agent",
+        "definition": "This property refers to an entity (organization) responsible for making the Data Service available.",
+        "usageNote": "This property refers to an entity (organization) responsible for making the Catalog available."
+      }
     },
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "type": "string"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:rights",
+        "range": "dcterms:RightsStatement",
+        "definition": "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements."
       }
     },
     "rightsHolder": {
       "title": "rights holder",
       "description": "A list of Agents (organizations) holding rights on the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:rightsHolder",
+        "range": "org:Organization",
+        "definition": "This property refers to an Agent (organization) holding rights on the Data Service."
       }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:spatial",
+        "range": "dcterms:Location",
+        "definition": "This property refers to a geographic region that is covered by the Data Service.",
+        "usageNote": "TO DISCUSS: Conventions to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
       }
     },
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the DataService covers",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:temporal",
+        "range": "dcterms:PeriodOfTime",
+        "definition": "This property refers to a temporal period that the Data Service covers."
       }
     },
     "title": {
       "title": "title",
       "description": "The title of the data service in the indicated language",
-      "type": "string"
+      "type": "string",
+      "oldDocs": {
+        "requirementLevel": "Mandatory",
+        "cardinality": "1..n",
+        "uri": "dcterms:title",
+        "range": "rdfs:Literal",
+        "usageNote": "The title of the catalog in the indicated language This property can be repeated for parallel language versions of the description (see )"
+      }
     },
     "category": {
       "title": "category",
       "description": "List of categories for the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcterms:type",
+        "range": "skos:Concept",
+        "definition": "Category of the data service",
+        "usageNote": "This property SHOULD take as value one of the URIs of a concept defined in service type taxonomy or code list."
       }
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "Refers to the performed quality measurements",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dqv:hasQualityMeasurement",
+        "range": "dqv:QualityMeasurement",
+        "definition": "Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric",
+        "usageNote": "Use for quality measurements of data services (availability,response time, reliability)"
       }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents having some form of responsibility for the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "prov:qualifiedAttribution",
+        "range": "prov:Attribution",
+        "definition": "This property refers to a link to an Agent having some form of responsibility for the Data Service."
       }
     },
     "wasUsedBy": {
       "title": "was used by",
       "description": "List of activities that used the Data Service",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "prov:wasUsedBy",
+        "range": "prov:Activity",
+        "definition": "This property refers to an Activity that used the Data Service.",
+        "usageNote": "This property MAY be used to specify a testing Activity over a Data Service, against a given Standard, producing as output a conformance degree."
       }
     }
   },
-  "required": ["contactPoint", "endpointURL", "publisher", "title"]
+  "required": [
+    "contactPoint",
+    "endpointURL",
+    "publisher",
+    "title"
+  ],
+  "oldDocs": {
+    "rdfClass": "dcat:DataService",
+    "definition": "A collection of operations that provides access to one or more datasets or data processing functions.",
+    "usageNote": "If a dcat:DataService is bound to one or more specified Datasets, they are indicated by the dcat:servesDataset property. The kind of service can be indicated using the dcterms:type property. Its value may be taken from a controlled vocabulary such as the Data.GOV spatial data service type code list [[?DATA-GOV-SDST]].",
+    "rationale": "Introducing dcat:DataService is essential as it clarifies the representation of data services, addressing the confusion caused by using dcat:Distribution to describe services in DCAT 1. This addition promotes clear communication of service-related information, improving discoverability, and facilitating seamless integration and usage by data consumers and applications.",
+    "subclassOf": "dctype:Service"
+  }
 }

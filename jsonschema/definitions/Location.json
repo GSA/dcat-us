@@ -36,9 +36,20 @@
               "const": "Polygon"
             }
           },
-          "required": ["type", "coordinates"]
+          "required": [
+            "type",
+            "coordinates"
+          ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..1",
+        "uri": "dcat:bbox",
+        "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
+        "definition": "Describes the spatial extent of domain of application of an resource and is standardized in WGS 84 Lat/Long coordinate system.",
+        "usageNote": "The range of this property (rdfs:Literal) is intentionally generic, with the purpose of allowing different geometry literal encodings. E.g., the geometry could be encoded as a WKT literal (geosparql:wktLiteral) Please note that the order of usage is as follows: use the most specific geospatial relationship by preference. E.g. if the spatial description is a bbox, use dcat:bbox, otherwise use locn:geometry The WKT encoding supports geospatial positions expressed in coordinate reference systems other than WGS84."
+      }
     },
     "centroid": {
       "title": "centroid",
@@ -68,9 +79,19 @@
               "const": "Point"
             }
           },
-          "required": ["type", "coordinates"]
+          "required": [
+            "type",
+            "coordinates"
+          ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "dcat:centroid",
+        "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
+        "usageNote": "The range of this property (rdfs:Literal) is intentionally generic, with the purpose of allowing different geometry literal encodings. E.g., the geometry could be encoded as a WKT literal (geosparql:wktLiteral) Please note that the order of usage is as follows: use the most specific geospatial relationship by preference. E.g. if the spatial description is a bbox, use dcat:bbox, otherwise use locn:geometry The WKT encoding supports geospatial positions expressed in coordinate reference systems other than WGS84."
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -83,12 +104,22 @@
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "uri": "dcterms:identifier",
+        "range": "rdfs:Literal",
+        "usageNote": "This property contains the geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer."
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer",
-      "type": ["null", "array"],
+      "type": [
+        "null",
+        "array"
+      ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       }
@@ -107,9 +138,20 @@
         {
           "type": "object",
           "description": "Geometry represented in GeoJSON format",
-          "required": ["type", "coordinates"]
+          "required": [
+            "type",
+            "coordinates"
+          ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "uri": "locn:geometry",
+        "range": "locn:Geometry",
+        "definition": "Associates a spatial thing [[?SDW-BP]] with a corresponding geometry.",
+        "usageNote": "The range of this property (locn:Geometry) allows for any type of geometry specification. E.g., the geometry could be encoded by a literal, as WKT (geosparql:wktLiteral [[GeoSPARQL]]), or represented by a class, as geosparql:Geometry (or any of its subclasses) [[GeoSPARQL]]."
+      }
     },
     "inScheme": {
       "title": "gazetteer",
@@ -122,18 +164,50 @@
           "$ref": "/dcat-us/3.0.0/definitions/conceptscheme",
           "description": "inline description of the gazetteer"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..1",
+        "range": "skos:ConceptScheme",
+        "usageNote": "This property MAY be used to specify the gazetteer to which the Location belongs."
+      }
     },
     "altLabel": {
       "title": "alternative name",
       "description": "An alternative label or name for a location",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional",
+        "cardinality": "0..n",
+        "range": "rdfs:Literal",
+        "definition": "Alternate toponyms for the location",
+        "usageNote": "This property contains a alternate labels of the Location. This property can be repeated for parallel language versions of the label."
+      }
     },
     "prefLabel": {
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
-      "type": ["null", "string"]
+      "type": [
+        "null",
+        "string"
+      ],
+      "oldDocs": {
+        "requirementLevel": "Recommended",
+        "cardinality": "0..n",
+        "range": "rdfs:Literal",
+        "definition": "Preferred toponym for the location",
+        "usageNote": "This property contains a preferred label of the Location. This property can be repeated for parallel language versions of the label."
+      }
     }
   },
-  "required": []
+  "required": [],
+  "oldDocs": {
+    "rdfClass": "dcterms:Location",
+    "definition": "A spatial region or named place. It can be represented using a controlled vocabulary or with geographic coordinates.",
+    "usageNote": "For an extensive geometry (i.e., a set of coordinates denoting the vertices of the relevant geographic area), the property locn:geometry [[LOCN]] SHOULD be used. For a geographic bounding box delimiting a spatial area the property dcat:bbox SHOULD be used. For the geographic center of a spatial area, or another characteristic point, the property dcat:centroid SHOULD be used.",
+    "rationale": "The introduction of dcterms:Location in DCAT-US 3.0 is driven by the need to restore compatibility with the DCAT standard. DCAT-US 1.1 had deviated from the standard by using strings for location in dcterms:spatial property, which was incompatible. This addition aligns DCAT-US with recognized geospatial standards (e.g., Geosparql, WKT, GeoJSON, W3C Location) for representing geometries, addresses, and location names, ensuring data compatibility, discoverability, and integration while adhering to international data management practices."
+  }
 }
