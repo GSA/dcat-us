@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/series/annual-climate-observations" ]
+      "examples": ["https://example.gov/series/annual-climate-observations"]
     },
     "@type": {
       "type": "string",
@@ -17,7 +17,7 @@
     "contactPoint": {
       "title": "contact point",
       "description": "List of contacts that can be used for sending comments about the Dataset Series",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -71,7 +71,7 @@
     "seriesMember": {
       "title": "series member",
       "description": "List of members of the Dataset Series",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -143,7 +143,7 @@
         "range": "dcterms:Frequency",
         "usageNote": "This property refers to the frequency at which the Dataset Series is updated. The frequency of a dataset series is not equal to the frequency of the dataset in the collection. CV to be used: [[CLD-FREQ]]."
       },
-      "examples": [ "annually" ]
+      "examples": ["annually"]
     },
     "description": {
       "title": "description",
@@ -198,7 +198,7 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g.,publication) of the Dataset Series. The moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series."
       },
-      "examples": [ "2000-01-15" ]
+      "examples": ["2000-01-15"]
     },
     "modified": {
       "title": "update/modification date",
@@ -238,7 +238,7 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Dataset Series was changed or modified. No value may indicate that the Dataset Series has never changed after its initial publication, or that the date of the last modification is not known, or that the Dataset Series is continuously updated This is not equal to the most recent modified dataset in the collection of the dataset series."
       },
-      "examples": [ "2024-12-01", "2024-06-01" ]
+      "examples": ["2024-12-01", "2024-06-01"]
     },
     "publisher": {
       "title": "publisher",
@@ -263,7 +263,7 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "A geographic region that is covered by the Dataset Series",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
@@ -277,7 +277,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "A list of temporal periods that the Dataset Series covers",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -304,7 +304,7 @@
       ]
     }
   },
-  "required": [ "description", "title" ],
+  "required": ["description", "title"],
   "_oldDocs": {
     "rdfClass": "dcat:DatasetSeries",
     "definition": "A collection of datasets that are published separately, but share some characteristics that group them.",
@@ -408,11 +408,11 @@
             "type": "Polygon",
             "coordinates": [
               [
-                [ -125.0, 24.0 ],
-                [ -66.0, 24.0 ],
-                [ -66.0, 50.0 ],
-                [ -125.0, 50.0 ],
-                [ -125.0, 24.0 ]
+                [-125.0, 24.0],
+                [-66.0, 24.0],
+                [-66.0, 50.0],
+                [-125.0, 50.0],
+                [-125.0, 24.0]
               ]
             ]
           }

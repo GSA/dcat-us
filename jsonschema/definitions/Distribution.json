@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/distributions/climate-data-csv-001" ]
+      "examples": ["https://example.gov/distributions/climate-data-csv-001"]
     },
     "@type": {
       "type": "string",
@@ -78,12 +78,12 @@
         "range": "rdfs:Literal",
         "usageNote": "This property SHOULD be used to specify the character encoding of the Distribution, by using as value the character set names in the IANA register [[IANA-CHARSETS]]."
       },
-      "examples": [ [ "UTF-8" ] ]
+      "examples": [["UTF-8"]]
     },
     "accessService": {
       "title": "access service",
       "description": "A data service that gives access to the distribution of the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
@@ -123,7 +123,7 @@
     "byteSize": {
       "title": "byte size",
       "description": "The size of a Distribution in bytes",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:byteSize",
@@ -131,19 +131,19 @@
         "definition": "The size of a distribution in bytes.",
         "usageNote": "The size in bytes can be approximated (as a non-negative integer) when the precise size is not known."
       },
-      "examples": [ "52428800", "15728640" ]
+      "examples": ["52428800", "15728640"]
     },
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:compressFormat",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the format of the file in which the data is contained in a compressed form, e.g., to reduce the size of the downloadable file. It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA [[IANA-MEDIA-TYPES]]."
       },
-      "examples": [ "application/gzip" ]
+      "examples": ["application/gzip"]
     },
     "downloadURL": {
       "title": "download URL",
@@ -174,7 +174,7 @@
     "mediaType": {
       "title": "media type",
       "description": "MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:mediaType",
@@ -182,43 +182,43 @@
         "definition": "This property refers to the media type of the Distribution as defined in the official register of media types managed by IANA [[IANA-MEDIA-TYPES]].",
         "usageNote": "The mediaType property specifies the media type (MIME type) of the distribution. It should be used when the distribution's format corresponds to a standard media type registered with the IANA Media Types [[IANA-MEDIA-TYPES]]. This property provides a precise technical descriptor of the data format (e.g., application/json, text/csv). This property refers to the media type of the Distribution as defined in the official register of media types managed by IANA. [[IANA-MEDIA-TYPES]]. The encoding in JSON-LD allows to use mime type without the full URL (e.g. text/csv). The JSON-LD context processor will expand automatically to the full uri in RDF using the base uri https://www.iana.org/assignments/media-types/. This preserves backward compatibility with DCAT-US 1.1"
       },
-      "examples": [ "text/csv" ]
+      "examples": ["text/csv"]
     },
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:packageFormat",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together. It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."
       },
-      "examples": [ "application/zip" ]
+      "examples": ["application/zip"]
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "xsd:decimal",
         "usageNote": "This property refers to the minimum spatial separation resolvable in a Distribution, measured in meters."
       },
-      "examples": [ "1000" ]
+      "examples": ["1000"]
     },
     "temporalResolution": {
       "title": "termporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "xsd:duration",
         "usageNote": "This property refers to the minimum time period resolvable in the Dataset distribution."
       },
-      "examples": [ "P1D" ]
+      "examples": ["P1D"]
     },
     "availability": {
       "title": "availability",
@@ -240,7 +240,7 @@
     "accessRestriction": {
       "title": "access restriction",
       "description": "List of access restrictions related to the distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       },
@@ -294,7 +294,7 @@
     "useRestriction": {
       "title": "use restriction",
       "description": "Use restriction related to the distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       },
@@ -324,12 +324,12 @@
         "range": "dcterms:RightsStatement",
         "usageNote": "This property MAY include information regarding access or restrictions based on privacy, security, or other policies."
       },
-      "examples": [ "Public access without restrictions" ]
+      "examples": ["Public access without restrictions"]
     },
     "conformsTo": {
       "title": "linked schemas",
       "description": "List of established schemas or reference systems to which the described Distribution conforms",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -344,7 +344,7 @@
     "description": {
       "title": "description",
       "description": "A free-text account of the Distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
@@ -359,14 +359,14 @@
     "format": {
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:format",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the file format of the Distribution. CV to be used: [[?DATA-GOV-FT]] If a format is not available, use media type ([[IANA-MEDIA-TYPES]]) if applicable."
       },
-      "examples": [ "CSV" ]
+      "examples": ["CSV"]
     },
     "identifier": {
       "title": "identifier",
@@ -391,7 +391,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -437,7 +437,7 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g., publication) of the Distribution. Date of formal issuance (publication) of the distribution UsageThe first time issuance of the distribution."
       },
-      "examples": [ "2023-06-01" ]
+      "examples": ["2023-06-01"]
     },
     "language": {
       "title": "language",
@@ -469,7 +469,7 @@
         "definition": "A language of the resource. This refers to the natural language used for textual metadata (i.e., titles, descriptions, etc.) of textual values of a dataset distribution",
         "usageNote": "Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used. For datasets available in separate languages, create a dcat:Distribution instance for each language version. Assign a unique dcterms:language value to each distribution to specify its language. Distributions with multiple languages should list several dcterms:language values."
       },
-      "examples": [ [ "en" ] ]
+      "examples": [["en"]]
     },
     "license": {
       "title": "license",
@@ -490,7 +490,7 @@
         "range": "dcterms:LicenseDocument",
         "usageNote": "This property refers to the license under which the Distribution is made available. CV to used: [[?DATA-GOV-LICENSE]]"
       },
-      "examples": [ "https://creativecommons.org/publicdomain/zero/1.0/" ]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
     },
     "modified": {
       "title": "last modified",
@@ -530,12 +530,12 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Distribution was changed or modified."
       },
-      "examples": [ "2024-06-01", "2024-01-15" ]
+      "examples": ["2024-06-01", "2024-01-15"]
     },
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -547,7 +547,7 @@
         "usageNote": "This property refers to a statement that specifies rights associated with the Distribution."
       },
       "examples": [
-        [ "No rights reserved. This data is in the public domain." ],
+        ["No rights reserved. This data is in the public domain."],
         [
           "This data is in the public domain and may be used without restriction."
         ]
@@ -556,19 +556,19 @@
     "title": {
       "title": "title",
       "description": "A name given to the Distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a name given to the Distribution. This property can be repeated for parallel language versions of the description (see Multilingualism). The title MUST be given if the distribution contains only part of the data offered by the Dataset The title can be given in several languages. In multilingual data portals, the title in the language selected by a user will usually be shown as title for the distribution."
       },
-      "examples": [ "Climate Data CSV", "Climate Data CSV Distribution" ]
+      "examples": ["Climate Data CSV", "Climate Data CSV Distribution"]
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "A list of quality measurements for the distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -583,7 +583,7 @@
     "page": {
       "title": "documentation",
       "description": "A page or document about this Distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
@@ -637,7 +637,7 @@
       }
     }
   },
-  "required": [ ],
+  "required": [],
   "_oldDocs": {
     "rdfClass": "dcat:Distribution",
     "definition": "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).",
@@ -657,7 +657,7 @@
       "byteSize": "52428800",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "modified": "2024-06-01",
-      "rights": [ "No rights reserved. This data is in the public domain." ],
+      "rights": ["No rights reserved. This data is in the public domain."],
       "describedBy": {
         "@type": "Standard",
         "title": "CSV Data Dictionary",

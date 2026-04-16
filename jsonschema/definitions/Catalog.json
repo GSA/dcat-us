@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/catalogs/federal-data-catalog" ]
+      "examples": ["https://example.gov/catalogs/federal-data-catalog"]
     },
     "@type": {
       "type": "string",
@@ -17,7 +17,7 @@
     "catalog": {
       "title": "Related catalogs",
       "description": "List of related catalogs whose contents are of interest in the context of this catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "#"
       },
@@ -31,7 +31,7 @@
     "contactPoint": {
       "title": "Contact points",
       "description": "Contact information that can be used for sending comments about the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -60,7 +60,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "minLength": 1
@@ -72,13 +72,13 @@
         "usageNote": "A keyword or tag describing the resource."
       },
       "examples": [
-        [ "federal data", "government", "open data", "public records" ]
+        ["federal data", "government", "open data", "public records"]
       ]
     },
     "record": {
       "title": "catalog record",
       "description": "A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/catalogrecord"
       },
@@ -92,7 +92,7 @@
     "service": {
       "title": "service",
       "description": "List of data services that are listed in the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
@@ -106,7 +106,7 @@
     "theme": {
       "title": "theme/category",
       "description": "A list of categories for the Catalog. A Catalog may be associated with multiple themes",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -120,7 +120,7 @@
     "themeTaxonomy": {
       "title": "themes",
       "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
       },
@@ -150,7 +150,7 @@
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public. CV to be used: [[?DATA-GOV-AR]]."
       },
-      "examples": [ "Public access with no restrictions" ]
+      "examples": ["Public access with no restrictions"]
     },
     "conformsTo": {
       "title": "schema version",
@@ -175,7 +175,7 @@
     "creator": {
       "title": "creator",
       "description": "The entity responsible for creating the resource",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -190,7 +190,7 @@
     "description": {
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:description",
@@ -206,7 +206,7 @@
     "hasPart": {
       "title": "has part",
       "description": "A list of related catalogs that are part of the described catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "#"
       },
@@ -240,7 +240,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -286,7 +286,7 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g., for publication of the Catalog)."
       },
-      "examples": [ "2020-01-15" ]
+      "examples": ["2020-01-15"]
     },
     "language": {
       "title": "language",
@@ -318,7 +318,7 @@
         "definition": "A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalogue.",
         "usageNote": "Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used. The value(s) provided for members of a catalog (i.e., dataset or service) override the value(s) provided for the catalog if they conflict. This property can be repeated if the resources of the catalog are provided in multiple languages."
       },
-      "examples": [ [ "en" ], [ "en", "es" ] ]
+      "examples": [["en"], ["en", "es"]]
     },
     "license": {
       "title": "license",
@@ -339,7 +339,7 @@
         "range": "dcterms:LicenseDocument",
         "usageNote": "This property refers to the license under which the Catalog can be used or reused. CV to be used: [[?DATA-GOV-LICENSE]]"
       },
-      "examples": [ "https://creativecommons.org/publicdomain/zero/1.0/" ]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
     },
     "modified": {
       "title": "update/modification date",
@@ -379,7 +379,7 @@
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Catalog was modified. The value of this property indicates a change to the actual resource, not a change to the catalog record. An absent value MAY indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated."
       },
-      "examples": [ "2024-06-01", "2024-06-01T14:30:00Z" ]
+      "examples": ["2024-06-01", "2024-06-01T14:30:00Z"]
     },
     "publisher": {
       "title": "publisher",
@@ -405,7 +405,7 @@
     "rights": {
       "title": "rights",
       "description": "A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -417,7 +417,7 @@
         "usageNote": "This property refers to a statement that specifies rights associated with the Catalog."
       },
       "examples": [
-        [ "This catalog is maintained by the National Climate Data Center." ],
+        ["This catalog is maintained by the National Climate Data Center."],
         [
           "This catalog is maintained by the Federal Data Management Office.",
           "Data within this catalog may be subject to individual dataset licensing terms."
@@ -427,7 +427,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of organizations holding rights on the catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -441,7 +441,7 @@
     "spatial": {
       "title": "spatial/geographic coverage",
       "description": "The geographical area covered by the catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
@@ -455,7 +455,7 @@
     "subject": {
       "title": "subject",
       "description": "List of subjects of the catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -468,7 +468,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "List of temporal periods that the Catalog covers",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -482,19 +482,19 @@
     "title": {
       "title": "title",
       "description": "The title of the catalog in the indicated language",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "The title of the catalog in the indicated language This property can be repeated for parallel language versions of the description (see )"
       },
-      "examples": [ "National Climate Data Catalog", "Federal Data Catalog" ]
+      "examples": ["National Climate Data Catalog", "Federal Data Catalog"]
     },
     "category": {
       "title": "category",
       "description": "List of categories for the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -528,7 +528,7 @@
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "A list of agents having some form of responsibility for the catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
@@ -540,7 +540,7 @@
       }
     }
   },
-  "required": [ "dataset" ],
+  "required": ["dataset"],
   "_oldDocs": {
     "rdfClass": "dcat:Catalog",
     "definition": "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)",
@@ -578,7 +578,7 @@
         "title": "National Climate Data Catalog Homepage",
         "accessURL": "https://example.gov/climate-data"
       },
-      "language": [ "en" ],
+      "language": ["en"],
       "issued": "2020-01-15",
       "modified": "2024-06-01",
       "rights": [
