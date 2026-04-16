@@ -87,5 +87,12 @@
         ]
       }
     }
+  ],
+  "temporal": [
+    {
+      "@type": "PeriodOfTime",
+      "startDate": "2000-01-01",
+      "endDate": "2024-12-31"
+    }
   ]
 }

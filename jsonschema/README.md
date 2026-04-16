@@ -256,13 +256,13 @@ For consistency, we format all JSON schema files with [Prettier](https://prettie
 Check formatting:
 
 ```bash
-npx prettier --check Catalog.json definitions/*.json examples/
+npx prettier --check definitions/*.json examples/
 ```
 
 Apply formatting:
 
 ```bash
-npx prettier --write Catalog.json definitions/*.json examples/
+npx prettier --write definitions/*.json examples/
 ```
 
 ## Schema Metadata (oldDocs)

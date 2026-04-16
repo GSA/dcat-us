@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://resources.data.gov/dcat-us/3.0.0/catalog",
+  "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/catalog",
   "title": "DCAT-US 3 Catalog",
   "description": "The main item defined by DCAT-US 3 is the Catalog class",
   "type": "object",

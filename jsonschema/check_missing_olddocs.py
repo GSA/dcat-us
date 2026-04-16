@@ -30,9 +30,8 @@ def check_schema(schema_path: Path) -> list[str]:
 def main():
     schema_dir = Path(__file__).parent
     
-    # Collect all schema files
-    schema_files = [schema_dir / "Catalog.json"]
-    schema_files.extend(sorted((schema_dir / "definitions").glob("*.json")))
+    # Collect all schema files from definitions directory
+    schema_files = sorted((schema_dir / "definitions").glob("*.json"))
     
     total_missing = 0
     

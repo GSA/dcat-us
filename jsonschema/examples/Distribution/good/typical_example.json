@@ -5,5 +5,17 @@
   "accessURL": "https://example.gov/data/climate",
   "downloadURL": "https://example.gov/downloads/climate-2024.csv",
   "mediaType": "text/csv",
-  "byteSize": "52428800"
+  "format": "CSV",
+  "byteSize": "52428800",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "modified": "2024-06-01",
+  "rights": ["No rights reserved. This data is in the public domain."],
+  "describedBy": {
+    "@type": "Standard",
+    "title": "CSV Data Dictionary",
+    "accessURL": "https://example.gov/data/climate/dictionary"
+  },
+  "accessRestriction": null,
+  "cuiRestriction": null,
+  "useRestriction": null
 }

@@ -1,0 +1,17 @@
+{
+  "@type": "Catalog",
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "title": "Example Dataset",
+      "description": "A simple dataset for testing.",
+      "contactPoint": {
+        "fn": "Data Support",
+        "hasEmail": "mailto:support@example.gov"
+      },
+      "publisher": {
+        "name": "Example Organization"
+      }
+    }
+  ]
+}

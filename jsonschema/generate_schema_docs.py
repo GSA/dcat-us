@@ -132,7 +132,7 @@ def type_info_table_wrap(type_info_list):
 
 def generate_docs(output_dir):
     """Generate the schema documentation into output_dir."""
-    schema_files = ["Catalog.json"] + sorted(glob.glob("definitions/*.json"))
+    schema_files = sorted(glob.glob("definitions/*.json"))
 
     # We need to preload the schemas at their relative ids
     loaded_schemas = {}

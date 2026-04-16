@@ -509,12 +509,7 @@ def collect_schema_files(schema_dir: Path) -> dict[str, Path]:
     """Collect all JSON schema files and return mapping of name -> path."""
     schema_files: dict[str, Path] = {}
     
-    # Check root level Catalog.json
-    catalog_path = schema_dir / "Catalog.json"
-    if catalog_path.exists():
-        schema_files["Catalog"] = catalog_path
-    
-    # Check definitions directory
+    # All schemas are in definitions directory
     definitions_dir = schema_dir / "definitions"
     if definitions_dir.exists():
         for json_file in definitions_dir.glob("*.json"):
