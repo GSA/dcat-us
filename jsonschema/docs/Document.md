@@ -168,23 +168,6 @@ The individual(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/contacts/doc-author-001",
-        "@type": "Kind",
-        "fn": "Dr. Jane Smith",
-        "hasEmail": "mailto:jane.smith@example.gov",
-        "given-name": "Jane",
-        "family-name": "Smith",
-        "organization-name": "National Climate Data Center",
-        "title": "Senior Climate Scientist"
-    }
-]
-```
-
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
 | [Kind](#creator_items)          | Contact information for an individual or entity |
@@ -266,19 +249,6 @@ List of standards that the Document conforms to
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/standards/pdf-a",
-        "@type": "Standard",
-        "title": "PDF/A-3",
-        "description": "ISO 19005-3 - Document management -- Electronic document file format for long-term preservation."
-    }
-]
-```
-
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
 | [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
@@ -304,18 +274,6 @@ The corporate organization(s) responsible for creating the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/organizations/ncdc",
-        "@type": "Organization",
-        "name": "National Climate Data Center"
-    }
-]
-```
 
 | Each item of this array must be         | Description                                                                         |
 | --------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -365,20 +323,6 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-"NCDC-UG-2024-001"
-```
-
-```json
-{
-    "@type": "Identifier",
-    "schemaAgency": "example.gov",
-    "notation": "DOC-CLIMATE-GUIDE-001"
-}
-```
-
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
@@ -412,23 +356,6 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Identifier",
-        "schemaAgency": "DOI",
-        "notation": "10.12345/climate-guide-2024"
-    },
-    {
-        "@type": "Identifier",
-        "schemaAgency": "ISBN",
-        "notation": "978-0-123456-78-9"
-    }
-]
-```
 
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
@@ -537,27 +464,6 @@ The organization(s) that published the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-[
-    {
-        "@type": "Organization",
-        "name": "National Climate Data Center"
-    }
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/organizations/noaa",
-        "@type": "Organization",
-        "name": "National Oceanic and Atmospheric Administration"
-    }
-]
-```
-
 | Each item of this array must be  | Description                                                                         |
 | -------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#publisher_items) | Information about an organization, including other organizations that it is part of |
@@ -601,35 +507,6 @@ List of categories/genres for the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/concepts/user-guide",
-        "@type": "Concept",
-        "prefLabel": "User Guide",
-        "definition": "A document that provides instructions for using a product or service.",
-        "inScheme": {
-            "@id": "https://example.gov/concept-schemes/document-types",
-            "@type": "ConceptScheme",
-            "title": "Document Types"
-        }
-    },
-    {
-        "@id": "https://example.gov/concepts/technical-documentation",
-        "@type": "Concept",
-        "prefLabel": "Technical Documentation",
-        "definition": "Documentation describing technical aspects of a system or service.",
-        "inScheme": {
-            "@id": "https://example.gov/concept-schemes/document-types",
-            "@type": "ConceptScheme",
-            "title": "Document Types"
-        }
-    }
-]
-```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |

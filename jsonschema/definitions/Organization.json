@@ -41,16 +41,7 @@
         "uri": "org:subOrganizationOf",
         "range": "org:Organization",
         "definition": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/organizations/doc",
-            "@type": "Organization",
-            "name": "U.S. Department of Commerce"
-          }
-        ]
-      ]
+      }
     },
     "altLabel": {
       "title": "alternative label",

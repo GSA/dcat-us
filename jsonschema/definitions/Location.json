@@ -128,15 +128,7 @@
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains the geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/identifiers/geonames-4140963",
-          "@type": "Identifier",
-          "notation": "4140963",
-          "schemaAgency": "GeoNames"
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -147,18 +139,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/identifiers/fips-11001",
-            "@type": "Identifier",
-            "notation": "11001",
-            "schemaAgency": "FIPS"
-          },
-          "https://www.wikidata.org/wiki/Q61"
-        ]
-      ]
+      }
     },
     "geometry": {
       "title": "geometry",
@@ -223,14 +204,7 @@
         "cardinality": "0..1",
         "range": "skos:ConceptScheme",
         "usageNote": "This property MAY be used to specify the gazetteer to which the Location belongs."
-      },
-      "examples": [
-        {
-          "@id": "https://www.geonames.org/",
-          "@type": "ConceptScheme",
-          "title": "GeoNames"
-        }
-      ]
+      }
     },
     "altLabel": {
       "title": "alternative name",

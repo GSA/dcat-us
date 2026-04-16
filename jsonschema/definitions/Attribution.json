@@ -38,30 +38,7 @@
         "uri": "prov:agent",
         "range": "foaf:Agent",
         "definition": "The prov:agent property references an Agent that plays a role in the resource"
-      },
-      "examples": [
-        {
-          "name": "Environmental Data Management Office"
-        },
-        {
-          "@id": "https://example.gov/agents/env-data-office-001",
-          "@type": "Agent",
-          "name": "Environmental Data Management Office",
-          "category": [
-            {
-              "@id": "https://example.gov/concepts/government-office",
-              "@type": "Concept",
-              "prefLabel": "Government Office",
-              "definition": "A subdivision of a government agency responsible for specific functions.",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-              }
-            }
-          ]
-        }
-      ]
+      }
     }
   },
   "required": ["hadRole", "agent"],

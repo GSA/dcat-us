@@ -250,17 +250,6 @@ The unique geographic identifier for the Location, e.g., the URI or other unique
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/identifiers/geonames-4140963",
-    "@type": "Identifier",
-    "notation": "4140963",
-    "schemaAgency": "GeoNames"
-}
-```
-
 | Any of(Option)                     |
 | ---------------------------------- |
 | [item 0](#identifier_anyOf_i0)     |
@@ -292,20 +281,6 @@ A list of geographic identifiers for the Location besides the main identifier, e
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/identifiers/fips-11001",
-        "@type": "Identifier",
-        "notation": "11001",
-        "schemaAgency": "FIPS"
-    },
-    "https://www.wikidata.org/wiki/Q61"
-]
-```
 
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
@@ -431,16 +406,6 @@ The gazetteer to which the location belongs
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-{
-    "@id": "https://www.geonames.org/",
-    "@type": "ConceptScheme",
-    "title": "GeoNames"
-}
-```
 
 | Any of(Option)                      |
 | ----------------------------------- |

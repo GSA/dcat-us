@@ -89,18 +89,6 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/organizations/doc",
-        "@type": "Organization",
-        "name": "U.S. Department of Commerce"
-    }
-]
-```
-
 | Each item of this array must be          | Description                                                                         |
 | ---------------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#subOrganizationOf_items) | Information about an organization, including other organizations that it is part of |

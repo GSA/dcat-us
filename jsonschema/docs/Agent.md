@@ -66,33 +66,6 @@ The type of the agent that makes the item available
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-[
-    "https://example.gov/concepts/federal-agency"
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/concepts/government-agency",
-        "@type": "Concept",
-        "prefLabel": "Government Agency",
-        "altLabel": "Federal Agency",
-        "definition": "A government organization responsible for public administration and policy implementation.",
-        "notation": [
-            "GOV-AGY",
-            "FA"
-        ],
-        "inScheme": {
-            "title": "Minimal concept scheme"
-        }
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |

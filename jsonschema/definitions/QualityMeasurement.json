@@ -25,20 +25,7 @@
         "uri": "dqv:isMeasurementOf",
         "range": "dqv:Metric",
         "definition": "Indicates the metric being observed."
-      },
-      "examples": [
-        {
-          "expectedDataType": "xsd:decimal",
-          "inDimension": "https://example.gov/dimensions/completeness"
-        },
-        {
-          "@id": "https://example.gov/metrics/data-completeness-001",
-          "@type": "Metric",
-          "definition": "The percentage of expected data values that are present in the dataset.",
-          "expectedDataType": "xsd:decimal",
-          "inDimension": "https://example.gov/concepts/completeness-dimension"
-        }
-      ]
+      }
     },
     "value": {
       "title": "value",

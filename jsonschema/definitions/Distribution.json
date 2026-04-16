@@ -35,20 +35,7 @@
         "range": "skos:Concept",
         "definition": "More information about the format in which a Distribution is released. This is different from the file format as, for example, a XML file (file format) could contain an XML schema (representation technique).",
         "usageNote": "adms:representationTechnique in DCAT-US metadata plays a crucial role in detailing the specific schema, standard, or method used to structure data within a dataset, like specifying RFC 4180 for CSV, GeoJSON for JSON, OWL for RDF, or XML Schema for XML. This contrasts with dcterms:format, which broadly identifies the file format (e.g., CSV, JSON, RDF, XML), providing a general idea of the data's structure and syntax. Meanwhile, dcterms:mediaType complements these by defining the MIME type, such as 'text/csv' or 'application/json', crucial for software processing and data transmission. The detailed insight provided by adms:representationTechnique is indispensable for users needing comprehensive knowledge about the dataset's internal organization and interpretation, which goes beyond the basic format or MIME type indicated by dcterms:format and dcterms:mediaType."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/concepts/tabular-data",
-          "@type": "Concept",
-          "prefLabel": "Tabular Data",
-          "definition": "Data organized in rows and columns.",
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/data-formats",
-            "@type": "ConceptScheme",
-            "title": "Data Formats"
-          }
-        }
-      ]
+      }
     },
     "status": {
       "title": "lifecycle status",
@@ -69,20 +56,7 @@
         "uri": "adms:status",
         "range": "skos:Concept",
         "usageNote": "This property refers to the maturity of the Distribution. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]] vocabulary."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/concepts/status-completed",
-          "@type": "Concept",
-          "prefLabel": "Completed",
-          "definition": "The distribution is complete and final.",
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/lifecycle-status",
-            "@type": "ConceptScheme",
-            "title": "Lifecycle Status"
-          }
-        }
-      ]
+      }
     },
     "characterEncoding": {
       "title": "character encoding",
@@ -123,26 +97,7 @@
         "uri": "dcat:accessService",
         "range": "dcat:DataService",
         "usageNote": "This property refers to a data service that gives access to the distribution of the Dataset"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/data-services/climate-api",
-            "@type": "DataService",
-            "title": "Climate Data API",
-            "endpointURL": ["https://api.example.gov/climate/v1"],
-            "contactPoint": [
-              {
-                "fn": "Climate Support",
-                "hasEmail": "mailto:climate@example.gov"
-              }
-            ],
-            "publisher": {
-              "name": "Climate Data Center"
-            }
-          }
-        ]
-      ]
+      }
     },
     "accessURL": {
       "title": "access URL",
@@ -293,20 +248,7 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/concepts/available-stable",
-          "@type": "Concept",
-          "prefLabel": "Stable",
-          "definition": "The distribution is intended to be available for the long term.",
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/availability",
-            "@type": "ConceptScheme",
-            "title": "Availability"
-          }
-        }
-      ]
+      }
     },
     "accessRestriction": {
       "title": "access restriction",
@@ -321,28 +263,7 @@
         "uri": "dcat-us:accessRestriction",
         "range": "dcat-us:AccessRestriction",
         "usageNote": ">This property refers to a statement that specifies access restriction associated with the Distribution."
-      },
-      "examples": [
-        null,
-        [
-          {
-            "@id": "https://example.gov/restrictions/none",
-            "@type": "AccessRestriction",
-            "restrictionNote": "No access restrictions apply to this distribution.",
-            "restrictionStatus": {
-              "@id": "https://example.gov/concepts/unrestricted",
-              "@type": "Concept",
-              "prefLabel": "Unrestricted",
-              "definition": "No restrictions on access.",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/restriction-status",
-                "@type": "ConceptScheme",
-                "title": "Restriction Status"
-              }
-            }
-          }
-        ]
-      ]
+      }
     },
     "cuiRestriction": {
       "title": "CUI restriction",
@@ -363,8 +284,7 @@
         "uri": "dcat-us:cuiRestriction",
         "range": "dcat-us:CuiRestriction",
         "usageNote": "This property refers to a statement that specifies cui restriction associated with the Distribution."
-      },
-      "examples": [null]
+      }
     },
     "describedBy": {
       "title": "data dictionary",
@@ -385,22 +305,7 @@
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
         "usageNote": "This is used to specify a data dictionary or schema that defines fields (variables, dimensions, measures, attributes) in the distribution."
-      },
-      "examples": [
-        {
-          "@type": "Standard",
-          "title": "CSV Data Dictionary",
-          "accessURL": "https://example.gov/data/climate/dictionary"
-        },
-        {
-          "@id": "https://example.gov/distributions/climate-data-dict",
-          "@type": "Distribution",
-          "title": "Climate Data Dictionary",
-          "description": "Data dictionary describing the fields in the climate data CSV.",
-          "downloadURL": "https://example.gov/data/climate/data-dictionary.pdf",
-          "mediaType": "application/pdf"
-        }
-      ]
+      }
     },
     "useRestriction": {
       "title": "use restriction",
@@ -415,28 +320,7 @@
         "uri": "dcat-us:useRestriction",
         "range": "dcat-us:UseRestriction",
         "usageNote": "This property refers to a statement that specifies use restriction associated with the Distribution."
-      },
-      "examples": [
-        null,
-        [
-          {
-            "@id": "https://example.gov/restrictions/attribution",
-            "@type": "UseRestriction",
-            "restrictionNote": "Attribution to the Climate Data Center is requested but not required.",
-            "restrictionStatus": {
-              "@id": "https://example.gov/concepts/unrestricted",
-              "@type": "Concept",
-              "prefLabel": "Unrestricted",
-              "definition": "No restrictions on use.",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/restriction-status",
-                "@type": "ConceptScheme",
-                "title": "Restriction Status"
-              }
-            }
-          }
-        ]
-      ]
+      }
     },
     "accessRights": {
       "title": "access rights",
@@ -474,17 +358,7 @@
         "range": "dcterms:Standard (A basis for comparison; a reference point against which other things can be evaluated.)",
         "definition": "An established standard to which the distribution conforms.",
         "usageNote": "This is used to identify a standardized specification the distribution conforms to. It's recommended that this be a URI that serves as a unique identifier for the standard. The URI may or may not also be a URL that provides documentation of the specification. This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/standards/csv-format",
-            "@type": "Standard",
-            "title": "RFC 4180 - CSV Format",
-            "description": "Common Format and MIME Type for Comma-Separated Values (CSV) Files"
-          }
-        ]
-      ]
+      }
     },
     "description": {
       "title": "description",
@@ -534,14 +408,7 @@
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "An identifier for the distribution, that identifies it as a resource mainly for the organization publishing the data."
-      },
-      "examples": [
-        {
-          "@type": "Identifier",
-          "schemaAgency": "example.gov",
-          "notation": "DIST-CLIMATE-CSV-001"
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -552,16 +419,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "schemaAgency": "DOI",
-            "notation": "10.12345/climate-csv-2023"
-          }
-        ]
-      ]
+      }
     },
     "issued": {
       "title": "release date",
@@ -808,15 +666,7 @@
         "uri": "spdx:checksum",
         "range": "spdx:Checksum",
         "usageNote": "This property provides a mechanism that can be used to verify that the contents of a distribution have not changed. The checksum is related to the downloadURL. Property added in [[VOCAB-DCAT-3]]: spdx:checksum"
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/checksums/climate-csv-sha256",
-          "@type": "Checksum",
-          "algorithm": "SHA-256",
-          "checksumValue": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
-        }
-      ]
+      }
     }
   },
   "required": [],

@@ -81,26 +81,6 @@ The status of the catalog record in the context of editorial flow of the dataset
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-"published"
-```
-
-```json
-{
-    "@id": "https://example.gov/concepts/status-published",
-    "@type": "Concept",
-    "prefLabel": "Published",
-    "definition": "The catalog record has been published and is publicly available.",
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/record-status",
-        "@type": "ConceptScheme",
-        "title": "Record Status"
-    }
-}
-```
-
 | Any of(Option)                                     |
 | -------------------------------------------------- |
 | [Null allowed when not required](#status_anyOf_i0) |
@@ -135,24 +115,6 @@ An Application Profile that the Catalog Record's metadata conforms to
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-{
-    "@type": "Standard",
-    "title": "DCAT-US 3.0"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/standards/dcat-us-3",
-    "@type": "Standard",
-    "title": "DCAT-US 3.0",
-    "description": "Data Catalog Vocabulary - United States Profile version 3.0"
-}
-```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |

@@ -5,6 +5,8 @@ For each class schema in definitions/:
 - Schema-level `examples` is populated from `good/typical_example.json`.
 - Property-level `examples` is populated from values found in both
   `good/typical_example.json` and `good/complete_example.json`.
+- Properties that reference other class types (via ``$ref``) are skipped
+  to avoid duplicating information defined in those schemas.
 
 Examples are deduplicated while preserving order. Missing example files are
 reported and skipped without failing the whole run.
@@ -54,6 +56,29 @@ def _object_examples(raw_example: Any) -> list[dict[str, Any]]:
     return []
 
 
+def _references_another_class(prop_def: dict[str, Any]) -> bool:
+    """Return True if the property definition references another class type via $ref."""
+    if "$ref" in prop_def:
+        return True
+    if "items" in prop_def and isinstance(prop_def["items"], dict) and "$ref" in prop_def["items"]:
+        return True
+    for branch in prop_def.get("anyOf", []):
+        if not isinstance(branch, dict):
+            continue
+        if "$ref" in branch:
+            return True
+        if "items" in branch and isinstance(branch["items"], dict) and "$ref" in branch["items"]:
+            return True
+    for branch in prop_def.get("oneOf", []):
+        if not isinstance(branch, dict):
+            continue
+        if "$ref" in branch:
+            return True
+        if "items" in branch and isinstance(branch["items"], dict) and "$ref" in branch["items"]:
+            return True
+    return False
+
+
 def _update_schema(schema_name: str, dry_run: bool = False) -> tuple[bool, str]:
     schema_path = DEFINITIONS_DIR / f"{schema_name}.json"
     typical_path = EXAMPLES_DIR / schema_name / "good" / "typical_example.json"
@@ -91,6 +116,10 @@ def _update_schema(schema_name: str, dry_run: bool = False) -> tuple[bool, str]:
 
         # Clear any prior generated examples before repopulating.
         prop_def.pop("examples", None)
+
+        # Skip properties that reference other class types.
+        if _references_another_class(prop_def):
+            continue
 
         prop_values: list[Any] = []
         for obj in source_objects:

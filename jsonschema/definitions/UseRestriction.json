@@ -41,23 +41,7 @@
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "Indication of whether or not there are use restrictions on the archival materials"
-      },
-      "examples": [
-        "https://example.gov/concepts/unrestricted",
-        {
-          "@id": "https://example.gov/concepts/restricted-commercial",
-          "@type": "Concept",
-          "prefLabel": "Restricted - Commercial Use",
-          "altLabel": "Commercial Restriction",
-          "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
-          "notation": ["RST-COM"],
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/restriction-status",
-            "@type": "ConceptScheme",
-            "title": "Restriction Status"
-          }
-        }
-      ]
+      }
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -78,22 +62,7 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The identification of the type of use restrictions, based on copyright, donor, or statutory provisions, on the archival materials."
-      },
-      "examples": [
-        "https://creativecommons.org/publicdomain/zero/1.0/",
-        {
-          "@id": "https://example.gov/concepts/nara-restriction-copyright",
-          "@type": "Concept",
-          "prefLabel": "Copyright Restriction",
-          "definition": "Materials protected by copyright with limited use permissions.",
-          "notation": ["CR"],
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/nara-restrictions",
-            "@type": "ConceptScheme",
-            "title": "NARA Restrictions"
-          }
-        }
-      ]
+      }
     }
   },
   "required": ["restrictionStatus"],

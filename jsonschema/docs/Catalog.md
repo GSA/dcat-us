@@ -140,33 +140,6 @@ List of related catalogs whose contents are of interest in the context of this c
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Catalog",
-        "title": "Related Agency Catalog",
-        "description": "A related catalog from a partner agency.",
-        "dataset": [
-            {
-                "@type": "Dataset",
-                "title": "Partner Dataset",
-                "description": "Dataset from partner agency.",
-                "contactPoint": {
-                    "fn": "Partner Support",
-                    "hasEmail": "mailto:partner@example.gov"
-                },
-                "publisher": {
-                    "name": "Partner Agency"
-                },
-                "identifier": "https://example.gov/datasets/subcatalog-1-dataset-001"
-            }
-        ]
-    }
-]
-```
-
 | Each item of this array must be     | Description                                             |
 | ----------------------------------- | ------------------------------------------------------- |
 | [DCAT-US 3 Catalog](#catalog_items) | The main item defined by DCAT-US 3 is the Catalog class |
@@ -192,29 +165,6 @@ Contact information that can be used for sending comments about the Catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Kind",
-        "fn": "Federal Data Support Center",
-        "hasEmail": "mailto:data-support@example.gov",
-        "address": [
-            {
-                "@type": "Address",
-                "street-address": "1800 F Street NW",
-                "locality": "Washington",
-                "region": "DC",
-                "postal-code": "20405",
-                "country-name": "United States"
-            }
-        ],
-        "tel": "tel:+1-202-555-0100"
-    }
-]
-```
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
@@ -242,57 +192,6 @@ List of Datasets that are part of the Catalog
 | **Type**     | `array` |
 | ------------ | ------- |
 | **Required** | Yes     |
-
-**Examples:**
-
-```json
-[
-    {
-        "@type": "Dataset",
-        "title": "Daily Climate Observations 2024",
-        "description": "Daily temperature, precipitation, and wind measurements.",
-        "contactPoint": {
-            "fn": "Climate Data Support",
-            "hasEmail": "mailto:climate@example.gov"
-        },
-        "publisher": {
-            "name": "National Climate Data Center"
-        },
-        "identifier": "https://example.gov/datasets/climate-observations-1"
-    }
-]
-```
-
-```json
-[
-    {
-        "@type": "Dataset",
-        "title": "Annual Budget Data",
-        "description": "Federal budget allocations and expenditures by agency and fiscal year.",
-        "contactPoint": {
-            "fn": "Budget Data Team",
-            "hasEmail": "mailto:budget@example.gov"
-        },
-        "publisher": {
-            "name": "Office of Management and Budget"
-        },
-        "identifier": "https://example.gov/datasets/catalog-complete-001"
-    },
-    {
-        "@type": "Dataset",
-        "title": "Employment Statistics",
-        "description": "Monthly employment data across federal agencies.",
-        "contactPoint": {
-            "fn": "HR Data Team",
-            "hasEmail": "mailto:hr-data@example.gov"
-        },
-        "publisher": {
-            "name": "Office of Personnel Management"
-        },
-        "identifier": "https://example.gov/datasets/catalog-complete-002"
-    }
-]
-```
 
 | Each item of this array must be | Description                     |
 | ------------------------------- | ------------------------------- |
@@ -355,18 +254,6 @@ A record describing a single resource (e.g., a dataset, a data service) that is 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "CatalogRecord",
-        "modified": "2024-06-01",
-        "primaryTopic": "https://example.gov/datasets/annual-budget-data"
-    }
-]
-```
-
 | Each item of this array must be | Description                                                             |
 | ------------------------------- | ----------------------------------------------------------------------- |
 | [CatalogRecord](#record_items)  | A record in a catalog, describing the registration of a single resource |
@@ -392,31 +279,6 @@ List of data services that are listed in the Catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "DataService",
-        "title": "Federal Data API",
-        "endpointURL": [
-            "https://api.example.gov/data/v1"
-        ],
-        "contactPoint": [
-            {
-                "fn": "API Support",
-                "hasEmail": "mailto:api@example.gov"
-            }
-        ],
-        "publisher": {
-            "@type": "Agent",
-            "name": "Federal Data Management Office"
-        },
-        "identifier": "https://example.gov/services/catalog-service-001"
-    }
-]
-```
 
 | Each item of this array must be | Description                                   |
 | ------------------------------- | --------------------------------------------- |
@@ -444,21 +306,6 @@ A list of categories for the Catalog. A Catalog may be associated with multiple 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Concept",
-        "prefLabel": "Government Administration"
-    },
-    {
-        "@type": "Concept",
-        "prefLabel": "Public Services"
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#theme_items)         | A labeled value from an optionally specified concept scheme |
@@ -484,27 +331,6 @@ A knowledge organization system (KOS) used to classify the resources documented 
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Examples:**
-
-```json
-[
-    {
-        "@type": "ConceptScheme",
-        "title": "Climate Science Topics"
-    }
-]
-```
-
-```json
-[
-    {
-        "@type": "ConceptScheme",
-        "title": "Federal Data Categories",
-        "description": "Standard classification scheme for federal government data"
-    }
-]
-```
 
 | Each item of this array must be       | Description                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -570,15 +396,6 @@ An established standard to which the described catalog conforms
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@type": "Standard",
-    "title": "DCAT-US 3.0"
-}
-```
-
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#conformsTo_anyOf_i0) |
@@ -612,17 +429,6 @@ The entity responsible for creating the resource
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Agent",
-        "name": "Data Governance Team"
-    }
-]
-```
 
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
@@ -671,33 +477,6 @@ A list of related catalogs that are part of the described catalog
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Catalog",
-        "title": "Budget Sub-Catalog",
-        "description": "A sub-catalog focused on budget-related datasets.",
-        "dataset": [
-            {
-                "@type": "Dataset",
-                "title": "Quarterly Budget Reports",
-                "description": "Quarterly financial reports.",
-                "contactPoint": {
-                    "fn": "Finance Team",
-                    "hasEmail": "mailto:finance@example.gov"
-                },
-                "publisher": {
-                    "name": "Treasury Department"
-                },
-                "identifier": "https://example.gov/datasets/subcatalog-1-dataset-002"
-            }
-        ]
-    }
-]
-```
-
 | Each item of this array must be     | Description                                             |
 | ----------------------------------- | ------------------------------------------------------- |
 | [DCAT-US 3 Catalog](#hasPart_items) | The main item defined by DCAT-US 3 is the Catalog class |
@@ -724,19 +503,6 @@ The unique identifier for the Catalog, e.g. the URI or other unique identifier
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-{
-    "@type": "Identifier",
-    "notation": "FDC-2020-001",
-    "creator": {
-        "@type": "Agent",
-        "name": "Federal Data Management Office"
-    }
-}
-```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -771,17 +537,6 @@ A list of identifiers for the Catalog besides the main identifier, e.g. the URI 
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Identifier",
-        "notation": "LEGACY-CAT-001"
-    }
-]
-```
 
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
@@ -1082,28 +837,6 @@ Agent responsible for making the catalog available
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-{
-    "@type": "Agent",
-    "name": "National Climate Data Center"
-}
-```
-
-```json
-{
-    "@type": "Agent",
-    "name": "Federal Data Management Office",
-    "category": [
-        {
-            "@type": "Concept",
-            "prefLabel": "Government Agency"
-        }
-    ]
-}
-```
-
 | Any of(Option)                                        |
 | ----------------------------------------------------- |
 | [Null allowed when not required](#publisher_anyOf_i0) |
@@ -1175,17 +908,6 @@ List of organizations holding rights on the catalog
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Organization",
-        "name": "Federal Data Management Office"
-    }
-]
-```
-
 | Each item of this array must be     | Description                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#rightsHolder_items) | Information about an organization, including other organizations that it is part of |
@@ -1211,27 +933,6 @@ The geographical area covered by the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Examples:**
-
-```json
-[
-    {
-        "@type": "Location",
-        "prefLabel": "United States"
-    }
-]
-```
-
-```json
-[
-    {
-        "@type": "Location",
-        "prefLabel": "United States of America",
-        "identifier": "https://www.geonames.org/6252001/"
-    }
-]
-```
 
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
@@ -1259,17 +960,6 @@ List of subjects of the catalog
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Concept",
-        "prefLabel": "Public Administration"
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#subject_items)       | A labeled value from an optionally specified concept scheme |
@@ -1295,18 +985,6 @@ List of temporal periods that the Catalog covers
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "PeriodOfTime",
-        "startDate": "2000-01-01",
-        "endDate": "2024-12-31"
-    }
-]
-```
 
 | Each item of this array must be | Description                                                            |
 | ------------------------------- | ---------------------------------------------------------------------- |
@@ -1355,17 +1033,6 @@ List of categories for the Catalog
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Concept",
-        "prefLabel": "Aggregate Catalog"
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
@@ -1392,25 +1059,6 @@ The home page of the catalog (a public Web document usually available in HTML)
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-{
-    "@type": "Document",
-    "title": "National Climate Data Catalog Homepage",
-    "accessURL": "https://example.gov/climate-data"
-}
-```
-
-```json
-{
-    "@type": "Document",
-    "title": "Federal Data Catalog Portal",
-    "accessURL": "https://example.gov/data-catalog",
-    "description": "The main portal for accessing the Federal Data Catalog"
-}
-```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -1445,21 +1093,6 @@ A list of agents having some form of responsibility for the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Attribution",
-        "agent": {
-            "@type": "Agent",
-            "name": "Data Quality Assurance Team"
-        },
-        "hadRole": "Data Quality"
-    }
-]
-```
 
 | Each item of this array must be            | Description                                  |
 | ------------------------------------------ | -------------------------------------------- |

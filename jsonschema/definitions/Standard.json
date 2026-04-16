@@ -91,20 +91,7 @@
         "uri": "dcterms:identifier",
         "range": "xsd:string",
         "definition": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog, or of a reference register"
-      },
-      "examples": [
-        {
-          "@type": "Identifier",
-          "notation": "DCAT-US-3.0",
-          "schemaAgency": "U.S. General Services Administration"
-        },
-        {
-          "@type": "Identifier",
-          "schemaAgency": "resources.data.gov",
-          "notation": "DCAT-US-3.0",
-          "version": "3.0.0"
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -115,16 +102,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "schemaAgency": "W3C",
-            "notation": "DCAT-3.0-US-Profile"
-          }
-        ]
-      ]
+      }
     },
     "issued": {
       "title": "issued",
@@ -233,20 +211,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Concept",
-            "prefLabel": "Metadata Standards",
-            "inScheme": {
-              "@id": "https://example.gov/vocabularies/standard-categories",
-              "@type": "ConceptScheme",
-              "title": "Standard Categories"
-            }
-          }
-        ]
-      ]
+      }
     },
     "inScheme": {
       "title": "in scheme",
@@ -267,19 +232,7 @@
         "uri": "skos:inScheme",
         "range": "skos:ConceptScheme",
         "definition": "This property MAY be used to specify the reference register to which the Standard belongs."
-      },
-      "examples": [
-        {
-          "@type": "ConceptScheme",
-          "title": "Federal Data Standards",
-          "description": "A collection of data standards used by federal agencies"
-        },
-        {
-          "@id": "https://resources.data.gov/standards-register",
-          "@type": "ConceptScheme",
-          "title": "Standards Register"
-        }
-      ]
+      }
     }
   },
   "required": [],

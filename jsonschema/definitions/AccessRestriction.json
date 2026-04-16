@@ -37,8 +37,7 @@
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "The indication of whether or not there are access restrictions on the data."
-      },
-      "examples": ["https://example.gov/concepts/restricted"]
+      }
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -59,8 +58,7 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The authority of the restriction"
-      },
-      "examples": ["https://www.archives.gov/cui/registry/category-list"]
+      }
     }
   },
   "required": ["restrictionStatus"],

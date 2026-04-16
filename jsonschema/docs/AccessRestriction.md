@@ -80,12 +80,6 @@ The indication of whether or not there are access restrictions on the item
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-**Example:**
-
-```json
-"https://example.gov/concepts/restricted"
-```
-
 ## <a name="specificRestriction"></a>[Recommended] Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
@@ -97,12 +91,6 @@ The specific NARA restriction associated with this restriction
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-"https://www.archives.gov/cui/registry/category-list"
-```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |

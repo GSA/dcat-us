@@ -183,25 +183,6 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-{
-    "@type": "Identifier",
-    "notation": "DCAT-US-3.0",
-    "schemaAgency": "U.S. General Services Administration"
-}
-```
-
-```json
-{
-    "@type": "Identifier",
-    "schemaAgency": "resources.data.gov",
-    "notation": "DCAT-US-3.0",
-    "version": "3.0.0"
-}
-```
-
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
@@ -235,18 +216,6 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Identifier",
-        "schemaAgency": "W3C",
-        "notation": "DCAT-3.0-US-Profile"
-    }
-]
-```
 
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
@@ -453,22 +422,6 @@ List of categories for the Standard
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Concept",
-        "prefLabel": "Metadata Standards",
-        "inScheme": {
-            "@id": "https://example.gov/vocabularies/standard-categories",
-            "@type": "ConceptScheme",
-            "title": "Standard Categories"
-        }
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
@@ -495,24 +448,6 @@ The reference register to which the Standard belongs
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-{
-    "@type": "ConceptScheme",
-    "title": "Federal Data Standards",
-    "description": "A collection of data standards used by federal agencies"
-}
-```
-
-```json
-{
-    "@id": "https://resources.data.gov/standards-register",
-    "@type": "ConceptScheme",
-    "title": "Standards Register"
-}
-```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |

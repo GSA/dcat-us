@@ -29,35 +29,7 @@
         "range": "vcard:Kind",
         "definition": "This property contains contact information that can be used for sending comments about the Data Service.",
         "usageNote": "This property MUST contain an email address that is continuously monitored by the data publisher. If there are several contributors involved in the publication of the Dataset, the property can be used multiple times."
-      },
-      "examples": [
-        [
-          {
-            "fn": "API Support Team",
-            "hasEmail": "mailto:api-support@example.gov"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/contacts/climate-team-001",
-            "@type": "Kind",
-            "fn": "Climate Data Support Team",
-            "hasEmail": "mailto:climate-support@example.gov",
-            "organization-name": "National Climate Data Center",
-            "tel": "+1-555-123-4567",
-            "address": [
-              {
-                "@id": "https://example.gov/addresses/climate-office-001",
-                "country-name": "United States",
-                "locality": "Asheville",
-                "postal-code": "28801",
-                "region": "NC",
-                "street-address": "151 Patton Ave"
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "endpointDescription": {
       "title": "endpoint description",
@@ -139,43 +111,7 @@
         "range": "dcat:Dataset",
         "definition": "The Dataset that is served by this data service.",
         "usageNote": "This property refers to a collection of data that this data service can distribute."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2024",
-            "@type": "Dataset",
-            "title": "Climate Observations 2024",
-            "description": "Annual climate observation data.",
-            "contactPoint": {
-              "fn": "Climate Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/climate-observations-2024"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/datasets/daily-climate-obs",
-            "@type": "Dataset",
-            "title": "Daily Climate Observations",
-            "description": "Daily observations of temperature, precipitation, and other climate variables.",
-            "contactPoint": [
-              {
-                "fn": "Climate Data Team",
-                "hasEmail": "mailto:climate-data@example.gov"
-              }
-            ],
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/served-dataset-001"
-          }
-        ]
-      ]
+      }
     },
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
@@ -217,22 +153,7 @@
         "range": "skos:Concept",
         "definition": "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.",
         "usageNote": "CV to be used: [[?DATA-GOV-THEME]]"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/concepts/climate-science",
-            "@type": "Concept",
-            "prefLabel": "Climate Science",
-            "definition": "The scientific study of climate and climate change.",
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/science-domains",
-              "@type": "ConceptScheme",
-              "title": "Science Domains"
-            }
-          }
-        ]
-      ]
+      }
     },
     "accessRights": {
       "title": "access rights",
@@ -269,17 +190,7 @@
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "definition": "This property is used to indicate the general standard or specification that the Data Service endpoints implement."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/standards/ogc-api-features",
-            "@type": "Standard",
-            "title": "OGC API - Features",
-            "description": "OGC standard for accessing geospatial features via a Web API."
-          }
-        ]
-      ]
+      }
     },
     "created": {
       "title": "creation date",
@@ -334,16 +245,7 @@
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
         "usageNote": "This property refers to the Agent primarily responsible for producing the Data Service."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/agents/ncdc-team",
-            "@type": "Agent",
-            "name": "NCDC Development Team"
-          }
-        ]
-      ]
+      }
     },
     "description": {
       "title": "description",
@@ -380,15 +282,7 @@
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "definition": "This property contains the main identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog."
-      },
-      "examples": [
-        "https://example.gov/services/climate-api",
-        {
-          "@type": "Identifier",
-          "schemaAgency": "example.gov",
-          "notation": "CLIMATE-API-001"
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -399,16 +293,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "schemaAgency": "DOI",
-            "notation": "10.12345/climate-api"
-          }
-        ]
-      ]
+      }
     },
     "language": {
       "title": "language",
@@ -518,30 +403,7 @@
         "range": "foaf:Agent",
         "definition": "This property refers to an entity (organization) responsible for making the Data Service available.",
         "usageNote": "This property refers to an entity (organization) responsible for making the Catalog available."
-      },
-      "examples": [
-        {
-          "name": "National Climate Data Center"
-        },
-        {
-          "@id": "https://example.gov/agents/ncdc-001",
-          "@type": "Agent",
-          "name": "National Climate Data Center",
-          "category": [
-            {
-              "@id": "https://example.gov/concepts/federal-agency",
-              "@type": "Concept",
-              "prefLabel": "Federal Agency",
-              "definition": "An agency of the federal government of the United States.",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     "rights": {
       "title": "rights",
@@ -576,16 +438,7 @@
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization",
         "definition": "This property refers to an Agent (organization) holding rights on the Data Service."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/organizations/noaa",
-            "@type": "Organization",
-            "name": "National Oceanic and Atmospheric Administration"
-          }
-        ]
-      ]
+      }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -601,16 +454,7 @@
         "range": "dcterms:Location",
         "definition": "This property refers to a geographic region that is covered by the Data Service.",
         "usageNote": "TO DISCUSS: Conventions to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/locations/usa",
-            "@type": "Location",
-            "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
-          }
-        ]
-      ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
@@ -625,17 +469,7 @@
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "definition": "This property refers to a temporal period that the Data Service covers."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/periods/1950-present",
-            "@type": "PeriodOfTime",
-            "startDate": "1950-01-01",
-            "endDate": "2024-12-31"
-          }
-        ]
-      ]
+      }
     },
     "title": {
       "title": "title",

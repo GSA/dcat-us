@@ -197,18 +197,6 @@ A list of identifiers for the Dataset besides the main identifier, e.g. the URI 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@type": "Identifier",
-        "schemaAgency": "DOI",
-        "notation": "10.12345/ncdc-climate-2024"
-    }
-]
-```
-
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -234,22 +222,6 @@ List of links to samples of a Dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/distributions/climate-sample",
-        "@type": "Distribution",
-        "title": "Climate Data Sample",
-        "description": "A sample subset of climate observations for preview",
-        "downloadURL": "https://example.gov/samples/climate-sample.csv",
-        "mediaType": "text/csv",
-        "byteSize": "10240"
-    }
-]
-```
 
 | Each item of this array must be | Description                         |
 | ------------------------------- | ----------------------------------- |
@@ -277,22 +249,6 @@ The status of the dataset  in the context of maturity lifecycle
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/concepts/status-published",
-    "@type": "Concept",
-    "prefLabel": "Published",
-    "definition": "The dataset has been officially published and is available for public access.",
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/lifecycle-status",
-        "@type": "ConceptScheme",
-        "title": "Lifecycle Status"
-    }
-}
-```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -382,40 +338,6 @@ A single contact point or list of contact information that can be used for sendi
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-{
-    "fn": "Climate Data Support",
-    "hasEmail": "mailto:climate@example.gov"
-}
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/contacts/climate-support",
-        "@type": "Kind",
-        "fn": "Climate Data Support Team",
-        "hasEmail": "mailto:climate-support@example.gov",
-        "organization-name": "National Climate Data Center",
-        "tel": "+1-555-CLIMATE",
-        "title": "Data Support Specialist",
-        "address": [
-            {
-                "@id": "https://example.gov/addresses/ncdc-hq",
-                "@type": "Address",
-                "street-address": "151 Patton Avenue",
-                "locality": "Asheville",
-                "region": "NC",
-                "postal-code": "28801",
-                "country-name": "United States"
-            }
-        ]
-    }
-]
-```
-
 | Any of(Option)                             |
 | ------------------------------------------ |
 | [Kind](#contactPoint_anyOf_i0)             |
@@ -464,50 +386,6 @@ List of available distributions for the Dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Examples:**
-
-```json
-[
-    {
-        "title": "Climate Data CSV",
-        "downloadURL": "https://example.gov/downloads/climate-2024.csv",
-        "mediaType": "text/csv"
-    }
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/distributions/climate-csv",
-        "@type": "Distribution",
-        "title": "Climate Observations CSV",
-        "description": "Daily climate observations in CSV format",
-        "accessURL": "https://example.gov/data/climate/2024",
-        "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
-        "mediaType": "text/csv",
-        "format": "CSV",
-        "byteSize": "524288000",
-        "characterEncoding": [
-            "UTF-8"
-        ],
-        "issued": "2024-01-15",
-        "modified": "2024-06-01"
-    },
-    {
-        "@id": "https://example.gov/distributions/climate-json",
-        "@type": "Distribution",
-        "title": "Climate Observations JSON",
-        "description": "Daily climate observations in JSON format",
-        "accessURL": "https://example.gov/data/climate/2024/json",
-        "downloadURL": "https://example.gov/downloads/climate-observations-2024.json",
-        "mediaType": "application/json",
-        "format": "JSON",
-        "byteSize": "785432000"
-    }
-]
-```
 
 | Each item of this array must be     | Description                         |
 | ----------------------------------- | ----------------------------------- |
@@ -631,19 +509,6 @@ List of Dataset Series this dataset belongs to
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/series/annual-climate-observations",
-        "@type": "DatasetSeries",
-        "title": "Annual Climate Observations Series",
-        "description": "An annual series of national climate observations datasets."
-    }
-]
-```
-
 | Each item of this array must be  | Description                   |
 | -------------------------------- | ----------------------------- |
 | [DatasetSeries](#inSeries_items) | An ordered series of datasets |
@@ -720,26 +585,6 @@ A web page that provides access to the Dataset, its Distributions and/or additio
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-{
-    "@id": "https://example.gov/climate-data",
-    "@type": "Document",
-    "title": "Climate Data Landing Page"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/datasets/climate-2024/landing",
-    "@type": "Document",
-    "title": "National Climate Observations 2024 - Dataset Home",
-    "description": "The official landing page for the National Climate Observations 2024 dataset.",
-    "accessURL": "https://example.gov/datasets/climate-2024"
-}
-```
-
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
 | [Null allowed when not required](#landingPage_anyOf_i0) |
@@ -775,25 +620,6 @@ reference to the previous dataset version
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/datasets/national-climate-observations-2023",
-    "@type": "Dataset",
-    "title": "National Climate Observations 2023",
-    "description": "Previous year climate observations.",
-    "contactPoint": {
-        "fn": "Climate Support",
-        "hasEmail": "mailto:climate@example.gov"
-    },
-    "publisher": {
-        "name": "National Climate Data Center"
-    },
-    "identifier": "https://example.gov/datasets/complete-example-v1-prev"
-}
-```
-
 | Any of(Option)                                              |
 | ----------------------------------------------------------- |
 | [Null allowed when not required](#previousVersion_anyOf_i0) |
@@ -827,19 +653,6 @@ Qualified relationship with role of the dataset with another resource
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/relationships/climate-model-input",
-        "@type": "Relationship",
-        "hadRole": "isInputTo",
-        "relation": "https://example.gov/models/climate-prediction-model"
-    }
-]
-```
 
 | Each item of this array must be          | Description                                                                                                    |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -901,45 +714,6 @@ List of themes of the dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-[
-    "Climate Science"
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/concepts/climate-science",
-        "@type": "Concept",
-        "prefLabel": "Climate Science",
-        "altLabel": "Climatology",
-        "definition": "The scientific study of climate, including patterns, variability, and change over time.",
-        "notation": [
-            "CLIM-SCI"
-        ],
-        "inScheme": {
-            "@id": "https://example.gov/concept-schemes/science-domains",
-            "@type": "ConceptScheme",
-            "title": "Science Domains"
-        }
-    },
-    {
-        "@id": "https://example.gov/concepts/environmental-monitoring",
-        "@type": "Concept",
-        "prefLabel": "Environmental Monitoring",
-        "definition": "Systematic collection of environmental data to assess conditions and detect changes.",
-        "inScheme": {
-            "@id": "https://example.gov/concept-schemes/science-domains",
-            "@type": "ConceptScheme",
-            "title": "Science Domains"
-        }
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#theme_items)         | A labeled value from an optionally specified concept scheme |
@@ -983,28 +757,6 @@ A distribution describing the Data Dictionary for this dataset
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-{
-    "@id": "https://example.gov/climate-data/data-dictionary",
-    "@type": "Distribution",
-    "title": "Data Dictionary",
-    "mediaType": "application/pdf"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/distributions/climate-data-dict",
-    "@type": "Distribution",
-    "title": "Climate Data Dictionary",
-    "description": "Comprehensive data dictionary describing all variables in the climate observations dataset.",
-    "downloadURL": "https://example.gov/docs/climate-data-dictionary.pdf",
-    "mediaType": "application/pdf"
-}
-```
 
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
@@ -1251,19 +1003,6 @@ List of standards to which the described Dataset conforms
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/standards/wmo-climate-data",
-        "@type": "Standard",
-        "title": "WMO Climate Data Standards",
-        "description": "World Meteorological Organization standards for climate data collection and reporting."
-    }
-]
-```
-
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
 | [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
@@ -1289,18 +1028,6 @@ List of agents contributing to the Dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/agents/station-operators",
-        "@type": "Agent",
-        "name": "Weather Station Operators Network"
-    }
-]
-```
 
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
@@ -1408,28 +1135,6 @@ An entity responsible for producing the dataset
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/agents/climate-monitoring-team",
-    "@type": "Agent",
-    "name": "Climate Monitoring and Analysis Team",
-    "category": [
-        {
-            "@id": "https://example.gov/concepts/research-team",
-            "@type": "Concept",
-            "prefLabel": "Research Team",
-            "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-            }
-        }
-    ]
-}
-```
-
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#creator_anyOf_i0) |
@@ -1513,21 +1218,6 @@ The unique identifier for the Dataset, e.g. the URI or other unique identifier i
 | ------------------------- | ------------------ |
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-"https://example.gov/datasets/climate-observations-2024"
-```
-
-```json
-{
-    "@type": "Identifier",
-    "schemaAgency": "National Climate Data Center",
-    "notation": "NCDC-CLIMATE-OBS-2024",
-    "version": "1.0"
-}
-```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -1854,27 +1544,6 @@ An organization responsible for making the Dataset available
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
-**Examples:**
-
-```json
-{
-    "name": "National Climate Data Center"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/organizations/ncdc",
-    "@type": "Organization",
-    "name": "National Climate Data Center",
-    "altLabel": "NCDC",
-    "prefLabel": "National Climate Data Center",
-    "notation": [
-        "NCDC"
-    ]
-}
-```
-
 ## <a name="relation"></a>[Optional] Property `Dataset > relation`
 
 **Title:** related resource
@@ -1981,19 +1650,6 @@ List of agents (organizations) holding rights on the Dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/organizations/noaa",
-        "@type": "Organization",
-        "name": "National Oceanic and Atmospheric Administration",
-        "altLabel": "NOAA"
-    }
-]
-```
-
 | Each item of this array must be     | Description                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#rightsHolder_items) | Information about an organization, including other organizations that it is part of |
@@ -2046,51 +1702,6 @@ A geographic region or regions that are covered by the Dataset
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-{
-    "@type": "Location",
-    "bbox": {
-        "type": "Polygon",
-        "coordinates": [
-            [
-                [
-                    -125.0,
-                    24.0
-                ],
-                [
-                    -66.0,
-                    24.0
-                ],
-                [
-                    -66.0,
-                    50.0
-                ],
-                [
-                    -125.0,
-                    50.0
-                ],
-                [
-                    -125.0,
-                    24.0
-                ]
-            ]
-        ]
-    }
-}
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/locations/usa",
-        "@type": "Location",
-        "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
-    }
-]
-```
 
 | Any of(Option)                                      |
 | --------------------------------------------------- |
@@ -2175,29 +1786,6 @@ List of temporal periods that the dataset covers
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-[
-    {
-        "@type": "PeriodOfTime",
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31"
-    }
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/periods/2024",
-        "@type": "PeriodOfTime",
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31"
-    }
-]
-```
-
 | Each item of this array must be | Description                                                            |
 | ------------------------------- | ---------------------------------------------------------------------- |
 | [PeriodOfTime](#temporal_items) | Information about a specific time period with a start- and/or end-time |
@@ -2272,25 +1860,6 @@ List of quality measurements for the dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/quality/completeness-2024",
-        "@type": "QualityMeasurement",
-        "isMeasurementOf": {
-            "@id": "https://example.gov/metrics/data-completeness",
-            "@type": "Metric",
-            "expectedDataType": "xsd:decimal",
-            "inDimension": "https://example.gov/concepts/completeness-dimension"
-        },
-        "value": "99.2",
-        "unitMeasure": "percent"
-    }
-]
-```
-
 | Each item of this array must be                    | Description                        |
 | -------------------------------------------------- | ---------------------------------- |
 | [QualityMeasurement](#hasQualityMeasurement_items) | A single measurement of one metric |
@@ -2317,20 +1886,6 @@ List of pages or documents about this dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/docs/climate-user-guide",
-        "@type": "Document",
-        "title": "Climate Observations User Guide",
-        "description": "Comprehensive guide for accessing and using the climate observations dataset.",
-        "accessURL": "https://example.gov/docs/climate-user-guide"
-    }
-]
-```
-
 | Each item of this array must be | Description                       |
 | ------------------------------- | --------------------------------- |
 | [Document](#page_items)         | Information about a text document |
@@ -2356,23 +1911,6 @@ List of agents having some form of responsibility for the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/attributions/data-steward",
-        "@type": "Attribution",
-        "hadRole": "Data Steward",
-        "agent": {
-            "@id": "https://example.gov/agents/climate-steward",
-            "@type": "Agent",
-            "name": "Climate Data Stewardship Office"
-        }
-    }
-]
-```
 
 | Each item of this array must be            | Description                                  |
 | ------------------------------------------ | -------------------------------------------- |
@@ -2425,30 +1963,6 @@ List of activities that generated, or provide the business context for the creat
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/activities/2024-monitoring",
-        "@type": "Activity",
-        "label": "2024 National Climate Monitoring Campaign",
-        "category": [
-            {
-                "@id": "https://example.gov/concepts/data-collection",
-                "@type": "Concept",
-                "prefLabel": "Data Collection",
-                "inScheme": {
-                    "@id": "https://example.gov/concept-schemes/activity-types",
-                    "@type": "ConceptScheme",
-                    "title": "Activity Types"
-                }
-            }
-        ]
-    }
-]
-```
 
 | Each item of this array must be   | Description                                      |
 | --------------------------------- | ------------------------------------------------ |

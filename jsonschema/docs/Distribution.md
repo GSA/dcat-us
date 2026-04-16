@@ -114,22 +114,6 @@ The format in which an Distribution is released. This is different from the file
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/concepts/tabular-data",
-    "@type": "Concept",
-    "prefLabel": "Tabular Data",
-    "definition": "Data organized in rows and columns.",
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/data-formats",
-        "@type": "ConceptScheme",
-        "title": "Data Formats"
-    }
-}
-```
-
 | Any of(Option)                                                      |
 | ------------------------------------------------------------------- |
 | [Null allowed when not required](#representationTechnique_anyOf_i0) |
@@ -164,22 +148,6 @@ The status of the distribution in the context of maturity lifecycle
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/concepts/status-completed",
-    "@type": "Concept",
-    "prefLabel": "Completed",
-    "definition": "The distribution is complete and final.",
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/lifecycle-status",
-        "@type": "ConceptScheme",
-        "title": "Lifecycle Status"
-    }
-}
-```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -264,30 +232,6 @@ A data service that gives access to the distribution of the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/data-services/climate-api",
-        "@type": "DataService",
-        "title": "Climate Data API",
-        "endpointURL": [
-            "https://api.example.gov/climate/v1"
-        ],
-        "contactPoint": [
-            {
-                "fn": "Climate Support",
-                "hasEmail": "mailto:climate@example.gov"
-            }
-        ],
-        "publisher": {
-            "name": "Climate Data Center"
-        }
-    }
-]
-```
 
 | Each item of this array must be     | Description                                   |
 | ----------------------------------- | --------------------------------------------- |
@@ -510,22 +454,6 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/concepts/available-stable",
-    "@type": "Concept",
-    "prefLabel": "Stable",
-    "definition": "The distribution is intended to be available for the long term.",
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/availability",
-        "@type": "ConceptScheme",
-        "title": "Availability"
-    }
-}
-```
-
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
 | [Null allowed when not required](#availability_anyOf_i0) |
@@ -560,33 +488,6 @@ List of access restrictions related to the distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-null
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/restrictions/none",
-        "@type": "AccessRestriction",
-        "restrictionNote": "No access restrictions apply to this distribution.",
-        "restrictionStatus": {
-            "@id": "https://example.gov/concepts/unrestricted",
-            "@type": "Concept",
-            "prefLabel": "Unrestricted",
-            "definition": "No restrictions on access.",
-            "inScheme": {
-                "@id": "https://example.gov/concept-schemes/restriction-status",
-                "@type": "ConceptScheme",
-                "title": "Restriction Status"
-            }
-        }
-    }
-]
-```
-
 | Each item of this array must be               | Description                                         |
 | --------------------------------------------- | --------------------------------------------------- |
 | [AccessRestriction](#accessRestriction_items) | A restriction on the permitted access to a resource |
@@ -613,12 +514,6 @@ Controlled Unclassified Information restriction related to the distribution
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-null
-```
 
 | Any of(Option)                                             |
 | ---------------------------------------------------------- |
@@ -655,27 +550,6 @@ A distribution containing the Data Dictionary for this distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-{
-    "@type": "Standard",
-    "title": "CSV Data Dictionary",
-    "accessURL": "https://example.gov/data/climate/dictionary"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/distributions/climate-data-dict",
-    "@type": "Distribution",
-    "title": "Climate Data Dictionary",
-    "description": "Data dictionary describing the fields in the climate data CSV.",
-    "downloadURL": "https://example.gov/data/climate/data-dictionary.pdf",
-    "mediaType": "application/pdf"
-}
-```
-
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
 | [Null allowed when not required](#describedBy_anyOf_i0) |
@@ -709,33 +583,6 @@ Use restriction related to the distribution
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Examples:**
-
-```json
-null
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/restrictions/attribution",
-        "@type": "UseRestriction",
-        "restrictionNote": "Attribution to the Climate Data Center is requested but not required.",
-        "restrictionStatus": {
-            "@id": "https://example.gov/concepts/unrestricted",
-            "@type": "Concept",
-            "prefLabel": "Unrestricted",
-            "definition": "No restrictions on use.",
-            "inScheme": {
-                "@id": "https://example.gov/concept-schemes/restriction-status",
-                "@type": "ConceptScheme",
-                "title": "Restriction Status"
-            }
-        }
-    }
-]
-```
 
 | Each item of this array must be         | Description                            |
 | --------------------------------------- | -------------------------------------- |
@@ -799,19 +646,6 @@ List of established schemas or reference systems to which the described Distribu
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/standards/csv-format",
-        "@type": "Standard",
-        "title": "RFC 4180 - CSV Format",
-        "description": "Common Format and MIME Type for Comma-Separated Values (CSV) Files"
-    }
-]
-```
 
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
@@ -878,16 +712,6 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
-
-```json
-{
-    "@type": "Identifier",
-    "schemaAgency": "example.gov",
-    "notation": "DIST-CLIMATE-CSV-001"
-}
-```
-
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
@@ -921,18 +745,6 @@ A list of identifiers for the Distribution besides the main identifier, e.g. the
 
 | **Type** | `null or array` |
 | -------- | --------------- |
-
-**Example:**
-
-```json
-[
-    {
-        "@type": "Identifier",
-        "schemaAgency": "DOI",
-        "notation": "10.12345/climate-csv-2023"
-    }
-]
-```
 
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
@@ -1368,17 +1180,6 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Example:**
-
-```json
-{
-    "@id": "https://example.gov/checksums/climate-csv-sha256",
-    "@type": "Checksum",
-    "algorithm": "SHA-256",
-    "checksumValue": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
-}
-```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |

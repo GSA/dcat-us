@@ -90,30 +90,6 @@ Indication of whether or not there are use restrictions on the archival material
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-**Examples:**
-
-```json
-"https://example.gov/concepts/unrestricted"
-```
-
-```json
-{
-    "@id": "https://example.gov/concepts/restricted-commercial",
-    "@type": "Concept",
-    "prefLabel": "Restricted - Commercial Use",
-    "altLabel": "Commercial Restriction",
-    "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
-    "notation": [
-        "RST-COM"
-    ],
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/restriction-status",
-        "@type": "ConceptScheme",
-        "title": "Restriction Status"
-    }
-}
-```
-
 ## <a name="specificRestriction"></a>[Recommended] Property `UseRestriction > specificRestriction`
 
 **Title:** specific restriction
@@ -125,29 +101,6 @@ The specific NARA restriction associated with the use restriction
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
-
-**Examples:**
-
-```json
-"https://creativecommons.org/publicdomain/zero/1.0/"
-```
-
-```json
-{
-    "@id": "https://example.gov/concepts/nara-restriction-copyright",
-    "@type": "Concept",
-    "prefLabel": "Copyright Restriction",
-    "definition": "Materials protected by copyright with limited use permissions.",
-    "notation": [
-        "CR"
-    ],
-    "inScheme": {
-        "@id": "https://example.gov/concept-schemes/nara-restrictions",
-        "@type": "ConceptScheme",
-        "title": "NARA Restrictions"
-    }
-}
-```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |

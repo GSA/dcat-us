@@ -36,21 +36,7 @@
         "uri": "adms:status",
         "range": "skos:Concept",
         "definition": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions."
-      },
-      "examples": [
-        "published",
-        {
-          "@id": "https://example.gov/concepts/status-published",
-          "@type": "Concept",
-          "prefLabel": "Published",
-          "definition": "The catalog record has been published and is publicly available.",
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/record-status",
-            "@type": "ConceptScheme",
-            "title": "Record Status"
-          }
-        }
-      ]
+      }
     },
     "conformsTo": {
       "title": "application profile",
@@ -71,19 +57,7 @@
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "definition": "An Application Profile that the Catalog Record's metadata conforms to."
-      },
-      "examples": [
-        {
-          "@type": "Standard",
-          "title": "DCAT-US 3.0"
-        },
-        {
-          "@id": "https://example.gov/standards/dcat-us-3",
-          "@type": "Standard",
-          "title": "DCAT-US 3.0",
-          "description": "Data Catalog Vocabulary - United States Profile version 3.0"
-        }
-      ]
+      }
     },
     "description": {
       "title": "Descriptions",

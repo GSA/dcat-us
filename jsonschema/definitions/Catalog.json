@@ -28,31 +28,7 @@
         "uri": "dcat:catalog",
         "range": "dcat:Catalog",
         "usageNote": "This property refers to a catalog whose contents are of interest in the context of this catalog."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Catalog",
-            "title": "Related Agency Catalog",
-            "description": "A related catalog from a partner agency.",
-            "dataset": [
-              {
-                "@type": "Dataset",
-                "title": "Partner Dataset",
-                "description": "Dataset from partner agency.",
-                "contactPoint": {
-                  "fn": "Partner Support",
-                  "hasEmail": "mailto:partner@example.gov"
-                },
-                "publisher": {
-                  "name": "Partner Agency"
-                },
-                "identifier": "https://example.gov/datasets/subcatalog-1-dataset-001"
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "contactPoint": {
       "title": "Contact points",
@@ -67,27 +43,7 @@
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "Relevant contact information for the cataloged resource. Use of vCard is recommended"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Kind",
-            "fn": "Federal Data Support Center",
-            "hasEmail": "mailto:data-support@example.gov",
-            "address": [
-              {
-                "@type": "Address",
-                "street-address": "1800 F Street NW",
-                "locality": "Washington",
-                "region": "DC",
-                "postal-code": "20405",
-                "country-name": "United States"
-              }
-            ],
-            "tel": "tel:+1-202-555-0100"
-          }
-        ]
-      ]
+      }
     },
     "dataset": {
       "title": "dataset",
@@ -103,52 +59,7 @@
         "range": "dcat:Dataset",
         "definition": "Dataset that is part of the catalog.",
         "usageNote": "This property links the Catalog with a Dataset that is part of the Catalog. As empty Catalogs are usually indications of problems, this property SHOULD be combined with the property service to implement an empty Catalog check."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Dataset",
-            "title": "Daily Climate Observations 2024",
-            "description": "Daily temperature, precipitation, and wind measurements.",
-            "contactPoint": {
-              "fn": "Climate Data Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/climate-observations-1"
-          }
-        ],
-        [
-          {
-            "@type": "Dataset",
-            "title": "Annual Budget Data",
-            "description": "Federal budget allocations and expenditures by agency and fiscal year.",
-            "contactPoint": {
-              "fn": "Budget Data Team",
-              "hasEmail": "mailto:budget@example.gov"
-            },
-            "publisher": {
-              "name": "Office of Management and Budget"
-            },
-            "identifier": "https://example.gov/datasets/catalog-complete-001"
-          },
-          {
-            "@type": "Dataset",
-            "title": "Employment Statistics",
-            "description": "Monthly employment data across federal agencies.",
-            "contactPoint": {
-              "fn": "HR Data Team",
-              "hasEmail": "mailto:hr-data@example.gov"
-            },
-            "publisher": {
-              "name": "Office of Personnel Management"
-            },
-            "identifier": "https://example.gov/datasets/catalog-complete-002"
-          }
-        ]
-      ]
+      }
     },
     "keyword": {
       "title": "keyword/tag",
@@ -182,16 +93,7 @@
         "uri": "dcat:record",
         "range": "dcat:CatalogRecord",
         "definition": "A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog."
-      },
-      "examples": [
-        [
-          {
-            "@type": "CatalogRecord",
-            "modified": "2024-06-01",
-            "primaryTopic": "https://example.gov/datasets/annual-budget-data"
-          }
-        ]
-      ]
+      }
     },
     "service": {
       "title": "service",
@@ -206,27 +108,7 @@
         "uri": "dcat:service",
         "range": "dcat:DataService",
         "usageNote": "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalogs are usually indications of problems, this property SHOULD be combined with the property Dataset to implement an empty Catalog check."
-      },
-      "examples": [
-        [
-          {
-            "@type": "DataService",
-            "title": "Federal Data API",
-            "endpointURL": ["https://api.example.gov/data/v1"],
-            "contactPoint": [
-              {
-                "fn": "API Support",
-                "hasEmail": "mailto:api@example.gov"
-              }
-            ],
-            "publisher": {
-              "@type": "Agent",
-              "name": "Federal Data Management Office"
-            },
-            "identifier": "https://example.gov/services/catalog-service-001"
-          }
-        ]
-      ]
+      }
     },
     "theme": {
       "title": "theme/category",
@@ -241,19 +123,7 @@
         "uri": "dcat:theme",
         "range": "skos:Concept",
         "usageNote": "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Concept",
-            "prefLabel": "Government Administration"
-          },
-          {
-            "@type": "Concept",
-            "prefLabel": "Public Services"
-          }
-        ]
-      ]
+      }
     },
     "themeTaxonomy": {
       "title": "themes",
@@ -268,22 +138,7 @@
         "uri": "dcat:themeTaxonomy",
         "range": "skos:ConceptScheme",
         "usageNote": "This property refers to a knowledge organization system used to classify the Catalog's Datasets. CV to be used: http://TBD/resource/dataset/data-theme"
-      },
-      "examples": [
-        [
-          {
-            "@type": "ConceptScheme",
-            "title": "Climate Science Topics"
-          }
-        ],
-        [
-          {
-            "@type": "ConceptScheme",
-            "title": "Federal Data Categories",
-            "description": "Standard classification scheme for federal government data"
-          }
-        ]
-      ]
+      }
     },
     "accessRights": {
       "title": "access rights",
@@ -326,13 +181,7 @@
         "range": "dcterms:Standard",
         "definition": "An established standard to which the described catalog conforms.",
         "usageNote": "This property SHOULD be used to indicate the model, schema, ontology, view or profile that the cataloged resource content conforms to."
-      },
-      "examples": [
-        {
-          "@type": "Standard",
-          "title": "DCAT-US 3.0"
-        }
-      ]
+      }
     },
     "creator": {
       "title": "creator",
@@ -348,15 +197,7 @@
         "range": "dcterms:Agent",
         "definition": "The entity responsible for producing the resource.",
         "usageNote": "Resources of type foaf:Agent are recommended as values for this property."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Agent",
-            "name": "Data Governance Team"
-          }
-        ]
-      ]
+      }
     },
     "description": {
       "title": "description",
@@ -388,31 +229,7 @@
         "uri": "dcterms:hasPart",
         "range": "dcat:Catalog",
         "usageNote": "This property refers to a related catalog that is part of the described catalog."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Catalog",
-            "title": "Budget Sub-Catalog",
-            "description": "A sub-catalog focused on budget-related datasets.",
-            "dataset": [
-              {
-                "@type": "Dataset",
-                "title": "Quarterly Budget Reports",
-                "description": "Quarterly financial reports.",
-                "contactPoint": {
-                  "fn": "Finance Team",
-                  "hasEmail": "mailto:finance@example.gov"
-                },
-                "publisher": {
-                  "name": "Treasury Department"
-                },
-                "identifier": "https://example.gov/datasets/subcatalog-1-dataset-002"
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "identifier": {
       "title": "identifier",
@@ -433,17 +250,7 @@
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier."
-      },
-      "examples": [
-        {
-          "@type": "Identifier",
-          "notation": "FDC-2020-001",
-          "creator": {
-            "@type": "Agent",
-            "name": "Federal Data Management Office"
-          }
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -454,15 +261,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "notation": "LEGACY-CAT-001"
-          }
-        ]
-      ]
+      }
     },
     "issued": {
       "title": "release date",
@@ -621,23 +420,7 @@
         "range": "foaf:Agent",
         "definition": "Entity responsible for making the catalog available.",
         "usageNote": "This property refers to an entity (organization) responsible for making the Catalog available."
-      },
-      "examples": [
-        {
-          "@type": "Agent",
-          "name": "National Climate Data Center"
-        },
-        {
-          "@type": "Agent",
-          "name": "Federal Data Management Office",
-          "category": [
-            {
-              "@type": "Concept",
-              "prefLabel": "Government Agency"
-            }
-          ]
-        }
-      ]
+      }
     },
     "rights": {
       "title": "rights",
@@ -675,15 +458,7 @@
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization",
         "usageNote": "This property refers to an organization holding rights on the Catalog."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Organization",
-            "name": "Federal Data Management Office"
-          }
-        ]
-      ]
+      }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -698,22 +473,7 @@
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographical area covered by the Catalog. Conventions to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[?GEONAMES]]"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Location",
-            "prefLabel": "United States"
-          }
-        ],
-        [
-          {
-            "@type": "Location",
-            "prefLabel": "United States of America",
-            "identifier": "https://www.geonames.org/6252001/"
-          }
-        ]
-      ]
+      }
     },
     "subject": {
       "title": "subject",
@@ -727,15 +487,7 @@
         "cardinality": "0..n",
         "uri": "dcterms:subject",
         "range": "skos:Concept"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Concept",
-            "prefLabel": "Public Administration"
-          }
-        ]
-      ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
@@ -750,16 +502,7 @@
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "This property refers to a temporal period that the Catalog covers."
-      },
-      "examples": [
-        [
-          {
-            "@type": "PeriodOfTime",
-            "startDate": "2000-01-01",
-            "endDate": "2024-12-31"
-          }
-        ]
-      ]
+      }
     },
     "title": {
       "title": "title",
@@ -787,15 +530,7 @@
         "uri": "dcterms:type",
         "range": "skos:Concept",
         "usageNote": "The category of the Catalog"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Concept",
-            "prefLabel": "Aggregate Catalog"
-          }
-        ]
-      ]
+      }
     },
     "homepage": {
       "title": "homepage",
@@ -816,20 +551,7 @@
         "uri": "foaf:homepage",
         "range": "foaf:Document",
         "usageNote": "This property refers to a web page that acts as the main page for the Catalog For instance data.gov, would be the homepage of the Data Catalog exported to [[?DATA-GOV]]."
-      },
-      "examples": [
-        {
-          "@type": "Document",
-          "title": "National Climate Data Catalog Homepage",
-          "accessURL": "https://example.gov/climate-data"
-        },
-        {
-          "@type": "Document",
-          "title": "Federal Data Catalog Portal",
-          "accessURL": "https://example.gov/data-catalog",
-          "description": "The main portal for accessing the Federal Data Catalog"
-        }
-      ]
+      }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -844,19 +566,7 @@
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
         "usageNote": "This property refers to a link to an Agent having some form of responsibility for the Catalog."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Attribution",
-            "agent": {
-              "@type": "Agent",
-              "name": "Data Quality Assurance Team"
-            },
-            "hadRole": "Data Quality"
-          }
-        ]
-      ]
+      }
     }
   },
   "required": ["dataset"],

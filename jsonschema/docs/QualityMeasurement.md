@@ -72,25 +72,6 @@ The metric being observed
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
-**Examples:**
-
-```json
-{
-    "expectedDataType": "xsd:decimal",
-    "inDimension": "https://example.gov/dimensions/completeness"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/metrics/data-completeness-001",
-    "@type": "Metric",
-    "definition": "The percentage of expected data values that are present in the dataset.",
-    "expectedDataType": "xsd:decimal",
-    "inDimension": "https://example.gov/concepts/completeness-dimension"
-}
-```
-
 ## <a name="value"></a>[Mandatory] Property `QualityMeasurement > value`
 
 **Title:** value

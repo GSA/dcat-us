@@ -28,37 +28,7 @@
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "Contact information that can be used for sending comments about the Dataset Series."
-      },
-      "examples": [
-        [
-          {
-            "fn": "Climate Data Support",
-            "hasEmail": "mailto:climate@example.gov"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/contacts/series-manager",
-            "@type": "Kind",
-            "fn": "Climate Series Data Manager",
-            "hasEmail": "mailto:climate-series@example.gov",
-            "organization-name": "National Climate Data Center",
-            "tel": "+1-555-123-4567",
-            "title": "Series Data Manager",
-            "address": [
-              {
-                "@id": "https://example.gov/addresses/ncdc-main",
-                "@type": "Address",
-                "street-address": "151 Patton Avenue",
-                "locality": "Asheville",
-                "region": "NC",
-                "postal-code": "28801",
-                "country-name": "United States"
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "first": {
       "title": "first",
@@ -79,37 +49,7 @@
         "uri": "dcat:first",
         "range": "dcat:Dataset",
         "usageNote": "The first resource in an ordered collection or series of resources, to which the current resource belongs."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/datasets/climate-observations-2000",
-          "@type": "Dataset",
-          "title": "Climate Observations 2000",
-          "description": "First year of climate observations.",
-          "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/series-first"
-        },
-        {
-          "@id": "https://example.gov/datasets/climate-observations-2000",
-          "@type": "Dataset",
-          "title": "National Climate Observations 2000",
-          "description": "The first dataset in the annual climate observations series, covering calendar year 2000.",
-          "contactPoint": {
-            "fn": "Climate Data Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/series-first"
-        }
-      ]
+      }
     },
     "last": {
       "title": "last",
@@ -130,37 +70,7 @@
         "uri": "dcat:last",
         "range": "dcat:Dataset",
         "usageNote": "The last resource in an ordered collection or series of resources"
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/datasets/climate-observations-2024",
-          "@type": "Dataset",
-          "title": "Climate Observations 2024",
-          "description": "Latest year of climate observations.",
-          "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/series-last"
-        },
-        {
-          "@id": "https://example.gov/datasets/climate-observations-2024",
-          "@type": "Dataset",
-          "title": "National Climate Observations 2024",
-          "description": "The most recent dataset in the annual climate observations series, covering calendar year 2024.",
-          "contactPoint": {
-            "fn": "Climate Data Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/series-last"
-        }
-      ]
+      }
     },
     "seriesMember": {
       "title": "series member",
@@ -175,97 +85,7 @@
         "uri": "dcat:seriesMember",
         "range": "dcat:Dataset",
         "usageNote": "A member of the Dataset Series."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2022",
-            "@type": "Dataset",
-            "title": "Climate Observations 2022",
-            "description": "Climate observations for 2022.",
-            "contactPoint": {
-              "fn": "Climate Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-001"
-          },
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2023",
-            "@type": "Dataset",
-            "title": "Climate Observations 2023",
-            "description": "Climate observations for 2023.",
-            "contactPoint": {
-              "fn": "Climate Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-002"
-          },
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2024",
-            "@type": "Dataset",
-            "title": "Climate Observations 2024",
-            "description": "Climate observations for 2024.",
-            "contactPoint": {
-              "fn": "Climate Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-003"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2022",
-            "@type": "Dataset",
-            "title": "National Climate Observations 2022",
-            "description": "Climate observations for calendar year 2022.",
-            "contactPoint": {
-              "fn": "Climate Data Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-001"
-          },
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2023",
-            "@type": "Dataset",
-            "title": "National Climate Observations 2023",
-            "description": "Climate observations for calendar year 2023.",
-            "contactPoint": {
-              "fn": "Climate Data Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-002"
-          },
-          {
-            "@id": "https://example.gov/datasets/climate-observations-2024",
-            "@type": "Dataset",
-            "title": "National Climate Observations 2024",
-            "description": "Climate observations for calendar year 2024.",
-            "contactPoint": {
-              "fn": "Climate Data Support",
-              "hasEmail": "mailto:climate@example.gov"
-            },
-            "publisher": {
-              "name": "National Climate Data Center"
-            },
-            "identifier": "https://example.gov/datasets/series-member-003"
-          }
-        ]
-      ]
+      }
     },
     "accrualPeriodicity": {
       "title": "frequency",
@@ -448,30 +268,7 @@
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity (organization) responsible for ensuring the coherency of the Dataset Series. The publisher of the dataset series may not be the publisher of all datasets. E.g. a digital archive could take over the publishing of older datasets in the series."
-      },
-      "examples": [
-        {
-          "name": "National Climate Data Center"
-        },
-        {
-          "@id": "https://example.gov/agents/ncdc",
-          "@type": "Agent",
-          "name": "National Climate Data Center",
-          "category": [
-            {
-              "@id": "https://example.gov/concepts/federal-agency",
-              "@type": "Concept",
-              "prefLabel": "Federal Agency",
-              "definition": "An agency of the federal government of the United States.",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -486,33 +283,7 @@
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographic region that is covered by the Dataset Series. When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset in the collection should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU or a broad bounding box covering the expected values. CV to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Location",
-            "bbox": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [-125.0, 24.0],
-                  [-66.0, 24.0],
-                  [-66.0, 50.0],
-                  [-125.0, 50.0],
-                  [-125.0, 24.0]
-                ]
-              ]
-            }
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/locations/usa-coverage",
-            "@type": "Location",
-            "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
-          }
-        ]
-      ]
+      }
     },
     "temporal": {
       "title": "temporal coverage",
@@ -527,24 +298,7 @@
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "A temporal period that the Dataset Series covers. When temporal coverage is a dimension in the dataset series then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open ended value is recommended, e.g. after 2012. The temporal coverage of a dataset series may be encoded as an instance of dcterms:PeriodOfTime, or may be indicated using an IRI reference (link) to a resource describing a time period ."
-      },
-      "examples": [
-        [
-          {
-            "@type": "PeriodOfTime",
-            "startDate": "2000-01-01",
-            "endDate": "2024-12-31"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/periods/series-coverage",
-            "@type": "PeriodOfTime",
-            "startDate": "2000-01-01",
-            "endDate": "2024-12-31"
-          }
-        ]
-      ]
+      }
     },
     "title": {
       "title": "title",

@@ -72,22 +72,6 @@ The address of the contact
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Example:**
-
-```json
-[
-    {
-        "@id": "https://example.gov/addresses/ncdc-main",
-        "@type": "Address",
-        "street-address": "151 Patton Avenue",
-        "locality": "Asheville",
-        "region": "NC",
-        "postal-code": "28801",
-        "country-name": "United States"
-    }
-]
-```
-
 | Each item of this array must be | Description               |
 | ------------------------------- | ------------------------- |
 | [Address](#address_items)       | A single physical address |

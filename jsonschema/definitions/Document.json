@@ -67,21 +67,7 @@
         "cardinality": "0..n",
         "uri": "dcterms:creator",
         "range": "org:Organization"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/contacts/doc-author-001",
-            "@type": "Kind",
-            "fn": "Dr. Jane Smith",
-            "hasEmail": "mailto:jane.smith@example.gov",
-            "given-name": "Jane",
-            "family-name": "Smith",
-            "organization-name": "National Climate Data Center",
-            "title": "Senior Climate Scientist"
-          }
-        ]
-      ]
+      }
     },
     "mediaType": {
       "title": "media type",
@@ -138,17 +124,7 @@
         "uri": "dcterms:identifier",
         "range": "dcterms:Standard",
         "usageNote": "An implementing rule or other specification."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/standards/pdf-a",
-            "@type": "Standard",
-            "title": "PDF/A-3",
-            "description": "ISO 19005-3 - Document management -- Electronic document file format for long-term preservation."
-          }
-        ]
-      ]
+      }
     },
     "corporateCreator": {
       "title": "corporate author",
@@ -159,16 +135,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/organizations/ncdc",
-            "@type": "Organization",
-            "name": "National Climate Data Center"
-          }
-        ]
-      ]
+      }
     },
     "description": {
       "title": "description",
@@ -204,15 +171,7 @@
         "cardinality": "0..1",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      },
-      "examples": [
-        "NCDC-UG-2024-001",
-        {
-          "@type": "Identifier",
-          "schemaAgency": "example.gov",
-          "notation": "DOC-CLIMATE-GUIDE-001"
-        }
-      ]
+      }
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -223,21 +182,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "schemaAgency": "DOI",
-            "notation": "10.12345/climate-guide-2024"
-          },
-          {
-            "@type": "Identifier",
-            "schemaAgency": "ISBN",
-            "notation": "978-0-123456-78-9"
-          }
-        ]
-      ]
+      }
     },
     "issued": {
       "title": "publication date",
@@ -291,22 +236,7 @@
         "uri": "dc:publisher",
         "range": "rdfs:Literal",
         "usageNote": "Use this property to represent publisher as literal string and not structured data."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Organization",
-            "name": "National Climate Data Center"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/organizations/noaa",
-            "@type": "Organization",
-            "name": "National Oceanic and Atmospheric Administration"
-          }
-        ]
-      ]
+      }
     },
     "title": {
       "title": "title",
@@ -329,33 +259,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/concepts/user-guide",
-            "@type": "Concept",
-            "prefLabel": "User Guide",
-            "definition": "A document that provides instructions for using a product or service.",
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/document-types",
-              "@type": "ConceptScheme",
-              "title": "Document Types"
-            }
-          },
-          {
-            "@id": "https://example.gov/concepts/technical-documentation",
-            "@type": "Concept",
-            "prefLabel": "Technical Documentation",
-            "definition": "Documentation describing technical aspects of a system or service.",
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/document-types",
-              "@type": "ConceptScheme",
-              "title": "Document Types"
-            }
-          }
-        ]
-      ]
+      }
     }
   },
   "required": ["title"],

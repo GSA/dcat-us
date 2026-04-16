@@ -28,20 +28,7 @@
         "uri": "vcard:address",
         "range": "vcard:Address",
         "definition": "This property specifies the address of the contact"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/addresses/ncdc-main",
-            "@type": "Address",
-            "street-address": "151 Patton Avenue",
-            "locality": "Asheville",
-            "region": "NC",
-            "postal-code": "28801",
-            "country-name": "United States"
-          }
-        ]
-      ]
+      }
     },
     "hasEmail": {
       "title": "Email",

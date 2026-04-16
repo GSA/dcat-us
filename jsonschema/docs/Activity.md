@@ -66,30 +66,6 @@ List of categories for the Activity
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-**Examples:**
-
-```json
-[
-    "https://example.gov/concepts/data-collection"
-]
-```
-
-```json
-[
-    {
-        "@id": "https://example.gov/concepts/data-processing",
-        "@type": "Concept",
-        "prefLabel": "Data Processing",
-        "definition": "Activities related to processing and transforming raw data into usable formats.",
-        "inScheme": {
-            "@id": "https://example.gov/concept-schemes/activity-types",
-            "@type": "ConceptScheme",
-            "title": "Activity Types"
-        }
-    }
-]
-```
-
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
 | [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |

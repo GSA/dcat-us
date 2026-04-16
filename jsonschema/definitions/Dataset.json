@@ -29,16 +29,7 @@
         "uri": "adms:identifier",
         "range": "adms:Identifier",
         "usageNote": "A secondary identifier of the Dataset, such as MAST/ADS17, DataCite18, DOI19, EZID20 or W3ID21."
-      },
-      "examples": [
-        [
-          {
-            "@type": "Identifier",
-            "schemaAgency": "DOI",
-            "notation": "10.12345/ncdc-climate-2024"
-          }
-        ]
-      ]
+      }
     },
     "sample": {
       "title": "sample",
@@ -53,20 +44,7 @@
         "uri": "adms:sample",
         "range": "dcat:Distribution",
         "definition": "Links to a sample of an Dataset, which is a dcat:Distribution."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/distributions/climate-sample",
-            "@type": "Distribution",
-            "title": "Climate Data Sample",
-            "description": "A sample subset of climate observations for preview",
-            "downloadURL": "https://example.gov/samples/climate-sample.csv",
-            "mediaType": "text/csv",
-            "byteSize": "10240"
-          }
-        ]
-      ]
+      }
     },
     "status": {
       "title": "lifecycle status",
@@ -87,20 +65,7 @@
         "uri": "adms:status",
         "range": "skos:Concept",
         "usageNote": "This property refers to the maturity of the Dataset. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]] vocabulary."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/concepts/status-published",
-          "@type": "Concept",
-          "prefLabel": "Published",
-          "definition": "The dataset has been officially published and is available for public access.",
-          "inScheme": {
-            "@id": "https://example.gov/concept-schemes/lifecycle-status",
-            "@type": "ConceptScheme",
-            "title": "Lifecycle Status"
-          }
-        }
-      ]
+      }
     },
     "supportedSchema": {
       "title": "supported schema",
@@ -154,35 +119,7 @@
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "This property contains contact information that can be used for sending comments about the Dataset. This property MUST contain an email address that is continuously monitored by the data publisher. If there are several contributors involved in the publication of the Dataset, the property can be used multiple times."
-      },
-      "examples": [
-        {
-          "fn": "Climate Data Support",
-          "hasEmail": "mailto:climate@example.gov"
-        },
-        [
-          {
-            "@id": "https://example.gov/contacts/climate-support",
-            "@type": "Kind",
-            "fn": "Climate Data Support Team",
-            "hasEmail": "mailto:climate-support@example.gov",
-            "organization-name": "National Climate Data Center",
-            "tel": "+1-555-CLIMATE",
-            "title": "Data Support Specialist",
-            "address": [
-              {
-                "@id": "https://example.gov/addresses/ncdc-hq",
-                "@type": "Address",
-                "street-address": "151 Patton Avenue",
-                "locality": "Asheville",
-                "region": "NC",
-                "postal-code": "28801",
-                "country-name": "United States"
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "distribution": {
       "title": "dataset distribution",
@@ -197,43 +134,7 @@
         "uri": "dcat:distribution",
         "range": "dcat:Distribution",
         "usageNote": "This property links the Dataset to an available Distribution. In exceptional cases, a Dataset for which no distribution form exists (yet) can be described in the Catalog. In this case, the element dcat:distribution may be omitted."
-      },
-      "examples": [
-        [
-          {
-            "title": "Climate Data CSV",
-            "downloadURL": "https://example.gov/downloads/climate-2024.csv",
-            "mediaType": "text/csv"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/distributions/climate-csv",
-            "@type": "Distribution",
-            "title": "Climate Observations CSV",
-            "description": "Daily climate observations in CSV format",
-            "accessURL": "https://example.gov/data/climate/2024",
-            "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
-            "mediaType": "text/csv",
-            "format": "CSV",
-            "byteSize": "524288000",
-            "characterEncoding": ["UTF-8"],
-            "issued": "2024-01-15",
-            "modified": "2024-06-01"
-          },
-          {
-            "@id": "https://example.gov/distributions/climate-json",
-            "@type": "Distribution",
-            "title": "Climate Observations JSON",
-            "description": "Daily climate observations in JSON format",
-            "accessURL": "https://example.gov/data/climate/2024/json",
-            "downloadURL": "https://example.gov/downloads/climate-observations-2024.json",
-            "mediaType": "application/json",
-            "format": "JSON",
-            "byteSize": "785432000"
-          }
-        ]
-      ]
+      }
     },
     "first": {
       "title": "first",
@@ -295,17 +196,7 @@
         "range": "dcat:DatasetSeries",
         "definition": "A dataset series of which the dataset is part.",
         "usageNote": "The datasets are linked to the dataset series by using the property dcat:inSeries. Note that a dataset series can also be hierarchical, and a dataset series can be a member of another dataset series"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/series/annual-climate-observations",
-            "@type": "DatasetSeries",
-            "title": "Annual Climate Observations Series",
-            "description": "An annual series of national climate observations datasets."
-          }
-        ]
-      ]
+      }
     },
     "keyword": {
       "title": "keyword/tag",
@@ -355,21 +246,7 @@
         "uri": "dcat:landingPage",
         "range": "foaf:Document",
         "usageNote": "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/climate-data",
-          "@type": "Document",
-          "title": "Climate Data Landing Page"
-        },
-        {
-          "@id": "https://example.gov/datasets/climate-2024/landing",
-          "@type": "Document",
-          "title": "National Climate Observations 2024 - Dataset Home",
-          "description": "The official landing page for the National Climate Observations 2024 dataset.",
-          "accessURL": "https://example.gov/datasets/climate-2024"
-        }
-      ]
+      }
     },
     "previousVersion": {
       "title": "previous version",
@@ -386,23 +263,7 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/datasets/national-climate-observations-2023",
-          "@type": "Dataset",
-          "title": "National Climate Observations 2023",
-          "description": "Previous year climate observations.",
-          "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/complete-example-v1-prev"
-        }
-      ]
+      }
     },
     "qualifiedRelation": {
       "title": "qualified relation",
@@ -417,17 +278,7 @@
         "uri": "dcat:qualifiedRelation",
         "range": "dcat:Relationship",
         "usageNote": "This property provides a link to a description of a relationship with another resource and it is especially meant for relationships between Datasets. It replaces the property rdfs:seeAlso of DCAT-US v1. See here for examples on how to use it: dcat:qualifiedRelation."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/relationships/climate-model-input",
-            "@type": "Relationship",
-            "hadRole": "isInputTo",
-            "relation": "https://example.gov/models/climate-prediction-model"
-          }
-        ]
-      ]
+      }
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
@@ -468,36 +319,7 @@
         "uri": "dcat:theme",
         "range": "skos:Concept",
         "usageNote": "This property refers to a category of the Dataset. A Dataset may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
-      },
-      "examples": [
-        ["Climate Science"],
-        [
-          {
-            "@id": "https://example.gov/concepts/climate-science",
-            "@type": "Concept",
-            "prefLabel": "Climate Science",
-            "altLabel": "Climatology",
-            "definition": "The scientific study of climate, including patterns, variability, and change over time.",
-            "notation": ["CLIM-SCI"],
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/science-domains",
-              "@type": "ConceptScheme",
-              "title": "Science Domains"
-            }
-          },
-          {
-            "@id": "https://example.gov/concepts/environmental-monitoring",
-            "@type": "Concept",
-            "prefLabel": "Environmental Monitoring",
-            "definition": "Systematic collection of environmental data to assess conditions and detect changes.",
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/science-domains",
-              "@type": "ConceptScheme",
-              "title": "Science Domains"
-            }
-          }
-        ]
-      ]
+      }
     },
     "version": {
       "title": "version",
@@ -531,23 +353,7 @@
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
         "usageNote": "This is used to specify a data dictionary or schema that defines fields (variables, dimensions, measures, attributes) in the dataset."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/climate-data/data-dictionary",
-          "@type": "Distribution",
-          "title": "Data Dictionary",
-          "mediaType": "application/pdf"
-        },
-        {
-          "@id": "https://example.gov/distributions/climate-data-dict",
-          "@type": "Distribution",
-          "title": "Climate Data Dictionary",
-          "description": "Comprehensive data dictionary describing all variables in the climate observations dataset.",
-          "downloadURL": "https://example.gov/docs/climate-data-dictionary.pdf",
-          "mediaType": "application/pdf"
-        }
-      ]
+      }
     },
     "liabilityStatement": {
       "title": "liability statement",
@@ -706,17 +512,7 @@
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "usageNote": "This property refers to an implementing rule or other specification. This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a Dataset conforms to (and may indicate more than one). This is (generally) a complementary concern to the media-type or format."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/standards/wmo-climate-data",
-            "@type": "Standard",
-            "title": "WMO Climate Data Standards",
-            "description": "World Meteorological Organization standards for climate data collection and reporting."
-          }
-        ]
-      ]
+      }
     },
     "contributor": {
       "title": "contributor",
@@ -731,16 +527,7 @@
         "uri": "dcterms:contributor",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an agent contributing to the Dataset."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/agents/station-operators",
-            "@type": "Agent",
-            "name": "Weather Station Operators Network"
-          }
-        ]
-      ]
+      }
     },
     "created": {
       "title": "creation date",
@@ -798,26 +585,7 @@
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity responsible for producing the dataset."
-      },
-      "examples": [
-        {
-          "@id": "https://example.gov/agents/climate-monitoring-team",
-          "@type": "Agent",
-          "name": "Climate Monitoring and Analysis Team",
-          "category": [
-            {
-              "@id": "https://example.gov/concepts/research-team",
-              "@type": "Concept",
-              "prefLabel": "Research Team",
-              "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     "description": {
       "title": "description",
@@ -866,16 +634,7 @@
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a unique identifier for the Dataset, e.g. a URI or other unique identifier in the context of the Catalog."
-      },
-      "examples": [
-        "https://example.gov/datasets/climate-observations-2024",
-        {
-          "@type": "Identifier",
-          "schemaAgency": "National Climate Data Center",
-          "notation": "NCDC-CLIMATE-OBS-2024",
-          "version": "1.0"
-        }
-      ]
+      }
     },
     "isReferencedBy": {
       "title": "is referenced by",
@@ -1042,20 +801,7 @@
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity (organization) responsible for making the Dataset available."
-      },
-      "examples": [
-        {
-          "name": "National Climate Data Center"
-        },
-        {
-          "@id": "https://example.gov/organizations/ncdc",
-          "@type": "Organization",
-          "name": "National Climate Data Center",
-          "altLabel": "NCDC",
-          "prefLabel": "National Climate Data Center",
-          "notation": ["NCDC"]
-        }
-      ]
+      }
     },
     "relation": {
       "title": "related resource",
@@ -1120,17 +866,7 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/organizations/noaa",
-            "@type": "Organization",
-            "name": "National Oceanic and Atmospheric Administration",
-            "altLabel": "NOAA"
-          }
-        ]
-      ]
+      }
     },
     "source": {
       "title": "data source",
@@ -1173,31 +909,7 @@
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographic region that is covered by the Dataset. CV to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
-      },
-      "examples": [
-        {
-          "@type": "Location",
-          "bbox": {
-            "type": "Polygon",
-            "coordinates": [
-              [
-                [-125.0, 24.0],
-                [-66.0, 24.0],
-                [-66.0, 50.0],
-                [-125.0, 50.0],
-                [-125.0, 24.0]
-              ]
-            ]
-          }
-        },
-        [
-          {
-            "@id": "https://example.gov/locations/usa",
-            "@type": "Location",
-            "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
-          }
-        ]
-      ]
+      }
     },
     "subject": {
       "title": "subject",
@@ -1228,24 +940,7 @@
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "The temporal coverage of a dataset may be encoded as an instance of dcterms:PeriodOfTime, or may be indicated using an IRI reference (link) to a resource describing a time period."
-      },
-      "examples": [
-        [
-          {
-            "@type": "PeriodOfTime",
-            "startDate": "2024-01-01",
-            "endDate": "2024-12-31"
-          }
-        ],
-        [
-          {
-            "@id": "https://example.gov/periods/2024",
-            "@type": "PeriodOfTime",
-            "startDate": "2024-01-01",
-            "endDate": "2024-12-31"
-          }
-        ]
-      ]
+      }
     },
     "title": {
       "title": "title",
@@ -1293,23 +988,7 @@
         "range": "dqv:QualityMeasurement",
         "definition": "Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric",
         "usageNote": "Use for quality measurements other than spatial resolution in meters (use dcat:spatialResolutionInMeters). Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/quality/completeness-2024",
-            "@type": "QualityMeasurement",
-            "isMeasurementOf": {
-              "@id": "https://example.gov/metrics/data-completeness",
-              "@type": "Metric",
-              "expectedDataType": "xsd:decimal",
-              "inDimension": "https://example.gov/concepts/completeness-dimension"
-            },
-            "value": "99.2",
-            "unitMeasure": "percent"
-          }
-        ]
-      ]
+      }
     },
     "page": {
       "title": "documentation",
@@ -1324,18 +1003,7 @@
         "uri": "foaf:page",
         "range": "foaf:Document",
         "usageNote": "This property refers to a page or document about this Dataset."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/docs/climate-user-guide",
-            "@type": "Document",
-            "title": "Climate Observations User Guide",
-            "description": "Comprehensive guide for accessing and using the climate observations dataset.",
-            "accessURL": "https://example.gov/docs/climate-user-guide"
-          }
-        ]
-      ]
+      }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -1350,21 +1018,7 @@
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
         "usageNote": "This property refers to a link to an Agent having some form of responsibility for the resource."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/attributions/data-steward",
-            "@type": "Attribution",
-            "hadRole": "Data Steward",
-            "agent": {
-              "@id": "https://example.gov/agents/climate-steward",
-              "@type": "Agent",
-              "name": "Climate Data Stewardship Office"
-            }
-          }
-        ]
-      ]
+      }
     },
     "wasAttributedTo": {
       "title": "attribution",
@@ -1390,28 +1044,7 @@
         "uri": "prov:wasGeneratedBy",
         "range": "prov:Activity",
         "usageNote": "An activity that generated, or provides the business context for, the creation of the dataset."
-      },
-      "examples": [
-        [
-          {
-            "@id": "https://example.gov/activities/2024-monitoring",
-            "@type": "Activity",
-            "label": "2024 National Climate Monitoring Campaign",
-            "category": [
-              {
-                "@id": "https://example.gov/concepts/data-collection",
-                "@type": "Concept",
-                "prefLabel": "Data Collection",
-                "inScheme": {
-                  "@id": "https://example.gov/concept-schemes/activity-types",
-                  "@type": "ConceptScheme",
-                  "title": "Activity Types"
-                }
-              }
-            ]
-          }
-        ]
-      ]
+      }
     },
     "wasUsedBy": {
       "title": "used by",

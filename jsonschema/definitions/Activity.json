@@ -27,23 +27,7 @@
         "cardinality": "0..n",
         "uri": "dcterms:type",
         "range": "skos:Concept"
-      },
-      "examples": [
-        ["https://example.gov/concepts/data-collection"],
-        [
-          {
-            "@id": "https://example.gov/concepts/data-processing",
-            "@type": "Concept",
-            "prefLabel": "Data Processing",
-            "definition": "Activities related to processing and transforming raw data into usable formats.",
-            "inScheme": {
-              "@id": "https://example.gov/concept-schemes/activity-types",
-              "@type": "ConceptScheme",
-              "title": "Activity Types"
-            }
-          }
-        ]
-      ]
+      }
     },
     "label": {
       "title": "label",

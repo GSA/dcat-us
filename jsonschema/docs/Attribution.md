@@ -87,32 +87,3 @@ The agent that plays a role in the resource
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
-**Examples:**
-
-```json
-{
-    "name": "Environmental Data Management Office"
-}
-```
-
-```json
-{
-    "@id": "https://example.gov/agents/env-data-office-001",
-    "@type": "Agent",
-    "name": "Environmental Data Management Office",
-    "category": [
-        {
-            "@id": "https://example.gov/concepts/government-office",
-            "@type": "Concept",
-            "prefLabel": "Government Office",
-            "definition": "A subdivision of a government agency responsible for specific functions.",
-            "inScheme": {
-                "@id": "https://example.gov/concept-schemes/organization-types",
-                "@type": "ConceptScheme",
-                "title": "Organization Types"
-            }
-        }
-    ]
-}
-```
-
