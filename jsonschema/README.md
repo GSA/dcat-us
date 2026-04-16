@@ -242,6 +242,30 @@ poetry run python check_example_coverage.py --verbose
 poetry run python check_example_coverage.py --help
 ```
 
+### add_schema_examples.py
+
+Summary: Populates schema-level and property-level examples in `definitions/*.json` from `examples/{Class}/good/typical_example.json` and `examples/{Class}/good/complete_example.json`.
+
+- Class-level `examples`: uses values from `typical_example.json`.
+- Property-level `examples`: combines values from both typical and complete examples.
+- `examples` arrays are rewritten from source files each run (idempotent and deterministic).
+
+```bash
+# Apply updates to schema definitions
+poetry run python add_schema_examples.py
+
+# Preview what would be updated without writing files
+poetry run python add_schema_examples.py --dry-run
+```
+
+Typical workflow:
+
+```bash
+poetry run python add_schema_examples.py
+npx prettier --write definitions/*.json
+poetry run python generate_schema_docs.py
+```
+
 ### Script Help Verification
 
 The following commands were tested in this repository using Poetry:

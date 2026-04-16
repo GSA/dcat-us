@@ -76,6 +76,9 @@ def _update_schema(schema_name: str, dry_run: bool = False) -> tuple[bool, str]:
     typical_objects = _object_examples(typical_raw)
     complete_objects = _object_examples(complete_raw)
 
+    # Always recompute examples from source examples so reruns are deterministic.
+    schema.pop("examples", None)
+
     # Class-level examples should prefer typical examples.
     class_examples = _dedupe(typical_objects)
     if class_examples:
@@ -85,6 +88,9 @@ def _update_schema(schema_name: str, dry_run: bool = False) -> tuple[bool, str]:
     for prop_name, prop_def in properties.items():
         if not isinstance(prop_def, dict):
             continue
+
+        # Clear any prior generated examples before repopulating.
+        prop_def.pop("examples", None)
 
         prop_values: list[Any] = []
         for obj in source_objects:
