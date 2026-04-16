@@ -22,7 +22,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept"
@@ -32,7 +32,7 @@
       "title": "label",
       "description": "A human-readable label for the activity",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "rdfs:label",
         "range": "xsd:string",
@@ -42,7 +42,7 @@
     }
   },
   "required": ["label"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "prov:Activity",
     "definition": "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
     "usageNote": "The activity associated with generation of a dataset will typically be an initiative, project, mission, survey, on-going activity (\"business as usual\"). mission or survey etc. Multiple prov:wasGeneratedBy properties can be used to indicate the dataset production context at various levels of granularity. Details about how to describe the activity that generated a dataset are out of scope for this applicition profile. prov:Activity provides for minimum basic properties for labeling and classification of activities.",

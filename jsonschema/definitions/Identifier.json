@@ -86,7 +86,7 @@
       "required": []
     }
   ],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "adms:Identifier",
     "definition": "This is based on the UN/CEFACT Identifier class.",
     "usageNote": "An identifier in a particular context, consisting of the content string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme.",

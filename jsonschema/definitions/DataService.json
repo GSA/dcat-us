@@ -22,7 +22,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
@@ -37,7 +37,7 @@
       "items": {
         "type": "string"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:endpointDescription",
         "range": "rdfs:Resource",
@@ -59,7 +59,7 @@
         "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
         "format": "iri"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:endpointURL",
         "range": "rdfs:Resource",
@@ -82,7 +82,7 @@
         "type": "string",
         "minLength": 1
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal",
@@ -100,7 +100,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:servesDataset",
         "range": "dcat:Dataset",
@@ -112,7 +112,7 @@
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal typed as xsd:decimal",
@@ -124,7 +124,7 @@
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal typed as xsd:duration",
@@ -139,7 +139,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:theme",
         "range": "skos:Concept",
@@ -159,7 +159,7 @@
           "description": "Text description of the access rights"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
@@ -175,7 +175,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
@@ -213,7 +213,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:created",
         "range": "rdfs:Literal typed as xsd:date or xsd:dateTime",
@@ -228,7 +228,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
@@ -239,7 +239,7 @@
       "title": "description",
       "description": "A free-text account of the Data Service",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -263,7 +263,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
@@ -277,7 +277,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -304,7 +304,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem",
@@ -326,7 +326,7 @@
           "description": "Full text of the license"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
@@ -367,7 +367,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -379,7 +379,7 @@
       "title": "publisher",
       "description": "An entity (organization) responsible for making the Data Service available",
       "$ref": "/dcat-us/3.0.0/definitions/agent",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
@@ -394,7 +394,7 @@
       "items": {
         "type": "string"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
@@ -413,7 +413,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization",
@@ -427,7 +427,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
@@ -442,7 +442,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
@@ -453,7 +453,7 @@
       "title": "title",
       "description": "The title of the data service in the indicated language",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -468,7 +468,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept",
@@ -483,7 +483,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
@@ -498,7 +498,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
@@ -512,7 +512,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:wasUsedBy",
         "range": "prov:Activity",
@@ -522,7 +522,7 @@
     }
   },
   "required": ["contactPoint", "endpointURL", "publisher", "title"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:DataService",
     "definition": "A collection of operations that provides access to one or more datasets or data processing functions.",
     "usageNote": "If a dcat:DataService is bound to one or more specified Datasets, they are indicated by the dcat:servesDataset property. The kind of service can be indicated using the dcterms:type property. Its value may be taken from a controlled vocabulary such as the Data.GOV spatial data service type code list [[?DATA-GOV-SDST]].",

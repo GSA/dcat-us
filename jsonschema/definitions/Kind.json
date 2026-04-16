@@ -22,7 +22,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/address"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:address",
         "range": "vcard:Address",
@@ -34,7 +34,7 @@
       "description": "Email address for the contact",
       "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "vcard:hasEmail",
         "range": "rdfs:Resource",
@@ -50,7 +50,7 @@
       "title": "family name",
       "description": "The family name of the contact",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:family-name",
         "range": "xsd:string",
@@ -62,7 +62,7 @@
       "title": "formatted name",
       "description": "The formatted text of the name of the contact",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "vcard:fn",
         "range": "xsd:string",
@@ -74,7 +74,7 @@
       "title": "given name",
       "description": "The given name of the contact",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:given-name",
         "range": "xsd:string",
@@ -86,7 +86,7 @@
       "title": "organization name",
       "description": "The name of the organization to contact",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:organization-name",
         "range": "xsd:string",
@@ -98,7 +98,7 @@
       "title": "telephone",
       "description": "The telephone number for the contact",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:tel",
         "range": "rdfs:Resource",
@@ -110,7 +110,7 @@
       "title": "position title",
       "description": "The position role of the person to contact",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:title",
         "range": "xsd:string",
@@ -120,7 +120,7 @@
     }
   },
   "required": ["hasEmail", "fn"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "vcard:Kind",
     "definition": "Point of Contact information",
     "rationale": "The introduction of vcard:Kind in DCAT-US 3.0 is driven by the need for standardized, reliable, and interoperable Point of Contact information, ultimately improving the accessibility and usability of data resources within the DCAT-US ecosystem."

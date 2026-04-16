@@ -47,7 +47,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:created",
         "range": "xsd:date",
@@ -59,7 +59,7 @@
       "title": "description",
       "description": "A free-text account of the Standard",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -83,7 +83,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:identifier",
         "range": "xsd:string",
@@ -97,7 +97,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -133,7 +133,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -173,7 +173,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:modified",
         "range": "xsd:date",
@@ -185,7 +185,7 @@
       "title": "title",
       "description": "A name given to the Standard",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
         "range": "xsd:string",
@@ -203,7 +203,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -220,7 +220,7 @@
           "description": "inline description of ConceptScheme"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "skos:inScheme",
         "range": "skos:ConceptScheme",
@@ -229,7 +229,7 @@
     }
   },
   "required": [],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcterms:Standard",
     "definition": "A standard or other specification to which a Dataset or Distribution conforms.",
     "usageNote": "A standard or other specification to which a Catalog, Catalog Record, Data Service, Dataset, or Distribution conforms",

@@ -19,7 +19,7 @@
       "title": "version info",
       "description": "A version number or other version designation of the concept scheme",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:version",
         "range": "xsd:string",
@@ -59,7 +59,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:created",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -71,7 +71,7 @@
       "title": "description",
       "description": "A description of the concept scheme",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -115,7 +115,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -155,7 +155,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -167,7 +167,7 @@
       "title": "title",
       "description": "The title of the concept scheme",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -178,7 +178,7 @@
     }
   },
   "required": ["title"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "skos:ConceptScheme",
     "definition": "A concept collection (e.g. controlled vocabulary) in which a concept is defined.",
     "usageNote": "Following FAIR Vocabulary principles, Concept Scheme URI should be made resolvable and accessible using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples) To enhance data interoperability and consistency, it is advisable to reuse established controlled vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.",

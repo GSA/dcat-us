@@ -2,7 +2,7 @@
 """
 Check that good/typical examples include all Mandatory and Recommended fields.
 
-This script analyzes JSON schema files for properties with oldDocs.requirementLevel
+This script analyzes JSON schema files for properties with _oldDocs.requirementLevel
 set to "Mandatory" or "Recommended", then verifies that the corresponding
 good example files include those fields.
 
@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 def get_required_fields(schema: dict) -> tuple[list[str], list[str]]:
-    """Extract Mandatory and Recommended fields from schema based on oldDocs."""
+    """Extract Mandatory and Recommended fields from schema based on _oldDocs."""
     mandatory = []
     recommended = []
     
@@ -30,7 +30,7 @@ def get_required_fields(schema: dict) -> tuple[list[str], list[str]]:
         if not isinstance(prop_def, dict):
             continue
             
-        old_docs = prop_def.get('oldDocs', {})
+        old_docs = prop_def.get('_oldDocs', {})
         req_level = old_docs.get('requirementLevel', '')
         
         if 'Mandatory' in req_level:

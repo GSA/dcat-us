@@ -19,7 +19,7 @@
       "title": "country",
       "description": "The country of the Address",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "vcard:country-name",
         "range": "rdfs:Literal",
@@ -31,7 +31,7 @@
       "title": "locality",
       "description": "The city of the Address",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "vcard:locality",
         "range": "rdfs:Literal",
@@ -43,7 +43,7 @@
       "title": "postal code",
       "description": "The postal code of the Address",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "vcard:postal-code",
         "range": "rdfs:Literal",
@@ -55,7 +55,7 @@
       "title": "administrative area",
       "description": "The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "vcard:region",
         "range": "rdfs:Literal",
@@ -67,7 +67,7 @@
       "title": "street address",
       "description": "The street name and civic number of an Address",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "vcard:street-address",
         "range": "rdfs:Literal",
@@ -77,7 +77,7 @@
     }
   },
   "required": [],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "locn:Address",
     "definition": "The address of a location.",
     "usageNote": "This class is used to define a location defined by an address. It should be used only with the property dcterms:spatial, not the contact point address property.",

@@ -30,7 +30,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       },
       "examples": ["https://example.gov/docs/climate-user-guide"]
@@ -50,7 +50,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       },
       "examples": ["https://example.gov/docs/climate-user-guide.pdf"]
@@ -62,7 +62,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "org:Organization"
@@ -72,7 +72,7 @@
       "title": "media type",
       "description": "The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:mediaType",
         "range": "dcterms:MediaType",
@@ -84,7 +84,7 @@
       "title": "abstract",
       "description": "Text abstract of the Document",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:abstract",
         "range": "rdfs:Literal"
@@ -97,7 +97,7 @@
       "title": "bibliographic citation",
       "description": "Bibliographic citation as text",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:bibliographicCitation",
         "range": "rdfs:Literal"
@@ -114,7 +114,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "dcterms:Standard",
@@ -128,7 +128,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -136,7 +136,7 @@
       "title": "description",
       "description": "A free-text account of the Document",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -160,7 +160,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
@@ -173,7 +173,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -208,7 +208,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal"
@@ -222,7 +222,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dc:publisher",
         "range": "rdfs:Literal",
@@ -233,7 +233,7 @@
       "title": "title",
       "description": "The title of the Document",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
@@ -247,13 +247,13 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     }
   },
   "required": ["title"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "foaf:Document",
     "definition": "A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.",
     "usageNote": "Depending on whether a catalog supports or not publications as first-class citizens, a publication can be fully described, or simply denoted by its URI.",

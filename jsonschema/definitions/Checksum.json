@@ -19,7 +19,7 @@
       "title": "algorithm",
       "description": "The algorithm used to produce the checksum",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "spdx:algorithm",
         "range": "spdx:ChecksumAlgorithm",
@@ -31,7 +31,7 @@
       "title": "checksum value",
       "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "spdx:checksumValue",
         "range": "xsd:hexBinary",
@@ -44,7 +44,7 @@
     }
   },
   "required": ["algorithm", "checksumValue"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "spdx:Checksum",
     "definition": "A Checksum is a value that allows to check the integrity of the contents of a file. Even small changes to the content of the file will change its checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented [[SPDX]].",
     "usageNote": "The Checksum includes the algorithm (spdx:algorithm) and value (spdx:checksumValue) that allows the integrity of a file to be verified to ensure no errors occurred in transmission or storage.",

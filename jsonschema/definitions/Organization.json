@@ -19,7 +19,7 @@
       "title": "name",
       "description": "The full name of the Organization",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "foaf:name",
         "range": "xsd:string",
@@ -34,7 +34,7 @@
       "items": {
         "$ref": "#"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "org:subOrganizationOf",
         "range": "org:Organization",
@@ -45,7 +45,7 @@
       "title": "alternative label",
       "description": "alternative name (trading name, colloquial name) for an organization",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:altLabel",
         "range": "xsd:string",
@@ -61,7 +61,7 @@
         "title": "Abbreviation",
         "type": "string"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:notation",
         "range": "xsd:string",
@@ -73,7 +73,7 @@
       "title": "preferred label",
       "description": "Preferred or legal name of the organization",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:prefLabel",
         "range": "xsd:string",
@@ -83,7 +83,7 @@
     }
   },
   "required": ["name"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "org:Organization",
     "definition": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.",
     "usageNote": "When utilizing the org:Organization class in DCAT-US 3.0, data publishers are encouraged to provide the preferred label (skos:prefLabel) for the organization, along with any relevant alternative labels (skos:altLabel) and abbreviations skos:notation. This usage is consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures comprehensive and flexible organization identification, improving data discoverability and search accuracy. Data publishers should strive to maintain consistency in naming conventions while considering variations and common aliases used to refer to organizations. By providing a well-rounded representation of organizations, DCAT-US 3.0 enhances data usability and transparency, facilitating efficient data search and retrieval.",

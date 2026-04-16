@@ -22,7 +22,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
@@ -42,7 +42,7 @@
           "description": "inline description of the first dataset"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:first",
         "range": "dcat:Dataset",
@@ -62,7 +62,7 @@
           "description": "inline description of the last dataset"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:last",
         "range": "dcat:Dataset",
@@ -76,7 +76,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:seriesMember",
         "range": "dcat:Dataset",
@@ -138,7 +138,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency",
@@ -150,7 +150,7 @@
       "title": "description",
       "description": "A free-text account of the Dataset Series",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -193,7 +193,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -233,7 +233,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -254,7 +254,7 @@
           "description": "inline description of publisher"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
@@ -268,7 +268,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
@@ -282,7 +282,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
@@ -293,7 +293,7 @@
       "title": "title",
       "description": "A name given to the Dataset Series",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -306,7 +306,7 @@
     }
   },
   "required": ["description", "title"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:DatasetSeries",
     "definition": "A collection of datasets that are published separately, but share some characteristics that group them.",
     "usageNote": "Dataset series can be also soft-typed via property dcterms:type as in the approach used in [[?GeoDCAT-AP]] Common scenarios for dataset series include: time series composed of periodically released subsets; map-series composed of items of the same type or theme but with differing spatial footprints.",

@@ -3,7 +3,7 @@
 Historical script to parse DCAT-US HTML documentation and add metadata to JSON schemas.
 
 This script fetches the HTML documentation from https://infopolicy.github.io/dcat-us/,
-extracts class and property metadata, and adds an 'oldDocs' object to the
+extracts class and property metadata, and adds an '_oldDocs' object to the
 corresponding JSON schema files.
 
 It was primarily used for a one-time bootstrap import. The imported metadata was
@@ -536,15 +536,15 @@ def update_schema_with_metadata(
     
     modified = False
     
-    # Add class-level oldDocs
+    # Add class-level _oldDocs
     class_docs = class_metadata.to_dict()
     if class_docs:
-        schema['oldDocs'] = class_docs
+        schema['_oldDocs'] = class_docs
         modified = True
         if verbose:
-            print(f"  Added class-level oldDocs: {list(class_docs.keys())}")
+            print(f"  Added class-level _oldDocs: {list(class_docs.keys())}")
     
-    # Add property-level oldDocs using algorithmic matching
+    # Add property-level _oldDocs using algorithmic matching
     if 'properties' in schema and class_metadata.properties:
         schema_properties = schema['properties']
         matched_props = set()
@@ -557,14 +557,14 @@ def update_schema_with_metadata(
             if schema_prop:
                 prop_docs = prop_metadata.to_dict()
                 if prop_docs:
-                    schema['properties'][schema_prop]['oldDocs'] = prop_docs
+                    schema['properties'][schema_prop]['_oldDocs'] = prop_docs
                     modified = True
                     matched_props.add(schema_prop)
                     if verbose:
                         if schema_prop.lower() != doc_prop_name.lower():
-                            print(f"  Added property oldDocs for '{schema_prop}' (matched from '{doc_prop_name}')")
+                            print(f"  Added property _oldDocs for '{schema_prop}' (matched from '{doc_prop_name}')")
                         else:
-                            print(f"  Added property oldDocs for '{schema_prop}'")
+                            print(f"  Added property _oldDocs for '{schema_prop}'")
             else:
                 unmatched_props.append(doc_prop_name)
         

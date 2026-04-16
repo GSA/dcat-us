@@ -41,7 +41,7 @@
           "required": ["type", "coordinates"]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:bbox",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
@@ -95,7 +95,7 @@
           "required": ["type", "coordinates"]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:centroid",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
@@ -120,7 +120,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
@@ -134,7 +134,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -155,7 +155,7 @@
           "required": ["type", "coordinates"]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "locn:geometry",
         "range": "locn:Geometry",
@@ -195,7 +195,7 @@
           "description": "inline description of the gazetteer"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "range": "skos:ConceptScheme",
         "usageNote": "This property MAY be used to specify the gazetteer to which the Location belongs."
@@ -205,7 +205,7 @@
       "title": "alternative name",
       "description": "An alternative label or name for a location",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "range": "rdfs:Literal",
         "definition": "Alternate toponyms for the location",
@@ -217,7 +217,7 @@
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "range": "rdfs:Literal",
         "definition": "Preferred toponym for the location",
@@ -227,7 +227,7 @@
     }
   },
   "required": [],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcterms:Location",
     "definition": "A spatial region or named place. It can be represented using a controlled vocabulary or with geographic coordinates.",
     "usageNote": "For an extensive geometry (i.e., a set of coordinates denoting the vertices of the relevant geographic area), the property locn:geometry [[LOCN]] SHOULD be used. For a geographic bounding box delimiting a spatial area the property dcat:bbox SHOULD be used. For the geographic center of a spatial area, or another characteristic point, the property dcat:centroid SHOULD be used.",

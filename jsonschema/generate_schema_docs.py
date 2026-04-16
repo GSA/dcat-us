@@ -97,11 +97,11 @@ def _normalize_requirement_level(value):
 
 
 def schema_requirement_level(schema):
-    """Template helper for property requirement level from oldDocs."""
+    """Template helper for property requirement level from _oldDocs."""
     keywords = getattr(schema, "keywords", None) or {}
     old_docs = {}
     if isinstance(keywords, dict):
-        old_docs_node = keywords.get("oldDocs")
+        old_docs_node = keywords.get("_oldDocs")
         if isinstance(old_docs_node, dict):
             old_docs = old_docs_node
         elif hasattr(old_docs_node, "keywords"):

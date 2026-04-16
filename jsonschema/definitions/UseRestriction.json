@@ -19,7 +19,7 @@
       "title": "restriction note",
       "description": "Significant information pertaining to the use or reproduction of the data",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
@@ -34,7 +34,7 @@
       "title": "restriction status",
       "description": "Indication of whether or not there are use restrictions on the archival materials",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
@@ -54,7 +54,7 @@
           "description": "inline description of the specific restriction"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
@@ -63,7 +63,7 @@
     }
   },
   "required": ["restrictionStatus"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat-us:UseRestriction",
     "definition": "A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.",
     "usageNote": "When utilizing the dcat-us:UseRestriction class, data publishers are encouraged to provide comprehensive and precise details regarding the specific use restrictions applied to a resource. This may include information on access limitations, distribution rules, reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices. By offering clear and concise use restriction information, data consumers can make informed decisions about the utilization of these resources while complying with NARA's requirements.",

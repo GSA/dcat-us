@@ -21,7 +21,7 @@
       "title": "role",
       "description": "The function of an entity or agent with respect to a dataset",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:hadRole",
         "range": "dcat:Role",
@@ -33,7 +33,7 @@
       "title": "relation",
       "description": "The entity related to the dataset. This string should unambiguously identify the related resource using an appropriate identifier.",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:relation",
         "definition": "The resource related to the source resource."
@@ -45,7 +45,7 @@
     }
   },
   "required": ["hadRole", "relation"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:Relationship",
     "definition": "An association class for attaching additional information to a relationship between DCAT Resources",
     "usageNote": "Use to characterize a relationship between datasets, and potentially other resources, where the nature of the relationship is known but is not adequately characterized by the standard [[?DCTERMS]] properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or [[PROV-O]] properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf)",

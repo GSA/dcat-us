@@ -42,8 +42,8 @@ jsonschema/
 ├── test_json_schema.py          # Validation test script
 ├── generate_schema_docs.py      # Documentation generator
 ├── parse_old_docs.py            # Historical one-time DCAT-US HTML metadata import
-├── check_missing_olddocs.py     # Check for missing oldDocs sections
-├── check_requirement_levels.py  # Check/fix oldDocs requirement levels
+├── check_missing_olddocs.py     # Check for missing _oldDocs sections
+├── check_requirement_levels.py  # Check/fix _oldDocs requirement levels
 ├── check_undefined_fields.py    # Check for undefined fields in examples
 ├── create_null_examples.py      # Generate null-value test examples
 ├── pyproject.toml               # Python dependencies (Poetry)
@@ -161,11 +161,11 @@ poetry run python generate_schema_docs.py --help
 
 ### parse_old_docs.py
 
-Summary: Historical bootstrap script that imported `oldDocs` metadata from the legacy DCAT-US HTML documentation.
+Summary: Historical bootstrap script that imported `_oldDocs` metadata from the legacy DCAT-US HTML documentation.
 
 Note: This was effectively a one-time import step. The imported metadata was manually corrected and refined in this repository afterward, so re-running the parser is not a meaningful validation step and its output should not be used as a test oracle.
 
-For ongoing validation of `oldDocs`, use:
+For ongoing validation of `_oldDocs`, use:
 
 - `poetry run python check_missing_olddocs.py`
 - `poetry run python check_requirement_levels.py`
@@ -184,7 +184,7 @@ poetry run python parse_old_docs.py --help
 
 ### check_missing_olddocs.py
 
-Summary: Reports schema properties missing `oldDocs` metadata.
+Summary: Reports schema properties missing `_oldDocs` metadata.
 
 ```bash
 poetry run python check_missing_olddocs.py
@@ -194,7 +194,7 @@ Note: This script does not expose a dedicated `--help` interface; running it exe
 
 ### check_requirement_levels.py
 
-Summary: Compares `oldDocs.requirementLevel` against schema `required` fields and optionally fixes mismatches.
+Summary: Compares `_oldDocs.requirementLevel` against schema `required` fields and optionally fixes mismatches.
 
 ```bash
 # Report mismatches
@@ -229,7 +229,7 @@ Note: This script does not support `--help`; passing flags will still run genera
 
 ### check_example_coverage.py
 
-Summary: Checks whether good typical/complete examples include fields marked Mandatory or Recommended in `oldDocs`.
+Summary: Checks whether good typical/complete examples include fields marked Mandatory or Recommended in `_oldDocs`.
 
 ```bash
 # Coverage check
@@ -376,9 +376,9 @@ Apply formatting:
 npx prettier --write definitions/*.json examples/
 ```
 
-## Schema Metadata (oldDocs)
+## Schema Metadata (_oldDocs)
 
-Each schema and property can include an `oldDocs` object containing metadata extracted from the [DCAT-US HTML documentation](https://infopolicy.github.io/dcat-us/). This includes:
+Each schema and property can include an `_oldDocs` object containing metadata extracted from the [DCAT-US HTML documentation](https://infopolicy.github.io/dcat-us/). This includes:
 
 - `rdfClass` / `uri` - The RDF class or property URI
 - `definition` - The formal definition
@@ -387,7 +387,7 @@ Each schema and property can include an `oldDocs` object containing metadata ext
 - `requirementLevel` - Mandatory/Recommended/Optional
 - `range` - Expected value type
 
-The repository originally seeded `oldDocs` metadata from the legacy DCAT-US HTML documentation using `parse_old_docs.py`. That import was a one-time bootstrap step, and the resulting metadata has since been manually updated in places.
+The repository originally seeded `_oldDocs` metadata from the legacy DCAT-US HTML documentation using `parse_old_docs.py`. That import was a one-time bootstrap step, and the resulting metadata has since been manually updated in places.
 
 Because of that, `parse_old_docs.py` should not be treated as a regression test or as a source of truth for current schema metadata. A dry run is expected to report differences.
 

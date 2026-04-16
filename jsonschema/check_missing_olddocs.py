@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
-"""Check JSON schemas for properties missing oldDocs sections."""
+"""Check JSON schemas for properties missing _oldDocs sections."""
 
 import json
 from pathlib import Path
 
 
 def check_schema(schema_path: Path) -> list[str]:
-    """Check a schema file and return list of properties missing oldDocs."""
+    """Check a schema file and return list of properties missing _oldDocs."""
     missing = []
     
     with open(schema_path, 'r', encoding='utf-8') as f:
         schema = json.load(f)
     
-    # Check class-level oldDocs
-    if 'oldDocs' not in schema:
+    # Check class-level _oldDocs
+    if '_oldDocs' not in schema:
         missing.append("(class-level)")
     
-    # Check property-level oldDocs (skip JSON-LD structural fields)
+    # Check property-level _oldDocs (skip JSON-LD structural fields)
     if 'properties' in schema:
         for prop_name, prop_def in schema['properties'].items():
             if prop_name in ('@id', '@type'):
                 continue
-            if isinstance(prop_def, dict) and 'oldDocs' not in prop_def:
+            if isinstance(prop_def, dict) and '_oldDocs' not in prop_def:
                 missing.append(prop_name)
     
     return missing
@@ -44,7 +44,7 @@ def main():
             total_missing += len(missing)
     
     print(f"\n{'=' * 40}")
-    print(f"Total properties missing oldDocs: {total_missing}")
+    print(f"Total properties missing _oldDocs: {total_missing}")
 
 
 if __name__ == '__main__':

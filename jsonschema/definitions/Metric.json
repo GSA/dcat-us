@@ -18,7 +18,7 @@
       "title": "expected datatype",
       "description": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dqv:expectedDataType",
         "range": "xsd:anySimpleType",
@@ -30,7 +30,7 @@
       "title": "in dimension",
       "description": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of.",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dqv:inDimension",
         "range": "dqv:Dimension",
@@ -45,7 +45,7 @@
       "title": "definition",
       "description": "Definition of the metric.",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "skos:definition",
         "range": "rdfs:Literal",
@@ -58,7 +58,7 @@
     }
   },
   "required": ["expectedDataType", "inDimension"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dqv:Metric",
     "definition": "Represents a standard to measure a quality dimension. An observation (instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.",
     "usageNote": "The concept of a metric is used to define and measure specific aspects or dimensions of data quality within a given context, providing a standardized and quantifiable way to assess the quality of data. It allows for the comparison and evaluation of data quality across different resources and enables the development of consistent quality assessment frameworks and methodologies.",

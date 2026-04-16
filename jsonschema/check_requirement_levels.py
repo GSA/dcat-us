@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Check and optionally fix oldDocs requirement levels against JSON Schema required fields.
+"""Check and optionally fix _oldDocs requirement levels against JSON Schema required fields.
 
 Rules:
-- If a property is listed in a schema's required array, oldDocs.requirementLevel should be Mandatory.
-- If oldDocs.requirementLevel is Mandatory but property is not required, it is downgraded to Optional in --fix mode.
-- If oldDocs is missing, the property is treated as Optional by default.
+- If a property is listed in a schema's required array, _oldDocs.requirementLevel should be Mandatory.
+- If _oldDocs.requirementLevel is Mandatory but property is not required, it is downgraded to Optional in --fix mode.
+- If _oldDocs is missing, the property is treated as Optional by default.
 """
 
 import argparse
@@ -36,7 +36,7 @@ def check_schema(schema_path: Path, fix: bool = False) -> tuple[list[str], bool]
         if prop_name in {"@id", "@type"} or not isinstance(prop_schema, dict):
             continue
 
-        old_docs = prop_schema.get("oldDocs")
+        old_docs = prop_schema.get("_oldDocs")
         current_level = None
         if isinstance(old_docs, dict):
             current_level = normalize_requirement_level(old_docs.get("requirementLevel"))
@@ -47,18 +47,18 @@ def check_schema(schema_path: Path, fix: bool = False) -> tuple[list[str], bool]
 
         if is_required and current_level != "Mandatory":
             findings.append(
-                f"{schema_path.name}: '{prop_name}' is required in schema but oldDocs level is {current_level}"
+                f"{schema_path.name}: '{prop_name}' is required in schema but _oldDocs level is {current_level}"
             )
             if fix:
-                prop_schema.setdefault("oldDocs", {})["requirementLevel"] = "Mandatory"
+                prop_schema.setdefault("_oldDocs", {})["requirementLevel"] = "Mandatory"
                 changed = True
 
         if (not is_required) and current_level == "Mandatory":
             findings.append(
-                f"{schema_path.name}: '{prop_name}' is not required in schema but oldDocs level is Mandatory"
+                f"{schema_path.name}: '{prop_name}' is not required in schema but _oldDocs level is Mandatory"
             )
             if fix:
-                prop_schema.setdefault("oldDocs", {})["requirementLevel"] = "Optional"
+                prop_schema.setdefault("_oldDocs", {})["requirementLevel"] = "Optional"
                 changed = True
 
     if changed:

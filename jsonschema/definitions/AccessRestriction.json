@@ -18,7 +18,7 @@
       "title": "restriction note",
       "description": "A note related to the access restriction",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
@@ -30,7 +30,7 @@
       "title": "restriction status",
       "description": "The indication of whether or not there are access restrictions on the item",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
@@ -50,7 +50,7 @@
           "description": "inline description of the specific restriction"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
@@ -59,7 +59,7 @@
     }
   },
   "required": ["restrictionStatus"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat-us:AccessRestriction",
     "definition": "The \"AccessRestriction\" class used by NARA represents limitations placed on accessing specific records or information within their archives, ensuring controlled and responsible access based on legal, ethical, or security considerations.",
     "usageNote": "The \"AccessRestriction\" class serves as a valuable tool within NARA's archival framework, enabling the organization to effectively manage and communicate access limitations for specific records or information. By employing this class, NARA can categorize and enforce controlled access to sensitive content, safeguarding confidentiality, adhering to legal requirements, and preserving the integrity of historical data. Researchers, archivists, and authorized users can rely on \"AccessRestriction\" to navigate and understand the accessibility parameters associated with archived materials, facilitating responsible information dissemination and usage.",

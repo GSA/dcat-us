@@ -46,7 +46,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:endDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -85,7 +85,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:startDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -102,7 +102,7 @@
       "required": ["endDate"]
     }
   ],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcterms:PeriodOfTime",
     "definition": "PeriodOfTime represents a period of time with a start date and an end.",
     "usageNote": "The start and end of the interval SHOULD be given by using properties dcat:startDate, and dcat:endDate, respectively. The interval can also be open - i.e., it can have just a start or just an end.",

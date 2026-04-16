@@ -24,7 +24,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:identifier",
         "range": "adms:Identifier",
@@ -38,7 +38,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:sample",
         "range": "dcat:Distribution",
@@ -58,7 +58,7 @@
           "description": "inline description of Concept"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:status",
         "range": "skos:Concept",
@@ -78,7 +78,7 @@
           "description": "inline description of the supported schema"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -86,7 +86,7 @@
       "title": "version notes",
       "description": "version notes for this dataset",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:versionNotes",
         "range": "rdfs:Literal",
@@ -110,7 +110,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
@@ -124,7 +124,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:distribution",
         "range": "dcat:Distribution",
@@ -144,7 +144,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -161,7 +161,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -172,7 +172,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "uri": "dcat:hasVersion",
         "definition": "This resource has a more specific, versioned resource [[?PAV]].",
         "usageNote": "A related Dataset that is a version, edition, or adaptation of the described Dataset."
@@ -185,7 +185,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:inSeries",
         "range": "dcat:DatasetSeries",
@@ -202,7 +202,7 @@
         "type": "string",
         "minLength": 1
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal",
@@ -234,7 +234,7 @@
           "description": "inline description of Document"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:landingPage",
         "range": "foaf:Document",
@@ -254,7 +254,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -265,7 +265,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/relationship"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:qualifiedRelation",
         "range": "dcat:Relationship",
@@ -276,7 +276,7 @@
       "title": "Spatial resolution (meters)",
       "description": "Spatial resolution in meters",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal (typed as xsd:decimal)",
@@ -288,7 +288,7 @@
       "title": "temporal resolution",
       "description": "Temporal resolution using xsd:duration syntax",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal (typed as xsd:duration)",
@@ -303,7 +303,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:theme",
         "range": "skos:Concept",
@@ -314,7 +314,7 @@
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:version",
         "range": "rdfs:Literal",
@@ -335,7 +335,7 @@
           "description": "inline description of Distribution"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
@@ -355,7 +355,7 @@
           "description": "Full text of the liability statement"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:liabilityStatement",
         "range": "dcat-us:LiabilityStatement",
@@ -372,7 +372,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:metadataDistribution",
         "range": "dcat:Distribution",
@@ -384,7 +384,7 @@
       "title": "purpose",
       "description": "The purpose of the dataset",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:purpose",
         "range": "rdfs:Literal",
@@ -407,7 +407,7 @@
           "description": "Text description of the access rights"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
@@ -473,7 +473,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency",
@@ -488,7 +488,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
@@ -502,7 +502,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:contributor",
         "range": "foaf:Agent",
@@ -541,7 +541,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       },
       "examples": ["2024-01-01"]
@@ -559,7 +559,7 @@
           "description": "inline description of Agent"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
@@ -570,7 +570,7 @@
       "title": "description",
       "description": "A free-text account of the Dataset",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -589,7 +589,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -606,7 +606,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
@@ -623,7 +623,7 @@
         "description": "reference iri of Resource",
         "format": "iri"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:isReferencedBy",
         "range": "rdfs:Resource",
@@ -663,7 +663,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -694,7 +694,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem",
@@ -735,7 +735,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -751,7 +751,7 @@
         "type": "string",
         "description": "Full text of the provenance statement"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:provenance",
         "range": "dcterms:ProvenanceStatement",
@@ -769,7 +769,7 @@
       "title": "publisher",
       "description": "An organization responsible for making the Dataset available",
       "$ref": "/dcat-us/3.0.0/definitions/organization",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
@@ -786,7 +786,7 @@
         "description": "reference iri of Resource",
         "format": "iri"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:relation",
         "range": "rdfs:Resource",
@@ -801,7 +801,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -813,7 +813,7 @@
         "type": "string",
         "description": "Full text of a statement of rights"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
@@ -835,7 +835,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -846,7 +846,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:source",
         "range": "dcat:Dataset",
@@ -873,7 +873,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
@@ -887,7 +887,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:subject",
         "range": "skos:Concept",
@@ -902,7 +902,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
@@ -913,7 +913,7 @@
       "title": "title",
       "description": "A name given to the Dataset",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -932,7 +932,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept",
@@ -946,7 +946,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
@@ -961,7 +961,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "foaf:page",
         "range": "foaf:Document",
@@ -975,7 +975,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
@@ -989,7 +989,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -1000,7 +1000,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:wasGeneratedBy",
         "range": "prov:Activity",
@@ -1014,7 +1014,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -1033,7 +1033,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "schema:image",
         "range": "schema:url or schema:ImageObject",
@@ -1045,7 +1045,7 @@
       "title": "usage note",
       "description": "usage note for the dataset",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:scopeNote"
       },
@@ -1061,7 +1061,7 @@
     "contactPoint",
     "identifier"
   ],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:Dataset",
     "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more representations.",
     "usageNote": "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations. This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the dcat:CatalogRecord class can be used for the latter. The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.",

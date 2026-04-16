@@ -28,7 +28,7 @@
           "description": "inline description of Concept"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:representationTechnique",
         "range": "skos:Concept",
@@ -49,7 +49,7 @@
           "description": "inline description of Concept"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:status",
         "range": "skos:Concept",
@@ -73,7 +73,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "cnt:characterEncoding",
         "range": "rdfs:Literal",
@@ -88,7 +88,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:accessService",
         "range": "dcat:DataService",
@@ -110,7 +110,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:accessURL",
         "range": "rdfs:Resource",
@@ -125,7 +125,7 @@
       "title": "byte size",
       "description": "The size of a Distribution in bytes",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:byteSize",
         "range": "xsd:nonNegativeInteger",
@@ -138,7 +138,7 @@
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:compressFormat",
         "range": "dcterms:MediaType",
@@ -161,7 +161,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:downloadURL",
         "range": "rdfs:Resource",
@@ -176,7 +176,7 @@
       "title": "media type",
       "description": "The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:mediaType",
         "range": "dcterms:MediaType",
@@ -189,7 +189,7 @@
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:packageFormat",
         "range": "dcterms:MediaType",
@@ -201,7 +201,7 @@
       "title": "Spatial resolution (meters)",
       "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "xsd:decimal",
@@ -213,7 +213,7 @@
       "title": "termporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "xsd:duration",
@@ -234,7 +234,7 @@
           "description": "inline description of Concept"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -245,7 +245,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:accessRestriction",
         "range": "dcat-us:AccessRestriction",
@@ -265,7 +265,7 @@
           "description": "inline description of CUIRestriction"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:cuiRestriction",
         "range": "dcat-us:CuiRestriction",
@@ -285,7 +285,7 @@
           "description": "inline description of the data dictionary"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
@@ -299,7 +299,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:useRestriction",
         "range": "dcat-us:UseRestriction",
@@ -319,7 +319,7 @@
           "description": "Text description of the access rights"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
@@ -334,7 +334,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard (A basis for comparison; a reference point against which other things can be evaluated.)",
@@ -346,7 +346,7 @@
       "title": "description",
       "description": "A free-text account of the Distribution",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -361,7 +361,7 @@
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:format",
         "range": "dcterms:MediaType",
@@ -382,7 +382,7 @@
           "description": "inline description of Identifier"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
@@ -396,7 +396,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional"
       }
     },
@@ -432,7 +432,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -463,7 +463,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "rdfs:Literal",
@@ -485,7 +485,7 @@
           "description": "Full text of the license"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
@@ -525,7 +525,7 @@
           ]
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -541,7 +541,7 @@
         "type": "string",
         "description": "Full text of a statement of rights"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
@@ -558,7 +558,7 @@
       "title": "title",
       "description": "A name given to the Distribution",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -573,7 +573,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
@@ -588,7 +588,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "foaf:page",
         "range": "foaf:Document",
@@ -610,7 +610,7 @@
           "format": "iri"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "schema:image",
         "range": "schema:ImageObject",
@@ -630,7 +630,7 @@
           "description": "inline description of Checksum"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "spdx:checksum",
         "range": "spdx:Checksum",
@@ -639,7 +639,7 @@
     }
   },
   "required": [],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:Distribution",
     "definition": "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).",
     "usageNote": "This represents a general availability of a dataset. It implies no information about the actual access method of the data, i.e., whether by direct download, API, or through a Web page. The use of dcat:downloadURL property indicates directly downloadable distributions.",

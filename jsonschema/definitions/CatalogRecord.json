@@ -30,7 +30,7 @@
           "description": "inline description of status"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "adms:status",
         "range": "skos:Concept",
@@ -50,7 +50,7 @@
           "description": "inline description of application profile"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
@@ -65,7 +65,7 @@
         "title": "Description string",
         "type": "string"
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -105,7 +105,7 @@
           }
         ]
       },
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -136,7 +136,7 @@
           }
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem",
@@ -168,7 +168,7 @@
           "description": "A year and month in YYYY-MM format"
         }
       ],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
@@ -180,7 +180,7 @@
       "title": "source metadata",
       "description": "The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:source",
         "range": "dcat:Resource",
@@ -192,7 +192,7 @@
       "title": "title",
       "description": "A name given to the Catalog Record",
       "type": ["null", "string"],
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
@@ -208,7 +208,7 @@
       "title": "primary topic",
       "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record",
       "type": "string",
-      "oldDocs": {
+      "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "foaf:primaryTopic",
         "range": "dcat:Resource",
@@ -222,7 +222,7 @@
     }
   },
   "required": ["modified", "primaryTopic"],
-  "oldDocs": {
+  "_oldDocs": {
     "rdfClass": "dcat:CatalogRecord",
     "definition": "A record in a catalog, describing the registration of a single dcat:Resource.",
     "usageNote": "This class is optional and not all catalogs will use it. It exists for catalogs where a distinction is made between metadata about a dataset or service and metadata about the entry in the catalog about the dataset or service. For example, the publication date property of the dataset reflects the date when the information was originally made available by the publishing agency, while the publication date of the catalog record is the date when the dataset was added to the catalog. In cases where both dates differ, or where only the latter is known, the publication date SHOULD only be specified for the catalog record. Notice that the W3C PROV Ontology [[PROV-O]] allows describing further provenance information such as the details of the process and the agent involved in a particular change to a dataset or its registration.",
