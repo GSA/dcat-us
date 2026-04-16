@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Distribution",
-      "examples": ["Distribution"]
+      "default": "Distribution"
     },
     "representationTechnique": {
       "title": "representation technique",
@@ -58,7 +57,7 @@
     },
     "characterEncoding": {
       "title": "character encoding",
-      "description": "The list of character encodings of the Distribution, by using as value the character set names in the IANA register\u00a0",
+      "description": "The list of character encodings of the Distribution, by using as value the character set names in the IANA register ",
       "anyOf": [
         {
           "type": "null",

@@ -47,12 +47,6 @@
 | ----------- | ---------- |
 | **Default** | `"Metric"` |
 
-**Example:**
-
-```json
-"Metric"
-```
-
 ## <a name="expectedDataType"></a>[Mandatory] Property `Metric > expectedDataType`
 
 **Title:** expected datatype

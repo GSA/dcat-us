@@ -49,12 +49,6 @@ An entity that could be involved with a resource
 | ----------- | --------- |
 | **Default** | `"Agent"` |
 
-**Example:**
-
-```json
-"Agent"
-```
-
 ## <a name="category"></a>[Optional] Property `Agent > category`
 
 **Title:** category

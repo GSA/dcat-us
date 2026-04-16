@@ -52,12 +52,6 @@ A single measurement of one metric
 | ----------- | ---------------------- |
 | **Default** | `"QualityMeasurement"` |
 
-**Example:**
-
-```json
-"QualityMeasurement"
-```
-
 ## <a name="isMeasurementOf"></a>[Mandatory] Property `QualityMeasurement > isMeasurementOf`
 
 **Title:** is measurement of

@@ -70,12 +70,6 @@ Information about a specific time period with a start- and/or end-time
 | ----------- | ---------------- |
 | **Default** | `"PeriodOfTime"` |
 
-**Example:**
-
-```json
-"PeriodOfTime"
-```
-
 ## <a name="endDate"></a>[Recommended] Property `PeriodOfTime > endDate`
 
 **Title:** end date

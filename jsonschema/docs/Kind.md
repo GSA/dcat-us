@@ -55,12 +55,6 @@ Contact information for an individual or entity
 | ----------- | -------- |
 | **Default** | `"Kind"` |
 
-**Example:**
-
-```json
-"Kind"
-```
-
 ## <a name="address"></a>[Optional] Property `Kind > address`
 
 **Title:** address

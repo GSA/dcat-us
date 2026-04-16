@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "QualityMeasurement",
-      "examples": ["QualityMeasurement"]
+      "default": "QualityMeasurement"
     },
     "isMeasurementOf": {
       "title": "is measurement of",

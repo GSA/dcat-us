@@ -53,12 +53,6 @@ Information about a specific geographic location
 | ----------- | ------------ |
 | **Default** | `"Location"` |
 
-**Example:**
-
-```json
-"Location"
-```
-
 ## <a name="bbox"></a>[Recommended] Property `Location > bbox`
 
 **Title:** bounding box

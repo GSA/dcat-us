@@ -49,12 +49,6 @@ An attribution that an agent plays some role
 | ----------- | --------------- |
 | **Default** | `"Attribution"` |
 
-**Example:**
-
-```json
-"Attribution"
-```
-
 ## <a name="hadRole"></a>[Mandatory] Property `Attribution > hadRole`
 
 **Title:** role

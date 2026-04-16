@@ -63,12 +63,6 @@ A record in a catalog, describing the registration of a single resource
 | ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
 
-**Example:**
-
-```json
-"CatalogRecord"
-```
-
 ## <a name="status"></a>[Recommended] Property `CatalogRecord > status`
 
 **Title:** change type

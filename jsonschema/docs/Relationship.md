@@ -47,12 +47,6 @@ Information about an item or entity that has some relationship to a dataset and 
 | ----------- | ---------------- |
 | **Default** | `"Relationship"` |
 
-**Example:**
-
-```json
-"Relationship"
-```
-
 ## <a name="hadRole"></a>[Mandatory] Property `Relationship > hadRole`
 
 **Title:** role

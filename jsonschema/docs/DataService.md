@@ -111,12 +111,6 @@ A service for providing data at a URL or URLs
 | ----------- | --------------- |
 | **Default** | `"DataService"` |
 
-**Example:**
-
-```json
-"DataService"
-```
-
 ## <a name="contactPoint"></a>[Mandatory] Property `DataService > contactPoint`
 
 **Title:** contact point

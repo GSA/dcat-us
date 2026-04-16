@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Activity",
-      "examples": ["Activity"]
+      "default": "Activity"
     },
     "category": {
       "title": "category",

@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Location",
-      "examples": ["Location"]
+      "default": "Location"
     },
     "bbox": {
       "title": "bounding box",

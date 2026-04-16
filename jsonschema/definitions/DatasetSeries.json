@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "DatasetSeries",
-      "examples": ["DatasetSeries"]
+      "default": "DatasetSeries"
     },
     "contactPoint": {
       "title": "contact point",

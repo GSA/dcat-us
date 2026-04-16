@@ -5,6 +5,7 @@ Check that good/typical examples include all Mandatory and Recommended fields.
 This script analyzes JSON schema files for properties with _oldDocs.requirementLevel
 set to "Mandatory" or "Recommended", then verifies that the corresponding
 good example files include those fields.
+Fields with an explicit schema `default` are excluded from coverage checks.
 
 Usage:
     poetry run python check_example_coverage.py           # Check all schemas
@@ -28,6 +29,10 @@ def get_required_fields(schema: dict) -> tuple[list[str], list[str]]:
             continue
             
         if not isinstance(prop_def, dict):
+            continue
+
+        # Defaulted properties do not need explicit example values.
+        if 'default' in prop_def:
             continue
             
         old_docs = prop_def.get('_oldDocs', {})

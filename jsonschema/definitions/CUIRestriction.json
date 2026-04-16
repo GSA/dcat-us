@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "CUIRestriction",
-      "examples": ["CUIRestriction"]
+      "default": "CUIRestriction"
     },
     "cuiBannerMarking": {
       "title": "CUI banner marking",

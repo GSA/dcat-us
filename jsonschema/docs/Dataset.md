@@ -180,12 +180,6 @@ Information about a set of data
 | ----------- | ----------- |
 | **Default** | `"Dataset"` |
 
-**Example:**
-
-```json
-"Dataset"
-```
-
 ## <a name="otherIdentifier"></a>[Optional] Property `Dataset > otherIdentifier`
 
 **Title:** other identifier

@@ -49,12 +49,6 @@ An activity which a resource could be related to
 | ----------- | ------------ |
 | **Default** | `"Activity"` |
 
-**Example:**
-
-```json
-"Activity"
-```
-
 ## <a name="category"></a>[Optional] Property `Activity > category`
 
 **Title:** category

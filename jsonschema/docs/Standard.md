@@ -65,12 +65,6 @@ Information about a particular standard that another item conforms to
 | ----------- | ------------ |
 | **Default** | `"Standard"` |
 
-**Example:**
-
-```json
-"Standard"
-```
-
 ## <a name="created"></a>[Optional] Property `Standard > created`
 
 **Title:** creation date

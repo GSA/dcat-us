@@ -48,12 +48,6 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | ----------- | ------------------ |
 | **Default** | `"CUIRestriction"` |
 
-**Example:**
-
-```json
-"CUIRestriction"
-```
-
 ## <a name="cuiBannerMarking"></a>[Mandatory] Property `CUIRestriction > cuiBannerMarking`
 
 **Title:** CUI banner marking

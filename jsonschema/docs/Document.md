@@ -71,12 +71,6 @@ Information about a text document
 | ----------- | ------------ |
 | **Default** | `"Document"` |
 
-**Example:**
-
-```json
-"Document"
-```
-
 ## <a name="accessURL"></a>[Optional] Property `Document > accessURL`
 
 **Title:** access URL

@@ -49,12 +49,6 @@ A restriction on usage of another item
 | ----------- | ------------------ |
 | **Default** | `"UseRestriction"` |
 
-**Example:**
-
-```json
-"UseRestriction"
-```
-
 ## <a name="restrictionNote"></a>[Optional] Property `UseRestriction > restrictionNote`
 
 **Title:** restriction note

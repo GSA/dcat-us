@@ -11,8 +11,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "AccessRestriction",
-      "examples": ["AccessRestriction"]
+      "default": "AccessRestriction"
     },
     "restrictionNote": {
       "title": "restriction note",

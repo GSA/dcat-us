@@ -7,6 +7,7 @@ For each class schema in definitions/:
   `good/typical_example.json` and `good/complete_example.json`.
 - Properties that reference other class types (via ``$ref``) are skipped
   to avoid duplicating information defined in those schemas.
+- Properties with a schema `default` are skipped to avoid redundant examples.
 
 Examples are deduplicated while preserving order. Missing example files are
 reported and skipped without failing the whole run.
@@ -119,6 +120,10 @@ def _update_schema(schema_name: str, dry_run: bool = False) -> tuple[bool, str]:
 
         # Skip properties that reference other class types.
         if _references_another_class(prop_def):
+            continue
+
+        # Skip properties with explicit defaults.
+        if "default" in prop_def:
             continue
 
         prop_values: list[Any] = []

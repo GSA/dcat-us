@@ -14,8 +14,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "CatalogRecord",
-      "examples": ["CatalogRecord"]
+      "default": "CatalogRecord"
     },
     "status": {
       "title": "change type",

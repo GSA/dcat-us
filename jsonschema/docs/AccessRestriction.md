@@ -43,12 +43,6 @@ A restriction on the permitted access to a resource
 | ----------- | --------------------- |
 | **Default** | `"AccessRestriction"` |
 
-**Example:**
-
-```json
-"AccessRestriction"
-```
-
 ## <a name="restrictionNote"></a>[Optional] Property `AccessRestriction > restrictionNote`
 
 **Title:** restriction note

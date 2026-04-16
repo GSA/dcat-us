@@ -52,12 +52,6 @@ A system for specifying approved values for a single concept
 | ----------- | ----------------- |
 | **Default** | `"ConceptScheme"` |
 
-**Example:**
-
-```json
-"ConceptScheme"
-```
-
 ## <a name="version"></a>[Optional] Property `ConceptScheme > version`
 
 **Title:** version info

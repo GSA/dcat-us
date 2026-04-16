@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Agent",
-      "examples": ["Agent"]
+      "default": "Agent"
     },
     "category": {
       "title": "category",

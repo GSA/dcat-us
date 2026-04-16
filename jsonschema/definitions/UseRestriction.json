@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "UseRestriction",
-      "examples": ["UseRestriction"]
+      "default": "UseRestriction"
     },
     "restrictionNote": {
       "title": "restriction note",

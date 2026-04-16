@@ -53,12 +53,6 @@ A single physical address
 | ----------- | ----------- |
 | **Default** | `"Address"` |
 
-**Example:**
-
-```json
-"Address"
-```
-
 ## <a name="country-name"></a>[Recommended] Property `Address > country-name`
 
 **Title:** country

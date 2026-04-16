@@ -47,12 +47,6 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | ----------- | ------------ |
 | **Default** | `"Checksum"` |
 
-**Example:**
-
-```json
-"Checksum"
-```
-
 ## <a name="algorithm"></a>[Mandatory] Property `Checksum > algorithm`
 
 **Title:** algorithm

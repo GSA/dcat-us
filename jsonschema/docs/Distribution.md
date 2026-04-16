@@ -96,12 +96,6 @@ A file that distributes the dataset
 | ----------- | ---------------- |
 | **Default** | `"Distribution"` |
 
-**Example:**
-
-```json
-"Distribution"
-```
-
 ## <a name="representationTechnique"></a>[Optional] Property `Distribution > representationTechnique`
 
 **Title:** representation technique

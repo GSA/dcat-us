@@ -14,8 +14,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Dataset",
-      "examples": ["Dataset"]
+      "default": "Dataset"
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -1038,7 +1037,7 @@
         "uri": "schema:image",
         "range": "schema:url or schema:ImageObject",
         "definition": "A thumbnail picture illustrating the content of the dataset.",
-        "usageNote": "A thumbnail picture illustrating the content of the Dataset. For distributions that consist of visual content (photographs, videos, maps, etc.) it makes sense to add a limited number of thumbnails to the metadata. It\u2019s a DCAT-US Custom Class"
+        "usageNote": "A thumbnail picture illustrating the content of the Dataset. For distributions that consist of visual content (photographs, videos, maps, etc.) it makes sense to add a limited number of thumbnails to the metadata. It’s a DCAT-US Custom Class"
       }
     },
     "scopeNote": {

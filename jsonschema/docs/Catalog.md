@@ -123,12 +123,6 @@ The main item defined by DCAT-US 3 is the Catalog class
 | ----------- | ----------- |
 | **Default** | `"Catalog"` |
 
-**Example:**
-
-```json
-"Catalog"
-```
-
 ## <a name="catalog"></a>[Optional] Property `DCAT-US 3 Catalog > catalog`
 
 **Title:** Related catalogs

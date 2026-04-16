@@ -11,8 +11,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Metric",
-      "examples": ["Metric"]
+      "default": "Metric"
     },
     "expectedDataType": {
       "title": "expected datatype",

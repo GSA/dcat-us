@@ -14,8 +14,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Relationship",
-      "examples": ["Relationship"]
+      "default": "Relationship"
     },
     "hadRole": {
       "title": "role",

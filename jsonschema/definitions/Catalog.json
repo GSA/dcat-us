@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Catalog",
-      "examples": ["Catalog"]
+      "default": "Catalog"
     },
     "catalog": {
       "title": "Related catalogs",

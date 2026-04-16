@@ -180,12 +180,6 @@ An ordered series of datasets
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
 
-**Example:**
-
-```json
-"DatasetSeries"
-```
-
 ## <a name="contactPoint"></a>[Recommended] Property `DatasetSeries > contactPoint`
 
 **Title:** contact point

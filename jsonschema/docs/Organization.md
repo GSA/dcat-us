@@ -50,12 +50,6 @@ Information about an organization, including other organizations that it is part
 | ----------- | ---------------- |
 | **Default** | `"Organization"` |
 
-**Example:**
-
-```json
-"Organization"
-```
-
 ## <a name="name"></a>[Mandatory] Property `Organization > name`
 
 **Title:** name

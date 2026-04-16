@@ -12,8 +12,7 @@
     },
     "@type": {
       "type": "string",
-      "default": "Organization",
-      "examples": ["Organization"]
+      "default": "Organization"
     },
     "name": {
       "title": "name",
