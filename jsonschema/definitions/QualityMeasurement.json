@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/quality-measurements/completeness-001"]
     },
     "@type": {
       "type": "string",
-      "default": "QualityMeasurement"
+      "default": "QualityMeasurement",
+      "examples": ["QualityMeasurement"]
     },
     "isMeasurementOf": {
       "title": "is measurement of",
@@ -23,7 +25,20 @@
         "uri": "dqv:isMeasurementOf",
         "range": "dqv:Metric",
         "definition": "Indicates the metric being observed."
-      }
+      },
+      "examples": [
+        {
+          "expectedDataType": "xsd:decimal",
+          "inDimension": "https://example.gov/dimensions/completeness"
+        },
+        {
+          "@id": "https://example.gov/metrics/data-completeness-001",
+          "@type": "Metric",
+          "definition": "The percentage of expected data values that are present in the dataset.",
+          "expectedDataType": "xsd:decimal",
+          "inDimension": "https://example.gov/concepts/completeness-dimension"
+        }
+      ]
     },
     "value": {
       "title": "value",
@@ -35,7 +50,8 @@
         "uri": "dqv:value",
         "range": "rdfs:Literal",
         "definition": "Refers to values computed by metric."
-      }
+      },
+      "examples": ["98.5"]
     },
     "unitMeasure": {
       "title": "unit of measure",
@@ -47,7 +63,8 @@
         "uri": "sdmx-attribute:unitMeasure",
         "range": "rdfs:Resource",
         "definition": "Unit of measure associated with the value"
-      }
+      },
+      "examples": ["percent"]
     }
   },
   "required": ["isMeasurementOf", "value"],
@@ -56,5 +73,16 @@
     "definition": "Represents the evaluation of a given dataset (or dataset distribution) against a specific quality metric.",
     "usageNote": "Represents the evaluation of a given resource (as a Data Service, Dataset, or Distribution) against a specific quality metric, such as spatial resolution in scale, angle or metric.",
     "rationale": "The inclusion of dqv:QualityMeasurement in DCAT-US assists end-users in better evaluating the fitness of use of resources. This optional class enhances data quality assessment, aligns with international standards (DQV), and enables more precise evaluation against specific quality metrics, ultimately improving data usability and adherence to recognized quality assessment practices."
-  }
+  },
+  "examples": [
+    {
+      "@type": "QualityMeasurement",
+      "isMeasurementOf": {
+        "expectedDataType": "xsd:decimal",
+        "inDimension": "https://example.gov/dimensions/completeness"
+      },
+      "value": "98.5",
+      "unitMeasure": "percent"
+    }
+  ]
 }

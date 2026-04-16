@@ -11,7 +11,8 @@
     },
     "@type": {
       "type": "string",
-      "default": "AccessRestriction"
+      "default": "AccessRestriction",
+      "examples": ["AccessRestriction"]
     },
     "restrictionNote": {
       "title": "restriction note",
@@ -23,7 +24,8 @@
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
         "definition": "A note related to the access restriction"
-      }
+      },
+      "examples": ["Access restricted to authorized personnel only."]
     },
     "restrictionStatus": {
       "title": "restriction status",
@@ -35,7 +37,8 @@
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "The indication of whether or not there are access restrictions on the data."
-      }
+      },
+      "examples": ["https://example.gov/concepts/restricted"]
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -56,7 +59,8 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The authority of the restriction"
-      }
+      },
+      "examples": ["https://www.archives.gov/cui/registry/category-list"]
     }
   },
   "required": ["restrictionStatus"],
@@ -65,5 +69,13 @@
     "definition": "The \"AccessRestriction\" class used by NARA represents limitations placed on accessing specific records or information within their archives, ensuring controlled and responsible access based on legal, ethical, or security considerations.",
     "usageNote": "The \"AccessRestriction\" class serves as a valuable tool within NARA's archival framework, enabling the organization to effectively manage and communicate access limitations for specific records or information. By employing this class, NARA can categorize and enforce controlled access to sensitive content, safeguarding confidentiality, adhering to legal requirements, and preserving the integrity of historical data. Researchers, archivists, and authorized users can rely on \"AccessRestriction\" to navigate and understand the accessibility parameters associated with archived materials, facilitating responsible information dissemination and usage.",
     "rationale": "The \"AccessRestriction\" class in the DCAT-US application profile is essential for categorizing and managing access restrictions according to NARA standards, ensuring responsible access to sensitive historical records. It enhances transparency, aiding researchers and authorized users in understanding and navigating access parameters for archived materials."
-  }
+  },
+  "examples": [
+    {
+      "@type": "AccessRestriction",
+      "restrictionStatus": "https://example.gov/concepts/restricted",
+      "specificRestriction": "https://www.archives.gov/cui/registry/category-list",
+      "restrictionNote": "Access restricted to authorized personnel only."
+    }
+  ]
 }

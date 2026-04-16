@@ -8,6 +8,19 @@ A single physical address
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Address",
+    "street-address": "151 Patton Avenue",
+    "locality": "Asheville",
+    "region": "NC",
+    "postal-code": "28801",
+    "country-name": "United States"
+}
+```
+
 | Property                             | Type           | Title/Description   |
 | ------------------------------------ | -------------- | ------------------- |
 | - [@id](#@id )                       | string         | -                   |
@@ -26,6 +39,12 @@ A single physical address
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/addresses/hq-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Address > @type`
 
 **Requirement:** Optional
@@ -33,6 +52,12 @@ A single physical address
 | **Type**    | `string`    |
 | ----------- | ----------- |
 | **Default** | `"Address"` |
+
+**Example:**
+
+```json
+"Address"
+```
 
 ## <a name="country-name"></a>[Recommended] Property `Address > country-name`
 
@@ -45,6 +70,12 @@ The country of the Address
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"United States"
+```
+
 ## <a name="locality"></a>[Recommended] Property `Address > locality`
 
 **Title:** locality
@@ -55,6 +86,16 @@ The city of the Address
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Asheville"
+```
+
+```json
+"Washington"
+```
 
 ## <a name="postal-code"></a>[Recommended] Property `Address > postal-code`
 
@@ -67,6 +108,16 @@ The postal code of the Address
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"28801"
+```
+
+```json
+"20230"
+```
+
 ## <a name="region"></a>[Recommended] Property `Address > region`
 
 **Title:** administrative area
@@ -78,6 +129,16 @@ The administrative area of the Address. Depending on the country, this correspon
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"NC"
+```
+
+```json
+"DC"
+```
+
 ## <a name="street-address"></a>[Recommended] Property `Address > street-address`
 
 **Title:** street address
@@ -88,4 +149,14 @@ The street name and civic number of an Address
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"151 Patton Avenue"
+```
+
+```json
+"1401 Constitution Ave NW"
+```
 

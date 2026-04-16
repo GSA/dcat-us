@@ -8,6 +8,17 @@ A system for specifying approved values for a single concept
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "ConceptScheme",
+    "title": "Science Domains",
+    "description": "A classification scheme for scientific research domains.",
+    "issued": "2020-01-01"
+}
+```
+
 | Property                       | Type               | Title/Description        |
 | ------------------------------ | ------------------ | ------------------------ |
 | - [@id](#@id )                 | string             | -                        |
@@ -27,6 +38,12 @@ A system for specifying approved values for a single concept
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/concept-schemes/data-classification"
+```
+
 ## <a name="@type"></a>[Optional] Property `ConceptScheme > @type`
 
 **Requirement:** Optional
@@ -34,6 +51,12 @@ A system for specifying approved values for a single concept
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"ConceptScheme"` |
+
+**Example:**
+
+```json
+"ConceptScheme"
+```
 
 ## <a name="version"></a>[Optional] Property `ConceptScheme > version`
 
@@ -46,6 +69,12 @@ A version number or other version designation of the concept scheme
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"2.0.1"
+```
+
 ## <a name="created"></a>[Optional] Property `ConceptScheme > created`
 
 **Title:** creation date
@@ -57,6 +86,12 @@ The date on which the Concept Scheme was first created
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2020"
+```
 
 | Any of(Option)                                      |
 | --------------------------------------------------- |
@@ -130,6 +165,16 @@ A description of the concept scheme
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"A classification scheme for scientific research domains."
+```
+
+```json
+"A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
+```
+
 ## <a name="issued"></a>[Optional] Property `ConceptScheme > issued`
 
 **Title:** publication date
@@ -141,6 +186,16 @@ The date of formal issuance (e.g., publication) of the concept scheme
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2020-01-01"
+```
+
+```json
+"2020"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -215,6 +270,12 @@ The most recent date at which the concept scheme was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+"2024"
+```
+
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
@@ -287,4 +348,14 @@ The title of the concept scheme
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Science Domains"
+```
+
+```json
+"Federal Data Classification Scheme"
+```
 

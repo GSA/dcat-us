@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/restrictions/use-restriction-001"]
     },
     "@type": {
       "type": "string",
-      "default": "UseRestriction"
+      "default": "UseRestriction",
+      "examples": ["UseRestriction"]
     },
     "restrictionNote": {
       "title": "restriction note",
@@ -23,7 +25,11 @@
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
         "definition": "Significant information pertaining to the use or reproduction of the data."
-      }
+      },
+      "examples": [
+        "This data may be used for any purpose without restriction.",
+        "This data may be used for research purposes. Commercial use requires written permission from the data steward."
+      ]
     },
     "restrictionStatus": {
       "title": "restriction status",
@@ -35,7 +41,23 @@
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "Indication of whether or not there are use restrictions on the archival materials"
-      }
+      },
+      "examples": [
+        "https://example.gov/concepts/unrestricted",
+        {
+          "@id": "https://example.gov/concepts/restricted-commercial",
+          "@type": "Concept",
+          "prefLabel": "Restricted - Commercial Use",
+          "altLabel": "Commercial Restriction",
+          "definition": "The resource has restrictions on commercial use but is available for research and non-commercial purposes.",
+          "notation": ["RST-COM"],
+          "inScheme": {
+            "@id": "https://example.gov/concept-schemes/restriction-status",
+            "@type": "ConceptScheme",
+            "title": "Restriction Status"
+          }
+        }
+      ]
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -56,7 +78,22 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The identification of the type of use restrictions, based on copyright, donor, or statutory provisions, on the archival materials."
-      }
+      },
+      "examples": [
+        "https://creativecommons.org/publicdomain/zero/1.0/",
+        {
+          "@id": "https://example.gov/concepts/nara-restriction-copyright",
+          "@type": "Concept",
+          "prefLabel": "Copyright Restriction",
+          "definition": "Materials protected by copyright with limited use permissions.",
+          "notation": ["CR"],
+          "inScheme": {
+            "@id": "https://example.gov/concept-schemes/nara-restrictions",
+            "@type": "ConceptScheme",
+            "title": "NARA Restrictions"
+          }
+        }
+      ]
     }
   },
   "required": ["restrictionStatus"],
@@ -65,5 +102,13 @@
     "definition": "A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.",
     "usageNote": "When utilizing the dcat-us:UseRestriction class, data publishers are encouraged to provide comprehensive and precise details regarding the specific use restrictions applied to a resource. This may include information on access limitations, distribution rules, reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices. By offering clear and concise use restriction information, data consumers can make informed decisions about the utilization of these resources while complying with NARA's requirements.",
     "rationale": "The introduction of dcat-us:UseRestriction in DCAT-US 3.0, aligned with NARA (National Archives and Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data management practices within the DCAT-US framework."
-  }
+  },
+  "examples": [
+    {
+      "@type": "UseRestriction",
+      "restrictionStatus": "https://example.gov/concepts/unrestricted",
+      "specificRestriction": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "restrictionNote": "This data may be used for any purpose without restriction."
+    }
+  ]
 }

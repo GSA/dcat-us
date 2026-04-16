@@ -8,6 +8,16 @@ Information about a specific geographic location
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Continental United States",
+    "bbox": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+}
+```
+
 | Property                               | Type               | Title/Description |
 | -------------------------------------- | ------------------ | ----------------- |
 | - [@id](#@id )                         | string             | -                 |
@@ -29,6 +39,12 @@ Information about a specific geographic location
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/locations/washington-dc"
+```
+
 ## <a name="@type"></a>[Optional] Property `Location > @type`
 
 **Requirement:** Optional
@@ -36,6 +52,12 @@ Information about a specific geographic location
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Location"` |
+
+**Example:**
+
+```json
+"Location"
+```
 
 ## <a name="bbox"></a>[Recommended] Property `Location > bbox`
 
@@ -48,6 +70,42 @@ bounding box of a location described in WKT, GeoJSON, or GML format
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+```
+
+```json
+{
+    "type": "Polygon",
+    "coordinates": [
+        [
+            [
+                -77.119759,
+                38.791645
+            ],
+            [
+                -76.909393,
+                38.791645
+            ],
+            [
+                -76.909393,
+                38.99538
+            ],
+            [
+                -77.119759,
+                38.99538
+            ],
+            [
+                -77.119759,
+                38.791645
+            ]
+        ]
+    ]
+}
+```
 
 | Any of(Option)           |
 | ------------------------ |
@@ -109,6 +167,18 @@ The geographic center (centroid) of a location described in WKT, GeoJSON, or GML
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "type": "Point",
+    "coordinates": [
+        -77.0369,
+        38.9072
+    ]
+}
+```
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -180,6 +250,17 @@ The unique geographic identifier for the Location, e.g., the URI or other unique
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+{
+    "@id": "https://example.gov/identifiers/geonames-4140963",
+    "@type": "Identifier",
+    "notation": "4140963",
+    "schemaAgency": "GeoNames"
+}
+```
+
 | Any of(Option)                     |
 | ---------------------------------- |
 | [item 0](#identifier_anyOf_i0)     |
@@ -212,6 +293,20 @@ A list of geographic identifiers for the Location besides the main identifier, e
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/identifiers/fips-11001",
+        "@type": "Identifier",
+        "notation": "11001",
+        "schemaAgency": "FIPS"
+    },
+    "https://www.wikidata.org/wiki/Q61"
+]
+```
+
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -238,6 +333,62 @@ Associates a location with a corresponding geometry described in WKT, GeoJSON, o
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "type": "Polygon",
+    "coordinates": [
+        [
+            [
+                -77.0402,
+                38.7916
+            ],
+            [
+                -76.9094,
+                38.8921
+            ],
+            [
+                -76.9115,
+                38.9355
+            ],
+            [
+                -76.9286,
+                38.9784
+            ],
+            [
+                -77.0024,
+                38.9657
+            ],
+            [
+                -77.0389,
+                38.9939
+            ],
+            [
+                -77.0672,
+                38.9687
+            ],
+            [
+                -77.0782,
+                38.9143
+            ],
+            [
+                -77.1198,
+                38.9342
+            ],
+            [
+                -77.1198,
+                38.8456
+            ],
+            [
+                -77.0402,
+                38.7916
+            ]
+        ]
+    ]
+}
+```
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -281,6 +432,16 @@ The gazetteer to which the location belongs
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+{
+    "@id": "https://www.geonames.org/",
+    "@type": "ConceptScheme",
+    "title": "GeoNames"
+}
+```
+
 | Any of(Option)                      |
 | ----------------------------------- |
 | [item 0](#inScheme_anyOf_i0)        |
@@ -313,6 +474,12 @@ An alternative label or name for a location
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"DC"
+```
+
 ## <a name="prefLabel"></a>[Recommended] Property `Location > prefLabel`
 
 **Title:** geographic name
@@ -323,4 +490,14 @@ Preferred label or name of the Location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Continental United States"
+```
+
+```json
+"Washington, D.C."
+```
 

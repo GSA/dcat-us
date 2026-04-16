@@ -8,6 +8,17 @@ A restriction on the permitted access to a resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "AccessRestriction",
+    "restrictionStatus": "https://example.gov/concepts/restricted",
+    "specificRestriction": "https://www.archives.gov/cui/registry/category-list",
+    "restrictionNote": "Access restricted to authorized personnel only."
+}
+```
+
 | Property                                       | Type               | Title/Description    |
 | ---------------------------------------------- | ------------------ | -------------------- |
 | - [@id](#@id )                                 | string             | -                    |
@@ -32,6 +43,12 @@ A restriction on the permitted access to a resource
 | ----------- | --------------------- |
 | **Default** | `"AccessRestriction"` |
 
+**Example:**
+
+```json
+"AccessRestriction"
+```
+
 ## <a name="restrictionNote"></a>[Optional] Property `AccessRestriction > restrictionNote`
 
 **Title:** restriction note
@@ -42,6 +59,12 @@ A note related to the access restriction
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"Access restricted to authorized personnel only."
+```
 
 ## <a name="restrictionStatus"></a>[Mandatory] Property `AccessRestriction > restrictionStatus`
 
@@ -57,6 +80,12 @@ The indication of whether or not there are access restrictions on the item
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
+**Example:**
+
+```json
+"https://example.gov/concepts/restricted"
+```
+
 ## <a name="specificRestriction"></a>[Recommended] Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
@@ -68,6 +97,12 @@ The specific NARA restriction associated with this restriction
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"https://www.archives.gov/cui/registry/category-list"
+```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |

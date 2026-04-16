@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/standards/dcat-us-3"]
     },
     "@type": {
       "type": "string",
-      "default": "Standard"
+      "default": "Standard",
+      "examples": ["Standard"]
     },
     "created": {
       "title": "creation date",
@@ -51,7 +53,8 @@
         "uri": "dcterms:created",
         "range": "xsd:date",
         "definition": "This property contains the date on which the Standard has been first created."
-      }
+      },
+      "examples": ["2023-01-01"]
     },
     "description": {
       "title": "description",
@@ -63,7 +66,11 @@
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description - see Multilinguism"
-      }
+      },
+      "examples": [
+        "Data Catalog Vocabulary - United States Profile version 3.0",
+        "The DCAT-US 3.0 schema defines a standard metadata format for data catalogs in the United States government, based on W3C DCAT."
+      ]
     },
     "identifier": {
       "title": "identifier",
@@ -84,7 +91,20 @@
         "uri": "dcterms:identifier",
         "range": "xsd:string",
         "definition": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog, or of a reference register"
-      }
+      },
+      "examples": [
+        {
+          "@type": "Identifier",
+          "notation": "DCAT-US-3.0",
+          "schemaAgency": "U.S. General Services Administration"
+        },
+        {
+          "@type": "Identifier",
+          "schemaAgency": "resources.data.gov",
+          "notation": "DCAT-US-3.0",
+          "version": "3.0.0"
+        }
+      ]
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -95,7 +115,16 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@type": "Identifier",
+            "schemaAgency": "W3C",
+            "notation": "DCAT-3.0-US-Profile"
+          }
+        ]
+      ]
     },
     "issued": {
       "title": "issued",
@@ -135,7 +164,8 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the date of formal issuance (e.g., publication) of the Standard."
-      }
+      },
+      "examples": ["2024-01-15"]
     },
     "modified": {
       "title": "last modified",
@@ -175,7 +205,8 @@
         "uri": "dcterms:modified",
         "range": "xsd:date",
         "definition": "This property contains the most recent date on which the Standard was changed or modified."
-      }
+      },
+      "examples": ["2024-06-01"]
     },
     "title": {
       "title": "title",
@@ -187,7 +218,11 @@
         "uri": "dcterms:title",
         "range": "xsd:string",
         "definition": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name."
-      }
+      },
+      "examples": [
+        "DCAT-US 3.0",
+        "DCAT-US 3.0 - Data Catalog Vocabulary United States Profile"
+      ]
     },
     "category": {
       "title": "category",
@@ -198,7 +233,20 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@type": "Concept",
+            "prefLabel": "Metadata Standards",
+            "inScheme": {
+              "@id": "https://example.gov/vocabularies/standard-categories",
+              "@type": "ConceptScheme",
+              "title": "Standard Categories"
+            }
+          }
+        ]
+      ]
     },
     "inScheme": {
       "title": "in scheme",
@@ -219,7 +267,19 @@
         "uri": "skos:inScheme",
         "range": "skos:ConceptScheme",
         "definition": "This property MAY be used to specify the reference register to which the Standard belongs."
-      }
+      },
+      "examples": [
+        {
+          "@type": "ConceptScheme",
+          "title": "Federal Data Standards",
+          "description": "A collection of data standards used by federal agencies"
+        },
+        {
+          "@id": "https://resources.data.gov/standards-register",
+          "@type": "ConceptScheme",
+          "title": "Standards Register"
+        }
+      ]
     }
   },
   "required": [],
@@ -228,5 +288,23 @@
     "definition": "A standard or other specification to which a Dataset or Distribution conforms.",
     "usageNote": "A standard or other specification to which a Catalog, Catalog Record, Data Service, Dataset, or Distribution conforms",
     "rationale": "The inclusion of dcterms:Standard in DCAT-US accommodates standard references through URLs or custom, detailed descriptions when specific standards are not available, promoting flexibility and completeness in resource metadata."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Standard",
+      "title": "DCAT-US 3.0",
+      "description": "Data Catalog Vocabulary - United States Profile version 3.0",
+      "issued": "2024-01-15",
+      "identifier": {
+        "@type": "Identifier",
+        "notation": "DCAT-US-3.0",
+        "schemaAgency": "U.S. General Services Administration"
+      },
+      "inScheme": {
+        "@type": "ConceptScheme",
+        "title": "Federal Data Standards",
+        "description": "A collection of data standards used by federal agencies"
+      }
+    }
+  ]
 }

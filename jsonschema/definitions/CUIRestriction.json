@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/cui-restrictions/dataset-001"]
     },
     "@type": {
       "type": "string",
-      "default": "CUIRestriction"
+      "default": "CUIRestriction",
+      "examples": ["CUIRestriction"]
     },
     "cuiBannerMarking": {
       "title": "CUI banner marking",
@@ -23,7 +25,8 @@
         "uri": "dcat-us:cuiBannerMarking",
         "range": "xsd:string",
         "definition": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection."
-      }
+      },
+      "examples": ["CUI//SP-CTI", "CUI//SP-PRVCY//SP-LEGAL"]
     },
     "designationIndicator": {
       "title": "CUI designation indicator",
@@ -36,7 +39,8 @@
         "range": "xsd:string",
         "definition": "Designation Indicator shows which agency made the document CUI",
         "usageNote": "Free text per NARA Marking Guidebook and DODI 5200.48 (should have at least \"Controlled by:\"). It is best practice to include contact information."
-      }
+      },
+      "examples": ["Agency XYZ", "DOC"]
     },
     "requiredIndicatorPerAuthority": {
       "title": "required indicator per authority",
@@ -52,7 +56,8 @@
         "uri": "dcat-us:requiredIndicatorPerAuthority",
         "range": "xsd:string",
         "definition": "free text (e.g., text of the category description or the distribution statement)"
-      }
+      },
+      "examples": [["Privacy Act of 1974", "Federal Records Act"]]
     }
   },
   "required": ["cuiBannerMarking", "designationIndicator"],
@@ -61,5 +66,12 @@
     "definition": "Represents Controlled Unclassified Information (CUI), which is information that requires safeguarding or dissemination controls in accordance with applicable laws, regulations, and government-wide policies but is not classified as confidential.",
     "usageNote": "The CUI Restriction class is designed to capture information related to Controlled Unclassified Information (CUI) in accordance with NARA guidelines. Users of this class must provide the mandatory properties, i.e the CUI banner marking and designation indicator, to accurately describe the CUI status of a resource. The optional property, \"required indicator per authority,\" allows for additional information or context about CUI restrictions, providing flexibility for specific use cases.",
     "rationale": "The introduction of the dcat-us:CuiRestriction class in DCAT-US 3.0 is driven by the need for compliance with National Archives and Records Administration (NARA) guidelines regarding Controlled Unclassified Information (CUI). This addition ensures that DCAT-US aligns with NARA's standards, promotes transparency, facilitates compliance audits, and supports efficient resource management. Ultimately, it enhances data interoperability and security within the government data ecosystem."
-  }
+  },
+  "examples": [
+    {
+      "@type": "CUIRestriction",
+      "cuiBannerMarking": "CUI//SP-CTI",
+      "designationIndicator": "Agency XYZ"
+    }
+  ]
 }

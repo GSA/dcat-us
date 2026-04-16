@@ -7,11 +7,15 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": [
+        "https://example.gov/catalog-records/climate-dataset-record-001"
+      ]
     },
     "@type": {
       "type": "string",
-      "default": "CatalogRecord"
+      "default": "CatalogRecord",
+      "examples": ["CatalogRecord"]
     },
     "status": {
       "title": "change type",
@@ -32,7 +36,21 @@
         "uri": "adms:status",
         "range": "skos:Concept",
         "definition": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions."
-      }
+      },
+      "examples": [
+        "published",
+        {
+          "@id": "https://example.gov/concepts/status-published",
+          "@type": "Concept",
+          "prefLabel": "Published",
+          "definition": "The catalog record has been published and is publicly available.",
+          "inScheme": {
+            "@id": "https://example.gov/concept-schemes/record-status",
+            "@type": "ConceptScheme",
+            "title": "Record Status"
+          }
+        }
+      ]
     },
     "conformsTo": {
       "title": "application profile",
@@ -53,7 +71,19 @@
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "definition": "An Application Profile that the Catalog Record's metadata conforms to."
-      }
+      },
+      "examples": [
+        {
+          "@type": "Standard",
+          "title": "DCAT-US 3.0"
+        },
+        {
+          "@id": "https://example.gov/standards/dcat-us-3",
+          "@type": "Standard",
+          "title": "DCAT-US 3.0",
+          "description": "Data Catalog Vocabulary - United States Profile version 3.0"
+        }
+      ]
     },
     "description": {
       "title": "Descriptions",
@@ -69,7 +99,13 @@
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "A free-text account of the Catalog Record. This property can be repeated for parallel language versions of the description."
-      }
+      },
+      "examples": [
+        [
+          "This catalog record describes the registration of the Climate Data 2023 dataset.",
+          "Contains metadata about when the dataset was added and last updated."
+        ]
+      ]
     },
     "issued": {
       "title": "listing date",
@@ -104,7 +140,8 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "The date on which the description of the Dataset was included in the Catalog."
-      }
+      },
+      "examples": [["2024-01-15"], ["2023-06-01"]]
     },
     "language": {
       "title": "language",
@@ -136,7 +173,8 @@
         "range": "dcterms:LinguisticSystem",
         "definition": "A language used in the textual metadata describing titles, descriptions, etc. of the members of the catalog.",
         "usageNote": "Resources defined by the Library of Congress [[ISO 639-1]] SHOULD be used. This property can be repeated if the metadata is provided in multiple languages."
-      }
+      },
+      "examples": [["en", "es"]]
     },
     "modified": {
       "title": "update/modification date",
@@ -167,7 +205,8 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "The most recent date on which the Catalog Record's entry was changed or modified."
-      }
+      },
+      "examples": ["2024-06-15", "2024-01-15T10:30:00Z"]
     },
     "source": {
       "title": "source metadata",
@@ -179,7 +218,8 @@
         "uri": "dcterms:source",
         "range": "dcat:Resource",
         "definition": "The original metadata that was used in creating metadata for the datasets, data services, or catalogs in the Catalog Record."
-      }
+      },
+      "examples": ["Original metadata harvested from NOAA data portal"]
     },
     "title": {
       "title": "title",
@@ -192,7 +232,11 @@
         "range": "rdfs:Literal",
         "definition": "A name given to the Catalog Record.",
         "usageNote": "This property can be repeated for parallel language versions of the name."
-      }
+      },
+      "examples": [
+        "Climate Data 2024 Catalog Entry",
+        "Climate Data 2023 Catalog Record"
+      ]
     },
     "primaryTopic": {
       "title": "primary topic",
@@ -205,7 +249,11 @@
         "range": "dcat:Resource",
         "definition": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
         "usageNote": "A catalog record will refer to one entity in a catalog. This can be either a Dataset or a Data Service. To ensure an unambigous reading of the cardinality the range is set to Cataloged Resource. However it is not the intend with this range to require the explicit use of the class Cataloged Record. As abstract class, an subclass should be used."
-      }
+      },
+      "examples": [
+        "https://example.gov/datasets/climate-data-2024",
+        "https://example.gov/datasets/climate-data-2023"
+      ]
     }
   },
   "required": ["modified", "primaryTopic"],
@@ -214,5 +262,19 @@
     "definition": "A record in a catalog, describing the registration of a single dcat:Resource.",
     "usageNote": "This class is optional and not all catalogs will use it. It exists for catalogs where a distinction is made between metadata about a dataset or service and metadata about the entry in the catalog about the dataset or service. For example, the publication date property of the dataset reflects the date when the information was originally made available by the publishing agency, while the publication date of the catalog record is the date when the dataset was added to the catalog. In cases where both dates differ, or where only the latter is known, the publication date SHOULD only be specified for the catalog record. Notice that the W3C PROV Ontology [[PROV-O]] allows describing further provenance information such as the details of the process and the agent involved in a particular change to a dataset or its registration.",
     "rationale": "While its use is not mandatory, the incorporation of dcat:CatalogRecord into DCAT-US 3.0 holds significant value. It enables catalogs to distinguish between metadata describing datasets or services and the actual catalog entries. This differentiation proves especially advantageous for ensuring adherence to application profiles that demand specific metadata for catalog records. Furthermore, it streamlines resource lifecycle management, empowering catalogs to monitor alterations and revisions to their entries, ultimately bolstering data governance and quality assurance protocols."
-  }
+  },
+  "examples": [
+    {
+      "@type": "CatalogRecord",
+      "modified": "2024-06-15",
+      "primaryTopic": "https://example.gov/datasets/climate-data-2024",
+      "title": "Climate Data 2024 Catalog Entry",
+      "issued": ["2024-01-15"],
+      "status": "published",
+      "conformsTo": {
+        "@type": "Standard",
+        "title": "DCAT-US 3.0"
+      }
+    }
+  ]
 }

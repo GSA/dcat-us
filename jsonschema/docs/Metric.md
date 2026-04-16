@@ -6,6 +6,17 @@
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Metric",
+    "expectedDataType": "xsd:decimal",
+    "inDimension": "https://example.gov/dimensions/completeness",
+    "definition": "Percentage of non-null values in the dataset."
+}
+```
+
 | Property                                 | Type           | Title/Description |
 | ---------------------------------------- | -------------- | ----------------- |
 | - [@id](#@id )                           | string         | -                 |
@@ -22,6 +33,12 @@
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/metrics/record-completeness"
+```
+
 ## <a name="@type"></a>[Optional] Property `Metric > @type`
 
 **Requirement:** Optional
@@ -29,6 +46,12 @@
 | **Type**    | `string`   |
 | ----------- | ---------- |
 | **Default** | `"Metric"` |
+
+**Example:**
+
+```json
+"Metric"
+```
 
 ## <a name="expectedDataType"></a>[Mandatory] Property `Metric > expectedDataType`
 
@@ -42,6 +65,16 @@ Represents the expected data type for the metric's observed value (e.g., xsd:boo
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"xsd:decimal"
+```
+
+```json
+"xsd:double"
+```
+
 ## <a name="inDimension"></a>[Mandatory] Property `Metric > inDimension`
 
 **Title:** in dimension
@@ -54,6 +87,16 @@ Represents the dimensions a quality metric, certificate and annotation allow a m
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"https://example.gov/dimensions/completeness"
+```
+
+```json
+"https://www.w3.org/TR/vocab-dqv/#dqv:completeness"
+```
+
 ## <a name="definition"></a>[Recommended] Property `Metric > definition`
 
 **Title:** definition
@@ -64,4 +107,14 @@ Definition of the metric.
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Percentage of non-null values in the dataset."
+```
+
+```json
+"The percentage of non-null values for required fields in a dataset. A value of 1.0 indicates 100% completeness."
+```
 

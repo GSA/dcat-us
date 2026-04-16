@@ -8,6 +8,16 @@ Information about an item or entity that has some relationship to a dataset and 
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Relationship",
+    "hadRole": "isInputTo",
+    "relation": "https://example.gov/models/climate-prediction"
+}
+```
+
 | Property                 | Type   | Title/Description |
 | ------------------------ | ------ | ----------------- |
 | - [@id](#@id )           | string | -                 |
@@ -23,6 +33,12 @@ Information about an item or entity that has some relationship to a dataset and 
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/relationships/dataset-001-data-provider"
+```
+
 ## <a name="@type"></a>[Optional] Property `Relationship > @type`
 
 **Requirement:** Optional
@@ -30,6 +46,12 @@ Information about an item or entity that has some relationship to a dataset and 
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"Relationship"` |
+
+**Example:**
+
+```json
+"Relationship"
+```
 
 ## <a name="hadRole"></a>[Mandatory] Property `Relationship > hadRole`
 
@@ -43,6 +65,16 @@ The function of an entity or agent with respect to a dataset
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"isInputTo"
+```
+
+```json
+"dataProvider"
+```
+
 ## <a name="relation"></a>[Mandatory] Property `Relationship > relation`
 
 **Title:** relation
@@ -54,4 +86,14 @@ The entity related to the dataset. This string should unambiguously identify the
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"https://example.gov/models/climate-prediction"
+```
+
+```json
+"https://example.gov/organizations/national-weather-service"
+```
 

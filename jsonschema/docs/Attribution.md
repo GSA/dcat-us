@@ -8,6 +8,18 @@ An attribution that an agent plays some role
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Attribution",
+    "hadRole": "Data Steward",
+    "agent": {
+        "name": "Environmental Data Management Office"
+    }
+}
+```
+
 | Property               | Type   | Title/Description |
 | ---------------------- | ------ | ----------------- |
 | - [@id](#@id )         | string | -                 |
@@ -23,6 +35,12 @@ An attribution that an agent plays some role
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/attributions/dataset-steward-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Attribution > @type`
 
 **Requirement:** Optional
@@ -30,6 +48,12 @@ An attribution that an agent plays some role
 | **Type**    | `string`        |
 | ----------- | --------------- |
 | **Default** | `"Attribution"` |
+
+**Example:**
+
+```json
+"Attribution"
+```
 
 ## <a name="hadRole"></a>[Mandatory] Property `Attribution > hadRole`
 
@@ -42,6 +66,12 @@ The function of an entity or agent with respect to another entity or resource
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Example:**
+
+```json
+"Data Steward"
+```
 
 ## <a name="agent"></a>[Mandatory] Property `Attribution > agent`
 
@@ -56,4 +86,33 @@ The agent that plays a role in the resource
 | **Required**              | Yes                 |
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
+
+**Examples:**
+
+```json
+{
+    "name": "Environmental Data Management Office"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/agents/env-data-office-001",
+    "@type": "Agent",
+    "name": "Environmental Data Management Office",
+    "category": [
+        {
+            "@id": "https://example.gov/concepts/government-office",
+            "@type": "Concept",
+            "prefLabel": "Government Office",
+            "definition": "A subdivision of a government agency responsible for specific functions.",
+            "inScheme": {
+                "@id": "https://example.gov/concept-schemes/organization-types",
+                "@type": "ConceptScheme",
+                "title": "Organization Types"
+            }
+        }
+    ]
+}
+```
 

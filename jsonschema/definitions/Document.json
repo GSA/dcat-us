@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/documents/climate-user-guide-001"]
     },
     "@type": {
       "type": "string",
-      "default": "Document"
+      "default": "Document",
+      "examples": ["Document"]
     },
     "accessURL": {
       "title": "access URL",
@@ -30,7 +32,8 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": ["https://example.gov/docs/climate-user-guide"]
     },
     "downloadURL": {
       "title": "download URL",
@@ -49,7 +52,8 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": ["https://example.gov/docs/climate-user-guide.pdf"]
     },
     "creator": {
       "title": "author",
@@ -63,7 +67,21 @@
         "cardinality": "0..n",
         "uri": "dcterms:creator",
         "range": "org:Organization"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@id": "https://example.gov/contacts/doc-author-001",
+            "@type": "Kind",
+            "fn": "Dr. Jane Smith",
+            "hasEmail": "mailto:jane.smith@example.gov",
+            "given-name": "Jane",
+            "family-name": "Smith",
+            "organization-name": "National Climate Data Center",
+            "title": "Senior Climate Scientist"
+          }
+        ]
+      ]
     },
     "mediaType": {
       "title": "media type",
@@ -75,7 +93,8 @@
         "uri": "dcterms:mediaType",
         "range": "dcterms:MediaType",
         "usageNote": "An implementing rule or other specification."
-      }
+      },
+      "examples": ["application/pdf"]
     },
     "abstract": {
       "title": "abstract",
@@ -86,7 +105,10 @@
         "cardinality": "0..n",
         "uri": "dcterms:abstract",
         "range": "rdfs:Literal"
-      }
+      },
+      "examples": [
+        "This document provides detailed instructions for using climate data products, including API access, file formats, and data interpretation guidelines."
+      ]
     },
     "bibliographicCitation": {
       "title": "bibliographic citation",
@@ -97,7 +119,11 @@
         "cardinality": "0..1",
         "uri": "dcterms:bibliographicCitation",
         "range": "rdfs:Literal"
-      }
+      },
+      "examples": [
+        "National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide",
+        "National Climate Data Center. (2024). Climate Data User Guide. U.S. Department of Commerce."
+      ]
     },
     "conformsTo": {
       "title": "conforms to",
@@ -112,7 +138,17 @@
         "uri": "dcterms:identifier",
         "range": "dcterms:Standard",
         "usageNote": "An implementing rule or other specification."
-      }
+      },
+      "examples": [
+        [
+          {
+            "@id": "https://example.gov/standards/pdf-a",
+            "@type": "Standard",
+            "title": "PDF/A-3",
+            "description": "ISO 19005-3 - Document management -- Electronic document file format for long-term preservation."
+          }
+        ]
+      ]
     },
     "corporateCreator": {
       "title": "corporate author",
@@ -123,7 +159,16 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@id": "https://example.gov/organizations/ncdc",
+            "@type": "Organization",
+            "name": "National Climate Data Center"
+          }
+        ]
+      ]
     },
     "description": {
       "title": "description",
@@ -135,7 +180,11 @@
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "Description of the document."
-      }
+      },
+      "examples": [
+        "A guide for accessing and using the National Climate Data Center's data products.",
+        "A comprehensive guide for accessing and using the National Climate Data Center's data products and services."
+      ]
     },
     "identifier": {
       "title": "identifier",
@@ -155,7 +204,15 @@
         "cardinality": "0..1",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "examples": [
+        "NCDC-UG-2024-001",
+        {
+          "@type": "Identifier",
+          "schemaAgency": "example.gov",
+          "notation": "DOC-CLIMATE-GUIDE-001"
+        }
+      ]
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -166,7 +223,21 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@type": "Identifier",
+            "schemaAgency": "DOI",
+            "notation": "10.12345/climate-guide-2024"
+          },
+          {
+            "@type": "Identifier",
+            "schemaAgency": "ISBN",
+            "notation": "978-0-123456-78-9"
+          }
+        ]
+      ]
     },
     "issued": {
       "title": "publication date",
@@ -204,7 +275,8 @@
         "cardinality": "0..n",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal"
-      }
+      },
+      "examples": ["2024-03-15", "2024-01-15"]
     },
     "publisher": {
       "title": "publisher",
@@ -219,7 +291,22 @@
         "uri": "dc:publisher",
         "range": "rdfs:Literal",
         "usageNote": "Use this property to represent publisher as literal string and not structured data."
-      }
+      },
+      "examples": [
+        [
+          {
+            "@type": "Organization",
+            "name": "National Climate Data Center"
+          }
+        ],
+        [
+          {
+            "@id": "https://example.gov/organizations/noaa",
+            "@type": "Organization",
+            "name": "National Oceanic and Atmospheric Administration"
+          }
+        ]
+      ]
     },
     "title": {
       "title": "title",
@@ -230,7 +317,8 @@
         "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
-      }
+      },
+      "examples": ["Climate Data User Guide"]
     },
     "category": {
       "title": "category",
@@ -241,7 +329,33 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@id": "https://example.gov/concepts/user-guide",
+            "@type": "Concept",
+            "prefLabel": "User Guide",
+            "definition": "A document that provides instructions for using a product or service.",
+            "inScheme": {
+              "@id": "https://example.gov/concept-schemes/document-types",
+              "@type": "ConceptScheme",
+              "title": "Document Types"
+            }
+          },
+          {
+            "@id": "https://example.gov/concepts/technical-documentation",
+            "@type": "Concept",
+            "prefLabel": "Technical Documentation",
+            "definition": "Documentation describing technical aspects of a system or service.",
+            "inScheme": {
+              "@id": "https://example.gov/concept-schemes/document-types",
+              "@type": "ConceptScheme",
+              "title": "Document Types"
+            }
+          }
+        ]
+      ]
     }
   },
   "required": ["title"],
@@ -250,5 +364,23 @@
     "definition": "A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.",
     "usageNote": "Depending on whether a catalog supports or not publications as first-class citizens, a publication can be fully described, or simply denoted by its URI.",
     "rationale": "The introduction of foaf:Document significantly improves the representation of documents within the DCAT-US profile. It ensures that metadata about documents, such as title, format, language, and access options, are clearly defined and standardized. This alignment with global data standards fosters interoperability and eases document integration into various data ecosystems, benefiting both publishers and consumers."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Document",
+      "title": "Climate Data User Guide",
+      "description": "A guide for accessing and using the National Climate Data Center's data products.",
+      "accessURL": "https://example.gov/docs/climate-user-guide",
+      "mediaType": "application/pdf",
+      "identifier": "NCDC-UG-2024-001",
+      "issued": "2024-03-15",
+      "publisher": [
+        {
+          "@type": "Organization",
+          "name": "National Climate Data Center"
+        }
+      ],
+      "bibliographicCitation": "National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide"
+    }
+  ]
 }

@@ -8,6 +8,27 @@ Information about a text document
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Document",
+    "title": "Climate Data User Guide",
+    "description": "A guide for accessing and using the National Climate Data Center's data products.",
+    "accessURL": "https://example.gov/docs/climate-user-guide",
+    "mediaType": "application/pdf",
+    "identifier": "NCDC-UG-2024-001",
+    "issued": "2024-03-15",
+    "publisher": [
+        {
+            "@type": "Organization",
+            "name": "National Climate Data Center"
+        }
+    ],
+    "bibliographicCitation": "National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide"
+}
+```
+
 | Property                                           | Type               | Title/Description      |
 | -------------------------------------------------- | ------------------ | ---------------------- |
 | - [@id](#@id )                                     | string             | -                      |
@@ -36,6 +57,12 @@ Information about a text document
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/documents/climate-user-guide-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Document > @type`
 
 **Requirement:** Optional
@@ -43,6 +70,12 @@ Information about a text document
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Document"` |
+
+**Example:**
+
+```json
+"Document"
+```
 
 ## <a name="accessURL"></a>[Optional] Property `Document > accessURL`
 
@@ -55,6 +88,12 @@ A URL that gives access to the Document
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"https://example.gov/docs/climate-user-guide"
+```
 
 | Any of(Option)                                        |
 | ----------------------------------------------------- |
@@ -90,6 +129,12 @@ A URL that is a direct link to a downloadable file of the Document in a given fo
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+"https://example.gov/docs/climate-user-guide.pdf"
+```
+
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
 | [Null allowed when not required](#downloadURL_anyOf_i0) |
@@ -123,6 +168,23 @@ The individual(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/contacts/doc-author-001",
+        "@type": "Kind",
+        "fn": "Dr. Jane Smith",
+        "hasEmail": "mailto:jane.smith@example.gov",
+        "given-name": "Jane",
+        "family-name": "Smith",
+        "organization-name": "National Climate Data Center",
+        "title": "Senior Climate Scientist"
+    }
+]
+```
+
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
 | [Kind](#creator_items)          | Contact information for an individual or entity |
@@ -149,6 +211,12 @@ The file format of the Document as defined in the official register of media typ
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"application/pdf"
+```
+
 ## <a name="abstract"></a>[Optional] Property `Document > abstract`
 
 **Title:** abstract
@@ -159,6 +227,12 @@ Text abstract of the Document
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"This document provides detailed instructions for using climate data products, including API access, file formats, and data interpretation guidelines."
+```
 
 ## <a name="bibliographicCitation"></a>[Recommended] Property `Document > bibliographicCitation`
 
@@ -171,6 +245,16 @@ Bibliographic citation as text
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide"
+```
+
+```json
+"National Climate Data Center. (2024). Climate Data User Guide. U.S. Department of Commerce."
+```
+
 ## <a name="conformsTo"></a>[Optional] Property `Document > conformsTo`
 
 **Title:** conforms to
@@ -181,6 +265,19 @@ List of standards that the Document conforms to
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/standards/pdf-a",
+        "@type": "Standard",
+        "title": "PDF/A-3",
+        "description": "ISO 19005-3 - Document management -- Electronic document file format for long-term preservation."
+    }
+]
+```
 
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
@@ -208,6 +305,18 @@ The corporate organization(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/organizations/ncdc",
+        "@type": "Organization",
+        "name": "National Climate Data Center"
+    }
+]
+```
+
 | Each item of this array must be         | Description                                                                         |
 | --------------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#corporateCreator_items) | Information about an organization, including other organizations that it is part of |
@@ -234,6 +343,16 @@ A free-text account of the Document
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"A guide for accessing and using the National Climate Data Center's data products."
+```
+
+```json
+"A comprehensive guide for accessing and using the National Climate Data Center's data products and services."
+```
+
 ## <a name="identifier"></a>[Recommended] Property `Document > identifier`
 
 **Title:** identifier
@@ -245,6 +364,20 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"NCDC-UG-2024-001"
+```
+
+```json
+{
+    "@type": "Identifier",
+    "schemaAgency": "example.gov",
+    "notation": "DOC-CLIMATE-GUIDE-001"
+}
+```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -280,6 +413,23 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@type": "Identifier",
+        "schemaAgency": "DOI",
+        "notation": "10.12345/climate-guide-2024"
+    },
+    {
+        "@type": "Identifier",
+        "schemaAgency": "ISBN",
+        "notation": "978-0-123456-78-9"
+    }
+]
+```
+
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -306,6 +456,16 @@ Publication date of the Document
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-03-15"
+```
+
+```json
+"2024-01-15"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -377,6 +537,27 @@ The organization(s) that published the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+[
+    {
+        "@type": "Organization",
+        "name": "National Climate Data Center"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/organizations/noaa",
+        "@type": "Organization",
+        "name": "National Oceanic and Atmospheric Administration"
+    }
+]
+```
+
 | Each item of this array must be  | Description                                                                         |
 | -------------------------------- | ----------------------------------------------------------------------------------- |
 | [Organization](#publisher_items) | Information about an organization, including other organizations that it is part of |
@@ -404,6 +585,12 @@ The title of the Document
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Example:**
+
+```json
+"Climate Data User Guide"
+```
+
 ## <a name="category"></a>[Optional] Property `Document > category`
 
 **Title:** category
@@ -414,6 +601,35 @@ List of categories/genres for the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/concepts/user-guide",
+        "@type": "Concept",
+        "prefLabel": "User Guide",
+        "definition": "A document that provides instructions for using a product or service.",
+        "inScheme": {
+            "@id": "https://example.gov/concept-schemes/document-types",
+            "@type": "ConceptScheme",
+            "title": "Document Types"
+        }
+    },
+    {
+        "@id": "https://example.gov/concepts/technical-documentation",
+        "@type": "Concept",
+        "prefLabel": "Technical Documentation",
+        "definition": "Documentation describing technical aspects of a system or service.",
+        "inScheme": {
+            "@id": "https://example.gov/concept-schemes/document-types",
+            "@type": "ConceptScheme",
+            "title": "Document Types"
+        }
+    }
+]
+```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |

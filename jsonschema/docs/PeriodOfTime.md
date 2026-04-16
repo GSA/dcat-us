@@ -8,6 +8,16 @@ Information about a specific time period with a start- and/or end-time
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+{
+    "@type": "PeriodOfTime",
+    "startDate": "2024-01-01",
+    "endDate": "2024-12-31"
+}
+```
+
 | Property                   | Type               | Title/Description |
 | -------------------------- | ------------------ | ----------------- |
 | - [@id](#@id )             | string             | -                 |
@@ -46,6 +56,12 @@ Information about a specific time period with a start- and/or end-time
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/periods/fiscal-year-2024"
+```
+
 ## <a name="@type"></a>[Optional] Property `PeriodOfTime > @type`
 
 **Requirement:** Optional
@@ -53,6 +69,12 @@ Information about a specific time period with a start- and/or end-time
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"PeriodOfTime"` |
+
+**Example:**
+
+```json
+"PeriodOfTime"
+```
 
 ## <a name="endDate"></a>[Recommended] Property `PeriodOfTime > endDate`
 
@@ -65,6 +87,16 @@ The end date of the period of time
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-12-31"
+```
+
+```json
+"2024-09-30"
+```
 
 | Any of(Option)                                      |
 | --------------------------------------------------- |
@@ -136,6 +168,16 @@ The start date of the period of time
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-01-01"
+```
+
+```json
+"2023-10-01"
+```
 
 | Any of(Option)                                        |
 | ----------------------------------------------------- |

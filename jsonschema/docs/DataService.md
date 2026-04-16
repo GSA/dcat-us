@@ -8,6 +8,54 @@ A service for providing data at a URL or URLs
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "DataService",
+    "title": "Climate Data API",
+    "description": "RESTful API providing access to historical climate observations.",
+    "endpointURL": [
+        "https://api.example.gov/climate/v1"
+    ],
+    "endpointDescription": [
+        "https://api.example.gov/climate/v1/openapi.json"
+    ],
+    "contactPoint": [
+        {
+            "fn": "API Support Team",
+            "hasEmail": "mailto:api-support@example.gov"
+        }
+    ],
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "keyword": [
+        "climate",
+        "weather",
+        "API"
+    ],
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "servesDataset": [
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2024",
+            "@type": "Dataset",
+            "title": "Climate Observations 2024",
+            "description": "Annual climate observation data.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/climate-observations-2024"
+        }
+    ],
+    "identifier": "https://example.gov/services/climate-api"
+}
+```
+
 | Property                                                   | Type                    | Title/Description            |
 | ---------------------------------------------------------- | ----------------------- | ---------------------------- |
 | - [@id](#@id )                                             | string                  | -                            |
@@ -49,6 +97,12 @@ A service for providing data at a URL or URLs
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/data-services/climate-api-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `DataService > @type`
 
 **Requirement:** Optional
@@ -56,6 +110,12 @@ A service for providing data at a URL or URLs
 | **Type**    | `string`        |
 | ----------- | --------------- |
 | **Default** | `"DataService"` |
+
+**Example:**
+
+```json
+"DataService"
+```
 
 ## <a name="contactPoint"></a>[Mandatory] Property `DataService > contactPoint`
 
@@ -68,6 +128,40 @@ Contact information that can be used for sending comments about the Data Service
 | **Type**     | `array` |
 | ------------ | ------- |
 | **Required** | Yes     |
+
+**Examples:**
+
+```json
+[
+    {
+        "fn": "API Support Team",
+        "hasEmail": "mailto:api-support@example.gov"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/contacts/climate-team-001",
+        "@type": "Kind",
+        "fn": "Climate Data Support Team",
+        "hasEmail": "mailto:climate-support@example.gov",
+        "organization-name": "National Climate Data Center",
+        "tel": "+1-555-123-4567",
+        "address": [
+            {
+                "@id": "https://example.gov/addresses/climate-office-001",
+                "country-name": "United States",
+                "locality": "Asheville",
+                "postal-code": "28801",
+                "region": "NC",
+                "street-address": "151 Patton Ave"
+            }
+        ]
+    }
+]
+```
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
@@ -95,6 +189,20 @@ A list of descriptions of the services available via the end-points, including t
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
 
+**Examples:**
+
+```json
+[
+    "https://api.example.gov/climate/v1/openapi.json"
+]
+```
+
+```json
+[
+    "https://api.example.gov/climate/docs/openapi.json"
+]
+```
+
 | Each item of this array must be                         | Description |
 | ------------------------------------------------------- | ----------- |
 | [endpointDescription items](#endpointDescription_items) | -           |
@@ -115,6 +223,21 @@ A list of root locations or primary endpoints of the service (a Web-resolvable I
 | **Type**     | `array of string` |
 | ------------ | ----------------- |
 | **Required** | Yes               |
+
+**Examples:**
+
+```json
+[
+    "https://api.example.gov/climate/v1"
+]
+```
+
+```json
+[
+    "https://api.example.gov/climate/v1",
+    "https://api.example.gov/climate/v2"
+]
+```
 
 | Each item of this array must be | Description                                                                 |
 | ------------------------------- | --------------------------------------------------------------------------- |
@@ -140,6 +263,26 @@ List of keywords or tags describing the Data Service
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
+
+**Examples:**
+
+```json
+[
+    "climate",
+    "weather",
+    "API"
+]
+```
+
+```json
+[
+    "climate",
+    "weather",
+    "temperature",
+    "API",
+    "REST"
+]
+```
 
 | Each item of this array must be     | Description |
 | ----------------------------------- | ----------- |
@@ -167,6 +310,48 @@ List of datasets that are served by this data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2024",
+        "@type": "Dataset",
+        "title": "Climate Observations 2024",
+        "description": "Annual climate observation data.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/climate-observations-2024"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/datasets/daily-climate-obs",
+        "@type": "Dataset",
+        "title": "Daily Climate Observations",
+        "description": "Daily observations of temperature, precipitation, and other climate variables.",
+        "contactPoint": [
+            {
+                "fn": "Climate Data Team",
+                "hasEmail": "mailto:climate-data@example.gov"
+            }
+        ],
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/served-dataset-001"
+    }
+]
+```
+
 | Each item of this array must be | Description                     |
 | ------------------------------- | ------------------------------- |
 | [Dataset](#servesDataset_items) | Information about a set of data |
@@ -193,6 +378,12 @@ The minimum spatial separation resolvable in a Data Service, measured in meters
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"1000"
+```
+
 ## <a name="temporalResolution"></a>[Optional] Property `DataService > temporalResolution`
 
 **Title:** temporal resolution
@@ -204,6 +395,12 @@ The minimum time period resolvable by the Data Service
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"P1D"
+```
+
 ## <a name="theme"></a>[Optional] Property `DataService > theme`
 
 **Title:** theme/category
@@ -214,6 +411,24 @@ A list of themes of the Data Service. A Data Service may be associated with mult
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/concepts/climate-science",
+        "@type": "Concept",
+        "prefLabel": "Climate Science",
+        "definition": "The scientific study of climate and climate change.",
+        "inScheme": {
+            "@id": "https://example.gov/concept-schemes/science-domains",
+            "@type": "ConceptScheme",
+            "title": "Science Domains"
+        }
+    }
+]
+```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
@@ -241,6 +456,12 @@ Information that indicates whether the Data Service is open data, has access res
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"Public access with no restrictions"
+```
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -270,6 +491,19 @@ List of general standards or specifications that the Data Service endpoints impl
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/standards/ogc-api-features",
+        "@type": "Standard",
+        "title": "OGC API - Features",
+        "description": "OGC standard for accessing geospatial features via a Web API."
+    }
+]
+```
+
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
 | [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
@@ -296,6 +530,12 @@ The date on which the Data Service was first created
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2020-01-15"
+```
 
 | Any of(Option)                   |
 | -------------------------------- |
@@ -367,6 +607,18 @@ List of agents primarily responsible for producing the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/agents/ncdc-team",
+        "@type": "Agent",
+        "name": "NCDC Development Team"
+    }
+]
+```
+
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
 | [Agent](#creator_items)         | An entity that could be involved with a resource |
@@ -393,6 +645,16 @@ A free-text account of the Data Service
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"RESTful API providing access to historical climate observations."
+```
+
+```json
+"A RESTful API providing access to historical and real-time climate data including temperature, precipitation, and atmospheric conditions."
+```
+
 ## <a name="identifier"></a>[Optional] Property `DataService > identifier`
 
 **Title:** identifier
@@ -404,6 +666,20 @@ The unique identifier for the Data Service, e.g. the URI or other unique identif
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"https://example.gov/services/climate-api"
+```
+
+```json
+{
+    "@type": "Identifier",
+    "schemaAgency": "example.gov",
+    "notation": "CLIMATE-API-001"
+}
+```
 
 | Any of(Option)                     |
 | ---------------------------------- |
@@ -437,6 +713,18 @@ A list of identifiers for the Data Service besides the main identifier, e.g. the
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@type": "Identifier",
+        "schemaAgency": "DOI",
+        "notation": "10.12345/climate-api"
+    }
+]
+```
+
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -463,6 +751,15 @@ Language or languages supported by the Data Service. This should be provided as 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+[
+    "en",
+    "es"
+]
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -522,6 +819,12 @@ The license under which the Data Service is made available; see https://resource
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+"https://creativecommons.org/publicdomain/zero/1.0/"
+```
+
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
@@ -552,6 +855,12 @@ The most recent date on which the Data Service was changed or modified
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2024-03-20"
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -628,6 +937,35 @@ An entity (organization) responsible for making the Data Service available
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
+**Examples:**
+
+```json
+{
+    "name": "National Climate Data Center"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/agents/ncdc-001",
+    "@type": "Agent",
+    "name": "National Climate Data Center",
+    "category": [
+        {
+            "@id": "https://example.gov/concepts/federal-agency",
+            "@type": "Concept",
+            "prefLabel": "Federal Agency",
+            "definition": "An agency of the federal government of the United States.",
+            "inScheme": {
+                "@id": "https://example.gov/concept-schemes/organization-types",
+                "@type": "ConceptScheme",
+                "title": "Organization Types"
+            }
+        }
+    ]
+}
+```
+
 ## <a name="rights"></a>[Optional] Property `DataService > rights`
 
 **Title:** rights
@@ -638,6 +976,14 @@ A list of statements concerning all rights for the Data Service that may not be 
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
+
+**Example:**
+
+```json
+[
+    "Data provided by the National Climate Data Center is in the public domain."
+]
+```
 
 | Each item of this array must be | Description |
 | ------------------------------- | ----------- |
@@ -658,6 +1004,18 @@ A list of Agents (organizations) holding rights on the Data Service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/organizations/noaa",
+        "@type": "Organization",
+        "name": "National Oceanic and Atmospheric Administration"
+    }
+]
+```
 
 | Each item of this array must be     | Description                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------------------------- |
@@ -685,6 +1043,18 @@ A geographic region that is covered by the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/locations/usa",
+        "@type": "Location",
+        "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+    }
+]
+```
+
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
 | [Location](#spatial_items)      | Information about a specific geographic location |
@@ -710,6 +1080,19 @@ A list of temporal periods that the DataService covers
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/periods/1950-present",
+        "@type": "PeriodOfTime",
+        "startDate": "1950-01-01",
+        "endDate": "2024-12-31"
+    }
+]
+```
 
 | Each item of this array must be | Description                                                            |
 | ------------------------------- | ---------------------------------------------------------------------- |
@@ -737,6 +1120,16 @@ The title of the data service in the indicated language
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Climate Data API"
+```
+
+```json
+"Climate Data REST API"
+```
 
 ## <a name="category"></a>[Optional] Property `DataService > category`
 

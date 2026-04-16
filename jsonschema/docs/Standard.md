@@ -8,6 +8,27 @@ Information about a particular standard that another item conforms to
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Standard",
+    "title": "DCAT-US 3.0",
+    "description": "Data Catalog Vocabulary - United States Profile version 3.0",
+    "issued": "2024-01-15",
+    "identifier": {
+        "@type": "Identifier",
+        "notation": "DCAT-US-3.0",
+        "schemaAgency": "U.S. General Services Administration"
+    },
+    "inScheme": {
+        "@type": "ConceptScheme",
+        "title": "Federal Data Standards",
+        "description": "A collection of data standards used by federal agencies"
+    }
+}
+```
+
 | Property                               | Type               | Title/Description |
 | -------------------------------------- | ------------------ | ----------------- |
 | - [@id](#@id )                         | string             | -                 |
@@ -30,6 +51,12 @@ Information about a particular standard that another item conforms to
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/standards/dcat-us-3"
+```
+
 ## <a name="@type"></a>[Optional] Property `Standard > @type`
 
 **Requirement:** Optional
@@ -37,6 +64,12 @@ Information about a particular standard that another item conforms to
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Standard"` |
+
+**Example:**
+
+```json
+"Standard"
+```
 
 ## <a name="created"></a>[Optional] Property `Standard > created`
 
@@ -49,6 +82,12 @@ The date on which the Standard has been first created
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2023-01-01"
+```
 
 | Any of(Option)                                      |
 | --------------------------------------------------- |
@@ -122,6 +161,16 @@ A free-text account of the Standard
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"Data Catalog Vocabulary - United States Profile version 3.0"
+```
+
+```json
+"The DCAT-US 3.0 schema defines a standard metadata format for data catalogs in the United States government, based on W3C DCAT."
+```
+
 ## <a name="identifier"></a>[Recommended] Property `Standard > identifier`
 
 **Title:** identifier
@@ -133,6 +182,25 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+{
+    "@type": "Identifier",
+    "notation": "DCAT-US-3.0",
+    "schemaAgency": "U.S. General Services Administration"
+}
+```
+
+```json
+{
+    "@type": "Identifier",
+    "schemaAgency": "resources.data.gov",
+    "notation": "DCAT-US-3.0",
+    "version": "3.0.0"
+}
+```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -168,6 +236,18 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@type": "Identifier",
+        "schemaAgency": "W3C",
+        "notation": "DCAT-3.0-US-Profile"
+    }
+]
+```
+
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -194,6 +274,12 @@ The date of formal issuance (e.g., publication) of the Standard
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2024-01-15"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -268,6 +354,12 @@ The most recent date on which the Standard was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+"2024-06-01"
+```
+
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
@@ -340,6 +432,16 @@ A name given to the Standard
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"DCAT-US 3.0"
+```
+
+```json
+"DCAT-US 3.0 - Data Catalog Vocabulary United States Profile"
+```
+
 ## <a name="category"></a>[Optional] Property `Standard > category`
 
 **Title:** category
@@ -350,6 +452,22 @@ List of categories for the Standard
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@type": "Concept",
+        "prefLabel": "Metadata Standards",
+        "inScheme": {
+            "@id": "https://example.gov/vocabularies/standard-categories",
+            "@type": "ConceptScheme",
+            "title": "Standard Categories"
+        }
+    }
+]
+```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
@@ -377,6 +495,24 @@ The reference register to which the Standard belongs
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+{
+    "@type": "ConceptScheme",
+    "title": "Federal Data Standards",
+    "description": "A collection of data standards used by federal agencies"
+}
+```
+
+```json
+{
+    "@id": "https://resources.data.gov/standards-register",
+    "@type": "ConceptScheme",
+    "title": "Standards Register"
+}
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |

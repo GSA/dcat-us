@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/attributions/dataset-steward-001"]
     },
     "@type": {
       "type": "string",
-      "default": "Attribution"
+      "default": "Attribution",
+      "examples": ["Attribution"]
     },
     "hadRole": {
       "title": "role",
@@ -23,7 +25,8 @@
         "uri": "dcat:hadRole",
         "range": "dcat:Role",
         "definition": "The function of an entity or agent with respect to another entity or resource."
-      }
+      },
+      "examples": ["Data Steward"]
     },
     "agent": {
       "title": "agent",
@@ -35,7 +38,30 @@
         "uri": "prov:agent",
         "range": "foaf:Agent",
         "definition": "The prov:agent property references an Agent that plays a role in the resource"
-      }
+      },
+      "examples": [
+        {
+          "name": "Environmental Data Management Office"
+        },
+        {
+          "@id": "https://example.gov/agents/env-data-office-001",
+          "@type": "Agent",
+          "name": "Environmental Data Management Office",
+          "category": [
+            {
+              "@id": "https://example.gov/concepts/government-office",
+              "@type": "Concept",
+              "prefLabel": "Government Office",
+              "definition": "A subdivision of a government agency responsible for specific functions.",
+              "inScheme": {
+                "@id": "https://example.gov/concept-schemes/organization-types",
+                "@type": "ConceptScheme",
+                "title": "Organization Types"
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "required": ["hadRole", "agent"],
@@ -44,5 +70,14 @@
     "definition": "A responsibility of an Agent for a resource.",
     "usageNote": "Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [[DCTERMS]] properties (dcterms:creator, dcterms:contributor, dcterms:rightsHolder, and dcterms:publisher). Use dcat:hadRole on the prov:Attribution to capture the responsibility of the Agent with respect to the Resource.",
     "rationale": "The inclusion of prov:Attribution in the DCAT profile enables clear data source attribution, promoting responsible data sharing and proper citation practices. It aligns the profile with data provenance best practices for accurate attribution in data sharing."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Attribution",
+      "hadRole": "Data Steward",
+      "agent": {
+        "name": "Environmental Data Management Office"
+      }
+    }
+  ]
 }

@@ -8,6 +8,16 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "CUIRestriction",
+    "cuiBannerMarking": "CUI//SP-CTI",
+    "designationIndicator": "Agency XYZ"
+}
+```
+
 | Property                                                           | Type                    | Title/Description                |
 | ------------------------------------------------------------------ | ----------------------- | -------------------------------- |
 | - [@id](#@id )                                                     | string                  | -                                |
@@ -24,6 +34,12 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/cui-restrictions/dataset-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `CUIRestriction > @type`
 
 **Requirement:** Optional
@@ -31,6 +47,12 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | **Type**    | `string`           |
 | ----------- | ------------------ |
 | **Default** | `"CUIRestriction"` |
+
+**Example:**
+
+```json
+"CUIRestriction"
+```
 
 ## <a name="cuiBannerMarking"></a>[Mandatory] Property `CUIRestriction > cuiBannerMarking`
 
@@ -44,6 +66,16 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"CUI//SP-CTI"
+```
+
+```json
+"CUI//SP-PRVCY//SP-LEGAL"
+```
+
 ## <a name="designationIndicator"></a>[Mandatory] Property `CUIRestriction > designationIndicator`
 
 **Title:** CUI designation indicator
@@ -56,6 +88,16 @@ Designation Indicator shows which agency made the document CUI
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"Agency XYZ"
+```
+
+```json
+"DOC"
+```
+
 ## <a name="requiredIndicatorPerAuthority"></a>[Optional] Property `CUIRestriction > requiredIndicatorPerAuthority`
 
 **Title:** required indicator per authority
@@ -66,6 +108,15 @@ List of free text of the required indicator
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
+
+**Example:**
+
+```json
+[
+    "Privacy Act of 1974",
+    "Federal Records Act"
+]
+```
 
 | Each item of this array must be                          | Description |
 | -------------------------------------------------------- | ----------- |

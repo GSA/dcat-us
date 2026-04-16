@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/addresses/hq-001"]
     },
     "@type": {
       "type": "string",
-      "default": "Address"
+      "default": "Address",
+      "examples": ["Address"]
     },
     "country-name": {
       "title": "country",
@@ -23,7 +25,8 @@
         "uri": "vcard:country-name",
         "range": "rdfs:Literal",
         "usageNote": "The country of an Address of the Kind."
-      }
+      },
+      "examples": ["United States"]
     },
     "locality": {
       "title": "locality",
@@ -35,7 +38,8 @@
         "uri": "vcard:locality",
         "range": "rdfs:Literal",
         "usageNote": "The city of an Address of the Kind."
-      }
+      },
+      "examples": ["Asheville", "Washington"]
     },
     "postal-code": {
       "title": "postal code",
@@ -47,7 +51,8 @@
         "uri": "vcard:postal-code",
         "range": "rdfs:Literal",
         "usageNote": "The postal code of an Address of the Kind."
-      }
+      },
+      "examples": ["28801", "20230"]
     },
     "region": {
       "title": "administrative area",
@@ -59,7 +64,8 @@
         "uri": "vcard:region",
         "range": "rdfs:Literal",
         "usageNote": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state."
-      }
+      },
+      "examples": ["NC", "DC"]
     },
     "street-address": {
       "title": "street address",
@@ -71,7 +77,8 @@
         "uri": "vcard:street-address",
         "range": "rdfs:Literal",
         "usageNote": "The street name and civic number of an Address of the Kind."
-      }
+      },
+      "examples": ["151 Patton Avenue", "1401 Constitution Ave NW"]
     }
   },
   "required": [],
@@ -80,5 +87,15 @@
     "definition": "The address of a location.",
     "usageNote": "This class is used to define a location defined by an address. It should be used only with the property dcterms:spatial, not the contact point address property.",
     "rationale": "Incorporating locn:Address from the W3C Location ontology [[LOCN]] into DCAT-US provides a standardized, structured, and extensible format to represent physical addresses, facilitating consistent, interoperable, and precise sharing of location information across various datasets and digital platforms."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Address",
+      "street-address": "151 Patton Avenue",
+      "locality": "Asheville",
+      "region": "NC",
+      "postal-code": "28801",
+      "country-name": "United States"
+    }
+  ]
 }

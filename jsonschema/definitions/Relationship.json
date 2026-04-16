@@ -7,11 +7,15 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": [
+        "https://example.gov/relationships/dataset-001-data-provider"
+      ]
     },
     "@type": {
       "type": "string",
-      "default": "Relationship"
+      "default": "Relationship",
+      "examples": ["Relationship"]
     },
     "hadRole": {
       "title": "role",
@@ -23,7 +27,8 @@
         "uri": "dcat:hadRole",
         "range": "dcat:Role",
         "definition": "The function of an entity or agent with respect to another entity or resource."
-      }
+      },
+      "examples": ["isInputTo", "dataProvider"]
     },
     "relation": {
       "title": "relation",
@@ -34,7 +39,11 @@
         "cardinality": "1",
         "uri": "dcterms:relation",
         "definition": "The resource related to the source resource."
-      }
+      },
+      "examples": [
+        "https://example.gov/models/climate-prediction",
+        "https://example.gov/organizations/national-weather-service"
+      ]
     }
   },
   "required": ["hadRole", "relation"],
@@ -43,5 +52,12 @@
     "definition": "An association class for attaching additional information to a relationship between DCAT Resources",
     "usageNote": "Use to characterize a relationship between datasets, and potentially other resources, where the nature of the relationship is known but is not adequately characterized by the standard [[?DCTERMS]] properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or [[PROV-O]] properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf)",
     "rationale": "The introduction of dcat:Relationship in DCAT-US serves to enhance the representation and description of relationships between datasets and other resources. This class allows for the attachment of additional information to relationships that are not adequately characterized by standard properties, promoting a more comprehensive understanding of dataset connections. By accommodating nuanced relationship types beyond existing standards like [[DCTERMS]] and [[PROV-O]] properties, DCAT-US ensures greater flexibility and precision in documenting dataset relationships, facilitating more informed data discovery and utilization."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Relationship",
+      "hadRole": "isInputTo",
+      "relation": "https://example.gov/models/climate-prediction"
+    }
+  ]
 }

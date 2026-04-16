@@ -8,6 +8,25 @@ A record in a catalog, describing the registration of a single resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "CatalogRecord",
+    "modified": "2024-06-15",
+    "primaryTopic": "https://example.gov/datasets/climate-data-2024",
+    "title": "Climate Data 2024 Catalog Entry",
+    "issued": [
+        "2024-01-15"
+    ],
+    "status": "published",
+    "conformsTo": {
+        "@type": "Standard",
+        "title": "DCAT-US 3.0"
+    }
+}
+```
+
 | Property                         | Type                    | Title/Description        |
 | -------------------------------- | ----------------------- | ------------------------ |
 | - [@id](#@id )                   | string                  | -                        |
@@ -30,6 +49,12 @@ A record in a catalog, describing the registration of a single resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/catalog-records/climate-dataset-record-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `CatalogRecord > @type`
 
 **Requirement:** Optional
@@ -37,6 +62,12 @@ A record in a catalog, describing the registration of a single resource
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
+
+**Example:**
+
+```json
+"CatalogRecord"
+```
 
 ## <a name="status"></a>[Recommended] Property `CatalogRecord > status`
 
@@ -49,6 +80,26 @@ The status of the catalog record in the context of editorial flow of the dataset
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"published"
+```
+
+```json
+{
+    "@id": "https://example.gov/concepts/status-published",
+    "@type": "Concept",
+    "prefLabel": "Published",
+    "definition": "The catalog record has been published and is publicly available.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/record-status",
+        "@type": "ConceptScheme",
+        "title": "Record Status"
+    }
+}
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -85,6 +136,24 @@ An Application Profile that the Catalog Record's metadata conforms to
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+{
+    "@type": "Standard",
+    "title": "DCAT-US 3.0"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/standards/dcat-us-3",
+    "@type": "Standard",
+    "title": "DCAT-US 3.0",
+    "description": "Data Catalog Vocabulary - United States Profile version 3.0"
+}
+```
+
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#conformsTo_anyOf_i0) |
@@ -119,6 +188,15 @@ A list of free-text accounts of the catalog record
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
 
+**Example:**
+
+```json
+[
+    "This catalog record describes the registration of the Climate Data 2023 dataset.",
+    "Contains metadata about when the dataset was added and last updated."
+]
+```
+
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
 | [Description string](#description_items) | -           |
@@ -140,6 +218,20 @@ List of dates on which the catalog record was included in the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    "2024-01-15"
+]
+```
+
+```json
+[
+    "2023-06-01"
+]
+```
 
 | Each item of this array must be | Description |
 | ------------------------------- | ----------- |
@@ -206,6 +298,15 @@ A language or languages used in the textual metadata describing titles, descript
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+[
+    "en",
+    "es"
+]
+```
+
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#language_anyOf_i0) |
@@ -265,6 +366,16 @@ The most recent date on which the catalog record was changed or modified
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+"2024-06-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
 | Any of(Option)               |
 | ---------------------------- |
 | [item 0](#modified_anyOf_i0) |
@@ -317,6 +428,12 @@ The original metadata that was used in creating metadata for the items in the ca
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"Original metadata harvested from NOAA data portal"
+```
+
 ## <a name="title"></a>[Optional] Property `CatalogRecord > title`
 
 **Title:** title
@@ -327,6 +444,16 @@ A name given to the Catalog Record
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Climate Data 2024 Catalog Entry"
+```
+
+```json
+"Climate Data 2023 Catalog Record"
+```
 
 ## <a name="primaryTopic"></a>[Mandatory] Property `CatalogRecord > primaryTopic`
 
@@ -339,4 +466,14 @@ A link to the Dataset, Data service or Catalog described in the Catalog Record
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"https://example.gov/datasets/climate-data-2024"
+```
+
+```json
+"https://example.gov/datasets/climate-data-2023"
+```
 

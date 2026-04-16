@@ -8,6 +8,18 @@ An entity that could be involved with a resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Agent",
+    "name": "National Climate Data Center",
+    "category": [
+        "https://example.gov/concepts/federal-agency"
+    ]
+}
+```
+
 | Property                 | Type          | Title/Description |
 | ------------------------ | ------------- | ----------------- |
 | - [@id](#@id )           | string        | -                 |
@@ -23,6 +35,12 @@ An entity that could be involved with a resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/agents/data-steward-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Agent > @type`
 
 **Requirement:** Optional
@@ -30,6 +48,12 @@ An entity that could be involved with a resource
 | **Type**    | `string`  |
 | ----------- | --------- |
 | **Default** | `"Agent"` |
+
+**Example:**
+
+```json
+"Agent"
+```
 
 ## <a name="category"></a>[Optional] Property `Agent > category`
 
@@ -41,6 +65,33 @@ The type of the agent that makes the item available
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    "https://example.gov/concepts/federal-agency"
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/concepts/government-agency",
+        "@type": "Concept",
+        "prefLabel": "Government Agency",
+        "altLabel": "Federal Agency",
+        "definition": "A government organization responsible for public administration and policy implementation.",
+        "notation": [
+            "GOV-AGY",
+            "FA"
+        ],
+        "inScheme": {
+            "title": "Minimal concept scheme"
+        }
+    }
+]
+```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
@@ -68,4 +119,14 @@ The name of the agent
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"National Climate Data Center"
+```
+
+```json
+"U.S. Department of Commerce Data Stewardship Office"
+```
 

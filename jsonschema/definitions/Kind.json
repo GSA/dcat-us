@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/contacts/climate-support-001"]
     },
     "@type": {
       "type": "string",
-      "default": "Kind"
+      "default": "Kind",
+      "examples": ["Kind"]
     },
     "address": {
       "title": "address",
@@ -26,7 +28,20 @@
         "uri": "vcard:address",
         "range": "vcard:Address",
         "definition": "This property specifies the address of the contact"
-      }
+      },
+      "examples": [
+        [
+          {
+            "@id": "https://example.gov/addresses/ncdc-main",
+            "@type": "Address",
+            "street-address": "151 Patton Avenue",
+            "locality": "Asheville",
+            "region": "NC",
+            "postal-code": "28801",
+            "country-name": "United States"
+          }
+        ]
+      ]
     },
     "hasEmail": {
       "title": "Email",
@@ -40,7 +55,11 @@
         "range": "rdfs:Resource",
         "definition": "The email address of the contact.",
         "usageNote": "Use email with function name instead of individual name (e.g. support). The email address should be formatted as url starting with \"mailto:\" scheme"
-      }
+      },
+      "examples": [
+        "mailto:climate-support@example.gov",
+        "mailto:jane.smith@example.gov"
+      ]
     },
     "family-name": {
       "title": "family name",
@@ -52,7 +71,8 @@
         "uri": "vcard:family-name",
         "range": "xsd:string",
         "definition": "This property specifies the family name of the person to contact"
-      }
+      },
+      "examples": ["Smith"]
     },
     "fn": {
       "title": "formatted name",
@@ -64,7 +84,8 @@
         "uri": "vcard:fn",
         "range": "xsd:string",
         "definition": "The formatted text corresponding to the name of the contact"
-      }
+      },
+      "examples": ["Climate Data Support Team", "Dr. Jane Smith"]
     },
     "given-name": {
       "title": "given name",
@@ -76,7 +97,8 @@
         "uri": "vcard:given-name",
         "range": "xsd:string",
         "definition": "This property specifies the given name of the person to contact"
-      }
+      },
+      "examples": ["Jane"]
     },
     "organization-name": {
       "title": "organization name",
@@ -88,7 +110,8 @@
         "uri": "vcard:organization-name",
         "range": "xsd:string",
         "definition": "This property specifies the name of the organization to contact"
-      }
+      },
+      "examples": ["National Climate Data Center"]
     },
     "tel": {
       "title": "telephone",
@@ -100,7 +123,8 @@
         "uri": "vcard:tel",
         "range": "rdfs:Resource",
         "definition": "This property specifies the telephone number for telephony communication with the person or organization."
-      }
+      },
+      "examples": ["+1-555-123-4567"]
     },
     "title": {
       "title": "position title",
@@ -112,7 +136,8 @@
         "uri": "vcard:title",
         "range": "xsd:string",
         "definition": "This property specifies the position role of the person to contact"
-      }
+      },
+      "examples": ["Senior Climate Data Scientist"]
     }
   },
   "required": ["hasEmail", "fn"],
@@ -120,5 +145,14 @@
     "rdfClass": "vcard:Kind",
     "definition": "Point of Contact information",
     "rationale": "The introduction of vcard:Kind in DCAT-US 3.0 is driven by the need for standardized, reliable, and interoperable Point of Contact information, ultimately improving the accessibility and usability of data resources within the DCAT-US ecosystem."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Kind",
+      "fn": "Climate Data Support Team",
+      "hasEmail": "mailto:climate-support@example.gov",
+      "organization-name": "National Climate Data Center",
+      "tel": "+1-555-123-4567"
+    }
+  ]
 }

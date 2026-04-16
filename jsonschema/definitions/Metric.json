@@ -6,11 +6,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/metrics/record-completeness"]
     },
     "@type": {
       "type": "string",
-      "default": "Metric"
+      "default": "Metric",
+      "examples": ["Metric"]
     },
     "expectedDataType": {
       "title": "expected datatype",
@@ -22,7 +24,8 @@
         "uri": "dqv:expectedDataType",
         "range": "xsd:anySimpleType",
         "definition": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)"
-      }
+      },
+      "examples": ["xsd:decimal", "xsd:double"]
     },
     "inDimension": {
       "title": "in dimension",
@@ -34,7 +37,11 @@
         "uri": "dqv:inDimension",
         "range": "dqv:Dimension",
         "definition": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of."
-      }
+      },
+      "examples": [
+        "https://example.gov/dimensions/completeness",
+        "https://www.w3.org/TR/vocab-dqv/#dqv:completeness"
+      ]
     },
     "definition": {
       "title": "definition",
@@ -46,7 +53,11 @@
         "uri": "skos:definition",
         "range": "rdfs:Literal",
         "definition": "definition of the metric"
-      }
+      },
+      "examples": [
+        "Percentage of non-null values in the dataset.",
+        "The percentage of non-null values for required fields in a dataset. A value of 1.0 indicates 100% completeness."
+      ]
     }
   },
   "required": ["expectedDataType", "inDimension"],
@@ -55,5 +66,13 @@
     "definition": "Represents a standard to measure a quality dimension. An observation (instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.",
     "usageNote": "The concept of a metric is used to define and measure specific aspects or dimensions of data quality within a given context, providing a standardized and quantifiable way to assess the quality of data. It allows for the comparison and evaluation of data quality across different resources and enables the development of consistent quality assessment frameworks and methodologies.",
     "rationale": "Introducing dqv:Metric in the DCAT-US profile enhances dataset quality assessment and management by aligning with international data quality standards. It allows data publishers to systematically define and communicate dataset quality characteristics, promoting transparency and informed data utilization, fostering trust, and supporting responsible data sharing within the DCAT-US ecosystem."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Metric",
+      "expectedDataType": "xsd:decimal",
+      "inDimension": "https://example.gov/dimensions/completeness",
+      "definition": "Percentage of non-null values in the dataset."
+    }
+  ]
 }

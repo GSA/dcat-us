@@ -8,6 +8,16 @@ Information about an organization, including other organizations that it is part
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Organization",
+    "name": "National Climate Data Center",
+    "altLabel": "NCDC"
+}
+```
+
 | Property                                   | Type                    | Title/Description  |
 | ------------------------------------------ | ----------------------- | ------------------ |
 | - [@id](#@id )                             | string                  | -                  |
@@ -26,6 +36,12 @@ Information about an organization, including other organizations that it is part
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/organizations/census-bureau"
+```
+
 ## <a name="@type"></a>[Optional] Property `Organization > @type`
 
 **Requirement:** Optional
@@ -33,6 +49,12 @@ Information about an organization, including other organizations that it is part
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"Organization"` |
+
+**Example:**
+
+```json
+"Organization"
+```
 
 ## <a name="name"></a>[Mandatory] Property `Organization > name`
 
@@ -46,6 +68,16 @@ The full name of the Organization
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"National Climate Data Center"
+```
+
+```json
+"U.S. Census Bureau"
+```
+
 ## <a name="subOrganizationOf"></a>[Optional] Property `Organization > subOrganizationOf`
 
 **Title:** suborganization of
@@ -56,6 +88,18 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/organizations/doc",
+        "@type": "Organization",
+        "name": "U.S. Department of Commerce"
+    }
+]
+```
 
 | Each item of this array must be          | Description                                                                         |
 | ---------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -83,6 +127,16 @@ alternative name (trading name, colloquial name) for an organization
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"NCDC"
+```
+
+```json
+"Census Bureau"
+```
+
 ## <a name="notation"></a>[Optional] Property `Organization > notation`
 
 **Title:** notation
@@ -93,6 +147,15 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
+
+**Example:**
+
+```json
+[
+    "USCB",
+    "CB"
+]
+```
 
 | Each item of this array must be | Description |
 | ------------------------------- | ----------- |
@@ -115,4 +178,10 @@ Preferred or legal name of the organization
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"United States Census Bureau"
+```
 

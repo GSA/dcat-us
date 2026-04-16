@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/agents/data-steward-001"]
     },
     "@type": {
       "type": "string",
-      "default": "Agent"
+      "default": "Agent",
+      "examples": ["Agent"]
     },
     "category": {
       "title": "category",
@@ -22,7 +24,23 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional"
-      }
+      },
+      "examples": [
+        ["https://example.gov/concepts/federal-agency"],
+        [
+          {
+            "@id": "https://example.gov/concepts/government-agency",
+            "@type": "Concept",
+            "prefLabel": "Government Agency",
+            "altLabel": "Federal Agency",
+            "definition": "A government organization responsible for public administration and policy implementation.",
+            "notation": ["GOV-AGY", "FA"],
+            "inScheme": {
+              "title": "Minimal concept scheme"
+            }
+          }
+        ]
+      ]
     },
     "name": {
       "title": "name",
@@ -34,7 +52,11 @@
         "uri": "foaf:name",
         "range": "xsd:string",
         "definition": "The name of the software agent"
-      }
+      },
+      "examples": [
+        "National Climate Data Center",
+        "U.S. Department of Commerce Data Stewardship Office"
+      ]
     }
   },
   "required": ["name"],
@@ -43,5 +65,12 @@
     "definition": "An entity that acts on something (eg. person, group, software or physical artifact).",
     "usageNote": "Use this class when refering to a software agent that is associated with Catalogs, Catalog Records, Data Services, or Datasets. If the Agent is an organization, the use of the org:Organization is recommended. If the Agent is a person, the use of foaf:Person is recommended",
     "rationale": "The addition of the foaf:Agent class in DCAT-US 3.0 serves a dual purpose. Firstly, it allows for the representation of software agents, aligning with modern data automation needs. Secondly, it acts as an abstract class for both foaf:Person and org:Organization, promoting consistency and interoperability while simplifying resource descriptions within the dataset catalog."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Agent",
+      "name": "National Climate Data Center",
+      "category": ["https://example.gov/concepts/federal-agency"]
+    }
+  ]
 }

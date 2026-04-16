@@ -8,6 +8,139 @@ An ordered series of datasets
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "DatasetSeries",
+    "title": "Annual Climate Observations",
+    "description": "A series of annual climate observation datasets from monitoring stations.",
+    "contactPoint": [
+        {
+            "fn": "Climate Data Support",
+            "hasEmail": "mailto:climate@example.gov"
+        }
+    ],
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "accrualPeriodicity": "annually",
+    "issued": "2000-01-15",
+    "modified": "2024-12-01",
+    "first": {
+        "@id": "https://example.gov/datasets/climate-observations-2000",
+        "@type": "Dataset",
+        "title": "Climate Observations 2000",
+        "description": "First year of climate observations.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-first"
+    },
+    "last": {
+        "@id": "https://example.gov/datasets/climate-observations-2024",
+        "@type": "Dataset",
+        "title": "Climate Observations 2024",
+        "description": "Latest year of climate observations.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-last"
+    },
+    "seriesMember": [
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2022",
+            "@type": "Dataset",
+            "title": "Climate Observations 2022",
+            "description": "Climate observations for 2022.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-001"
+        },
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2023",
+            "@type": "Dataset",
+            "title": "Climate Observations 2023",
+            "description": "Climate observations for 2023.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-002"
+        },
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2024",
+            "@type": "Dataset",
+            "title": "Climate Observations 2024",
+            "description": "Climate observations for 2024.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-003"
+        }
+    ],
+    "spatial": [
+        {
+            "@type": "Location",
+            "bbox": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -125.0,
+                            24.0
+                        ],
+                        [
+                            -66.0,
+                            24.0
+                        ],
+                        [
+                            -66.0,
+                            50.0
+                        ],
+                        [
+                            -125.0,
+                            50.0
+                        ],
+                        [
+                            -125.0,
+                            24.0
+                        ]
+                    ]
+                ]
+            }
+        }
+    ],
+    "temporal": [
+        {
+            "@type": "PeriodOfTime",
+            "startDate": "2000-01-01",
+            "endDate": "2024-12-31"
+        }
+    ]
+}
+```
+
 | Property                                     | Type               | Title/Description           |
 | -------------------------------------------- | ------------------ | --------------------------- |
 | - [@id](#@id )                               | string             | -                           |
@@ -33,6 +166,12 @@ An ordered series of datasets
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/series/annual-climate-observations"
+```
+
 ## <a name="@type"></a>[Optional] Property `DatasetSeries > @type`
 
 **Requirement:** Optional
@@ -40,6 +179,12 @@ An ordered series of datasets
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
+
+**Example:**
+
+```json
+"DatasetSeries"
+```
 
 ## <a name="contactPoint"></a>[Recommended] Property `DatasetSeries > contactPoint`
 
@@ -51,6 +196,42 @@ List of contacts that can be used for sending comments about the Dataset Series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/contacts/series-manager",
+        "@type": "Kind",
+        "fn": "Climate Series Data Manager",
+        "hasEmail": "mailto:climate-series@example.gov",
+        "organization-name": "National Climate Data Center",
+        "tel": "+1-555-123-4567",
+        "title": "Series Data Manager",
+        "address": [
+            {
+                "@id": "https://example.gov/addresses/ncdc-main",
+                "@type": "Address",
+                "street-address": "151 Patton Avenue",
+                "locality": "Asheville",
+                "region": "NC",
+                "postal-code": "28801",
+                "country-name": "United States"
+            }
+        ]
+    }
+]
+```
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
@@ -78,6 +259,42 @@ The first dataset in an ordered dataset series
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+{
+    "@id": "https://example.gov/datasets/climate-observations-2000",
+    "@type": "Dataset",
+    "title": "Climate Observations 2000",
+    "description": "First year of climate observations.",
+    "contactPoint": {
+        "fn": "Climate Support",
+        "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-first"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/datasets/climate-observations-2000",
+    "@type": "Dataset",
+    "title": "National Climate Observations 2000",
+    "description": "The first dataset in the annual climate observations series, covering calendar year 2000.",
+    "contactPoint": {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-first"
+}
+```
 
 | Any of(Option)                                    |
 | ------------------------------------------------- |
@@ -114,6 +331,42 @@ The last dataset in an ordered dataset series
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+{
+    "@id": "https://example.gov/datasets/climate-observations-2024",
+    "@type": "Dataset",
+    "title": "Climate Observations 2024",
+    "description": "Latest year of climate observations.",
+    "contactPoint": {
+        "fn": "Climate Support",
+        "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-last"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/datasets/climate-observations-2024",
+    "@type": "Dataset",
+    "title": "National Climate Observations 2024",
+    "description": "The most recent dataset in the annual climate observations series, covering calendar year 2024.",
+    "contactPoint": {
+        "fn": "Climate Data Support",
+        "hasEmail": "mailto:climate@example.gov"
+    },
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-last"
+}
+```
+
 | Any of(Option)                                   |
 | ------------------------------------------------ |
 | [Null allowed when not required](#last_anyOf_i0) |
@@ -148,6 +401,102 @@ List of members of the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2022",
+        "@type": "Dataset",
+        "title": "Climate Observations 2022",
+        "description": "Climate observations for 2022.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-001"
+    },
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2023",
+        "@type": "Dataset",
+        "title": "Climate Observations 2023",
+        "description": "Climate observations for 2023.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-002"
+    },
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2024",
+        "@type": "Dataset",
+        "title": "Climate Observations 2024",
+        "description": "Climate observations for 2024.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-003"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2022",
+        "@type": "Dataset",
+        "title": "National Climate Observations 2022",
+        "description": "Climate observations for calendar year 2022.",
+        "contactPoint": {
+            "fn": "Climate Data Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-001"
+    },
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2023",
+        "@type": "Dataset",
+        "title": "National Climate Observations 2023",
+        "description": "Climate observations for calendar year 2023.",
+        "contactPoint": {
+            "fn": "Climate Data Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-002"
+    },
+    {
+        "@id": "https://example.gov/datasets/climate-observations-2024",
+        "@type": "Dataset",
+        "title": "National Climate Observations 2024",
+        "description": "Climate observations for calendar year 2024.",
+        "contactPoint": {
+            "fn": "Climate Data Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-member-003"
+    }
+]
+```
+
 | Each item of this array must be | Description                     |
 | ------------------------------- | ------------------------------- |
 | [Dataset](#seriesMember_items)  | Information about a set of data |
@@ -174,6 +523,12 @@ The frequency at which the Dataset Series is updated
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"annually"
+```
 
 | Any of(Option)                                                 |
 | -------------------------------------------------------------- |
@@ -259,6 +614,16 @@ A free-text account of the Dataset Series
 | ------------ | -------- |
 | **Required** | Yes      |
 
+**Examples:**
+
+```json
+"A series of annual climate observation datasets from monitoring stations."
+```
+
+```json
+"An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
+```
+
 ## <a name="issued"></a>[Optional] Property `DatasetSeries > issued`
 
 **Title:** release date
@@ -270,6 +635,12 @@ The date of formal issuance (e.g.,publication) of the Dataset Series
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2000-01-15"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -344,6 +715,16 @@ The most recent date on which the Dataset Series was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+"2024-12-01"
+```
+
+```json
+"2024-06-01"
+```
+
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
@@ -417,6 +798,35 @@ An entity (organization) responsible for ensuring the coherency of the Dataset S
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+{
+    "name": "National Climate Data Center"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/agents/ncdc",
+    "@type": "Agent",
+    "name": "National Climate Data Center",
+    "category": [
+        {
+            "@id": "https://example.gov/concepts/federal-agency",
+            "@type": "Concept",
+            "prefLabel": "Federal Agency",
+            "definition": "An agency of the federal government of the United States.",
+            "inScheme": {
+                "@id": "https://example.gov/concept-schemes/organization-types",
+                "@type": "ConceptScheme",
+                "title": "Organization Types"
+            }
+        }
+    ]
+}
+```
+
 | Any of(Option)                                        |
 | ----------------------------------------------------- |
 | [Null allowed when not required](#publisher_anyOf_i0) |
@@ -451,6 +861,53 @@ A geographic region that is covered by the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+[
+    {
+        "@type": "Location",
+        "bbox": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -125.0,
+                        24.0
+                    ],
+                    [
+                        -66.0,
+                        24.0
+                    ],
+                    [
+                        -66.0,
+                        50.0
+                    ],
+                    [
+                        -125.0,
+                        50.0
+                    ],
+                    [
+                        -125.0,
+                        24.0
+                    ]
+                ]
+            ]
+        }
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/locations/usa-coverage",
+        "@type": "Location",
+        "geometry": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+    }
+]
+```
+
 | Each item of this array must be | Description                                      |
 | ------------------------------- | ------------------------------------------------ |
 | [Location](#spatial_items)      | Information about a specific geographic location |
@@ -476,6 +933,29 @@ A list of temporal periods that the Dataset Series covers
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    {
+        "@type": "PeriodOfTime",
+        "startDate": "2000-01-01",
+        "endDate": "2024-12-31"
+    }
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/periods/series-coverage",
+        "@type": "PeriodOfTime",
+        "startDate": "2000-01-01",
+        "endDate": "2024-12-31"
+    }
+]
+```
 
 | Each item of this array must be | Description                                                            |
 | ------------------------------- | ---------------------------------------------------------------------- |
@@ -503,4 +983,14 @@ A name given to the Dataset Series
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Annual Climate Observations"
+```
+
+```json
+"Annual National Climate Observations Series"
+```
 

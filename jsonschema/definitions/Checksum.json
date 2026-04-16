@@ -7,11 +7,13 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/checksums/dataset-001-sha256"]
     },
     "@type": {
       "type": "string",
-      "default": "Checksum"
+      "default": "Checksum",
+      "examples": ["Checksum"]
     },
     "algorithm": {
       "title": "algorithm",
@@ -23,7 +25,8 @@
         "uri": "spdx:algorithm",
         "range": "spdx:ChecksumAlgorithm",
         "definition": "The algorithm used to produce the subject Checksum."
-      }
+      },
+      "examples": ["SHA-256"]
     },
     "checksumValue": {
       "title": "checksum value",
@@ -35,7 +38,11 @@
         "uri": "spdx:checksumValue",
         "range": "xsd:hexBinary",
         "definition": "A lower case hexadecimal encoded digest value produced using a specific algorithm."
-      }
+      },
+      "examples": [
+        "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+        "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e"
+      ]
     }
   },
   "required": ["algorithm", "checksumValue"],
@@ -44,5 +51,12 @@
     "definition": "A Checksum is a value that allows to check the integrity of the contents of a file. Even small changes to the content of the file will change its checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented [[SPDX]].",
     "usageNote": "The Checksum includes the algorithm (spdx:algorithm) and value (spdx:checksumValue) that allows the integrity of a file to be verified to ensure no errors occurred in transmission or storage.",
     "rationale": "Introducing the spdx:Checksum class in DCAT-US bolsters data integrity and trust by ensuring datasets remain unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools."
-  }
+  },
+  "examples": [
+    {
+      "@type": "Checksum",
+      "algorithm": "SHA-256",
+      "checksumValue": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+    }
+  ]
 }

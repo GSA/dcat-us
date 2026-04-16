@@ -8,6 +8,34 @@ A file that distributes the dataset
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Distribution",
+    "title": "Climate Data CSV",
+    "description": "Daily climate observations in CSV format.",
+    "accessURL": "https://example.gov/data/climate",
+    "downloadURL": "https://example.gov/downloads/climate-2024.csv",
+    "mediaType": "text/csv",
+    "format": "CSV",
+    "byteSize": "52428800",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "modified": "2024-06-01",
+    "rights": [
+        "No rights reserved. This data is in the public domain."
+    ],
+    "describedBy": {
+        "@type": "Standard",
+        "title": "CSV Data Dictionary",
+        "accessURL": "https://example.gov/data/climate/dictionary"
+    },
+    "accessRestriction": null,
+    "cuiRestriction": null,
+    "useRestriction": null
+}
+```
+
 | Property                                                   | Type                    | Title/Description           |
 | ---------------------------------------------------------- | ----------------------- | --------------------------- |
 | - [@id](#@id )                                             | string                  | -                           |
@@ -54,6 +82,12 @@ A file that distributes the dataset
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/distributions/climate-data-csv-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Distribution > @type`
 
 **Requirement:** Optional
@@ -61,6 +95,12 @@ A file that distributes the dataset
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"Distribution"` |
+
+**Example:**
+
+```json
+"Distribution"
+```
 
 ## <a name="representationTechnique"></a>[Optional] Property `Distribution > representationTechnique`
 
@@ -73,6 +113,22 @@ The format in which an Distribution is released. This is different from the file
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "@id": "https://example.gov/concepts/tabular-data",
+    "@type": "Concept",
+    "prefLabel": "Tabular Data",
+    "definition": "Data organized in rows and columns.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/data-formats",
+        "@type": "ConceptScheme",
+        "title": "Data Formats"
+    }
+}
+```
 
 | Any of(Option)                                                      |
 | ------------------------------------------------------------------- |
@@ -109,6 +165,22 @@ The status of the distribution in the context of maturity lifecycle
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+{
+    "@id": "https://example.gov/concepts/status-completed",
+    "@type": "Concept",
+    "prefLabel": "Completed",
+    "definition": "The distribution is complete and final.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/lifecycle-status",
+        "@type": "ConceptScheme",
+        "title": "Lifecycle Status"
+    }
+}
+```
+
 | Any of(Option)                                     |
 | -------------------------------------------------- |
 | [Null allowed when not required](#status_anyOf_i0) |
@@ -143,6 +215,14 @@ The list of character encodings of the Distribution, by using as value the chara
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+[
+    "UTF-8"
+]
+```
 
 | Any of(Option)                                                |
 | ------------------------------------------------------------- |
@@ -185,6 +265,30 @@ A data service that gives access to the distribution of the dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/data-services/climate-api",
+        "@type": "DataService",
+        "title": "Climate Data API",
+        "endpointURL": [
+            "https://api.example.gov/climate/v1"
+        ],
+        "contactPoint": [
+            {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            }
+        ],
+        "publisher": {
+            "name": "Climate Data Center"
+        }
+    }
+]
+```
+
 | Each item of this array must be     | Description                                   |
 | ----------------------------------- | --------------------------------------------- |
 | [DataService](#accessService_items) | A service for providing data at a URL or URLs |
@@ -211,6 +315,16 @@ A URL that gives access to a Distribution of the Dataset
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"https://example.gov/data/climate"
+```
+
+```json
+"https://example.gov/data/climate/access"
+```
 
 | Any of(Option)                                        |
 | ----------------------------------------------------- |
@@ -245,6 +359,16 @@ The size of a Distribution in bytes
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"52428800"
+```
+
+```json
+"15728640"
+```
+
 ## <a name="compressFormat"></a>[Optional] Property `Distribution > compressFormat`
 
 **Title:** compression format
@@ -255,6 +379,12 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"application/gzip"
+```
 
 ## <a name="downloadURL"></a>[Optional] Property `Distribution > downloadURL`
 
@@ -267,6 +397,16 @@ A URL that is a direct link to a downloadable file of the Distribution in a give
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"https://example.gov/downloads/climate-2024.csv"
+```
+
+```json
+"https://example.gov/data/climate/climate-data-2023.csv"
+```
 
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
@@ -301,6 +441,12 @@ The media type of the Distribution as defined in the official register of media 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"text/csv"
+```
+
 ## <a name="packageFormat"></a>[Optional] Property `Distribution > packageFormat`
 
 **Title:** packaging format
@@ -311,6 +457,12 @@ The format of the file in which one or more data files are grouped together, e.g
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"application/zip"
+```
 
 ## <a name="spatialResolutionInMeters"></a>[Optional] Property `Distribution > spatialResolutionInMeters`
 
@@ -323,6 +475,12 @@ The minimum spatial separation resolvable in a dataset distribution, measured in
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"1000"
+```
+
 ## <a name="temporalResolution"></a>[Optional] Property `Distribution > temporalResolution`
 
 **Title:** termporal resolution
@@ -333,6 +491,12 @@ The minimum time period resolvable in the dataset distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"P1D"
+```
 
 ## <a name="availability"></a>[Optional] Property `Distribution > availability`
 
@@ -345,6 +509,22 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "@id": "https://example.gov/concepts/available-stable",
+    "@type": "Concept",
+    "prefLabel": "Stable",
+    "definition": "The distribution is intended to be available for the long term.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/availability",
+        "@type": "ConceptScheme",
+        "title": "Availability"
+    }
+}
+```
 
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
@@ -380,6 +560,33 @@ List of access restrictions related to the distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+null
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/restrictions/none",
+        "@type": "AccessRestriction",
+        "restrictionNote": "No access restrictions apply to this distribution.",
+        "restrictionStatus": {
+            "@id": "https://example.gov/concepts/unrestricted",
+            "@type": "Concept",
+            "prefLabel": "Unrestricted",
+            "definition": "No restrictions on access.",
+            "inScheme": {
+                "@id": "https://example.gov/concept-schemes/restriction-status",
+                "@type": "ConceptScheme",
+                "title": "Restriction Status"
+            }
+        }
+    }
+]
+```
+
 | Each item of this array must be               | Description                                         |
 | --------------------------------------------- | --------------------------------------------------- |
 | [AccessRestriction](#accessRestriction_items) | A restriction on the permitted access to a resource |
@@ -406,6 +613,12 @@ Controlled Unclassified Information restriction related to the distribution
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+null
+```
 
 | Any of(Option)                                             |
 | ---------------------------------------------------------- |
@@ -442,6 +655,27 @@ A distribution containing the Data Dictionary for this distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Examples:**
+
+```json
+{
+    "@type": "Standard",
+    "title": "CSV Data Dictionary",
+    "accessURL": "https://example.gov/data/climate/dictionary"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/distributions/climate-data-dict",
+    "@type": "Distribution",
+    "title": "Climate Data Dictionary",
+    "description": "Data dictionary describing the fields in the climate data CSV.",
+    "downloadURL": "https://example.gov/data/climate/data-dictionary.pdf",
+    "mediaType": "application/pdf"
+}
+```
+
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
 | [Null allowed when not required](#describedBy_anyOf_i0) |
@@ -476,6 +710,33 @@ Use restriction related to the distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Examples:**
+
+```json
+null
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/restrictions/attribution",
+        "@type": "UseRestriction",
+        "restrictionNote": "Attribution to the Climate Data Center is requested but not required.",
+        "restrictionStatus": {
+            "@id": "https://example.gov/concepts/unrestricted",
+            "@type": "Concept",
+            "prefLabel": "Unrestricted",
+            "definition": "No restrictions on use.",
+            "inScheme": {
+                "@id": "https://example.gov/concept-schemes/restriction-status",
+                "@type": "ConceptScheme",
+                "title": "Restriction Status"
+            }
+        }
+    }
+]
+```
+
 | Each item of this array must be         | Description                            |
 | --------------------------------------- | -------------------------------------- |
 | [UseRestriction](#useRestriction_items) | A restriction on usage of another item |
@@ -502,6 +763,12 @@ Information that indicates whether the Distribution is open data, has access res
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"Public access without restrictions"
+```
 
 | Any of(Option)                                           |
 | -------------------------------------------------------- |
@@ -533,6 +800,19 @@ List of established schemas or reference systems to which the described Distribu
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@id": "https://example.gov/standards/csv-format",
+        "@type": "Standard",
+        "title": "RFC 4180 - CSV Format",
+        "description": "Common Format and MIME Type for Comma-Separated Values (CSV) Files"
+    }
+]
+```
+
 | Each item of this array must be | Description                                                           |
 | ------------------------------- | --------------------------------------------------------------------- |
 | [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
@@ -559,6 +839,16 @@ A free-text account of the Distribution
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Examples:**
+
+```json
+"Daily climate observations in CSV format."
+```
+
+```json
+"A CSV file containing historical climate data including daily temperature and precipitation readings."
+```
+
 ## <a name="format"></a>[Recommended] Property `Distribution > format`
 
 **Title:** format
@@ -569,6 +859,12 @@ A human-readable description of the file format of the Distribution that provide
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"CSV"
+```
 
 ## <a name="identifier"></a>[Optional] Property `Distribution > identifier`
 
@@ -581,6 +877,16 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "@type": "Identifier",
+    "schemaAgency": "example.gov",
+    "notation": "DIST-CLIMATE-CSV-001"
+}
+```
 
 | Any of(Option)                                         |
 | ------------------------------------------------------ |
@@ -616,6 +922,18 @@ A list of identifiers for the Distribution besides the main identifier, e.g. the
 | **Type** | `null or array` |
 | -------- | --------------- |
 
+**Example:**
+
+```json
+[
+    {
+        "@type": "Identifier",
+        "schemaAgency": "DOI",
+        "notation": "10.12345/climate-csv-2023"
+    }
+]
+```
+
 | Each item of this array must be      | Description                                                                   |
 | ------------------------------------ | ----------------------------------------------------------------------------- |
 | [Identifier](#otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
@@ -642,6 +960,12 @@ The date of formal issuance (e.g., publication) of the Distribution
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"2023-06-01"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -716,6 +1040,14 @@ A language or languages used in the Distribution. This should be provided as an 
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+[
+    "en"
+]
+```
+
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#language_anyOf_i0) |
@@ -774,6 +1106,12 @@ The license under which the Distribution is made available; see https://resource
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
+**Example:**
+
+```json
+"https://creativecommons.org/publicdomain/zero/1.0/"
+```
+
 | Any of(Option)                                      |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
@@ -804,6 +1142,16 @@ The most recent date on which the Distribution was changed or modified
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-06-01"
+```
+
+```json
+"2024-01-15"
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -877,6 +1225,20 @@ A list of statements concerning all rights for the Distribution that may not be 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
 
+**Examples:**
+
+```json
+[
+    "No rights reserved. This data is in the public domain."
+]
+```
+
+```json
+[
+    "This data is in the public domain and may be used without restriction."
+]
+```
+
 | Each item of this array must be | Description                        |
 | ------------------------------- | ---------------------------------- |
 | [rights items](#rights_items)   | Full text of a statement of rights |
@@ -898,6 +1260,16 @@ A name given to the Distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Climate Data CSV"
+```
+
+```json
+"Climate Data CSV Distribution"
+```
 
 ## <a name="hasQualityMeasurement"></a>[Optional] Property `Distribution > hasQualityMeasurement`
 
@@ -996,6 +1368,17 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "@id": "https://example.gov/checksums/climate-csv-sha256",
+    "@type": "Checksum",
+    "algorithm": "SHA-256",
+    "checksumValue": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+}
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |

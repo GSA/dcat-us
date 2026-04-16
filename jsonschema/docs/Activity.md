@@ -8,6 +8,18 @@ An activity which a resource could be related to
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "Activity",
+    "label": "Data Collection",
+    "category": [
+        "https://example.gov/concepts/data-collection"
+    ]
+}
+```
+
 | Property                 | Type          | Title/Description |
 | ------------------------ | ------------- | ----------------- |
 | - [@id](#@id )           | string        | -                 |
@@ -23,6 +35,12 @@ An activity which a resource could be related to
 | ---------- | -------- |
 | **Format** | `iri`    |
 
+**Example:**
+
+```json
+"https://example.gov/activities/data-processing-001"
+```
+
 ## <a name="@type"></a>[Optional] Property `Activity > @type`
 
 **Requirement:** Optional
@@ -30,6 +48,12 @@ An activity which a resource could be related to
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Activity"` |
+
+**Example:**
+
+```json
+"Activity"
+```
 
 ## <a name="category"></a>[Optional] Property `Activity > category`
 
@@ -41,6 +65,30 @@ List of categories for the Activity
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    "https://example.gov/concepts/data-collection"
+]
+```
+
+```json
+[
+    {
+        "@id": "https://example.gov/concepts/data-processing",
+        "@type": "Concept",
+        "prefLabel": "Data Processing",
+        "definition": "Activities related to processing and transforming raw data into usable formats.",
+        "inScheme": {
+            "@id": "https://example.gov/concept-schemes/activity-types",
+            "@type": "ConceptScheme",
+            "title": "Activity Types"
+        }
+    }
+]
+```
 
 | Each item of this array must be | Description                                                 |
 | ------------------------------- | ----------------------------------------------------------- |
@@ -68,4 +116,14 @@ A human-readable label for the activity
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Data Collection"
+```
+
+```json
+"Data Processing and Quality Assurance"
+```
 
