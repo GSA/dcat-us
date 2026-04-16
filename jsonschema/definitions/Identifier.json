@@ -85,11 +85,5 @@
       },
       "required": []
     }
-  ],
-  "oldDocs": {
-    "rdfClass": "adms:Identifier",
-    "definition": "This is based on the UN/CEFACT Identifier class.",
-    "usageNote": "An identifier in a particular context, consisting of the content string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme.",
-    "rationale": "Incorporating adms:Identifier in the DCAT-US profile fosters a culture of data governance and trust by transparently documenting the authority behind each identifier. This enhances data reliability and credibility, boosting confidence for DCAT-US users. Additionally, it enables versatile data access using multiple identifiers, enhancing overall data accessibility and usability for diverse stakeholders."
-  }
+  ]
 }

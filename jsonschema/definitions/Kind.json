@@ -19,106 +19,44 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/address"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "vcard:address",
-        "range": "vcard:Address",
-        "definition": "This property specifies the address of the contact"
       }
     },
     "hasEmail": {
       "title": "Email",
       "description": "Email address for the contact",
       "pattern": "^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$",
-      "type": "string",
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1",
-        "uri": "vcard:hasEmail",
-        "range": "rdfs:Resource",
-        "definition": "The email address of the contact.",
-        "usageNote": "Use email with function name instead of individual name (e.g. support). The email address should be formatted as url starting with \"mailto:\" scheme"
-      }
+      "type": "string"
     },
     "family-name": {
       "title": "family name",
       "description": "The family name of the contact",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "vcard:family-name",
-        "range": "xsd:string",
-        "definition": "This property specifies the family name of the person to contact"
-      }
+      "type": ["null", "string"]
     },
     "fn": {
       "title": "formatted name",
       "description": "The formatted text of the name of the contact",
-      "type": "string",
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1",
-        "uri": "vcard:fn",
-        "range": "xsd:string",
-        "definition": "The formatted text corresponding to the name of the contact"
-      }
+      "type": "string"
     },
     "given-name": {
       "title": "given name",
       "description": "The given name of the contact",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "vcard:given-name",
-        "range": "xsd:string",
-        "definition": "This property specifies the given name of the person to contact"
-      }
+      "type": ["null", "string"]
     },
     "organization-name": {
       "title": "organization name",
       "description": "The name of the organization to contact",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "vcard:organization-name",
-        "range": "xsd:string",
-        "definition": "This property specifies the name of the organization to contact"
-      }
+      "type": ["null", "string"]
     },
     "tel": {
       "title": "telephone",
       "description": "The telephone number for the contact",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "vcard:tel",
-        "range": "rdfs:Resource",
-        "definition": "This property specifies the telephone number for telephony communication with the person or organization."
-      }
+      "type": ["null", "string"]
     },
     "title": {
       "title": "position title",
       "description": "The position role of the person to contact",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "vcard:title",
-        "range": "xsd:string",
-        "definition": "This property specifies the position role of the person to contact"
-      }
+      "type": ["null", "string"]
     }
   },
-  "required": ["hasEmail", "fn"],
-  "oldDocs": {
-    "rdfClass": "vcard:Kind",
-    "definition": "Point of Contact information",
-    "rationale": "The introduction of vcard:Kind in DCAT-US 3.0 is driven by the need for standardized, reliable, and interoperable Point of Contact information, ultimately improving the accessibility and usability of data resources within the DCAT-US ecosystem."
-  }
+  "required": ["hasEmail", "fn"]
 }

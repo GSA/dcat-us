@@ -19,13 +19,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "#"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:catalog",
-        "range": "dcat:Catalog",
-        "usageNote": "This property refers to a catalog whose contents are of interest in the context of this catalog."
       }
     },
     "contactPoint": {
@@ -34,13 +27,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:contactPoint",
-        "range": "vcard:Kind",
-        "usageNote": "Relevant contact information for the cataloged resource. Use of vCard is recommended"
       }
     },
     "dataset": {
@@ -49,14 +35,6 @@
       "type": "array",
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
-      },
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
-        "uri": "dcat:dataset",
-        "range": "dcat:Dataset",
-        "definition": "Dataset that is part of the catalog.",
-        "usageNote": "This property links the Catalog with a Dataset that is part of the Catalog. As empty Catalogs are usually indications of problems, this property SHOULD be combined with the property service to implement an empty Catalog check."
       }
     },
     "keyword": {
@@ -66,13 +44,6 @@
       "items": {
         "type": "string",
         "minLength": 1
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:keyword",
-        "range": "rdfs:Literal",
-        "usageNote": "A keyword or tag describing the resource."
       }
     },
     "record": {
@@ -81,13 +52,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/catalogrecord"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:record",
-        "range": "dcat:CatalogRecord",
-        "definition": "A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog."
       }
     },
     "service": {
@@ -96,13 +60,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:service",
-        "range": "dcat:DataService",
-        "usageNote": "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalogs are usually indications of problems, this property SHOULD be combined with the property Dataset to implement an empty Catalog check."
       }
     },
     "theme": {
@@ -111,13 +68,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcat:theme",
-        "range": "skos:Concept",
-        "usageNote": "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
       }
     },
     "themeTaxonomy": {
@@ -126,13 +76,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
-      },
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..n",
-        "uri": "dcat:themeTaxonomy",
-        "range": "skos:ConceptScheme",
-        "usageNote": "This property refers to a knowledge organization system used to classify the Catalog's Datasets. CV to be used: http://TBD/resource/dataset/data-theme"
       }
     },
     "accessRights": {
@@ -147,14 +90,7 @@
           "type": "string",
           "description": "Text description of the access rights"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "dcterms:accessRights",
-        "range": "dcterms:RightsStatement",
-        "usageNote": "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public. CV to be used: [[?DATA-GOV-AR]]."
-      }
+      ]
     },
     "conformsTo": {
       "title": "schema version",
@@ -167,15 +103,7 @@
         {
           "$ref": "/dcat-us/3.0.0/definitions/standard"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..1",
-        "uri": "dcterms:conformsTo",
-        "range": "dcterms:Standard",
-        "definition": "An established standard to which the described catalog conforms.",
-        "usageNote": "This property SHOULD be used to indicate the model, schema, ontology, view or profile that the cataloged resource content conforms to."
-      }
+      ]
     },
     "creator": {
       "title": "creator",
@@ -183,28 +111,12 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:creator",
-        "range": "dcterms:Agent",
-        "definition": "The entity responsible for producing the resource.",
-        "usageNote": "Resources of type foaf:Agent are recommended as values for this property."
       }
     },
     "description": {
       "title": "description",
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
-        "uri": "dcterms:description",
-        "range": "rdfs:Literal",
-        "definition": "Free-text description of the catalog (in the language indicated in the attribute).",
-        "usageNote": "This property contains a free-text account of the data Catalog (in the language indicated in the attribute). This property can be repeated for parallel language versions of the description (see )."
-      }
+      "type": ["null", "string"]
     },
     "hasPart": {
       "title": "has part",
@@ -212,13 +124,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "#"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:hasPart",
-        "range": "dcat:Catalog",
-        "usageNote": "This property refers to a related catalog that is part of the described catalog."
       }
     },
     "identifier": {
@@ -233,14 +138,7 @@
           "$ref": "/dcat-us/3.0.0/definitions/identifier",
           "description": "inline description of Identifier"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:identifier",
-        "range": "rdfs:Literal",
-        "usageNote": "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier."
-      }
+      ]
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -281,14 +179,7 @@
             }
           ]
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..1",
-        "uri": "dcterms:issued",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "usageNote": "This property contains the date of formal issuance (e.g., for publication of the Catalog)."
-      }
+      ]
     },
     "language": {
       "title": "language",
@@ -312,15 +203,7 @@
             "maxLength": 2
           }
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..n",
-        "uri": "dcterms:language",
-        "range": "dcterms:LinguisticSystem",
-        "definition": "A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalogue.",
-        "usageNote": "Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used. The value(s) provided for members of a catalog (i.e., dataset or service) override the value(s) provided for the catalog if they conflict. This property can be repeated if the resources of the catalog are provided in multiple languages."
-      }
+      ]
     },
     "license": {
       "title": "license",
@@ -334,14 +217,7 @@
           "type": "string",
           "description": "Full text of the license"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "0..1",
-        "uri": "dcterms:license",
-        "range": "dcterms:LicenseDocument",
-        "usageNote": "This property refers to the license under which the Catalog can be used or reused. CV to be used: [[?DATA-GOV-LICENSE]]"
-      }
+      ]
     },
     "modified": {
       "title": "update/modification date",
@@ -374,14 +250,7 @@
             }
           ]
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..1",
-        "uri": "dcterms:modified",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "usageNote": "This property contains the most recent date on which the Catalog was modified. The value of this property indicates a change to the actual resource, not a change to the catalog record. An absent value MAY indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated."
-      }
+      ]
     },
     "publisher": {
       "title": "publisher",
@@ -395,15 +264,7 @@
           "$ref": "/dcat-us/3.0.0/definitions/agent",
           "description": "inline description of the publisher"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1..1",
-        "uri": "dcterms:publisher",
-        "range": "foaf:Agent",
-        "definition": "Entity responsible for making the catalog available.",
-        "usageNote": "This property refers to an entity (organization) responsible for making the Catalog available."
-      }
+      ]
     },
     "rights": {
       "title": "rights",
@@ -412,13 +273,6 @@
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
-      },
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..n",
-        "uri": "dcterms:rights",
-        "range": "dcterms:RightsStatement",
-        "usageNote": "This property refers to a statement that specifies rights associated with the Catalog."
       }
     },
     "rightsHolder": {
@@ -427,13 +281,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:rightsHolder",
-        "range": "org:Organization",
-        "usageNote": "This property refers to an organization holding rights on the Catalog."
       }
     },
     "spatial": {
@@ -442,13 +289,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/location"
-      },
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..n",
-        "uri": "dcterms:spatial",
-        "range": "dcterms:Location",
-        "usageNote": "This property refers to a geographical area covered by the Catalog. Conventions to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[?GEONAMES]]"
       }
     },
     "subject": {
@@ -457,12 +297,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:subject",
-        "range": "skos:Concept"
       }
     },
     "temporal": {
@@ -471,26 +305,12 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "dcterms:temporal",
-        "range": "dcterms:PeriodOfTime",
-        "usageNote": "This property refers to a temporal period that the Catalog covers."
       }
     },
     "title": {
       "title": "title",
       "description": "The title of the catalog in the indicated language",
-      "type": ["null", "string"],
-      "oldDocs": {
-        "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
-        "uri": "dcterms:title",
-        "range": "rdfs:Literal",
-        "usageNote": "The title of the catalog in the indicated language This property can be repeated for parallel language versions of the description (see )"
-      }
+      "type": ["null", "string"]
     },
     "category": {
       "title": "category",
@@ -498,13 +318,6 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..1",
-        "uri": "dcterms:type",
-        "range": "skos:Concept",
-        "usageNote": "The category of the Catalog"
       }
     },
     "homepage": {
@@ -519,14 +332,7 @@
           "$ref": "/dcat-us/3.0.0/definitions/document",
           "description": "inline description of the home page"
         }
-      ],
-      "oldDocs": {
-        "requirementLevel": "Recommended",
-        "cardinality": "0..1",
-        "uri": "foaf:homepage",
-        "range": "foaf:Document",
-        "usageNote": "This property refers to a web page that acts as the main page for the Catalog For instance data.gov, would be the homepage of the Data Catalog exported to [[?DATA-GOV]]."
-      }
+      ]
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -534,22 +340,8 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
-      },
-      "oldDocs": {
-        "requirementLevel": "Optional",
-        "cardinality": "0..n",
-        "uri": "prov:qualifiedAttribution",
-        "range": "prov:Attribution",
-        "usageNote": "This property refers to a link to an Agent having some form of responsibility for the Catalog."
       }
     }
   },
-  "required": ["dataset"],
-  "oldDocs": {
-    "rdfClass": "dcat:Catalog",
-    "definition": "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)",
-    "usageNote": "A Web-based data catalog is typically represented as a single instance of this class. Populate metadata within the dcat:Catalog to facilitate resource discovery, including title, description, classifiers and other relevant information. Specify the resources hosted within the catalog by linking them as dcat:dataset or dcat:service.",
-    "rationale": "The update of the dcat:Catalog class aligns with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services, or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of other catalogs, promoting modularity and extensibility in the data catalog ecosystem.",
-    "subclassOf": "dcat:Dataset Usage note A Web-based data catalog is typically represented as a single instance of this class. Populate metadata within the dcat:Catalog to facilitate resource discovery, including title, description, classifiers and other relevant information. Specify the resources hosted within the catalog by linking them as dcat:dataset or dcat:service. Rationale The update of the dcat:Catalog class aligns with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services, or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of other catalogs, promoting modularity and extensibility in the data catalog ecosystem."
-  }
+  "required": ["dataset"]
 }

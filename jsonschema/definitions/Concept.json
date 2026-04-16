@@ -58,11 +58,5 @@
       },
       "required": ["prefLabel"]
     }
-  ],
-  "oldDocs": {
-    "rdfClass": "skos:Concept",
-    "definition": "A controlled vocabulary term used to classify Catalog, Dataset, or Data Service.",
-    "usageNote": "Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples) Ensure FAIR Resolvability: Make Concept URIs resolvable using FAIR principles, allowing them to be Findable, Accessible, Interoperable, and Reusable. This ensures that skos:Concept instances can be easily discovered, accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data interoperability and accessibility. To enhance data interoperability and consistency, it is advisable to reuse established controlled vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.",
-    "rationale": "The inclusion of skos:Concept in DCAT-US 3.0 enhances semantic search in catalogs, enabling more accurate discovery of Catalogs, Datasets, and Data Services. It improves user experience, promotes data discoverability, and supports better resource utilization. Additionally, it aligns with international standards like SKOS, ensuring compatibility and adherence to recognized controlled vocabulary practices."
-  }
+  ]
 }
