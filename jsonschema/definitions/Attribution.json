@@ -21,7 +21,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat:hadRole",
         "range": "dcat:Role",
         "definition": "The function of an entity or agent with respect to another entity or resource."
@@ -34,7 +33,6 @@
       "$ref": "/dcat-us/3.0.0/definitions/agent",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "prov:agent",
         "range": "foaf:Agent",
         "definition": "The prov:agent property references an Agent that plays a role in the resource"

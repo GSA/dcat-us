@@ -24,7 +24,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "vcard:address",
         "range": "vcard:Address",
         "definition": "This property specifies the address of the contact"
@@ -37,7 +36,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "vcard:hasEmail",
         "range": "rdfs:Resource",
         "definition": "The email address of the contact.",
@@ -54,7 +52,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "vcard:family-name",
         "range": "xsd:string",
         "definition": "This property specifies the family name of the person to contact"
@@ -67,7 +64,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "vcard:fn",
         "range": "xsd:string",
         "definition": "The formatted text corresponding to the name of the contact"
@@ -80,7 +76,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "vcard:given-name",
         "range": "xsd:string",
         "definition": "This property specifies the given name of the person to contact"
@@ -93,7 +88,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "vcard:organization-name",
         "range": "xsd:string",
         "definition": "This property specifies the name of the organization to contact"
@@ -106,7 +100,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "vcard:tel",
         "range": "rdfs:Resource",
         "definition": "This property specifies the telephone number for telephony communication with the person or organization."
@@ -119,7 +112,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "vcard:title",
         "range": "xsd:string",
         "definition": "This property specifies the position role of the person to contact"

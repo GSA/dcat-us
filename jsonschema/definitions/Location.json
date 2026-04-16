@@ -43,7 +43,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:bbox",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
         "definition": "Describes the spatial extent of domain of application of an resource and is standardized in WGS 84 Lat/Long coordinate system.",
@@ -98,7 +97,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:centroid",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral",
         "usageNote": "The range of this property (rdfs:Literal) is intentionally generic, with the purpose of allowing different geometry literal encodings. E.g., the geometry could be encoded as a WKT literal (geosparql:wktLiteral) Please note that the order of usage is as follows: use the most specific geospatial relationship by preference. E.g. if the spatial description is a bbox, use dcat:bbox, otherwise use locn:geometry The WKT encoding supports geospatial positions expressed in coordinate reference systems other than WGS84."
@@ -124,7 +122,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains the geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer."
@@ -160,7 +157,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "locn:geometry",
         "range": "locn:Geometry",
         "definition": "Associates a spatial thing [[?SDW-BP]] with a corresponding geometry.",
@@ -201,7 +197,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "range": "skos:ConceptScheme",
         "usageNote": "This property MAY be used to specify the gazetteer to which the Location belongs."
       }
@@ -212,7 +207,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "range": "rdfs:Literal",
         "definition": "Alternate toponyms for the location",
         "usageNote": "This property contains a alternate labels of the Location. This property can be repeated for parallel language versions of the label."
@@ -225,7 +219,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "range": "rdfs:Literal",
         "definition": "Preferred toponym for the location",
         "usageNote": "This property contains a preferred label of the Location. This property can be repeated for parallel language versions of the label."

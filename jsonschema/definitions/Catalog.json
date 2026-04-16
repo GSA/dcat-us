@@ -24,7 +24,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:catalog",
         "range": "dcat:Catalog",
         "usageNote": "This property refers to a catalog whose contents are of interest in the context of this catalog."
@@ -39,7 +38,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "Relevant contact information for the cataloged resource. Use of vCard is recommended"
@@ -54,7 +52,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcat:dataset",
         "range": "dcat:Dataset",
         "definition": "Dataset that is part of the catalog.",
@@ -71,7 +68,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal",
         "usageNote": "A keyword or tag describing the resource."
@@ -89,7 +85,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:record",
         "range": "dcat:CatalogRecord",
         "definition": "A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog."
@@ -104,7 +99,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:service",
         "range": "dcat:DataService",
         "usageNote": "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalogs are usually indications of problems, this property SHOULD be combined with the property Dataset to implement an empty Catalog check."
@@ -119,7 +113,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:theme",
         "range": "skos:Concept",
         "usageNote": "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
@@ -134,7 +127,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:themeTaxonomy",
         "range": "skos:ConceptScheme",
         "usageNote": "This property refers to a knowledge organization system used to classify the Catalog's Datasets. CV to be used: http://TBD/resource/dataset/data-theme"
@@ -155,7 +147,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public. CV to be used: [[?DATA-GOV-AR]]."
@@ -176,7 +167,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "definition": "An established standard to which the described catalog conforms.",
@@ -192,7 +182,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:creator",
         "range": "dcterms:Agent",
         "definition": "The entity responsible for producing the resource.",
@@ -205,7 +194,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "1..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "Free-text description of the catalog (in the language indicated in the attribute).",
@@ -225,7 +213,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:hasPart",
         "range": "dcat:Catalog",
         "usageNote": "This property refers to a related catalog that is part of the described catalog."
@@ -246,7 +233,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier."
@@ -297,7 +283,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g., for publication of the Catalog)."
@@ -329,7 +314,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem",
         "definition": "A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalogue.",
@@ -352,7 +336,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
         "usageNote": "This property refers to the license under which the Catalog can be used or reused. CV to be used: [[?DATA-GOV-LICENSE]]"
@@ -393,7 +376,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Catalog was modified. The value of this property indicates a change to the actual resource, not a change to the catalog record. An absent value MAY indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated."
@@ -415,7 +397,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "1..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "definition": "Entity responsible for making the catalog available.",
@@ -432,7 +413,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to a statement that specifies rights associated with the Catalog."
@@ -454,7 +434,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization",
         "usageNote": "This property refers to an organization holding rights on the Catalog."
@@ -469,7 +448,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographical area covered by the Catalog. Conventions to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[?GEONAMES]]"
@@ -484,7 +462,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:subject",
         "range": "skos:Concept"
       }
@@ -498,7 +475,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "This property refers to a temporal period that the Catalog covers."
@@ -510,7 +486,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "The title of the catalog in the indicated language This property can be repeated for parallel language versions of the description (see )"
@@ -526,7 +501,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:type",
         "range": "skos:Concept",
         "usageNote": "The category of the Catalog"
@@ -547,7 +521,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "foaf:homepage",
         "range": "foaf:Document",
         "usageNote": "This property refers to a web page that acts as the main page for the Catalog For instance data.gov, would be the homepage of the Data Catalog exported to [[?DATA-GOV]]."
@@ -562,7 +535,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
         "usageNote": "This property refers to a link to an Agent having some form of responsibility for the Catalog."

@@ -20,7 +20,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
         "definition": "A note related to the access restriction"
@@ -33,7 +32,6 @@
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "The indication of whether or not there are access restrictions on the data."
@@ -54,7 +52,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The authority of the restriction"

@@ -64,7 +64,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:creator",
         "range": "org:Organization"
       }
@@ -75,7 +74,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:mediaType",
         "range": "dcterms:MediaType",
         "usageNote": "An implementing rule or other specification."
@@ -88,7 +86,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:abstract",
         "range": "rdfs:Literal"
       },
@@ -102,7 +99,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:bibliographicCitation",
         "range": "rdfs:Literal"
       },
@@ -120,7 +116,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "dcterms:Standard",
         "usageNote": "An implementing rule or other specification."
@@ -143,7 +138,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "Description of the document."
@@ -168,7 +162,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
       }
@@ -217,7 +210,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal"
       },
@@ -232,7 +224,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dc:publisher",
         "range": "rdfs:Literal",
         "usageNote": "Use this property to represent publisher as literal string and not structured data."
@@ -244,7 +235,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },

@@ -43,7 +43,6 @@ from bs4 import BeautifulSoup, Tag
 class PropertyMetadata:
     """Metadata for a single property extracted from documentation."""
     requirementLevel: str | None = None
-    cardinality: str | None = None
     uri: str | None = None
     range: str | None = None
     definition: str | None = None
@@ -274,8 +273,6 @@ def parse_property_table(table: Tag) -> PropertyMetadata:
             
             if 'requirement level' in key_lower:
                 metadata.requirementLevel = value
-            elif 'cardinality' in key_lower:
-                metadata.cardinality = value
             elif key_lower == 'uri':
                 metadata.uri = value
             elif key_lower == 'range':
@@ -642,7 +639,7 @@ def main():
             print(f"    Definition: {metadata.definition[:80] if metadata.definition else None}...")
             print(f"    Properties: {len(metadata.properties)}")
             for prop_name, prop_meta in metadata.properties.items():
-                print(f"      - {prop_name}: {prop_meta.requirementLevel}, {prop_meta.cardinality}")
+                print(f"      - {prop_name}: {prop_meta.requirementLevel}")
     
     # Update schemas using algorithmic matching
     print("\nMatching and updating JSON schemas...")

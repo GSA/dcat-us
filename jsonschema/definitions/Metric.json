@@ -20,7 +20,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dqv:expectedDataType",
         "range": "xsd:anySimpleType",
         "definition": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)"
@@ -33,7 +32,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dqv:inDimension",
         "range": "dqv:Dimension",
         "definition": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of."
@@ -49,7 +47,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "skos:definition",
         "range": "rdfs:Literal",
         "definition": "definition of the metric"

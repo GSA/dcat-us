@@ -21,7 +21,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat-us:cuiBannerMarking",
         "range": "xsd:string",
         "definition": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection."
@@ -34,7 +33,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat-us:designationIndicator",
         "range": "xsd:string",
         "definition": "Designation Indicator shows which agency made the document CUI",
@@ -52,7 +50,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat-us:requiredIndicatorPerAuthority",
         "range": "xsd:string",
         "definition": "free text (e.g., text of the category description or the distribution statement)"

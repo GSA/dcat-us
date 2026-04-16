@@ -23,7 +23,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat:hadRole",
         "range": "dcat:Role",
         "definition": "The function of an entity or agent with respect to another entity or resource."
@@ -36,7 +35,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcterms:relation",
         "definition": "The resource related to the source resource."
       },

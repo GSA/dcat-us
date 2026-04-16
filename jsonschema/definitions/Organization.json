@@ -21,7 +21,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "foaf:name",
         "range": "xsd:string",
         "definition": "The name of the Organization"
@@ -37,7 +36,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "org:subOrganizationOf",
         "range": "org:Organization",
         "definition": "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization."
@@ -49,7 +47,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "skos:altLabel",
         "range": "xsd:string",
         "definition": "alternative names (trading names, colloquial names) for an organization"
@@ -66,7 +63,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "skos:notation",
         "range": "xsd:string",
         "definition": "abbreviations or codes from code lists for an organization (e.g. DOI, DOD)"
@@ -79,7 +75,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "skos:prefLabel",
         "range": "xsd:string",
         "definition": "The legal name or preferred name of the Organization"

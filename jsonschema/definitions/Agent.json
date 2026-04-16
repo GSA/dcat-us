@@ -32,7 +32,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "foaf:name",
         "range": "xsd:string",
         "definition": "The name of the software agent"

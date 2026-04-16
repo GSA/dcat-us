@@ -48,7 +48,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:endDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "The end date of the period of time"
@@ -88,7 +87,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:startDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "The start date of the period of time"

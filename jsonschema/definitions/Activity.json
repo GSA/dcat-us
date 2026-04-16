@@ -24,7 +24,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:type",
         "range": "skos:Concept"
       }
@@ -35,7 +34,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "rdfs:label",
         "range": "xsd:string",
         "usageNote": "This property is used to give a human-readable label for the activity."

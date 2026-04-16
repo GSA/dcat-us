@@ -24,7 +24,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "Contact information that can be used for sending comments about the Dataset Series."
@@ -45,7 +44,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:first",
         "range": "dcat:Dataset",
         "usageNote": "The first resource in an ordered collection or series of resources, to which the current resource belongs."
@@ -66,7 +64,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:last",
         "range": "dcat:Dataset",
         "usageNote": "The last resource in an ordered collection or series of resources"
@@ -81,7 +78,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:seriesMember",
         "range": "dcat:Dataset",
         "usageNote": "A member of the Dataset Series."
@@ -144,7 +140,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency",
         "usageNote": "This property refers to the frequency at which the Dataset Series is updated. The frequency of a dataset series is not equal to the frequency of the dataset in the collection. CV to be used: [[CLD-FREQ]]."
@@ -157,7 +152,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a free-text account of the Dataset Series. This property can be repeated for parallel language versions of the description (see Multilingualism). It is recommended to provide an indication about the dimensions the Dataset Series evolves."
@@ -201,7 +195,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g.,publication) of the Dataset Series. The moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series."
@@ -242,7 +235,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Dataset Series was changed or modified. No value may indicate that the Dataset Series has never changed after its initial publication, or that the date of the last modification is not known, or that the Dataset Series is continuously updated This is not equal to the most recent modified dataset in the collection of the dataset series."
@@ -264,7 +256,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity (organization) responsible for ensuring the coherency of the Dataset Series. The publisher of the dataset series may not be the publisher of all datasets. E.g. a digital archive could take over the publishing of older datasets in the series."
@@ -279,7 +270,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographic region that is covered by the Dataset Series. When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset in the collection should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU or a broad bounding box covering the expected values. CV to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
@@ -294,7 +284,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "A temporal period that the Dataset Series covers. When temporal coverage is a dimension in the dataset series then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open ended value is recommended, e.g. after 2012. The temporal coverage of a dataset series may be encoded as an instance of dcterms:PeriodOfTime, or may be indicated using an IRI reference (link) to a resource describing a time period ."
@@ -306,7 +295,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a name given to the Dataset Series. This property can be repeated for parallel language versions of the name (see Multilingualism)."

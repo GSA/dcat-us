@@ -21,7 +21,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal",
         "definition": "Significant information pertaining to the use or reproduction of the data."
@@ -37,7 +36,6 @@
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept",
         "definition": "Indication of whether or not there are use restrictions on the archival materials"
@@ -58,7 +56,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept",
         "definition": "The identification of the type of use restrictions, based on copyright, donor, or statutory provisions, on the archival materials."

@@ -40,7 +40,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "adms:sample",
         "range": "dcat:Distribution",
         "definition": "Links to a sample of an Dataset, which is a dcat:Distribution."
@@ -61,7 +60,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "adms:status",
         "range": "skos:Concept",
         "usageNote": "This property refers to the maturity of the Dataset. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]] vocabulary."
@@ -90,7 +88,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "adms:versionNotes",
         "range": "rdfs:Literal",
         "usageNote": "A description of the differences between this version and a previous version of the Dataset. This property can be repeated for parallel language versions of the version notes."
@@ -115,7 +112,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "0..n",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "usageNote": "This property contains contact information that can be used for sending comments about the Dataset. This property MUST contain an email address that is continuously monitored by the data publisher. If there are several contributors involved in the publication of the Dataset, the property can be used multiple times."
@@ -130,7 +126,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:distribution",
         "range": "dcat:Distribution",
         "usageNote": "This property links the Dataset to an available Distribution. In exceptional cases, a Dataset for which no distribution form exists (yet) can be described in the Catalog. In this case, the element dcat:distribution may be omitted."
@@ -209,7 +204,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a keyword or tag describing the Dataset. Good practice: mark the language of the keywords with the [[ISO 639-1]] language code such as \"geodata\"@en."
@@ -242,7 +236,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:landingPage",
         "range": "foaf:Document",
         "usageNote": "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator."
@@ -274,7 +267,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:qualifiedRelation",
         "range": "dcat:Relationship",
         "usageNote": "This property provides a link to a description of a relationship with another resource and it is especially meant for relationships between Datasets. It replaces the property rdfs:seeAlso of DCAT-US v1. See here for examples on how to use it: dcat:qualifiedRelation."
@@ -286,7 +278,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal (typed as xsd:decimal)",
         "usageNote": "If the dataset is an image or grid this should correspond to the spacing of items. For other kinds of spatial datasets, this property will usually indicate the smallest distance between items in the dataset. The range of this property is a decimal number representing a length in meters. This is intended to provide a summary indication of the spatial resolution of the data as a single number. More complex descriptions of various aspects of spatial precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV]."
@@ -299,7 +290,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal (typed as xsd:duration)",
         "usageNote": "If the dataset is a time-series this should correspond to the spacing of items in the series. For other kinds of dataset, this property will usually indicate the smallest time difference between items in the dataset This is intended to provide a summary indication of the temporal resolution of the dataset as a single value. More complex descriptions of various aspects of temporal precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV]."
@@ -315,7 +305,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:theme",
         "range": "skos:Concept",
         "usageNote": "This property refers to a category of the Dataset. A Dataset may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
@@ -327,7 +316,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:version",
         "range": "rdfs:Literal",
         "usageNote": "The version indicator (name or identifier) of a resource."
@@ -349,7 +337,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
         "usageNote": "This is used to specify a data dictionary or schema that defines fields (variables, dimensions, measures, attributes) in the dataset."
@@ -370,7 +357,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat-us:liabilityStatement",
         "range": "dcat-us:LiabilityStatement",
         "usageNote": "A liability statement about the dataset"
@@ -388,7 +374,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat-us:metadataDistribution",
         "range": "dcat:Distribution",
         "definition": "Property referring to a metadata document distribution from which this dataset is derrived from.",
@@ -401,7 +386,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat-us:purpose",
         "range": "rdfs:Literal",
         "usageNote": "The purpose of the dataset"
@@ -425,7 +409,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. CV to be used: [[?DATA-GOV-AR]]."
@@ -492,7 +475,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency",
         "usageNote": "This property refers to the frequency at which the Dataset is updated. CV to be used: [[CLD-FREQ]]."
@@ -508,7 +490,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "usageNote": "This property refers to an implementing rule or other specification. This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a Dataset conforms to (and may indicate more than one). This is (generally) a complementary concern to the media-type or format."
@@ -523,7 +504,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:contributor",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an agent contributing to the Dataset."
@@ -581,7 +561,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity responsible for producing the dataset."
@@ -593,7 +572,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "This property contains a free-text account of the Dataset.",
@@ -630,7 +608,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a unique identifier for the Dataset, e.g. a URI or other unique identifier in the context of the Catalog."
@@ -648,7 +625,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:isReferencedBy",
         "range": "rdfs:Resource",
         "usageNote": "This property is about a related resource, such as a publication, that references, cites, or otherwise points to the Dataset."
@@ -689,7 +665,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g., first publication) of the Dataset. If this date is not known, the date of the first referencing of the data collection in the Catalog can be entered."
@@ -762,7 +737,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Dataset was changed or modified. No value may indicate that the Dataset has never changed after its initial publication, or that the date of the last modification is not known, or that the Dataset is continuously updated This property MUST only be set if the distributions (the actual data) that the Dataset describes have been updated after it has been issued. In this case the property MUST contain the date of the last update. That way a person or institution using the data for an analysis or application will know when to update the report or application on their side."
@@ -797,7 +771,6 @@
       "$ref": "/dcat-us/3.0.0/definitions/organization",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "0..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "usageNote": "This property refers to an entity (organization) responsible for making the Dataset available."
@@ -815,7 +788,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:relation",
         "range": "rdfs:Resource",
         "usageNote": "This property refers to a related resource where the relationship cannot be further specified as a dcat:qualifiedRelation. This may be additional material such as an article, example or documentation helpful in the context of the Dataset. The element can also be used to link to legal foundations that apply to the publication or usage of the Dataset."
@@ -843,7 +815,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to a statement that specifies copyrights associated with the Dataset."
@@ -877,7 +848,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:source",
         "range": "dcat:Dataset",
         "usageNote": "A related Dataset from which the described Dataset is derived."
@@ -905,7 +875,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "usageNote": "This property refers to a geographic region that is covered by the Dataset. CV to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
@@ -920,7 +889,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:subject",
         "range": "skos:Concept",
         "definition": "Primary Subjects of the Dataset.",
@@ -936,7 +904,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "usageNote": "The temporal coverage of a dataset may be encoded as an instance of dcterms:PeriodOfTime, or may be indicated using an IRI reference (link) to a resource describing a time period."
@@ -948,7 +915,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "definition": "This property contains a name given to the Dataset.",
@@ -968,7 +934,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:type",
         "range": "skos:Concept",
         "usageNote": "A type of the Dataset. A recommended controlled vocabulary data-type is foreseen."
@@ -983,7 +948,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
         "definition": "Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric",
@@ -999,7 +963,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "foaf:page",
         "range": "foaf:Document",
         "usageNote": "This property refers to a page or document about this Dataset."
@@ -1014,7 +977,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
         "usageNote": "This property refers to a link to an Agent having some form of responsibility for the resource."
@@ -1040,7 +1002,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "prov:wasGeneratedBy",
         "range": "prov:Activity",
         "usageNote": "An activity that generated, or provides the business context for, the creation of the dataset."
@@ -1074,11 +1035,10 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..3",
         "uri": "schema:image",
         "range": "schema:url or schema:ImageObject",
         "definition": "A thumbnail picture illustrating the content of the dataset.",
-        "usageNote": "A thumbnail picture illustrating the content of the Dataset. For distributions that consist of visual content (photographs, videos, maps, etc.) it makes sense to add a limited number of thumbnails to the metadata. It’s a DCAT-US Custom Class"
+        "usageNote": "A thumbnail picture illustrating the content of the Dataset. For distributions that consist of visual content (photographs, videos, maps, etc.) it makes sense to add a limited number of thumbnails to the metadata. It\u2019s a DCAT-US Custom Class"
       }
     },
     "scopeNote": {
@@ -1087,7 +1047,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "skos:scopeNote"
       },
       "examples": [

@@ -21,7 +21,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:version",
         "range": "xsd:string",
         "definition": "This property contains a version number or other version designation of the Concept Scheme."
@@ -62,7 +61,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:created",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the date on which the Concept Scheme has been first created."
@@ -75,7 +73,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "This property contains a description of the Concept Scheme.",
@@ -120,7 +117,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the date of formal issuance (e.g., publication) of the Concept Scheme."
@@ -161,7 +157,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the most recent date at which the Concept Scheme was changed or modified."
@@ -174,7 +169,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "definition": "The title of the concept scheme in the indicated language.",

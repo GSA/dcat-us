@@ -49,7 +49,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:created",
         "range": "xsd:date",
         "definition": "This property contains the date on which the Standard has been first created."
@@ -62,7 +61,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description - see Multilinguism"
@@ -87,7 +85,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "xsd:string",
         "definition": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog, or of a reference register"
@@ -138,7 +135,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the date of formal issuance (e.g., publication) of the Standard."
@@ -179,7 +175,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "xsd:date",
         "definition": "This property contains the most recent date on which the Standard was changed or modified."
@@ -192,7 +187,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:title",
         "range": "xsd:string",
         "definition": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name."
@@ -228,7 +222,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "skos:inScheme",
         "range": "skos:ConceptScheme",
         "definition": "This property MAY be used to specify the reference register to which the Standard belongs."

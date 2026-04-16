@@ -24,7 +24,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
         "definition": "This property contains contact information that can be used for sending comments about the Data Service.",
@@ -40,7 +39,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:endpointDescription",
         "range": "rdfs:Resource",
         "definition": "A description of the services available via the end-points, including their operations, parameters etc.",
@@ -63,7 +61,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcat:endpointURL",
         "range": "rdfs:Resource",
         "usageNote": "The root location or primary endpoint of the service (a Web-resolvable IRI)"
@@ -87,7 +84,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal",
         "definition": "This property contains a keyword or tag describing the Data Service."
@@ -106,7 +102,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat:servesDataset",
         "range": "dcat:Dataset",
         "definition": "The Dataset that is served by this data service.",
@@ -119,7 +114,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal typed as xsd:decimal",
         "definition": "This property refers to the minimum spatial separation resolvable in a Data Service, measured in meters."
@@ -132,7 +126,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal typed as xsd:duration",
         "definition": "The minimum time period resolvable by the Data Service."
@@ -148,7 +141,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:theme",
         "range": "skos:Concept",
         "definition": "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.",
@@ -169,7 +161,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
         "definition": "This property MAY include information regarding access or restrictions based on privacy, security, or other policies.",
@@ -186,7 +177,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard",
         "definition": "This property is used to indicate the general standard or specification that the Data Service endpoints implement."
@@ -225,7 +215,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:created",
         "range": "rdfs:Literal typed as xsd:date or xsd:dateTime",
         "definition": "This property contains the date on which the Data Service has been first created."
@@ -241,7 +230,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:creator",
         "range": "foaf:Agent",
         "usageNote": "This property refers to the Agent primarily responsible for producing the Data Service."
@@ -253,7 +241,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "definition": "This property contains a free-text account of the Data Service.",
@@ -278,7 +265,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "definition": "This property contains the main identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog."
@@ -320,7 +306,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem",
         "definition": "This property refers to a language supported by the Data Service. This property can be repeated if multiple languages are supported in the Data Service.",
@@ -343,7 +328,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
         "definition": "This property refers to the license under which the Data Service is made available.",
@@ -385,7 +369,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "definition": "This property contains the most recent date on which the Data Service was changed or modified."
@@ -398,7 +381,6 @@
       "$ref": "/dcat-us/3.0.0/definitions/agent",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
         "definition": "This property refers to an entity (organization) responsible for making the Data Service available.",
@@ -414,7 +396,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
         "definition": "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements."
@@ -434,7 +415,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization",
         "definition": "This property refers to an Agent (organization) holding rights on the Data Service."
@@ -449,7 +429,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location",
         "definition": "This property refers to a geographic region that is covered by the Data Service.",
@@ -465,7 +444,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime",
         "definition": "This property refers to a temporal period that the Data Service covers."
@@ -477,7 +455,6 @@
       "type": "string",
       "oldDocs": {
         "requirementLevel": "Mandatory",
-        "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "The title of the catalog in the indicated language This property can be repeated for parallel language versions of the description (see )"
@@ -493,7 +470,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:type",
         "range": "skos:Concept",
         "definition": "Category of the data service",
@@ -509,7 +485,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
         "definition": "Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric",
@@ -525,7 +500,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution",
         "definition": "This property refers to a link to an Agent having some form of responsibility for the Data Service."
@@ -540,7 +514,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "prov:wasUsedBy",
         "range": "prov:Activity",
         "definition": "This property refers to an Activity that used the Data Service.",

@@ -30,7 +30,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "adms:representationTechnique",
         "range": "skos:Concept",
         "definition": "More information about the format in which a Distribution is released. This is different from the file format as, for example, a XML file (file format) could contain an XML schema (representation technique).",
@@ -52,7 +51,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "adms:status",
         "range": "skos:Concept",
         "usageNote": "This property refers to the maturity of the Distribution. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]] vocabulary."
@@ -60,7 +58,7 @@
     },
     "characterEncoding": {
       "title": "character encoding",
-      "description": "The list of character encodings of the Distribution, by using as value the character set names in the IANA register ",
+      "description": "The list of character encodings of the Distribution, by using as value the character set names in the IANA register\u00a0",
       "anyOf": [
         {
           "type": "null",
@@ -77,7 +75,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "cnt:characterEncoding",
         "range": "rdfs:Literal",
         "usageNote": "This property SHOULD be used to specify the character encoding of the Distribution, by using as value the character set names in the IANA register [[IANA-CHARSETS]]."
@@ -93,7 +90,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:accessService",
         "range": "dcat:DataService",
         "usageNote": "This property refers to a data service that gives access to the distribution of the Dataset"
@@ -116,7 +112,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat:accessURL",
         "range": "rdfs:Resource",
         "usageNote": "This should be the URL for an indirect means of accessing the data, such as API documentation, a 'wizard' or other graphical interface which is used to generate a download, feed, or a request form for the data. When the access is restricted but the dataset is available online indirectly, this field should be the URL that provides indirect access. This should not be a direct download URL. It is usually assumed that accessURL is an HTML webpage. This property contains a URL that gives access to a Distribution of the Dataset (typically from a service). The resource at the access URL may contain information about how to get the Dataset. If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page URL associated with the dcat:Dataset SHOULD be duplicated as access URL on a distribution dcat:accessURL should match the property dcat:endpointURL of the dcat:DataService associated with the distribution."
@@ -132,7 +127,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:byteSize",
         "range": "xsd:nonNegativeInteger",
         "definition": "The size of a distribution in bytes.",
@@ -146,7 +140,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:compressFormat",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the format of the file in which the data is contained in a compressed form, e.g., to reduce the size of the downloadable file. It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA [[IANA-MEDIA-TYPES]]."
@@ -170,7 +163,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:downloadURL",
         "range": "rdfs:Resource",
         "usageNote": "This must be the direct download URL. Other means of accessing the dataset should be expressed using accessURL. This should always be accompanied by mediaType."
@@ -186,7 +178,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:mediaType",
         "range": "dcterms:MediaType",
         "definition": "This property refers to the media type of the Distribution as defined in the official register of media types managed by IANA [[IANA-MEDIA-TYPES]].",
@@ -200,7 +191,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:packageFormat",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together. It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."
@@ -213,7 +203,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "xsd:decimal",
         "usageNote": "This property refers to the minimum spatial separation resolvable in a Distribution, measured in meters."
@@ -226,7 +215,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcat:temporalResolution",
         "range": "xsd:duration",
         "usageNote": "This property refers to the minimum time period resolvable in the Dataset distribution."
@@ -259,7 +247,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat-us:accessRestriction",
         "range": "dcat-us:AccessRestriction",
         "usageNote": ">This property refers to a statement that specifies access restriction associated with the Distribution."
@@ -280,7 +267,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat-us:cuiRestriction",
         "range": "dcat-us:CuiRestriction",
         "usageNote": "This property refers to a statement that specifies cui restriction associated with the Distribution."
@@ -301,7 +287,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution",
         "usageNote": "This is used to specify a data dictionary or schema that defines fields (variables, dimensions, measures, attributes) in the distribution."
@@ -316,7 +301,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcat-us:useRestriction",
         "range": "dcat-us:UseRestriction",
         "usageNote": "This property refers to a statement that specifies use restriction associated with the Distribution."
@@ -337,7 +321,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property MAY include information regarding access or restrictions based on privacy, security, or other policies."
@@ -353,7 +336,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard (A basis for comparison; a reference point against which other things can be evaluated.)",
         "definition": "An established standard to which the distribution conforms.",
@@ -366,7 +348,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a free-text account of the Distribution. The description MAY be provided if the distribution contains only part of the data offered by the Dataset. This property can be repeated for parallel language versions of the description (see Multilingualism)."
@@ -382,7 +363,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:format",
         "range": "dcterms:MediaType",
         "usageNote": "This property refers to the file format of the Distribution. CV to be used: [[?DATA-GOV-FT]] If a format is not available, use media type ([[IANA-MEDIA-TYPES]]) if applicable."
@@ -404,7 +384,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal",
         "usageNote": "An identifier for the distribution, that identifies it as a resource mainly for the organization publishing the data."
@@ -455,7 +434,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the date of formal issuance (e.g., publication) of the Distribution. Date of formal issuance (publication) of the distribution UsageThe first time issuance of the distribution."
@@ -487,7 +465,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dcterms:language",
         "range": "rdfs:Literal",
         "definition": "A language of the resource. This refers to the natural language used for textual metadata (i.e., titles, descriptions, etc.) of textual values of a dataset distribution",
@@ -510,7 +487,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
         "usageNote": "This property refers to the license under which the Distribution is made available. CV to used: [[?DATA-GOV-LICENSE]]"
@@ -551,7 +527,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..1",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
         "usageNote": "This property contains the most recent date on which the Distribution was changed or modified."
@@ -568,7 +543,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement",
         "usageNote": "This property refers to a statement that specifies rights associated with the Distribution."
@@ -586,7 +560,6 @@
       "type": ["null", "string"],
       "oldDocs": {
         "requirementLevel": "Recommended",
-        "cardinality": "0..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",
         "usageNote": "This property contains a name given to the Distribution. This property can be repeated for parallel language versions of the description (see Multilingualism). The title MUST be given if the distribution contains only part of the data offered by the Dataset The title can be given in several languages. In multilingual data portals, the title in the language selected by a user will usually be shown as title for the distribution."
@@ -602,7 +575,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement",
         "definition": "Refers to the performed quality measurements on a distribution.It represents the evaluation of a given distribution against a specific quality metric",
@@ -618,7 +590,6 @@
       },
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..n",
         "uri": "foaf:page",
         "range": "foaf:Document",
         "usageNote": "This property refers to a page or document about this Distribution."
@@ -641,7 +612,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..3",
         "uri": "schema:image",
         "range": "schema:ImageObject",
         "usageNote": "This property is for associating thumbnail images that visually represent the Distribution's content, especially beneficial for visual content like photographs, videos, maps, etc. Thumbnails should effectively illustrate or summarize the content, enhancing metadata richness and utility. While typically only URLs pointing directly to downloadable images are allowed, for more detailed representation, additional fields from schema:ImageObject, such as schema:caption, can be utilized to provide further context or descriptions. This approach ensures the \"image\" property not only aids in content identification but also enriches the user's understanding and interaction with the metadata."
@@ -662,7 +632,6 @@
       ],
       "oldDocs": {
         "requirementLevel": "Optional",
-        "cardinality": "0..1",
         "uri": "spdx:checksum",
         "range": "spdx:Checksum",
         "usageNote": "This property provides a mechanism that can be used to verify that the contents of a distribution have not changed. The checksum is related to the downloadURL. Property added in [[VOCAB-DCAT-3]]: spdx:checksum"

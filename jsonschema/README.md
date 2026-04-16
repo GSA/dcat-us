@@ -385,7 +385,6 @@ Each schema and property can include an `oldDocs` object containing metadata ext
 - `usageNote` - Usage guidance
 - `rationale` - Rationale for inclusion
 - `requirementLevel` - Mandatory/Recommended/Optional
-- `cardinality` - Allowed occurrences (e.g., `1..n`, `0..1`)
 - `range` - Expected value type
 
 The repository originally seeded `oldDocs` metadata from the legacy DCAT-US HTML documentation using `parse_old_docs.py`. That import was a one-time bootstrap step, and the resulting metadata has since been manually updated in places.
