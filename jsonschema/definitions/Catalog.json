@@ -198,7 +198,7 @@
       "description": "Free-text description of the catalog (in the language indicated in the language property)",
       "type": ["null", "string"],
       "oldDocs": {
-        "requirementLevel": "Mandatory",
+        "requirementLevel": "Optional",
         "cardinality": "1..n",
         "uri": "dcterms:description",
         "range": "rdfs:Literal",
@@ -248,6 +248,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "issued": {
@@ -336,7 +339,7 @@
         }
       ],
       "oldDocs": {
-        "requirementLevel": "Mandatory",
+        "requirementLevel": "Optional",
         "cardinality": "0..1",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument",
@@ -397,7 +400,7 @@
         }
       ],
       "oldDocs": {
-        "requirementLevel": "Mandatory",
+        "requirementLevel": "Optional",
         "cardinality": "1..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
@@ -485,7 +488,7 @@
       "description": "The title of the catalog in the indicated language",
       "type": ["null", "string"],
       "oldDocs": {
-        "requirementLevel": "Mandatory",
+        "requirementLevel": "Optional",
         "cardinality": "1..n",
         "uri": "dcterms:title",
         "range": "rdfs:Literal",

@@ -228,7 +228,10 @@
           "$ref": "/dcat-us/3.0.0/definitions/concept",
           "description": "inline description of Concept"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "accessRestriction": {
       "title": "access restriction",
@@ -390,6 +393,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "issued": {

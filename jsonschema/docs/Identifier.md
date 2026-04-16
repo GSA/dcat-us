@@ -40,11 +40,15 @@ A unique identifier and optionally it's scheme and other relevant information
 
 ### <a name="anyOf_i1_@id"></a>Property `Identifier > anyOf > Identifier as a complex object > @id`
 
+**Requirement:** Optional
+
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
 ### <a name="anyOf_i1_@type"></a>Property `Identifier > anyOf > Identifier as a complex object > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`       |
 | ----------- | -------------- |
@@ -54,6 +58,8 @@ A unique identifier and optionally it's scheme and other relevant information
 
 **Title:** schema agency
 
+**Requirement:** Optional
+
 The name of the agency that issued the identifier
 
 | **Type** | `null or string` |
@@ -62,6 +68,8 @@ The name of the agency that issued the identifier
 ### <a name="anyOf_i1_creator"></a>Property `Identifier > anyOf > Identifier as a complex object > creator`
 
 **Title:** creator
+
+**Requirement:** Optional
 
 the agency that manages the identifier scheme
 
@@ -95,6 +103,8 @@ inline description of the creator
 ### <a name="anyOf_i1_issued"></a>Property `Identifier > anyOf > Identifier as a complex object > issued`
 
 **Title:** issued
+
+**Requirement:** Optional
 
 The date of formal issuance (e.g., publication) of the Identifier
 
@@ -167,6 +177,8 @@ A year and month in YYYY-MM format
 
 **Title:** version
 
+**Requirement:** Optional
+
 version of the identifier scheme
 
 | **Type** | `null or string` |
@@ -175,6 +187,8 @@ version of the identifier scheme
 ### <a name="anyOf_i1_notation"></a>Property `Identifier > anyOf > Identifier as a complex object > notation`
 
 **Title:** notation
+
+**Requirement:** Optional
 
 abbreviation or code from code lists for an identifier
 

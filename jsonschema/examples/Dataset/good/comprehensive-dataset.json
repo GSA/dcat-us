@@ -52,7 +52,10 @@
       "fn": "Schema Support",
       "hasEmail": "mailto:schema@example.gov"
     },
-    "publisher": { "name": "Sample Government Agency" }
+    "publisher": {
+      "name": "Sample Government Agency"
+    },
+    "identifier": "https://example.gov/datasets/nested-schema-008"
   },
   "versionNotes": "Initial release of the comprehensive example dataset with all fields populated.",
   "contactPoint": [
@@ -107,31 +110,40 @@
   ],
   "first": {
     "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
+    "publisher": {
+      "name": "The Minimal Organization"
+    },
     "title": "Dataset One",
     "contactPoint": {
       "hasEmail": "mailto:example@example.gov",
       "fn": "Example contact"
-    }
+    },
+    "identifier": "https://example.gov/datasets/nested-first-001"
   },
   "hasCurrentVersion": {
     "description": "A minimal dataset",
-    "publisher": { "name": "The Minimal Organization" },
+    "publisher": {
+      "name": "The Minimal Organization"
+    },
     "title": "Dataset One",
     "contactPoint": {
       "hasEmail": "mailto:example@example.gov",
       "fn": "Example contact"
-    }
+    },
+    "identifier": "https://example.gov/datasets/nested-current-version-002"
   },
   "hasVersion": [
     {
       "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
+      "publisher": {
+        "name": "The Minimal Organization"
+      },
       "title": "Dataset One",
       "contactPoint": {
         "hasEmail": "mailto:example@example.gov",
         "fn": "Example contact"
-      }
+      },
+      "identifier": "https://example.gov/datasets/nested-version-003"
     }
   ],
   "inSeries": [
@@ -150,21 +162,27 @@
       ],
       "first": {
         "description": "A minimal dataset",
-        "publisher": { "name": "The Minimal Organization" },
+        "publisher": {
+          "name": "The Minimal Organization"
+        },
         "title": "Dataset One",
         "contactPoint": {
           "hasEmail": "mailto:example@example.gov",
           "fn": "Example contact"
-        }
+        },
+        "identifier": "https://example.gov/datasets/nested-series-first-004"
       },
       "last": {
         "description": "A minimal dataset",
-        "publisher": { "name": "The Minimal Organization" },
+        "publisher": {
+          "name": "The Minimal Organization"
+        },
         "title": "Dataset One",
         "contactPoint": {
           "hasEmail": "mailto:example@example.gov",
           "fn": "Example contact"
-        }
+        },
+        "identifier": "https://example.gov/datasets/nested-series-last-005"
       }
     }
   ],
@@ -190,7 +208,10 @@
       "fn": "Data Support",
       "hasEmail": "mailto:data@example.gov"
     },
-    "publisher": { "name": "Sample Government Agency" }
+    "publisher": {
+      "name": "Sample Government Agency"
+    },
+    "identifier": "https://example.gov/datasets/nested-prev-version-007"
   },
   "qualifiedRelation": [
     {
@@ -253,12 +274,15 @@
   "hasPart": [
     {
       "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
+      "publisher": {
+        "name": "The Minimal Organization"
+      },
       "title": "Dataset One",
       "contactPoint": {
         "hasEmail": "mailto:example@example.gov",
         "fn": "Example contact"
-      }
+      },
+      "identifier": "https://example.gov/datasets/nested-part-006"
     }
   ],
   "isReferencedBy": [
@@ -278,12 +302,15 @@
   "replaces": [
     {
       "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
+      "publisher": {
+        "name": "The Minimal Organization"
+      },
       "title": "Dataset One",
       "contactPoint": {
         "hasEmail": "mailto:example@example.gov",
         "fn": "Example contact"
-      }
+      },
+      "identifier": "https://example.gov/datasets/nested-replaces-010"
     }
   ],
   "rights": [
@@ -300,12 +327,15 @@
   "source": [
     {
       "description": "A minimal dataset",
-      "publisher": { "name": "The Minimal Organization" },
+      "publisher": {
+        "name": "The Minimal Organization"
+      },
       "title": "Dataset One",
       "contactPoint": {
         "hasEmail": "mailto:example@example.gov",
         "fn": "Example contact"
-      }
+      },
+      "identifier": "https://example.gov/datasets/nested-source-009"
     }
   ],
   "temporal": [

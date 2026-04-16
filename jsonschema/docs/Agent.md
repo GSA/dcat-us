@@ -15,21 +15,27 @@ An entity that could be involved with a resource
 | - [category](#category ) | null or array | category          |
 | + [name](#name )         | string        | name              |
 
-## <a name="@id"></a>Property `Agent > @id`
+## <a name="@id"></a>[Optional] Property `Agent > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Agent > @type`
+## <a name="@type"></a>[Optional] Property `Agent > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`  |
 | ----------- | --------- |
 | **Default** | `"Agent"` |
 
-## <a name="category"></a>Property `Agent > category`
+## <a name="category"></a>[Optional] Property `Agent > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 The type of the agent that makes the item available
 
@@ -51,9 +57,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="name"></a>Property `Agent > name`
+## <a name="name"></a>[Mandatory] Property `Agent > name`
 
 **Title:** name
+
+**Requirement:** Mandatory
 
 The name of the agent
 

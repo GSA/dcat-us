@@ -43,7 +43,7 @@ Information about a set of data
 | - [creator](#creator )                                     | More than one type      | creator                     |
 | + [description](#description )                             | string                  | description                 |
 | - [hasPart](#hasPart )                                     | null or array           | has part                    |
-| - [identifier](#identifier )                               | More than one type      | identifier                  |
+| + [identifier](#identifier )                               | More than one type      | identifier                  |
 | - [isReferencedBy](#isReferencedBy )                       | null or array of string | is referenced by            |
 | - [issued](#issued )                                       | More than one type      | release date                |
 | - [language](#language )                                   | More than one type      | language                    |
@@ -69,21 +69,27 @@ Information about a set of data
 | - [image](#image )                                         | More than one type      | image                       |
 | - [scopeNote](#scopeNote )                                 | null or string          | usage note                  |
 
-## <a name="@id"></a>Property `Dataset > @id`
+## <a name="@id"></a>[Optional] Property `Dataset > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Dataset > @type`
+## <a name="@type"></a>[Optional] Property `Dataset > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`    |
 | ----------- | ----------- |
 | **Default** | `"Dataset"` |
 
-## <a name="otherIdentifier"></a>Property `Dataset > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Dataset > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
@@ -105,9 +111,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-## <a name="sample"></a>Property `Dataset > sample`
+## <a name="sample"></a>[Optional] Property `Dataset > sample`
 
 **Title:** sample
+
+**Requirement:** Optional
 
 List of links to samples of a Dataset
 
@@ -129,9 +137,11 @@ A file that distributes the dataset
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Distribution](./Distribution.md) |
 
-## <a name="status"></a>Property `Dataset > status`
+## <a name="status"></a>[Optional] Property `Dataset > status`
 
 **Title:** lifecycle status
+
+**Requirement:** Optional
 
 The status of the dataset  in the context of maturity lifecycle
 
@@ -162,9 +172,11 @@ inline description of Concept
 | **Additional properties** | Any type allowed                                          |
 | **Same definition as**    | [Concept](#sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="supportedSchema"></a>Property `Dataset > supportedSchema`
+## <a name="supportedSchema"></a>[Optional] Property `Dataset > supportedSchema`
 
 **Title:** supported schema
+
+**Requirement:** Optional
 
 supported schema for this dataset
 
@@ -195,18 +207,22 @@ inline description of the supported schema
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="versionNotes"></a>Property `Dataset > versionNotes`
+## <a name="versionNotes"></a>[Optional] Property `Dataset > versionNotes`
 
 **Title:** version notes
+
+**Requirement:** Optional
 
 version notes for this dataset
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="contactPoint"></a>Property `Dataset > contactPoint`
+## <a name="contactPoint"></a>[Mandatory] Property `Dataset > contactPoint`
 
 **Title:** contact point
+
+**Requirement:** Mandatory
 
 A single contact point or list of contact information that can be used for sending comments about the Dataset
 
@@ -253,9 +269,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed                                             |
 | **Same definition as**    | [Kind](#sample_items_accessService_items_contactPoint_items) |
 
-## <a name="distribution"></a>Property `Dataset > distribution`
+## <a name="distribution"></a>[Recommended] Property `Dataset > distribution`
 
 **Title:** dataset distribution
+
+**Requirement:** Recommended
 
 List of available distributions for the Dataset
 
@@ -277,9 +295,11 @@ A file that distributes the dataset
 | **Additional properties** | Any type allowed              |
 | **Same definition as**    | [Distribution](#sample_items) |
 
-## <a name="first"></a>Property `Dataset > first`
+## <a name="first"></a>[Optional] Property `Dataset > first`
 
 **Title:** first
+
+**Requirement:** Optional
 
 the first item of the sequence the dataset belongs to
 
@@ -310,9 +330,11 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="hasCurrentVersion"></a>Property `Dataset > hasCurrentVersion`
+## <a name="hasCurrentVersion"></a>[Optional] Property `Dataset > hasCurrentVersion`
 
 **Title:** current version
+
+**Requirement:** Optional
 
 reference to the current (latest) version of a dataset
 
@@ -343,9 +365,11 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="hasVersion"></a>Property `Dataset > hasVersion`
+## <a name="hasVersion"></a>[Optional] Property `Dataset > hasVersion`
 
 **Title:** has version
+
+**Requirement:** Optional
 
 List of related Datasets that are a version, edition, or adaptation of the described Dataset
 
@@ -367,9 +391,11 @@ Information about a set of data
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="inSeries"></a>Property `Dataset > inSeries`
+## <a name="inSeries"></a>[Optional] Property `Dataset > inSeries`
 
 **Title:** in series
+
+**Requirement:** Optional
 
 List of Dataset Series this dataset belongs to
 
@@ -391,9 +417,11 @@ An ordered series of datasets
 | **Additional properties** | Any type allowed                                                                      |
 | **Same definition as**    | [DatasetSeries](#sample_items_accessService_items_servesDataset_items_inSeries_items) |
 
-## <a name="keyword"></a>Property `Dataset > keyword`
+## <a name="keyword"></a>[Recommended] Property `Dataset > keyword`
 
 **Title:** keyword/tag
+
+**Requirement:** Recommended
 
 List of keywords or tags describing the Dataset
 
@@ -415,9 +443,11 @@ List of keywords or tags describing the Dataset
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="landingPage"></a>Property `Dataset > landingPage`
+## <a name="landingPage"></a>[Recommended] Property `Dataset > landingPage`
 
 **Title:** landing page
+
+**Requirement:** Recommended
 
 A web page that provides access to the Dataset, its Distributions and/or additional information
 
@@ -448,9 +478,11 @@ inline description of Document
 | **Additional properties** | Any type allowed                                                                       |
 | **Same definition as**    | [Document](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1) |
 
-## <a name="previousVersion"></a>Property `Dataset > previousVersion`
+## <a name="previousVersion"></a>[Optional] Property `Dataset > previousVersion`
 
 **Title:** previous version
+
+**Requirement:** Optional
 
 reference to the previous dataset version
 
@@ -481,9 +513,11 @@ inline description of Dataset
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="qualifiedRelation"></a>Property `Dataset > qualifiedRelation`
+## <a name="qualifiedRelation"></a>[Optional] Property `Dataset > qualifiedRelation`
 
 **Title:** qualified relation
+
+**Requirement:** Optional
 
 Qualified relationship with role of the dataset with another resource
 
@@ -505,27 +539,33 @@ Information about an item or entity that has some relationship to a dataset and 
 | **Additional properties** | Any type allowed                                                                              |
 | **Same definition as**    | [Relationship](#sample_items_accessService_items_servesDataset_items_qualifiedRelation_items) |
 
-## <a name="spatialResolutionInMeters"></a>Property `Dataset > spatialResolutionInMeters`
+## <a name="spatialResolutionInMeters"></a>[Optional] Property `Dataset > spatialResolutionInMeters`
 
 **Title:** Spatial resolution (meters)
+
+**Requirement:** Optional
 
 Spatial resolution in meters
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="temporalResolution"></a>Property `Dataset > temporalResolution`
+## <a name="temporalResolution"></a>[Optional] Property `Dataset > temporalResolution`
 
 **Title:** temporal resolution
+
+**Requirement:** Optional
 
 Temporal resolution using xsd:duration syntax
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="theme"></a>Property `Dataset > theme`
+## <a name="theme"></a>[Recommended] Property `Dataset > theme`
 
 **Title:** theme/category
+
+**Requirement:** Recommended
 
 List of themes of the dataset
 
@@ -547,18 +587,22 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                          |
 | **Same definition as**    | [Concept](#sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="version"></a>Property `Dataset > version`
+## <a name="version"></a>[Optional] Property `Dataset > version`
 
 **Title:** version
+
+**Requirement:** Optional
 
 The version indicator (name or identifier) of a resource
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="describedBy"></a>Property `Dataset > describedBy`
+## <a name="describedBy"></a>[Recommended] Property `Dataset > describedBy`
 
 **Title:** data dictionary
+
+**Requirement:** Recommended
 
 A distribution describing the Data Dictionary for this dataset
 
@@ -589,9 +633,11 @@ inline description of Distribution
 | **Additional properties** | Any type allowed              |
 | **Same definition as**    | [Distribution](#sample_items) |
 
-## <a name="liabilityStatement"></a>Property `Dataset > liabilityStatement`
+## <a name="liabilityStatement"></a>[Optional] Property `Dataset > liabilityStatement`
 
 **Title:** liability statement
+
+**Requirement:** Optional
 
 A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations
 
@@ -618,9 +664,11 @@ Full text of the liability statement
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="metadataDistribution"></a>Property `Dataset > metadataDistribution`
+## <a name="metadataDistribution"></a>[Optional] Property `Dataset > metadataDistribution`
 
 **Title:** metadata distribution
+
+**Requirement:** Optional
 
 Distribution to "original" metadata document
 
@@ -642,18 +690,22 @@ A file that distributes the dataset
 | **Additional properties** | Any type allowed              |
 | **Same definition as**    | [Distribution](#sample_items) |
 
-## <a name="purpose"></a>Property `Dataset > purpose`
+## <a name="purpose"></a>[Optional] Property `Dataset > purpose`
 
 **Title:** purpose
+
+**Requirement:** Optional
 
 The purpose of the dataset
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="accessRights"></a>Property `Dataset > accessRights`
+## <a name="accessRights"></a>[Optional] Property `Dataset > accessRights`
 
 **Title:** access rights
+
+**Requirement:** Optional
 
 Information that indicates whether the Dataset is open data, has access restrictions or is public
 
@@ -680,9 +732,11 @@ Text description of the access rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="accrualPeriodicity"></a>Property `Dataset > accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>[Optional] Property `Dataset > accrualPeriodicity`
 
 **Title:** frequency
+
+**Requirement:** Optional
 
 The frequency at which the Dataset is updated
 
@@ -762,9 +816,11 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="conformsTo"></a>Property `Dataset > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `Dataset > conformsTo`
 
 **Title:** conforms to
+
+**Requirement:** Optional
 
 List of standards to which the described Dataset conforms
 
@@ -786,9 +842,11 @@ Information about a particular standard that another item conforms to
 | **Additional properties** | Any type allowed                                                                                        |
 | **Same definition as**    | [Standard](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1_conformsTo_items) |
 
-## <a name="contributor"></a>Property `Dataset > contributor`
+## <a name="contributor"></a>[Optional] Property `Dataset > contributor`
 
 **Title:** contributor
+
+**Requirement:** Optional
 
 List of agents contributing to the Dataset
 
@@ -810,9 +868,11 @@ An entity that could be involved with a resource
 | **Additional properties** | Any type allowed                                                                                 |
 | **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
-## <a name="created"></a>Property `Dataset > created`
+## <a name="created"></a>[Optional] Property `Dataset > created`
 
 **Title:** creation date
+
+**Requirement:** Optional
 
 The date on which the Dataset was first created
 
@@ -881,9 +941,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="creator"></a>Property `Dataset > creator`
+## <a name="creator"></a>[Optional] Property `Dataset > creator`
 
 **Title:** creator
+
+**Requirement:** Optional
 
 An entity responsible for producing the dataset
 
@@ -914,9 +976,11 @@ inline description of Agent
 | **Additional properties** | Any type allowed                                                                                 |
 | **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
-## <a name="description"></a>Property `Dataset > description`
+## <a name="description"></a>[Mandatory] Property `Dataset > description`
 
 **Title:** description
+
+**Requirement:** Mandatory
 
 A free-text account of the Dataset
 
@@ -924,9 +988,11 @@ A free-text account of the Dataset
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="hasPart"></a>Property `Dataset > hasPart`
+## <a name="hasPart"></a>[Optional] Property `Dataset > hasPart`
 
 **Title:** has part
+
+**Requirement:** Optional
 
 List of related datasets that are part of the described dataset
 
@@ -948,14 +1014,17 @@ Information about a set of data
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="identifier"></a>Property `Dataset > identifier`
+## <a name="identifier"></a>[Mandatory] Property `Dataset > identifier`
 
 **Title:** identifier
+
+**Requirement:** Mandatory
 
 The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
+| **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
 
 | Any of(Option)                                         |
@@ -981,9 +1050,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                     |
 | **Same definition as**    | [Identifier](#otherIdentifier_items) |
 
-## <a name="isReferencedBy"></a>Property `Dataset > isReferencedBy`
+## <a name="isReferencedBy"></a>[Optional] Property `Dataset > isReferencedBy`
 
 **Title:** is referenced by
+
+**Requirement:** Optional
 
 List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset
 
@@ -1004,9 +1075,11 @@ reference iri of Resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="issued"></a>Property `Dataset > issued`
+## <a name="issued"></a>[Optional] Property `Dataset > issued`
 
 **Title:** release date
+
+**Requirement:** Optional
 
 Date of formal issuance (e.g., publication) of the dataset
 
@@ -1075,9 +1148,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `Dataset > language`
+## <a name="language"></a>[Optional] Property `Dataset > language`
 
 **Title:** language
+
+**Requirement:** Optional
 
 Language or languages used in the Dataset. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
@@ -1131,9 +1206,11 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>Property `Dataset > modified`
+## <a name="modified"></a>[Recommended] Property `Dataset > modified`
 
 **Title:** last modified
+
+**Requirement:** Recommended
 
 The most recent date on which the Dataset was changed or modified
 
@@ -1202,9 +1279,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="provenance"></a>Property `Dataset > provenance`
+## <a name="provenance"></a>[Optional] Property `Dataset > provenance`
 
 **Title:** provenance
+
+**Requirement:** Optional
 
 List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation
 
@@ -1222,9 +1301,11 @@ Full text of the provenance statement
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="publisher"></a>Property `Dataset > publisher`
+## <a name="publisher"></a>[Mandatory] Property `Dataset > publisher`
 
 **Title:** publisher
+
+**Requirement:** Mandatory
 
 An organization responsible for making the Dataset available
 
@@ -1234,9 +1315,11 @@ An organization responsible for making the Dataset available
 | **Additional properties** | Any type allowed                  |
 | **Defined in**            | [Organization](./Organization.md) |
 
-## <a name="relation"></a>Property `Dataset > relation`
+## <a name="relation"></a>[Optional] Property `Dataset > relation`
 
 **Title:** related resource
+
+**Requirement:** Optional
 
 List of references to a related resource
 
@@ -1257,9 +1340,11 @@ reference iri of Resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="replaces"></a>Property `Dataset > replaces`
+## <a name="replaces"></a>[Optional] Property `Dataset > replaces`
 
 **Title:** replaces
+
+**Requirement:** Optional
 
 List of Datasets replaced by this Dataset
 
@@ -1281,9 +1366,11 @@ Information about a set of data
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="rights"></a>Property `Dataset > rights`
+## <a name="rights"></a>[Recommended] Property `Dataset > rights`
 
 **Title:** rights
+
+**Requirement:** Recommended
 
 A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
 
@@ -1301,9 +1388,11 @@ Full text of a statement of rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="rightsHolder"></a>Property `Dataset > rightsHolder`
+## <a name="rightsHolder"></a>[Optional] Property `Dataset > rightsHolder`
 
 **Title:** rights holder
+
+**Requirement:** Optional
 
 List of agents (organizations) holding rights on the Dataset
 
@@ -1325,9 +1414,11 @@ Information about an organization, including other organizations that it is part
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Organization](#otherIdentifier_items_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="source"></a>Property `Dataset > source`
+## <a name="source"></a>[Optional] Property `Dataset > source`
 
 **Title:** data source
+
+**Requirement:** Optional
 
 List of related Datasets from which the described Dataset is derived
 
@@ -1349,9 +1440,11 @@ Information about a set of data
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="spatial"></a>Property `Dataset > spatial`
+## <a name="spatial"></a>[Recommended] Property `Dataset > spatial`
 
 **Title:** spatial/geographic coverage
+
+**Requirement:** Recommended
 
 A geographic region or regions that are covered by the Dataset
 
@@ -1405,9 +1498,11 @@ Information about a specific geographic location
 | **Additional properties** | Any type allowed                                                                               |
 | **Same definition as**    | [Location](#sample_items_accessService_items_servesDataset_items_inSeries_items_spatial_items) |
 
-## <a name="subject"></a>Property `Dataset > subject`
+## <a name="subject"></a>[Optional] Property `Dataset > subject`
 
 **Title:** subject
+
+**Requirement:** Optional
 
 List of primary subjects of the dataset
 
@@ -1429,9 +1524,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                          |
 | **Same definition as**    | [Concept](#sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="temporal"></a>Property `Dataset > temporal`
+## <a name="temporal"></a>[Recommended] Property `Dataset > temporal`
 
 **Title:** temporal coverage
+
+**Requirement:** Recommended
 
 List of temporal periods that the dataset covers
 
@@ -1453,9 +1550,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                                    |
 | **Same definition as**    | [PeriodOfTime](#sample_items_accessService_items_servesDataset_items_inSeries_items_temporal_items) |
 
-## <a name="title"></a>Property `Dataset > title`
+## <a name="title"></a>[Mandatory] Property `Dataset > title`
 
 **Title:** title
+
+**Requirement:** Mandatory
 
 A name given to the Dataset
 
@@ -1463,9 +1562,11 @@ A name given to the Dataset
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="category"></a>Property `Dataset > category`
+## <a name="category"></a>[Optional] Property `Dataset > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories for the Dataset
 
@@ -1487,9 +1588,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                          |
 | **Same definition as**    | [Concept](#sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="hasQualityMeasurement"></a>Property `Dataset > hasQualityMeasurement`
+## <a name="hasQualityMeasurement"></a>[Optional] Property `Dataset > hasQualityMeasurement`
 
 **Title:** quality measurement
+
+**Requirement:** Optional
 
 List of quality measurements for the dataset
 
@@ -1511,9 +1614,11 @@ A single measurement of one metric
 | **Additional properties** | Any type allowed                                                                                        |
 | **Same definition as**    | [QualityMeasurement](#sample_items_accessService_items_servesDataset_items_hasQualityMeasurement_items) |
 
-## <a name="page"></a>Property `Dataset > page`
+## <a name="page"></a>[Optional] Property `Dataset > page`
 
 **Title:** documentation
+
+**Requirement:** Optional
 
 List of pages or documents about this dataset
 
@@ -1535,9 +1640,11 @@ Information about a text document
 | **Additional properties** | Any type allowed                                                                       |
 | **Same definition as**    | [Document](#sample_items_accessService_items_servesDataset_items_landingPage_anyOf_i1) |
 
-## <a name="qualifiedAttribution"></a>Property `Dataset > qualifiedAttribution`
+## <a name="qualifiedAttribution"></a>[Optional] Property `Dataset > qualifiedAttribution`
 
 **Title:** qualified attribution
+
+**Requirement:** Optional
 
 List of agents having some form of responsibility for the dataset
 
@@ -1559,9 +1666,11 @@ An attribution that an agent plays some role
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [Attribution](#sample_items_accessService_items_servesDataset_items_qualifiedAttribution_items) |
 
-## <a name="wasAttributedTo"></a>Property `Dataset > wasAttributedTo`
+## <a name="wasAttributedTo"></a>[Optional] Property `Dataset > wasAttributedTo`
 
 **Title:** attribution
+
+**Requirement:** Optional
 
 List of agents attributed to this dataset
 
@@ -1583,9 +1692,11 @@ An entity that could be involved with a resource
 | **Additional properties** | Any type allowed                                                                                 |
 | **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
-## <a name="wasGeneratedBy"></a>Property `Dataset > wasGeneratedBy`
+## <a name="wasGeneratedBy"></a>[Optional] Property `Dataset > wasGeneratedBy`
 
 **Title:** was generated by
+
+**Requirement:** Optional
 
 List of activities that generated, or provide the business context for the creation of the dataset
 
@@ -1607,9 +1718,11 @@ An activity which a resource could be related to
 | **Additional properties** | Any type allowed                                                                       |
 | **Same definition as**    | [Activity](#sample_items_accessService_items_servesDataset_items_wasGeneratedBy_items) |
 
-## <a name="wasUsedBy"></a>Property `Dataset > wasUsedBy`
+## <a name="wasUsedBy"></a>[Optional] Property `Dataset > wasUsedBy`
 
 **Title:** used by
+
+**Requirement:** Optional
 
 List of activities that used the Dataset
 
@@ -1631,9 +1744,11 @@ An activity which a resource could be related to
 | **Additional properties** | Any type allowed                                                                       |
 | **Same definition as**    | [Activity](#sample_items_accessService_items_servesDataset_items_wasGeneratedBy_items) |
 
-## <a name="image"></a>Property `Dataset > image`
+## <a name="image"></a>[Optional] Property `Dataset > image`
 
 **Title:** image
+
+**Requirement:** Optional
 
 Link to a thumbnail picture illustrating the content of the dataset
 
@@ -1663,9 +1778,11 @@ The link to the image
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="scopeNote"></a>Property `Dataset > scopeNote`
+## <a name="scopeNote"></a>[Optional] Property `Dataset > scopeNote`
 
 **Title:** usage note
+
+**Requirement:** Optional
 
 usage note for the dataset
 

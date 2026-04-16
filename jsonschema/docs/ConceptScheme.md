@@ -19,30 +19,38 @@ A system for specifying approved values for a single concept
 | - [modified](#modified )       | More than one type | update/modification date |
 | + [title](#title )             | string             | title                    |
 
-## <a name="@id"></a>Property `ConceptScheme > @id`
+## <a name="@id"></a>[Optional] Property `ConceptScheme > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `ConceptScheme > @type`
+## <a name="@type"></a>[Optional] Property `ConceptScheme > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"ConceptScheme"` |
 
-## <a name="version"></a>Property `ConceptScheme > version`
+## <a name="version"></a>[Optional] Property `ConceptScheme > version`
 
 **Title:** version info
+
+**Requirement:** Optional
 
 A version number or other version designation of the concept scheme
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="created"></a>Property `ConceptScheme > created`
+## <a name="created"></a>[Optional] Property `ConceptScheme > created`
 
 **Title:** creation date
+
+**Requirement:** Optional
 
 The date on which the Concept Scheme was first created
 
@@ -111,18 +119,22 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>Property `ConceptScheme > description`
+## <a name="description"></a>[Recommended] Property `ConceptScheme > description`
 
 **Title:** description
+
+**Requirement:** Recommended
 
 A description of the concept scheme
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="issued"></a>Property `ConceptScheme > issued`
+## <a name="issued"></a>[Optional] Property `ConceptScheme > issued`
 
 **Title:** publication date
+
+**Requirement:** Optional
 
 The date of formal issuance (e.g., publication) of the concept scheme
 
@@ -191,9 +203,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `ConceptScheme > modified`
+## <a name="modified"></a>[Optional] Property `ConceptScheme > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Optional
 
 The most recent date at which the concept scheme was changed or modified
 
@@ -262,9 +276,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>Property `ConceptScheme > title`
+## <a name="title"></a>[Mandatory] Property `ConceptScheme > title`
 
 **Title:** title
+
+**Requirement:** Mandatory
 
 The title of the concept scheme
 

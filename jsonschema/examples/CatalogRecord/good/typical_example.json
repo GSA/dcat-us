@@ -7,7 +7,6 @@
   "status": "published",
   "conformsTo": {
     "@type": "Standard",
-    "title": "DCAT-US 3.0",
-    "accessURL": "https://resources.data.gov/dcat-us/"
+    "title": "DCAT-US 3.0"
   }
 }

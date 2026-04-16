@@ -16,30 +16,38 @@ A restriction on the permitted access to a resource
 | + [restrictionStatus](#restrictionStatus )     | object             | restriction status   |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
-## <a name="@id"></a>Property `AccessRestriction > @id`
+## <a name="@id"></a>[Optional] Property `AccessRestriction > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `AccessRestriction > @type`
+## <a name="@type"></a>[Optional] Property `AccessRestriction > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`              |
 | ----------- | --------------------- |
 | **Default** | `"AccessRestriction"` |
 
-## <a name="restrictionNote"></a>Property `AccessRestriction > restrictionNote`
+## <a name="restrictionNote"></a>[Optional] Property `AccessRestriction > restrictionNote`
 
 **Title:** restriction note
+
+**Requirement:** Optional
 
 A note related to the access restriction
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="restrictionStatus"></a>Property `AccessRestriction > restrictionStatus`
+## <a name="restrictionStatus"></a>[Mandatory] Property `AccessRestriction > restrictionStatus`
 
 **Title:** restriction status
+
+**Requirement:** Mandatory
 
 The indication of whether or not there are access restrictions on the item
 
@@ -49,9 +57,11 @@ The indication of whether or not there are access restrictions on the item
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="specificRestriction"></a>Property `AccessRestriction > specificRestriction`
+## <a name="specificRestriction"></a>[Recommended] Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
+
+**Requirement:** Recommended
 
 The specific NARA restriction associated with this restriction
 

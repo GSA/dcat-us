@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """
-Script to parse DCAT-US HTML documentation and add metadata to JSON schemas.
+Historical script to parse DCAT-US HTML documentation and add metadata to JSON schemas.
 
 This script fetches the HTML documentation from https://infopolicy.github.io/dcat-us/,
 extracts class and property metadata, and adds an 'oldDocs' object to the
 corresponding JSON schema files.
+
+It was primarily used for a one-time bootstrap import. The imported metadata was
+manually corrected and refined afterward, so re-running this script is not a
+reliable validation step for the current repository state.
 
 The script uses algorithmic matching to find corresponding classes and properties:
 - Classes are matched by normalizing names (removing spaces, case-insensitive)

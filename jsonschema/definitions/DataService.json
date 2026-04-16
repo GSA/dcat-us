@@ -265,6 +265,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "language": {

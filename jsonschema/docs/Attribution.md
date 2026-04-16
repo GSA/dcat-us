@@ -15,21 +15,27 @@ An attribution that an agent plays some role
 | + [hadRole](#hadRole ) | string | role              |
 | + [agent](#agent )     | object | agent             |
 
-## <a name="@id"></a>Property `Attribution > @id`
+## <a name="@id"></a>[Optional] Property `Attribution > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Attribution > @type`
+## <a name="@type"></a>[Optional] Property `Attribution > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`        |
 | ----------- | --------------- |
 | **Default** | `"Attribution"` |
 
-## <a name="hadRole"></a>Property `Attribution > hadRole`
+## <a name="hadRole"></a>[Mandatory] Property `Attribution > hadRole`
 
 **Title:** role
+
+**Requirement:** Mandatory
 
 The function of an entity or agent with respect to another entity or resource
 
@@ -37,9 +43,11 @@ The function of an entity or agent with respect to another entity or resource
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="agent"></a>Property `Attribution > agent`
+## <a name="agent"></a>[Mandatory] Property `Attribution > agent`
 
 **Title:** agent
+
+**Requirement:** Mandatory
 
 The agent that plays a role in the resource
 

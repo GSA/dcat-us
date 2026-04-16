@@ -22,21 +22,27 @@ Information about a particular standard that another item conforms to
 | - [category](#category )               | null or array      | category          |
 | - [inScheme](#inScheme )               | More than one type | in scheme         |
 
-## <a name="@id"></a>Property `Standard > @id`
+## <a name="@id"></a>[Optional] Property `Standard > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Standard > @type`
+## <a name="@type"></a>[Optional] Property `Standard > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Standard"` |
 
-## <a name="created"></a>Property `Standard > created`
+## <a name="created"></a>[Optional] Property `Standard > created`
 
 **Title:** creation date
+
+**Requirement:** Optional
 
 The date on which the Standard has been first created
 
@@ -105,18 +111,22 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>Property `Standard > description`
+## <a name="description"></a>[Recommended] Property `Standard > description`
 
 **Title:** description
+
+**Requirement:** Recommended
 
 A free-text account of the Standard
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="identifier"></a>Property `Standard > identifier`
+## <a name="identifier"></a>[Recommended] Property `Standard > identifier`
 
 **Title:** identifier
+
+**Requirement:** Recommended
 
 The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -147,9 +157,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-## <a name="otherIdentifier"></a>Property `Standard > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Standard > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
@@ -171,9 +183,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
 
-## <a name="issued"></a>Property `Standard > issued`
+## <a name="issued"></a>[Recommended] Property `Standard > issued`
 
 **Title:** issued
+
+**Requirement:** Recommended
 
 The date of formal issuance (e.g., publication) of the Standard
 
@@ -242,9 +256,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `Standard > modified`
+## <a name="modified"></a>[Optional] Property `Standard > modified`
 
 **Title:** last modified
+
+**Requirement:** Optional
 
 The most recent date on which the Standard was changed or modified
 
@@ -313,18 +329,22 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>Property `Standard > title`
+## <a name="title"></a>[Recommended] Property `Standard > title`
 
 **Title:** title
+
+**Requirement:** Recommended
 
 A name given to the Standard
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="category"></a>Property `Standard > category`
+## <a name="category"></a>[Optional] Property `Standard > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories for the Standard
 
@@ -346,9 +366,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="inScheme"></a>Property `Standard > inScheme`
+## <a name="inScheme"></a>[Recommended] Property `Standard > inScheme`
 
 **Title:** in scheme
+
+**Requirement:** Recommended
 
 The reference register to which the Standard belongs
 

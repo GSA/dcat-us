@@ -16,21 +16,27 @@ A specific restriction on handling Controlled Unclassified Information (CUI)
 | + [designationIndicator](#designationIndicator )                   | string                  | CUI designation indicator        |
 | - [requiredIndicatorPerAuthority](#requiredIndicatorPerAuthority ) | null or array of string | required indicator per authority |
 
-## <a name="@id"></a>Property `CUIRestriction > @id`
+## <a name="@id"></a>[Optional] Property `CUIRestriction > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `CUIRestriction > @type`
+## <a name="@type"></a>[Optional] Property `CUIRestriction > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`           |
 | ----------- | ------------------ |
 | **Default** | `"CUIRestriction"` |
 
-## <a name="cuiBannerMarking"></a>Property `CUIRestriction > cuiBannerMarking`
+## <a name="cuiBannerMarking"></a>[Mandatory] Property `CUIRestriction > cuiBannerMarking`
 
 **Title:** CUI banner marking
+
+**Requirement:** Mandatory
 
 CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
 
@@ -38,9 +44,11 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="designationIndicator"></a>Property `CUIRestriction > designationIndicator`
+## <a name="designationIndicator"></a>[Mandatory] Property `CUIRestriction > designationIndicator`
 
 **Title:** CUI designation indicator
+
+**Requirement:** Mandatory
 
 Designation Indicator shows which agency made the document CUI
 
@@ -48,9 +56,11 @@ Designation Indicator shows which agency made the document CUI
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="requiredIndicatorPerAuthority"></a>Property `CUIRestriction > requiredIndicatorPerAuthority`
+## <a name="requiredIndicatorPerAuthority"></a>[Optional] Property `CUIRestriction > requiredIndicatorPerAuthority`
 
 **Title:** required indicator per authority
+
+**Requirement:** Optional
 
 List of free text of the required indicator
 

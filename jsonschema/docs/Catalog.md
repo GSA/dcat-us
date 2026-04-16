@@ -42,21 +42,27 @@ The main item defined by DCAT-US 3 is the Catalog class
 | - [homepage](#homepage )                         | More than one type      | homepage                    |
 | - [qualifiedAttribution](#qualifiedAttribution ) | null or array           | qualified attribution       |
 
-## <a name="@id"></a>Property `DCAT-US 3 Catalog > @id`
+## <a name="@id"></a>[Optional] Property `DCAT-US 3 Catalog > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `DCAT-US 3 Catalog > @type`
+## <a name="@type"></a>[Optional] Property `DCAT-US 3 Catalog > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`    |
 | ----------- | ----------- |
 | **Default** | `"Catalog"` |
 
-## <a name="catalog"></a>Property `DCAT-US 3 Catalog > catalog`
+## <a name="catalog"></a>[Optional] Property `DCAT-US 3 Catalog > catalog`
 
 **Title:** Related catalogs
+
+**Requirement:** Optional
 
 List of related catalogs whose contents are of interest in the context of this catalog
 
@@ -78,9 +84,11 @@ The main item defined by DCAT-US 3 is the Catalog class
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [DCAT-US 3 Catalog](#root) |
 
-## <a name="contactPoint"></a>Property `DCAT-US 3 Catalog > contactPoint`
+## <a name="contactPoint"></a>[Optional] Property `DCAT-US 3 Catalog > contactPoint`
 
 **Title:** Contact points
+
+**Requirement:** Optional
 
 Contact information that can be used for sending comments about the Catalog
 
@@ -102,9 +110,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="dataset"></a>Property `DCAT-US 3 Catalog > dataset`
+## <a name="dataset"></a>[Mandatory] Property `DCAT-US 3 Catalog > dataset`
 
 **Title:** dataset
+
+**Requirement:** Mandatory
 
 List of Datasets that are part of the Catalog
 
@@ -127,9 +137,11 @@ Information about a set of data
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-## <a name="keyword"></a>Property `DCAT-US 3 Catalog > keyword`
+## <a name="keyword"></a>[Optional] Property `DCAT-US 3 Catalog > keyword`
 
 **Title:** keyword/tag
+
+**Requirement:** Optional
 
 List of keywords or tags describing the Catalog
 
@@ -149,9 +161,11 @@ List of keywords or tags describing the Catalog
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="record"></a>Property `DCAT-US 3 Catalog > record`
+## <a name="record"></a>[Optional] Property `DCAT-US 3 Catalog > record`
 
 **Title:** catalog record
+
+**Requirement:** Optional
 
 A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog
 
@@ -173,9 +187,11 @@ A record in a catalog, describing the registration of a single resource
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Catalogrecord](./Catalogrecord.md) |
 
-## <a name="service"></a>Property `DCAT-US 3 Catalog > service`
+## <a name="service"></a>[Optional] Property `DCAT-US 3 Catalog > service`
 
 **Title:** service
+
+**Requirement:** Optional
 
 List of data services that are listed in the Catalog
 
@@ -197,9 +213,11 @@ A service for providing data at a URL or URLs
 | **Additional properties** | Any type allowed                                               |
 | **Same definition as**    | [DataService](#dataset_items_sample_items_accessService_items) |
 
-## <a name="theme"></a>Property `DCAT-US 3 Catalog > theme`
+## <a name="theme"></a>[Optional] Property `DCAT-US 3 Catalog > theme`
 
 **Title:** theme/category
+
+**Requirement:** Optional
 
 A list of categories for the Catalog. A Catalog may be associated with multiple themes
 
@@ -221,9 +239,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Concept](#dataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="themeTaxonomy"></a>Property `DCAT-US 3 Catalog > themeTaxonomy`
+## <a name="themeTaxonomy"></a>[Recommended] Property `DCAT-US 3 Catalog > themeTaxonomy`
 
 **Title:** themes
+
+**Requirement:** Recommended
 
 A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)
 
@@ -245,9 +265,11 @@ A system for specifying approved values for a single concept
 | **Additional properties** | Any type allowed                                                                           |
 | **Same definition as**    | [inScheme](#dataset_items_sample_items_representationTechnique_anyOf_i1_anyOf_i1_inScheme) |
 
-## <a name="accessRights"></a>Property `DCAT-US 3 Catalog > accessRights`
+## <a name="accessRights"></a>[Optional] Property `DCAT-US 3 Catalog > accessRights`
 
 **Title:** access rights
+
+**Requirement:** Optional
 
 Information that indicates whether the Catalog is open data, has access restrictions or is not public
 
@@ -274,9 +296,11 @@ Text description of the access rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="conformsTo"></a>Property `DCAT-US 3 Catalog > conformsTo`
+## <a name="conformsTo"></a>[Recommended] Property `DCAT-US 3 Catalog > conformsTo`
 
 **Title:** schema version
+
+**Requirement:** Recommended
 
 An established standard to which the described catalog conforms
 
@@ -307,9 +331,11 @@ Information about a particular standard that another item conforms to
 | **Additional properties** | Any type allowed                                                             |
 | **Same definition as**    | [Standard](#dataset_items_sample_items_accessService_items_conformsTo_items) |
 
-## <a name="creator"></a>Property `DCAT-US 3 Catalog > creator`
+## <a name="creator"></a>[Optional] Property `DCAT-US 3 Catalog > creator`
 
 **Title:** creator
+
+**Requirement:** Optional
 
 The entity responsible for creating the resource
 
@@ -331,18 +357,22 @@ An entity that could be involved with a resource
 | **Additional properties** | Any type allowed                                                       |
 | **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_creator_items) |
 
-## <a name="description"></a>Property `DCAT-US 3 Catalog > description`
+## <a name="description"></a>[Optional] Property `DCAT-US 3 Catalog > description`
 
 **Title:** description
+
+**Requirement:** Optional
 
 Free-text description of the catalog (in the language indicated in the language property)
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="hasPart"></a>Property `DCAT-US 3 Catalog > hasPart`
+## <a name="hasPart"></a>[Optional] Property `DCAT-US 3 Catalog > hasPart`
 
 **Title:** has part
+
+**Requirement:** Optional
 
 A list of related catalogs that are part of the described catalog
 
@@ -364,9 +394,11 @@ The main item defined by DCAT-US 3 is the Catalog class
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [DCAT-US 3 Catalog](#root) |
 
-## <a name="identifier"></a>Property `DCAT-US 3 Catalog > identifier`
+## <a name="identifier"></a>[Optional] Property `DCAT-US 3 Catalog > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique identifier for the Catalog, e.g. the URI or other unique identifier
 
@@ -397,9 +429,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                   |
 | **Same definition as**    | [Identifier](#dataset_items_otherIdentifier_items) |
 
-## <a name="otherIdentifier"></a>Property `DCAT-US 3 Catalog > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `DCAT-US 3 Catalog > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers
 
@@ -421,9 +455,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                   |
 | **Same definition as**    | [Identifier](#dataset_items_otherIdentifier_items) |
 
-## <a name="issued"></a>Property `DCAT-US 3 Catalog > issued`
+## <a name="issued"></a>[Recommended] Property `DCAT-US 3 Catalog > issued`
 
 **Title:** release date
+
+**Requirement:** Recommended
 
 Date of formal issuance (e.g., publication) of the catalog
 
@@ -492,9 +528,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `DCAT-US 3 Catalog > language`
+## <a name="language"></a>[Recommended] Property `DCAT-US 3 Catalog > language`
 
 **Title:** language
+
+**Requirement:** Recommended
 
 Language or languages used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
@@ -548,9 +586,11 @@ Language or languages used in the textual metadata describing titles, descriptio
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>Property `DCAT-US 3 Catalog > license`
+## <a name="license"></a>[Optional] Property `DCAT-US 3 Catalog > license`
 
 **Title:** license
+
+**Requirement:** Optional
 
 The license under which the Catalog is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
@@ -577,9 +617,11 @@ Full text of the license
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>Property `DCAT-US 3 Catalog > modified`
+## <a name="modified"></a>[Recommended] Property `DCAT-US 3 Catalog > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Recommended
 
 Most recent date on which the catalog was changed, updated or modified
 
@@ -648,9 +690,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `DCAT-US 3 Catalog > publisher`
+## <a name="publisher"></a>[Optional] Property `DCAT-US 3 Catalog > publisher`
 
 **Title:** publisher
+
+**Requirement:** Optional
 
 Agent responsible for making the catalog available
 
@@ -681,9 +725,11 @@ inline description of the publisher
 | **Additional properties** | Any type allowed                                                       |
 | **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_creator_items) |
 
-## <a name="rights"></a>Property `DCAT-US 3 Catalog > rights`
+## <a name="rights"></a>[Recommended] Property `DCAT-US 3 Catalog > rights`
 
 **Title:** rights
+
+**Requirement:** Recommended
 
 A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
 
@@ -701,9 +747,11 @@ Full text of a statement of rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="rightsHolder"></a>Property `DCAT-US 3 Catalog > rightsHolder`
+## <a name="rightsHolder"></a>[Optional] Property `DCAT-US 3 Catalog > rightsHolder`
 
 **Title:** rights holder
+
+**Requirement:** Optional
 
 List of organizations holding rights on the catalog
 
@@ -725,9 +773,11 @@ Information about an organization, including other organizations that it is part
 | **Additional properties** | Any type allowed                                                               |
 | **Same definition as**    | [Organization](#dataset_items_otherIdentifier_items_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="spatial"></a>Property `DCAT-US 3 Catalog > spatial`
+## <a name="spatial"></a>[Recommended] Property `DCAT-US 3 Catalog > spatial`
 
 **Title:** spatial/geographic coverage
+
+**Requirement:** Recommended
 
 The geographical area covered by the catalog
 
@@ -749,9 +799,11 @@ Information about a specific geographic location
 | **Additional properties** | Any type allowed                                                          |
 | **Same definition as**    | [Location](#dataset_items_sample_items_accessService_items_spatial_items) |
 
-## <a name="subject"></a>Property `DCAT-US 3 Catalog > subject`
+## <a name="subject"></a>[Optional] Property `DCAT-US 3 Catalog > subject`
 
 **Title:** subject
+
+**Requirement:** Optional
 
 List of subjects of the catalog
 
@@ -773,9 +825,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Concept](#dataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="temporal"></a>Property `DCAT-US 3 Catalog > temporal`
+## <a name="temporal"></a>[Optional] Property `DCAT-US 3 Catalog > temporal`
 
 **Title:** temporal coverage
+
+**Requirement:** Optional
 
 List of temporal periods that the Catalog covers
 
@@ -797,18 +851,22 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                               |
 | **Same definition as**    | [PeriodOfTime](#dataset_items_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>Property `DCAT-US 3 Catalog > title`
+## <a name="title"></a>[Optional] Property `DCAT-US 3 Catalog > title`
 
 **Title:** title
+
+**Requirement:** Optional
 
 The title of the catalog in the indicated language
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="category"></a>Property `DCAT-US 3 Catalog > category`
+## <a name="category"></a>[Optional] Property `DCAT-US 3 Catalog > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories for the Catalog
 
@@ -830,9 +888,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Concept](#dataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="homepage"></a>Property `DCAT-US 3 Catalog > homepage`
+## <a name="homepage"></a>[Recommended] Property `DCAT-US 3 Catalog > homepage`
 
 **Title:** homepage
+
+**Requirement:** Recommended
 
 The home page of the catalog (a public Web document usually available in HTML)
 
@@ -863,9 +923,11 @@ inline description of the home page
 | **Additional properties** | Any type allowed                                   |
 | **Same definition as**    | [Document](#dataset_items_sample_items_page_items) |
 
-## <a name="qualifiedAttribution"></a>Property `DCAT-US 3 Catalog > qualifiedAttribution`
+## <a name="qualifiedAttribution"></a>[Optional] Property `DCAT-US 3 Catalog > qualifiedAttribution`
 
 **Title:** qualified attribution
+
+**Requirement:** Optional
 
 A list of agents having some form of responsibility for the catalog
 

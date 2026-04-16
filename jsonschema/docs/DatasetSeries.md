@@ -25,21 +25,27 @@ An ordered series of datasets
 | - [temporal](#temporal )                     | null or array      | temporal coverage           |
 | + [title](#title )                           | string             | title                       |
 
-## <a name="@id"></a>Property `DatasetSeries > @id`
+## <a name="@id"></a>[Optional] Property `DatasetSeries > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `DatasetSeries > @type`
+## <a name="@type"></a>[Optional] Property `DatasetSeries > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
 
-## <a name="contactPoint"></a>Property `DatasetSeries > contactPoint`
+## <a name="contactPoint"></a>[Recommended] Property `DatasetSeries > contactPoint`
 
 **Title:** contact point
+
+**Requirement:** Recommended
 
 List of contacts that can be used for sending comments about the Dataset Series
 
@@ -61,9 +67,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="first"></a>Property `DatasetSeries > first`
+## <a name="first"></a>[Recommended] Property `DatasetSeries > first`
 
 **Title:** first
+
+**Requirement:** Recommended
 
 The first dataset in an ordered dataset series
 
@@ -94,9 +102,11 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-## <a name="last"></a>Property `DatasetSeries > last`
+## <a name="last"></a>[Recommended] Property `DatasetSeries > last`
 
 **Title:** last
+
+**Requirement:** Recommended
 
 The last dataset in an ordered dataset series
 
@@ -127,9 +137,11 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-## <a name="seriesMember"></a>Property `DatasetSeries > seriesMember`
+## <a name="seriesMember"></a>[Recommended] Property `DatasetSeries > seriesMember`
 
 **Title:** series member
+
+**Requirement:** Recommended
 
 List of members of the Dataset Series
 
@@ -151,9 +163,11 @@ Information about a set of data
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-## <a name="accrualPeriodicity"></a>Property `DatasetSeries > accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>[Optional] Property `DatasetSeries > accrualPeriodicity`
 
 **Title:** frequency
+
+**Requirement:** Optional
 
 The frequency at which the Dataset Series is updated
 
@@ -233,9 +247,11 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="description"></a>Property `DatasetSeries > description`
+## <a name="description"></a>[Mandatory] Property `DatasetSeries > description`
 
 **Title:** description
+
+**Requirement:** Mandatory
 
 A free-text account of the Dataset Series
 
@@ -243,9 +259,11 @@ A free-text account of the Dataset Series
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="issued"></a>Property `DatasetSeries > issued`
+## <a name="issued"></a>[Optional] Property `DatasetSeries > issued`
 
 **Title:** release date
+
+**Requirement:** Optional
 
 The date of formal issuance (e.g.,publication) of the Dataset Series
 
@@ -314,9 +332,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `DatasetSeries > modified`
+## <a name="modified"></a>[Recommended] Property `DatasetSeries > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Recommended
 
 The most recent date on which the Dataset Series was changed or modified
 
@@ -385,9 +405,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `DatasetSeries > publisher`
+## <a name="publisher"></a>[Recommended] Property `DatasetSeries > publisher`
 
 **Title:** publisher
+
+**Requirement:** Recommended
 
 An entity (organization) responsible for ensuring the coherency of the Dataset Series
 
@@ -418,9 +440,11 @@ inline description of publisher
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_creator_items) |
 
-## <a name="spatial"></a>Property `DatasetSeries > spatial`
+## <a name="spatial"></a>[Recommended] Property `DatasetSeries > spatial`
 
 **Title:** spatial/geographic coverage
+
+**Requirement:** Recommended
 
 A geographic region that is covered by the Dataset Series
 
@@ -442,9 +466,11 @@ Information about a specific geographic location
 | **Additional properties** | Any type allowed                                                           |
 | **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_spatial_items) |
 
-## <a name="temporal"></a>Property `DatasetSeries > temporal`
+## <a name="temporal"></a>[Recommended] Property `DatasetSeries > temporal`
 
 **Title:** temporal coverage
+
+**Requirement:** Recommended
 
 A list of temporal periods that the Dataset Series covers
 
@@ -466,9 +492,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>Property `DatasetSeries > title`
+## <a name="title"></a>[Mandatory] Property `DatasetSeries > title`
 
 **Title:** title
+
+**Requirement:** Mandatory
 
 A name given to the Dataset Series
 

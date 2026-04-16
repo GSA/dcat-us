@@ -75,7 +75,10 @@
           "$ref": "/dcat-us/3.0.0/definitions/dataset",
           "description": "inline description of the supported schema"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "versionNotes": {
       "title": "version notes",
@@ -106,7 +109,7 @@
         }
       ],
       "oldDocs": {
-        "requirementLevel": "Recommended",
+        "requirementLevel": "Mandatory",
         "cardinality": "0..n",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind",
@@ -140,7 +143,10 @@
           "$ref": "/dcat-us/3.0.0/definitions/dataset",
           "description": "inline description of Dataset"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "hasCurrentVersion": {
       "title": "current version",
@@ -154,7 +160,10 @@
           "$ref": "/dcat-us/3.0.0/definitions/dataset",
           "description": "inline description of Dataset"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "hasVersion": {
       "title": "has version",
@@ -234,7 +243,10 @@
           "$ref": "/dcat-us/3.0.0/definitions/dataset",
           "description": "inline description of Dataset"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "qualifiedRelation": {
       "title": "qualified relation",
@@ -517,7 +529,10 @@
             }
           ]
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "creator": {
       "title": "creator",
@@ -559,6 +574,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "identifier": {
@@ -732,7 +750,7 @@
       "description": "An organization responsible for making the Dataset available",
       "$ref": "/dcat-us/3.0.0/definitions/organization",
       "oldDocs": {
-        "requirementLevel": "Recommended",
+        "requirementLevel": "Mandatory",
         "cardinality": "0..1",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent",
@@ -763,6 +781,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "rights": {
@@ -787,6 +808,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "source": {
@@ -943,6 +967,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "wasGeneratedBy": {
@@ -966,6 +993,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "image": {
@@ -1003,7 +1033,13 @@
       }
     }
   },
-  "required": ["description", "publisher", "title", "contactPoint"],
+  "required": [
+    "description",
+    "publisher",
+    "title",
+    "contactPoint",
+    "identifier"
+  ],
   "oldDocs": {
     "rdfClass": "dcat:Dataset",
     "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more representations.",

@@ -22,21 +22,27 @@ A record in a catalog, describing the registration of a single resource
 | - [title](#title )               | null or string          | title                    |
 | + [primaryTopic](#primaryTopic ) | string                  | primary topic            |
 
-## <a name="@id"></a>Property `CatalogRecord > @id`
+## <a name="@id"></a>[Optional] Property `CatalogRecord > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `CatalogRecord > @type`
+## <a name="@type"></a>[Optional] Property `CatalogRecord > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
 
-## <a name="status"></a>Property `CatalogRecord > status`
+## <a name="status"></a>[Recommended] Property `CatalogRecord > status`
 
 **Title:** change type
+
+**Requirement:** Recommended
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
@@ -67,9 +73,11 @@ inline description of status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="conformsTo"></a>Property `CatalogRecord > conformsTo`
+## <a name="conformsTo"></a>[Recommended] Property `CatalogRecord > conformsTo`
 
 **Title:** application profile
+
+**Requirement:** Recommended
 
 An Application Profile that the Catalog Record's metadata conforms to
 
@@ -100,9 +108,11 @@ inline description of application profile
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
-## <a name="description"></a>Property `CatalogRecord > description`
+## <a name="description"></a>[Optional] Property `CatalogRecord > description`
 
 **Title:** Descriptions
+
+**Requirement:** Optional
 
 A list of free-text accounts of the catalog record
 
@@ -120,9 +130,11 @@ A list of free-text accounts of the catalog record
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="issued"></a>Property `CatalogRecord > issued`
+## <a name="issued"></a>[Optional] Property `CatalogRecord > issued`
 
 **Title:** listing date
+
+**Requirement:** Optional
 
 List of dates on which the catalog record was included in the catalog
 
@@ -182,9 +194,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `CatalogRecord > language`
+## <a name="language"></a>[Optional] Property `CatalogRecord > language`
 
 **Title:** language
+
+**Requirement:** Optional
 
 A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
@@ -238,9 +252,11 @@ A language or languages used in the textual metadata describing titles, descript
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>Property `CatalogRecord > modified`
+## <a name="modified"></a>[Mandatory] Property `CatalogRecord > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Mandatory
 
 The most recent date on which the catalog record was changed or modified
 
@@ -290,27 +306,33 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="source"></a>Property `CatalogRecord > source`
+## <a name="source"></a>[Optional] Property `CatalogRecord > source`
 
 **Title:** source metadata
+
+**Requirement:** Optional
 
 The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="title"></a>Property `CatalogRecord > title`
+## <a name="title"></a>[Optional] Property `CatalogRecord > title`
 
 **Title:** title
+
+**Requirement:** Optional
 
 A name given to the Catalog Record
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="primaryTopic"></a>Property `CatalogRecord > primaryTopic`
+## <a name="primaryTopic"></a>[Mandatory] Property `CatalogRecord > primaryTopic`
 
 **Title:** primary topic
+
+**Requirement:** Mandatory
 
 A link to the Dataset, Data service or Catalog described in the Catalog Record
 

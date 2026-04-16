@@ -24,15 +24,17 @@
       "@type": "Kind",
       "fn": "Federal Data Support Center",
       "hasEmail": "mailto:data-support@example.gov",
-      "hasAddress": {
-        "@type": "Address",
-        "streetAddress": "1800 F Street NW",
-        "locality": "Washington",
-        "region": "DC",
-        "postalCode": "20405",
-        "countryName": "United States"
-      },
-      "hasTelephone": "tel:+1-202-555-0100"
+      "address": [
+        {
+          "@type": "Address",
+          "street-address": "1800 F Street NW",
+          "locality": "Washington",
+          "region": "DC",
+          "postal-code": "20405",
+          "country-name": "United States"
+        }
+      ],
+      "tel": "tel:+1-202-555-0100"
     }
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -110,8 +112,7 @@
   ],
   "conformsTo": {
     "@type": "Standard",
-    "title": "DCAT-US 3.0",
-    "accessURL": "https://resources.data.gov/dcat-us/"
+    "title": "DCAT-US 3.0"
   },
   "homepage": {
     "@type": "Document",
@@ -130,7 +131,8 @@
       },
       "publisher": {
         "name": "Office of Management and Budget"
-      }
+      },
+      "identifier": "https://example.gov/datasets/catalog-complete-001"
     },
     {
       "@type": "Dataset",
@@ -142,7 +144,8 @@
       },
       "publisher": {
         "name": "Office of Personnel Management"
-      }
+      },
+      "identifier": "https://example.gov/datasets/catalog-complete-002"
     }
   ],
   "service": [
@@ -159,7 +162,8 @@
       "publisher": {
         "@type": "Agent",
         "name": "Federal Data Management Office"
-      }
+      },
+      "identifier": "https://example.gov/services/catalog-service-001"
     }
   ],
   "record": [
@@ -185,7 +189,8 @@
           },
           "publisher": {
             "name": "Partner Agency"
-          }
+          },
+          "identifier": "https://example.gov/datasets/subcatalog-1-dataset-001"
         }
       ]
     }
@@ -206,7 +211,8 @@
           },
           "publisher": {
             "name": "Treasury Department"
-          }
+          },
+          "identifier": "https://example.gov/datasets/subcatalog-1-dataset-002"
         }
       ]
     }

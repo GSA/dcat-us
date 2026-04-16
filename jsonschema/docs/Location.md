@@ -21,21 +21,27 @@ Information about a specific geographic location
 | - [altLabel](#altLabel )               | null or string     | alternative name  |
 | - [prefLabel](#prefLabel )             | null or string     | geographic name   |
 
-## <a name="@id"></a>Property `Location > @id`
+## <a name="@id"></a>[Optional] Property `Location > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Location > @type`
+## <a name="@type"></a>[Optional] Property `Location > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Location"` |
 
-## <a name="bbox"></a>Property `Location > bbox`
+## <a name="bbox"></a>[Recommended] Property `Location > bbox`
 
 **Title:** bounding box
+
+**Requirement:** Recommended
 
 bounding box of a location described in WKT, GeoJSON, or GML format
 
@@ -76,11 +82,15 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 
 #### <a name="bbox_anyOf_i2_coordinates"></a>Property `Location > bbox > anyOf > item 2 > coordinates`
 
+**Requirement:** Optional
+
 | **Type**     | `array` |
 | ------------ | ------- |
 | **Required** | Yes     |
 
 #### <a name="bbox_anyOf_i2_type"></a>Property `Location > bbox > anyOf > item 2 > type`
+
+**Requirement:** Optional
 
 | **Type**     | `const` |
 | ------------ | ------- |
@@ -88,9 +98,11 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 
 Specific value: `"Polygon"`
 
-## <a name="centroid"></a>Property `Location > centroid`
+## <a name="centroid"></a>[Optional] Property `Location > centroid`
 
 **Title:** centroid
+
+**Requirement:** Optional
 
 The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format
 
@@ -131,6 +143,8 @@ Centroid represented in GeoJSON format; force point usage with coordinates of lo
 
 #### <a name="centroid_anyOf_i2_coordinates"></a>Property `Location > centroid > anyOf > item 2 > coordinates`
 
+**Requirement:** Optional
+
 | **Type**     | `array of number` |
 | ------------ | ----------------- |
 | **Required** | Yes               |
@@ -146,15 +160,19 @@ Centroid represented in GeoJSON format; force point usage with coordinates of lo
 
 #### <a name="centroid_anyOf_i2_type"></a>Property `Location > centroid > anyOf > item 2 > type`
 
+**Requirement:** Optional
+
 | **Type**     | `const` |
 | ------------ | ------- |
 | **Required** | Yes     |
 
 Specific value: `"Point"`
 
-## <a name="identifier"></a>Property `Location > identifier`
+## <a name="identifier"></a>[Optional] Property `Location > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
@@ -183,9 +201,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-## <a name="otherIdentifier"></a>Property `Location > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Location > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer
 
@@ -207,9 +227,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
 
-## <a name="geometry"></a>Property `Location > geometry`
+## <a name="geometry"></a>[Optional] Property `Location > geometry`
 
 **Title:** geometry
+
+**Requirement:** Optional
 
 Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format
 
@@ -247,9 +269,11 @@ Geometry represented in GeoJSON format
 * type
 * coordinates
 
-## <a name="inScheme"></a>Property `Location > inScheme`
+## <a name="inScheme"></a>[Optional] Property `Location > inScheme`
 
 **Title:** gazetteer
+
+**Requirement:** Optional
 
 The gazetteer to which the location belongs
 
@@ -278,18 +302,22 @@ inline description of the gazetteer
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-## <a name="altLabel"></a>Property `Location > altLabel`
+## <a name="altLabel"></a>[Optional] Property `Location > altLabel`
 
 **Title:** alternative name
+
+**Requirement:** Optional
 
 An alternative label or name for a location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="prefLabel"></a>Property `Location > prefLabel`
+## <a name="prefLabel"></a>[Recommended] Property `Location > prefLabel`
 
 **Title:** geographic name
+
+**Requirement:** Recommended
 
 Preferred label or name of the Location
 

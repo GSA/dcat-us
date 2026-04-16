@@ -27,7 +27,10 @@
           "description": "reference iri of Document",
           "format": "iri"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "downloadURL": {
       "title": "download URL",
@@ -43,7 +46,10 @@
           "description": "reference iri of Document",
           "format": "iri"
         }
-      ]
+      ],
+      "oldDocs": {
+        "requirementLevel": "Optional"
+      }
     },
     "creator": {
       "title": "author",
@@ -114,6 +120,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "description": {
@@ -154,6 +163,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     },
     "issued": {
@@ -226,6 +238,9 @@
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
+      },
+      "oldDocs": {
+        "requirementLevel": "Optional"
       }
     }
   },

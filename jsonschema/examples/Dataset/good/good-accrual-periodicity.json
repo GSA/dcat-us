@@ -2,7 +2,9 @@
   "@type": "Dataset",
   "title": "Example Dataset",
   "description": "A minimal dataset example with a valid periodicity",
-  "publisher": { "name": "The Minimal Organization" },
+  "publisher": {
+    "name": "The Minimal Organization"
+  },
   "accrualPeriodicity": "quarterly",
   "contactPoint": [
     {
@@ -27,5 +29,6 @@
         }
       ]
     }
-  ]
+  ],
+  "identifier": "https://example.gov/datasets/periodicity-example"
 }

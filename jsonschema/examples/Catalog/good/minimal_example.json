@@ -11,7 +11,8 @@
       },
       "publisher": {
         "name": "Example Organization"
-      }
+      },
+      "identifier": "https://example.gov/datasets/catalog-example-001"
     }
   ]
 }

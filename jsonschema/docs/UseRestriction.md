@@ -16,30 +16,38 @@ A restriction on usage of another item
 | + [restrictionStatus](#restrictionStatus )     | object             | restriction status   |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
-## <a name="@id"></a>Property `UseRestriction > @id`
+## <a name="@id"></a>[Optional] Property `UseRestriction > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `UseRestriction > @type`
+## <a name="@type"></a>[Optional] Property `UseRestriction > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`           |
 | ----------- | ------------------ |
 | **Default** | `"UseRestriction"` |
 
-## <a name="restrictionNote"></a>Property `UseRestriction > restrictionNote`
+## <a name="restrictionNote"></a>[Optional] Property `UseRestriction > restrictionNote`
 
 **Title:** restriction note
+
+**Requirement:** Optional
 
 Significant information pertaining to the use or reproduction of the data
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="restrictionStatus"></a>Property `UseRestriction > restrictionStatus`
+## <a name="restrictionStatus"></a>[Mandatory] Property `UseRestriction > restrictionStatus`
 
 **Title:** restriction status
+
+**Requirement:** Mandatory
 
 Indication of whether or not there are use restrictions on the archival materials
 
@@ -49,9 +57,11 @@ Indication of whether or not there are use restrictions on the archival material
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="specificRestriction"></a>Property `UseRestriction > specificRestriction`
+## <a name="specificRestriction"></a>[Recommended] Property `UseRestriction > specificRestriction`
 
 **Title:** specific restriction
+
+**Requirement:** Recommended
 
 The specific NARA restriction associated with the use restriction
 

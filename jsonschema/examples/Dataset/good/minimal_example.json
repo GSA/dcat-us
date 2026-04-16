@@ -7,5 +7,6 @@
   "contactPoint": {
     "fn": "Data Support",
     "hasEmail": "mailto:data@example.gov"
-  }
+  },
+  "identifier": "https://example.gov/datasets/example-001"
 }

@@ -23,7 +23,10 @@
       "fn": "Climate Support",
       "hasEmail": "mailto:climate@example.gov"
     },
-    "publisher": { "name": "National Climate Data Center" }
+    "publisher": {
+      "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-first"
   },
   "last": {
     "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -34,7 +37,10 @@
       "fn": "Climate Support",
       "hasEmail": "mailto:climate@example.gov"
     },
-    "publisher": { "name": "National Climate Data Center" }
+    "publisher": {
+      "name": "National Climate Data Center"
+    },
+    "identifier": "https://example.gov/datasets/series-last"
   },
   "seriesMember": [
     {
@@ -46,7 +52,10 @@
         "fn": "Climate Support",
         "hasEmail": "mailto:climate@example.gov"
       },
-      "publisher": { "name": "National Climate Data Center" }
+      "publisher": {
+        "name": "National Climate Data Center"
+      },
+      "identifier": "https://example.gov/datasets/series-member-001"
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2023",
@@ -57,7 +66,10 @@
         "fn": "Climate Support",
         "hasEmail": "mailto:climate@example.gov"
       },
-      "publisher": { "name": "National Climate Data Center" }
+      "publisher": {
+        "name": "National Climate Data Center"
+      },
+      "identifier": "https://example.gov/datasets/series-member-002"
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -68,7 +80,10 @@
         "fn": "Climate Support",
         "hasEmail": "mailto:climate@example.gov"
       },
-      "publisher": { "name": "National Climate Data Center" }
+      "publisher": {
+        "name": "National Climate Data Center"
+      },
+      "identifier": "https://example.gov/datasets/series-member-003"
     }
   ],
   "spatial": [

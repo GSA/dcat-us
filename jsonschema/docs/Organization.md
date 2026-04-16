@@ -18,21 +18,27 @@ Information about an organization, including other organizations that it is part
 | - [notation](#notation )                   | null or array of string | notation           |
 | - [prefLabel](#prefLabel )                 | null or string          | preferred label    |
 
-## <a name="@id"></a>Property `Organization > @id`
+## <a name="@id"></a>[Optional] Property `Organization > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Organization > @type`
+## <a name="@type"></a>[Optional] Property `Organization > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"Organization"` |
 
-## <a name="name"></a>Property `Organization > name`
+## <a name="name"></a>[Mandatory] Property `Organization > name`
 
 **Title:** name
+
+**Requirement:** Mandatory
 
 The full name of the Organization
 
@@ -40,9 +46,11 @@ The full name of the Organization
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="subOrganizationOf"></a>Property `Organization > subOrganizationOf`
+## <a name="subOrganizationOf"></a>[Optional] Property `Organization > subOrganizationOf`
 
 **Title:** suborganization of
+
+**Requirement:** Optional
 
 Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
@@ -64,18 +72,22 @@ Information about an organization, including other organizations that it is part
 | **Additional properties** | Any type allowed      |
 | **Same definition as**    | [Organization](#root) |
 
-## <a name="altLabel"></a>Property `Organization > altLabel`
+## <a name="altLabel"></a>[Optional] Property `Organization > altLabel`
 
 **Title:** alternative label
+
+**Requirement:** Optional
 
 alternative name (trading name, colloquial name) for an organization
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="notation"></a>Property `Organization > notation`
+## <a name="notation"></a>[Optional] Property `Organization > notation`
 
 **Title:** notation
+
+**Requirement:** Optional
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
@@ -93,9 +105,11 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="prefLabel"></a>Property `Organization > prefLabel`
+## <a name="prefLabel"></a>[Optional] Property `Organization > prefLabel`
 
 **Title:** preferred label
+
+**Requirement:** Optional
 
 Preferred or legal name of the organization
 

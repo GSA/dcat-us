@@ -16,21 +16,27 @@ A single measurement of one metric
 | + [value](#value )                     | string         | value             |
 | - [unitMeasure](#unitMeasure )         | null or string | unit of measure   |
 
-## <a name="@id"></a>Property `QualityMeasurement > @id`
+## <a name="@id"></a>[Optional] Property `QualityMeasurement > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `QualityMeasurement > @type`
+## <a name="@type"></a>[Optional] Property `QualityMeasurement > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`               |
 | ----------- | ---------------------- |
 | **Default** | `"QualityMeasurement"` |
 
-## <a name="isMeasurementOf"></a>Property `QualityMeasurement > isMeasurementOf`
+## <a name="isMeasurementOf"></a>[Mandatory] Property `QualityMeasurement > isMeasurementOf`
 
 **Title:** is measurement of
+
+**Requirement:** Mandatory
 
 The metric being observed
 
@@ -40,9 +46,11 @@ The metric being observed
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
-## <a name="value"></a>Property `QualityMeasurement > value`
+## <a name="value"></a>[Mandatory] Property `QualityMeasurement > value`
 
 **Title:** value
+
+**Requirement:** Mandatory
 
 The value computed by metric
 
@@ -50,9 +58,11 @@ The value computed by metric
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="unitMeasure"></a>Property `QualityMeasurement > unitMeasure`
+## <a name="unitMeasure"></a>[Optional] Property `QualityMeasurement > unitMeasure`
 
 **Title:** unit of measure
+
+**Requirement:** Optional
 
 Unit of measure associated with the value
 

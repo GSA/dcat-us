@@ -41,21 +41,27 @@ A service for providing data at a URL or URLs
 | - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution        |
 | - [wasUsedBy](#wasUsedBy )                                 | null or array           | was used by                  |
 
-## <a name="@id"></a>Property `DataService > @id`
+## <a name="@id"></a>[Optional] Property `DataService > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `DataService > @type`
+## <a name="@type"></a>[Optional] Property `DataService > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`        |
 | ----------- | --------------- |
 | **Default** | `"DataService"` |
 
-## <a name="contactPoint"></a>Property `DataService > contactPoint`
+## <a name="contactPoint"></a>[Mandatory] Property `DataService > contactPoint`
 
 **Title:** contact point
+
+**Requirement:** Mandatory
 
 Contact information that can be used for sending comments about the Data Service
 
@@ -78,9 +84,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="endpointDescription"></a>Property `DataService > endpointDescription`
+## <a name="endpointDescription"></a>[Recommended] Property `DataService > endpointDescription`
 
 **Title:** endpoint description
+
+**Requirement:** Recommended
 
 A list of descriptions of the services available via the end-points, including their operations, parameters etc
 
@@ -96,9 +104,11 @@ A list of descriptions of the services available via the end-points, including t
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="endpointURL"></a>Property `DataService > endpointURL`
+## <a name="endpointURL"></a>[Mandatory] Property `DataService > endpointURL`
 
 **Title:** endpoint URL
+
+**Requirement:** Mandatory
 
 A list of root locations or primary endpoints of the service (a Web-resolvable IRI)
 
@@ -120,9 +130,11 @@ The root location or primary endpoint of the service (a Web-resolvable IRI)
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="keyword"></a>Property `DataService > keyword`
+## <a name="keyword"></a>[Optional] Property `DataService > keyword`
 
 **Title:** keyword/tag
+
+**Requirement:** Optional
 
 List of keywords or tags describing the Data Service
 
@@ -144,9 +156,11 @@ List of keywords or tags describing the Data Service
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="servesDataset"></a>Property `DataService > servesDataset`
+## <a name="servesDataset"></a>[Recommended] Property `DataService > servesDataset`
 
 **Title:** serves dataset
+
+**Requirement:** Recommended
 
 List of datasets that are served by this data service
 
@@ -168,27 +182,33 @@ Information about a set of data
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-## <a name="spatialResolutionInMeters"></a>Property `DataService > spatialResolutionInMeters`
+## <a name="spatialResolutionInMeters"></a>[Optional] Property `DataService > spatialResolutionInMeters`
 
 **Title:** spatial resolution in meters
+
+**Requirement:** Optional
 
 The minimum spatial separation resolvable in a Data Service, measured in meters
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="temporalResolution"></a>Property `DataService > temporalResolution`
+## <a name="temporalResolution"></a>[Optional] Property `DataService > temporalResolution`
 
 **Title:** temporal resolution
+
+**Requirement:** Optional
 
 The minimum time period resolvable by the Data Service
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="theme"></a>Property `DataService > theme`
+## <a name="theme"></a>[Optional] Property `DataService > theme`
 
 **Title:** theme/category
+
+**Requirement:** Optional
 
 A list of themes of the Data Service. A Data Service may be associated with multiple themes
 
@@ -210,9 +230,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                                              |
 | **Same definition as**    | [Concept](#servesDataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="accessRights"></a>Property `DataService > accessRights`
+## <a name="accessRights"></a>[Optional] Property `DataService > accessRights`
 
 **Title:** access rights
+
+**Requirement:** Optional
 
 Information that indicates whether the Data Service is open data, has access restrictions or is public
 
@@ -237,9 +259,11 @@ Text description of the access rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="conformsTo"></a>Property `DataService > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `DataService > conformsTo`
 
 **Title:** conforms to
+
+**Requirement:** Optional
 
 List of general standards or specifications that the Data Service endpoints implement
 
@@ -261,9 +285,11 @@ Information about a particular standard that another item conforms to
 | **Additional properties** | Any type allowed                                                                   |
 | **Same definition as**    | [Standard](#servesDataset_items_sample_items_accessService_items_conformsTo_items) |
 
-## <a name="created"></a>Property `DataService > created`
+## <a name="created"></a>[Optional] Property `DataService > created`
 
 **Title:** creation date
+
+**Requirement:** Optional
 
 The date on which the Data Service was first created
 
@@ -330,9 +356,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="creator"></a>Property `DataService > creator`
+## <a name="creator"></a>[Optional] Property `DataService > creator`
 
 **Title:** creator
+
+**Requirement:** Optional
 
 List of agents primarily responsible for producing the Data Service
 
@@ -354,18 +382,22 @@ An entity that could be involved with a resource
 | **Additional properties** | Any type allowed                                                             |
 | **Same definition as**    | [Agent](#servesDataset_items_sample_items_accessService_items_creator_items) |
 
-## <a name="description"></a>Property `DataService > description`
+## <a name="description"></a>[Optional] Property `DataService > description`
 
 **Title:** description
+
+**Requirement:** Optional
 
 A free-text account of the Data Service
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="identifier"></a>Property `DataService > identifier`
+## <a name="identifier"></a>[Optional] Property `DataService > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -394,9 +426,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                         |
 | **Same definition as**    | [Identifier](#servesDataset_items_otherIdentifier_items) |
 
-## <a name="otherIdentifier"></a>Property `DataService > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `DataService > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
@@ -418,9 +452,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                         |
 | **Same definition as**    | [Identifier](#servesDataset_items_otherIdentifier_items) |
 
-## <a name="language"></a>Property `DataService > language`
+## <a name="language"></a>[Optional] Property `DataService > language`
 
 **Title:** language
+
+**Requirement:** Optional
 
 Language or languages supported by the Data Service. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
@@ -474,9 +510,11 @@ Language or languages supported by the Data Service. This should be provided as 
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>Property `DataService > license`
+## <a name="license"></a>[Recommended] Property `DataService > license`
 
 **Title:** license
+
+**Requirement:** Recommended
 
 The license under which the Data Service is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
@@ -503,9 +541,11 @@ Full text of the license
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>Property `DataService > modified`
+## <a name="modified"></a>[Optional] Property `DataService > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Optional
 
 The most recent date on which the Data Service was changed or modified
 
@@ -574,9 +614,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `DataService > publisher`
+## <a name="publisher"></a>[Mandatory] Property `DataService > publisher`
 
 **Title:** publisher
+
+**Requirement:** Mandatory
 
 An entity (organization) responsible for making the Data Service available
 
@@ -586,9 +628,11 @@ An entity (organization) responsible for making the Data Service available
 | **Additional properties** | Any type allowed    |
 | **Defined in**            | [Agent](./Agent.md) |
 
-## <a name="rights"></a>Property `DataService > rights`
+## <a name="rights"></a>[Optional] Property `DataService > rights`
 
 **Title:** rights
+
+**Requirement:** Optional
 
 A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
 
@@ -604,9 +648,11 @@ A list of statements concerning all rights for the Data Service that may not be 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="rightsHolder"></a>Property `DataService > rightsHolder`
+## <a name="rightsHolder"></a>[Optional] Property `DataService > rightsHolder`
 
 **Title:** rights holder
+
+**Requirement:** Optional
 
 A list of Agents (organizations) holding rights on the Data Service
 
@@ -628,9 +674,11 @@ Information about an organization, including other organizations that it is part
 | **Additional properties** | Any type allowed                                                                     |
 | **Same definition as**    | [Organization](#servesDataset_items_otherIdentifier_items_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="spatial"></a>Property `DataService > spatial`
+## <a name="spatial"></a>[Optional] Property `DataService > spatial`
 
 **Title:** spatial/geographic coverage
+
+**Requirement:** Optional
 
 A geographic region that is covered by the Data Service
 
@@ -652,9 +700,11 @@ Information about a specific geographic location
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [Location](#servesDataset_items_sample_items_accessService_items_spatial_items) |
 
-## <a name="temporal"></a>Property `DataService > temporal`
+## <a name="temporal"></a>[Optional] Property `DataService > temporal`
 
 **Title:** temporal coverage
+
+**Requirement:** Optional
 
 A list of temporal periods that the DataService covers
 
@@ -676,9 +726,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                     |
 | **Same definition as**    | [PeriodOfTime](#servesDataset_items_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>Property `DataService > title`
+## <a name="title"></a>[Mandatory] Property `DataService > title`
 
 **Title:** title
+
+**Requirement:** Mandatory
 
 The title of the data service in the indicated language
 
@@ -686,9 +738,11 @@ The title of the data service in the indicated language
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="category"></a>Property `DataService > category`
+## <a name="category"></a>[Optional] Property `DataService > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories for the Data Service
 
@@ -710,9 +764,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed                                                              |
 | **Same definition as**    | [Concept](#servesDataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="hasQualityMeasurement"></a>Property `DataService > hasQualityMeasurement`
+## <a name="hasQualityMeasurement"></a>[Optional] Property `DataService > hasQualityMeasurement`
 
 **Title:** quality measurement
+
+**Requirement:** Optional
 
 Refers to the performed quality measurements
 
@@ -734,9 +790,11 @@ A single measurement of one metric
 | **Additional properties** | Any type allowed                                                                                        |
 | **Same definition as**    | [QualityMeasurement](#servesDataset_items_sample_items_accessService_items_hasQualityMeasurement_items) |
 
-## <a name="qualifiedAttribution"></a>Property `DataService > qualifiedAttribution`
+## <a name="qualifiedAttribution"></a>[Optional] Property `DataService > qualifiedAttribution`
 
 **Title:** qualified attribution
+
+**Requirement:** Optional
 
 List of agents having some form of responsibility for the Data Service
 
@@ -758,9 +816,11 @@ An attribution that an agent plays some role
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [Attribution](#servesDataset_items_sample_items_accessService_items_qualifiedAttribution_items) |
 
-## <a name="wasUsedBy"></a>Property `DataService > wasUsedBy`
+## <a name="wasUsedBy"></a>[Optional] Property `DataService > wasUsedBy`
 
 **Title:** was used by
+
+**Requirement:** Optional
 
 List of activities that used the Data Service
 

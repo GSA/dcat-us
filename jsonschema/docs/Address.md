@@ -18,57 +18,71 @@ A single physical address
 | - [region](#region )                 | null or string | administrative area |
 | - [street-address](#street-address ) | null or string | street address      |
 
-## <a name="@id"></a>Property `Address > @id`
+## <a name="@id"></a>[Optional] Property `Address > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Address > @type`
+## <a name="@type"></a>[Optional] Property `Address > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`    |
 | ----------- | ----------- |
 | **Default** | `"Address"` |
 
-## <a name="country-name"></a>Property `Address > country-name`
+## <a name="country-name"></a>[Recommended] Property `Address > country-name`
 
 **Title:** country
+
+**Requirement:** Recommended
 
 The country of the Address
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="locality"></a>Property `Address > locality`
+## <a name="locality"></a>[Recommended] Property `Address > locality`
 
 **Title:** locality
+
+**Requirement:** Recommended
 
 The city of the Address
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="postal-code"></a>Property `Address > postal-code`
+## <a name="postal-code"></a>[Recommended] Property `Address > postal-code`
 
 **Title:** postal code
+
+**Requirement:** Recommended
 
 The postal code of the Address
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="region"></a>Property `Address > region`
+## <a name="region"></a>[Recommended] Property `Address > region`
 
 **Title:** administrative area
+
+**Requirement:** Recommended
 
 The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="street-address"></a>Property `Address > street-address`
+## <a name="street-address"></a>[Recommended] Property `Address > street-address`
 
 **Title:** street address
+
+**Requirement:** Recommended
 
 The street name and civic number of an Address
 

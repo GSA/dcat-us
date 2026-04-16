@@ -15,21 +15,27 @@ An activity which a resource could be related to
 | - [category](#category ) | null or array | category          |
 | + [label](#label )       | string        | label             |
 
-## <a name="@id"></a>Property `Activity > @id`
+## <a name="@id"></a>[Optional] Property `Activity > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Activity > @type`
+## <a name="@type"></a>[Optional] Property `Activity > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Activity"` |
 
-## <a name="category"></a>Property `Activity > category`
+## <a name="category"></a>[Optional] Property `Activity > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories for the Activity
 
@@ -51,9 +57,11 @@ A labeled value from an optionally specified concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="label"></a>Property `Activity > label`
+## <a name="label"></a>[Mandatory] Property `Activity > label`
 
 **Title:** label
+
+**Requirement:** Mandatory
 
 A human-readable label for the activity
 

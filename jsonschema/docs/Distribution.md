@@ -46,21 +46,27 @@ A file that distributes the dataset
 | - [image](#image )                                         | More than one type      | image                       |
 | - [checksum](#checksum )                                   | More than one type      | checksum                    |
 
-## <a name="@id"></a>Property `Distribution > @id`
+## <a name="@id"></a>[Optional] Property `Distribution > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Distribution > @type`
+## <a name="@type"></a>[Optional] Property `Distribution > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`         |
 | ----------- | ---------------- |
 | **Default** | `"Distribution"` |
 
-## <a name="representationTechnique"></a>Property `Distribution > representationTechnique`
+## <a name="representationTechnique"></a>[Optional] Property `Distribution > representationTechnique`
 
 **Title:** representation technique
+
+**Requirement:** Optional
 
 The format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry
 
@@ -91,9 +97,11 @@ inline description of Concept
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="status"></a>Property `Distribution > status`
+## <a name="status"></a>[Optional] Property `Distribution > status`
 
 **Title:** lifecycle status
+
+**Requirement:** Optional
 
 The status of the distribution in the context of maturity lifecycle
 
@@ -124,9 +132,11 @@ inline description of Concept
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
 
-## <a name="characterEncoding"></a>Property `Distribution > characterEncoding`
+## <a name="characterEncoding"></a>[Optional] Property `Distribution > characterEncoding`
 
 **Title:** character encoding
+
+**Requirement:** Optional
 
 The list of character encodings of the Distribution, by using as value the character set names in the IANA register 
 
@@ -164,9 +174,11 @@ The list of character encodings of the Distribution, by using as value the chara
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="accessService"></a>Property `Distribution > accessService`
+## <a name="accessService"></a>[Optional] Property `Distribution > accessService`
 
 **Title:** access service
+
+**Requirement:** Optional
 
 A data service that gives access to the distribution of the dataset
 
@@ -188,9 +200,11 @@ A service for providing data at a URL or URLs
 | **Additional properties** | Any type allowed                |
 | **Defined in**            | [Dataservice](./Dataservice.md) |
 
-## <a name="accessURL"></a>Property `Distribution > accessURL`
+## <a name="accessURL"></a>[Recommended] Property `Distribution > accessURL`
 
 **Title:** access URL
+
+**Requirement:** Recommended
 
 A URL that gives access to a Distribution of the Dataset
 
@@ -220,27 +234,33 @@ reference iri of Resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="byteSize"></a>Property `Distribution > byteSize`
+## <a name="byteSize"></a>[Optional] Property `Distribution > byteSize`
 
 **Title:** byte size
+
+**Requirement:** Optional
 
 The size of a Distribution in bytes
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="compressFormat"></a>Property `Distribution > compressFormat`
+## <a name="compressFormat"></a>[Optional] Property `Distribution > compressFormat`
 
 **Title:** compression format
+
+**Requirement:** Optional
 
 The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="downloadURL"></a>Property `Distribution > downloadURL`
+## <a name="downloadURL"></a>[Optional] Property `Distribution > downloadURL`
 
 **Title:** download URL
+
+**Requirement:** Optional
 
 A URL that is a direct link to a downloadable file of the Distribution in a given format
 
@@ -270,45 +290,55 @@ reference iri of Resource
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="mediaType"></a>Property `Distribution > mediaType`
+## <a name="mediaType"></a>[Optional] Property `Distribution > mediaType`
 
 **Title:** media type
+
+**Requirement:** Optional
 
 The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="packageFormat"></a>Property `Distribution > packageFormat`
+## <a name="packageFormat"></a>[Optional] Property `Distribution > packageFormat`
 
 **Title:** packaging format
+
+**Requirement:** Optional
 
 The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="spatialResolutionInMeters"></a>Property `Distribution > spatialResolutionInMeters`
+## <a name="spatialResolutionInMeters"></a>[Optional] Property `Distribution > spatialResolutionInMeters`
 
 **Title:** Spatial resolution (meters)
+
+**Requirement:** Optional
 
 The minimum spatial separation resolvable in a dataset distribution, measured in meters
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="temporalResolution"></a>Property `Distribution > temporalResolution`
+## <a name="temporalResolution"></a>[Optional] Property `Distribution > temporalResolution`
 
 **Title:** termporal resolution
+
+**Requirement:** Optional
 
 The minimum time period resolvable in the dataset distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="availability"></a>Property `Distribution > availability`
+## <a name="availability"></a>[Optional] Property `Distribution > availability`
 
 **Title:** availability
+
+**Requirement:** Optional
 
 An indication how long it is planned to keep the Distribution of the Dataset available
 
@@ -339,9 +369,11 @@ inline description of Concept
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
 
-## <a name="accessRestriction"></a>Property `Distribution > accessRestriction`
+## <a name="accessRestriction"></a>[Recommended] Property `Distribution > accessRestriction`
 
 **Title:** access restriction
+
+**Requirement:** Recommended
 
 List of access restrictions related to the distribution
 
@@ -363,9 +395,11 @@ A restriction on the permitted access to a resource
 | **Additional properties** | Any type allowed                                                                                   |
 | **Same definition as**    | [AccessRestriction](#accessService_items_servesDataset_items_sample_items_accessRestriction_items) |
 
-## <a name="cuiRestriction"></a>Property `Distribution > cuiRestriction`
+## <a name="cuiRestriction"></a>[Recommended] Property `Distribution > cuiRestriction`
 
 **Title:** CUI restriction
+
+**Requirement:** Recommended
 
 Controlled Unclassified Information restriction related to the distribution
 
@@ -396,9 +430,11 @@ inline description of CUIRestriction
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [CUIRestriction](#accessService_items_servesDataset_items_sample_items_cuiRestriction_anyOf_i1) |
 
-## <a name="describedBy"></a>Property `Distribution > describedBy`
+## <a name="describedBy"></a>[Recommended] Property `Distribution > describedBy`
 
 **Title:** data dictionary
+
+**Requirement:** Recommended
 
 A distribution containing the Data Dictionary for this distribution
 
@@ -429,9 +465,11 @@ inline description of the data dictionary
 | **Additional properties** | Any type allowed                                                      |
 | **Same definition as**    | [Distribution](#accessService_items_servesDataset_items_sample_items) |
 
-## <a name="useRestriction"></a>Property `Distribution > useRestriction`
+## <a name="useRestriction"></a>[Recommended] Property `Distribution > useRestriction`
 
 **Title:** use restriction
+
+**Requirement:** Recommended
 
 Use restriction related to the distribution
 
@@ -453,9 +491,11 @@ A restriction on usage of another item
 | **Additional properties** | Any type allowed                                                                             |
 | **Same definition as**    | [UseRestriction](#accessService_items_servesDataset_items_sample_items_useRestriction_items) |
 
-## <a name="accessRights"></a>Property `Distribution > accessRights`
+## <a name="accessRights"></a>[Optional] Property `Distribution > accessRights`
 
 **Title:** access rights
+
+**Requirement:** Optional
 
 Information that indicates whether the Distribution is open data, has access restrictions or is not public
 
@@ -482,9 +522,11 @@ Text description of the access rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="conformsTo"></a>Property `Distribution > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `Distribution > conformsTo`
 
 **Title:** linked schemas
+
+**Requirement:** Optional
 
 List of established schemas or reference systems to which the described Distribution conforms
 
@@ -506,27 +548,33 @@ Information about a particular standard that another item conforms to
 | **Additional properties** | Any type allowed                                                                   |
 | **Same definition as**    | [Standard](#accessService_items_servesDataset_items_sample_items_conformsTo_items) |
 
-## <a name="description"></a>Property `Distribution > description`
+## <a name="description"></a>[Recommended] Property `Distribution > description`
 
 **Title:** description
+
+**Requirement:** Recommended
 
 A free-text account of the Distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="format"></a>Property `Distribution > format`
+## <a name="format"></a>[Recommended] Property `Distribution > format`
 
 **Title:** format
+
+**Requirement:** Recommended
 
 A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="identifier"></a>Property `Distribution > identifier`
+## <a name="identifier"></a>[Optional] Property `Distribution > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique identifier for the Distribution (e.g. DOI, ISBN)
 
@@ -557,9 +605,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                                             |
 | **Same definition as**    | [Identifier](#accessService_items_servesDataset_items_otherIdentifier_items) |
 
-## <a name="otherIdentifier"></a>Property `Distribution > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Distribution > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
@@ -581,9 +631,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                                             |
 | **Same definition as**    | [Identifier](#accessService_items_servesDataset_items_otherIdentifier_items) |
 
-## <a name="issued"></a>Property `Distribution > issued`
+## <a name="issued"></a>[Optional] Property `Distribution > issued`
 
 **Title:** release date
+
+**Requirement:** Optional
 
 The date of formal issuance (e.g., publication) of the Distribution
 
@@ -652,9 +704,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `Distribution > language`
+## <a name="language"></a>[Optional] Property `Distribution > language`
 
 **Title:** language
+
+**Requirement:** Optional
 
 A language or languages used in the Distribution. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
@@ -708,9 +762,11 @@ A language or languages used in the Distribution. This should be provided as an 
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>Property `Distribution > license`
+## <a name="license"></a>[Recommended] Property `Distribution > license`
 
 **Title:** license
+
+**Requirement:** Recommended
 
 The license under which the Distribution is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
 
@@ -737,9 +793,11 @@ Full text of the license
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>Property `Distribution > modified`
+## <a name="modified"></a>[Recommended] Property `Distribution > modified`
 
 **Title:** last modified
+
+**Requirement:** Recommended
 
 The most recent date on which the Distribution was changed or modified
 
@@ -808,9 +866,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="rights"></a>Property `Distribution > rights`
+## <a name="rights"></a>[Recommended] Property `Distribution > rights`
 
 **Title:** rights
+
+**Requirement:** Recommended
 
 A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
 
@@ -828,18 +888,22 @@ Full text of a statement of rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="title"></a>Property `Distribution > title`
+## <a name="title"></a>[Recommended] Property `Distribution > title`
 
 **Title:** title
+
+**Requirement:** Recommended
 
 A name given to the Distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="hasQualityMeasurement"></a>Property `Distribution > hasQualityMeasurement`
+## <a name="hasQualityMeasurement"></a>[Optional] Property `Distribution > hasQualityMeasurement`
 
 **Title:** quality measurement
+
+**Requirement:** Optional
 
 A list of quality measurements for the distribution
 
@@ -861,9 +925,11 @@ A single measurement of one metric
 | **Additional properties** | Any type allowed                                                                                        |
 | **Same definition as**    | [QualityMeasurement](#accessService_items_servesDataset_items_sample_items_hasQualityMeasurement_items) |
 
-## <a name="page"></a>Property `Distribution > page`
+## <a name="page"></a>[Optional] Property `Distribution > page`
 
 **Title:** documentation
+
+**Requirement:** Optional
 
 A page or document about this Distribution
 
@@ -885,9 +951,11 @@ Information about a text document
 | **Additional properties** | Any type allowed                                                             |
 | **Same definition as**    | [Document](#accessService_items_servesDataset_items_sample_items_page_items) |
 
-## <a name="image"></a>Property `Distribution > image`
+## <a name="image"></a>[Optional] Property `Distribution > image`
 
 **Title:** image
+
+**Requirement:** Optional
 
 A link to a thumbnail picture illustrating the content of the distribution
 
@@ -917,9 +985,11 @@ The link to the image
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="checksum"></a>Property `Distribution > checksum`
+## <a name="checksum"></a>[Optional] Property `Distribution > checksum`
 
 **Title:** checksum
+
+**Requirement:** Optional
 
 A mechanism that can be used to verify that the contents of a distribution have not changed
 

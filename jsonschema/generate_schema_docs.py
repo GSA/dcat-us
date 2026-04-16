@@ -83,7 +83,41 @@ def _wrapped_filter(old_filter, wrap_func):
     return _func_that_wraps
 
 
-def properties_table_wrap(properties_list):
+def _normalize_requirement_level(value):
+    """Return a normalized requirement level label."""
+    if not value:
+        return "Optional"
+
+    normalized = str(value).strip().lower()
+    if normalized == "mandatory":
+        return "Mandatory"
+    if normalized == "recommended":
+        return "Recommended"
+    return "Optional"
+
+
+def schema_requirement_level(schema):
+    """Template helper for property requirement level from oldDocs."""
+    keywords = getattr(schema, "keywords", None) or {}
+    old_docs = {}
+    if isinstance(keywords, dict):
+        old_docs_node = keywords.get("oldDocs")
+        if isinstance(old_docs_node, dict):
+            old_docs = old_docs_node
+        elif hasattr(old_docs_node, "keywords"):
+            old_docs = {
+                k: getattr(v, "literal", v) for k, v in old_docs_node.keywords.items()
+            }
+    return _normalize_requirement_level(old_docs.get("requirementLevel"))
+
+
+def requirement_badge(schema):
+    """Template helper that formats requirement level as an inline badge."""
+    requirement = schema_requirement_level(schema)
+    return f"[{requirement}]"
+
+
+def properties_table_wrap(properties_list, schema):
     """Edit the properties list for our preferred format.
 
     properties_list is a list of lists that will eventually be formatted
@@ -167,10 +201,17 @@ def generate_docs(output_dir):
     template_renderer = TemplateRenderer(final_config)
 
     # hack the rendering process
+    original_md_properties_table = template_renderer.template.environment.filters[
+        "md_properties_table"
+    ]
+    template_renderer.template.environment.filters["schema_requirement_level"] = (
+        schema_requirement_level
+    )
+    template_renderer.template.environment.filters["requirement_badge"] = requirement_badge
     template_renderer.template.environment.filters["md_properties_table"] = (
-        _wrapped_filter(
-            template_renderer.template.environment.filters["md_properties_table"],
-            properties_table_wrap,
+        lambda schema: properties_table_wrap(
+            original_md_properties_table(schema),
+            schema,
         )
     )
     template_renderer.template.environment.filters["md_type_info_table"] = (

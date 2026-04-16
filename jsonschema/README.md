@@ -41,8 +41,9 @@ jsonschema/
 ├── doc_templates/                # Templates for documentation generation
 ├── test_json_schema.py          # Validation test script
 ├── generate_schema_docs.py      # Documentation generator
-├── parse_old_docs.py            # DCAT-US HTML documentation parser
+├── parse_old_docs.py            # Historical one-time DCAT-US HTML metadata import
 ├── check_missing_olddocs.py     # Check for missing oldDocs sections
+├── check_requirement_levels.py  # Check/fix oldDocs requirement levels
 ├── check_undefined_fields.py    # Check for undefined fields in examples
 ├── create_null_examples.py      # Generate null-value test examples
 ├── pyproject.toml               # Python dependencies (Poetry)
@@ -91,6 +92,36 @@ This project uses [Poetry](https://python-poetry.org/) for Python dependency man
 
 **Python 3.13+** is required.
 
+### Install Poetry
+
+If Poetry is not already installed, use one of the following methods:
+
+```bash
+# Recommended
+pipx install poetry
+
+# Alternative installer from poetry.org
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+Verify installation:
+
+```bash
+poetry --version
+```
+
+### Configure Poetry Environment
+
+From this `jsonschema/` directory:
+
+```bash
+# Ensure Poetry uses Python 3.13+
+poetry env use python3.13
+
+# Confirm selected interpreter and virtual environment
+poetry env info
+```
+
 ### Install Dependencies
 
 ```bash
@@ -103,70 +134,126 @@ npm ci
 
 ## Available Scripts
 
-### Running Tests
+All repository scripts are listed below with a brief summary and usage.
 
-Validate all example files against their schemas:
+### test_json_schema.py
+
+Summary: Validates all `examples/{Class}/good` (must pass) and `examples/{Class}/bad` (must fail) against the schema registry.
 
 ```bash
 poetry run python test_json_schema.py
 ```
 
-The script will output results for each example:
+### generate_schema_docs.py
 
-```
-PASS: Agent/good/complete_example.json
-PASS: Agent/bad/missing_required_name.json
-
-All tests passed
-```
-
-### Generate Documentation
-
-Generate markdown documentation from the JSON schema files:
+Summary: Generates Markdown schema documentation in `docs/` from the JSON Schema files.
 
 ```bash
 # Generate docs
 poetry run python generate_schema_docs.py
 
-# Check if docs are up to date (useful for CI)
+# Check if generated docs are up to date (CI-friendly)
 poetry run python generate_schema_docs.py --check
+
+# Show CLI help
+poetry run python generate_schema_docs.py --help
 ```
 
-### Parse Old Documentation
+### parse_old_docs.py
 
-Parse the DCAT-US HTML documentation and add `oldDocs` metadata to schemas:
+Summary: Historical bootstrap script that imported `oldDocs` metadata from the legacy DCAT-US HTML documentation.
+
+Note: This was effectively a one-time import step. The imported metadata was manually corrected and refined in this repository afterward, so re-running the parser is not a meaningful validation step and its output should not be used as a test oracle.
+
+For ongoing validation of `oldDocs`, use:
+
+- `poetry run python check_missing_olddocs.py`
+- `poetry run python check_requirement_levels.py`
+- `poetry run python check_example_coverage.py`
 
 ```bash
-# Preview changes without modifying files
+# Historical preview only
 poetry run python parse_old_docs.py --dry-run --verbose
 
-# Apply changes
+# Historical import/apply mode
 poetry run python parse_old_docs.py
+
+# Show CLI help
+poetry run python parse_old_docs.py --help
 ```
 
-### Check for Missing oldDocs
+### check_missing_olddocs.py
 
-Report schema properties that don't have `oldDocs` sections:
+Summary: Reports schema properties missing `oldDocs` metadata.
 
 ```bash
 poetry run python check_missing_olddocs.py
 ```
 
-### Check for Undefined Fields
+Note: This script does not expose a dedicated `--help` interface; running it executes the check.
 
-Validate that example files only use fields defined in their schemas:
+### check_requirement_levels.py
+
+Summary: Compares `oldDocs.requirementLevel` against schema `required` fields and optionally fixes mismatches.
+
+```bash
+# Report mismatches
+poetry run python check_requirement_levels.py
+
+# Apply automatic fixes
+poetry run python check_requirement_levels.py --fix
+
+# Show CLI help
+poetry run python check_requirement_levels.py --help
+```
+
+### check_undefined_fields.py
+
+Summary: Verifies that example JSON files only use fields defined by their schema.
 
 ```bash
 poetry run python check_undefined_fields.py
 ```
 
-### Generate Null Examples
+Note: This script does not expose a dedicated `--help` interface; running it executes the check.
 
-Create test examples with `null` values for all non-required properties:
+### create_null_examples.py
+
+Summary: Generates `null_example.json` files with required starter fields plus nullable optional fields.
 
 ```bash
 poetry run python create_null_examples.py
 ```
+
+Note: This script does not support `--help`; passing flags will still run generation logic.
+
+### check_example_coverage.py
+
+Summary: Checks whether good typical/complete examples include fields marked Mandatory or Recommended in `oldDocs`.
+
+```bash
+# Coverage check
+poetry run python check_example_coverage.py
+
+# Verbose output
+poetry run python check_example_coverage.py --verbose
+
+# Show CLI help
+poetry run python check_example_coverage.py --help
+```
+
+### Script Help Verification
+
+The following commands were tested in this repository using Poetry:
+
+- `poetry run python generate_schema_docs.py --help` (works)
+- `poetry run python parse_old_docs.py --help` (works; historical/bootstrap script, not part of routine validation)
+- `poetry run python check_requirement_levels.py --help` (works)
+- `poetry run python check_example_coverage.py --help` (works)
+- `poetry run python check_missing_olddocs.py --help` (no help interface; runs check)
+- `poetry run python check_undefined_fields.py --help` (no help interface; runs check)
+- `poetry run python create_null_examples.py --help` (not supported; script executes)
+- `poetry run python test_json_schema.py --help` (not supported; script executes test suite)
 
 ## Adding New Test Examples
 
@@ -277,7 +364,17 @@ Each schema and property can include an `oldDocs` object containing metadata ext
 - `cardinality` - Allowed occurrences (e.g., `1..n`, `0..1`)
 - `range` - Expected value type
 
-To update `oldDocs` metadata from the latest HTML documentation:
+The repository originally seeded `oldDocs` metadata from the legacy DCAT-US HTML documentation using `parse_old_docs.py`. That import was a one-time bootstrap step, and the resulting metadata has since been manually updated in places.
+
+Because of that, `parse_old_docs.py` should not be treated as a regression test or as a source of truth for current schema metadata. A dry run is expected to report differences.
+
+For current validation, use:
+
+- `poetry run python check_missing_olddocs.py`
+- `poetry run python check_requirement_levels.py`
+- `poetry run python check_example_coverage.py`
+
+If you need to inspect the historical importer behavior, you can still run:
 
 ```bash
 poetry run python parse_old_docs.py
