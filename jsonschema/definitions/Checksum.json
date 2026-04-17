@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/checksums/dataset-001-sha256" ]
+      "examples": ["https://example.gov/checksums/dataset-001-sha256"]
     },
     "@type": {
       "type": "string",
@@ -23,7 +23,7 @@
         "uri": "spdx:algorithm",
         "range": "spdx:ChecksumAlgorithm"
       },
-      "examples": [ "SHA-256" ]
+      "examples": ["SHA-256"]
     },
     "checksumValue": {
       "title": "checksum value",
@@ -40,7 +40,7 @@
       ]
     }
   },
-  "required": [ "algorithm", "checksumValue" ],
+  "required": ["algorithm", "checksumValue"],
   "_oldDocs": {
     "rdfClass": "spdx:Checksum",
     "rationale": "Introducing the spdx:Checksum class in DCAT-US bolsters data integrity and trust by ensuring datasets remain unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools."

@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/periods/fiscal-year-2024" ]
+      "examples": ["https://example.gov/periods/fiscal-year-2024"]
     },
     "@type": {
       "type": "string",
@@ -50,7 +50,7 @@
         "uri": "dcat:endDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-12-31", "2024-09-30" ]
+      "examples": ["2024-12-31", "2024-09-30"]
     },
     "startDate": {
       "title": "start date",
@@ -88,15 +88,15 @@
         "uri": "dcat:startDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-01-01", "2023-10-01" ]
+      "examples": ["2024-01-01", "2023-10-01"]
     }
   },
   "anyOf": [
     {
-      "required": [ "startDate" ]
+      "required": ["startDate"]
     },
     {
-      "required": [ "endDate" ]
+      "required": ["endDate"]
     }
   ],
   "_oldDocs": {

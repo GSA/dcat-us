@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/contacts/climate-support-001" ]
+      "examples": ["https://example.gov/contacts/climate-support-001"]
     },
     "@type": {
       "type": "string",
@@ -17,7 +17,7 @@
     "address": {
       "title": "address",
       "description": "The address of the contact",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/address"
       },
@@ -45,13 +45,13 @@
     "family-name": {
       "title": "family name",
       "description": "The family name of the contact",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:family-name",
         "range": "xsd:string"
       },
-      "examples": [ "Smith" ]
+      "examples": ["Smith"]
     },
     "fn": {
       "title": "formatted name",
@@ -62,54 +62,54 @@
         "uri": "vcard:fn",
         "range": "xsd:string"
       },
-      "examples": [ "Climate Data Support Team", "Dr. Jane Smith" ]
+      "examples": ["Climate Data Support Team", "Dr. Jane Smith"]
     },
     "given-name": {
       "title": "given name",
       "description": "The given name of the contact",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:given-name",
         "range": "xsd:string"
       },
-      "examples": [ "Jane" ]
+      "examples": ["Jane"]
     },
     "organization-name": {
       "title": "organization name",
       "description": "The name of the organization to contact",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:organization-name",
         "range": "xsd:string"
       },
-      "examples": [ "National Climate Data Center" ]
+      "examples": ["National Climate Data Center"]
     },
     "tel": {
       "title": "telephone",
       "description": "The telephone number for the contact",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:tel",
         "range": "rdfs:Resource"
       },
-      "examples": [ "+1-555-123-4567" ]
+      "examples": ["+1-555-123-4567"]
     },
     "title": {
       "title": "position title",
       "description": "The position role of the person to contact",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "vcard:title",
         "range": "xsd:string"
       },
-      "examples": [ "Senior Climate Data Scientist" ]
+      "examples": ["Senior Climate Data Scientist"]
     }
   },
-  "required": [ "hasEmail", "fn" ],
+  "required": ["hasEmail", "fn"],
   "_oldDocs": {
     "rdfClass": "vcard:Kind",
     "rationale": "The introduction of vcard:Kind in DCAT-US 3.0 is driven by the need for standardized, reliable, and interoperable Point of Contact information, ultimately improving the accessibility and usability of data resources within the DCAT-US ecosystem."

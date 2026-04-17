@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/metrics/record-completeness" ]
+      "examples": ["https://example.gov/metrics/record-completeness"]
     },
     "@type": {
       "type": "string",
@@ -23,7 +23,7 @@
         "uri": "dqv:expectedDataType",
         "range": "xsd:anySimpleType"
       },
-      "examples": [ "xsd:decimal", "xsd:double" ]
+      "examples": ["xsd:decimal", "xsd:double"]
     },
     "inDimension": {
       "title": "in dimension",
@@ -42,7 +42,7 @@
     "definition": {
       "title": "definition",
       "description": "Definition of the metric.",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "skos:definition",
@@ -54,7 +54,7 @@
       ]
     }
   },
-  "required": [ "expectedDataType", "inDimension" ],
+  "required": ["expectedDataType", "inDimension"],
   "_oldDocs": {
     "rdfClass": "dqv:Metric",
     "rationale": "Introducing dqv:Metric in the DCAT-US profile enhances dataset quality assessment and management by aligning with international data quality standards. It allows data publishers to systematically define and communicate dataset quality characteristics, promoting transparency and informed data utilization, fostering trust, and supporting responsible data sharing within the DCAT-US ecosystem."

@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/locations/washington-dc" ]
+      "examples": ["https://example.gov/locations/washington-dc"]
     },
     "@type": {
       "type": "string",
@@ -37,7 +37,7 @@
               "const": "Polygon"
             }
           },
-          "required": [ "type", "coordinates" ]
+          "required": ["type", "coordinates"]
         }
       ],
       "_oldDocs": {
@@ -51,11 +51,11 @@
           "type": "Polygon",
           "coordinates": [
             [
-              [ -77.119759, 38.791645 ],
-              [ -76.909393, 38.791645 ],
-              [ -76.909393, 38.99538 ],
-              [ -77.119759, 38.99538 ],
-              [ -77.119759, 38.791645 ]
+              [-77.119759, 38.791645],
+              [-76.909393, 38.791645],
+              [-76.909393, 38.99538],
+              [-77.119759, 38.99538],
+              [-77.119759, 38.791645]
             ]
           ]
         }
@@ -89,7 +89,7 @@
               "const": "Point"
             }
           },
-          "required": [ "type", "coordinates" ]
+          "required": ["type", "coordinates"]
         }
       ],
       "_oldDocs": {
@@ -100,7 +100,7 @@
       "examples": [
         {
           "type": "Point",
-          "coordinates": [ -77.0369, 38.9072 ]
+          "coordinates": [-77.0369, 38.9072]
         }
       ]
     },
@@ -125,7 +125,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -147,7 +147,7 @@
         {
           "type": "object",
           "description": "Geometry represented in GeoJSON format",
-          "required": [ "type", "coordinates" ]
+          "required": ["type", "coordinates"]
         }
       ],
       "_oldDocs": {
@@ -160,17 +160,17 @@
           "type": "Polygon",
           "coordinates": [
             [
-              [ -77.0402, 38.7916 ],
-              [ -76.9094, 38.8921 ],
-              [ -76.9115, 38.9355 ],
-              [ -76.9286, 38.9784 ],
-              [ -77.0024, 38.9657 ],
-              [ -77.0389, 38.9939 ],
-              [ -77.0672, 38.9687 ],
-              [ -77.0782, 38.9143 ],
-              [ -77.1198, 38.9342 ],
-              [ -77.1198, 38.8456 ],
-              [ -77.0402, 38.7916 ]
+              [-77.0402, 38.7916],
+              [-76.9094, 38.8921],
+              [-76.9115, 38.9355],
+              [-76.9286, 38.9784],
+              [-77.0024, 38.9657],
+              [-77.0389, 38.9939],
+              [-77.0672, 38.9687],
+              [-77.0782, 38.9143],
+              [-77.1198, 38.9342],
+              [-77.1198, 38.8456],
+              [-77.0402, 38.7916]
             ]
           ]
         }
@@ -197,25 +197,25 @@
     "altLabel": {
       "title": "alternative name",
       "description": "An alternative label or name for a location",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "range": "rdfs:Literal"
       },
-      "examples": [ "DC" ]
+      "examples": ["DC"]
     },
     "prefLabel": {
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "range": "rdfs:Literal"
       },
-      "examples": [ "Continental United States", "Washington, D.C." ]
+      "examples": ["Continental United States", "Washington, D.C."]
     }
   },
-  "required": [ ],
+  "required": [],
   "_oldDocs": {
     "rdfClass": "dcterms:Location",
     "rationale": "The introduction of dcterms:Location in DCAT-US 3.0 is driven by the need to restore compatibility with the DCAT standard. DCAT-US 1.1 had deviated from the standard by using strings for location in dcterms:spatial property, which was incompatible. This addition aligns DCAT-US with recognized geospatial standards (e.g., Geosparql, WKT, GeoJSON, W3C Location) for representing geometries, addresses, and location names, ensuring data compatibility, discoverability, and integration while adhering to international data management practices."

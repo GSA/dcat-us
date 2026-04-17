@@ -23,12 +23,12 @@
         "altLabel": {
           "title": "alternate label",
           "description": "Alternative label for a concept",
-          "type": [ "null", "string" ]
+          "type": ["null", "string"]
         },
         "definition": {
           "title": "definition",
           "description": "Definition of the controlled vocabulary term",
-          "type": [ "null", "string" ]
+          "type": ["null", "string"]
         },
         "inScheme": {
           "title": "in scheme",
@@ -56,7 +56,7 @@
           "type": "string"
         }
       },
-      "required": [ "prefLabel" ]
+      "required": ["prefLabel"]
     }
   ],
   "_oldDocs": {

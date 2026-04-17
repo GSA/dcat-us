@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/standards/dcat-us-3" ]
+      "examples": ["https://example.gov/standards/dcat-us-3"]
     },
     "@type": {
       "type": "string",
@@ -51,12 +51,12 @@
         "uri": "dcterms:created",
         "range": "xsd:date"
       },
-      "examples": [ "2023-01-01" ]
+      "examples": ["2023-01-01"]
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the standard",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
@@ -89,7 +89,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -134,7 +134,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-01-15" ]
+      "examples": ["2024-01-15"]
     },
     "modified": {
       "title": "last modified",
@@ -173,12 +173,12 @@
         "uri": "dcterms:modified",
         "range": "xsd:date"
       },
-      "examples": [ "2024-06-01" ]
+      "examples": ["2024-06-01"]
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the standard",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
@@ -192,7 +192,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Standard",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -220,7 +220,7 @@
       }
     }
   },
-  "required": [ ],
+  "required": [],
   "_oldDocs": {
     "rdfClass": "dcterms:Standard",
     "rationale": "The inclusion of dcterms:Standard in DCAT-US accommodates standard references through URLs or custom, detailed descriptions when specific standards are not available, promoting flexibility and completeness in resource metadata."

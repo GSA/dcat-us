@@ -25,7 +25,7 @@
         "uri": "dcat:hadRole",
         "range": "dcat:Role"
       },
-      "examples": [ "isInputTo", "dataProvider" ]
+      "examples": ["isInputTo", "dataProvider"]
     },
     "relation": {
       "title": "relation",
@@ -42,7 +42,7 @@
       ]
     }
   },
-  "required": [ "hadRole", "relation" ],
+  "required": ["hadRole", "relation"],
   "_oldDocs": {
     "rdfClass": "dcat:Relationship",
     "rationale": "The introduction of dcat:Relationship in DCAT-US serves to enhance the representation and description of relationships between datasets and other resources. This class allows for the attachment of additional information to relationships that are not adequately characterized by standard properties, promoting a more comprehensive understanding of dataset connections. By accommodating nuanced relationship types beyond existing standards like [[DCTERMS]] and [[PROV-O]] properties, DCAT-US ensures greater flexibility and precision in documenting dataset relationships, facilitating more informed data discovery and utilization."

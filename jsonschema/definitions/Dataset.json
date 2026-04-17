@@ -19,7 +19,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -32,7 +32,7 @@
     "sample": {
       "title": "sample",
       "description": "List of sample distributions for the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -81,13 +81,13 @@
     "versionNotes": {
       "title": "version notes",
       "description": "Notes describing how this version differs from earlier versions of the dataset",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:versionNotes",
         "range": "rdfs:Literal"
       },
-      "examples": [ "Initial release of 2024 climate observations data." ]
+      "examples": ["Initial release of 2024 climate observations data."]
     },
     "contactPoint": {
       "title": "contact point",
@@ -114,7 +114,7 @@
     "distribution": {
       "title": "dataset distribution",
       "description": "List of available distributions for the dataset. This can be omitted when no distribution is available yet.",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -161,7 +161,7 @@
     "hasVersion": {
       "title": "has version",
       "description": "List of related Datasets that are a version, edition, or adaptation of the described Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -172,7 +172,7 @@
     "inSeries": {
       "title": "in series",
       "description": "Dataset series this dataset belongs to",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
       },
@@ -185,7 +185,7 @@
     "keyword": {
       "title": "keyword/tag",
       "description": "List of keywords or tags describing the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "title": "Non-empty string",
         "type": "string",
@@ -197,7 +197,7 @@
         "range": "rdfs:Literal"
       },
       "examples": [
-        [ "climate", "weather", "temperature", "precipitation" ],
+        ["climate", "weather", "temperature", "precipitation"],
         [
           "climate",
           "weather",
@@ -248,7 +248,7 @@
     "qualifiedRelation": {
       "title": "qualified relation",
       "description": "Detailed relationship between the dataset and another resource, including the role of that relationship",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/relationship"
       },
@@ -261,29 +261,29 @@
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "Smallest spatial distance between data points, in meters, represented as a single value",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal (typed as xsd:decimal)"
       },
-      "examples": [ "1000" ]
+      "examples": ["1000"]
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "Smallest time interval between data points, using xsd:duration format (for example, P1D)",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal (typed as xsd:duration)"
       },
-      "examples": [ "P1D" ]
+      "examples": ["P1D"]
     },
     "theme": {
       "title": "theme/category",
       "description": "List of themes or categories for the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -296,13 +296,13 @@
     "version": {
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:version",
         "range": "rdfs:Literal"
       },
-      "examples": [ "2024.1" ]
+      "examples": ["2024.1"]
     },
     "describedBy": {
       "title": "data dictionary",
@@ -348,7 +348,7 @@
     "metadataDistribution": {
       "title": "metadata distribution",
       "description": "Distribution of the original metadata document this dataset was derived from",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
@@ -361,7 +361,7 @@
     "purpose": {
       "title": "purpose",
       "description": "The purpose of the dataset",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:purpose",
@@ -454,12 +454,12 @@
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency"
       },
-      "examples": [ "daily" ]
+      "examples": ["daily"]
     },
     "conformsTo": {
       "title": "conforms to",
       "description": "List of standards, schemas, or profiles the dataset follows",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -472,7 +472,7 @@
     "contributor": {
       "title": "contributor",
       "description": "List of agents contributing to the Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -517,7 +517,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional"
       },
-      "examples": [ "2024-01-01" ]
+      "examples": ["2024-01-01"]
     },
     "creator": {
       "title": "creator",
@@ -555,7 +555,7 @@
     "hasPart": {
       "title": "has part",
       "description": "List of related datasets that are part of the described dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -585,7 +585,7 @@
     "isReferencedBy": {
       "title": "is referenced by",
       "description": "List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "title": "Link",
@@ -597,7 +597,7 @@
         "uri": "dcterms:isReferencedBy",
         "range": "rdfs:Resource"
       },
-      "examples": [ [ "https://example.gov/publications/climate-trends-2024" ] ]
+      "examples": [["https://example.gov/publications/climate-trends-2024"]]
     },
     "issued": {
       "title": "release date",
@@ -636,7 +636,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-01-15" ]
+      "examples": ["2024-01-15"]
     },
     "language": {
       "title": "language",
@@ -666,7 +666,7 @@
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [ [ "en" ] ]
+      "examples": [["en"]]
     },
     "modified": {
       "title": "last modified",
@@ -705,12 +705,12 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-06-01" ]
+      "examples": ["2024-06-01"]
     },
     "provenance": {
       "title": "provenance",
       "description": "List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of the provenance statement"
@@ -740,7 +740,7 @@
     "relation": {
       "title": "related resource",
       "description": "List of links to related resources when the relationship is not otherwise specified",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "title": "Link",
@@ -752,12 +752,12 @@
         "uri": "dcterms:relation",
         "range": "rdfs:Resource"
       },
-      "examples": [ [ "https://example.gov/datasets/historical-climate-averages" ] ]
+      "examples": [["https://example.gov/datasets/historical-climate-averages"]]
     },
     "replaces": {
       "title": "replaces",
       "description": "List of Datasets replaced by this Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -768,7 +768,7 @@
     "rights": {
       "title": "rights",
       "description": "Rights statements not already covered by license or accessRights, such as copyright or policy restrictions",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -790,7 +790,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of agents (organizations) holding rights on the Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -801,7 +801,7 @@
     "source": {
       "title": "data source",
       "description": "List of related Datasets from which the described Dataset is derived",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -840,7 +840,7 @@
     "subject": {
       "title": "subject",
       "description": "List of primary subjects for the dataset, usually narrower than broad theme categories",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -853,7 +853,7 @@
     "temporal": {
       "title": "temporal coverage",
       "description": "Time periods covered by the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
@@ -880,7 +880,7 @@
     "category": {
       "title": "category",
       "description": "List of high-level categories for the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -893,7 +893,7 @@
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -906,7 +906,7 @@
     "page": {
       "title": "documentation",
       "description": "List of pages or documents about this dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
@@ -919,7 +919,7 @@
     "qualifiedAttribution": {
       "title": "qualified attribution",
       "description": "List of agents with specific responsibilities for the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
@@ -932,7 +932,7 @@
     "wasAttributedTo": {
       "title": "attribution",
       "description": "List of agents attributed to this dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -943,7 +943,7 @@
     "wasGeneratedBy": {
       "title": "was generated by",
       "description": "List of activities that generated, or provide the business context for the creation of the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
@@ -956,7 +956,7 @@
     "wasUsedBy": {
       "title": "used by",
       "description": "List of activities that used the Dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
@@ -988,7 +988,7 @@
     "scopeNote": {
       "title": "usage note",
       "description": "usage note for the dataset",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:scopeNote"
@@ -1023,7 +1023,7 @@
       "publisher": {
         "name": "National Climate Data Center"
       },
-      "keyword": [ "climate", "weather", "temperature", "precipitation" ],
+      "keyword": ["climate", "weather", "temperature", "precipitation"],
       "issued": "2024-01-15",
       "modified": "2024-06-01",
       "accrualPeriodicity": "daily",
@@ -1045,16 +1045,16 @@
           "type": "Polygon",
           "coordinates": [
             [
-              [ -125.0, 24.0 ],
-              [ -66.0, 24.0 ],
-              [ -66.0, 50.0 ],
-              [ -125.0, 50.0 ],
-              [ -125.0, 24.0 ]
+              [-125.0, 24.0],
+              [-66.0, 24.0],
+              [-66.0, 50.0],
+              [-125.0, 50.0],
+              [-125.0, 24.0]
             ]
           ]
         }
       },
-      "theme": [ "Climate Science" ],
+      "theme": ["Climate Science"],
       "distribution": [
         {
           "title": "Climate Data CSV",

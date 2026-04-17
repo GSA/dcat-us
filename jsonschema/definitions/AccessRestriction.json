@@ -16,13 +16,13 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "A note related to the access restriction",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal"
       },
-      "examples": [ "Access restricted to authorized personnel only." ]
+      "examples": ["Access restricted to authorized personnel only."]
     },
     "restrictionStatus": {
       "title": "restriction status",
@@ -54,7 +54,7 @@
       }
     }
   },
-  "required": [ "restrictionStatus" ],
+  "required": ["restrictionStatus"],
   "_oldDocs": {
     "rdfClass": "dcat-us:AccessRestriction",
     "rationale": "The \"AccessRestriction\" class in the DCAT-US application profile is essential for categorizing and managing access restrictions according to NARA standards, ensuring responsible access to sensitive historical records. It enhances transparency, aiding researchers and authorized users in understanding and navigating access parameters for archived materials."

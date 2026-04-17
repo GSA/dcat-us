@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/attributions/dataset-steward-001" ]
+      "examples": ["https://example.gov/attributions/dataset-steward-001"]
     },
     "@type": {
       "type": "string",
@@ -23,7 +23,7 @@
         "uri": "dcat:hadRole",
         "range": "dcat:Role"
       },
-      "examples": [ "Data Steward" ]
+      "examples": ["Data Steward"]
     },
     "agent": {
       "title": "agent",
@@ -36,7 +36,7 @@
       }
     }
   },
-  "required": [ "hadRole", "agent" ],
+  "required": ["hadRole", "agent"],
   "_oldDocs": {
     "rdfClass": "prov:Attribution",
     "rationale": "The inclusion of prov:Attribution in the DCAT profile enables clear data source attribution, promoting responsible data sharing and proper citation practices. It aligns the profile with data provenance best practices for accurate attribution in data sharing."

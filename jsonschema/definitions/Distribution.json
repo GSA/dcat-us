@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/distributions/climate-data-csv-001" ]
+      "examples": ["https://example.gov/distributions/climate-data-csv-001"]
     },
     "@type": {
       "type": "string",
@@ -74,12 +74,12 @@
         "uri": "cnt:characterEncoding",
         "range": "rdfs:Literal"
       },
-      "examples": [ [ "UTF-8" ] ]
+      "examples": [["UTF-8"]]
     },
     "accessService": {
       "title": "access service",
       "description": "A data service that gives access to the distribution of the dataset",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
@@ -117,24 +117,24 @@
     "byteSize": {
       "title": "byte size",
       "description": "The size of a Distribution in bytes",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:byteSize",
         "range": "xsd:nonNegativeInteger"
       },
-      "examples": [ "52428800", "15728640" ]
+      "examples": ["52428800", "15728640"]
     },
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:compressFormat",
         "range": "dcterms:MediaType"
       },
-      "examples": [ "application/gzip" ]
+      "examples": ["application/gzip"]
     },
     "downloadURL": {
       "title": "download URL",
@@ -164,46 +164,46 @@
     "mediaType": {
       "title": "media type",
       "description": "MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:mediaType",
         "range": "dcterms:MediaType"
       },
-      "examples": [ "text/csv" ]
+      "examples": ["text/csv"]
     },
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:packageFormat",
         "range": "dcterms:MediaType"
       },
-      "examples": [ "application/zip" ]
+      "examples": ["application/zip"]
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "xsd:decimal"
       },
-      "examples": [ "1000" ]
+      "examples": ["1000"]
     },
     "temporalResolution": {
       "title": "termporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "xsd:duration"
       },
-      "examples": [ "P1D" ]
+      "examples": ["P1D"]
     },
     "availability": {
       "title": "availability",
@@ -225,7 +225,7 @@
     "accessRestriction": {
       "title": "access restriction",
       "description": "List of access restrictions related to the distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       },
@@ -276,7 +276,7 @@
     "useRestriction": {
       "title": "use restriction",
       "description": "Use restriction related to the distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       },
@@ -304,12 +304,12 @@
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement"
       },
-      "examples": [ "Public access without restrictions" ]
+      "examples": ["Public access without restrictions"]
     },
     "conformsTo": {
       "title": "linked schemas",
       "description": "List of standards, schemas, or reference systems the Distribution follows (prefer stable URIs when available)",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
@@ -322,7 +322,7 @@
     "description": {
       "title": "description",
       "description": "Plain-language summary of the distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
@@ -336,13 +336,13 @@
     "format": {
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:format",
         "range": "dcterms:MediaType"
       },
-      "examples": [ "CSV" ]
+      "examples": ["CSV"]
     },
     "identifier": {
       "title": "identifier",
@@ -366,7 +366,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -411,7 +411,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2023-06-01" ]
+      "examples": ["2023-06-01"]
     },
     "language": {
       "title": "language",
@@ -441,7 +441,7 @@
         "uri": "dcterms:language",
         "range": "rdfs:Literal"
       },
-      "examples": [ [ "en" ] ]
+      "examples": [["en"]]
     },
     "license": {
       "title": "license",
@@ -461,7 +461,7 @@
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument"
       },
-      "examples": [ "https://creativecommons.org/publicdomain/zero/1.0/" ]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
     },
     "modified": {
       "title": "last modified",
@@ -500,12 +500,12 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [ "2024-06-01", "2024-01-15" ]
+      "examples": ["2024-06-01", "2024-01-15"]
     },
     "rights": {
       "title": "rights",
       "description": "Rights statements not already covered by license or accessRights, such as copyright or policy restrictions",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -516,7 +516,7 @@
         "range": "dcterms:RightsStatement"
       },
       "examples": [
-        [ "No rights reserved. This data is in the public domain." ],
+        ["No rights reserved. This data is in the public domain."],
         [
           "This data is in the public domain and may be used without restriction."
         ]
@@ -525,18 +525,18 @@
     "title": {
       "title": "title",
       "description": "Human-readable title of the distribution",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": [ "Climate Data CSV", "Climate Data CSV Distribution" ]
+      "examples": ["Climate Data CSV", "Climate Data CSV Distribution"]
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
       "description": "Quality measurements for the distribution (for example, completeness, accuracy, or timeliness)",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
@@ -549,7 +549,7 @@
     "page": {
       "title": "documentation",
       "description": "A page or document about this Distribution",
-      "type": [ "null", "array" ],
+      "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
@@ -600,7 +600,7 @@
       }
     }
   },
-  "required": [ ],
+  "required": [],
   "_oldDocs": {
     "rdfClass": "dcat:Distribution",
     "rationale": "The update to DCAT 3 dcat:Distribution is of paramount significance as it greatly enhances data accessibility. It introduces a more comprehensive and structured approach to describing data distributions, ensuring that data consumers can easily understand and access the data in the format that best suits their needs, ultimately fostering greater data utilization and dissemination.",
@@ -618,7 +618,7 @@
       "byteSize": "52428800",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "modified": "2024-06-01",
-      "rights": [ "No rights reserved. This data is in the public domain." ],
+      "rights": ["No rights reserved. This data is in the public domain."],
       "describedBy": {
         "@type": "Standard",
         "title": "CSV Data Dictionary",
