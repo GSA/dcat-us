@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/userestriction",
   "title": "UseRestriction",
-  "description": "A restriction on usage of another item",
+  "description": "Rules or legal limits on how a resource may be used",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": ["https://example.gov/restrictions/use-restriction-001"]
+      "examples": [ "https://example.gov/restrictions/use-restriction-001" ]
     },
     "@type": {
       "type": "string",
@@ -17,12 +17,11 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "Significant information pertaining to the use or reproduction of the data",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
-        "range": "rdfs:Literal",
-        "definition": "Significant information pertaining to the use or reproduction of the data."
+        "range": "rdfs:Literal"
       },
       "examples": [
         "This data may be used for any purpose without restriction.",
@@ -36,13 +35,12 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat-us:restrictionStatus",
-        "range": "skos:Concept",
-        "definition": "Indication of whether or not there are use restrictions on the archival materials"
+        "range": "skos:Concept"
       }
     },
     "specificRestriction": {
       "title": "specific restriction",
-      "description": "The specific NARA restriction associated with the use restriction",
+      "description": "Authority, code list entry, or policy reference that defines the specific use restriction",
       "anyOf": [
         {
           "type": "null",
@@ -56,16 +54,13 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:specificRestriction",
-        "range": "skos:Concept",
-        "definition": "The identification of the type of use restrictions, based on copyright, donor, or statutory provisions, on the archival materials."
+        "range": "skos:Concept"
       }
     }
   },
-  "required": ["restrictionStatus"],
+  "required": [ "restrictionStatus" ],
   "_oldDocs": {
     "rdfClass": "dcat-us:UseRestriction",
-    "definition": "A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.",
-    "usageNote": "When utilizing the dcat-us:UseRestriction class, data publishers are encouraged to provide comprehensive and precise details regarding the specific use restrictions applied to a resource. This may include information on access limitations, distribution rules, reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA guidelines and standards should be a priority when defining use restrictions, ensuring that data resources align with archival and preservation practices. By offering clear and concise use restriction information, data consumers can make informed decisions about the utilization of these resources while complying with NARA's requirements.",
     "rationale": "The introduction of dcat-us:UseRestriction in DCAT-US 3.0, aligned with NARA (National Archives and Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data management practices within the DCAT-US framework."
   },
   "examples": [

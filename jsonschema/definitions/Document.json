@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/document",
   "title": "Document",
-  "description": "Information about a text document",
+  "description": "A publication or other document related to a resource",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": ["https://example.gov/documents/climate-user-guide-001"]
+      "examples": [ "https://example.gov/documents/climate-user-guide-001" ]
     },
     "@type": {
       "type": "string",
@@ -32,7 +32,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional"
       },
-      "examples": ["https://example.gov/docs/climate-user-guide"]
+      "examples": [ "https://example.gov/docs/climate-user-guide" ]
     },
     "downloadURL": {
       "title": "download URL",
@@ -52,12 +52,12 @@
       "_oldDocs": {
         "requirementLevel": "Optional"
       },
-      "examples": ["https://example.gov/docs/climate-user-guide.pdf"]
+      "examples": [ "https://example.gov/docs/climate-user-guide.pdf" ]
     },
     "creator": {
       "title": "author",
       "description": "The individual(s) responsible for creating the Document",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
@@ -70,19 +70,18 @@
     "mediaType": {
       "title": "media type",
       "description": "The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:mediaType",
-        "range": "dcterms:MediaType",
-        "usageNote": "An implementing rule or other specification."
+        "range": "dcterms:MediaType"
       },
-      "examples": ["application/pdf"]
+      "examples": [ "application/pdf" ]
     },
     "abstract": {
       "title": "abstract",
       "description": "Text abstract of the Document",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:abstract",
@@ -95,7 +94,7 @@
     "bibliographicCitation": {
       "title": "bibliographic citation",
       "description": "Bibliographic citation as text",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:bibliographicCitation",
@@ -108,22 +107,21 @@
     },
     "conformsTo": {
       "title": "conforms to",
-      "description": "List of standards that the Document conforms to",
-      "type": ["null", "array"],
+      "description": "List of standards or specifications the document follows",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
-        "range": "dcterms:Standard",
-        "usageNote": "An implementing rule or other specification."
+        "range": "dcterms:Standard"
       }
     },
     "corporateCreator": {
       "title": "corporate author",
       "description": "The corporate organization(s) responsible for creating the Document",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -133,13 +131,12 @@
     },
     "description": {
       "title": "description",
-      "description": "A free-text account of the Document",
-      "type": ["null", "string"],
+      "description": "Plain-language summary of the document",
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
-        "range": "rdfs:Literal",
-        "definition": "Description of the document."
+        "range": "rdfs:Literal"
       },
       "examples": [
         "A guide for accessing and using the National Climate Data Center's data products.",
@@ -168,7 +165,7 @@
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -212,20 +209,19 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal"
       },
-      "examples": ["2024-03-15", "2024-01-15"]
+      "examples": [ "2024-03-15", "2024-01-15" ]
     },
     "publisher": {
       "title": "publisher",
       "description": "The organization(s) that published the Document",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dc:publisher",
-        "range": "rdfs:Literal",
-        "usageNote": "Use this property to represent publisher as literal string and not structured data."
+        "range": "rdfs:Literal"
       }
     },
     "title": {
@@ -237,12 +233,12 @@
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Climate Data User Guide"]
+      "examples": [ "Climate Data User Guide" ]
     },
     "category": {
       "title": "category",
       "description": "List of categories/genres for the Document",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -251,11 +247,9 @@
       }
     }
   },
-  "required": ["title"],
+  "required": [ "title" ],
   "_oldDocs": {
     "rdfClass": "foaf:Document",
-    "definition": "A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.",
-    "usageNote": "Depending on whether a catalog supports or not publications as first-class citizens, a publication can be fully described, or simply denoted by its URI.",
     "rationale": "The introduction of foaf:Document significantly improves the representation of documents within the DCAT-US profile. It ensures that metadata about documents, such as title, format, language, and access options, are clearly defined and standardized. This alignment with global data standards fosters interoperability and eases document integration into various data ecosystems, benefiting both publishers and consumers."
   },
   "examples": [

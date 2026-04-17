@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/relationship",
   "title": "Relationship",
-  "description": "Information about an item or entity that has some relationship to a dataset and the nature of the relationship",
+  "description": "Additional information about how one resource is related to another",
   "type": "object",
   "properties": {
     "@id": {
@@ -23,10 +23,9 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:hadRole",
-        "range": "dcat:Role",
-        "definition": "The function of an entity or agent with respect to another entity or resource."
+        "range": "dcat:Role"
       },
-      "examples": ["isInputTo", "dataProvider"]
+      "examples": [ "isInputTo", "dataProvider" ]
     },
     "relation": {
       "title": "relation",
@@ -35,7 +34,7 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:relation",
-        "definition": "The resource related to the source resource."
+        "range": "rdfs:Resource"
       },
       "examples": [
         "https://example.gov/models/climate-prediction",
@@ -43,11 +42,9 @@
       ]
     }
   },
-  "required": ["hadRole", "relation"],
+  "required": [ "hadRole", "relation" ],
   "_oldDocs": {
     "rdfClass": "dcat:Relationship",
-    "definition": "An association class for attaching additional information to a relationship between DCAT Resources",
-    "usageNote": "Use to characterize a relationship between datasets, and potentially other resources, where the nature of the relationship is known but is not adequately characterized by the standard [[?DCTERMS]] properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or [[PROV-O]] properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf)",
     "rationale": "The introduction of dcat:Relationship in DCAT-US serves to enhance the representation and description of relationships between datasets and other resources. This class allows for the attachment of additional information to relationships that are not adequately characterized by standard properties, promoting a more comprehensive understanding of dataset connections. By accommodating nuanced relationship types beyond existing standards like [[DCTERMS]] and [[PROV-O]] properties, DCAT-US ensures greater flexibility and precision in documenting dataset relationships, facilitating more informed data discovery and utilization."
   },
   "examples": [

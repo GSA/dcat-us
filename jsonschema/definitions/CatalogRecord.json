@@ -57,7 +57,7 @@
     "description": {
       "title": "Descriptions",
       "description": "A list of free-text accounts of the catalog record",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "title": "Description string",
         "type": "string"
@@ -77,7 +77,7 @@
     "issued": {
       "title": "listing date",
       "description": "List of dates on which the catalog record was included in the catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "title": "Date string",
         "anyOf": [
@@ -106,7 +106,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [["2024-01-15"], ["2023-06-01"]]
+      "examples": [ [ "2024-01-15" ], [ "2023-06-01" ] ]
     },
     "language": {
       "title": "language",
@@ -136,7 +136,7 @@
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en", "es"]]
+      "examples": [ [ "en", "es" ] ]
     },
     "modified": {
       "title": "update/modification date",
@@ -166,23 +166,23 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-15", "2024-01-15T10:30:00Z"]
+      "examples": [ "2024-06-15", "2024-01-15T10:30:00Z" ]
     },
     "source": {
       "title": "source metadata",
       "description": "The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:source",
         "range": "dcat:Resource"
       },
-      "examples": ["Original metadata harvested from NOAA data portal"]
+      "examples": [ "Original metadata harvested from NOAA data portal" ]
     },
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:title",
@@ -208,11 +208,9 @@
       ]
     }
   },
-  "required": ["modified", "primaryTopic"],
+  "required": [ "modified", "primaryTopic" ],
   "_oldDocs": {
     "rdfClass": "dcat:CatalogRecord",
-    "definition": "A record in a catalog, describing the registration of a single dcat:Resource.",
-    "usageNote": "This class is optional and not all catalogs will use it. It exists for catalogs where a distinction is made between metadata about a dataset or service and metadata about the entry in the catalog about the dataset or service. For example, the publication date property of the dataset reflects the date when the information was originally made available by the publishing agency, while the publication date of the catalog record is the date when the dataset was added to the catalog. In cases where both dates differ, or where only the latter is known, the publication date SHOULD only be specified for the catalog record. Notice that the W3C PROV Ontology [[PROV-O]] allows describing further provenance information such as the details of the process and the agent involved in a particular change to a dataset or its registration.",
     "rationale": "While its use is not mandatory, the incorporation of dcat:CatalogRecord into DCAT-US 3.0 holds significant value. It enables catalogs to distinguish between metadata describing datasets or services and the actual catalog entries. This differentiation proves especially advantageous for ensuring adherence to application profiles that demand specific metadata for catalog records. Furthermore, it streamlines resource lifecycle management, empowering catalogs to monitor alterations and revisions to their entries, ultimately bolstering data governance and quality assurance protocols."
   },
   "examples": [
@@ -221,7 +219,7 @@
       "modified": "2024-06-15",
       "primaryTopic": "https://example.gov/datasets/climate-data-2024",
       "title": "Climate Data 2024 Catalog Entry",
-      "issued": ["2024-01-15"],
+      "issued": [ "2024-01-15" ],
       "status": "published",
       "conformsTo": {
         "@type": "Standard",

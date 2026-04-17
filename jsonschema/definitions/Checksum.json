@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": ["https://example.gov/checksums/dataset-001-sha256"]
+      "examples": [ "https://example.gov/checksums/dataset-001-sha256" ]
     },
     "@type": {
       "type": "string",
@@ -21,10 +21,9 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "spdx:algorithm",
-        "range": "spdx:ChecksumAlgorithm",
-        "definition": "The algorithm used to produce the subject Checksum."
+        "range": "spdx:ChecksumAlgorithm"
       },
-      "examples": ["SHA-256"]
+      "examples": [ "SHA-256" ]
     },
     "checksumValue": {
       "title": "checksum value",
@@ -33,8 +32,7 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "spdx:checksumValue",
-        "range": "xsd:hexBinary",
-        "definition": "A lower case hexadecimal encoded digest value produced using a specific algorithm."
+        "range": "xsd:hexBinary"
       },
       "examples": [
         "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
@@ -42,11 +40,9 @@
       ]
     }
   },
-  "required": ["algorithm", "checksumValue"],
+  "required": [ "algorithm", "checksumValue" ],
   "_oldDocs": {
     "rdfClass": "spdx:Checksum",
-    "definition": "A Checksum is a value that allows to check the integrity of the contents of a file. Even small changes to the content of the file will change its checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented [[SPDX]].",
-    "usageNote": "The Checksum includes the algorithm (spdx:algorithm) and value (spdx:checksumValue) that allows the integrity of a file to be verified to ensure no errors occurred in transmission or storage.",
     "rationale": "Introducing the spdx:Checksum class in DCAT-US bolsters data integrity and trust by ensuring datasets remain unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools."
   },
   "examples": [

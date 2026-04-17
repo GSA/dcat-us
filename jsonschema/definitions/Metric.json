@@ -2,12 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/metric",
   "title": "Metric",
+  "description": "A standard used to measure one aspect of data quality",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": ["https://example.gov/metrics/record-completeness"]
+      "examples": [ "https://example.gov/metrics/record-completeness" ]
     },
     "@type": {
       "type": "string",
@@ -20,10 +21,9 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dqv:expectedDataType",
-        "range": "xsd:anySimpleType",
-        "definition": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)"
+        "range": "xsd:anySimpleType"
       },
-      "examples": ["xsd:decimal", "xsd:double"]
+      "examples": [ "xsd:decimal", "xsd:double" ]
     },
     "inDimension": {
       "title": "in dimension",
@@ -32,8 +32,7 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dqv:inDimension",
-        "range": "dqv:Dimension",
-        "definition": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of."
+        "range": "dqv:Dimension"
       },
       "examples": [
         "https://example.gov/dimensions/completeness",
@@ -43,12 +42,11 @@
     "definition": {
       "title": "definition",
       "description": "Definition of the metric.",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "skos:definition",
-        "range": "rdfs:Literal",
-        "definition": "definition of the metric"
+        "range": "rdfs:Literal"
       },
       "examples": [
         "Percentage of non-null values in the dataset.",
@@ -56,11 +54,9 @@
       ]
     }
   },
-  "required": ["expectedDataType", "inDimension"],
+  "required": [ "expectedDataType", "inDimension" ],
   "_oldDocs": {
     "rdfClass": "dqv:Metric",
-    "definition": "Represents a standard to measure a quality dimension. An observation (instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.",
-    "usageNote": "The concept of a metric is used to define and measure specific aspects or dimensions of data quality within a given context, providing a standardized and quantifiable way to assess the quality of data. It allows for the comparison and evaluation of data quality across different resources and enables the development of consistent quality assessment frameworks and methodologies.",
     "rationale": "Introducing dqv:Metric in the DCAT-US profile enhances dataset quality assessment and management by aligning with international data quality standards. It allows data publishers to systematically define and communicate dataset quality characteristics, promoting transparency and informed data utilization, fostering trust, and supporting responsible data sharing within the DCAT-US ecosystem."
   },
   "examples": [

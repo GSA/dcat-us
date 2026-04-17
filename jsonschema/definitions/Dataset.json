@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/dataset",
   "title": "Dataset",
-  "description": "Information about a set of data",
+  "description": "A collection of data published or curated by one provider",
   "type": "object",
   "properties": {
     "@id": {
@@ -18,35 +18,33 @@
     },
     "otherIdentifier": {
       "title": "other identifier",
-      "description": "A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "description": "Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:identifier",
-        "range": "adms:Identifier",
-        "usageNote": "A secondary identifier of the Dataset, such as MAST/ADS17, DataCite18, DOI19, EZID20 or W3ID21."
+        "range": "adms:Identifier"
       }
     },
     "sample": {
       "title": "sample",
-      "description": "List of links to samples of a Dataset",
-      "type": ["null", "array"],
+      "description": "List of sample distributions for the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:sample",
-        "range": "dcat:Distribution",
-        "definition": "Links to a sample of an Dataset, which is a dcat:Distribution."
+        "range": "dcat:Distribution"
       }
     },
     "status": {
       "title": "lifecycle status",
-      "description": "The status of the dataset  in the context of maturity lifecycle",
+      "description": "Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn",
       "anyOf": [
         {
           "type": "null",
@@ -60,8 +58,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:status",
-        "range": "skos:Concept",
-        "usageNote": "This property refers to the maturity of the Dataset. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]] vocabulary."
+        "range": "skos:Concept"
       }
     },
     "supportedSchema": {
@@ -83,15 +80,14 @@
     },
     "versionNotes": {
       "title": "version notes",
-      "description": "version notes for this dataset",
-      "type": ["null", "string"],
+      "description": "Notes describing how this version differs from earlier versions of the dataset",
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "adms:versionNotes",
-        "range": "rdfs:Literal",
-        "usageNote": "A description of the differences between this version and a previous version of the Dataset. This property can be repeated for parallel language versions of the version notes."
+        "range": "rdfs:Literal"
       },
-      "examples": ["Initial release of 2024 climate observations data."]
+      "examples": [ "Initial release of 2024 climate observations data." ]
     },
     "contactPoint": {
       "title": "contact point",
@@ -112,22 +108,20 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcat:contactPoint",
-        "range": "vcard:Kind",
-        "usageNote": "This property contains contact information that can be used for sending comments about the Dataset. This property MUST contain an email address that is continuously monitored by the data publisher. If there are several contributors involved in the publication of the Dataset, the property can be used multiple times."
+        "range": "vcard:Kind"
       }
     },
     "distribution": {
       "title": "dataset distribution",
-      "description": "List of available distributions for the Dataset",
-      "type": ["null", "array"],
+      "description": "List of available distributions for the dataset. This can be omitted when no distribution is available yet.",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:distribution",
-        "range": "dcat:Distribution",
-        "usageNote": "This property links the Dataset to an available Distribution. In exceptional cases, a Dataset for which no distribution form exists (yet) can be described in the Catalog. In this case, the element dcat:distribution may be omitted."
+        "range": "dcat:Distribution"
       }
     },
     "first": {
@@ -167,35 +161,31 @@
     "hasVersion": {
       "title": "has version",
       "description": "List of related Datasets that are a version, edition, or adaptation of the described Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
-        "uri": "dcat:hasVersion",
-        "definition": "This resource has a more specific, versioned resource [[?PAV]].",
-        "usageNote": "A related Dataset that is a version, edition, or adaptation of the described Dataset."
+        "uri": "dcat:hasVersion"
       }
     },
     "inSeries": {
       "title": "in series",
-      "description": "List of Dataset Series this dataset belongs to",
-      "type": ["null", "array"],
+      "description": "Dataset series this dataset belongs to",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:inSeries",
-        "range": "dcat:DatasetSeries",
-        "definition": "A dataset series of which the dataset is part.",
-        "usageNote": "The datasets are linked to the dataset series by using the property dcat:inSeries. Note that a dataset series can also be hierarchical, and a dataset series can be a member of another dataset series"
+        "range": "dcat:DatasetSeries"
       }
     },
     "keyword": {
       "title": "keyword/tag",
-      "description": "List of keywords or tags describing the Dataset",
-      "type": ["null", "array"],
+      "description": "List of keywords or tags describing the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "title": "Non-empty string",
         "type": "string",
@@ -204,11 +194,10 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:keyword",
-        "range": "rdfs:Literal",
-        "usageNote": "This property contains a keyword or tag describing the Dataset. Good practice: mark the language of the keywords with the [[ISO 639-1]] language code such as \"geodata\"@en."
+        "range": "rdfs:Literal"
       },
       "examples": [
-        ["climate", "weather", "temperature", "precipitation"],
+        [ "climate", "weather", "temperature", "precipitation" ],
         [
           "climate",
           "weather",
@@ -222,7 +211,7 @@
     },
     "landingPage": {
       "title": "landing page",
-      "description": "A web page that provides access to the Dataset, its Distributions and/or additional information",
+      "description": "A web page from the original data provider that gives access to the Dataset, its Distributions, and related information",
       "anyOf": [
         {
           "type": "null",
@@ -236,8 +225,7 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:landingPage",
-        "range": "foaf:Document",
-        "usageNote": "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator."
+        "range": "foaf:Document"
       }
     },
     "previousVersion": {
@@ -259,67 +247,62 @@
     },
     "qualifiedRelation": {
       "title": "qualified relation",
-      "description": "Qualified relationship with role of the dataset with another resource",
-      "type": ["null", "array"],
+      "description": "Detailed relationship between the dataset and another resource, including the role of that relationship",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/relationship"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:qualifiedRelation",
-        "range": "dcat:Relationship",
-        "usageNote": "This property provides a link to a description of a relationship with another resource and it is especially meant for relationships between Datasets. It replaces the property rdfs:seeAlso of DCAT-US v1. See here for examples on how to use it: dcat:qualifiedRelation."
+        "range": "dcat:Relationship"
       }
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "Smallest spatial distance between data points, in meters, represented as a single value",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
-        "range": "rdfs:Literal (typed as xsd:decimal)",
-        "usageNote": "If the dataset is an image or grid this should correspond to the spacing of items. For other kinds of spatial datasets, this property will usually indicate the smallest distance between items in the dataset. The range of this property is a decimal number representing a length in meters. This is intended to provide a summary indication of the spatial resolution of the data as a single number. More complex descriptions of various aspects of spatial precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV]."
+        "range": "rdfs:Literal (typed as xsd:decimal)"
       },
-      "examples": ["1000"]
+      "examples": [ "1000" ]
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "Smallest time interval between data points, using xsd:duration format (for example, P1D)",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
-        "range": "rdfs:Literal (typed as xsd:duration)",
-        "usageNote": "If the dataset is a time-series this should correspond to the spacing of items in the series. For other kinds of dataset, this property will usually indicate the smallest time difference between items in the dataset This is intended to provide a summary indication of the temporal resolution of the dataset as a single value. More complex descriptions of various aspects of temporal precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV]."
+        "range": "rdfs:Literal (typed as xsd:duration)"
       },
-      "examples": ["P1D"]
+      "examples": [ "P1D" ]
     },
     "theme": {
       "title": "theme/category",
-      "description": "List of themes of the dataset",
-      "type": ["null", "array"],
+      "description": "List of themes or categories for the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat:theme",
-        "range": "skos:Concept",
-        "usageNote": "This property refers to a category of the Dataset. A Dataset may be associated with multiple themes. CV to be used: [[?DATA-GOV-THEME]]"
+        "range": "skos:Concept"
       }
     },
     "version": {
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat:version",
-        "range": "rdfs:Literal",
-        "usageNote": "The version indicator (name or identifier) of a resource."
+        "range": "rdfs:Literal"
       },
-      "examples": ["2024.1"]
+      "examples": [ "2024.1" ]
     },
     "describedBy": {
       "title": "data dictionary",
@@ -337,8 +320,7 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcat-us:describedBy",
-        "range": "dcat:Distribution",
-        "usageNote": "This is used to specify a data dictionary or schema that defines fields (variables, dimensions, measures, attributes) in the dataset."
+        "range": "dcat:Distribution"
       }
     },
     "liabilityStatement": {
@@ -357,8 +339,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:liabilityStatement",
-        "range": "dcat-us:LiabilityStatement",
-        "usageNote": "A liability statement about the dataset"
+        "range": "dcat-us:LiabilityStatement"
       },
       "examples": [
         "This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use."
@@ -366,28 +347,25 @@
     },
     "metadataDistribution": {
       "title": "metadata distribution",
-      "description": "Distribution to \"original\" metadata document",
-      "type": ["null", "array"],
+      "description": "Distribution of the original metadata document this dataset was derived from",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:metadataDistribution",
-        "range": "dcat:Distribution",
-        "definition": "Property referring to a metadata document distribution from which this dataset is derrived from.",
-        "usageNote": "Distribution to \"original\" metadata document from which the dataset is derived from"
+        "range": "dcat:Distribution"
       }
     },
     "purpose": {
       "title": "purpose",
       "description": "The purpose of the dataset",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcat-us:purpose",
-        "range": "rdfs:Literal",
-        "usageNote": "The purpose of the dataset"
+        "range": "rdfs:Literal"
       },
       "examples": [
         "To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate."
@@ -395,7 +373,7 @@
     },
     "accessRights": {
       "title": "access rights",
-      "description": "Information that indicates whether the Dataset is open data, has access restrictions or is public",
+      "description": "Information about whether the dataset is publicly accessible, restricted, or not public",
       "anyOf": [
         {
           "type": "null",
@@ -409,8 +387,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
-        "range": "dcterms:RightsStatement",
-        "usageNote": "This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. CV to be used: [[?DATA-GOV-AR]]."
+        "range": "dcterms:RightsStatement"
       },
       "examples": [
         "public",
@@ -475,37 +452,34 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:accrualPeriodicity",
-        "range": "dcterms:Frequency",
-        "usageNote": "This property refers to the frequency at which the Dataset is updated. CV to be used: [[CLD-FREQ]]."
+        "range": "dcterms:Frequency"
       },
-      "examples": ["daily"]
+      "examples": [ "daily" ]
     },
     "conformsTo": {
       "title": "conforms to",
-      "description": "List of standards to which the described Dataset conforms",
-      "type": ["null", "array"],
+      "description": "List of standards, schemas, or profiles the dataset follows",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
-        "range": "dcterms:Standard",
-        "usageNote": "This property refers to an implementing rule or other specification. This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a Dataset conforms to (and may indicate more than one). This is (generally) a complementary concern to the media-type or format."
+        "range": "dcterms:Standard"
       }
     },
     "contributor": {
       "title": "contributor",
       "description": "List of agents contributing to the Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:contributor",
-        "range": "foaf:Agent",
-        "usageNote": "This property refers to an agent contributing to the Dataset."
+        "range": "foaf:Agent"
       }
     },
     "created": {
@@ -543,11 +517,11 @@
       "_oldDocs": {
         "requirementLevel": "Optional"
       },
-      "examples": ["2024-01-01"]
+      "examples": [ "2024-01-01" ]
     },
     "creator": {
       "title": "creator",
-      "description": "An entity responsible for producing the dataset",
+      "description": "Person or organization responsible for creating the dataset",
       "anyOf": [
         {
           "type": "null",
@@ -561,20 +535,17 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:creator",
-        "range": "foaf:Agent",
-        "usageNote": "This property refers to an entity responsible for producing the dataset."
+        "range": "foaf:Agent"
       }
     },
     "description": {
       "title": "description",
-      "description": "A free-text account of the Dataset",
+      "description": "Plain-language summary of the dataset",
       "type": "string",
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:description",
-        "range": "rdfs:Literal",
-        "definition": "This property contains a free-text account of the Dataset.",
-        "usageNote": "This property can be repeated for parallel language versions of the description (see Multilingualism). On the user interface of data portals, the content of the element whose language corresponds to the display language selected by the user is displayed."
+        "range": "rdfs:Literal"
       },
       "examples": [
         "Daily temperature, precipitation, and wind measurements from monitoring stations across the United States.",
@@ -584,7 +555,7 @@
     "hasPart": {
       "title": "has part",
       "description": "List of related datasets that are part of the described dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -608,14 +579,13 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:identifier",
-        "range": "rdfs:Literal",
-        "usageNote": "This property contains a unique identifier for the Dataset, e.g. a URI or other unique identifier in the context of the Catalog."
+        "range": "rdfs:Literal"
       }
     },
     "isReferencedBy": {
       "title": "is referenced by",
       "description": "List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "title": "Link",
@@ -625,14 +595,13 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:isReferencedBy",
-        "range": "rdfs:Resource",
-        "usageNote": "This property is about a related resource, such as a publication, that references, cites, or otherwise points to the Dataset."
+        "range": "rdfs:Resource"
       },
-      "examples": [["https://example.gov/publications/climate-trends-2024"]]
+      "examples": [ [ "https://example.gov/publications/climate-trends-2024" ] ]
     },
     "issued": {
       "title": "release date",
-      "description": "Date of formal issuance (e.g., publication) of the dataset",
+      "description": "Date when the dataset was first published. If the exact publication date is unknown, use the date it was first referenced in the catalog.",
       "anyOf": [
         {
           "type": "null",
@@ -665,14 +634,13 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "usageNote": "This property contains the date of formal issuance (e.g., first publication) of the Dataset. If this date is not known, the date of the first referencing of the data collection in the Catalog can be entered."
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-15"]
+      "examples": [ "2024-01-15" ]
     },
     "language": {
       "title": "language",
-      "description": "Language or languages used in the Dataset. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
+      "description": "ISO 639-1 language code values used in the dataset text or metadata, such as en or es",
       "anyOf": [
         {
           "type": "null",
@@ -696,11 +664,9 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
-        "range": "dcterms:LinguisticSystem",
-        "definition": "A language of the dataset. This refers to the natural language used for textual metadata (i.e., titles, descriptions, etc.) of a dataset.",
-        "usageNote": "Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used. The value(s) provided for members of a catalog (i.e., dataset or service) override the value(s) provided for the catalog if they conflict. If representations of a dataset are available for each language separately, define an instance of dcat:Distribution for each language and describe the specific language of each distribution using dcterms:language (i.e., the dataset will have multiple dcterms:language values and each distribution will have just one as the value of its dcterms:language property). In case of multilingual distributions, the distributions will have multiple dcterms:language values."
+        "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en"]]
+      "examples": [ [ "en" ] ]
     },
     "modified": {
       "title": "last modified",
@@ -737,15 +703,14 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "usageNote": "This property contains the most recent date on which the Dataset was changed or modified. No value may indicate that the Dataset has never changed after its initial publication, or that the date of the last modification is not known, or that the Dataset is continuously updated This property MUST only be set if the distributions (the actual data) that the Dataset describes have been updated after it has been issued. In this case the property MUST contain the date of the last update. That way a person or institution using the data for an analysis or application will know when to update the report or application on their side."
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01"]
+      "examples": [ "2024-06-01" ]
     },
     "provenance": {
       "title": "provenance",
       "description": "List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "description": "Full text of the provenance statement"
@@ -753,9 +718,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:provenance",
-        "range": "dcterms:ProvenanceStatement",
-        "definition": "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.",
-        "usageNote": "This property contains a statement about the lineage of a Dataset."
+        "range": "dcterms:ProvenanceStatement"
       },
       "examples": [
         [
@@ -766,19 +729,18 @@
     },
     "publisher": {
       "title": "publisher",
-      "description": "An organization responsible for making the Dataset available",
+      "description": "Organization responsible for publishing and making the dataset available",
       "$ref": "/dcat-us/3.0.0/definitions/organization",
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:publisher",
-        "range": "foaf:Agent",
-        "usageNote": "This property refers to an entity (organization) responsible for making the Dataset available."
+        "range": "foaf:Agent"
       }
     },
     "relation": {
       "title": "related resource",
-      "description": "List of references to a related resource",
-      "type": ["null", "array"],
+      "description": "List of links to related resources when the relationship is not otherwise specified",
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "title": "Link",
@@ -788,15 +750,14 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:relation",
-        "range": "rdfs:Resource",
-        "usageNote": "This property refers to a related resource where the relationship cannot be further specified as a dcat:qualifiedRelation. This may be additional material such as an article, example or documentation helpful in the context of the Dataset. The element can also be used to link to legal foundations that apply to the publication or usage of the Dataset."
+        "range": "rdfs:Resource"
       },
-      "examples": [["https://example.gov/datasets/historical-climate-averages"]]
+      "examples": [ [ "https://example.gov/datasets/historical-climate-averages" ] ]
     },
     "replaces": {
       "title": "replaces",
       "description": "List of Datasets replaced by this Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
@@ -806,8 +767,8 @@
     },
     "rights": {
       "title": "rights",
-      "description": "A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies",
-      "type": ["null", "array"],
+      "description": "Rights statements not already covered by license or accessRights, such as copyright or policy restrictions",
+      "type": [ "null", "array" ],
       "items": {
         "type": "string",
         "description": "Full text of a statement of rights"
@@ -815,8 +776,7 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
-        "range": "dcterms:RightsStatement",
-        "usageNote": "This property refers to a statement that specifies copyrights associated with the Dataset."
+        "range": "dcterms:RightsStatement"
       },
       "examples": [
         [
@@ -830,7 +790,7 @@
     "rightsHolder": {
       "title": "rights holder",
       "description": "List of agents (organizations) holding rights on the Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
@@ -841,15 +801,14 @@
     "source": {
       "title": "data source",
       "description": "List of related Datasets from which the described Dataset is derived",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:source",
-        "range": "dcat:Dataset",
-        "usageNote": "A related Dataset from which the described Dataset is derived."
+        "range": "dcat:Dataset"
       }
     },
     "spatial": {
@@ -875,49 +834,43 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
-        "range": "dcterms:Location",
-        "usageNote": "This property refers to a geographic region that is covered by the Dataset. CV to be used: The Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used: [[?DATA-GOV-CONT]], [[?DATA-GOV-COUNTRY]], [[?DATA-GOV-PLACE]], [[GEONAMES]]"
+        "range": "dcterms:Location"
       }
     },
     "subject": {
       "title": "subject",
-      "description": "List of primary subjects of the dataset",
-      "type": ["null", "array"],
+      "description": "List of primary subjects for the dataset, usually narrower than broad theme categories",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:subject",
-        "range": "skos:Concept",
-        "definition": "Primary Subjects of the Dataset.",
-        "usageNote": "Primary Subjects of the Dataset defined in a controlled vocabularies. Subjects are typically narrower in meaning than dcat:theme."
+        "range": "skos:Concept"
       }
     },
     "temporal": {
       "title": "temporal coverage",
-      "description": "List of temporal periods that the dataset covers",
-      "type": ["null", "array"],
+      "description": "Time periods covered by the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:temporal",
-        "range": "dcterms:PeriodOfTime",
-        "usageNote": "The temporal coverage of a dataset may be encoded as an instance of dcterms:PeriodOfTime, or may be indicated using an IRI reference (link) to a resource describing a time period."
+        "range": "dcterms:PeriodOfTime"
       }
     },
     "title": {
       "title": "title",
-      "description": "A name given to the Dataset",
+      "description": "Human-readable title of the dataset",
       "type": "string",
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
-        "range": "rdfs:Literal",
-        "definition": "This property contains a name given to the Dataset.",
-        "usageNote": "This property can be repeated for parallel language versions of the title (see Multilingualism)."
+        "range": "rdfs:Literal"
       },
       "examples": [
         "Daily Climate Observations 2024",
@@ -926,65 +879,60 @@
     },
     "category": {
       "title": "category",
-      "description": "List of categories for the Dataset",
-      "type": ["null", "array"],
+      "description": "List of high-level categories for the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:type",
-        "range": "skos:Concept",
-        "usageNote": "A type of the Dataset. A recommended controlled vocabulary data-type is foreseen."
+        "range": "skos:Concept"
       }
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
-      "description": "List of quality measurements for the dataset",
-      "type": ["null", "array"],
+      "description": "List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
-        "range": "dqv:QualityMeasurement",
-        "definition": "Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric",
-        "usageNote": "Use for quality measurements other than spatial resolution in meters (use dcat:spatialResolutionInMeters). Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity."
+        "range": "dqv:QualityMeasurement"
       }
     },
     "page": {
       "title": "documentation",
       "description": "List of pages or documents about this dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "foaf:page",
-        "range": "foaf:Document",
-        "usageNote": "This property refers to a page or document about this Dataset."
+        "range": "foaf:Document"
       }
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
-      "description": "List of agents having some form of responsibility for the dataset",
-      "type": ["null", "array"],
+      "description": "List of agents with specific responsibilities for the dataset",
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
-        "range": "prov:Attribution",
-        "usageNote": "This property refers to a link to an Agent having some form of responsibility for the resource."
+        "range": "prov:Attribution"
       }
     },
     "wasAttributedTo": {
       "title": "attribution",
       "description": "List of agents attributed to this dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
@@ -995,21 +943,20 @@
     "wasGeneratedBy": {
       "title": "was generated by",
       "description": "List of activities that generated, or provide the business context for the creation of the dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "prov:wasGeneratedBy",
-        "range": "prov:Activity",
-        "usageNote": "An activity that generated, or provides the business context for, the creation of the dataset."
+        "range": "prov:Activity"
       }
     },
     "wasUsedBy": {
       "title": "used by",
       "description": "List of activities that used the Dataset",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
@@ -1019,7 +966,7 @@
     },
     "image": {
       "title": "image",
-      "description": "Link to a thumbnail picture illustrating the content of the dataset",
+      "description": "Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video",
       "anyOf": [
         {
           "type": "null",
@@ -1035,15 +982,13 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "schema:image",
-        "range": "schema:url or schema:ImageObject",
-        "definition": "A thumbnail picture illustrating the content of the dataset.",
-        "usageNote": "A thumbnail picture illustrating the content of the Dataset. For distributions that consist of visual content (photographs, videos, maps, etc.) it makes sense to add a limited number of thumbnails to the metadata. It’s a DCAT-US Custom Class"
+        "range": "schema:url or schema:ImageObject"
       }
     },
     "scopeNote": {
       "title": "usage note",
       "description": "usage note for the dataset",
-      "type": ["null", "string"],
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "skos:scopeNote"
@@ -1062,8 +1007,6 @@
   ],
   "_oldDocs": {
     "rdfClass": "dcat:Dataset",
-    "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more representations.",
-    "usageNote": "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations. This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the dcat:CatalogRecord class can be used for the latter. The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.",
     "rationale": "The update of dcat:Dataset is crucial as it aligns the DCAT profile with international standards, offering a standardized and widely recognized way to describe datasets. This alignment enhances data interoperability and discoverability, enabling data publishers to provide structured metadata, improving data sharing, and facilitating seamless integration for users and applications.",
     "subclassOf": "dcat:Resource"
   },
@@ -1080,7 +1023,7 @@
       "publisher": {
         "name": "National Climate Data Center"
       },
-      "keyword": ["climate", "weather", "temperature", "precipitation"],
+      "keyword": [ "climate", "weather", "temperature", "precipitation" ],
       "issued": "2024-01-15",
       "modified": "2024-06-01",
       "accrualPeriodicity": "daily",
@@ -1102,16 +1045,16 @@
           "type": "Polygon",
           "coordinates": [
             [
-              [-125.0, 24.0],
-              [-66.0, 24.0],
-              [-66.0, 50.0],
-              [-125.0, 50.0],
-              [-125.0, 24.0]
+              [ -125.0, 24.0 ],
+              [ -66.0, 24.0 ],
+              [ -66.0, 50.0 ],
+              [ -125.0, 50.0 ],
+              [ -125.0, 24.0 ]
             ]
           ]
         }
       },
-      "theme": ["Climate Science"],
+      "theme": [ "Climate Science" ],
       "distribution": [
         {
           "title": "Climate Data CSV",

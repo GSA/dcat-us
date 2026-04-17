@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/standard",
   "title": "Standard",
-  "description": "Information about a particular standard that another item conforms to",
+  "description": "A standard or specification that another resource conforms to",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": ["https://example.gov/standards/dcat-us-3"]
+      "examples": [ "https://example.gov/standards/dcat-us-3" ]
     },
     "@type": {
       "type": "string",
@@ -49,20 +49,18 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:created",
-        "range": "xsd:date",
-        "definition": "This property contains the date on which the Standard has been first created."
+        "range": "xsd:date"
       },
-      "examples": ["2023-01-01"]
+      "examples": [ "2023-01-01" ]
     },
     "description": {
       "title": "description",
-      "description": "A free-text account of the Standard",
-      "type": ["null", "string"],
+      "description": "Plain-language summary of the standard",
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:description",
-        "range": "rdfs:Literal",
-        "definition": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description - see Multilinguism"
+        "range": "rdfs:Literal"
       },
       "examples": [
         "Data Catalog Vocabulary - United States Profile version 3.0",
@@ -85,14 +83,13 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:identifier",
-        "range": "xsd:string",
-        "definition": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog, or of a reference register"
+        "range": "xsd:string"
       }
     },
     "otherIdentifier": {
       "title": "other identifier",
       "description": "A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
@@ -135,10 +132,9 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:issued",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "definition": "This property contains the date of formal issuance (e.g., publication) of the Standard."
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-15"]
+      "examples": [ "2024-01-15" ]
     },
     "modified": {
       "title": "last modified",
@@ -175,20 +171,18 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:modified",
-        "range": "xsd:date",
-        "definition": "This property contains the most recent date on which the Standard was changed or modified."
+        "range": "xsd:date"
       },
-      "examples": ["2024-06-01"]
+      "examples": [ "2024-06-01" ]
     },
     "title": {
       "title": "title",
-      "description": "A name given to the Standard",
-      "type": ["null", "string"],
+      "description": "Human-readable title of the standard",
+      "type": [ "null", "string" ],
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:title",
-        "range": "xsd:string",
-        "definition": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name."
+        "range": "xsd:string"
       },
       "examples": [
         "DCAT-US 3.0",
@@ -198,7 +192,7 @@
     "category": {
       "title": "category",
       "description": "List of categories for the Standard",
-      "type": ["null", "array"],
+      "type": [ "null", "array" ],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
@@ -222,16 +216,13 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "skos:inScheme",
-        "range": "skos:ConceptScheme",
-        "definition": "This property MAY be used to specify the reference register to which the Standard belongs."
+        "range": "skos:ConceptScheme"
       }
     }
   },
-  "required": [],
+  "required": [ ],
   "_oldDocs": {
     "rdfClass": "dcterms:Standard",
-    "definition": "A standard or other specification to which a Dataset or Distribution conforms.",
-    "usageNote": "A standard or other specification to which a Catalog, Catalog Record, Data Service, Dataset, or Distribution conforms",
     "rationale": "The inclusion of dcterms:Standard in DCAT-US accommodates standard references through URLs or custom, detailed descriptions when specific standards are not available, promoting flexibility and completeness in resource metadata."
   },
   "examples": [
