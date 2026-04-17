@@ -2,7 +2,7 @@
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -186,7 +186,7 @@ Information about a set of data
 
 **Requirement:** Optional
 
-A list of identifiers for the Dataset besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
+Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -212,20 +212,20 @@ A unique identifier and optionally it's scheme and other relevant information
 
 **Requirement:** Optional
 
-List of links to samples of a Dataset
+List of sample distributions for the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                         |
-| ------------------------------- | ----------------------------------- |
-| [Distribution](#sample_items)   | A file that distributes the dataset |
+| Each item of this array must be | Description                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------- |
+| [Distribution](#sample_items)   | A specific representation of a dataset, such as a file, feed, or API response |
 
 ### <a name="sample_items"></a>Dataset > sample > Distribution
 
 **Title:** Distribution
 
-A file that distributes the dataset
+A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`                          |
 | ------------------------- | --------------------------------- |
@@ -238,7 +238,7 @@ A file that distributes the dataset
 
 **Requirement:** Optional
 
-The status of the dataset  in the context of maturity lifecycle
+Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -308,7 +308,7 @@ inline description of the supported schema
 
 **Requirement:** Optional
 
-version notes for this dataset
+Notes describing how this version differs from earlier versions of the dataset
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -325,7 +325,7 @@ version notes for this dataset
 
 **Requirement:** Mandatory
 
-A single contact point or list of contact information that can be used for sending comments about the Dataset
+A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -376,20 +376,20 @@ Contact information for an individual or entity
 
 **Requirement:** Recommended
 
-List of available distributions for the Dataset
+List of available distributions for the dataset. This can be omitted when no distribution is available yet.
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                         |
-| ----------------------------------- | ----------------------------------- |
-| [Distribution](#distribution_items) | A file that distributes the dataset |
+| Each item of this array must be     | Description                                                                   |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| [Distribution](#distribution_items) | A specific representation of a dataset, such as a file, feed, or API response |
 
 ### <a name="distribution_items"></a>Dataset > distribution > Distribution
 
 **Title:** Distribution
 
-A file that distributes the dataset
+A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`                      |
 | ------------------------- | ----------------------------- |
@@ -477,15 +477,15 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#hasVersion_items)    | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#hasVersion_items)    | A collection of data published or curated by one provider |
 
 ### <a name="hasVersion_items"></a>Dataset > hasVersion > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -498,20 +498,20 @@ Information about a set of data
 
 **Requirement:** Optional
 
-List of Dataset Series this dataset belongs to
+Dataset series this dataset belongs to
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be  | Description                   |
-| -------------------------------- | ----------------------------- |
-| [DatasetSeries](#inSeries_items) | An ordered series of datasets |
+| Each item of this array must be  | Description                                               |
+| -------------------------------- | --------------------------------------------------------- |
+| [DatasetSeries](#inSeries_items) | A group of related datasets that are published separately |
 
 ### <a name="inSeries_items"></a>Dataset > inSeries > DatasetSeries
 
 **Title:** DatasetSeries
 
-An ordered series of datasets
+A group of related datasets that are published separately
 
 | **Type**                  | `object`                                                                              |
 | ------------------------- | ------------------------------------------------------------------------------------- |
@@ -524,7 +524,7 @@ An ordered series of datasets
 
 **Requirement:** Recommended
 
-List of keywords or tags describing the Dataset
+List of keywords or tags describing the dataset
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -573,7 +573,7 @@ List of keywords or tags describing the Dataset
 
 **Requirement:** Recommended
 
-A web page that provides access to the Dataset, its Distributions and/or additional information
+A web page from the original data provider that gives access to the Dataset, its Distributions, and related information
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -643,20 +643,20 @@ inline description of Dataset
 
 **Requirement:** Optional
 
-Qualified relationship with role of the dataset with another resource
+Detailed relationship between the dataset and another resource, including the role of that relationship
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be          | Description                                                                                                    |
-| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [Relationship](#qualifiedRelation_items) | Information about an item or entity that has some relationship to a dataset and the nature of the relationship |
+| Each item of this array must be          | Description                                                         |
+| ---------------------------------------- | ------------------------------------------------------------------- |
+| [Relationship](#qualifiedRelation_items) | Additional information about how one resource is related to another |
 
 ### <a name="qualifiedRelation_items"></a>Dataset > qualifiedRelation > Relationship
 
 **Title:** Relationship
 
-Information about an item or entity that has some relationship to a dataset and the nature of the relationship
+Additional information about how one resource is related to another
 
 | **Type**                  | `object`                                                                                      |
 | ------------------------- | --------------------------------------------------------------------------------------------- |
@@ -669,7 +669,7 @@ Information about an item or entity that has some relationship to a dataset and 
 
 **Requirement:** Optional
 
-Spatial resolution in meters
+Smallest spatial distance between data points, in meters, represented as a single value
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -686,7 +686,7 @@ Spatial resolution in meters
 
 **Requirement:** Optional
 
-Temporal resolution using xsd:duration syntax
+Smallest time interval between data points, using xsd:duration format (for example, P1D)
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -703,20 +703,20 @@ Temporal resolution using xsd:duration syntax
 
 **Requirement:** Recommended
 
-List of themes of the dataset
+List of themes or categories for the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#theme_items)         | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#theme_items)         | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="theme_items"></a>Dataset > theme > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
@@ -818,20 +818,20 @@ Full text of the liability statement
 
 **Requirement:** Optional
 
-Distribution to "original" metadata document
+Distribution of the original metadata document this dataset was derived from
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be             | Description                         |
-| ------------------------------------------- | ----------------------------------- |
-| [Distribution](#metadataDistribution_items) | A file that distributes the dataset |
+| Each item of this array must be             | Description                                                                   |
+| ------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Distribution](#metadataDistribution_items) | A specific representation of a dataset, such as a file, feed, or API response |
 
 ### <a name="metadataDistribution_items"></a>Dataset > metadataDistribution > Distribution
 
 **Title:** Distribution
 
-A file that distributes the dataset
+A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`                      |
 | ------------------------- | ----------------------------- |
@@ -861,7 +861,7 @@ The purpose of the dataset
 
 **Requirement:** Optional
 
-Information that indicates whether the Dataset is open data, has access restrictions or is public
+Information about whether the dataset is publicly accessible, restricted, or not public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -992,20 +992,20 @@ Must be one of:
 
 **Requirement:** Optional
 
-List of standards to which the described Dataset conforms
+List of standards, schemas, or profiles the dataset follows
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                           |
-| ------------------------------- | --------------------------------------------------------------------- |
-| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
+| Each item of this array must be | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | A standard or specification that another resource conforms to |
 
 ### <a name="conformsTo_items"></a>Dataset > conformsTo > Standard
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -1023,15 +1023,15 @@ List of agents contributing to the Dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Agent](#contributor_items)     | An entity that could be involved with a resource |
+| Each item of this array must be | Description                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| [Agent](#contributor_items)     | A person, organization, software agent, or other entity involved with a resource |
 
 ### <a name="contributor_items"></a>Dataset > contributor > Agent
 
 **Title:** Agent
 
-An entity that could be involved with a resource
+A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -1123,7 +1123,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-An entity responsible for producing the dataset
+Person or organization responsible for creating the dataset
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1158,7 +1158,7 @@ inline description of Agent
 
 **Requirement:** Mandatory
 
-A free-text account of the Dataset
+Plain-language summary of the dataset
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -1185,15 +1185,15 @@ List of related datasets that are part of the described dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#hasPart_items)       | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#hasPart_items)       | A collection of data published or curated by one provider |
 
 ### <a name="hasPart_items"></a>Dataset > hasPart > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1275,7 +1275,7 @@ reference iri of Resource
 
 **Requirement:** Optional
 
-Date of formal issuance (e.g., publication) of the dataset
+Date when the dataset was first published. If the exact publication date is unknown, use the date it was first referenced in the catalog.
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1354,7 +1354,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-Language or languages used in the Dataset. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+ISO 639-1 language code values used in the dataset text or metadata, such as en or es
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1420,7 +1420,7 @@ Language or languages used in the Dataset. This should be provided as an ISO 639
 
 **Requirement:** Recommended
 
-The most recent date on which the Dataset was changed or modified
+Most recent date when the dataset's actual data changed, not just metadata
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1530,7 +1530,7 @@ Full text of the provenance statement
 
 **Requirement:** Mandatory
 
-An organization responsible for making the Dataset available
+Organization responsible for publishing and making the dataset available
 
 | **Type**                  | `object`                          |
 | ------------------------- | --------------------------------- |
@@ -1544,7 +1544,7 @@ An organization responsible for making the Dataset available
 
 **Requirement:** Optional
 
-List of references to a related resource
+List of links to related resources when the relationship is not otherwise specified
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -1582,15 +1582,15 @@ List of Datasets replaced by this Dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#replaces_items)      | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#replaces_items)      | A collection of data published or curated by one provider |
 
 ### <a name="replaces_items"></a>Dataset > replaces > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1603,7 +1603,7 @@ Information about a set of data
 
 **Requirement:** Recommended
 
-A list of statements concerning all rights for the Dataset that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -1644,15 +1644,15 @@ List of agents (organizations) holding rights on the Dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                                                         |
-| ----------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#rightsHolder_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be     | Description                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#rightsHolder_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="rightsHolder_items"></a>Dataset > rightsHolder > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1670,15 +1670,15 @@ List of related Datasets from which the described Dataset is derived
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#source_items)        | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#source_items)        | A collection of data published or curated by one provider |
 
 ### <a name="source_items"></a>Dataset > source > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1728,15 +1728,15 @@ inline description of Location
 | **Type** | `array` |
 | -------- | ------- |
 
-| Each item of this array must be     | Description                                      |
-| ----------------------------------- | ------------------------------------------------ |
-| [Location](#spatial_anyOf_i2_items) | Information about a specific geographic location |
+| Each item of this array must be     | Description                      |
+| ----------------------------------- | -------------------------------- |
+| [Location](#spatial_anyOf_i2_items) | A named place or geographic area |
 
 #### <a name="spatial_anyOf_i2_items"></a>Dataset > spatial > anyOf > List of geographic regions > Location
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`                                                                                       |
 | ------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -1749,20 +1749,20 @@ Information about a specific geographic location
 
 **Requirement:** Optional
 
-List of primary subjects of the dataset
+List of primary subjects for the dataset, usually narrower than broad theme categories
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#subject_items)       | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#subject_items)       | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="subject_items"></a>Dataset > subject > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
@@ -1775,7 +1775,7 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Recommended
 
-List of temporal periods that the dataset covers
+Time periods covered by the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -1801,7 +1801,7 @@ Information about a specific time period with a start- and/or end-time
 
 **Requirement:** Mandatory
 
-A name given to the Dataset
+Human-readable title of the dataset
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -1823,20 +1823,20 @@ A name given to the Dataset
 
 **Requirement:** Optional
 
-List of categories for the Dataset
+List of high-level categories for the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Dataset > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
@@ -1849,20 +1849,20 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Optional
 
-List of quality measurements for the dataset
+List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                    | Description                        |
-| -------------------------------------------------- | ---------------------------------- |
-| [QualityMeasurement](#hasQualityMeasurement_items) | A single measurement of one metric |
+| Each item of this array must be                    | Description                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| [QualityMeasurement](#hasQualityMeasurement_items) | A measurement of a resource against a specific quality metric |
 
 ### <a name="hasQualityMeasurement_items"></a>Dataset > hasQualityMeasurement > QualityMeasurement
 
 **Title:** QualityMeasurement
 
-A single measurement of one metric
+A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -1880,15 +1880,15 @@ List of pages or documents about this dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                       |
-| ------------------------------- | --------------------------------- |
-| [Document](#page_items)         | Information about a text document |
+| Each item of this array must be | Description                                           |
+| ------------------------------- | ----------------------------------------------------- |
+| [Document](#page_items)         | A publication or other document related to a resource |
 
 ### <a name="page_items"></a>Dataset > page > Document
 
 **Title:** Document
 
-Information about a text document
+A publication or other document related to a resource
 
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
@@ -1901,20 +1901,20 @@ Information about a text document
 
 **Requirement:** Optional
 
-List of agents having some form of responsibility for the dataset
+List of agents with specific responsibilities for the dataset
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be            | Description                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| [Attribution](#qualifiedAttribution_items) | An attribution that an agent plays some role |
+| Each item of this array must be            | Description                                       |
+| ------------------------------------------ | ------------------------------------------------- |
+| [Attribution](#qualifiedAttribution_items) | A responsibility that an agent has for a resource |
 
 ### <a name="qualifiedAttribution_items"></a>Dataset > qualifiedAttribution > Attribution
 
 **Title:** Attribution
 
-An attribution that an agent plays some role
+A responsibility that an agent has for a resource
 
 | **Type**                  | `object`                                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -1932,15 +1932,15 @@ List of agents attributed to this dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Agent](#wasAttributedTo_items) | An entity that could be involved with a resource |
+| Each item of this array must be | Description                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| [Agent](#wasAttributedTo_items) | A person, organization, software agent, or other entity involved with a resource |
 
 ### <a name="wasAttributedTo_items"></a>Dataset > wasAttributedTo > Agent
 
 **Title:** Agent
 
-An entity that could be involved with a resource
+A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -1958,15 +1958,15 @@ List of activities that generated, or provide the business context for the creat
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be   | Description                                      |
-| --------------------------------- | ------------------------------------------------ |
-| [Activity](#wasGeneratedBy_items) | An activity which a resource could be related to |
+| Each item of this array must be   | Description                                                    |
+| --------------------------------- | -------------------------------------------------------------- |
+| [Activity](#wasGeneratedBy_items) | An activity related to creating, changing, or using a resource |
 
 ### <a name="wasGeneratedBy_items"></a>Dataset > wasGeneratedBy > Activity
 
 **Title:** Activity
 
-An activity which a resource could be related to
+An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
@@ -1984,15 +1984,15 @@ List of activities that used the Dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Activity](#wasUsedBy_items)    | An activity which a resource could be related to |
+| Each item of this array must be | Description                                                    |
+| ------------------------------- | -------------------------------------------------------------- |
+| [Activity](#wasUsedBy_items)    | An activity related to creating, changing, or using a resource |
 
 ### <a name="wasUsedBy_items"></a>Dataset > wasUsedBy > Activity
 
 **Title:** Activity
 
-An activity which a resource could be related to
+An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
@@ -2005,7 +2005,7 @@ An activity which a resource could be related to
 
 **Requirement:** Optional
 
-Link to a thumbnail picture illustrating the content of the dataset
+Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

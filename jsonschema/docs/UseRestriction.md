@@ -2,7 +2,7 @@
 
 **Title:** UseRestriction
 
-A restriction on usage of another item
+Rules or legal limits on how a resource may be used
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -90,7 +90,7 @@ Indication of whether or not there are use restrictions on the archival material
 
 **Requirement:** Recommended
 
-The specific NARA restriction associated with the use restriction
+Authority, code list entry, or policy reference that defines the specific use restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

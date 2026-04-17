@@ -2,7 +2,7 @@
 
 **Title:** Attribution
 
-An attribution that an agent plays some role
+A responsibility that an agent has for a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |

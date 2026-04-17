@@ -2,7 +2,7 @@
 
 **Title:** Activity
 
-An activity which a resource could be related to
+An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -60,15 +60,15 @@ List of categories for the Activity
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Activity > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |

@@ -2,7 +2,7 @@
 
 **Title:** QualityMeasurement
 
-A single measurement of one metric
+A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |

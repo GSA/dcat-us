@@ -2,7 +2,7 @@
 
 **Title:** CUIRestriction
 
-A specific restriction on handling Controlled Unclassified Information (CUI)
+Information describing Controlled Unclassified Information (CUI) restrictions for a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -76,7 +76,7 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 
 **Requirement:** Mandatory
 
-Designation Indicator shows which agency made the document CUI
+Agency that designated the information as CUI; include at least "Controlled by:" and, when possible, contact information
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -98,7 +98,7 @@ Designation Indicator shows which agency made the document CUI
 
 **Requirement:** Optional
 
-List of free text of the required indicator
+List of free-text required indicators from the applicable authority (for example, category descriptions or distribution statements)
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |

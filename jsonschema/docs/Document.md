@@ -2,7 +2,7 @@
 
 **Title:** Document
 
-Information about a text document
+A publication or other document related to a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -238,20 +238,20 @@ Bibliographic citation as text
 
 **Requirement:** Optional
 
-List of standards that the Document conforms to
+List of standards or specifications the document follows
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                           |
-| ------------------------------- | --------------------------------------------------------------------- |
-| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
+| Each item of this array must be | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | A standard or specification that another resource conforms to |
 
 ### <a name="conformsTo_items"></a>Document > conformsTo > Standard
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                  |
 | ------------------------- | ------------------------- |
@@ -269,15 +269,15 @@ The corporate organization(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be         | Description                                                                         |
-| --------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#corporateCreator_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be         | Description                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#corporateCreator_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="corporateCreator_items"></a>Document > corporateCreator > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------- |
@@ -290,7 +290,7 @@ Information about an organization, including other organizations that it is part
 
 **Requirement:** Recommended
 
-A free-text account of the Document
+Plain-language summary of the document
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -458,15 +458,15 @@ The organization(s) that published the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be  | Description                                                                         |
-| -------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#publisher_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be  | Description                                                                       |
+| -------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#publisher_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="publisher_items"></a>Document > publisher > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------- |
@@ -502,15 +502,15 @@ List of categories/genres for the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Document > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                          |
 | ------------------------- | ------------------------------------------- |

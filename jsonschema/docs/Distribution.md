@@ -2,7 +2,7 @@
 
 **Title:** Distribution
 
-A file that distributes the dataset
+A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -102,7 +102,7 @@ A file that distributes the dataset
 
 **Requirement:** Optional
 
-The format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry
+Method or schema used to structure the distribution content (for example, CSV convention, XML schema, or spatial representation type)
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -172,7 +172,7 @@ inline description of Concept
 
 **Requirement:** Optional
 
-The list of character encodings of the Distribution, by using as value the character set names in the IANA register 
+List of character encodings used in the Distribution, using IANA character set names (for example, UTF-8)
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -227,15 +227,15 @@ A data service that gives access to the distribution of the dataset
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                   |
-| ----------------------------------- | --------------------------------------------- |
-| [DataService](#accessService_items) | A service for providing data at a URL or URLs |
+| Each item of this array must be     | Description                                                         |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| [DataService](#accessService_items) | A service that provides access to data or data processing functions |
 
 ### <a name="accessService_items"></a>Distribution > accessService > DataService
 
 **Title:** DataService
 
-A service for providing data at a URL or URLs
+A service that provides access to data or data processing functions
 
 | **Type**                  | `object`                        |
 | ------------------------- | ------------------------------- |
@@ -248,7 +248,7 @@ A service for providing data at a URL or URLs
 
 **Requirement:** Recommended
 
-A URL that gives access to a Distribution of the Dataset
+URL for indirect access to the Distribution (for example, a landing page, API docs, or request form), not a direct file download
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -330,7 +330,7 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 **Requirement:** Optional
 
-A URL that is a direct link to a downloadable file of the Distribution in a given format
+Direct URL to a downloadable file for the Distribution; use accessURL for indirect access
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -374,7 +374,7 @@ reference iri of Resource
 
 **Requirement:** Optional
 
-The media type of the Distribution as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
+MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -482,15 +482,15 @@ List of access restrictions related to the distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be               | Description                                         |
-| --------------------------------------------- | --------------------------------------------------- |
-| [AccessRestriction](#accessRestriction_items) | A restriction on the permitted access to a resource |
+| Each item of this array must be               | Description                                                 |
+| --------------------------------------------- | ----------------------------------------------------------- |
+| [AccessRestriction](#accessRestriction_items) | Rules or indicators that describe who can access a resource |
 
 ### <a name="accessRestriction_items"></a>Distribution > accessRestriction > AccessRestriction
 
 **Title:** AccessRestriction
 
-A restriction on the permitted access to a resource
+Rules or indicators that describe who can access a resource
 
 | **Type**                  | `object`                                                                                           |
 | ------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -578,15 +578,15 @@ Use restriction related to the distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be         | Description                            |
-| --------------------------------------- | -------------------------------------- |
-| [UseRestriction](#useRestriction_items) | A restriction on usage of another item |
+| Each item of this array must be         | Description                                         |
+| --------------------------------------- | --------------------------------------------------- |
+| [UseRestriction](#useRestriction_items) | Rules or legal limits on how a resource may be used |
 
 ### <a name="useRestriction_items"></a>Distribution > useRestriction > UseRestriction
 
 **Title:** UseRestriction
 
-A restriction on usage of another item
+Rules or legal limits on how a resource may be used
 
 | **Type**                  | `object`                                                                                     |
 | ------------------------- | -------------------------------------------------------------------------------------------- |
@@ -599,7 +599,7 @@ A restriction on usage of another item
 
 **Requirement:** Optional
 
-Information that indicates whether the Distribution is open data, has access restrictions or is not public
+Information about whether the distribution is publicly accessible, restricted, or not public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -636,20 +636,20 @@ Text description of the access rights
 
 **Requirement:** Optional
 
-List of established schemas or reference systems to which the described Distribution conforms
+List of standards, schemas, or reference systems the Distribution follows (prefer stable URIs when available)
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                           |
-| ------------------------------- | --------------------------------------------------------------------- |
-| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
+| Each item of this array must be | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | A standard or specification that another resource conforms to |
 
 ### <a name="conformsTo_items"></a>Distribution > conformsTo > Standard
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                                                                           |
 | ------------------------- | ---------------------------------------------------------------------------------- |
@@ -662,7 +662,7 @@ Information about a particular standard that another item conforms to
 
 **Requirement:** Recommended
 
-A free-text account of the Distribution
+Plain-language summary of the distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -840,7 +840,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-A language or languages used in the Distribution. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+ISO 639-1 language code values used in the distribution metadata text, such as en or es
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -906,7 +906,7 @@ A language or languages used in the Distribution. This should be provided as an 
 
 **Requirement:** Recommended
 
-The license under which the Distribution is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
+License that governs how the distribution can be used or reused
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1026,7 +1026,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-A list of statements concerning all rights for the Distribution that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -1062,7 +1062,7 @@ Full text of a statement of rights
 
 **Requirement:** Recommended
 
-A name given to the Distribution
+Human-readable title of the distribution
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -1083,20 +1083,20 @@ A name given to the Distribution
 
 **Requirement:** Optional
 
-A list of quality measurements for the distribution
+Quality measurements for the distribution (for example, completeness, accuracy, or timeliness)
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                    | Description                        |
-| -------------------------------------------------- | ---------------------------------- |
-| [QualityMeasurement](#hasQualityMeasurement_items) | A single measurement of one metric |
+| Each item of this array must be                    | Description                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| [QualityMeasurement](#hasQualityMeasurement_items) | A measurement of a resource against a specific quality metric |
 
 ### <a name="hasQualityMeasurement_items"></a>Distribution > hasQualityMeasurement > QualityMeasurement
 
 **Title:** QualityMeasurement
 
-A single measurement of one metric
+A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -1114,15 +1114,15 @@ A page or document about this Distribution
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                       |
-| ------------------------------- | --------------------------------- |
-| [Document](#page_items)         | Information about a text document |
+| Each item of this array must be | Description                                           |
+| ------------------------------- | ----------------------------------------------------- |
+| [Document](#page_items)         | A publication or other document related to a resource |
 
 ### <a name="page_items"></a>Distribution > page > Document
 
 **Title:** Document
 
-Information about a text document
+A publication or other document related to a resource
 
 | **Type**                  | `object`                                                                     |
 | ------------------------- | ---------------------------------------------------------------------------- |
@@ -1169,7 +1169,7 @@ The link to the image
 
 **Requirement:** Optional
 
-A mechanism that can be used to verify that the contents of a distribution have not changed
+Checksum used to verify that the downloadable file content has not changed
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

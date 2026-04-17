@@ -2,7 +2,7 @@
 
 **Title:** Agent
 
-An entity that could be involved with a resource
+A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -60,15 +60,15 @@ The type of the agent that makes the item available
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Agent > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |

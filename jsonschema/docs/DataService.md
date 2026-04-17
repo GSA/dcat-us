@@ -2,7 +2,7 @@
 
 **Title:** DataService
 
-A service for providing data at a URL or URLs
+A service that provides access to data or data processing functions
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -117,7 +117,7 @@ A service for providing data at a URL or URLs
 
 **Requirement:** Mandatory
 
-Contact information that can be used for sending comments about the Data Service
+Contact information for questions about the Data Service. Include an email address that is continuously monitored
 
 | **Type**     | `array` |
 | ------------ | ------- |
@@ -144,7 +144,7 @@ Contact information for an individual or entity
 
 **Requirement:** Recommended
 
-A list of descriptions of the services available via the end-points, including their operations, parameters etc
+List of endpoint descriptions with operations and parameters (for example, OpenAPI or similar service documentation)
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -219,7 +219,7 @@ The root location or primary endpoint of the service (a Web-resolvable IRI)
 
 **Requirement:** Optional
 
-List of keywords or tags describing the Data Service
+List of keywords or tags describing the data service
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -265,20 +265,20 @@ List of keywords or tags describing the Data Service
 
 **Requirement:** Recommended
 
-List of datasets that are served by this data service
+List of datasets this service provides access to
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#servesDataset_items) | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#servesDataset_items) | A collection of data published or curated by one provider |
 
 ### <a name="servesDataset_items"></a>DataService > servesDataset > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                |
 | ------------------------- | ----------------------- |
@@ -325,20 +325,20 @@ The minimum time period resolvable by the Data Service
 
 **Requirement:** Optional
 
-A list of themes of the Data Service. A Data Service may be associated with multiple themes
+List of themes or categories for the data service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#theme_items)         | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#theme_items)         | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="theme_items"></a>DataService > theme > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                                            |
 | ------------------------- | ----------------------------------------------------------------------------- |
@@ -351,7 +351,7 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Optional
 
-Information that indicates whether the Data Service is open data, has access restrictions or is public
+Information about whether the data service is publicly accessible, restricted, or not public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -391,15 +391,15 @@ List of general standards or specifications that the Data Service endpoints impl
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                           |
-| ------------------------------- | --------------------------------------------------------------------- |
-| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
+| Each item of this array must be | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | A standard or specification that another resource conforms to |
 
 ### <a name="conformsTo_items"></a>DataService > conformsTo > Standard
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                                                                           |
 | ------------------------- | ---------------------------------------------------------------------------------- |
@@ -494,15 +494,15 @@ List of agents primarily responsible for producing the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Agent](#creator_items)         | An entity that could be involved with a resource |
+| Each item of this array must be | Description                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| [Agent](#creator_items)         | A person, organization, software agent, or other entity involved with a resource |
 
 ### <a name="creator_items"></a>DataService > creator > Agent
 
 **Title:** Agent
 
-An entity that could be involved with a resource
+A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`                                                                     |
 | ------------------------- | ---------------------------------------------------------------------------- |
@@ -515,7 +515,7 @@ An entity that could be involved with a resource
 
 **Requirement:** Optional
 
-A free-text account of the Data Service
+Plain-language summary of the data service
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -595,7 +595,7 @@ A unique identifier and optionally it's scheme and other relevant information
 
 **Requirement:** Optional
 
-Language or languages supported by the Data Service. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+ISO 639-1 language code values supported by the data service, such as en or es
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -662,7 +662,7 @@ Language or languages supported by the Data Service. This should be provided as 
 
 **Requirement:** Recommended
 
-The license under which the Data Service is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
+License that governs how the data service can be used or reused
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -778,7 +778,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Mandatory
 
-An entity (organization) responsible for making the Data Service available
+Person or organization responsible for publishing and making the data service available
 
 | **Type**                  | `object`            |
 | ------------------------- | ------------------- |
@@ -792,7 +792,7 @@ An entity (organization) responsible for making the Data Service available
 
 **Requirement:** Optional
 
-A list of statements concerning all rights for the Data Service that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -825,15 +825,15 @@ A list of Agents (organizations) holding rights on the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                                                         |
-| ----------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#rightsHolder_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be     | Description                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#rightsHolder_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="rightsHolder_items"></a>DataService > rightsHolder > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                             |
 | ------------------------- | ------------------------------------------------------------------------------------ |
@@ -851,15 +851,15 @@ A geographic region that is covered by the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Location](#spatial_items)      | Information about a specific geographic location |
+| Each item of this array must be | Description                      |
+| ------------------------------- | -------------------------------- |
+| [Location](#spatial_items)      | A named place or geographic area |
 
 ### <a name="spatial_items"></a>DataService > spatial > Location
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------- |
@@ -872,7 +872,7 @@ Information about a specific geographic location
 
 **Requirement:** Optional
 
-A list of temporal periods that the DataService covers
+Time periods covered by the data service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -898,7 +898,7 @@ Information about a specific time period with a start- and/or end-time
 
 **Requirement:** Mandatory
 
-The title of the data service in the indicated language
+Human-readable title of the data service
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -920,20 +920,20 @@ The title of the data service in the indicated language
 
 **Requirement:** Optional
 
-List of categories for the Data Service
+List of high-level categories for the data service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>DataService > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                                            |
 | ------------------------- | ----------------------------------------------------------------------------- |
@@ -946,20 +946,20 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Optional
 
-Refers to the performed quality measurements
+Quality measurements for the data service (for example, availability, response time, or reliability)
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                    | Description                        |
-| -------------------------------------------------- | ---------------------------------- |
-| [QualityMeasurement](#hasQualityMeasurement_items) | A single measurement of one metric |
+| Each item of this array must be                    | Description                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| [QualityMeasurement](#hasQualityMeasurement_items) | A measurement of a resource against a specific quality metric |
 
 ### <a name="hasQualityMeasurement_items"></a>DataService > hasQualityMeasurement > QualityMeasurement
 
 **Title:** QualityMeasurement
 
-A single measurement of one metric
+A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -972,20 +972,20 @@ A single measurement of one metric
 
 **Requirement:** Optional
 
-List of agents having some form of responsibility for the Data Service
+List of agents with specific responsibilities for the data service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be            | Description                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| [Attribution](#qualifiedAttribution_items) | An attribution that an agent plays some role |
+| Each item of this array must be            | Description                                       |
+| ------------------------------------------ | ------------------------------------------------- |
+| [Attribution](#qualifiedAttribution_items) | A responsibility that an agent has for a resource |
 
 ### <a name="qualifiedAttribution_items"></a>DataService > qualifiedAttribution > Attribution
 
 **Title:** Attribution
 
-An attribution that an agent plays some role
+A responsibility that an agent has for a resource
 
 | **Type**                  | `object`                                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -998,20 +998,20 @@ An attribution that an agent plays some role
 
 **Requirement:** Optional
 
-List of activities that used the Data Service
+List of activities that used or tested the data service
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Activity](#wasUsedBy_items)    | An activity which a resource could be related to |
+| Each item of this array must be | Description                                                    |
+| ------------------------------- | -------------------------------------------------------------- |
+| [Activity](#wasUsedBy_items)    | An activity related to creating, changing, or using a resource |
 
 ### <a name="wasUsedBy_items"></a>DataService > wasUsedBy > Activity
 
 **Title:** Activity
 
-An activity which a resource could be related to
+An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`                                                                          |
 | ------------------------- | --------------------------------------------------------------------------------- |

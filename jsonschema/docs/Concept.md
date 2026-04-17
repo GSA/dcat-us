@@ -2,7 +2,7 @@
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

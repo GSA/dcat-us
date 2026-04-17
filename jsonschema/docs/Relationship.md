@@ -2,7 +2,7 @@
 
 **Title:** Relationship
 
-Information about an item or entity that has some relationship to a dataset and the nature of the relationship
+Additional information about how one resource is related to another
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |

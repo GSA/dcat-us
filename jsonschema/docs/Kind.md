@@ -87,7 +87,7 @@ A single physical address
 
 **Requirement:** Mandatory
 
-Email address for the contact
+Email address for the contact in mailto: format (for example, mailto:support@example.gov)
 
 | **Type**     | `string` |
 | ------------ | -------- |

@@ -2,7 +2,7 @@
 
 **Title:** DatasetSeries
 
-An ordered series of datasets
+A group of related datasets that are published separately
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -186,7 +186,7 @@ An ordered series of datasets
 
 **Requirement:** Recommended
 
-List of contacts that can be used for sending comments about the Dataset Series
+List of contacts people can use to ask questions or send feedback about the dataset series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -287,15 +287,15 @@ List of members of the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#seriesMember_items)  | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#seriesMember_items)  | A collection of data published or curated by one provider |
 
 ### <a name="seriesMember_items"></a>DatasetSeries > seriesMember > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
@@ -308,7 +308,7 @@ Information about a set of data
 
 **Requirement:** Optional
 
-The frequency at which the Dataset Series is updated
+The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -398,7 +398,7 @@ Must be one of:
 
 **Requirement:** Mandatory
 
-A free-text account of the Dataset Series
+Plain-language summary of the dataset series
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -420,7 +420,7 @@ A free-text account of the Dataset Series
 
 **Requirement:** Optional
 
-The date of formal issuance (e.g.,publication) of the Dataset Series
+Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -499,7 +499,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-The most recent date on which the Dataset Series was changed or modified
+Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -582,7 +582,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-An entity (organization) responsible for ensuring the coherency of the Dataset Series
+Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -622,15 +622,15 @@ A geographic region that is covered by the Dataset Series
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Location](#spatial_items)      | Information about a specific geographic location |
+| Each item of this array must be | Description                      |
+| ------------------------------- | -------------------------------- |
+| [Location](#spatial_items)      | A named place or geographic area |
 
 ### <a name="spatial_items"></a>DatasetSeries > spatial > Location
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`                                                                   |
 | ------------------------- | -------------------------------------------------------------------------- |
@@ -643,7 +643,7 @@ Information about a specific geographic location
 
 **Requirement:** Recommended
 
-A list of temporal periods that the Dataset Series covers
+Time periods covered by the dataset series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -669,7 +669,7 @@ Information about a specific time period with a start- and/or end-time
 
 **Requirement:** Mandatory
 
-A name given to the Dataset Series
+Human-readable title of the dataset series
 
 | **Type**     | `string` |
 | ------------ | -------- |

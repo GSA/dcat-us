@@ -2,7 +2,7 @@
 
 **Title:** DCAT-US 3 Catalog
 
-The main item defined by DCAT-US 3 is the Catalog class
+A curated collection of metadata about datasets, data services, or other resources
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -129,20 +129,20 @@ The main item defined by DCAT-US 3 is the Catalog class
 
 **Requirement:** Optional
 
-List of related catalogs whose contents are of interest in the context of this catalog
+List of related catalogs that are useful in the context of this catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                             |
-| ----------------------------------- | ------------------------------------------------------- |
-| [DCAT-US 3 Catalog](#catalog_items) | The main item defined by DCAT-US 3 is the Catalog class |
+| Each item of this array must be     | Description                                                                        |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| [DCAT-US 3 Catalog](#catalog_items) | A curated collection of metadata about datasets, data services, or other resources |
 
 ### <a name="catalog_items"></a>DCAT-US 3 Catalog > catalog > DCAT-US 3 Catalog
 
 **Title:** DCAT-US 3 Catalog
 
-The main item defined by DCAT-US 3 is the Catalog class
+A curated collection of metadata about datasets, data services, or other resources
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
@@ -155,7 +155,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 
 **Requirement:** Optional
 
-Contact information that can be used for sending comments about the Catalog
+Contact information people can use to ask questions or send feedback about the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -181,21 +181,21 @@ Contact information for an individual or entity
 
 **Requirement:** Mandatory
 
-List of Datasets that are part of the Catalog
+List of datasets included in the catalog. Use this together with service so the catalog is not empty.
 
 | **Type**     | `array` |
 | ------------ | ------- |
 | **Required** | Yes     |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#dataset_items)       | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#dataset_items)       | A collection of data published or curated by one provider |
 
 ### <a name="dataset_items"></a>DCAT-US 3 Catalog > dataset > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                |
 | ------------------------- | ----------------------- |
@@ -208,7 +208,7 @@ Information about a set of data
 
 **Requirement:** Optional
 
-List of keywords or tags describing the Catalog
+List of keywords or tags describing the catalog
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -243,7 +243,7 @@ List of keywords or tags describing the Catalog
 
 **Requirement:** Optional
 
-A record describing a single resource (e.g., a dataset, a data service) that is part of the catalog
+A catalog record describing how a single resource (such as a dataset or data service) is registered in the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -269,20 +269,20 @@ A record in a catalog, describing the registration of a single resource
 
 **Requirement:** Optional
 
-List of data services that are listed in the Catalog
+List of data services included in the catalog. Use this together with dataset so the catalog is not empty.
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                   |
-| ------------------------------- | --------------------------------------------- |
-| [DataService](#service_items)   | A service for providing data at a URL or URLs |
+| Each item of this array must be | Description                                                         |
+| ------------------------------- | ------------------------------------------------------------------- |
+| [DataService](#service_items)   | A service that provides access to data or data processing functions |
 
 ### <a name="service_items"></a>DCAT-US 3 Catalog > service > DataService
 
 **Title:** DataService
 
-A service for providing data at a URL or URLs
+A service that provides access to data or data processing functions
 
 | **Type**                  | `object`                                                       |
 | ------------------------- | -------------------------------------------------------------- |
@@ -295,20 +295,20 @@ A service for providing data at a URL or URLs
 
 **Requirement:** Optional
 
-A list of categories for the Catalog. A Catalog may be associated with multiple themes
+List of themes or categories for the catalog. A catalog can have more than one theme.
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#theme_items)         | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#theme_items)         | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="theme_items"></a>DCAT-US 3 Catalog > theme > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                                      |
 | ------------------------- | ----------------------------------------------------------------------- |
@@ -321,20 +321,20 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Recommended
 
-A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)
+Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be       | Description                                                  |
-| ------------------------------------- | ------------------------------------------------------------ |
-| [ConceptScheme](#themeTaxonomy_items) | A system for specifying approved values for a single concept |
+| Each item of this array must be       | Description                                                           |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| [ConceptScheme](#themeTaxonomy_items) | A controlled vocabulary or other list of approved terms for a concept |
 
 ### <a name="themeTaxonomy_items"></a>DCAT-US 3 Catalog > themeTaxonomy > ConceptScheme
 
 **Title:** ConceptScheme
 
-A system for specifying approved values for a single concept
+A controlled vocabulary or other list of approved terms for a concept
 
 | **Type**                  | `object`                                                                                   |
 | ------------------------- | ------------------------------------------------------------------------------------------ |
@@ -347,7 +347,7 @@ A system for specifying approved values for a single concept
 
 **Requirement:** Optional
 
-Information that indicates whether the Catalog is open data, has access restrictions or is not public
+Information about whether the catalog is publicly accessible, restricted, or not public
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -384,7 +384,7 @@ Text description of the access rights
 
 **Requirement:** Recommended
 
-An established standard to which the described catalog conforms
+Standard, schema, profile, or model that this catalog follows
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -406,7 +406,7 @@ An established standard to which the described catalog conforms
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                                                                     |
 | ------------------------- | ---------------------------------------------------------------------------- |
@@ -419,20 +419,20 @@ Information about a particular standard that another item conforms to
 
 **Requirement:** Optional
 
-The entity responsible for creating the resource
+Person or organization responsible for creating the catalog metadata
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Agent](#creator_items)         | An entity that could be involved with a resource |
+| Each item of this array must be | Description                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| [Agent](#creator_items)         | A person, organization, software agent, or other entity involved with a resource |
 
 ### <a name="creator_items"></a>DCAT-US 3 Catalog > creator > Agent
 
 **Title:** Agent
 
-An entity that could be involved with a resource
+A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`                                                               |
 | ------------------------- | ---------------------------------------------------------------------- |
@@ -445,7 +445,7 @@ An entity that could be involved with a resource
 
 **Requirement:** Optional
 
-Free-text description of the catalog (in the language indicated in the language property)
+Plain-language summary of the catalog
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -466,20 +466,20 @@ Free-text description of the catalog (in the language indicated in the language 
 
 **Requirement:** Optional
 
-A list of related catalogs that are part of the described catalog
+List of catalogs that are contained within this catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                             |
-| ----------------------------------- | ------------------------------------------------------- |
-| [DCAT-US 3 Catalog](#hasPart_items) | The main item defined by DCAT-US 3 is the Catalog class |
+| Each item of this array must be     | Description                                                                        |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| [DCAT-US 3 Catalog](#hasPart_items) | A curated collection of metadata about datasets, data services, or other resources |
 
 ### <a name="hasPart_items"></a>DCAT-US 3 Catalog > hasPart > DCAT-US 3 Catalog
 
 **Title:** DCAT-US 3 Catalog
 
-The main item defined by DCAT-US 3 is the Catalog class
+A curated collection of metadata about datasets, data services, or other resources
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
@@ -492,7 +492,7 @@ The main item defined by DCAT-US 3 is the Catalog class
 
 **Requirement:** Optional
 
-The unique identifier for the Catalog, e.g. the URI or other unique identifier
+Main unique identifier for the catalog, such as a URI or another persistent identifier
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -553,7 +553,7 @@ A unique identifier and optionally it's scheme and other relevant information
 
 **Requirement:** Recommended
 
-Date of formal issuance (e.g., publication) of the catalog
+Date when the catalog was formally issued, such as its initial publication date
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -632,7 +632,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-Language or languages used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -705,7 +705,7 @@ Language or languages used in the textual metadata describing titles, descriptio
 
 **Requirement:** Optional
 
-The license under which the Catalog is made available; see https://resources.data.gov/schemas/dcat-us/open-licenses for more information regarding license-free declarations and licenses
+License that governs how the catalog can be used or reused
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -742,7 +742,7 @@ Full text of the license
 
 **Requirement:** Recommended
 
-Most recent date on which the catalog was changed, updated or modified
+Most recent date when the catalog content changed, not just catalog-record metadata
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -825,7 +825,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-Agent responsible for making the catalog available
+Person or organization responsible for publishing and making the catalog available
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -860,7 +860,7 @@ inline description of the publisher
 
 **Requirement:** Recommended
 
-A list of statements concerning all rights for the Catalog that may not be addressed by license or accessRights, such as copyright statements, statements about the intellectual property rights (IPR), or information regarding access or restrictions based on privacy, security, or other policies
+Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
@@ -897,20 +897,20 @@ Full text of a statement of rights
 
 **Requirement:** Optional
 
-List of organizations holding rights on the catalog
+Organizations that hold rights in the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                                                         |
-| ----------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#rightsHolder_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be     | Description                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#rightsHolder_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="rightsHolder_items"></a>DCAT-US 3 Catalog > rightsHolder > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------ |
@@ -923,20 +923,20 @@ Information about an organization, including other organizations that it is part
 
 **Requirement:** Recommended
 
-The geographical area covered by the catalog
+Geographic area covered by the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Location](#spatial_items)      | Information about a specific geographic location |
+| Each item of this array must be | Description                      |
+| ------------------------------- | -------------------------------- |
+| [Location](#spatial_items)      | A named place or geographic area |
 
 ### <a name="spatial_items"></a>DCAT-US 3 Catalog > spatial > Location
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`                                                                  |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -954,15 +954,15 @@ List of subjects of the catalog
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#subject_items)       | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#subject_items)       | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="subject_items"></a>DCAT-US 3 Catalog > subject > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                                      |
 | ------------------------- | ----------------------------------------------------------------------- |
@@ -975,7 +975,7 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Optional
 
-List of temporal periods that the Catalog covers
+Time periods covered by the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -1001,7 +1001,7 @@ Information about a specific time period with a start- and/or end-time
 
 **Requirement:** Optional
 
-The title of the catalog in the indicated language
+Human-readable title of the catalog
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -1022,20 +1022,20 @@ The title of the catalog in the indicated language
 
 **Requirement:** Optional
 
-List of categories for the Catalog
+List of high-level categories for the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>DCAT-US 3 Catalog > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                                      |
 | ------------------------- | ----------------------------------------------------------------------- |
@@ -1048,7 +1048,7 @@ A labeled value from an optionally specified concept scheme
 
 **Requirement:** Recommended
 
-The home page of the catalog (a public Web document usually available in HTML)
+Main public web page for the catalog, usually an HTML page
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1083,20 +1083,20 @@ inline description of the home page
 
 **Requirement:** Optional
 
-A list of agents having some form of responsibility for the catalog
+List of agents with specific responsibilities for the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be            | Description                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| [Attribution](#qualifiedAttribution_items) | An attribution that an agent plays some role |
+| Each item of this array must be            | Description                                       |
+| ------------------------------------------ | ------------------------------------------------- |
+| [Attribution](#qualifiedAttribution_items) | A responsibility that an agent has for a resource |
 
 ### <a name="qualifiedAttribution_items"></a>DCAT-US 3 Catalog > qualifiedAttribution > Attribution
 
 **Title:** Attribution
 
-An attribution that an agent plays some role
+A responsibility that an agent has for a resource
 
 | **Type**                  | `object`                                                                                  |
 | ------------------------- | ----------------------------------------------------------------------------------------- |

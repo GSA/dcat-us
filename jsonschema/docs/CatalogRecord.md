@@ -248,7 +248,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+Language code used in catalog record metadata text, using ISO 639-1 values such as en or es
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

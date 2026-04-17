@@ -2,6 +2,8 @@
 
 **Title:** Metric
 
+A standard used to measure one aspect of data quality
+
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |

@@ -2,7 +2,7 @@
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -83,15 +83,15 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be          | Description                                                                         |
-| ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#subOrganizationOf_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be          | Description                                                                       |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#subOrganizationOf_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="subOrganizationOf_items"></a>Organization > subOrganizationOf > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`              |
 | ------------------------- | --------------------- |

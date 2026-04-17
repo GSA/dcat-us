@@ -2,7 +2,7 @@
 
 **Title:** ConceptScheme
 
-A system for specifying approved values for a single concept
+A controlled vocabulary or other list of approved terms for a concept
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |

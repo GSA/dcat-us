@@ -2,7 +2,7 @@
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -59,7 +59,7 @@ Information about a specific geographic location
 
 **Requirement:** Recommended
 
-bounding box of a location described in WKT, GeoJSON, or GML format
+Bounding box for the location, described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |

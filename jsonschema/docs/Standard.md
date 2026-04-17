@@ -2,7 +2,7 @@
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -150,7 +150,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-A free-text account of the Standard
+Plain-language summary of the standard
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -390,7 +390,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Recommended
 
-A name given to the Standard
+Human-readable title of the standard
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
@@ -416,15 +416,15 @@ List of categories for the Standard
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Standard > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |

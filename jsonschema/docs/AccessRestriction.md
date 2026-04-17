@@ -2,7 +2,7 @@
 
 **Title:** AccessRestriction
 
-A restriction on the permitted access to a resource
+Rules or indicators that describe who can access a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
@@ -80,7 +80,7 @@ The indication of whether or not there are access restrictions on the item
 
 **Requirement:** Recommended
 
-The specific NARA restriction associated with this restriction
+Authority, code list entry, or policy reference that defines the specific access restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
