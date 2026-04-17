@@ -32,8 +32,7 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "adms:status",
-        "range": "skos:Concept",
-        "definition": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions."
+        "range": "skos:Concept"
       }
     },
     "conformsTo": {
@@ -52,8 +51,7 @@
       "_oldDocs": {
         "requirementLevel": "Recommended",
         "uri": "dcterms:conformsTo",
-        "range": "dcterms:Standard",
-        "definition": "An Application Profile that the Catalog Record's metadata conforms to."
+        "range": "dcterms:Standard"
       }
     },
     "description": {
@@ -67,8 +65,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:description",
-        "range": "rdfs:Literal",
-        "definition": "A free-text account of the Catalog Record. This property can be repeated for parallel language versions of the description."
+        "range": "rdfs:Literal"
       },
       "examples": [
         [
@@ -107,14 +104,13 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:issued",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "definition": "The date on which the description of the Dataset was included in the Catalog."
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
       "examples": [["2024-01-15"], ["2023-06-01"]]
     },
     "language": {
       "title": "language",
-      "description": "A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
+      "description": "Language code used in catalog record metadata text, using ISO 639-1 values such as en or es",
       "anyOf": [
         {
           "type": "null",
@@ -138,9 +134,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:language",
-        "range": "dcterms:LinguisticSystem",
-        "definition": "A language used in the textual metadata describing titles, descriptions, etc. of the members of the catalog.",
-        "usageNote": "Resources defined by the Library of Congress [[ISO 639-1]] SHOULD be used. This property can be repeated if the metadata is provided in multiple languages."
+        "range": "dcterms:LinguisticSystem"
       },
       "examples": [["en", "es"]]
     },
@@ -170,8 +164,7 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "dcterms:modified",
-        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)",
-        "definition": "The most recent date on which the Catalog Record's entry was changed or modified."
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
       "examples": ["2024-06-15", "2024-01-15T10:30:00Z"]
     },
@@ -182,8 +175,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:source",
-        "range": "dcat:Resource",
-        "definition": "The original metadata that was used in creating metadata for the datasets, data services, or catalogs in the Catalog Record."
+        "range": "dcat:Resource"
       },
       "examples": ["Original metadata harvested from NOAA data portal"]
     },
@@ -194,9 +186,7 @@
       "_oldDocs": {
         "requirementLevel": "Optional",
         "uri": "dcterms:title",
-        "range": "rdfs:Literal",
-        "definition": "A name given to the Catalog Record.",
-        "usageNote": "This property can be repeated for parallel language versions of the name."
+        "range": "rdfs:Literal"
       },
       "examples": [
         "Climate Data 2024 Catalog Entry",
@@ -210,9 +200,7 @@
       "_oldDocs": {
         "requirementLevel": "Mandatory",
         "uri": "foaf:primaryTopic",
-        "range": "dcat:Resource",
-        "definition": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
-        "usageNote": "A catalog record will refer to one entity in a catalog. This can be either a Dataset or a Data Service. To ensure an unambigous reading of the cardinality the range is set to Cataloged Resource. However it is not the intend with this range to require the explicit use of the class Cataloged Record. As abstract class, an subclass should be used."
+        "range": "dcat:Resource"
       },
       "examples": [
         "https://example.gov/datasets/climate-data-2024",
