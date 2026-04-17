@@ -111,11 +111,11 @@ A service that provides access to data or data processing functions
 | ----------- | --------------- |
 | **Default** | `"DataService"` |
 
-## <a name="contactPoint"></a>[Mandatory] Property `DataService > contactPoint`
+## <a name="contactPoint"></a>[Optional] Property `DataService > contactPoint`
 
 **Title:** contact point
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Contact information for questions about the Data Service. Include an email address that is continuously monitored
 
@@ -138,11 +138,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="endpointDescription"></a>[Recommended] Property `DataService > endpointDescription`
+## <a name="endpointDescription"></a>[Optional] Property `DataService > endpointDescription`
 
 **Title:** endpoint description
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of endpoint descriptions with operations and parameters (for example, OpenAPI or similar service documentation)
 
@@ -172,11 +172,11 @@ List of endpoint descriptions with operations and parameters (for example, OpenA
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="endpointURL"></a>[Mandatory] Property `DataService > endpointURL`
+## <a name="endpointURL"></a>[Optional] Property `DataService > endpointURL`
 
 **Title:** endpoint URL
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 A list of root locations or primary endpoints of the service (a Web-resolvable IRI)
 
@@ -259,11 +259,11 @@ List of keywords or tags describing the data service
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="servesDataset"></a>[Recommended] Property `DataService > servesDataset`
+## <a name="servesDataset"></a>[Optional] Property `DataService > servesDataset`
 
 **Title:** serves dataset
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of datasets this service provides access to
 
@@ -656,11 +656,11 @@ ISO 639-1 language code values supported by the data service, such as en or es
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>[Recommended] Property `DataService > license`
+## <a name="license"></a>[Optional] Property `DataService > license`
 
 **Title:** license
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 License that governs how the data service can be used or reused
 
@@ -772,11 +772,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>[Mandatory] Property `DataService > publisher`
+## <a name="publisher"></a>[Optional] Property `DataService > publisher`
 
 **Title:** publisher
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Person or organization responsible for publishing and making the data service available
 
@@ -892,11 +892,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                     |
 | **Same definition as**    | [PeriodOfTime](#servesDataset_items_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>[Mandatory] Property `DataService > title`
+## <a name="title"></a>[Optional] Property `DataService > title`
 
 **Title:** title
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Human-readable title of the data service
 

@@ -19,22 +19,22 @@
       "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat-us:cuiBannerMarking",
         "range": "xsd:string"
       },
-      "examples": ["CUI//SP-CTI", "CUI//SP-PRVCY//SP-LEGAL"]
+      "examples": ["CUI//SP-CTI", "CUI//SP-PRVCY//SP-LEGAL"],
+      "requirementLevel": "Mandatory"
     },
     "designationIndicator": {
       "title": "CUI designation indicator",
       "description": "Agency that designated the information as CUI; include at least \"Controlled by:\" and, when possible, contact information",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat-us:designationIndicator",
         "range": "xsd:string"
       },
-      "examples": ["Agency XYZ", "DOC"]
+      "examples": ["Agency XYZ", "DOC"],
+      "requirementLevel": "Mandatory"
     },
     "requiredIndicatorPerAuthority": {
       "title": "required indicator per authority",
@@ -45,11 +45,11 @@
         "type": "string"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:requiredIndicatorPerAuthority",
         "range": "xsd:string"
       },
-      "examples": [["Privacy Act of 1974", "Federal Records Act"]]
+      "examples": [["Privacy Act of 1974", "Federal Records Act"]],
+      "requirementLevel": "Optional"
     }
   },
   "required": ["cuiBannerMarking", "designationIndicator"],

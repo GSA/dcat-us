@@ -75,11 +75,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="label"></a>[Mandatory] Property `Activity > label`
+## <a name="label"></a>[Optional] Property `Activity > label`
 
 **Title:** label
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 A human-readable label for the activity
 

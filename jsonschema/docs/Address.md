@@ -53,11 +53,11 @@ A single physical address
 | ----------- | ----------- |
 | **Default** | `"Address"` |
 
-## <a name="country-name"></a>[Recommended] Property `Address > country-name`
+## <a name="country-name"></a>[Optional] Property `Address > country-name`
 
 **Title:** country
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The country of the Address
 
@@ -70,11 +70,11 @@ The country of the Address
 "United States"
 ```
 
-## <a name="locality"></a>[Recommended] Property `Address > locality`
+## <a name="locality"></a>[Optional] Property `Address > locality`
 
 **Title:** locality
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The city of the Address
 
@@ -91,11 +91,11 @@ The city of the Address
 "Washington"
 ```
 
-## <a name="postal-code"></a>[Recommended] Property `Address > postal-code`
+## <a name="postal-code"></a>[Optional] Property `Address > postal-code`
 
 **Title:** postal code
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The postal code of the Address
 
@@ -112,11 +112,11 @@ The postal code of the Address
 "20230"
 ```
 
-## <a name="region"></a>[Recommended] Property `Address > region`
+## <a name="region"></a>[Optional] Property `Address > region`
 
 **Title:** administrative area
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state
 
@@ -133,11 +133,11 @@ The administrative area of the Address. Depending on the country, this correspon
 "DC"
 ```
 
-## <a name="street-address"></a>[Recommended] Property `Address > street-address`
+## <a name="street-address"></a>[Optional] Property `Address > street-address`
 
 **Title:** street address
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The street name and civic number of an Address
 

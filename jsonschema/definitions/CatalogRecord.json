@@ -30,10 +30,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "adms:status",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "conformsTo": {
       "title": "application profile",
@@ -49,10 +49,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "description": {
       "title": "Descriptions",
@@ -63,7 +63,6 @@
         "type": "string"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
@@ -72,7 +71,8 @@
           "This catalog record describes the registration of the Climate Data 2023 dataset.",
           "Contains metadata about when the dataset was added and last updated."
         ]
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "issued": {
       "title": "listing date",
@@ -102,11 +102,11 @@
         ]
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [["2024-01-15"], ["2023-06-01"]]
+      "examples": [["2024-01-15"], ["2023-06-01"]],
+      "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
@@ -132,11 +132,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en", "es"]]
+      "examples": [["en", "es"]],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "update/modification date",
@@ -162,50 +162,50 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-15", "2024-01-15T10:30:00Z"]
+      "examples": ["2024-06-15", "2024-01-15T10:30:00Z"],
+      "requirementLevel": "Mandatory"
     },
     "source": {
       "title": "source metadata",
       "description": "The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:source",
         "range": "dcat:Resource"
       },
-      "examples": ["Original metadata harvested from NOAA data portal"]
+      "examples": ["Original metadata harvested from NOAA data portal"],
+      "requirementLevel": "Optional"
     },
     "title": {
       "title": "title",
       "description": "A name given to the Catalog Record",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
       "examples": [
         "Climate Data 2024 Catalog Entry",
         "Climate Data 2023 Catalog Record"
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "primaryTopic": {
       "title": "primary topic",
       "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "foaf:primaryTopic",
         "range": "dcat:Resource"
       },
       "examples": [
         "https://example.gov/datasets/climate-data-2024",
         "https://example.gov/datasets/climate-data-2023"
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["modified", "primaryTopic"],

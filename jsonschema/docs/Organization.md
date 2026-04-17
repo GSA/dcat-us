@@ -50,11 +50,11 @@ An organization involved with a resource, including parent or child organization
 | ----------- | ---------------- |
 | **Default** | `"Organization"` |
 
-## <a name="name"></a>[Mandatory] Property `Organization > name`
+## <a name="name"></a>[Optional] Property `Organization > name`
 
 **Title:** name
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The full name of the Organization
 

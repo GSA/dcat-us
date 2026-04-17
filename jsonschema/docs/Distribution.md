@@ -242,11 +242,11 @@ A service that provides access to data or data processing functions
 | **Additional properties** | Any type allowed                |
 | **Defined in**            | [Dataservice](./Dataservice.md) |
 
-## <a name="accessURL"></a>[Recommended] Property `Distribution > accessURL`
+## <a name="accessURL"></a>[Optional] Property `Distribution > accessURL`
 
 **Title:** access URL
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 URL for indirect access to the Distribution (for example, a landing page, API docs, or request form), not a direct file download
 
@@ -471,11 +471,11 @@ inline description of Concept
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Concept](#representationTechnique_anyOf_i1) |
 
-## <a name="accessRestriction"></a>[Recommended] Property `Distribution > accessRestriction`
+## <a name="accessRestriction"></a>[Optional] Property `Distribution > accessRestriction`
 
 **Title:** access restriction
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of access restrictions related to the distribution
 
@@ -497,11 +497,11 @@ Rules or indicators that describe who can access a resource
 | **Additional properties** | Any type allowed                                                                                   |
 | **Same definition as**    | [AccessRestriction](#accessService_items_servesDataset_items_sample_items_accessRestriction_items) |
 
-## <a name="cuiRestriction"></a>[Recommended] Property `Distribution > cuiRestriction`
+## <a name="cuiRestriction"></a>[Optional] Property `Distribution > cuiRestriction`
 
 **Title:** CUI restriction
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Controlled Unclassified Information restriction related to the distribution
 
@@ -532,11 +532,11 @@ inline description of CUIRestriction
 | **Additional properties** | Any type allowed                                                                                |
 | **Same definition as**    | [CUIRestriction](#accessService_items_servesDataset_items_sample_items_cuiRestriction_anyOf_i1) |
 
-## <a name="describedBy"></a>[Recommended] Property `Distribution > describedBy`
+## <a name="describedBy"></a>[Optional] Property `Distribution > describedBy`
 
 **Title:** data dictionary
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A distribution containing the Data Dictionary for this distribution
 
@@ -567,11 +567,11 @@ inline description of the data dictionary
 | **Additional properties** | Any type allowed                                                      |
 | **Same definition as**    | [Distribution](#accessService_items_servesDataset_items_sample_items) |
 
-## <a name="useRestriction"></a>[Recommended] Property `Distribution > useRestriction`
+## <a name="useRestriction"></a>[Optional] Property `Distribution > useRestriction`
 
 **Title:** use restriction
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Use restriction related to the distribution
 
@@ -656,11 +656,11 @@ A standard or specification that another resource conforms to
 | **Additional properties** | Any type allowed                                                                   |
 | **Same definition as**    | [Standard](#accessService_items_servesDataset_items_sample_items_conformsTo_items) |
 
-## <a name="description"></a>[Recommended] Property `Distribution > description`
+## <a name="description"></a>[Optional] Property `Distribution > description`
 
 **Title:** description
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Plain-language summary of the distribution
 
@@ -677,11 +677,11 @@ Plain-language summary of the distribution
 "A CSV file containing historical climate data including daily temperature and precipitation readings."
 ```
 
-## <a name="format"></a>[Recommended] Property `Distribution > format`
+## <a name="format"></a>[Optional] Property `Distribution > format`
 
 **Title:** format
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType
 
@@ -900,11 +900,11 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>[Recommended] Property `Distribution > license`
+## <a name="license"></a>[Optional] Property `Distribution > license`
 
 **Title:** license
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 License that governs how the distribution can be used or reused
 
@@ -937,11 +937,11 @@ Full text of the license
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>[Recommended] Property `Distribution > modified`
+## <a name="modified"></a>[Optional] Property `Distribution > modified`
 
 **Title:** last modified
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The most recent date on which the Distribution was changed or modified
 
@@ -1020,11 +1020,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="rights"></a>[Recommended] Property `Distribution > rights`
+## <a name="rights"></a>[Optional] Property `Distribution > rights`
 
 **Title:** rights
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
@@ -1056,11 +1056,11 @@ Full text of a statement of rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="title"></a>[Recommended] Property `Distribution > title`
+## <a name="title"></a>[Optional] Property `Distribution > title`
 
 **Title:** title
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Human-readable title of the distribution
 

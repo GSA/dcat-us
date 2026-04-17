@@ -19,11 +19,11 @@
       "description": "A version number or other version designation of the concept scheme",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:version",
         "range": "xsd:string"
       },
-      "examples": ["2.0.1"]
+      "examples": ["2.0.1"],
+      "requirementLevel": "Optional"
     },
     "created": {
       "title": "creation date",
@@ -58,25 +58,25 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:created",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2020"]
+      "examples": ["2020"],
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "A description of the concept scheme",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "A classification scheme for scientific research domains.",
         "A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "issued": {
       "title": "publication date",
@@ -111,11 +111,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2020-01-01", "2020"]
+      "examples": ["2020-01-01", "2020"],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "update/modification date",
@@ -150,22 +150,22 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024"]
+      "examples": ["2024"],
+      "requirementLevel": "Optional"
     },
     "title": {
       "title": "title",
       "description": "The title of the concept scheme",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Science Domains", "Federal Data Classification Scheme"]
+      "examples": ["Science Domains", "Federal Data Classification Scheme"],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["title"],

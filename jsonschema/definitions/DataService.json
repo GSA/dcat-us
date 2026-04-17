@@ -22,10 +22,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "endpointDescription": {
       "title": "endpoint description",
@@ -35,14 +35,14 @@
         "type": "string"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:endpointDescription",
         "range": "rdfs:Resource"
       },
       "examples": [
         ["https://api.example.gov/climate/v1/openapi.json"],
         ["https://api.example.gov/climate/docs/openapi.json"]
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "endpointURL": {
       "title": "endpoint URL",
@@ -55,7 +55,6 @@
         "format": "iri"
       },
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat:endpointURL",
         "range": "rdfs:Resource"
       },
@@ -65,7 +64,8 @@
           "https://api.example.gov/climate/v1",
           "https://api.example.gov/climate/v2"
         ]
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     },
     "keyword": {
       "title": "keyword/tag",
@@ -77,14 +77,14 @@
         "minLength": 1
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal"
       },
       "examples": [
         ["climate", "weather", "API"],
         ["climate", "weather", "temperature", "API", "REST"]
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "servesDataset": {
       "title": "serves dataset",
@@ -94,32 +94,32 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:servesDataset",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "spatialResolutionInMeters": {
       "title": "spatial resolution in meters",
       "description": "The minimum spatial separation resolvable in a Data Service, measured in meters",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal typed as xsd:decimal"
       },
-      "examples": ["1000"]
+      "examples": ["1000"],
+      "requirementLevel": "Optional"
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "The minimum time period resolvable by the Data Service",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal typed as xsd:duration"
       },
-      "examples": ["P1D"]
+      "examples": ["P1D"],
+      "requirementLevel": "Optional"
     },
     "theme": {
       "title": "theme/category",
@@ -129,10 +129,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:theme",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "accessRights": {
       "title": "access rights",
@@ -147,11 +147,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement"
       },
-      "examples": ["Public access with no restrictions"]
+      "examples": ["Public access with no restrictions"],
+      "requirementLevel": "Optional"
     },
     "conformsTo": {
       "title": "conforms to",
@@ -161,10 +161,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "created": {
       "title": "creation date",
@@ -198,11 +198,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:created",
         "range": "rdfs:Literal typed as xsd:date or xsd:dateTime"
       },
-      "examples": ["2020-01-15"]
+      "examples": ["2020-01-15"],
+      "requirementLevel": "Optional"
     },
     "creator": {
       "title": "creator",
@@ -212,24 +212,24 @@
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the data service",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "RESTful API providing access to historical climate observations.",
         "A RESTful API providing access to historical and real-time climate data including temperature, precipitation, and atmospheric conditions."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "identifier": {
       "title": "identifier",
@@ -244,10 +244,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -256,9 +256,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
@@ -284,11 +282,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en", "es"]]
+      "examples": [["en", "es"]],
+      "requirementLevel": "Optional"
     },
     "license": {
       "title": "license",
@@ -304,11 +302,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument"
       },
-      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"],
+      "requirementLevel": "Recommended"
     },
     "modified": {
       "title": "update/modification date",
@@ -343,21 +341,21 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-03-20"]
+      "examples": ["2024-03-20"],
+      "requirementLevel": "Optional"
     },
     "publisher": {
       "title": "publisher",
       "description": "Person or organization responsible for publishing and making the data service available",
       "$ref": "/dcat-us/3.0.0/definitions/agent",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "rights": {
       "title": "rights",
@@ -367,7 +365,6 @@
         "type": "string"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement"
       },
@@ -375,7 +372,8 @@
         [
           "Data provided by the National Climate Data Center is in the public domain."
         ]
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "rightsHolder": {
       "title": "rights holder",
@@ -385,10 +383,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -398,10 +396,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "temporal": {
       "title": "temporal coverage",
@@ -411,21 +409,21 @@
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the data service",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Climate Data API", "Climate Data REST API"]
+      "examples": ["Climate Data API", "Climate Data REST API"],
+      "requirementLevel": "Mandatory"
     },
     "category": {
       "title": "category",
@@ -435,10 +433,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
@@ -448,10 +446,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -461,10 +459,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "wasUsedBy": {
       "title": "was used by",
@@ -474,10 +472,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "prov:wasUsedBy",
         "range": "prov:Activity"
-      }
+      },
+      "requirementLevel": "Optional"
     }
   },
   "required": ["contactPoint", "endpointURL", "publisher", "title"],

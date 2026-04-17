@@ -24,10 +24,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:identifier",
         "range": "adms:Identifier"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "sample": {
       "title": "sample",
@@ -37,10 +37,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:sample",
         "range": "dcat:Distribution"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "status": {
       "title": "lifecycle status",
@@ -56,10 +56,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:status",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "supportedSchema": {
       "title": "supported schema",
@@ -74,20 +74,18 @@
           "description": "inline description of the supported schema"
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "versionNotes": {
       "title": "version notes",
       "description": "Notes describing how this version differs from earlier versions of the dataset",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:versionNotes",
         "range": "rdfs:Literal"
       },
-      "examples": ["Initial release of 2024 climate observations data."]
+      "examples": ["Initial release of 2024 climate observations data."],
+      "requirementLevel": "Optional"
     },
     "contactPoint": {
       "title": "contact point",
@@ -106,10 +104,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "distribution": {
       "title": "dataset distribution",
@@ -119,10 +117,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:distribution",
         "range": "dcat:Distribution"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "first": {
       "title": "first",
@@ -137,9 +135,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "hasCurrentVersion": {
       "title": "current version",
@@ -154,9 +150,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "hasVersion": {
       "title": "has version",
@@ -177,10 +171,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:inSeries",
         "range": "dcat:DatasetSeries"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "keyword": {
       "title": "keyword/tag",
@@ -192,7 +186,6 @@
         "minLength": 1
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal"
       },
@@ -207,7 +200,8 @@
           "wind",
           "meteorology"
         ]
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "landingPage": {
       "title": "landing page",
@@ -223,10 +217,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:landingPage",
         "range": "foaf:Document"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "previousVersion": {
       "title": "previous version",
@@ -241,9 +235,7 @@
           "description": "inline description of Dataset"
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "qualifiedRelation": {
       "title": "qualified relation",
@@ -253,32 +245,32 @@
         "$ref": "/dcat-us/3.0.0/definitions/relationship"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:qualifiedRelation",
         "range": "dcat:Relationship"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "Smallest spatial distance between data points, in meters, represented as a single value",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "rdfs:Literal (typed as xsd:decimal)"
       },
-      "examples": ["1000"]
+      "examples": ["1000"],
+      "requirementLevel": "Optional"
     },
     "temporalResolution": {
       "title": "temporal resolution",
       "description": "Smallest time interval between data points, using xsd:duration format (for example, P1D)",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "rdfs:Literal (typed as xsd:duration)"
       },
-      "examples": ["P1D"]
+      "examples": ["P1D"],
+      "requirementLevel": "Optional"
     },
     "theme": {
       "title": "theme/category",
@@ -288,21 +280,21 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:theme",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "version": {
       "title": "version",
       "description": "The version indicator (name or identifier) of a resource",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:version",
         "range": "rdfs:Literal"
       },
-      "examples": ["2024.1"]
+      "examples": ["2024.1"],
+      "requirementLevel": "Optional"
     },
     "describedBy": {
       "title": "data dictionary",
@@ -318,10 +310,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "liabilityStatement": {
       "title": "liability statement",
@@ -337,13 +329,13 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:liabilityStatement",
         "range": "dcat-us:LiabilityStatement"
       },
       "examples": [
         "This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "metadataDistribution": {
       "title": "metadata distribution",
@@ -353,23 +345,23 @@
         "$ref": "/dcat-us/3.0.0/definitions/distribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:metadataDistribution",
         "range": "dcat:Distribution"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "purpose": {
       "title": "purpose",
       "description": "The purpose of the dataset",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:purpose",
         "range": "rdfs:Literal"
       },
       "examples": [
         "To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "accessRights": {
       "title": "access rights",
@@ -385,14 +377,14 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement"
       },
       "examples": [
         "public",
         "Public access with no restrictions. Data is freely available for download and use."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "accrualPeriodicity": {
       "title": "frequency",
@@ -450,11 +442,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency"
       },
-      "examples": ["daily"]
+      "examples": ["daily"],
+      "requirementLevel": "Optional"
     },
     "conformsTo": {
       "title": "conforms to",
@@ -464,10 +456,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "contributor": {
       "title": "contributor",
@@ -477,10 +469,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:contributor",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "created": {
       "title": "creation date",
@@ -514,10 +506,8 @@
           ]
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      },
-      "examples": ["2024-01-01"]
+      "examples": ["2024-01-01"],
+      "requirementLevel": "Optional"
     },
     "creator": {
       "title": "creator",
@@ -533,24 +523,24 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the dataset",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "Daily temperature, precipitation, and wind measurements from monitoring stations across the United States.",
         "Comprehensive daily climate observations collected from monitoring stations across the United States, including temperature, precipitation, humidity, and wind measurements."
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     },
     "hasPart": {
       "title": "has part",
@@ -559,9 +549,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "identifier": {
       "title": "identifier",
@@ -577,10 +565,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "isReferencedBy": {
       "title": "is referenced by",
@@ -593,11 +581,11 @@
         "format": "iri"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:isReferencedBy",
         "range": "rdfs:Resource"
       },
-      "examples": [["https://example.gov/publications/climate-trends-2024"]]
+      "examples": [["https://example.gov/publications/climate-trends-2024"]],
+      "requirementLevel": "Optional"
     },
     "issued": {
       "title": "release date",
@@ -632,11 +620,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-15"]
+      "examples": ["2024-01-15"],
+      "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
@@ -662,11 +650,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en"]]
+      "examples": [["en"]],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "last modified",
@@ -701,11 +689,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01"]
+      "examples": ["2024-06-01"],
+      "requirementLevel": "Recommended"
     },
     "provenance": {
       "title": "provenance",
@@ -716,7 +704,6 @@
         "description": "Full text of the provenance statement"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:provenance",
         "range": "dcterms:ProvenanceStatement"
       },
@@ -725,17 +712,18 @@
           "Data collected from automated weather stations deployed at 2,500 locations across the continental United States.",
           "Quality control procedures applied according to WMO guidelines."
         ]
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "publisher": {
       "title": "publisher",
       "description": "Organization responsible for publishing and making the dataset available",
       "$ref": "/dcat-us/3.0.0/definitions/organization",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "relation": {
       "title": "related resource",
@@ -748,11 +736,13 @@
         "format": "iri"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:relation",
         "range": "rdfs:Resource"
       },
-      "examples": [["https://example.gov/datasets/historical-climate-averages"]]
+      "examples": [
+        ["https://example.gov/datasets/historical-climate-averages"]
+      ],
+      "requirementLevel": "Optional"
     },
     "replaces": {
       "title": "replaces",
@@ -761,9 +751,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "rights": {
       "title": "rights",
@@ -774,7 +762,6 @@
         "description": "Full text of a statement of rights"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement"
       },
@@ -785,7 +772,8 @@
         [
           "This data is in the public domain and may be used without restriction."
         ]
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "rightsHolder": {
       "title": "rights holder",
@@ -794,9 +782,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "source": {
       "title": "data source",
@@ -806,10 +792,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:source",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -832,10 +818,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "subject": {
       "title": "subject",
@@ -845,10 +831,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:subject",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "temporal": {
       "title": "temporal coverage",
@@ -858,24 +844,24 @@
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the dataset",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
       "examples": [
         "Daily Climate Observations 2024",
         "National Climate Observations 2024"
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     },
     "category": {
       "title": "category",
@@ -885,10 +871,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
@@ -898,10 +884,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "page": {
       "title": "documentation",
@@ -911,10 +897,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "foaf:page",
         "range": "foaf:Document"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -924,10 +910,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "wasAttributedTo": {
       "title": "attribution",
@@ -936,9 +922,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "wasGeneratedBy": {
       "title": "was generated by",
@@ -948,10 +932,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "prov:wasGeneratedBy",
         "range": "prov:Activity"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "wasUsedBy": {
       "title": "used by",
@@ -960,9 +944,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/activity"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "image": {
       "title": "image",
@@ -980,22 +962,22 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "schema:image",
         "range": "schema:url or schema:ImageObject"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "scopeNote": {
       "title": "usage note",
       "description": "usage note for the dataset",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "skos:scopeNote"
       },
       "examples": [
         "This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets."
-      ]
+      ],
+      "requirementLevel": "Optional"
     }
   },
   "required": [

@@ -63,11 +63,11 @@ A record in a catalog, describing the registration of a single resource
 | ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
 
-## <a name="status"></a>[Recommended] Property `CatalogRecord > status`
+## <a name="status"></a>[Optional] Property `CatalogRecord > status`
 
 **Title:** change type
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
@@ -98,11 +98,11 @@ inline description of status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="conformsTo"></a>[Recommended] Property `CatalogRecord > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `CatalogRecord > conformsTo`
 
 **Title:** application profile
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 An Application Profile that the Catalog Record's metadata conforms to
 
@@ -309,11 +309,11 @@ Language code used in catalog record metadata text, using ISO 639-1 values such 
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>[Mandatory] Property `CatalogRecord > modified`
+## <a name="modified"></a>[Optional] Property `CatalogRecord > modified`
 
 **Title:** update/modification date
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The most recent date on which the catalog record was changed or modified
 
@@ -411,11 +411,11 @@ A name given to the Catalog Record
 "Climate Data 2023 Catalog Record"
 ```
 
-## <a name="primaryTopic"></a>[Mandatory] Property `CatalogRecord > primaryTopic`
+## <a name="primaryTopic"></a>[Optional] Property `CatalogRecord > primaryTopic`
 
 **Title:** primary topic
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 A link to the Dataset, Data service or Catalog described in the Catalog Record
 

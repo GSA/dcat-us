@@ -148,11 +148,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>[Recommended] Property `ConceptScheme > description`
+## <a name="description"></a>[Optional] Property `ConceptScheme > description`
 
 **Title:** description
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A description of the concept scheme
 
@@ -331,11 +331,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>[Mandatory] Property `ConceptScheme > title`
+## <a name="title"></a>[Optional] Property `ConceptScheme > title`
 
 **Title:** title
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The title of the concept scheme
 

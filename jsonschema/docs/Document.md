@@ -211,11 +211,11 @@ Text abstract of the Document
 "This document provides detailed instructions for using climate data products, including API access, file formats, and data interpretation guidelines."
 ```
 
-## <a name="bibliographicCitation"></a>[Recommended] Property `Document > bibliographicCitation`
+## <a name="bibliographicCitation"></a>[Optional] Property `Document > bibliographicCitation`
 
 **Title:** bibliographic citation
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Bibliographic citation as text
 
@@ -284,11 +284,11 @@ An organization involved with a resource, including parent or child organization
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="description"></a>[Recommended] Property `Document > description`
+## <a name="description"></a>[Optional] Property `Document > description`
 
 **Title:** description
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Plain-language summary of the document
 
@@ -305,11 +305,11 @@ Plain-language summary of the document
 "A comprehensive guide for accessing and using the National Climate Data Center's data products and services."
 ```
 
-## <a name="identifier"></a>[Recommended] Property `Document > identifier`
+## <a name="identifier"></a>[Optional] Property `Document > identifier`
 
 **Title:** identifier
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The unique identifier for the Document (e.g. DOI, ISBN)
 
@@ -366,11 +366,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                    |
 | **Same definition as**    | [Identifier](#conformsTo_items_identifier_anyOf_i1) |
 
-## <a name="issued"></a>[Recommended] Property `Document > issued`
+## <a name="issued"></a>[Optional] Property `Document > issued`
 
 **Title:** publication date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Publication date of the Document
 
@@ -447,11 +447,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>[Recommended] Property `Document > publisher`
+## <a name="publisher"></a>[Optional] Property `Document > publisher`
 
 **Title:** publisher
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The organization(s) that published the Document
 
@@ -473,11 +473,11 @@ An organization involved with a resource, including parent or child organization
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="title"></a>[Mandatory] Property `Document > title`
+## <a name="title"></a>[Optional] Property `Document > title`
 
 **Title:** title
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The title of the Document
 

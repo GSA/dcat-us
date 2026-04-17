@@ -28,10 +28,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:representationTechnique",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "status": {
       "title": "lifecycle status",
@@ -47,10 +47,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "adms:status",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "characterEncoding": {
       "title": "character encoding",
@@ -70,11 +70,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "cnt:characterEncoding",
         "range": "rdfs:Literal"
       },
-      "examples": [["UTF-8"]]
+      "examples": [["UTF-8"]],
+      "requirementLevel": "Optional"
     },
     "accessService": {
       "title": "access service",
@@ -84,10 +84,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:accessService",
         "range": "dcat:DataService"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "accessURL": {
       "title": "access URL",
@@ -105,36 +105,36 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:accessURL",
         "range": "rdfs:Resource"
       },
       "examples": [
         "https://example.gov/data/climate",
         "https://example.gov/data/climate/access"
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "byteSize": {
       "title": "byte size",
       "description": "The size of a Distribution in bytes",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:byteSize",
         "range": "xsd:nonNegativeInteger"
       },
-      "examples": ["52428800", "15728640"]
+      "examples": ["52428800", "15728640"],
+      "requirementLevel": "Optional"
     },
     "compressFormat": {
       "title": "compression format",
       "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:compressFormat",
         "range": "dcterms:MediaType"
       },
-      "examples": ["application/gzip"]
+      "examples": ["application/gzip"],
+      "requirementLevel": "Optional"
     },
     "downloadURL": {
       "title": "download URL",
@@ -152,58 +152,58 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:downloadURL",
         "range": "rdfs:Resource"
       },
       "examples": [
         "https://example.gov/downloads/climate-2024.csv",
         "https://example.gov/data/climate/climate-data-2023.csv"
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "mediaType": {
       "title": "media type",
       "description": "MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:mediaType",
         "range": "dcterms:MediaType"
       },
-      "examples": ["text/csv"]
+      "examples": ["text/csv"],
+      "requirementLevel": "Optional"
     },
     "packageFormat": {
       "title": "packaging format",
       "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:packageFormat",
         "range": "dcterms:MediaType"
       },
-      "examples": ["application/zip"]
+      "examples": ["application/zip"],
+      "requirementLevel": "Optional"
     },
     "spatialResolutionInMeters": {
       "title": "Spatial resolution (meters)",
       "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:spatialResolutionInMeters",
         "range": "xsd:decimal"
       },
-      "examples": ["1000"]
+      "examples": ["1000"],
+      "requirementLevel": "Optional"
     },
     "temporalResolution": {
       "title": "termporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:temporalResolution",
         "range": "xsd:duration"
       },
-      "examples": ["P1D"]
+      "examples": ["P1D"],
+      "requirementLevel": "Optional"
     },
     "availability": {
       "title": "availability",
@@ -218,9 +218,7 @@
           "description": "inline description of Concept"
         }
       ],
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "accessRestriction": {
       "title": "access restriction",
@@ -230,10 +228,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:accessRestriction",
         "range": "dcat-us:AccessRestriction"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "cuiRestriction": {
       "title": "CUI restriction",
@@ -249,10 +247,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:cuiRestriction",
         "range": "dcat-us:CuiRestriction"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "describedBy": {
       "title": "data dictionary",
@@ -268,10 +266,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:describedBy",
         "range": "dcat:Distribution"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "useRestriction": {
       "title": "use restriction",
@@ -281,10 +279,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:useRestriction",
         "range": "dcat-us:UseRestriction"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "accessRights": {
       "title": "access rights",
@@ -300,11 +298,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement"
       },
-      "examples": ["Public access without restrictions"]
+      "examples": ["Public access without restrictions"],
+      "requirementLevel": "Optional"
     },
     "conformsTo": {
       "title": "linked schemas",
@@ -314,35 +312,35 @@
         "$ref": "/dcat-us/3.0.0/definitions/standard"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard (A basis for comparison; a reference point against which other things can be evaluated.)"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the distribution",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "Daily climate observations in CSV format.",
         "A CSV file containing historical climate data including daily temperature and precipitation readings."
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "format": {
       "title": "format",
       "description": "A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:format",
         "range": "dcterms:MediaType"
       },
-      "examples": ["CSV"]
+      "examples": ["CSV"],
+      "requirementLevel": "Recommended"
     },
     "identifier": {
       "title": "identifier",
@@ -358,10 +356,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -370,9 +368,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "issued": {
       "title": "release date",
@@ -407,11 +403,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2023-06-01"]
+      "examples": ["2023-06-01"],
+      "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
@@ -437,11 +433,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:language",
         "range": "rdfs:Literal"
       },
-      "examples": [["en"]]
+      "examples": [["en"]],
+      "requirementLevel": "Optional"
     },
     "license": {
       "title": "license",
@@ -457,11 +453,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument"
       },
-      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"],
+      "requirementLevel": "Recommended"
     },
     "modified": {
       "title": "last modified",
@@ -496,11 +492,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01", "2024-01-15"]
+      "examples": ["2024-06-01", "2024-01-15"],
+      "requirementLevel": "Recommended"
     },
     "rights": {
       "title": "rights",
@@ -511,7 +507,6 @@
         "description": "Full text of a statement of rights"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement"
       },
@@ -520,18 +515,19 @@
         [
           "This data is in the public domain and may be used without restriction."
         ]
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the distribution",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Climate Data CSV", "Climate Data CSV Distribution"]
+      "examples": ["Climate Data CSV", "Climate Data CSV Distribution"],
+      "requirementLevel": "Recommended"
     },
     "hasQualityMeasurement": {
       "title": "quality measurement",
@@ -541,10 +537,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/qualitymeasurement"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dqv:hasQualityMeasurement",
         "range": "dqv:QualityMeasurement"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "page": {
       "title": "documentation",
@@ -554,10 +550,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/document"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "foaf:page",
         "range": "foaf:Document"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "image": {
       "title": "image",
@@ -575,10 +571,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "schema:image",
         "range": "schema:ImageObject"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "checksum": {
       "title": "checksum",
@@ -594,10 +590,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "spdx:checksum",
         "range": "spdx:Checksum"
-      }
+      },
+      "requirementLevel": "Optional"
     }
   },
   "required": [],

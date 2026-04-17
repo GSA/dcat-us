@@ -47,11 +47,11 @@ A mechanism that can be used to verify that the contents of a distribution have 
 | ----------- | ------------ |
 | **Default** | `"Checksum"` |
 
-## <a name="algorithm"></a>[Mandatory] Property `Checksum > algorithm`
+## <a name="algorithm"></a>[Optional] Property `Checksum > algorithm`
 
 **Title:** algorithm
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The algorithm used to produce the checksum
 
@@ -65,11 +65,11 @@ The algorithm used to produce the checksum
 "SHA-256"
 ```
 
-## <a name="checksumValue"></a>[Mandatory] Property `Checksum > checksumValue`
+## <a name="checksumValue"></a>[Optional] Property `Checksum > checksumValue`
 
 **Title:** checksum value
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 A lower case hexadecimal encoded digest value produced using a specific algorithm
 

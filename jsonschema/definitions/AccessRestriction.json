@@ -18,21 +18,21 @@
       "description": "A note related to the access restriction",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal"
       },
-      "examples": ["Access restricted to authorized personnel only."]
+      "examples": ["Access restricted to authorized personnel only."],
+      "requirementLevel": "Optional"
     },
     "restrictionStatus": {
       "title": "restriction status",
       "description": "The indication of whether or not there are access restrictions on the item",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -48,10 +48,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Recommended"
     }
   },
   "required": ["restrictionStatus"],

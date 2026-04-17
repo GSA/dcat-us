@@ -144,11 +144,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>[Recommended] Property `Standard > description`
+## <a name="description"></a>[Optional] Property `Standard > description`
 
 **Title:** description
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Plain-language summary of the standard
 
@@ -165,11 +165,11 @@ Plain-language summary of the standard
 "The DCAT-US 3.0 schema defines a standard metadata format for data catalogs in the United States government, based on W3C DCAT."
 ```
 
-## <a name="identifier"></a>[Recommended] Property `Standard > identifier`
+## <a name="identifier"></a>[Optional] Property `Standard > identifier`
 
 **Title:** identifier
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -226,11 +226,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
 
-## <a name="issued"></a>[Recommended] Property `Standard > issued`
+## <a name="issued"></a>[Optional] Property `Standard > issued`
 
 **Title:** issued
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The date of formal issuance (e.g., publication) of the Standard
 
@@ -384,11 +384,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>[Recommended] Property `Standard > title`
+## <a name="title"></a>[Optional] Property `Standard > title`
 
 **Title:** title
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Human-readable title of the standard
 
@@ -431,11 +431,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="inScheme"></a>[Recommended] Property `Standard > inScheme`
+## <a name="inScheme"></a>[Optional] Property `Standard > inScheme`
 
 **Title:** in scheme
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The reference register to which the Standard belongs
 

@@ -19,24 +19,24 @@
       "description": "Significant information pertaining to the use or reproduction of the data",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal"
       },
       "examples": [
         "This data may be used for any purpose without restriction.",
         "This data may be used for research purposes. Commercial use requires written permission from the data steward."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "restrictionStatus": {
       "title": "restriction status",
       "description": "Indication of whether or not there are use restrictions on the archival materials",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "specificRestriction": {
       "title": "specific restriction",
@@ -52,10 +52,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Recommended"
     }
   },
   "required": ["restrictionStatus"],

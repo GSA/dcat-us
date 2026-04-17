@@ -52,11 +52,11 @@ A measurement of a resource against a specific quality metric
 | ----------- | ---------------------- |
 | **Default** | `"QualityMeasurement"` |
 
-## <a name="isMeasurementOf"></a>[Mandatory] Property `QualityMeasurement > isMeasurementOf`
+## <a name="isMeasurementOf"></a>[Optional] Property `QualityMeasurement > isMeasurementOf`
 
 **Title:** is measurement of
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The metric being observed
 
@@ -66,11 +66,11 @@ The metric being observed
 | **Additional properties** | Any type allowed      |
 | **Defined in**            | [Metric](./Metric.md) |
 
-## <a name="value"></a>[Mandatory] Property `QualityMeasurement > value`
+## <a name="value"></a>[Optional] Property `QualityMeasurement > value`
 
 **Title:** value
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The value computed by metric
 

@@ -22,21 +22,21 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "label": {
       "title": "label",
       "description": "A human-readable label for the activity",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "rdfs:label",
         "range": "xsd:string"
       },
-      "examples": ["Data Collection", "Data Processing and Quality Assurance"]
+      "examples": ["Data Collection", "Data Processing and Quality Assurance"],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["label"],

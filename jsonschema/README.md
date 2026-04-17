@@ -43,7 +43,7 @@ jsonschema/
 ├── generate_schema_docs.py      # Documentation generator
 ├── parse_old_docs.py            # Historical one-time DCAT-US HTML metadata import
 ├── check_missing_olddocs.py     # Check for missing _oldDocs sections
-├── check_requirement_levels.py  # Check/fix _oldDocs requirement levels
+├── check_requirement_levels.py  # Check/fix requirementLevel values
 ├── check_undefined_fields.py    # Check for undefined fields in examples
 ├── create_null_examples.py      # Generate null-value test examples
 ├── pyproject.toml               # Python dependencies (Poetry)
@@ -194,7 +194,7 @@ Note: This script does not expose a dedicated `--help` interface; running it exe
 
 ### check_requirement_levels.py
 
-Summary: Compares `_oldDocs.requirementLevel` against schema `required` fields and optionally fixes mismatches.
+Summary: Compares top-level `requirementLevel` against schema `required` fields and optionally fixes mismatches. Falls back to legacy `_oldDocs.requirementLevel` if needed.
 
 ```bash
 # Report mismatches
@@ -229,7 +229,7 @@ Note: This script does not support `--help`; passing flags will still run genera
 
 ### check_example_coverage.py
 
-Summary: Checks whether good typical/complete examples include fields marked Mandatory or Recommended in `_oldDocs`.
+Summary: Checks whether good typical/complete examples include fields marked Mandatory or Recommended in top-level `requirementLevel`. Falls back to legacy `_oldDocs.requirementLevel` if needed.
 
 ```bash
 # Coverage check

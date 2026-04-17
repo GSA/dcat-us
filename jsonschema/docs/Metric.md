@@ -49,11 +49,11 @@ A standard used to measure one aspect of data quality
 | ----------- | ---------- |
 | **Default** | `"Metric"` |
 
-## <a name="expectedDataType"></a>[Mandatory] Property `Metric > expectedDataType`
+## <a name="expectedDataType"></a>[Optional] Property `Metric > expectedDataType`
 
 **Title:** expected datatype
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)
 
@@ -71,11 +71,11 @@ Represents the expected data type for the metric's observed value (e.g., xsd:boo
 "xsd:double"
 ```
 
-## <a name="inDimension"></a>[Mandatory] Property `Metric > inDimension`
+## <a name="inDimension"></a>[Optional] Property `Metric > inDimension`
 
 **Title:** in dimension
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Represents the dimensions a quality metric, certificate and annotation allow a measurement of.
 
@@ -93,11 +93,11 @@ Represents the dimensions a quality metric, certificate and annotation allow a m
 "https://www.w3.org/TR/vocab-dqv/#dqv:completeness"
 ```
 
-## <a name="definition"></a>[Recommended] Property `Metric > definition`
+## <a name="definition"></a>[Optional] Property `Metric > definition`
 
 **Title:** definition
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Definition of the metric.
 

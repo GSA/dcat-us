@@ -319,11 +319,11 @@ Notes describing how this version differs from earlier versions of the dataset
 "Initial release of 2024 climate observations data."
 ```
 
-## <a name="contactPoint"></a>[Mandatory] Property `Dataset > contactPoint`
+## <a name="contactPoint"></a>[Optional] Property `Dataset > contactPoint`
 
 **Title:** contact point
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored
 
@@ -370,11 +370,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed                                             |
 | **Same definition as**    | [Kind](#sample_items_accessService_items_contactPoint_items) |
 
-## <a name="distribution"></a>[Recommended] Property `Dataset > distribution`
+## <a name="distribution"></a>[Optional] Property `Dataset > distribution`
 
 **Title:** dataset distribution
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of available distributions for the dataset. This can be omitted when no distribution is available yet.
 
@@ -518,11 +518,11 @@ A group of related datasets that are published separately
 | **Additional properties** | Any type allowed                                                                      |
 | **Same definition as**    | [DatasetSeries](#sample_items_accessService_items_servesDataset_items_inSeries_items) |
 
-## <a name="keyword"></a>[Recommended] Property `Dataset > keyword`
+## <a name="keyword"></a>[Optional] Property `Dataset > keyword`
 
 **Title:** keyword/tag
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of keywords or tags describing the dataset
 
@@ -567,11 +567,11 @@ List of keywords or tags describing the dataset
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="landingPage"></a>[Recommended] Property `Dataset > landingPage`
+## <a name="landingPage"></a>[Optional] Property `Dataset > landingPage`
 
 **Title:** landing page
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A web page from the original data provider that gives access to the Dataset, its Distributions, and related information
 
@@ -697,11 +697,11 @@ Smallest time interval between data points, using xsd:duration format (for examp
 "P1D"
 ```
 
-## <a name="theme"></a>[Recommended] Property `Dataset > theme`
+## <a name="theme"></a>[Optional] Property `Dataset > theme`
 
 **Title:** theme/category
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of themes or categories for the dataset
 
@@ -740,11 +740,11 @@ The version indicator (name or identifier) of a resource
 "2024.1"
 ```
 
-## <a name="describedBy"></a>[Recommended] Property `Dataset > describedBy`
+## <a name="describedBy"></a>[Optional] Property `Dataset > describedBy`
 
 **Title:** data dictionary
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A distribution describing the Data Dictionary for this dataset
 
@@ -1152,11 +1152,11 @@ inline description of Agent
 | **Additional properties** | Any type allowed                                                                                 |
 | **Same definition as**    | [Agent](#sample_items_accessService_items_servesDataset_items_inSeries_items_publisher_anyOf_i1) |
 
-## <a name="description"></a>[Mandatory] Property `Dataset > description`
+## <a name="description"></a>[Optional] Property `Dataset > description`
 
 **Title:** description
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Plain-language summary of the dataset
 
@@ -1200,11 +1200,11 @@ A collection of data published or curated by one provider
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="identifier"></a>[Mandatory] Property `Dataset > identifier`
+## <a name="identifier"></a>[Optional] Property `Dataset > identifier`
 
 **Title:** identifier
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -1414,11 +1414,11 @@ ISO 639-1 language code values used in the dataset text or metadata, such as en 
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>[Recommended] Property `Dataset > modified`
+## <a name="modified"></a>[Optional] Property `Dataset > modified`
 
 **Title:** last modified
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Most recent date when the dataset's actual data changed, not just metadata
 
@@ -1524,11 +1524,11 @@ Full text of the provenance statement
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="publisher"></a>[Mandatory] Property `Dataset > publisher`
+## <a name="publisher"></a>[Optional] Property `Dataset > publisher`
 
 **Title:** publisher
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Organization responsible for publishing and making the dataset available
 
@@ -1597,11 +1597,11 @@ A collection of data published or curated by one provider
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="rights"></a>[Recommended] Property `Dataset > rights`
+## <a name="rights"></a>[Optional] Property `Dataset > rights`
 
 **Title:** rights
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
@@ -1685,11 +1685,11 @@ A collection of data published or curated by one provider
 | **Additional properties** | Any type allowed                                                 |
 | **Same definition as**    | [Dataset](#sample_items_accessService_items_servesDataset_items) |
 
-## <a name="spatial"></a>[Recommended] Property `Dataset > spatial`
+## <a name="spatial"></a>[Optional] Property `Dataset > spatial`
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A geographic region or regions that are covered by the Dataset
 
@@ -1769,11 +1769,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed                                          |
 | **Same definition as**    | [Concept](#sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="temporal"></a>[Recommended] Property `Dataset > temporal`
+## <a name="temporal"></a>[Optional] Property `Dataset > temporal`
 
 **Title:** temporal coverage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Time periods covered by the dataset
 
@@ -1795,11 +1795,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                                    |
 | **Same definition as**    | [PeriodOfTime](#sample_items_accessService_items_servesDataset_items_inSeries_items_temporal_items) |
 
-## <a name="title"></a>[Mandatory] Property `Dataset > title`
+## <a name="title"></a>[Optional] Property `Dataset > title`
 
 **Title:** title
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Human-readable title of the dataset
 

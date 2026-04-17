@@ -175,11 +175,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="dataset"></a>[Mandatory] Property `DCAT-US 3 Catalog > dataset`
+## <a name="dataset"></a>[Optional] Property `DCAT-US 3 Catalog > dataset`
 
 **Title:** dataset
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 List of datasets included in the catalog. Use this together with service so the catalog is not empty.
 
@@ -315,11 +315,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Concept](#dataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="themeTaxonomy"></a>[Recommended] Property `DCAT-US 3 Catalog > themeTaxonomy`
+## <a name="themeTaxonomy"></a>[Optional] Property `DCAT-US 3 Catalog > themeTaxonomy`
 
 **Title:** themes
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services
 
@@ -378,11 +378,11 @@ Text description of the access rights
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="conformsTo"></a>[Recommended] Property `DCAT-US 3 Catalog > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `DCAT-US 3 Catalog > conformsTo`
 
 **Title:** schema version
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Standard, schema, profile, or model that this catalog follows
 
@@ -547,11 +547,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                   |
 | **Same definition as**    | [Identifier](#dataset_items_otherIdentifier_items) |
 
-## <a name="issued"></a>[Recommended] Property `DCAT-US 3 Catalog > issued`
+## <a name="issued"></a>[Optional] Property `DCAT-US 3 Catalog > issued`
 
 **Title:** release date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Date when the catalog was formally issued, such as its initial publication date
 
@@ -626,11 +626,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>[Recommended] Property `DCAT-US 3 Catalog > language`
+## <a name="language"></a>[Optional] Property `DCAT-US 3 Catalog > language`
 
 **Title:** language
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
 
@@ -736,11 +736,11 @@ Full text of the license
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>[Recommended] Property `DCAT-US 3 Catalog > modified`
+## <a name="modified"></a>[Optional] Property `DCAT-US 3 Catalog > modified`
 
 **Title:** update/modification date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Most recent date when the catalog content changed, not just catalog-record metadata
 
@@ -854,11 +854,11 @@ inline description of the publisher
 | **Additional properties** | Any type allowed                                                       |
 | **Same definition as**    | [Agent](#dataset_items_sample_items_accessService_items_creator_items) |
 
-## <a name="rights"></a>[Recommended] Property `DCAT-US 3 Catalog > rights`
+## <a name="rights"></a>[Optional] Property `DCAT-US 3 Catalog > rights`
 
 **Title:** rights
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions
 
@@ -917,11 +917,11 @@ An organization involved with a resource, including parent or child organization
 | **Additional properties** | Any type allowed                                                               |
 | **Same definition as**    | [Organization](#dataset_items_otherIdentifier_items_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="spatial"></a>[Recommended] Property `DCAT-US 3 Catalog > spatial`
+## <a name="spatial"></a>[Optional] Property `DCAT-US 3 Catalog > spatial`
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Geographic area covered by the catalog
 
@@ -1042,11 +1042,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Concept](#dataset_items_sample_items_representationTechnique_anyOf_i1) |
 
-## <a name="homepage"></a>[Recommended] Property `DCAT-US 3 Catalog > homepage`
+## <a name="homepage"></a>[Optional] Property `DCAT-US 3 Catalog > homepage`
 
 **Title:** homepage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Main public web page for the catalog, usually an HTML page
 

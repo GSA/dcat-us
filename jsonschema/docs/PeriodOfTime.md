@@ -70,11 +70,11 @@ Information about a specific time period with a start- and/or end-time
 | ----------- | ---------------- |
 | **Default** | `"PeriodOfTime"` |
 
-## <a name="endDate"></a>[Recommended] Property `PeriodOfTime > endDate`
+## <a name="endDate"></a>[Optional] Property `PeriodOfTime > endDate`
 
 **Title:** end date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The end date of the period of time
 
@@ -151,11 +151,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="startDate"></a>[Recommended] Property `PeriodOfTime > startDate`
+## <a name="startDate"></a>[Optional] Property `PeriodOfTime > startDate`
 
 **Title:** start date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The start date of the period of time
 

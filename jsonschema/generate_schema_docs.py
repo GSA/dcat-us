@@ -97,8 +97,18 @@ def _normalize_requirement_level(value):
 
 
 def schema_requirement_level(schema):
-    """Template helper for property requirement level from _oldDocs."""
+    """Template helper for property requirement level.
+
+    Prefer the top-level property keyword `requirementLevel`, with a fallback
+    to legacy `_oldDocs.requirementLevel` for backward compatibility.
+    """
     keywords = getattr(schema, "keywords", None) or {}
+
+    if isinstance(keywords, dict):
+        # New location for requirement metadata.
+        if "requirementLevel" in keywords:
+            return _normalize_requirement_level(keywords.get("requirementLevel"))
+
     old_docs = {}
     if isinstance(keywords, dict):
         old_docs_node = keywords.get("_oldDocs")

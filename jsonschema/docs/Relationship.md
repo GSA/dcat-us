@@ -47,11 +47,11 @@ Additional information about how one resource is related to another
 | ----------- | ---------------- |
 | **Default** | `"Relationship"` |
 
-## <a name="hadRole"></a>[Mandatory] Property `Relationship > hadRole`
+## <a name="hadRole"></a>[Optional] Property `Relationship > hadRole`
 
 **Title:** role
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The function of an entity or agent with respect to a dataset
 
@@ -69,11 +69,11 @@ The function of an entity or agent with respect to a dataset
 "dataProvider"
 ```
 
-## <a name="relation"></a>[Mandatory] Property `Relationship > relation`
+## <a name="relation"></a>[Optional] Property `Relationship > relation`
 
 **Title:** relation
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The entity related to the dataset. This string should unambiguously identify the related resource using an appropriate identifier.
 

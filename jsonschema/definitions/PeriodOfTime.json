@@ -46,11 +46,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:endDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-12-31", "2024-09-30"]
+      "examples": ["2024-12-31", "2024-09-30"],
+      "requirementLevel": "Recommended"
     },
     "startDate": {
       "title": "start date",
@@ -84,11 +84,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:startDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-01", "2023-10-01"]
+      "examples": ["2024-01-01", "2023-10-01"],
+      "requirementLevel": "Recommended"
     }
   },
   "anyOf": [

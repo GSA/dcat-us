@@ -22,10 +22,10 @@
         "$ref": "#"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:catalog",
         "range": "dcat:Catalog"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "contactPoint": {
       "title": "Contact points",
@@ -35,10 +35,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "dataset": {
       "title": "dataset",
@@ -48,10 +48,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat:dataset",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Mandatory"
     },
     "keyword": {
       "title": "keyword/tag",
@@ -62,13 +62,13 @@
         "minLength": 1
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:keyword",
         "range": "rdfs:Literal"
       },
       "examples": [
         ["federal data", "government", "open data", "public records"]
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "record": {
       "title": "catalog record",
@@ -78,10 +78,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/catalogrecord"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:record",
         "range": "dcat:CatalogRecord"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "service": {
       "title": "service",
@@ -91,10 +91,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataservice"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:service",
         "range": "dcat:DataService"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "theme": {
       "title": "theme/category",
@@ -104,10 +104,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:theme",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "themeTaxonomy": {
       "title": "themes",
@@ -117,10 +117,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/conceptscheme"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:themeTaxonomy",
         "range": "skos:ConceptScheme"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "accessRights": {
       "title": "access rights",
@@ -136,11 +136,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accessRights",
         "range": "dcterms:RightsStatement"
       },
-      "examples": ["Public access with no restrictions"]
+      "examples": ["Public access with no restrictions"],
+      "requirementLevel": "Optional"
     },
     "conformsTo": {
       "title": "schema version",
@@ -155,10 +155,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:conformsTo",
         "range": "dcterms:Standard"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "creator": {
       "title": "creator",
@@ -168,24 +168,24 @@
         "$ref": "/dcat-us/3.0.0/definitions/agent"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:creator",
         "range": "dcterms:Agent"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the catalog",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "A comprehensive catalog of climate and weather datasets from federal monitoring stations across the United States.",
         "A comprehensive catalog of federal government data assets spanning multiple agencies and data domains."
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "hasPart": {
       "title": "has part",
@@ -195,10 +195,10 @@
         "$ref": "#"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:hasPart",
         "range": "dcat:Catalog"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "identifier": {
       "title": "identifier",
@@ -214,10 +214,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -226,9 +226,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "issued": {
       "title": "release date",
@@ -263,11 +261,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2020-01-15"]
+      "examples": ["2020-01-15"],
+      "requirementLevel": "Recommended"
     },
     "language": {
       "title": "language",
@@ -293,11 +291,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en"], ["en", "es"]]
+      "examples": [["en"], ["en", "es"]],
+      "requirementLevel": "Recommended"
     },
     "license": {
       "title": "license",
@@ -313,11 +311,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:license",
         "range": "dcterms:LicenseDocument"
       },
-      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"]
+      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "update/modification date",
@@ -352,11 +350,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01", "2024-06-01T14:30:00Z"]
+      "examples": ["2024-06-01", "2024-06-01T14:30:00Z"],
+      "requirementLevel": "Recommended"
     },
     "publisher": {
       "title": "publisher",
@@ -372,10 +370,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "rights": {
       "title": "rights",
@@ -386,7 +384,6 @@
         "description": "Full text of a statement of rights"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:rights",
         "range": "dcterms:RightsStatement"
       },
@@ -396,7 +393,8 @@
           "This catalog is maintained by the Federal Data Management Office.",
           "Data within this catalog may be subject to individual dataset licensing terms."
         ]
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "rightsHolder": {
       "title": "rights holder",
@@ -406,10 +404,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/organization"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:rightsHolder",
         "range": "org:Organization"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -419,10 +417,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "subject": {
       "title": "subject",
@@ -432,10 +430,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:subject",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "temporal": {
       "title": "temporal coverage",
@@ -445,21 +443,21 @@
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the catalog",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["National Climate Data Catalog", "Federal Data Catalog"]
+      "examples": ["National Climate Data Catalog", "Federal Data Catalog"],
+      "requirementLevel": "Optional"
     },
     "category": {
       "title": "category",
@@ -469,10 +467,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:type",
         "range": "skos:Concept"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "homepage": {
       "title": "homepage",
@@ -488,10 +486,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "foaf:homepage",
         "range": "foaf:Document"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "qualifiedAttribution": {
       "title": "qualified attribution",
@@ -501,10 +499,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/attribution"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "prov:qualifiedAttribution",
         "range": "prov:Attribution"
-      }
+      },
+      "requirementLevel": "Optional"
     }
   },
   "required": ["dataset"],

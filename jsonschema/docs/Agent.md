@@ -75,11 +75,11 @@ A controlled term or label, optionally drawn from a concept scheme
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="name"></a>[Mandatory] Property `Agent > name`
+## <a name="name"></a>[Optional] Property `Agent > name`
 
 **Title:** name
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The name of the agent
 

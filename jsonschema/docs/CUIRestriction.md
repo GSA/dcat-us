@@ -48,11 +48,11 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 | ----------- | ------------------ |
 | **Default** | `"CUIRestriction"` |
 
-## <a name="cuiBannerMarking"></a>[Mandatory] Property `CUIRestriction > cuiBannerMarking`
+## <a name="cuiBannerMarking"></a>[Optional] Property `CUIRestriction > cuiBannerMarking`
 
 **Title:** CUI banner marking
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
 
@@ -70,11 +70,11 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 "CUI//SP-PRVCY//SP-LEGAL"
 ```
 
-## <a name="designationIndicator"></a>[Mandatory] Property `CUIRestriction > designationIndicator`
+## <a name="designationIndicator"></a>[Optional] Property `CUIRestriction > designationIndicator`
 
 **Title:** CUI designation indicator
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Agency that designated the information as CUI; include at least "Controlled by:" and, when possible, contact information
 

@@ -2,10 +2,13 @@
 """
 Check that good/typical examples include all Mandatory and Recommended fields.
 
-This script analyzes JSON schema files for properties with _oldDocs.requirementLevel
+This script analyzes JSON schema files for properties with requirementLevel
 set to "Mandatory" or "Recommended", then verifies that the corresponding
 good example files include those fields.
 Fields with an explicit schema `default` are excluded from coverage checks.
+
+Compatibility:
+    Falls back to legacy _oldDocs.requirementLevel when requirementLevel is not present.
 
 Usage:
     poetry run python check_example_coverage.py           # Check all schemas
@@ -18,7 +21,7 @@ from pathlib import Path
 
 
 def get_required_fields(schema: dict) -> tuple[list[str], list[str]]:
-    """Extract Mandatory and Recommended fields from schema based on _oldDocs."""
+    """Extract Mandatory and Recommended fields from schema metadata."""
     mandatory = []
     recommended = []
     
@@ -35,8 +38,11 @@ def get_required_fields(schema: dict) -> tuple[list[str], list[str]]:
         if 'default' in prop_def:
             continue
             
-        old_docs = prop_def.get('_oldDocs', {})
-        req_level = old_docs.get('requirementLevel', '')
+        req_level = prop_def.get('requirementLevel', '')
+        if not req_level:
+            old_docs = prop_def.get('_oldDocs', {})
+            if isinstance(old_docs, dict):
+                req_level = old_docs.get('requirementLevel', '')
         
         if 'Mandatory' in req_level:
             mandatory.append(prop_name)

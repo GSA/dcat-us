@@ -19,11 +19,11 @@
       "description": "The full name of the Organization",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "foaf:name",
         "range": "xsd:string"
       },
-      "examples": ["National Climate Data Center", "U.S. Census Bureau"]
+      "examples": ["National Climate Data Center", "U.S. Census Bureau"],
+      "requirementLevel": "Mandatory"
     },
     "subOrganizationOf": {
       "title": "suborganization of",
@@ -33,21 +33,21 @@
         "$ref": "#"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "org:subOrganizationOf",
         "range": "org:Organization"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "altLabel": {
       "title": "alternative label",
       "description": "alternative name (trading name, colloquial name) for an organization",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "skos:altLabel",
         "range": "xsd:string"
       },
-      "examples": ["NCDC", "Census Bureau"]
+      "examples": ["NCDC", "Census Bureau"],
+      "requirementLevel": "Optional"
     },
     "notation": {
       "title": "notation",
@@ -58,22 +58,22 @@
         "type": "string"
       },
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "skos:notation",
         "range": "xsd:string"
       },
-      "examples": [["USCB", "CB"]]
+      "examples": [["USCB", "CB"]],
+      "requirementLevel": "Optional"
     },
     "prefLabel": {
       "title": "preferred label",
       "description": "Preferred or legal name of the organization",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "skos:prefLabel",
         "range": "xsd:string"
       },
-      "examples": ["United States Census Bureau"]
+      "examples": ["United States Census Bureau"],
+      "requirementLevel": "Optional"
     }
   },
   "required": ["name"],

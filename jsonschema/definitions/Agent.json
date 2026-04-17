@@ -21,23 +21,21 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/concept"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "name": {
       "title": "name",
       "description": "The name of the agent",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "foaf:name",
         "range": "xsd:string"
       },
       "examples": [
         "National Climate Data Center",
         "U.S. Department of Commerce Data Stewardship Office"
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["name"],

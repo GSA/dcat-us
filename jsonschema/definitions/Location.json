@@ -41,7 +41,6 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:bbox",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral"
       },
@@ -59,7 +58,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "requirementLevel": "Recommended"
     },
     "centroid": {
       "title": "centroid",
@@ -93,7 +93,6 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcat:centroid",
         "range": "rdfs:Literal typed as geosparql:wktLiteral or geosparql:gmlLiteral"
       },
@@ -102,7 +101,8 @@
           "type": "Point",
           "coordinates": [-77.0369, 38.9072]
         }
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "identifier": {
       "title": "identifier",
@@ -117,10 +117,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "otherIdentifier": {
       "title": "other identifier",
@@ -129,9 +129,7 @@
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/identifier"
       },
-      "_oldDocs": {
-        "requirementLevel": "Optional"
-      }
+      "requirementLevel": "Optional"
     },
     "geometry": {
       "title": "geometry",
@@ -151,7 +149,6 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "locn:geometry",
         "range": "locn:Geometry"
       },
@@ -174,7 +171,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "requirementLevel": "Optional"
     },
     "inScheme": {
       "title": "gazetteer",
@@ -189,30 +187,30 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "range": "skos:ConceptScheme",
         "uri": "skos:inScheme"
-      }
+      },
+      "requirementLevel": "Optional"
     },
     "altLabel": {
       "title": "alternative name",
       "description": "An alternative label or name for a location",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "range": "rdfs:Literal"
       },
-      "examples": ["DC"]
+      "examples": ["DC"],
+      "requirementLevel": "Optional"
     },
     "prefLabel": {
       "title": "geographic name",
       "description": "Preferred label or name of the Location",
       "type": ["null", "string"],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "range": "rdfs:Literal"
       },
-      "examples": ["Continental United States", "Washington, D.C."]
+      "examples": ["Continental United States", "Washington, D.C."],
+      "requirementLevel": "Recommended"
     }
   },
   "required": [],

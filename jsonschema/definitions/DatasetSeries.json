@@ -22,10 +22,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/kind"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:contactPoint",
         "range": "vcard:Kind"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "first": {
       "title": "first",
@@ -41,10 +41,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:first",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "last": {
       "title": "last",
@@ -60,10 +60,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:last",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "seriesMember": {
       "title": "series member",
@@ -73,10 +73,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcat:seriesMember",
         "range": "dcat:Dataset"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "accrualPeriodicity": {
       "title": "frequency",
@@ -134,25 +134,25 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:accrualPeriodicity",
         "range": "dcterms:Frequency"
       },
-      "examples": ["annually"]
+      "examples": ["annually"],
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "Plain-language summary of the dataset series",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:description",
         "range": "rdfs:Literal"
       },
       "examples": [
         "A series of annual climate observation datasets from monitoring stations.",
         "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     },
     "issued": {
       "title": "release date",
@@ -187,11 +187,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Optional",
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2000-01-15"]
+      "examples": ["2000-01-15"],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "update/modification date",
@@ -226,11 +226,11 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-12-01", "2024-06-01"]
+      "examples": ["2024-12-01", "2024-06-01"],
+      "requirementLevel": "Recommended"
     },
     "publisher": {
       "title": "publisher",
@@ -246,10 +246,10 @@
         }
       ],
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:publisher",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "spatial": {
       "title": "spatial/geographic coverage",
@@ -259,10 +259,10 @@
         "$ref": "/dcat-us/3.0.0/definitions/location"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:spatial",
         "range": "dcterms:Location"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "temporal": {
       "title": "temporal coverage",
@@ -272,24 +272,24 @@
         "$ref": "/dcat-us/3.0.0/definitions/periodoftime"
       },
       "_oldDocs": {
-        "requirementLevel": "Recommended",
         "uri": "dcterms:temporal",
         "range": "dcterms:PeriodOfTime"
-      }
+      },
+      "requirementLevel": "Recommended"
     },
     "title": {
       "title": "title",
       "description": "Human-readable title of the dataset series",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
       "examples": [
         "Annual Climate Observations",
         "Annual National Climate Observations Series"
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["description", "title"],

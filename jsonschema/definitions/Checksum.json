@@ -19,25 +19,25 @@
       "description": "The algorithm used to produce the checksum",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "spdx:algorithm",
         "range": "spdx:ChecksumAlgorithm"
       },
-      "examples": ["SHA-256"]
+      "examples": ["SHA-256"],
+      "requirementLevel": "Mandatory"
     },
     "checksumValue": {
       "title": "checksum value",
       "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "spdx:checksumValue",
         "range": "xsd:hexBinary"
       },
       "examples": [
         "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
         "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e"
-      ]
+      ],
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["algorithm", "checksumValue"],

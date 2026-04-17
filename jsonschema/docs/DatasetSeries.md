@@ -180,11 +180,11 @@ A group of related datasets that are published separately
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
 
-## <a name="contactPoint"></a>[Recommended] Property `DatasetSeries > contactPoint`
+## <a name="contactPoint"></a>[Optional] Property `DatasetSeries > contactPoint`
 
 **Title:** contact point
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of contacts people can use to ask questions or send feedback about the dataset series
 
@@ -206,11 +206,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="first"></a>[Recommended] Property `DatasetSeries > first`
+## <a name="first"></a>[Optional] Property `DatasetSeries > first`
 
 **Title:** first
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The first dataset in an ordered dataset series
 
@@ -241,11 +241,11 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-## <a name="last"></a>[Recommended] Property `DatasetSeries > last`
+## <a name="last"></a>[Optional] Property `DatasetSeries > last`
 
 **Title:** last
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 The last dataset in an ordered dataset series
 
@@ -276,11 +276,11 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-## <a name="seriesMember"></a>[Recommended] Property `DatasetSeries > seriesMember`
+## <a name="seriesMember"></a>[Optional] Property `DatasetSeries > seriesMember`
 
 **Title:** series member
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 List of members of the Dataset Series
 
@@ -392,11 +392,11 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="description"></a>[Mandatory] Property `DatasetSeries > description`
+## <a name="description"></a>[Optional] Property `DatasetSeries > description`
 
 **Title:** description
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Plain-language summary of the dataset series
 
@@ -493,11 +493,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>[Recommended] Property `DatasetSeries > modified`
+## <a name="modified"></a>[Optional] Property `DatasetSeries > modified`
 
 **Title:** update/modification date
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
@@ -576,11 +576,11 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>[Recommended] Property `DatasetSeries > publisher`
+## <a name="publisher"></a>[Optional] Property `DatasetSeries > publisher`
 
 **Title:** publisher
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
@@ -611,11 +611,11 @@ inline description of publisher
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_creator_items) |
 
-## <a name="spatial"></a>[Recommended] Property `DatasetSeries > spatial`
+## <a name="spatial"></a>[Optional] Property `DatasetSeries > spatial`
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 A geographic region that is covered by the Dataset Series
 
@@ -637,11 +637,11 @@ A named place or geographic area
 | **Additional properties** | Any type allowed                                                           |
 | **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_spatial_items) |
 
-## <a name="temporal"></a>[Recommended] Property `DatasetSeries > temporal`
+## <a name="temporal"></a>[Optional] Property `DatasetSeries > temporal`
 
 **Title:** temporal coverage
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Time periods covered by the dataset series
 
@@ -663,11 +663,11 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>[Mandatory] Property `DatasetSeries > title`
+## <a name="title"></a>[Optional] Property `DatasetSeries > title`
 
 **Title:** title
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Human-readable title of the dataset series
 

@@ -19,21 +19,21 @@
       "description": "The function of an entity or agent with respect to another entity or resource",
       "type": "string",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "dcat:hadRole",
         "range": "dcat:Role"
       },
-      "examples": ["Data Steward"]
+      "examples": ["Data Steward"],
+      "requirementLevel": "Mandatory"
     },
     "agent": {
       "title": "agent",
       "description": "The agent that plays a role in the resource",
       "$ref": "/dcat-us/3.0.0/definitions/agent",
       "_oldDocs": {
-        "requirementLevel": "Mandatory",
         "uri": "prov:agent",
         "range": "foaf:Agent"
-      }
+      },
+      "requirementLevel": "Mandatory"
     }
   },
   "required": ["hadRole", "agent"],

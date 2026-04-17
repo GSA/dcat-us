@@ -60,11 +60,11 @@ A note related to the access restriction
 "Access restricted to authorized personnel only."
 ```
 
-## <a name="restrictionStatus"></a>[Mandatory] Property `AccessRestriction > restrictionStatus`
+## <a name="restrictionStatus"></a>[Optional] Property `AccessRestriction > restrictionStatus`
 
 **Title:** restriction status
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The indication of whether or not there are access restrictions on the item
 
@@ -74,11 +74,11 @@ The indication of whether or not there are access restrictions on the item
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="specificRestriction"></a>[Recommended] Property `AccessRestriction > specificRestriction`
+## <a name="specificRestriction"></a>[Optional] Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Authority, code list entry, or policy reference that defines the specific access restriction
 

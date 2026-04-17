@@ -81,11 +81,11 @@ A single physical address
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
 
-## <a name="hasEmail"></a>[Mandatory] Property `Kind > hasEmail`
+## <a name="hasEmail"></a>[Optional] Property `Kind > hasEmail`
 
 **Title:** Email
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Email address for the contact in mailto: format (for example, mailto:support@example.gov)
 
@@ -124,11 +124,11 @@ The family name of the contact
 "Smith"
 ```
 
-## <a name="fn"></a>[Mandatory] Property `Kind > fn`
+## <a name="fn"></a>[Optional] Property `Kind > fn`
 
 **Title:** formatted name
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 The formatted text of the name of the contact
 

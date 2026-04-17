@@ -53,11 +53,11 @@ A named place or geographic area
 | ----------- | ------------ |
 | **Default** | `"Location"` |
 
-## <a name="bbox"></a>[Recommended] Property `Location > bbox`
+## <a name="bbox"></a>[Optional] Property `Location > bbox`
 
 **Title:** bounding box
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Bounding box for the location, described in WKT, GeoJSON, or GML format
 
@@ -439,11 +439,11 @@ An alternative label or name for a location
 "DC"
 ```
 
-## <a name="prefLabel"></a>[Recommended] Property `Location > prefLabel`
+## <a name="prefLabel"></a>[Optional] Property `Location > prefLabel`
 
 **Title:** geographic name
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Preferred label or name of the Location
 

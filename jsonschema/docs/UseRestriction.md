@@ -70,11 +70,11 @@ Significant information pertaining to the use or reproduction of the data
 "This data may be used for research purposes. Commercial use requires written permission from the data steward."
 ```
 
-## <a name="restrictionStatus"></a>[Mandatory] Property `UseRestriction > restrictionStatus`
+## <a name="restrictionStatus"></a>[Optional] Property `UseRestriction > restrictionStatus`
 
 **Title:** restriction status
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
 Indication of whether or not there are use restrictions on the archival materials
 
@@ -84,11 +84,11 @@ Indication of whether or not there are use restrictions on the archival material
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="specificRestriction"></a>[Recommended] Property `UseRestriction > specificRestriction`
+## <a name="specificRestriction"></a>[Optional] Property `UseRestriction > specificRestriction`
 
 **Title:** specific restriction
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
 Authority, code list entry, or policy reference that defines the specific use restriction
 
