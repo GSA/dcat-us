@@ -559,10 +559,22 @@ Date when the catalog was formally issued, such as its initial publication date
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2020-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                     |
@@ -756,6 +768,14 @@ Most recent date when the catalog content changed, not just catalog-record metad
 
 ```json
 "2024-06-01T14:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |

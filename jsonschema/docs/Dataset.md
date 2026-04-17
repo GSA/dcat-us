@@ -930,7 +930,7 @@ The frequency at which the Dataset is updated
 
 ### <a name="accrualPeriodicity_anyOf_i1"></a>Property `Dataset > accrualPeriodicity > anyOf > item 1`
 
-ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO 19115 Maintenance Frequency code
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -951,7 +951,7 @@ Must be one of:
 
 ### <a name="accrualPeriodicity_anyOf_i2"></a>Property `Dataset > accrualPeriodicity > anyOf > item 2`
 
-ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -962,7 +962,7 @@ ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy
 
 ### <a name="accrualPeriodicity_anyOf_i3"></a>Property `Dataset > accrualPeriodicity > anyOf > item 3`
 
-Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding
+Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -1050,10 +1050,22 @@ The date on which the Dataset was first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2024-01-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                      |
@@ -1281,10 +1293,22 @@ Date when the dataset was first published. If the exact publication date is unkn
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2024-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                     |
@@ -1354,7 +1378,7 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-ISO 639-1 language code values used in the dataset text or metadata, such as en or es
+ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1426,10 +1450,22 @@ Most recent date when the dataset's actual data changed, not just metadata
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2024-06-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |

@@ -2,7 +2,8 @@
 """
 Historical script to parse DCAT-US HTML documentation and add metadata to JSON schemas.
 
-This script fetches the HTML documentation from https://infopolicy.github.io/dcat-us/,
+This script loads the DCAT-US HTML documentation (defaulting to the local
+repository copy at DEPRECATED/docs/index.html),
 extracts class and property metadata, and adds an '_oldDocs' object to the
 corresponding JSON schema files.
 
@@ -236,14 +237,23 @@ def find_matching_schema_property(
 # HTML Parsing Functions
 # ============================================================================
 
-def fetch_html(url: str) -> str:
-    """Fetch HTML content from a URL."""
-    print(f"Fetching HTML from {url}...")
+def load_html_source(source: str) -> str:
+    """Load HTML content from a local file path or URL."""
+    if source.startswith(('http://', 'https://')):
+        print(f"Fetching HTML from {source}...")
+        try:
+            with urlopen(source, timeout=30) as response:
+                return response.read().decode('utf-8')
+        except URLError as e:
+            print(f"Error fetching URL: {e}")
+            sys.exit(1)
+
+    source_path = Path(source).expanduser().resolve()
+    print(f"Loading HTML from {source_path}...")
     try:
-        with urlopen(url, timeout=30) as response:
-            return response.read().decode('utf-8')
-    except URLError as e:
-        print(f"Error fetching URL: {e}")
+        return source_path.read_text(encoding='utf-8')
+    except OSError as e:
+        print(f"Error reading file: {e}")
         sys.exit(1)
 
 
@@ -591,6 +601,8 @@ def update_schema_with_metadata(
 # ============================================================================
 
 def main():
+    default_source = (Path(__file__).parent.parent / "DEPRECATED" / "docs" / "index.html").resolve()
+
     parser = argparse.ArgumentParser(
         description='Parse DCAT-US HTML documentation and add metadata to JSON schemas.'
     )
@@ -605,9 +617,9 @@ def main():
         help='Print detailed information about extracted metadata'
     )
     parser.add_argument(
-        '--url',
-        default='https://infopolicy.github.io/dcat-us/',
-        help='URL of the HTML documentation to parse'
+        '--source',
+        default=str(default_source),
+        help='Path or URL of the HTML documentation to parse (default: local DEPRECATED/docs/index.html)'
     )
     parser.add_argument(
         '--schema-dir',
@@ -618,8 +630,8 @@ def main():
     
     args = parser.parse_args()
     
-    # Fetch and parse HTML
-    html = fetch_html(args.url)
+    # Load and parse HTML
+    html = load_html_source(args.source)
     print(f"Fetched {len(html)} bytes of HTML")
     
     # Collect schema files first

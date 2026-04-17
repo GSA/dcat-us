@@ -418,10 +418,22 @@ The date on which the Data Service was first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2020-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                   |
@@ -520,11 +532,7 @@ Plain-language summary of the data service
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-**Examples:**
-
-```json
-"RESTful API providing access to historical climate observations."
-```
+**Example:**
 
 ```json
 "A RESTful API providing access to historical and real-time climate data including temperature, precipitation, and atmospheric conditions."
@@ -595,13 +603,17 @@ A unique identifier and optionally it's scheme and other relevant information
 
 **Requirement:** Optional
 
-ISO 639-1 language code values supported by the data service, such as en or es
+ISO 639-1 language code values supported by the data service, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
+
+```json
+"en"
+```
 
 ```json
 [
@@ -705,10 +717,22 @@ The most recent date on which the Data Service was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2024-03-20"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |
@@ -904,11 +928,7 @@ Human-readable title of the data service
 | ------------ | -------- |
 | **Required** | Yes      |
 
-**Examples:**
-
-```json
-"Climate Data API"
-```
+**Example:**
 
 ```json
 "Climate Data REST API"

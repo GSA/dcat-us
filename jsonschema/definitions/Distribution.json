@@ -122,7 +122,7 @@
         "uri": "dcat:byteSize",
         "range": "xsd:nonNegativeInteger"
       },
-      "examples": ["52428800", "15728640"],
+      "examples": ["52428800"],
       "requirementLevel": "Optional"
     },
     "compressFormat": {
@@ -155,10 +155,7 @@
         "uri": "dcat:downloadURL",
         "range": "rdfs:Resource"
       },
-      "examples": [
-        "https://example.gov/downloads/climate-2024.csv",
-        "https://example.gov/data/climate/climate-data-2023.csv"
-      ],
+      "examples": ["https://example.gov/data/climate/climate-data-2023.csv"],
       "requirementLevel": "Optional"
     },
     "mediaType": {
@@ -406,12 +403,12 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2023-06-01"],
+      "examples": ["2023-06-01", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
-      "description": "ISO 639-1 language code values used in the distribution metadata text, such as en or es",
+      "description": "ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
           "type": "null",
@@ -436,7 +433,7 @@
         "uri": "dcterms:language",
         "range": "rdfs:Literal"
       },
-      "examples": [["en"]],
+      "examples": ["en", ["en", "es"]],
       "requirementLevel": "Optional"
     },
     "license": {
@@ -495,7 +492,13 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01", "2024-01-15"],
+      "examples": [
+        "2024-06-01",
+        "2024-01-15",
+        "2024-01-15T10:30:00Z",
+        "2024",
+        "2024-01"
+      ],
       "requirementLevel": "Recommended"
     },
     "rights": {
@@ -526,7 +529,7 @@
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Climate Data CSV", "Climate Data CSV Distribution"],
+      "examples": ["Climate Data CSV"],
       "requirementLevel": "Recommended"
     },
     "hasQualityMeasurement": {

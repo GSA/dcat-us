@@ -201,7 +201,7 @@
         "uri": "dcterms:created",
         "range": "rdfs:Literal typed as xsd:date or xsd:dateTime"
       },
-      "examples": ["2020-01-15"],
+      "examples": ["2020-01-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "creator": {
@@ -226,7 +226,6 @@
         "range": "rdfs:Literal"
       },
       "examples": [
-        "RESTful API providing access to historical climate observations.",
         "A RESTful API providing access to historical and real-time climate data including temperature, precipitation, and atmospheric conditions."
       ],
       "requirementLevel": "Optional"
@@ -260,7 +259,7 @@
     },
     "language": {
       "title": "language",
-      "description": "ISO 639-1 language code values supported by the data service, such as en or es",
+      "description": "ISO 639-1 language code values supported by the data service, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
           "type": "null",
@@ -285,7 +284,7 @@
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en", "es"]],
+      "examples": ["en", ["en", "es"]],
       "requirementLevel": "Optional"
     },
     "license": {
@@ -344,7 +343,7 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-03-20"],
+      "examples": ["2024-03-20", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "publisher": {
@@ -422,7 +421,7 @@
         "uri": "dcterms:title",
         "range": "rdfs:Literal"
       },
-      "examples": ["Climate Data API", "Climate Data REST API"],
+      "examples": ["Climate Data REST API"],
       "requirementLevel": "Mandatory"
     },
     "category": {
@@ -481,8 +480,7 @@
   "required": ["contactPoint", "endpointURL", "publisher", "title"],
   "_oldDocs": {
     "rdfClass": "dcat:DataService",
-    "rationale": "Introducing dcat:DataService is essential as it clarifies the representation of data services, addressing the confusion caused by using dcat:Distribution to describe services in DCAT 1. This addition promotes clear communication of service-related information, improving discoverability, and facilitating seamless integration and usage by data consumers and applications.",
-    "subclassOf": "dctype:Service"
+    "rationale": "Introducing dcat:DataService is essential as it clarifies the representation of data services, addressing the confusion caused by using dcat:Distribution to describe services in DCAT 1. This addition promotes clear communication of service-related information, improving discoverability, and facilitating seamless integration and usage by data consumers and applications."
   },
   "examples": [
     {

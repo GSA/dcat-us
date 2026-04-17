@@ -200,7 +200,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal"
       },
-      "examples": ["2024-03-15", "2024-01-15"],
+      "examples": ["2024-01-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     },
     "publisher": {

@@ -105,12 +105,17 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": [["2024-01-15"], ["2023-06-01"]],
+      "examples": [
+        ["2024-01-15T10:30:00Z"],
+        ["2024-01-15"],
+        ["2024"],
+        ["2024-01"]
+      ],
       "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
-      "description": "Language code used in catalog record metadata text, using ISO 639-1 values such as en or es",
+      "description": "Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
           "type": "null",
@@ -135,7 +140,7 @@
         "uri": "dcterms:language",
         "range": "dcterms:LinguisticSystem"
       },
-      "examples": [["en", "es"]],
+      "examples": ["en", ["en", "es"]],
       "requirementLevel": "Optional"
     },
     "modified": {
@@ -165,7 +170,7 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-15", "2024-01-15T10:30:00Z"],
+      "examples": ["2024-06-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Mandatory"
     },
     "source": {

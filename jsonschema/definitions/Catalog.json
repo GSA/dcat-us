@@ -264,7 +264,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2020-01-15"],
+      "examples": ["2020-01-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     },
     "language": {
@@ -353,7 +353,7 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01", "2024-06-01T14:30:00Z"],
+      "examples": ["2024-06-01", "2024-06-01T14:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     },
     "publisher": {
@@ -507,9 +507,7 @@
   },
   "required": ["dataset"],
   "_oldDocs": {
-    "rdfClass": "dcat:Catalog",
-    "rationale": "The update of the dcat:Catalog class aligns with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services, or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of other catalogs, promoting modularity and extensibility in the data catalog ecosystem.",
-    "subclassOf": "dcat:Dataset Usage note A Web-based data catalog is typically represented as a single instance of this class. Populate metadata within the dcat:Catalog to facilitate resource discovery, including title, description, classifiers and other relevant information. Specify the resources hosted within the catalog by linking them as dcat:dataset or dcat:service. Rationale The update of the dcat:Catalog class aligns with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services, or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of other catalogs, promoting modularity and extensibility in the data catalog ecosystem."
+    "rdfClass": "dcat:Catalog"
   },
   "examples": [
     {

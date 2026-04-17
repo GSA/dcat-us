@@ -8,7 +8,7 @@ Contact information for an individual or entity
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-**Example:**
+**Examples:**
 
 ```json
 {
@@ -17,6 +17,14 @@ Contact information for an individual or entity
     "hasEmail": "mailto:climate-support@example.gov",
     "organization-name": "National Climate Data Center",
     "tel": "+1-555-123-4567"
+}
+```
+
+```json
+{
+    "@type": "Kind",
+    "fn": "Dr. Jane Smith",
+    "hasEmail": "mailto:jane.smith@example.gov"
 }
 ```
 

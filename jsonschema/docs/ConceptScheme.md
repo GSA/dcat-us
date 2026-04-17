@@ -81,10 +81,22 @@ The date on which the Concept Scheme was first created
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2020"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                      |
@@ -191,6 +203,14 @@ The date of formal issuance (e.g., publication) of the concept scheme
 "2020"
 ```
 
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01"
+```
+
 | Any of(Option)                                     |
 | -------------------------------------------------- |
 | [Null allowed when not required](#issued_anyOf_i0) |
@@ -264,10 +284,22 @@ The most recent date at which the concept scheme was changed or modified
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2024"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |

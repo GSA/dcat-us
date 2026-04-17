@@ -179,13 +179,25 @@ List of dates on which the catalog record was included in the catalog
 
 ```json
 [
+    "2024-01-15T10:30:00Z"
+]
+```
+
+```json
+[
     "2024-01-15"
 ]
 ```
 
 ```json
 [
-    "2023-06-01"
+    "2024"
+]
+```
+
+```json
+[
+    "2024-01"
 ]
 ```
 
@@ -248,13 +260,17 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-Language code used in catalog record metadata text, using ISO 639-1 values such as en or es
+Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
+
+```json
+"en"
+```
 
 ```json
 [
@@ -330,6 +346,14 @@ The most recent date on which the catalog record was changed or modified
 
 ```json
 "2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)               |

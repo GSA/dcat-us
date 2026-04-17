@@ -88,7 +88,7 @@
         },
         {
           "type": "string",
-          "description": "ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "ISO 19115 Maintenance Frequency code",
           "enum": [
             "continual",
             "daily",
@@ -106,12 +106,12 @@
         },
         {
           "type": "string",
-          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html",
           "pattern": "^R/P.+$"
         },
         {
           "type": "string",
-          "description": "Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms",
           "enum": [
             "continuous",
             "daily",
@@ -149,7 +149,6 @@
         "range": "rdfs:Literal"
       },
       "examples": [
-        "A series of annual climate observation datasets from monitoring stations.",
         "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
       ],
       "requirementLevel": "Mandatory"
@@ -190,7 +189,7 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2000-01-15"],
+      "examples": ["2000-01-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "modified": {
@@ -229,7 +228,13 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-12-01", "2024-06-01"],
+      "examples": [
+        "2024-12-01",
+        "2024-06-01",
+        "2024-01-15T10:30:00Z",
+        "2024",
+        "2024-01"
+      ],
       "requirementLevel": "Recommended"
     },
     "publisher": {

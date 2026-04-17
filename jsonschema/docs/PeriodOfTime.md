@@ -89,7 +89,15 @@ The end date of the period of time
 ```
 
 ```json
-"2024-09-30"
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                      |
@@ -166,11 +174,19 @@ The start date of the period of time
 **Examples:**
 
 ```json
-"2024-01-01"
+"2023-10-01"
 ```
 
 ```json
-"2023-10-01"
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                        |

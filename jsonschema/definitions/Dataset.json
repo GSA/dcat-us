@@ -396,7 +396,7 @@
         },
         {
           "type": "string",
-          "description": "ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "ISO 19115 Maintenance Frequency code",
           "enum": [
             "continual",
             "daily",
@@ -414,12 +414,12 @@
         },
         {
           "type": "string",
-          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html",
           "pattern": "^R/P.+$"
         },
         {
           "type": "string",
-          "description": "Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding",
+          "description": "Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms",
           "enum": [
             "continuous",
             "daily",
@@ -506,7 +506,7 @@
           ]
         }
       ],
-      "examples": ["2024-01-01"],
+      "examples": ["2024-01-01", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "creator": {
@@ -623,12 +623,12 @@
         "uri": "dcterms:issued",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-15"],
+      "examples": ["2024-01-15", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Optional"
     },
     "language": {
       "title": "language",
-      "description": "ISO 639-1 language code values used in the dataset text or metadata, such as en or es",
+      "description": "ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html",
       "anyOf": [
         {
           "type": "null",
@@ -692,7 +692,7 @@
         "uri": "dcterms:modified",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-06-01"],
+      "examples": ["2024-06-01", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     },
     "provenance": {

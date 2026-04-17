@@ -49,7 +49,7 @@
         "uri": "dcat:endDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-12-31", "2024-09-30"],
+      "examples": ["2024-12-31", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     },
     "startDate": {
@@ -87,7 +87,7 @@
         "uri": "dcat:startDate",
         "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
       },
-      "examples": ["2024-01-01", "2023-10-01"],
+      "examples": ["2023-10-01", "2024-01-15T10:30:00Z", "2024", "2024-01"],
       "requirementLevel": "Recommended"
     }
   },

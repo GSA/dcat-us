@@ -121,6 +121,11 @@
       "hasEmail": "mailto:climate-support@example.gov",
       "organization-name": "National Climate Data Center",
       "tel": "+1-555-123-4567"
+    },
+    {
+      "@type": "Kind",
+      "fn": "Dr. Jane Smith",
+      "hasEmail": "mailto:jane.smith@example.gov"
     }
   ]
 }

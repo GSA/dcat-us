@@ -8,13 +8,113 @@ A named place or geographic area
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-**Example:**
+**Examples:**
 
 ```json
 {
     "@type": "Location",
     "prefLabel": "Continental United States",
     "bbox": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Continental United States",
+    "bbox": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -77.119759,
+                    38.791645
+                ],
+                [
+                    -76.909393,
+                    38.791645
+                ],
+                [
+                    -76.909393,
+                    38.99538
+                ],
+                [
+                    -77.119759,
+                    38.99538
+                ],
+                [
+                    -77.119759,
+                    38.791645
+                ]
+            ]
+        ]
+    }
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Null Island",
+    "bbox": "POINT (0.0 0.0)"
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Random object",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -77.0402,
+                    38.7916
+                ],
+                [
+                    -76.9094,
+                    38.8921
+                ],
+                [
+                    -76.9115,
+                    38.9355
+                ],
+                [
+                    -76.9286,
+                    38.9784
+                ],
+                [
+                    -77.0024,
+                    38.9657
+                ],
+                [
+                    -77.0389,
+                    38.9939
+                ],
+                [
+                    -77.0672,
+                    38.9687
+                ],
+                [
+                    -77.0782,
+                    38.9143
+                ],
+                [
+                    -77.1198,
+                    38.9342
+                ],
+                [
+                    -77.1198,
+                    38.8456
+                ],
+                [
+                    -77.0402,
+                    38.7916
+                ]
+            ]
+        ]
+    }
 }
 ```
 

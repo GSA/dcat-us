@@ -8,13 +8,34 @@ An organization involved with a resource, including parent or child organization
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
-**Example:**
+**Examples:**
 
 ```json
 {
     "@type": "Organization",
     "name": "National Climate Data Center",
     "altLabel": "NCDC"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/organizations/census-bureau",
+    "@type": "Organization",
+    "name": "U.S. Census Bureau",
+    "prefLabel": "United States Census Bureau",
+    "altLabel": "Census Bureau",
+    "notation": [
+        "USCB",
+        "CB"
+    ],
+    "subOrganizationOf": [
+        {
+            "@id": "https://example.gov/organizations/doc",
+            "@type": "Organization",
+            "name": "U.S. Department of Commerce"
+        }
+    ]
 }
 ```
 

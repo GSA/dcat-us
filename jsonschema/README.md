@@ -6,13 +6,13 @@ This directory contains JSON Schema definitions for validating DCAT-US 3.0 metad
 
 ```
 jsonschema/
-├── Catalog.json                  # Root catalog schema
 ├── definitions/                  # Individual schema definitions
 │   ├── AccessRestriction.json
 │   ├── Activity.json
 │   ├── Address.json
 │   ├── Agent.json
 │   ├── Attribution.json
+│   ├── Catalog.json
 │   ├── CatalogRecord.json
 │   ├── Checksum.json
 │   ├── Concept.json
@@ -82,7 +82,7 @@ The `definitions/` folder contains individual JSON Schema files for each DCAT-US
 | Standard | A standard or specification |
 | UseRestriction | Use restriction information |
 
-The root-level `Catalog.json` defines the collection of datasets.
+`definitions/Catalog.json` defines the catalog class and serves as the root catalog schema.
 
 ## Setup
 
@@ -326,8 +326,8 @@ from referencing import Registry, Resource
 schema_dir = Path(".")
 registry = Registry()
 
-# Load Catalog.json
-with open(schema_dir / "Catalog.json") as f:
+# Load Catalog schema
+with open(schema_dir / "definitions" / "Catalog.json") as f:
     catalog_schema = json.load(f)
     registry = registry.with_resource(
         catalog_schema["$id"],
@@ -378,7 +378,7 @@ npx prettier --write definitions/*.json examples/
 
 ## Schema Metadata (_oldDocs)
 
-Each schema and property can include an `_oldDocs` object containing metadata extracted from the [DCAT-US HTML documentation](https://infopolicy.github.io/dcat-us/). This includes:
+Each schema and property can include an `_oldDocs` object containing metadata extracted from the local DCAT-US HTML snapshot at `../DEPRECATED/docs/index.html`. This includes:
 
 - `rdfClass` / `uri` - The RDF class or property URI
 - `definition` - The formal definition

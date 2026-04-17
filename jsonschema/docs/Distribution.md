@@ -297,14 +297,10 @@ The size of a Distribution in bytes
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-**Examples:**
+**Example:**
 
 ```json
 "52428800"
-```
-
-```json
-"15728640"
 ```
 
 ## <a name="compressFormat"></a>[Optional] Property `Distribution > compressFormat`
@@ -336,11 +332,7 @@ Direct URL to a downloadable file for the Distribution; use accessURL for indire
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Examples:**
-
-```json
-"https://example.gov/downloads/climate-2024.csv"
-```
+**Example:**
 
 ```json
 "https://example.gov/data/climate/climate-data-2023.csv"
@@ -767,10 +759,22 @@ The date of formal issuance (e.g., publication) of the Distribution
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2023-06-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                     |
@@ -840,17 +844,22 @@ A year and month in YYYY-MM format
 
 **Requirement:** Optional
 
-ISO 639-1 language code values used in the distribution metadata text, such as en or es
+ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
+
+```json
+"en"
+```
 
 ```json
 [
-    "en"
+    "en",
+    "es"
 ]
 ```
 
@@ -957,6 +966,18 @@ The most recent date on which the Distribution was changed or modified
 
 ```json
 "2024-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |
@@ -1067,14 +1088,10 @@ Human-readable title of the distribution
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-**Examples:**
+**Example:**
 
 ```json
 "Climate Data CSV"
-```
-
-```json
-"Climate Data CSV Distribution"
 ```
 
 ## <a name="hasQualityMeasurement"></a>[Optional] Property `Distribution > hasQualityMeasurement`

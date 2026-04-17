@@ -381,11 +381,19 @@ Publication date of the Document
 **Examples:**
 
 ```json
-"2024-03-15"
+"2024-01-15"
 ```
 
 ```json
-"2024-01-15"
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                     |

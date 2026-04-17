@@ -336,7 +336,7 @@ The frequency at which the Dataset Series is updated. This is the series update 
 
 ### <a name="accrualPeriodicity_anyOf_i1"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 1`
 
-ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO 19115 Maintenance Frequency code
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -357,7 +357,7 @@ Must be one of:
 
 ### <a name="accrualPeriodicity_anyOf_i2"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 2`
 
-ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -368,7 +368,7 @@ ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy
 
 ### <a name="accrualPeriodicity_anyOf_i3"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 3`
 
-Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding
+Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -404,11 +404,7 @@ Plain-language summary of the dataset series
 | ------------ | -------- |
 | **Required** | Yes      |
 
-**Examples:**
-
-```json
-"A series of annual climate observation datasets from monitoring stations."
-```
+**Example:**
 
 ```json
 "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
@@ -426,10 +422,22 @@ Date when the Dataset Series was formally established or published, not the rele
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-**Example:**
+**Examples:**
 
 ```json
 "2000-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                     |
@@ -513,6 +521,18 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 
 ```json
 "2024-06-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
 ```
 
 | Any of(Option)                                       |
