@@ -30,7 +30,7 @@
     },
     "restrictionStatus": {
       "title": "restriction status",
-      "description": "Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status",
+      "description": "Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "_oldDocs": {
         "uri": "dcat-us:restrictionStatus",
@@ -41,7 +41,7 @@
     },
     "specificRestriction": {
       "title": "specific restriction",
-      "description": "Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction",
+      "description": "Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction",
       "anyOf": [
         {
           "type": "null",
@@ -56,10 +56,7 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept"
       },
-      "examples": [
-        "CRCCRCA 4(1)(A)",
-        "PRMPA - National Security Classified (B)"
-      ],
+      "examples": ["Copyright", "Trademark"],
       "requirementLevel": "Recommended"
     }
   },
@@ -72,7 +69,7 @@
     {
       "@type": "UseRestriction",
       "restrictionStatus": "Restricted - Fully",
-      "specificRestriction": "PRMPA - National Security Classified (B)",
+      "specificRestriction": "Trademark",
       "restrictionNote": "This data may be used for any purpose without restriction."
     }
   ]
