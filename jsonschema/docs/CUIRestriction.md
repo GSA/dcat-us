@@ -14,7 +14,7 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 {
     "@type": "CUIRestriction",
     "cuiBannerMarking": "CUI//SP-CTI",
-    "designationIndicator": "Agency XYZ"
+    "designationIndicator": "Controlled by: Agency XYZ"
 }
 ```
 
@@ -54,7 +54,7 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 
 **Requirement:** Optional
 
-CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection
+CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection; see information at https://www.archives.gov/cui/registry/category-marking-list
 
 | **Type**     | `string` |
 | ------------ | -------- |
@@ -85,11 +85,11 @@ Agency that designated the information as CUI; include at least "Controlled by:"
 **Examples:**
 
 ```json
-"Agency XYZ"
+"Controlled by: Agency XYZ"
 ```
 
 ```json
-"DOC"
+"Controlled by: DOC; POC: Jane Smith, mailto:jane.smith@example.gov, XXX-XXX-XXXX"
 ```
 
 ## <a name="requiredIndicatorPerAuthority"></a>[Optional] Property `CUIRestriction > requiredIndicatorPerAuthority`

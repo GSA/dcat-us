@@ -13,8 +13,8 @@ Rules or indicators that describe who can access a resource
 ```json
 {
     "@type": "AccessRestriction",
-    "restrictionStatus": "https://example.gov/concepts/restricted",
-    "specificRestriction": "https://www.archives.gov/cui/registry/category-list",
+    "restrictionStatus": "Restricted - Fully",
+    "specificRestriction": "PRMPA - National Security Classified (B)",
     "restrictionNote": "Access restricted to authorized personnel only."
 }
 ```
@@ -66,7 +66,7 @@ A note related to the access restriction
 
 **Requirement:** Optional
 
-The indication of whether or not there are access restrictions on the item
+The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
@@ -74,17 +74,37 @@ The indication of whether or not there are access restrictions on the item
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
+**Examples:**
+
+```json
+"Restricted - Fully"
+```
+
+```json
+"Unrestricted"
+```
+
 ## <a name="specificRestriction"></a>[Optional] Property `AccessRestriction > specificRestriction`
 
 **Title:** specific restriction
 
 **Requirement:** Optional
 
-Authority, code list entry, or policy reference that defines the specific access restriction
+Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"CRCCRCA 4(1)(A)"
+```
+
+```json
+"PRMPA - National Security Classified (B)"
+```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |

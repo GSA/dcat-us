@@ -34,7 +34,7 @@
         "range": "xsd:string"
       },
       "examples": [
-        "Controlled by: Agency XYZ", 
+        "Controlled by: Agency XYZ",
         "Controlled by: DOC; POC: Jane Smith, mailto:jane.smith@example.gov, XXX-XXX-XXXX"
       ],
       "requirementLevel": "Mandatory"

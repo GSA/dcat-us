@@ -13,8 +13,8 @@ Rules or legal limits on how a resource may be used
 ```json
 {
     "@type": "UseRestriction",
-    "restrictionStatus": "https://example.gov/concepts/unrestricted",
-    "specificRestriction": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "restrictionStatus": "Restricted - Fully",
+    "specificRestriction": "PRMPA - National Security Classified (B)",
     "restrictionNote": "This data may be used for any purpose without restriction."
 }
 ```
@@ -76,7 +76,7 @@ Significant information pertaining to the use or reproduction of the data
 
 **Requirement:** Optional
 
-Indication of whether or not there are use restrictions on the archival materials
+Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
@@ -84,17 +84,37 @@ Indication of whether or not there are use restrictions on the archival material
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
+**Examples:**
+
+```json
+"Restricted - Fully"
+```
+
+```json
+"Unrestricted"
+```
+
 ## <a name="specificRestriction"></a>[Optional] Property `UseRestriction > specificRestriction`
 
 **Title:** specific restriction
 
 **Requirement:** Optional
 
-Authority, code list entry, or policy reference that defines the specific use restriction
+Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"CRCCRCA 4(1)(A)"
+```
+
+```json
+"PRMPA - National Security Classified (B)"
+```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |
