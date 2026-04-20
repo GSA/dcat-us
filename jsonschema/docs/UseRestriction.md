@@ -14,7 +14,7 @@ Rules or legal limits on how a resource may be used
 {
     "@type": "UseRestriction",
     "restrictionStatus": "Restricted - Fully",
-    "specificRestriction": "PRMPA - National Security Classified (B)",
+    "specificRestriction": "Trademark",
     "restrictionNote": "This data may be used for any purpose without restriction."
 }
 ```
@@ -76,7 +76,7 @@ Significant information pertaining to the use or reproduction of the data
 
 **Requirement:** Optional
 
-Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
+Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
@@ -100,7 +100,7 @@ Indication of whether or not there are use restrictions on the archival material
 
 **Requirement:** Optional
 
-Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
+Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -109,11 +109,11 @@ Authority, code list entry, or policy reference that defines the specific use re
 **Examples:**
 
 ```json
-"CRCCRCA 4(1)(A)"
+"Copyright"
 ```
 
 ```json
-"PRMPA - National Security Classified (B)"
+"Trademark"
 ```
 
 | Any of(Option)                                                  |
