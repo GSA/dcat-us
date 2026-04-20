@@ -26,17 +26,18 @@
     },
     "restrictionStatus": {
       "title": "restriction status",
-      "description": "The indication of whether or not there are access restrictions on the item",
+      "description": "The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status",
       "$ref": "/dcat-us/3.0.0/definitions/concept",
       "_oldDocs": {
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept"
       },
+      "examples": ["Restricted - Fully", "Unrestricted"],
       "requirementLevel": "Mandatory"
     },
     "specificRestriction": {
       "title": "specific restriction",
-      "description": "Authority, code list entry, or policy reference that defines the specific access restriction",
+      "description": "Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction",
       "anyOf": [
         {
           "type": "null",
@@ -51,6 +52,10 @@
         "uri": "dcat-us:specificRestriction",
         "range": "skos:Concept"
       },
+      "examples": [
+        "CRCCRCA 4(1)(A)",
+        "PRMPA - National Security Classified (B)"
+      ],
       "requirementLevel": "Recommended"
     }
   },
@@ -62,8 +67,8 @@
   "examples": [
     {
       "@type": "AccessRestriction",
-      "restrictionStatus": "https://example.gov/concepts/restricted",
-      "specificRestriction": "https://www.archives.gov/cui/registry/category-list",
+      "restrictionStatus": "Restricted - Fully",
+      "specificRestriction": "PRMPA - National Security Classified (B)",
       "restrictionNote": "Access restricted to authorized personnel only."
     }
   ]

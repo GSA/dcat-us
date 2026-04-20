@@ -16,7 +16,7 @@
     },
     "cuiBannerMarking": {
       "title": "CUI banner marking",
-      "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection",
+      "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection; see information at https://www.archives.gov/cui/registry/category-marking-list",
       "type": "string",
       "_oldDocs": {
         "uri": "dcat-us:cuiBannerMarking",
@@ -64,7 +64,7 @@
     {
       "@type": "CUIRestriction",
       "cuiBannerMarking": "CUI//SP-CTI",
-      "designationIndicator": "Agency XYZ"
+      "designationIndicator": "Controlled by: Agency XYZ"
     }
   ]
 }
