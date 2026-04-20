@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "examples": [ "https://example.gov/restrictions/use-restriction-001" ]
+      "examples": ["https://example.gov/restrictions/use-restriction-001"]
     },
     "@type": {
       "type": "string",
@@ -17,7 +17,7 @@
     "restrictionNote": {
       "title": "restriction note",
       "description": "Significant information pertaining to the use or reproduction of the data",
-      "type": [ "null", "string" ],
+      "type": ["null", "string"],
       "_oldDocs": {
         "uri": "dcat-us:restrictionNote",
         "range": "rdfs:Literal"
@@ -36,7 +36,7 @@
         "uri": "dcat-us:restrictionStatus",
         "range": "skos:Concept"
       },
-      "examples": [ "Restricted - Fully", "Unrestricted" ],
+      "examples": ["Restricted - Fully", "Unrestricted"],
       "requirementLevel": "Mandatory"
     },
     "specificRestriction": {
@@ -63,7 +63,7 @@
       "requirementLevel": "Recommended"
     }
   },
-  "required": [ "restrictionStatus" ],
+  "required": ["restrictionStatus"],
   "_oldDocs": {
     "rdfClass": "dcat-us:UseRestriction",
     "rationale": "The introduction of dcat-us:UseRestriction in DCAT-US 3.0, aligned with NARA (National Archives and Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data management practices within the DCAT-US framework."
