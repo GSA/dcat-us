@@ -2,11 +2,32 @@
 
 **Title:** Document
 
-Information about a text document
+A publication or other document related to a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+{
+    "@type": "Document",
+    "title": "Climate Data User Guide",
+    "description": "A guide for accessing and using the National Climate Data Center's data products.",
+    "accessURL": "https://example.gov/docs/climate-user-guide",
+    "mediaType": "application/pdf",
+    "identifier": "NCDC-UG-2024-001",
+    "issued": "2024-03-15",
+    "publisher": [
+        {
+            "@type": "Organization",
+            "name": "National Climate Data Center"
+        }
+    ],
+    "bibliographicCitation": "National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide"
+}
+```
 
 | Property                                           | Type               | Title/Description      |
 | -------------------------------------------------- | ------------------ | ---------------------- |
@@ -28,27 +49,45 @@ Information about a text document
 | + [title](#title )                                 | string             | title                  |
 | - [category](#category )                           | null or array      | category               |
 
-## <a name="@id"></a>Property `Document > @id`
+## <a name="@id"></a>[Optional] Property `Document > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Document > @type`
+**Example:**
+
+```json
+"https://example.gov/documents/climate-user-guide-001"
+```
+
+## <a name="@type"></a>[Optional] Property `Document > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Document"` |
 
-## <a name="accessURL"></a>Property `Document > accessURL`
+## <a name="accessURL"></a>[Optional] Property `Document > accessURL`
 
 **Title:** access URL
+
+**Requirement:** Optional
 
 A URL that gives access to the Document
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"https://example.gov/docs/climate-user-guide"
+```
 
 | Any of(Option)                                        |
 | ----------------------------------------------------- |
@@ -72,15 +111,23 @@ reference iri of Document
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="downloadURL"></a>Property `Document > downloadURL`
+## <a name="downloadURL"></a>[Optional] Property `Document > downloadURL`
 
 **Title:** download URL
+
+**Requirement:** Optional
 
 A URL that is a direct link to a downloadable file of the Document in a given format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"https://example.gov/docs/climate-user-guide.pdf"
+```
 
 | Any of(Option)                                          |
 | ------------------------------------------------------- |
@@ -104,9 +151,11 @@ reference iri of Document
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="creator"></a>Property `Document > creator`
+## <a name="creator"></a>[Optional] Property `Document > creator`
 
 **Title:** author
+
+**Requirement:** Optional
 
 The individual(s) responsible for creating the Document
 
@@ -128,93 +177,139 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="mediaType"></a>Property `Document > mediaType`
+## <a name="mediaType"></a>[Optional] Property `Document > mediaType`
 
 **Title:** media type
+
+**Requirement:** Optional
 
 The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="abstract"></a>Property `Document > abstract`
+**Example:**
+
+```json
+"application/pdf"
+```
+
+## <a name="abstract"></a>[Optional] Property `Document > abstract`
 
 **Title:** abstract
+
+**Requirement:** Optional
 
 Text abstract of the Document
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="bibliographicCitation"></a>Property `Document > bibliographicCitation`
+**Example:**
+
+```json
+"This document provides detailed instructions for using climate data products, including API access, file formats, and data interpretation guidelines."
+```
+
+## <a name="bibliographicCitation"></a>[Optional] Property `Document > bibliographicCitation`
 
 **Title:** bibliographic citation
+
+**Requirement:** Optional
 
 Bibliographic citation as text
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="conformsTo"></a>Property `Document > conformsTo`
+**Examples:**
+
+```json
+"National Climate Data Center. (2024). Climate Data User Guide. Retrieved from https://example.gov/docs/climate-user-guide"
+```
+
+```json
+"National Climate Data Center. (2024). Climate Data User Guide. U.S. Department of Commerce."
+```
+
+## <a name="conformsTo"></a>[Optional] Property `Document > conformsTo`
 
 **Title:** conforms to
 
-List of standards that the Document conforms to
+**Requirement:** Optional
+
+List of standards or specifications the document follows
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                           |
-| ------------------------------- | --------------------------------------------------------------------- |
-| [Standard](#conformsTo_items)   | Information about a particular standard that another item conforms to |
+| Each item of this array must be | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| [Standard](#conformsTo_items)   | A standard or specification that another resource conforms to |
 
 ### <a name="conformsTo_items"></a>Document > conformsTo > Standard
 
 **Title:** Standard
 
-Information about a particular standard that another item conforms to
+A standard or specification that another resource conforms to
 
 | **Type**                  | `object`                  |
 | ------------------------- | ------------------------- |
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
-## <a name="corporateCreator"></a>Property `Document > corporateCreator`
+## <a name="corporateCreator"></a>[Optional] Property `Document > corporateCreator`
 
 **Title:** corporate author
+
+**Requirement:** Optional
 
 The corporate organization(s) responsible for creating the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be         | Description                                                                         |
-| --------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#corporateCreator_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be         | Description                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#corporateCreator_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="corporateCreator_items"></a>Document > corporateCreator > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="description"></a>Property `Document > description`
+## <a name="description"></a>[Optional] Property `Document > description`
 
 **Title:** description
 
-A free-text account of the Document
+**Requirement:** Optional
+
+Plain-language summary of the document
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="identifier"></a>Property `Document > identifier`
+**Examples:**
+
+```json
+"A guide for accessing and using the National Climate Data Center's data products."
+```
+
+```json
+"A comprehensive guide for accessing and using the National Climate Data Center's data products and services."
+```
+
+## <a name="identifier"></a>[Optional] Property `Document > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique identifier for the Document (e.g. DOI, ISBN)
 
@@ -245,9 +340,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                    |
 | **Same definition as**    | [Identifier](#conformsTo_items_identifier_anyOf_i1) |
 
-## <a name="otherIdentifier"></a>Property `Document > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Document > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
@@ -269,15 +366,35 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                                    |
 | **Same definition as**    | [Identifier](#conformsTo_items_identifier_anyOf_i1) |
 
-## <a name="issued"></a>Property `Document > issued`
+## <a name="issued"></a>[Optional] Property `Document > issued`
 
 **Title:** publication date
+
+**Requirement:** Optional
 
 Publication date of the Document
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -338,33 +455,37 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `Document > publisher`
+## <a name="publisher"></a>[Optional] Property `Document > publisher`
 
 **Title:** publisher
+
+**Requirement:** Optional
 
 The organization(s) that published the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be  | Description                                                                         |
-| -------------------------------- | ----------------------------------------------------------------------------------- |
-| [Organization](#publisher_items) | Information about an organization, including other organizations that it is part of |
+| Each item of this array must be  | Description                                                                       |
+| -------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](#publisher_items) | An organization involved with a resource, including parent or child organizations |
 
 ### <a name="publisher_items"></a>Document > publisher > Organization
 
 **Title:** Organization
 
-Information about an organization, including other organizations that it is part of
+An organization involved with a resource, including parent or child organizations
 
 | **Type**                  | `object`                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [Organization](#conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
 
-## <a name="title"></a>Property `Document > title`
+## <a name="title"></a>[Optional] Property `Document > title`
 
 **Title:** title
+
+**Requirement:** Optional
 
 The title of the Document
 
@@ -372,24 +493,32 @@ The title of the Document
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="category"></a>Property `Document > category`
+**Example:**
+
+```json
+"Climate Data User Guide"
+```
+
+## <a name="category"></a>[Optional] Property `Document > category`
 
 **Title:** category
+
+**Requirement:** Optional
 
 List of categories/genres for the Document
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| [Concept](#category_items)      | A labeled value from an optionally specified concept scheme |
+| Each item of this array must be | Description                                                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| [Concept](#category_items)      | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="category_items"></a>Document > category > Concept
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                          |
 | ------------------------- | ------------------------------------------- |

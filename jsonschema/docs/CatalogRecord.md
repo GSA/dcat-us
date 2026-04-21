@@ -8,6 +8,25 @@ A record in a catalog, describing the registration of a single resource
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Example:**
+
+```json
+{
+    "@type": "CatalogRecord",
+    "modified": "2024-06-15",
+    "primaryTopic": "https://example.gov/datasets/climate-data-2024",
+    "title": "Climate Data 2024 Catalog Entry",
+    "issued": [
+        "2024-01-15"
+    ],
+    "status": "published",
+    "conformsTo": {
+        "@type": "Standard",
+        "title": "DCAT-US 3.0"
+    }
+}
+```
+
 | Property                         | Type                    | Title/Description        |
 | -------------------------------- | ----------------------- | ------------------------ |
 | - [@id](#@id )                   | string                  | -                        |
@@ -22,21 +41,33 @@ A record in a catalog, describing the registration of a single resource
 | - [title](#title )               | null or string          | title                    |
 | + [primaryTopic](#primaryTopic ) | string                  | primary topic            |
 
-## <a name="@id"></a>Property `CatalogRecord > @id`
+## <a name="@id"></a>[Optional] Property `CatalogRecord > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `CatalogRecord > @type`
+**Example:**
+
+```json
+"https://example.gov/catalog-records/climate-dataset-record-001"
+```
+
+## <a name="@type"></a>[Optional] Property `CatalogRecord > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"CatalogRecord"` |
 
-## <a name="status"></a>Property `CatalogRecord > status`
+## <a name="status"></a>[Optional] Property `CatalogRecord > status`
 
 **Title:** change type
+
+**Requirement:** Optional
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
@@ -67,9 +98,11 @@ inline description of status
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="conformsTo"></a>Property `CatalogRecord > conformsTo`
+## <a name="conformsTo"></a>[Optional] Property `CatalogRecord > conformsTo`
 
 **Title:** application profile
+
+**Requirement:** Optional
 
 An Application Profile that the Catalog Record's metadata conforms to
 
@@ -100,14 +133,25 @@ inline description of application profile
 | **Additional properties** | Any type allowed          |
 | **Defined in**            | [Standard](./Standard.md) |
 
-## <a name="description"></a>Property `CatalogRecord > description`
+## <a name="description"></a>[Optional] Property `CatalogRecord > description`
 
 **Title:** Descriptions
+
+**Requirement:** Optional
 
 A list of free-text accounts of the catalog record
 
 | **Type** | `null or array of string` |
 | -------- | ------------------------- |
+
+**Example:**
+
+```json
+[
+    "This catalog record describes the registration of the Climate Data 2023 dataset.",
+    "Contains metadata about when the dataset was added and last updated."
+]
+```
 
 | Each item of this array must be          | Description |
 | ---------------------------------------- | ----------- |
@@ -120,14 +164,42 @@ A list of free-text accounts of the catalog record
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="issued"></a>Property `CatalogRecord > issued`
+## <a name="issued"></a>[Optional] Property `CatalogRecord > issued`
 
 **Title:** listing date
+
+**Requirement:** Optional
 
 List of dates on which the catalog record was included in the catalog
 
 | **Type** | `null or array` |
 | -------- | --------------- |
+
+**Examples:**
+
+```json
+[
+    "2024-01-15T10:30:00Z"
+]
+```
+
+```json
+[
+    "2024-01-15"
+]
+```
+
+```json
+[
+    "2024"
+]
+```
+
+```json
+[
+    "2024-01"
+]
+```
 
 | Each item of this array must be | Description |
 | ------------------------------- | ----------- |
@@ -182,15 +254,30 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>Property `CatalogRecord > language`
+## <a name="language"></a>[Optional] Property `CatalogRecord > language`
 
 **Title:** language
 
-A language or languages used in the textual metadata describing titles, descriptions, etc. of the catalog record. This should be provided as an ISO 639-1 language code, which can be seen at https://id.loc.gov/vocabulary/iso639-1.html
+**Requirement:** Optional
+
+Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"en"
+```
+
+```json
+[
+    "en",
+    "es"
+]
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -238,9 +325,11 @@ A language or languages used in the textual metadata describing titles, descript
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="modified"></a>Property `CatalogRecord > modified`
+## <a name="modified"></a>[Optional] Property `CatalogRecord > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Optional
 
 The most recent date on which the catalog record was changed or modified
 
@@ -248,6 +337,24 @@ The most recent date on which the catalog record was changed or modified
 | ------------------------- | ------------------ |
 | **Required**              | Yes                |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-06-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -290,31 +397,63 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="source"></a>Property `CatalogRecord > source`
+## <a name="source"></a>[Optional] Property `CatalogRecord > source`
 
 **Title:** source metadata
+
+**Requirement:** Optional
 
 The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="title"></a>Property `CatalogRecord > title`
+**Example:**
+
+```json
+"Original metadata harvested from NOAA data portal"
+```
+
+## <a name="title"></a>[Optional] Property `CatalogRecord > title`
 
 **Title:** title
+
+**Requirement:** Optional
 
 A name given to the Catalog Record
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="primaryTopic"></a>Property `CatalogRecord > primaryTopic`
+**Examples:**
+
+```json
+"Climate Data 2024 Catalog Entry"
+```
+
+```json
+"Climate Data 2023 Catalog Record"
+```
+
+## <a name="primaryTopic"></a>[Optional] Property `CatalogRecord > primaryTopic`
 
 **Title:** primary topic
+
+**Requirement:** Optional
 
 A link to the Dataset, Data service or Catalog described in the Catalog Record
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"https://example.gov/datasets/climate-data-2024"
+```
+
+```json
+"https://example.gov/datasets/climate-data-2023"
+```
 

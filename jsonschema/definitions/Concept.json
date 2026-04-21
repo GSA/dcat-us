@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/concept",
   "title": "Concept",
-  "description": "A labeled value from an optionally specified concept scheme",
+  "description": "A controlled term or label, optionally drawn from a concept scheme",
   "anyOf": [
     {
       "type": "string",
@@ -58,5 +58,9 @@
       },
       "required": ["prefLabel"]
     }
-  ]
+  ],
+  "_oldDocs": {
+    "rdfClass": "skos:Concept",
+    "rationale": "The inclusion of skos:Concept in DCAT-US 3.0 enhances semantic search in catalogs, enabling more accurate discovery of Catalogs, Datasets, and Data Services. It improves user experience, promotes data discoverability, and supports better resource utilization. Additionally, it aligns with international standards like SKOS, ensuring compatibility and adherence to recognized controlled vocabulary practices."
+  }
 }

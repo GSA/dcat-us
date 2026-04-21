@@ -2,11 +2,22 @@
 
 **Title:** ConceptScheme
 
-A system for specifying approved values for a single concept
+A controlled vocabulary or other list of approved terms for a concept
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+{
+    "@type": "ConceptScheme",
+    "title": "Science Domains",
+    "description": "A classification scheme for scientific research domains.",
+    "issued": "2020-01-01"
+}
+```
 
 | Property                       | Type               | Title/Description        |
 | ------------------------------ | ------------------ | ------------------------ |
@@ -19,36 +30,74 @@ A system for specifying approved values for a single concept
 | - [modified](#modified )       | More than one type | update/modification date |
 | + [title](#title )             | string             | title                    |
 
-## <a name="@id"></a>Property `ConceptScheme > @id`
+## <a name="@id"></a>[Optional] Property `ConceptScheme > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `ConceptScheme > @type`
+**Example:**
+
+```json
+"https://example.gov/concept-schemes/data-classification"
+```
+
+## <a name="@type"></a>[Optional] Property `ConceptScheme > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"ConceptScheme"` |
 
-## <a name="version"></a>Property `ConceptScheme > version`
+## <a name="version"></a>[Optional] Property `ConceptScheme > version`
 
 **Title:** version info
+
+**Requirement:** Optional
 
 A version number or other version designation of the concept scheme
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="created"></a>Property `ConceptScheme > created`
+**Example:**
+
+```json
+"2.0.1"
+```
+
+## <a name="created"></a>[Optional] Property `ConceptScheme > created`
 
 **Title:** creation date
+
+**Requirement:** Optional
 
 The date on which the Concept Scheme was first created
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2020"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                      |
 | --------------------------------------------------- |
@@ -111,24 +160,56 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="description"></a>Property `ConceptScheme > description`
+## <a name="description"></a>[Optional] Property `ConceptScheme > description`
 
 **Title:** description
+
+**Requirement:** Optional
 
 A description of the concept scheme
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="issued"></a>Property `ConceptScheme > issued`
+**Examples:**
+
+```json
+"A classification scheme for scientific research domains."
+```
+
+```json
+"A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
+```
+
+## <a name="issued"></a>[Optional] Property `ConceptScheme > issued`
 
 **Title:** publication date
+
+**Requirement:** Optional
 
 The date of formal issuance (e.g., publication) of the concept scheme
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2020-01-01"
+```
+
+```json
+"2020"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -191,15 +272,35 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `ConceptScheme > modified`
+## <a name="modified"></a>[Optional] Property `ConceptScheme > modified`
 
 **Title:** update/modification date
+
+**Requirement:** Optional
 
 The most recent date at which the concept scheme was changed or modified
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -262,13 +363,25 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="title"></a>Property `ConceptScheme > title`
+## <a name="title"></a>[Optional] Property `ConceptScheme > title`
 
 **Title:** title
+
+**Requirement:** Optional
 
 The title of the concept scheme
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Science Domains"
+```
+
+```json
+"Federal Data Classification Scheme"
+```
 

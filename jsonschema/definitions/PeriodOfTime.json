@@ -7,7 +7,8 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/periods/fiscal-year-2024"]
     },
     "@type": {
       "type": "string",
@@ -43,7 +44,13 @@
             }
           ]
         }
-      ]
+      ],
+      "_oldDocs": {
+        "uri": "dcat:endDate",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
+      },
+      "examples": ["2024-12-31", "2024-01-15T10:30:00Z", "2024", "2024-01"],
+      "requirementLevel": "Recommended"
     },
     "startDate": {
       "title": "start date",
@@ -75,8 +82,32 @@
             }
           ]
         }
-      ]
+      ],
+      "_oldDocs": {
+        "uri": "dcat:startDate",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
+      },
+      "examples": ["2023-10-01", "2024-01-15T10:30:00Z", "2024", "2024-01"],
+      "requirementLevel": "Recommended"
     }
   },
-  "anyOf": [{ "required": ["startDate"] }, { "required": ["endDate"] }]
+  "anyOf": [
+    {
+      "required": ["startDate"]
+    },
+    {
+      "required": ["endDate"]
+    }
+  ],
+  "_oldDocs": {
+    "rdfClass": "dcterms:PeriodOfTime",
+    "rationale": "The introduction of dcterms:PeriodOfTime in DCAT-US 3.0 is pivotal for harmonizing with international standards and rectifying the inconsistency with DCAT 1. In DCAT-US 1.1, [[ISO8601-1]] was used for interval representation in dcterms:temporal, diverging from DCAT 1's requirement of dcterms:PeriodOfTime. This alignment with DCAT 3 standards in DCAT-US 3.0 not only resolves discrepancies but also streamlines data processing, simplifying parsing and indexing of time intervals. By adopting dcterms:PeriodOfTime, DCAT-US 3.0 promotes ease of implementation, ensuring uniformity, flexibility, accuracy, and enhanced interoperability in handling time-related data, ultimately benefiting data usability and exchange."
+  },
+  "examples": [
+    {
+      "@type": "PeriodOfTime",
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31"
+    }
+  ]
 }

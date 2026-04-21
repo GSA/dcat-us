@@ -7,7 +7,8 @@
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/checksums/dataset-001-sha256"]
     },
     "@type": {
       "type": "string",
@@ -16,13 +17,39 @@
     "algorithm": {
       "title": "algorithm",
       "description": "The algorithm used to produce the checksum",
-      "type": "string"
+      "type": "string",
+      "_oldDocs": {
+        "uri": "spdx:algorithm",
+        "range": "spdx:ChecksumAlgorithm"
+      },
+      "examples": ["SHA-256"],
+      "requirementLevel": "Mandatory"
     },
     "checksumValue": {
       "title": "checksum value",
       "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm",
-      "type": "string"
+      "type": "string",
+      "_oldDocs": {
+        "uri": "spdx:checksumValue",
+        "range": "xsd:hexBinary"
+      },
+      "examples": [
+        "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+        "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e"
+      ],
+      "requirementLevel": "Mandatory"
     }
   },
-  "required": ["algorithm", "checksumValue"]
+  "required": ["algorithm", "checksumValue"],
+  "_oldDocs": {
+    "rdfClass": "spdx:Checksum",
+    "rationale": "Introducing the spdx:Checksum class in DCAT-US bolsters data integrity and trust by ensuring datasets remain unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools."
+  },
+  "examples": [
+    {
+      "@type": "Checksum",
+      "algorithm": "SHA-256",
+      "checksumValue": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+    }
+  ]
 }

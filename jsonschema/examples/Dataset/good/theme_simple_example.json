@@ -12,5 +12,6 @@
   "theme": [
     "https://example.gov/themes/water",
     "https://example.gov/themes/environment"
-  ]
+  ],
+  "identifier": "https://example.gov/datasets/national-water-quality-simple"
 }

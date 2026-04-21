@@ -2,11 +2,23 @@
 
 **Title:** Attribution
 
-An attribution that an agent plays some role
+A responsibility that an agent has for a resource
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+{
+    "@type": "Attribution",
+    "hadRole": "Data Steward",
+    "agent": {
+        "name": "Environmental Data Management Office"
+    }
+}
+```
 
 | Property               | Type   | Title/Description |
 | ---------------------- | ------ | ----------------- |
@@ -15,21 +27,33 @@ An attribution that an agent plays some role
 | + [hadRole](#hadRole ) | string | role              |
 | + [agent](#agent )     | object | agent             |
 
-## <a name="@id"></a>Property `Attribution > @id`
+## <a name="@id"></a>[Optional] Property `Attribution > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Attribution > @type`
+**Example:**
+
+```json
+"https://example.gov/attributions/dataset-steward-001"
+```
+
+## <a name="@type"></a>[Optional] Property `Attribution > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`        |
 | ----------- | --------------- |
 | **Default** | `"Attribution"` |
 
-## <a name="hadRole"></a>Property `Attribution > hadRole`
+## <a name="hadRole"></a>[Optional] Property `Attribution > hadRole`
 
 **Title:** role
+
+**Requirement:** Optional
 
 The function of an entity or agent with respect to another entity or resource
 
@@ -37,9 +61,17 @@ The function of an entity or agent with respect to another entity or resource
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="agent"></a>Property `Attribution > agent`
+**Example:**
+
+```json
+"Data Steward"
+```
+
+## <a name="agent"></a>[Optional] Property `Attribution > agent`
 
 **Title:** agent
+
+**Requirement:** Optional
 
 The agent that plays a role in the resource
 

@@ -2,12 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://resources.data.gov/dcat-us/3.0.0/definitions/conceptscheme",
   "title": "ConceptScheme",
-  "description": "A system for specifying approved values for a single concept",
+  "description": "A controlled vocabulary or other list of approved terms for a concept",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "examples": ["https://example.gov/concept-schemes/data-classification"]
     },
     "@type": {
       "type": "string",
@@ -16,7 +17,13 @@
     "version": {
       "title": "version info",
       "description": "A version number or other version designation of the concept scheme",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "_oldDocs": {
+        "uri": "dcat:version",
+        "range": "xsd:string"
+      },
+      "examples": ["2.0.1"],
+      "requirementLevel": "Optional"
     },
     "created": {
       "title": "creation date",
@@ -49,12 +56,27 @@
             }
           ]
         }
-      ]
+      ],
+      "_oldDocs": {
+        "uri": "dcterms:created",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
+      },
+      "examples": ["2020", "2024-01-15T10:30:00Z", "2024-01-15", "2024-01"],
+      "requirementLevel": "Optional"
     },
     "description": {
       "title": "description",
       "description": "A description of the concept scheme",
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "_oldDocs": {
+        "uri": "dcterms:description",
+        "range": "rdfs:Literal"
+      },
+      "examples": [
+        "A classification scheme for scientific research domains.",
+        "A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
+      ],
+      "requirementLevel": "Recommended"
     },
     "issued": {
       "title": "publication date",
@@ -87,7 +109,13 @@
             }
           ]
         }
-      ]
+      ],
+      "_oldDocs": {
+        "uri": "dcterms:issued",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
+      },
+      "examples": ["2020-01-01", "2020", "2024-01-15T10:30:00Z", "2024-01"],
+      "requirementLevel": "Optional"
     },
     "modified": {
       "title": "update/modification date",
@@ -120,13 +148,37 @@
             }
           ]
         }
-      ]
+      ],
+      "_oldDocs": {
+        "uri": "dcterms:modified",
+        "range": "rdfs:Literal (typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth)"
+      },
+      "examples": ["2024", "2024-01-15T10:30:00Z", "2024-01-15", "2024-01"],
+      "requirementLevel": "Optional"
     },
     "title": {
       "title": "title",
       "description": "The title of the concept scheme",
-      "type": "string"
+      "type": "string",
+      "_oldDocs": {
+        "uri": "dcterms:title",
+        "range": "rdfs:Literal"
+      },
+      "examples": ["Science Domains", "Federal Data Classification Scheme"],
+      "requirementLevel": "Mandatory"
     }
   },
-  "required": ["title"]
+  "required": ["title"],
+  "_oldDocs": {
+    "rdfClass": "skos:ConceptScheme",
+    "rationale": "The introduction of skos:ConceptScheme in DCAT-US 3.0 enhances data resource organization, categorization, and accessibility. It provides a structured framework for controlled vocabularies, aligning with FAIR Vocabulary principles for improved data interoperability and discoverability."
+  },
+  "examples": [
+    {
+      "@type": "ConceptScheme",
+      "title": "Science Domains",
+      "description": "A classification scheme for scientific research domains.",
+      "issued": "2020-01-01"
+    }
+  ]
 }

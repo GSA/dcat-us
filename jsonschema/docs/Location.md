@@ -2,11 +2,121 @@
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Examples:**
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Continental United States",
+    "bbox": "POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Continental United States",
+    "bbox": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -77.119759,
+                    38.791645
+                ],
+                [
+                    -76.909393,
+                    38.791645
+                ],
+                [
+                    -76.909393,
+                    38.99538
+                ],
+                [
+                    -77.119759,
+                    38.99538
+                ],
+                [
+                    -77.119759,
+                    38.791645
+                ]
+            ]
+        ]
+    }
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Null Island",
+    "bbox": "POINT (0.0 0.0)"
+}
+```
+
+```json
+{
+    "@type": "Location",
+    "prefLabel": "Random object",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -77.0402,
+                    38.7916
+                ],
+                [
+                    -76.9094,
+                    38.8921
+                ],
+                [
+                    -76.9115,
+                    38.9355
+                ],
+                [
+                    -76.9286,
+                    38.9784
+                ],
+                [
+                    -77.0024,
+                    38.9657
+                ],
+                [
+                    -77.0389,
+                    38.9939
+                ],
+                [
+                    -77.0672,
+                    38.9687
+                ],
+                [
+                    -77.0782,
+                    38.9143
+                ],
+                [
+                    -77.1198,
+                    38.9342
+                ],
+                [
+                    -77.1198,
+                    38.8456
+                ],
+                [
+                    -77.0402,
+                    38.7916
+                ]
+            ]
+        ]
+    }
+}
+```
 
 | Property                               | Type               | Title/Description |
 | -------------------------------------- | ------------------ | ----------------- |
@@ -21,27 +131,75 @@ Information about a specific geographic location
 | - [altLabel](#altLabel )               | null or string     | alternative name  |
 | - [prefLabel](#prefLabel )             | null or string     | geographic name   |
 
-## <a name="@id"></a>Property `Location > @id`
+## <a name="@id"></a>[Optional] Property `Location > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Location > @type`
+**Example:**
+
+```json
+"https://example.gov/locations/washington-dc"
+```
+
+## <a name="@type"></a>[Optional] Property `Location > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`     |
 | ----------- | ------------ |
 | **Default** | `"Location"` |
 
-## <a name="bbox"></a>Property `Location > bbox`
+## <a name="bbox"></a>[Optional] Property `Location > bbox`
 
 **Title:** bounding box
 
-bounding box of a location described in WKT, GeoJSON, or GML format
+**Requirement:** Optional
+
+Bounding box for the location, described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"POLYGON((-125 24, -66 24, -66 50, -125 50, -125 24))"
+```
+
+```json
+{
+    "type": "Polygon",
+    "coordinates": [
+        [
+            [
+                -77.119759,
+                38.791645
+            ],
+            [
+                -76.909393,
+                38.791645
+            ],
+            [
+                -76.909393,
+                38.99538
+            ],
+            [
+                -77.119759,
+                38.99538
+            ],
+            [
+                -77.119759,
+                38.791645
+            ]
+        ]
+    ]
+}
+```
 
 | Any of(Option)           |
 | ------------------------ |
@@ -76,11 +234,15 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 
 #### <a name="bbox_anyOf_i2_coordinates"></a>Property `Location > bbox > anyOf > item 2 > coordinates`
 
+**Requirement:** Optional
+
 | **Type**     | `array` |
 | ------------ | ------- |
 | **Required** | Yes     |
 
 #### <a name="bbox_anyOf_i2_type"></a>Property `Location > bbox > anyOf > item 2 > type`
+
+**Requirement:** Optional
 
 | **Type**     | `const` |
 | ------------ | ------- |
@@ -88,15 +250,29 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 
 Specific value: `"Polygon"`
 
-## <a name="centroid"></a>Property `Location > centroid`
+## <a name="centroid"></a>[Optional] Property `Location > centroid`
 
 **Title:** centroid
+
+**Requirement:** Optional
 
 The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "type": "Point",
+    "coordinates": [
+        -77.0369,
+        38.9072
+    ]
+}
+```
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -131,6 +307,8 @@ Centroid represented in GeoJSON format; force point usage with coordinates of lo
 
 #### <a name="centroid_anyOf_i2_coordinates"></a>Property `Location > centroid > anyOf > item 2 > coordinates`
 
+**Requirement:** Optional
+
 | **Type**     | `array of number` |
 | ------------ | ----------------- |
 | **Required** | Yes               |
@@ -146,15 +324,19 @@ Centroid represented in GeoJSON format; force point usage with coordinates of lo
 
 #### <a name="centroid_anyOf_i2_type"></a>Property `Location > centroid > anyOf > item 2 > type`
 
+**Requirement:** Optional
+
 | **Type**     | `const` |
 | ------------ | ------- |
 | **Required** | Yes     |
 
 Specific value: `"Point"`
 
-## <a name="identifier"></a>Property `Location > identifier`
+## <a name="identifier"></a>[Optional] Property `Location > identifier`
 
 **Title:** identifier
+
+**Requirement:** Optional
 
 The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
@@ -183,9 +365,11 @@ inline description of Identifier
 | **Additional properties** | Any type allowed              |
 | **Defined in**            | [Identifier](./Identifier.md) |
 
-## <a name="otherIdentifier"></a>Property `Location > otherIdentifier`
+## <a name="otherIdentifier"></a>[Optional] Property `Location > otherIdentifier`
 
 **Title:** other identifier
+
+**Requirement:** Optional
 
 A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer
 
@@ -207,15 +391,73 @@ A unique identifier and optionally it's scheme and other relevant information
 | **Additional properties** | Any type allowed                   |
 | **Same definition as**    | [Identifier](#identifier_anyOf_i1) |
 
-## <a name="geometry"></a>Property `Location > geometry`
+## <a name="geometry"></a>[Optional] Property `Location > geometry`
 
 **Title:** geometry
+
+**Requirement:** Optional
 
 Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+{
+    "type": "Polygon",
+    "coordinates": [
+        [
+            [
+                -77.0402,
+                38.7916
+            ],
+            [
+                -76.9094,
+                38.8921
+            ],
+            [
+                -76.9115,
+                38.9355
+            ],
+            [
+                -76.9286,
+                38.9784
+            ],
+            [
+                -77.0024,
+                38.9657
+            ],
+            [
+                -77.0389,
+                38.9939
+            ],
+            [
+                -77.0672,
+                38.9687
+            ],
+            [
+                -77.0782,
+                38.9143
+            ],
+            [
+                -77.1198,
+                38.9342
+            ],
+            [
+                -77.1198,
+                38.8456
+            ],
+            [
+                -77.0402,
+                38.7916
+            ]
+        ]
+    ]
+}
+```
 
 | Any of(Option)               |
 | ---------------------------- |
@@ -247,9 +489,11 @@ Geometry represented in GeoJSON format
 * type
 * coordinates
 
-## <a name="inScheme"></a>Property `Location > inScheme`
+## <a name="inScheme"></a>[Optional] Property `Location > inScheme`
 
 **Title:** gazetteer
+
+**Requirement:** Optional
 
 The gazetteer to which the location belongs
 
@@ -278,21 +522,41 @@ inline description of the gazetteer
 | **Additional properties** | Any type allowed                    |
 | **Defined in**            | [Conceptscheme](./Conceptscheme.md) |
 
-## <a name="altLabel"></a>Property `Location > altLabel`
+## <a name="altLabel"></a>[Optional] Property `Location > altLabel`
 
 **Title:** alternative name
+
+**Requirement:** Optional
 
 An alternative label or name for a location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="prefLabel"></a>Property `Location > prefLabel`
+**Example:**
+
+```json
+"DC"
+```
+
+## <a name="prefLabel"></a>[Optional] Property `Location > prefLabel`
 
 **Title:** geographic name
+
+**Requirement:** Optional
 
 Preferred label or name of the Location
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"Continental United States"
+```
+
+```json
+"Washington, D.C."
+```
 

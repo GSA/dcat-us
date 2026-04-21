@@ -8,6 +8,26 @@ Contact information for an individual or entity
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Examples:**
+
+```json
+{
+    "@type": "Kind",
+    "fn": "Climate Data Support Team",
+    "hasEmail": "mailto:climate-support@example.gov",
+    "organization-name": "National Climate Data Center",
+    "tel": "+1-555-123-4567"
+}
+```
+
+```json
+{
+    "@type": "Kind",
+    "fn": "Dr. Jane Smith",
+    "hasEmail": "mailto:jane.smith@example.gov"
+}
+```
+
 | Property                                   | Type           | Title/Description |
 | ------------------------------------------ | -------------- | ----------------- |
 | - [@id](#@id )                             | string         | -                 |
@@ -21,21 +41,33 @@ Contact information for an individual or entity
 | - [tel](#tel )                             | null or string | telephone         |
 | - [title](#title )                         | null or string | position title    |
 
-## <a name="@id"></a>Property `Kind > @id`
+## <a name="@id"></a>[Optional] Property `Kind > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `Kind > @type`
+**Example:**
+
+```json
+"https://example.gov/contacts/climate-support-001"
+```
+
+## <a name="@type"></a>[Optional] Property `Kind > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string` |
 | ----------- | -------- |
 | **Default** | `"Kind"` |
 
-## <a name="address"></a>Property `Kind > address`
+## <a name="address"></a>[Optional] Property `Kind > address`
 
 **Title:** address
+
+**Requirement:** Optional
 
 The address of the contact
 
@@ -57,32 +89,54 @@ A single physical address
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Address](./Address.md) |
 
-## <a name="hasEmail"></a>Property `Kind > hasEmail`
+## <a name="hasEmail"></a>[Optional] Property `Kind > hasEmail`
 
 **Title:** Email
 
-Email address for the contact
+**Requirement:** Optional
+
+Email address for the contact in mailto: format (for example, mailto:support@example.gov)
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
 
-| Restrictions                      |                                                                                                                                                                                                                                                                 |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^mailto:[\w\_\~\!\$\&\'\(\)\*\+\,\;\=\:.-]+@[\w.-]+\.[\w.-]+?$``` [Test](https://regex101.com/?regex=%5Emailto%3A%5B%5Cw%5C_%5C~%5C%21%5C%24%5C%26%5C%27%5C%28%5C%29%5C%2A%5C%2B%5C%2C%5C%3B%5C%3D%5C%3A.-%5D%2B%40%5B%5Cw.-%5D%2B%5C.%5B%5Cw.-%5D%2B%3F%24) |
+**Examples:**
 
-## <a name="family-name"></a>Property `Kind > family-name`
+```json
+"mailto:climate-support@example.gov"
+```
+
+```json
+"mailto:jane.smith@example.gov"
+```
+
+| Restrictions                      |                                                                                                                                                                                                                                                                                                                         |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Must match regular expression** | ```^mailto:[\w\_\~\!\$\&\'\(\)\*\+\,\;\=\:.-]+@[\w.-]+\.[\w.-]+?$``` [Test](https://regex101.com/?regex=%5Emailto%3A%5B%5Cw%5C_%5C~%5C%21%5C%24%5C%26%5C%27%5C%28%5C%29%5C%2A%5C%2B%5C%2C%5C%3B%5C%3D%5C%3A.-%5D%2B%40%5B%5Cw.-%5D%2B%5C.%5B%5Cw.-%5D%2B%3F%24&testString=%22mailto%3Aclimate-support%40example.gov%22) |
+
+## <a name="family-name"></a>[Optional] Property `Kind > family-name`
 
 **Title:** family name
+
+**Requirement:** Optional
 
 The family name of the contact
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="fn"></a>Property `Kind > fn`
+**Example:**
+
+```json
+"Smith"
+```
+
+## <a name="fn"></a>[Optional] Property `Kind > fn`
 
 **Title:** formatted name
+
+**Requirement:** Optional
 
 The formatted text of the name of the contact
 
@@ -90,39 +144,81 @@ The formatted text of the name of the contact
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="given-name"></a>Property `Kind > given-name`
+**Examples:**
+
+```json
+"Climate Data Support Team"
+```
+
+```json
+"Dr. Jane Smith"
+```
+
+## <a name="given-name"></a>[Optional] Property `Kind > given-name`
 
 **Title:** given name
+
+**Requirement:** Optional
 
 The given name of the contact
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="organization-name"></a>Property `Kind > organization-name`
+**Example:**
+
+```json
+"Jane"
+```
+
+## <a name="organization-name"></a>[Optional] Property `Kind > organization-name`
 
 **Title:** organization name
+
+**Requirement:** Optional
 
 The name of the organization to contact
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="tel"></a>Property `Kind > tel`
+**Example:**
+
+```json
+"National Climate Data Center"
+```
+
+## <a name="tel"></a>[Optional] Property `Kind > tel`
 
 **Title:** telephone
+
+**Requirement:** Optional
 
 The telephone number for the contact
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="title"></a>Property `Kind > title`
+**Example:**
+
+```json
+"+1-555-123-4567"
+```
+
+## <a name="title"></a>[Optional] Property `Kind > title`
 
 **Title:** position title
+
+**Requirement:** Optional
 
 The position role of the person to contact
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Example:**
+
+```json
+"Senior Climate Data Scientist"
+```
 

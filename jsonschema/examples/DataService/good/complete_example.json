@@ -60,7 +60,8 @@
       ],
       "publisher": {
         "name": "National Climate Data Center"
-      }
+      },
+      "identifier": "https://example.gov/datasets/served-dataset-001"
     }
   ],
   "keyword": ["climate", "weather", "temperature", "API", "REST"],
