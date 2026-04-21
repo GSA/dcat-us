@@ -1,0 +1,20 @@
+{
+  "@type": "Catalog",
+  "title": "Catalog With Invalid Date Format",
+  "description": "This catalog has an invalid issued date format.",
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "title": "Example Dataset",
+      "description": "A valid dataset.",
+      "contactPoint": {
+        "fn": "Support",
+        "hasEmail": "mailto:support@example.gov"
+      },
+      "publisher": {
+        "name": "Example Org"
+      }
+    }
+  ],
+  "issued": "January 15, 2020"
+}

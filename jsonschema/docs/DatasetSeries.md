@@ -2,11 +2,144 @@
 
 **Title:** DatasetSeries
 
-An ordered series of datasets
+A group of related datasets that are published separately
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+{
+    "@type": "DatasetSeries",
+    "title": "Annual Climate Observations",
+    "description": "A series of annual climate observation datasets from monitoring stations.",
+    "contactPoint": [
+        {
+            "fn": "Climate Data Support",
+            "hasEmail": "mailto:climate@example.gov"
+        }
+    ],
+    "publisher": {
+        "name": "National Climate Data Center"
+    },
+    "accrualPeriodicity": "annually",
+    "issued": "2000-01-15",
+    "modified": "2024-12-01",
+    "first": {
+        "@id": "https://example.gov/datasets/climate-observations-2000",
+        "@type": "Dataset",
+        "title": "Climate Observations 2000",
+        "description": "First year of climate observations.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-first"
+    },
+    "last": {
+        "@id": "https://example.gov/datasets/climate-observations-2024",
+        "@type": "Dataset",
+        "title": "Climate Observations 2024",
+        "description": "Latest year of climate observations.",
+        "contactPoint": {
+            "fn": "Climate Support",
+            "hasEmail": "mailto:climate@example.gov"
+        },
+        "publisher": {
+            "name": "National Climate Data Center"
+        },
+        "identifier": "https://example.gov/datasets/series-last"
+    },
+    "seriesMember": [
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2022",
+            "@type": "Dataset",
+            "title": "Climate Observations 2022",
+            "description": "Climate observations for 2022.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-001"
+        },
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2023",
+            "@type": "Dataset",
+            "title": "Climate Observations 2023",
+            "description": "Climate observations for 2023.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-002"
+        },
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2024",
+            "@type": "Dataset",
+            "title": "Climate Observations 2024",
+            "description": "Climate observations for 2024.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-member-003"
+        }
+    ],
+    "spatial": [
+        {
+            "@type": "Location",
+            "bbox": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -125.0,
+                            24.0
+                        ],
+                        [
+                            -66.0,
+                            24.0
+                        ],
+                        [
+                            -66.0,
+                            50.0
+                        ],
+                        [
+                            -125.0,
+                            50.0
+                        ],
+                        [
+                            -125.0,
+                            24.0
+                        ]
+                    ]
+                ]
+            }
+        }
+    ],
+    "temporal": [
+        {
+            "@type": "PeriodOfTime",
+            "startDate": "2000-01-01",
+            "endDate": "2024-12-31"
+        }
+    ]
+}
+```
 
 | Property                                     | Type               | Title/Description           |
 | -------------------------------------------- | ------------------ | --------------------------- |
@@ -25,23 +158,35 @@ An ordered series of datasets
 | - [temporal](#temporal )                     | null or array      | temporal coverage           |
 | + [title](#title )                           | string             | title                       |
 
-## <a name="@id"></a>Property `DatasetSeries > @id`
+## <a name="@id"></a>[Optional] Property `DatasetSeries > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `DatasetSeries > @type`
+**Example:**
+
+```json
+"https://example.gov/series/annual-climate-observations"
+```
+
+## <a name="@type"></a>[Optional] Property `DatasetSeries > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`          |
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
 
-## <a name="contactPoint"></a>Property `DatasetSeries > contactPoint`
+## <a name="contactPoint"></a>[Optional] Property `DatasetSeries > contactPoint`
 
 **Title:** contact point
 
-List of contacts that can be used for sending comments about the Dataset Series
+**Requirement:** Optional
+
+List of contacts people can use to ask questions or send feedback about the dataset series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -61,9 +206,11 @@ Contact information for an individual or entity
 | **Additional properties** | Any type allowed  |
 | **Defined in**            | [Kind](./Kind.md) |
 
-## <a name="first"></a>Property `DatasetSeries > first`
+## <a name="first"></a>[Optional] Property `DatasetSeries > first`
 
 **Title:** first
+
+**Requirement:** Optional
 
 The first dataset in an ordered dataset series
 
@@ -94,9 +241,11 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Dataset](./Dataset.md) |
 
-## <a name="last"></a>Property `DatasetSeries > last`
+## <a name="last"></a>[Optional] Property `DatasetSeries > last`
 
 **Title:** last
+
+**Requirement:** Optional
 
 The last dataset in an ordered dataset series
 
@@ -127,39 +276,49 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-## <a name="seriesMember"></a>Property `DatasetSeries > seriesMember`
+## <a name="seriesMember"></a>[Optional] Property `DatasetSeries > seriesMember`
 
 **Title:** series member
+
+**Requirement:** Optional
 
 List of members of the Dataset Series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                     |
-| ------------------------------- | ------------------------------- |
-| [Dataset](#seriesMember_items)  | Information about a set of data |
+| Each item of this array must be | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| [Dataset](#seriesMember_items)  | A collection of data published or curated by one provider |
 
 ### <a name="seriesMember_items"></a>DatasetSeries > seriesMember > Dataset
 
 **Title:** Dataset
 
-Information about a set of data
+A collection of data published or curated by one provider
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Dataset](#first_anyOf_i1) |
 
-## <a name="accrualPeriodicity"></a>Property `DatasetSeries > accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>[Optional] Property `DatasetSeries > accrualPeriodicity`
 
 **Title:** frequency
 
-The frequency at which the Dataset Series is updated
+**Requirement:** Optional
+
+The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Example:**
+
+```json
+"annually"
+```
 
 | Any of(Option)                                                 |
 | -------------------------------------------------------------- |
@@ -177,7 +336,7 @@ The frequency at which the Dataset Series is updated
 
 ### <a name="accrualPeriodicity_anyOf_i1"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 1`
 
-ISO 19115 Maintenance Frequency code, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO 19115 Maintenance Frequency code
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -198,7 +357,7 @@ Must be one of:
 
 ### <a name="accrualPeriodicity_anyOf_i2"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 2`
 
-ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy.github.io/dcat-us/#frequency-coding
+ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -209,7 +368,7 @@ ISO-8601 Maintenance Frequency code for recurring values, see https://infopolicy
 
 ### <a name="accrualPeriodicity_anyOf_i3"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 3`
 
-Dublin Core Collection Frequency Vocabulary, see https://infopolicy.github.io/dcat-us/#frequency-coding
+Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
 | **Type** | `enum (of string)` |
 | -------- | ------------------ |
@@ -233,25 +392,53 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="description"></a>Property `DatasetSeries > description`
+## <a name="description"></a>[Optional] Property `DatasetSeries > description`
 
 **Title:** description
 
-A free-text account of the Dataset Series
+**Requirement:** Optional
+
+Plain-language summary of the dataset series
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
 
-## <a name="issued"></a>Property `DatasetSeries > issued`
+**Example:**
+
+```json
+"An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
+```
+
+## <a name="issued"></a>[Optional] Property `DatasetSeries > issued`
 
 **Title:** release date
 
-The date of formal issuance (e.g.,publication) of the Dataset Series
+**Requirement:** Optional
+
+Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2000-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                     |
 | -------------------------------------------------- |
@@ -314,15 +501,39 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>Property `DatasetSeries > modified`
+## <a name="modified"></a>[Optional] Property `DatasetSeries > modified`
 
 **Title:** update/modification date
 
-The most recent date on which the Dataset Series was changed or modified
+**Requirement:** Optional
+
+Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"2024-12-01"
+```
+
+```json
+"2024-06-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 | Any of(Option)                                       |
 | ---------------------------------------------------- |
@@ -385,11 +596,13 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>Property `DatasetSeries > publisher`
+## <a name="publisher"></a>[Optional] Property `DatasetSeries > publisher`
 
 **Title:** publisher
 
-An entity (organization) responsible for ensuring the coherency of the Dataset Series
+**Requirement:** Optional
+
+Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -418,35 +631,39 @@ inline description of publisher
 | **Additional properties** | Any type allowed                                                        |
 | **Same definition as**    | [Agent](#first_anyOf_i1_sample_items_accessService_items_creator_items) |
 
-## <a name="spatial"></a>Property `DatasetSeries > spatial`
+## <a name="spatial"></a>[Optional] Property `DatasetSeries > spatial`
 
 **Title:** spatial/geographic coverage
+
+**Requirement:** Optional
 
 A geographic region that is covered by the Dataset Series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| [Location](#spatial_items)      | Information about a specific geographic location |
+| Each item of this array must be | Description                      |
+| ------------------------------- | -------------------------------- |
+| [Location](#spatial_items)      | A named place or geographic area |
 
 ### <a name="spatial_items"></a>DatasetSeries > spatial > Location
 
 **Title:** Location
 
-Information about a specific geographic location
+A named place or geographic area
 
 | **Type**                  | `object`                                                                   |
 | ------------------------- | -------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                           |
 | **Same definition as**    | [Location](#first_anyOf_i1_sample_items_accessService_items_spatial_items) |
 
-## <a name="temporal"></a>Property `DatasetSeries > temporal`
+## <a name="temporal"></a>[Optional] Property `DatasetSeries > temporal`
 
 **Title:** temporal coverage
 
-A list of temporal periods that the Dataset Series covers
+**Requirement:** Optional
+
+Time periods covered by the dataset series
 
 | **Type** | `null or array` |
 | -------- | --------------- |
@@ -466,13 +683,25 @@ Information about a specific time period with a start- and/or end-time
 | **Additional properties** | Any type allowed                                                                |
 | **Same definition as**    | [PeriodOfTime](#first_anyOf_i1_sample_items_accessService_items_temporal_items) |
 
-## <a name="title"></a>Property `DatasetSeries > title`
+## <a name="title"></a>[Optional] Property `DatasetSeries > title`
 
 **Title:** title
 
-A name given to the Dataset Series
+**Requirement:** Optional
+
+Human-readable title of the dataset series
 
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Annual Climate Observations"
+```
+
+```json
+"Annual National Climate Observations Series"
+```
 

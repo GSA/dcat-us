@@ -156,13 +156,7 @@ def format_validation_errors(errors, indent=0):
 def load_schema_registry(script_dir):
     registry = Registry()
 
-    # the top-level schema is in script_dir/Catalog.json
-    with open(script_dir / "Catalog.json") as f:
-        schema_dict = json.load(f)
-        resource = Resource.from_contents(schema_dict)
-        registry = resource @ registry
-
-    # lower-level schemas are in all the files in script_dir/definitions
+    # all schemas are in script_dir/definitions
     definitions_dir = script_dir / "definitions"
 
     for schema_file in definitions_dir.glob("*.json"):
@@ -195,7 +189,6 @@ def main():
         if expected_result not in ("good", "bad"):
             continue
 
-        # TODO: Catalog has an id with a different structure
         schema_id = f"https://resources.data.gov/dcat-us/3.0.0/definitions/{schema_name.lower()}"
         try:
             schema_resource = registry[schema_id]
@@ -223,6 +216,49 @@ def main():
             if expected_result == "good" and not validation_passed:
                 print(f"\n  Validation errors for {rel_path}:")
                 print(format_validation_errors(errors, indent=2))
+
+    # check examples embedded in schema definitions
+    definitions_dir = script_dir / "definitions"
+    for schema_file in sorted(definitions_dir.glob("*.json")):
+        with open(schema_file) as f:
+            schema_dict = json.load(f)
+
+        schema_id = schema_dict.get("$id")
+        if not schema_id:
+            continue
+
+        validator = Draft202012Validator({"$ref": schema_id}, registry=registry, format_checker=Draft202012Validator.FORMAT_CHECKER)
+
+        # Check top-level schema examples
+        for i, example in enumerate(schema_dict.get("examples", [])):
+            label = f"definitions/{schema_file.name} examples[{i}]"
+            errors = list(validator.iter_errors(example))
+            if errors:
+                print(f"FAIL: {label} (schema-level example failed validation)")
+                failures.append(label)
+                print(f"\n  Validation errors for {label}:")
+                print(format_validation_errors(errors, indent=2))
+            else:
+                print(f"PASS: {label}")
+
+        # Check property-level examples
+        for prop_name, prop_schema in schema_dict.get("properties", {}).items():
+            if not prop_schema.get("examples"):
+                continue
+            # Reference the property schema via JSON Pointer within the parent schema
+            # so that relative $refs (including "#") resolve correctly.
+            prop_ref = f"{schema_id}#/properties/{prop_name}"
+            prop_validator = Draft202012Validator({"$ref": prop_ref}, registry=registry, format_checker=Draft202012Validator.FORMAT_CHECKER)
+            for i, example in enumerate(prop_schema.get("examples", [])):
+                label = f"definitions/{schema_file.name} properties.{prop_name}.examples[{i}]"
+                errors = list(prop_validator.iter_errors(example))
+                if errors:
+                    print(f"FAIL: {label} (property-level example failed validation)")
+                    failures.append(label)
+                    print(f"\n  Validation errors for {label}:")
+                    print(format_validation_errors(errors, indent=2))
+                else:
+                    print(f"PASS: {label}")
 
     if failures:
         print(f"\n{len(failures)} test(s) failed")

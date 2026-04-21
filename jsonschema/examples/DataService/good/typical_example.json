@@ -25,7 +25,11 @@
         "fn": "Climate Support",
         "hasEmail": "mailto:climate@example.gov"
       },
-      "publisher": { "name": "National Climate Data Center" }
+      "publisher": {
+        "name": "National Climate Data Center"
+      },
+      "identifier": "https://example.gov/datasets/climate-observations-2024"
     }
-  ]
+  ],
+  "identifier": "https://example.gov/services/climate-api"
 }

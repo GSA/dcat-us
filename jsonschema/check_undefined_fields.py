@@ -17,13 +17,7 @@ def load_schemas(script_dir):
     """Load all schema definitions into a dictionary keyed by schema name."""
     schemas = {}
     
-    # Load top-level Catalog schema
-    catalog_path = script_dir / "Catalog.json"
-    if catalog_path.exists():
-        with open(catalog_path) as f:
-            schemas["catalog"] = json.load(f)
-    
-    # Load all definition schemas
+    # Load all schemas from definitions directory
     definitions_dir = script_dir / "definitions"
     for schema_file in definitions_dir.glob("*.json"):
         schema_name = schema_file.stem.lower()

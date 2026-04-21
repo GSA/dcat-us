@@ -72,7 +72,8 @@
     },
     "publisher": {
       "name": "National Climate Data Center"
-    }
+    },
+    "identifier": "https://example.gov/datasets/series-first"
   },
   "last": {
     "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -85,7 +86,8 @@
     },
     "publisher": {
       "name": "National Climate Data Center"
-    }
+    },
+    "identifier": "https://example.gov/datasets/series-last"
   },
   "seriesMember": [
     {
@@ -99,7 +101,8 @@
       },
       "publisher": {
         "name": "National Climate Data Center"
-      }
+      },
+      "identifier": "https://example.gov/datasets/series-member-001"
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2023",
@@ -112,7 +115,8 @@
       },
       "publisher": {
         "name": "National Climate Data Center"
-      }
+      },
+      "identifier": "https://example.gov/datasets/series-member-002"
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -125,7 +129,8 @@
       },
       "publisher": {
         "name": "National Climate Data Center"
-      }
+      },
+      "identifier": "https://example.gov/datasets/series-member-003"
     }
   ]
 }

@@ -4,5 +4,9 @@
   "primaryTopic": "https://example.gov/datasets/climate-data-2024",
   "title": "Climate Data 2024 Catalog Entry",
   "issued": ["2024-01-15"],
-  "status": "published"
+  "status": "published",
+  "conformsTo": {
+    "@type": "Standard",
+    "title": "DCAT-US 3.0"
+  }
 }

@@ -2,7 +2,7 @@
 
 **Title:** Concept
 
-A labeled value from an optionally specified concept scheme
+A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -40,11 +40,15 @@ The value of the concept, expressed as a string. This is only used when the conc
 
 ### <a name="anyOf_i1_@id"></a>Property `Concept > anyOf > item 1 > @id`
 
+**Requirement:** Optional
+
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
 ### <a name="anyOf_i1_@type"></a>Property `Concept > anyOf > item 1 > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`    |
 | ----------- | ----------- |
@@ -53,6 +57,8 @@ The value of the concept, expressed as a string. This is only used when the conc
 ### <a name="anyOf_i1_altLabel"></a>Property `Concept > anyOf > item 1 > altLabel`
 
 **Title:** alternate label
+
+**Requirement:** Optional
 
 Alternative label for a concept
 
@@ -63,6 +69,8 @@ Alternative label for a concept
 
 **Title:** definition
 
+**Requirement:** Optional
+
 Definition of the controlled vocabulary term
 
 | **Type** | `null or string` |
@@ -71,6 +79,8 @@ Definition of the controlled vocabulary term
 ### <a name="anyOf_i1_inScheme"></a>Property `Concept > anyOf > item 1 > inScheme`
 
 **Title:** in scheme
+
+**Requirement:** Optional
 
 Concept scheme defining this concept
 
@@ -82,6 +92,8 @@ Concept scheme defining this concept
 ### <a name="anyOf_i1_notation"></a>Property `Concept > anyOf > item 1 > notation`
 
 **Title:** notation
+
+**Requirement:** Optional
 
 List of abbreviations or codes from code lists for the Concept
 
@@ -116,6 +128,8 @@ List of abbreviations or codes from code lists for the Concept
 ### <a name="anyOf_i1_prefLabel"></a>Property `Concept > anyOf > item 1 > prefLabel`
 
 **Title:** preferred label
+
+**Requirement:** Optional
 
 Preferred label for the term
 

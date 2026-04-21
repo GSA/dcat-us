@@ -85,5 +85,9 @@
       },
       "required": []
     }
-  ]
+  ],
+  "_oldDocs": {
+    "rdfClass": "adms:Identifier",
+    "rationale": "Incorporating adms:Identifier in the DCAT-US profile fosters a culture of data governance and trust by transparently documenting the authority behind each identifier. This enhances data reliability and credibility, boosting confidence for DCAT-US users. Additionally, it enables versatile data access using multiple identifiers, enhancing overall data accessibility and usability for diverse stakeholders."
+  }
 }

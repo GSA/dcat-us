@@ -2,11 +2,22 @@
 
 **Title:** UseRestriction
 
-A restriction on usage of another item
+Rules or legal limits on how a resource may be used
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+{
+    "@type": "UseRestriction",
+    "restrictionStatus": "Restricted - Fully",
+    "specificRestriction": "Trademark",
+    "restrictionNote": "This data may be used for any purpose without restriction."
+}
+```
 
 | Property                                       | Type               | Title/Description    |
 | ---------------------------------------------- | ------------------ | -------------------- |
@@ -16,32 +27,56 @@ A restriction on usage of another item
 | + [restrictionStatus](#restrictionStatus )     | object             | restriction status   |
 | - [specificRestriction](#specificRestriction ) | More than one type | specific restriction |
 
-## <a name="@id"></a>Property `UseRestriction > @id`
+## <a name="@id"></a>[Optional] Property `UseRestriction > @id`
+
+**Requirement:** Optional
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
 
-## <a name="@type"></a>Property `UseRestriction > @type`
+**Example:**
+
+```json
+"https://example.gov/restrictions/use-restriction-001"
+```
+
+## <a name="@type"></a>[Optional] Property `UseRestriction > @type`
+
+**Requirement:** Optional
 
 | **Type**    | `string`           |
 | ----------- | ------------------ |
 | **Default** | `"UseRestriction"` |
 
-## <a name="restrictionNote"></a>Property `UseRestriction > restrictionNote`
+## <a name="restrictionNote"></a>[Optional] Property `UseRestriction > restrictionNote`
 
 **Title:** restriction note
+
+**Requirement:** Optional
 
 Significant information pertaining to the use or reproduction of the data
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
-## <a name="restrictionStatus"></a>Property `UseRestriction > restrictionStatus`
+**Examples:**
+
+```json
+"This data may be used for any purpose without restriction."
+```
+
+```json
+"This data may be used for research purposes. Commercial use requires written permission from the data steward."
+```
+
+## <a name="restrictionStatus"></a>[Optional] Property `UseRestriction > restrictionStatus`
 
 **Title:** restriction status
 
-Indication of whether or not there are use restrictions on the archival materials
+**Requirement:** Optional
+
+Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status
 
 | **Type**                  | More than one type      |
 | ------------------------- | ----------------------- |
@@ -49,15 +84,37 @@ Indication of whether or not there are use restrictions on the archival material
 | **Additional properties** | Any type allowed        |
 | **Defined in**            | [Concept](./Concept.md) |
 
-## <a name="specificRestriction"></a>Property `UseRestriction > specificRestriction`
+**Examples:**
+
+```json
+"Restricted - Fully"
+```
+
+```json
+"Unrestricted"
+```
+
+## <a name="specificRestriction"></a>[Optional] Property `UseRestriction > specificRestriction`
 
 **Title:** specific restriction
 
-The specific NARA restriction associated with the use restriction
+**Requirement:** Optional
+
+Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
+
+**Examples:**
+
+```json
+"Copyright"
+```
+
+```json
+"Trademark"
+```
 
 | Any of(Option)                                                  |
 | --------------------------------------------------------------- |
