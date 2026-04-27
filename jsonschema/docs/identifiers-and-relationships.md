@@ -1,6 +1,6 @@
 # Identifiers and Relationships
 
-This page combines supporting DCAT-US 3 classes used with the main schema classes.
+Supporting classes for identifiers, relationships, checksums, and controlled concepts used to describe and connect resources.
 
 <a name="identifier"></a>
 

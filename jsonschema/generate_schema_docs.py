@@ -20,17 +20,29 @@ from json_schema_for_humans.template_renderer import TemplateRenderer
 
 
 MAIN_CLASS_PAGES = [
-    {"source": "Catalog.md", "output": "catalog.md", "title": "Catalog"},
-    {"source": "Dataset.md", "output": "dataset.md", "title": "Dataset"},
+    {
+        "source": "Catalog.md",
+        "output": "catalog.md",
+        "title": "Catalog",
+        "intro": "The catalog of datasets, services, and other information describing data assets.",
+    },
+    {
+        "source": "Dataset.md",
+        "output": "dataset.md",
+        "title": "Dataset",
+        "intro": "Information about a dataset, including identifiers, contacts, coverage, distributions, and related resources.",
+    },
     {
         "source": "DatasetSeries.md",
         "output": "dataset-series.md",
         "title": "Dataset Series",
+        "intro": "Information about a dataset series, including its members, ordering, coverage, and publishing details.",
     },
     {
         "source": "Distribution.md",
         "output": "distribution.md",
         "title": "Distribution",
+        "intro": "Information about a distribution, including access methods, formats, licenses, restrictions, and quality details.",
     },
 ]
 
@@ -38,16 +50,19 @@ GROUPED_CLASS_PAGES = [
     {
         "output": "agents.md",
         "title": "Agents",
+        "intro": "Data information classes including Agent, Organization, and Kind, which describe organizations, people, and contact information.",
         "classes": ["Agent.md", "Organization.md", "Kind.md"],
     },
     {
         "output": "constraints-and-restrictions.md",
         "title": "Constraints and Restrictions",
+        "intro": "Restriction classes describing access limits, controlled unclassified information, and rules on how a resource may be used.",
         "classes": ["AccessRestriction.md", "CUIRestriction.md", "UseRestriction.md"],
     },
     {
         "output": "identifiers-and-relationships.md",
         "title": "Identifiers and Relationships",
+        "intro": "Supporting classes for identifiers, relationships, checksums, and controlled concepts used to describe and connect resources.",
         "classes": [
             "Identifier.md",
             "Relationship.md",
@@ -59,6 +74,7 @@ GROUPED_CLASS_PAGES = [
     {
         "output": "temporal-spatial-metrics.md",
         "title": "Temporal, Spatial, and Metrics",
+        "intro": "Supporting classes for time periods, locations, quality metrics, measurements, activities, and addresses.",
         "classes": [
             "PeriodOfTime.md",
             "Location.md",
@@ -71,6 +87,7 @@ GROUPED_CLASS_PAGES = [
     {
         "output": "quality-governance.md",
         "title": "Quality and Governance",
+        "intro": "Supporting classes for standards, documents, catalog records, data services, and attribution used in governance and quality description.",
         "classes": [
             "Standard.md",
             "Document.md",
@@ -80,10 +97,6 @@ GROUPED_CLASS_PAGES = [
         ],
     },
 ]
-
-GROUP_PAGE_INTRO = (
-    "This page combines supporting DCAT-US 3 classes used with the main schema classes."
-)
 
 
 def _any_differences(comp_object):
@@ -307,7 +320,7 @@ def _build_public_docs(rendered_docs_dir, output_dir):
     for page in MAIN_CLASS_PAGES:
         raw_content = _read_generated_doc(rendered_docs_dir, page["source"])
         page_content = _normalize_doc_content(raw_content, root_anchor="root")
-        page_content = f'<a name="root"></a>\n\n{page_content}'
+        page_content = f'<a name="root"></a>\n\n{page["intro"]}\n\n{page_content}'
         _write_text(output_dir / page["output"], page_content)
 
     for page in GROUPED_CLASS_PAGES:
@@ -328,7 +341,7 @@ def _build_public_docs(rendered_docs_dir, output_dir):
         page_content = "\n\n---\n\n".join(sections)
         _write_text(
             output_dir / page["output"],
-            f"# {page['title']}\n\n{GROUP_PAGE_INTRO}\n\n{page_content}",
+            f"# {page['title']}\n\n{page['intro']}\n\n{page_content}",
         )
 
     _write_text(output_dir / "index.md", _build_index_page())

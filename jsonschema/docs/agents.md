@@ -1,6 +1,6 @@
 # Agents
 
-This page combines supporting DCAT-US 3 classes used with the main schema classes.
+Data information classes including Agent, Organization, and Kind, which describe organizations, people, and contact information.
 
 <a name="agent"></a>
 

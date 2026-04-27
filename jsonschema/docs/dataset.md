@@ -1,5 +1,7 @@
 <a name="root"></a>
 
+Information about a dataset, including identifiers, contacts, coverage, distributions, and related resources.
+
 **Title:** Dataset
 
 A collection of data published or curated by one provider

@@ -1,5 +1,7 @@
 <a name="root"></a>
 
+Information about a dataset series, including its members, ordering, coverage, and publishing details.
+
 **Title:** DatasetSeries
 
 A group of related datasets that are published separately

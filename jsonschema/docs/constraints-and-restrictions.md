@@ -1,6 +1,6 @@
 # Constraints and Restrictions
 
-This page combines supporting DCAT-US 3 classes used with the main schema classes.
+Restriction classes describing access limits, controlled unclassified information, and rules on how a resource may be used.
 
 <a name="access-restriction"></a>
 

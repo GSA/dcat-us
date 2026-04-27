@@ -1,5 +1,7 @@
 <a name="root"></a>
 
+The catalog of datasets, services, and other information describing data assets.
+
 **Title:** DCAT-US 3 Catalog
 
 A curated collection of metadata about datasets, data services, or other resources

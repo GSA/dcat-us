@@ -1,5 +1,7 @@
 <a name="root"></a>
 
+Information about a distribution, including access methods, formats, licenses, restrictions, and quality details.
+
 **Title:** Distribution
 
 A specific representation of a dataset, such as a file, feed, or API response

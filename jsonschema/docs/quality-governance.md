@@ -1,6 +1,6 @@
 # Quality and Governance
 
-This page combines supporting DCAT-US 3 classes used with the main schema classes.
+Supporting classes for standards, documents, catalog records, data services, and attribution used in governance and quality description.
 
 <a name="standard"></a>
 

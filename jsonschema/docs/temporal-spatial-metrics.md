@@ -1,6 +1,6 @@
 # Temporal, Spatial, and Metrics
 
-This page combines supporting DCAT-US 3 classes used with the main schema classes.
+Supporting classes for time periods, locations, quality metrics, measurements, activities, and addresses.
 
 <a name="period-of-time"></a>
 
