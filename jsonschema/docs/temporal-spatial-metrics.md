@@ -620,9 +620,9 @@ The unique geographic identifier for the Location, e.g., the URI or other unique
 
 inline description of Identifier
 
-| **Type**                  | More than one type            |
-| ------------------------- | ----------------------------- |
-| **Additional properties** | Any type allowed              |
+| **Type**                  | More than one type                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                            |
 | **Defined in**            | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="location--otherIdentifier"></a>[Optional] Property `Location > otherIdentifier`
@@ -636,16 +636,9 @@ A list of geographic identifiers for the Location besides the main identifier, e
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be      | Description                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------------------- |
-| [Identifier](#location--otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
-
-### <a name="location--otherIdentifier_items"></a>Location > otherIdentifier > Identifier
-
-| **Type**                  | More than one type                 |
-| ------------------------- | ---------------------------------- |
-| **Additional properties** | Any type allowed                   |
-| **Same definition as**    | [Identifier](#location--identifier_anyOf_i1) |
+| Each item of this array must be                             | Description                                                                   |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="location--geometry"></a>[Optional] Property `Location > geometry`
 
@@ -773,10 +766,10 @@ The gazetteer to which the location belongs
 
 inline description of the gazetteer
 
-| **Type**                  | `object`                            |
-| ------------------------- | ----------------------------------- |
-| **Additional properties** | Any type allowed                    |
-| **Defined in**            | [Conceptscheme](./identifiers-and-relationships.md#concept-scheme) |
+| **Type**                  | `object`                                                           |
+| ------------------------- | ------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                   |
+| **Defined in**            | [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) |
 
 ## <a name="location--altLabel"></a>[Optional] Property `Location > altLabel`
 
@@ -1002,10 +995,10 @@ A measurement of a resource against a specific quality metric
 
 The metric being observed
 
-| **Type**                  | `object`              |
-| ------------------------- | --------------------- |
-| **Required**              | Yes                   |
-| **Additional properties** | Any type allowed      |
+| **Type**                  | `object`                                       |
+| ------------------------- | ---------------------------------------------- |
+| **Required**              | Yes                                            |
+| **Additional properties** | Any type allowed                               |
 | **Defined in**            | [Metric](./temporal-spatial-metrics.md#metric) |
 
 ## <a name="quality-measurement--value"></a>[Optional] Property `QualityMeasurement > value`
@@ -1109,16 +1102,9 @@ List of categories for the Activity
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#activity--category_items)      | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="activity--category_items"></a>Activity > category > Concept
-
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="activity--label"></a>[Optional] Property `Activity > label`
 

@@ -213,9 +213,9 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 
 inline description of Identifier
 
-| **Type**                  | More than one type            |
-| ------------------------- | ----------------------------- |
-| **Additional properties** | Any type allowed              |
+| **Type**                  | More than one type                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                            |
 | **Defined in**            | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="standard--otherIdentifier"></a>[Optional] Property `Standard > otherIdentifier`
@@ -229,16 +229,9 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be      | Description                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------------------- |
-| [Identifier](#standard--otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
-
-### <a name="standard--otherIdentifier_items"></a>Standard > otherIdentifier > Identifier
-
-| **Type**                  | More than one type                 |
-| ------------------------- | ---------------------------------- |
-| **Additional properties** | Any type allowed                   |
-| **Same definition as**    | [Identifier](#standard--identifier_anyOf_i1) |
+| Each item of this array must be                             | Description                                                                   |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="standard--issued"></a>[Optional] Property `Standard > issued`
 
@@ -454,16 +447,9 @@ List of categories for the Standard
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#standard--category_items)      | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="standard--category_items"></a>Standard > category > Concept
-
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="standard--inScheme"></a>[Optional] Property `Standard > inScheme`
 
@@ -495,10 +481,10 @@ The reference register to which the Standard belongs
 
 inline description of ConceptScheme
 
-| **Type**                  | `object`                                      |
-| ------------------------- | --------------------------------------------- |
-| **Additional properties** | Any type allowed                              |
-| **Same definition as**    | [inScheme](#standard--category_items_anyOf_i1_inScheme) |
+| **Type**                  | `object`                                                           |
+| ------------------------- | ------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                   |
+| **Same definition as**    | [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) |
 
 ---
 
@@ -670,14 +656,7 @@ The individual(s) responsible for creating the Document
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
-| [Kind](#document--creator_items)          | Contact information for an individual or entity |
-
-### <a name="document--creator_items"></a>Document > creator > Kind
-
-| **Type**                  | `object`          |
-| ------------------------- | ----------------- |
-| **Additional properties** | Any type allowed  |
-| **Defined in**            | [Kind](./agents.md#kind) |
+| [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
 ## <a name="document--mediaType"></a>[Optional] Property `Document > mediaType`
 
@@ -745,16 +724,9 @@ List of standards or specifications the document follows
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| [Standard](#document--conformsTo_items)   | A standard or specification that another resource conforms to |
-
-### <a name="document--conformsTo_items"></a>Document > conformsTo > Standard
-
-| **Type**                  | `object`                  |
-| ------------------------- | ------------------------- |
-| **Additional properties** | Any type allowed          |
-| **Defined in**            | [Standard](./quality-governance.md#standard) |
+| Each item of this array must be              | Description                                                   |
+| -------------------------------------------- | ------------------------------------------------------------- |
+| [Standard](./quality-governance.md#standard) | A standard or specification that another resource conforms to |
 
 ## <a name="document--corporateCreator"></a>[Optional] Property `Document > corporateCreator`
 
@@ -767,16 +739,9 @@ The corporate organization(s) responsible for creating the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be         | Description                                                                       |
-| --------------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](#document--corporateCreator_items) | An organization involved with a resource, including parent or child organizations |
-
-### <a name="document--corporateCreator_items"></a>Document > corporateCreator > Organization
-
-| **Type**                  | `object`                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                |
-| **Same definition as**    | [Organization](#document--conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
+| Each item of this array must be          | Description                                                                       |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
 ## <a name="document--description"></a>[Optional] Property `Document > description`
 
@@ -829,10 +794,10 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                  |
-| ------------------------- | --------------------------------------------------- |
-| **Additional properties** | Any type allowed                                    |
-| **Same definition as**    | [Identifier](#document--conformsTo_items_identifier_anyOf_i1) |
+| **Type**                  | More than one type                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                            |
+| **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="document--otherIdentifier"></a>[Optional] Property `Document > otherIdentifier`
 
@@ -845,16 +810,9 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be      | Description                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------------------- |
-| [Identifier](#document--otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
-
-### <a name="document--otherIdentifier_items"></a>Document > otherIdentifier > Identifier
-
-| **Type**                  | More than one type                                  |
-| ------------------------- | --------------------------------------------------- |
-| **Additional properties** | Any type allowed                                    |
-| **Same definition as**    | [Identifier](#document--conformsTo_items_identifier_anyOf_i1) |
+| Each item of this array must be                             | Description                                                                   |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="document--issued"></a>[Optional] Property `Document > issued`
 
@@ -956,16 +914,9 @@ The organization(s) that published the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be  | Description                                                                       |
-| -------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](#document--publisher_items) | An organization involved with a resource, including parent or child organizations |
-
-### <a name="document--publisher_items"></a>Document > publisher > Organization
-
-| **Type**                  | `object`                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                |
-| **Same definition as**    | [Organization](#document--conformsTo_items_identifier_anyOf_i1_anyOf_i1_creator_anyOf_i1) |
+| Each item of this array must be          | Description                                                                       |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
 ## <a name="document--title"></a>[Optional] Property `Document > title`
 
@@ -996,16 +947,9 @@ List of categories/genres for the Document
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#document--category_items)      | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="document--category_items"></a>Document > category > Concept
-
-| **Type**                  | More than one type                          |
-| ------------------------- | ------------------------------------------- |
-| **Additional properties** | Any type allowed                            |
-| **Same definition as**    | [Concept](#document--conformsTo_items_category_items) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ---
 
@@ -1106,9 +1050,9 @@ The status of the catalog record in the context of editorial flow of the dataset
 
 inline description of status
 
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
+| **Type**                  | More than one type                                    |
+| ------------------------- | ----------------------------------------------------- |
+| **Additional properties** | Any type allowed                                      |
 | **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
 
 ## <a name="catalog-record--conformsTo"></a>[Optional] Property `CatalogRecord > conformsTo`
@@ -1141,9 +1085,9 @@ An Application Profile that the Catalog Record's metadata conforms to
 
 inline description of application profile
 
-| **Type**                  | `object`                  |
-| ------------------------- | ------------------------- |
-| **Additional properties** | Any type allowed          |
+| **Type**                  | `object`                                     |
+| ------------------------- | -------------------------------------------- |
+| **Additional properties** | Any type allowed                             |
 | **Defined in**            | [Standard](./quality-governance.md#standard) |
 
 ## <a name="catalog-record--description"></a>[Optional] Property `CatalogRecord > description`
@@ -1601,14 +1545,7 @@ Contact information for questions about the Data Service. Include an email addre
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
-| [Kind](#data-service--contactPoint_items)     | Contact information for an individual or entity |
-
-### <a name="data-service--contactPoint_items"></a>DataService > contactPoint > Kind
-
-| **Type**                  | `object`          |
-| ------------------------- | ----------------- |
-| **Additional properties** | Any type allowed  |
-| **Defined in**            | [Kind](./agents.md#kind) |
+| [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
 ## <a name="data-service--endpointDescription"></a>[Optional] Property `DataService > endpointDescription`
 
@@ -1744,14 +1681,7 @@ List of datasets this service provides access to
 
 | Each item of this array must be | Description                                               |
 | ------------------------------- | --------------------------------------------------------- |
-| [Dataset](#data-service--servesDataset_items) | A collection of data published or curated by one provider |
-
-### <a name="data-service--servesDataset_items"></a>DataService > servesDataset > Dataset
-
-| **Type**                  | `object`                |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Dataset](./dataset.md#root) |
+| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
 
 ## <a name="data-service--spatialResolutionInMeters"></a>[Optional] Property `DataService > spatialResolutionInMeters`
 
@@ -1798,16 +1728,9 @@ List of themes or categories for the data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#data-service--theme_items)         | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="data-service--theme_items"></a>DataService > theme > Concept
-
-| **Type**                  | More than one type                                                            |
-| ------------------------- | ----------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                              |
-| **Same definition as**    | [Concept](#data-service--servesDataset_items_sample_items_representationTechnique_anyOf_i1) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="data-service--accessRights"></a>[Optional] Property `DataService > accessRights`
 
@@ -1855,16 +1778,9 @@ List of general standards or specifications that the Data Service endpoints impl
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| [Standard](#data-service--conformsTo_items)   | A standard or specification that another resource conforms to |
-
-### <a name="data-service--conformsTo_items"></a>DataService > conformsTo > Standard
-
-| **Type**                  | `object`                                                                           |
-| ------------------------- | ---------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                   |
-| **Same definition as**    | [Standard](#data-service--servesDataset_items_sample_items_accessService_items_conformsTo_items) |
+| Each item of this array must be              | Description                                                   |
+| -------------------------------------------- | ------------------------------------------------------------- |
+| [Standard](./quality-governance.md#standard) | A standard or specification that another resource conforms to |
 
 ## <a name="data-service--created"></a>[Optional] Property `DataService > created`
 
@@ -1968,14 +1884,7 @@ List of agents primarily responsible for producing the Data Service
 
 | Each item of this array must be | Description                                                                      |
 | ------------------------------- | -------------------------------------------------------------------------------- |
-| [Agent](#data-service--creator_items)         | A person, organization, software agent, or other entity involved with a resource |
-
-### <a name="data-service--creator_items"></a>DataService > creator > Agent
-
-| **Type**                  | `object`                                                                     |
-| ------------------------- | ---------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                             |
-| **Same definition as**    | [Agent](#data-service--servesDataset_items_sample_items_accessService_items_creator_items) |
+| [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
 
 ## <a name="data-service--description"></a>[Optional] Property `DataService > description`
 
@@ -2022,10 +1931,10 @@ The unique identifier for the Data Service, e.g. the URI or other unique identif
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                       |
-| ------------------------- | -------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                         |
-| **Same definition as**    | [Identifier](#data-service--servesDataset_items_otherIdentifier_items) |
+| **Type**                  | More than one type                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| **Additional properties** | Any type allowed                                            |
+| **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="data-service--otherIdentifier"></a>[Optional] Property `DataService > otherIdentifier`
 
@@ -2038,16 +1947,9 @@ A list of identifiers for the Data Service besides the main identifier, e.g. the
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be      | Description                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------------------- |
-| [Identifier](#data-service--otherIdentifier_items) | A unique identifier and optionally it's scheme and other relevant information |
-
-### <a name="data-service--otherIdentifier_items"></a>DataService > otherIdentifier > Identifier
-
-| **Type**                  | More than one type                                       |
-| ------------------------- | -------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                         |
-| **Same definition as**    | [Identifier](#data-service--servesDataset_items_otherIdentifier_items) |
+| Each item of this array must be                             | Description                                                                   |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="data-service--language"></a>[Optional] Property `DataService > language`
 
@@ -2256,10 +2158,10 @@ A year and month in YYYY-MM format
 
 Person or organization responsible for publishing and making the data service available
 
-| **Type**                  | `object`            |
-| ------------------------- | ------------------- |
-| **Required**              | Yes                 |
-| **Additional properties** | Any type allowed    |
+| **Type**                  | `object`                   |
+| ------------------------- | -------------------------- |
+| **Required**              | Yes                        |
+| **Additional properties** | Any type allowed           |
 | **Defined in**            | [Agent](./agents.md#agent) |
 
 ## <a name="data-service--rights"></a>[Optional] Property `DataService > rights`
@@ -2301,16 +2203,9 @@ A list of Agents (organizations) holding rights on the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be     | Description                                                                       |
-| ----------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](#data-service--rightsHolder_items) | An organization involved with a resource, including parent or child organizations |
-
-### <a name="data-service--rightsHolder_items"></a>DataService > rightsHolder > Organization
-
-| **Type**                  | `object`                                                                             |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                     |
-| **Same definition as**    | [Organization](#data-service--servesDataset_items_otherIdentifier_items_anyOf_i1_creator_anyOf_i1) |
+| Each item of this array must be          | Description                                                                       |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
 ## <a name="data-service--spatial"></a>[Optional] Property `DataService > spatial`
 
@@ -2323,16 +2218,9 @@ A geographic region that is covered by the Data Service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                      |
-| ------------------------------- | -------------------------------- |
-| [Location](#data-service--spatial_items)      | A named place or geographic area |
-
-### <a name="data-service--spatial_items"></a>DataService > spatial > Location
-
-| **Type**                  | `object`                                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                |
-| **Same definition as**    | [Location](#data-service--servesDataset_items_sample_items_accessService_items_spatial_items) |
+| Each item of this array must be                    | Description                      |
+| -------------------------------------------------- | -------------------------------- |
+| [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
 
 ## <a name="data-service--temporal"></a>[Optional] Property `DataService > temporal`
 
@@ -2345,16 +2233,9 @@ Time periods covered by the data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                            |
-| ------------------------------- | ---------------------------------------------------------------------- |
-| [PeriodOfTime](#data-service--temporal_items) | Information about a specific time period with a start- and/or end-time |
-
-### <a name="data-service--temporal_items"></a>DataService > temporal > PeriodOfTime
-
-| **Type**                  | More than one type                                                                   |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| **Additional properties** | Any type allowed                                                                     |
-| **Same definition as**    | [PeriodOfTime](#data-service--servesDataset_items_sample_items_accessService_items_temporal_items) |
+| Each item of this array must be                              | Description                                                            |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
 
 ## <a name="data-service--title"></a>[Optional] Property `DataService > title`
 
@@ -2385,16 +2266,9 @@ List of high-level categories for the data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#data-service--category_items)      | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="data-service--category_items"></a>DataService > category > Concept
-
-| **Type**                  | More than one type                                                            |
-| ------------------------- | ----------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                              |
-| **Same definition as**    | [Concept](#data-service--servesDataset_items_sample_items_representationTechnique_anyOf_i1) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="data-service--hasQualityMeasurement"></a>[Optional] Property `DataService > hasQualityMeasurement`
 
@@ -2407,16 +2281,9 @@ Quality measurements for the data service (for example, availability, response t
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be                    | Description                                                   |
-| -------------------------------------------------- | ------------------------------------------------------------- |
-| [QualityMeasurement](#data-service--hasQualityMeasurement_items) | A measurement of a resource against a specific quality metric |
-
-### <a name="data-service--hasQualityMeasurement_items"></a>DataService > hasQualityMeasurement > QualityMeasurement
-
-| **Type**                  | `object`                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                        |
-| **Same definition as**    | [QualityMeasurement](#data-service--servesDataset_items_sample_items_accessService_items_hasQualityMeasurement_items) |
+| Each item of this array must be                                         | Description                                                   |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) | A measurement of a resource against a specific quality metric |
 
 ## <a name="data-service--qualifiedAttribution"></a>[Optional] Property `DataService > qualifiedAttribution`
 
@@ -2429,16 +2296,9 @@ List of agents with specific responsibilities for the data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be            | Description                                       |
-| ------------------------------------------ | ------------------------------------------------- |
-| [Attribution](#data-service--qualifiedAttribution_items) | A responsibility that an agent has for a resource |
-
-### <a name="data-service--qualifiedAttribution_items"></a>DataService > qualifiedAttribution > Attribution
-
-| **Type**                  | `object`                                                                                        |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                                |
-| **Same definition as**    | [Attribution](#data-service--servesDataset_items_sample_items_accessService_items_qualifiedAttribution_items) |
+| Each item of this array must be                    | Description                                       |
+| -------------------------------------------------- | ------------------------------------------------- |
+| [Attribution](./quality-governance.md#attribution) | A responsibility that an agent has for a resource |
 
 ## <a name="data-service--wasUsedBy"></a>[Optional] Property `DataService > wasUsedBy`
 
@@ -2451,16 +2311,9 @@ List of activities that used or tested the data service
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                    |
-| ------------------------------- | -------------------------------------------------------------- |
-| [Activity](#data-service--wasUsedBy_items)    | An activity related to creating, changing, or using a resource |
-
-### <a name="data-service--wasUsedBy_items"></a>DataService > wasUsedBy > Activity
-
-| **Type**                  | `object`                                                                          |
-| ------------------------- | --------------------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                                  |
-| **Same definition as**    | [Activity](#data-service--servesDataset_items_sample_items_accessService_items_wasUsedBy_items) |
+| Each item of this array must be                    | Description                                                    |
+| -------------------------------------------------- | -------------------------------------------------------------- |
+| [Activity](./temporal-spatial-metrics.md#activity) | An activity related to creating, changing, or using a resource |
 
 ---
 
@@ -2543,8 +2396,8 @@ The function of an entity or agent with respect to another entity or resource
 
 The agent that plays a role in the resource
 
-| **Type**                  | `object`            |
-| ------------------------- | ------------------- |
-| **Required**              | Yes                 |
-| **Additional properties** | Any type allowed    |
+| **Type**                  | `object`                   |
+| ------------------------- | -------------------------- |
+| **Required**              | Yes                        |
+| **Additional properties** | Any type allowed           |
 | **Defined in**            | [Agent](./agents.md#agent) |

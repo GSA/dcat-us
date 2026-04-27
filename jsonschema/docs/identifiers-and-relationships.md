@@ -101,9 +101,9 @@ the agency that manages the identifier scheme
 
 inline description of the creator
 
-| **Type**                  | `object`                          |
-| ------------------------- | --------------------------------- |
-| **Additional properties** | Any type allowed                  |
+| **Type**                  | `object`                                 |
+| ------------------------- | ---------------------------------------- |
+| **Additional properties** | Any type allowed                         |
 | **Defined in**            | [Organization](./agents.md#organization) |
 
 ### <a name="identifier--anyOf_i1_issued"></a>Property `Identifier > anyOf > Identifier as a complex object > issued`
@@ -481,10 +481,10 @@ Definition of the controlled vocabulary term
 
 Concept scheme defining this concept
 
-| **Type**                  | `object`                            |
-| ------------------------- | ----------------------------------- |
-| **Additional properties** | Any type allowed                    |
-| **Defined in**            | [Conceptscheme](./identifiers-and-relationships.md#concept-scheme) |
+| **Type**                  | `object`                                                           |
+| ------------------------- | ------------------------------------------------------------------ |
+| **Additional properties** | Any type allowed                                                   |
+| **Defined in**            | [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) |
 
 ### <a name="concept--anyOf_i1_notation"></a>Property `Concept > anyOf > item 1 > notation`
 

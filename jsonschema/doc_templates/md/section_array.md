@@ -6,14 +6,10 @@
 
 {% if schema.array_items_def %}
 {% set is_linked_array_item = schema.array_items_def.should_be_a_link(config) or schema.array_items_def.refers_to %}
+{% if not is_linked_array_item %}
 {% filter md_heading(depth+1, schema.array_items_def.html_id) %}
 {% with schema=schema.array_items_def %}{%- include "breadcrumbs.md" %}{% endwith %}
 {% endfilter %}
-{% if is_linked_array_item %}
-{% with schema=schema.array_items_def, skip_headers=True, depth=depth+1, skip_required=True %}
-    {% include "content.md" %}
-{% endwith %}
-{% else %}
 {% with schema=schema.array_items_def, skip_headers=False, depth=depth+1, skip_required=True %}
     {% include "content.md" %}
 {% endwith %}

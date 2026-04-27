@@ -66,16 +66,9 @@ The type of the agent that makes the item available
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description                                                        |
-| ------------------------------- | ------------------------------------------------------------------ |
-| [Concept](#agent--category_items)      | A controlled term or label, optionally drawn from a concept scheme |
-
-### <a name="agent--category_items"></a>Agent > category > Concept
-
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+| Each item of this array must be                       | Description                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="agent--name"></a>[Optional] Property `Agent > name`
 
@@ -211,14 +204,7 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 | Each item of this array must be          | Description                                                                       |
 | ---------------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](#organization--subOrganizationOf_items) | An organization involved with a resource, including parent or child organizations |
-
-### <a name="organization--subOrganizationOf_items"></a>Organization > subOrganizationOf > Organization
-
-| **Type**                  | `object`              |
-| ------------------------- | --------------------- |
-| **Additional properties** | Any type allowed      |
-| **Same definition as**    | [Organization](#organization) |
+| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
 ## <a name="organization--altLabel"></a>[Optional] Property `Organization > altLabel`
 
@@ -369,16 +355,9 @@ The address of the contact
 | **Type** | `null or array` |
 | -------- | --------------- |
 
-| Each item of this array must be | Description               |
-| ------------------------------- | ------------------------- |
-| [Address](#kind--address_items)       | A single physical address |
-
-### <a name="kind--address_items"></a>Kind > address > Address
-
-| **Type**                  | `object`                |
-| ------------------------- | ----------------------- |
-| **Additional properties** | Any type allowed        |
-| **Defined in**            | [Address](./temporal-spatial-metrics.md#address) |
+| Each item of this array must be                  | Description               |
+| ------------------------------------------------ | ------------------------- |
+| [Address](./temporal-spatial-metrics.md#address) | A single physical address |
 
 ## <a name="kind--hasEmail"></a>[Optional] Property `Kind > hasEmail`
 

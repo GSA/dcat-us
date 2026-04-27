@@ -178,6 +178,44 @@ def _build_class_link_map():
 
 
 CLASS_LINK_MAP = _build_class_link_map()
+CLASS_DISPLAY_NAME_MAP = {
+    _class_name_from_file(page["source"]).lower(): _class_name_from_file(page["source"])
+    for page in MAIN_CLASS_PAGES
+}
+CLASS_DISPLAY_NAME_MAP.update(
+    {
+        _class_name_from_file(class_file).lower(): _class_name_from_file(class_file)
+        for page in GROUPED_CLASS_PAGES
+        for class_file in page["classes"]
+    }
+)
+
+
+def _canonical_class_doc_link(schema_node):
+    if schema_node is None:
+        return None
+
+    candidates = [schema_node, schema_node.refers_to, schema_node.refers_to_merged]
+    for candidate in candidates:
+        if candidate is None:
+            continue
+
+        class_name = None
+        if getattr(candidate, "ref_path", None):
+            class_name = candidate.ref_path.split("/")[-1]
+        elif getattr(candidate, "definition_name", None):
+            class_name = candidate.definition_name
+
+        if not class_name:
+            continue
+
+        normalized_name = class_name.lower()
+        target = CLASS_LINK_MAP.get(normalized_name)
+        if target:
+            display_name = CLASS_DISPLAY_NAME_MAP.get(normalized_name, class_name)
+            return f"[{display_name}]({target})"
+
+    return None
 
 
 def _rewrite_class_doc_links(content):
@@ -360,20 +398,40 @@ def properties_table_wrap(properties_list, schema):
     return [line for line in properties_list if not _remove_me(line)]
 
 
-def type_info_table_wrap(type_info_list):
+def array_items_restrictions_wrap(items_restrictions, schema):
+    if not items_restrictions:
+        return items_restrictions
+
+    items = ([schema.array_items_def] if schema.array_items_def else []) + schema.tuple_validation_items
+    for row, item in zip(items_restrictions[1:], items):
+        canonical_link = _canonical_class_doc_link(item)
+        if canonical_link:
+            row[0] = canonical_link
+
+    return items_restrictions
+
+
+def type_info_table_wrap(type_info_list, schema):
     """Edit the type info table for our preferred format.
 
     type_info_list is a list of lists that will eventually be formatted
     into a table.
     """
 
+    canonical_link = _canonical_class_doc_link(schema)
+
     # edit lines
     for line in type_info_list:
         if line[0].strip("*") == "Defined in":
-            # This is a link to another type, so turn it into a relative link
-            match = re.match(r"^/dcat-us/3.0.0/definitions/(\w+)", line[1])
-            class_name = match.group(1)
-            line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
+            if canonical_link:
+                line[1] = canonical_link
+            else:
+                # This is a link to another type, so turn it into a relative link
+                match = re.match(r"^/dcat-us/3.0.0/definitions/(\w+)", line[1])
+                class_name = match.group(1)
+                line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
+        elif line[0].strip("*") == "Same definition as" and canonical_link:
+            line[1] = canonical_link
         elif "`combining`" in line:
             # replace combining with something better
             line[line.index("`combining`")] = "More than one type"
@@ -433,10 +491,25 @@ def _render_raw_docs(output_dir):
             schema,
         )
     )
+    original_md_array_items_restrictions = template_renderer.template.environment.filters[
+        "md_array_items_restrictions"
+    ]
+    original_md_type_info_table = template_renderer.template.environment.filters[
+        "md_type_info_table"
+    ]
+    template_renderer.template.environment.filters["canonical_class_doc_link"] = (
+        _canonical_class_doc_link
+    )
+    template_renderer.template.environment.filters["md_array_items_restrictions"] = (
+        lambda schema: array_items_restrictions_wrap(
+            original_md_array_items_restrictions(schema),
+            schema,
+        )
+    )
     template_renderer.template.environment.filters["md_type_info_table"] = (
-        _wrapped_filter(
-            template_renderer.template.environment.filters["md_type_info_table"],
-            type_info_table_wrap,
+        lambda schema: type_info_table_wrap(
+            original_md_type_info_table(schema),
+            schema,
         )
     )
 

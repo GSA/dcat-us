@@ -74,10 +74,10 @@ A note related to the access restriction
 
 The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
 
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Required**              | Yes                     |
-| **Additional properties** | Any type allowed        |
+| **Type**                  | More than one type                                    |
+| ------------------------- | ----------------------------------------------------- |
+| **Required**              | Yes                                                   |
+| **Additional properties** | Any type allowed                                      |
 | **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
 
 **Examples:**
@@ -130,10 +130,10 @@ Authority, code list entry, or policy reference that defines the specific access
 
 inline description of the specific restriction
 
-| **Type**                  | More than one type                      |
-| ------------------------- | --------------------------------------- |
-| **Additional properties** | Any type allowed                        |
-| **Same definition as**    | [restrictionStatus](#access-restriction--restrictionStatus) |
+| **Type**                  | More than one type                                    |
+| ------------------------- | ----------------------------------------------------- |
+| **Additional properties** | Any type allowed                                      |
+| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
 
 ---
 
@@ -348,10 +348,10 @@ Significant information pertaining to the use or reproduction of the data
 
 Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status
 
-| **Type**                  | More than one type      |
-| ------------------------- | ----------------------- |
-| **Required**              | Yes                     |
-| **Additional properties** | Any type allowed        |
+| **Type**                  | More than one type                                    |
+| ------------------------- | ----------------------------------------------------- |
+| **Required**              | Yes                                                   |
+| **Additional properties** | Any type allowed                                      |
 | **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
 
 **Examples:**
@@ -404,7 +404,7 @@ Authority, code list entry, or policy reference that defines the specific use re
 
 inline description of the specific restriction
 
-| **Type**                  | More than one type                      |
-| ------------------------- | --------------------------------------- |
-| **Additional properties** | Any type allowed                        |
-| **Same definition as**    | [restrictionStatus](#use-restriction--restrictionStatus) |
+| **Type**                  | More than one type                                    |
+| ------------------------- | ----------------------------------------------------- |
+| **Additional properties** | Any type allowed                                      |
+| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
