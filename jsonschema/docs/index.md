@@ -1,43 +1,18 @@
 # DCAT-US 3 Schema Documentation
 
-DCAT-US 3 is a schema for metadata about data assets. It's defined as a set of
-JSON Schema files divided into "classes" that specify different types of information
-that could appear in the metadata.
+DCAT-US 3 is documented here as a smaller set of review-friendly pages.
 
-## Catalog
+## Main classes
 
-The top level class for DCAT-US 3 is [Catalog](./Catalog.md) which collects
-information about other data elements and information about the overall
-collection such as publisher, keywords, and contact information.
+- [Catalog](./catalog.md)
+- [Dataset](./dataset.md)
+- [Dataset Series](./dataset-series.md)
+- [Distribution](./distribution.md)
 
-## Other classes
+## Supporting classes
 
-Inside of the DCAT-US 3 catalog, other classes are used to specify the format
-of a particular metadata element. Alphabetically:
-
-- [AccessRestriction](./AccessRestriction.md)
-- [Activity](./Activity.md)
-- [Address](./Address.md)
-- [Agent](./Agent.md)
-- [Attribution](./Attribution.md)
-- [Catalog](./Catalog.md)
-- [CatalogRecord](./CatalogRecord.md)
-- [Checksum](./Checksum.md)
-- [Concept](./Concept.md)
-- [ConceptScheme](./ConceptScheme.md)
-- [CUIRestriction](./CUIRestriction.md)
-- [DataService](./DataService.md)
-- [Dataset](./Dataset.md)
-- [DatasetSeries](./DatasetSeries.md)
-- [Distribution](./Distribution.md)
-- [Document](./Document.md)
-- [Identifier](./Identifier.md)
-- [Kind](./Kind.md)
-- [Location](./Location.md)
-- [Metric](./Metric.md)
-- [Organization](./Organization.md)
-- [PeriodOfTime](./PeriodOfTime.md)
-- [QualityMeasurement](./QualityMeasurement.md)
-- [Relationship](./Relationship.md)
-- [Standard](./Standard.md)
-- [UseRestriction](./UseRestriction.md)
+- [Agents](./agents.md): [Agent](./agents.md#agent), [Organization](./agents.md#organization), [Kind](./agents.md#kind)
+- [Constraints and Restrictions](./constraints-and-restrictions.md): [AccessRestriction](./constraints-and-restrictions.md#access-restriction), [CUIRestriction](./constraints-and-restrictions.md#cui-restriction), [UseRestriction](./constraints-and-restrictions.md#use-restriction)
+- [Identifiers and Relationships](./identifiers-and-relationships.md): [Identifier](./identifiers-and-relationships.md#identifier), [Relationship](./identifiers-and-relationships.md#relationship), [Checksum](./identifiers-and-relationships.md#checksum), [Concept](./identifiers-and-relationships.md#concept), [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
+- [Temporal, Spatial, and Metrics](./temporal-spatial-metrics.md): [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time), [Location](./temporal-spatial-metrics.md#location), [Metric](./temporal-spatial-metrics.md#metric), [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement), [Activity](./temporal-spatial-metrics.md#activity), [Address](./temporal-spatial-metrics.md#address)
+- [Quality and Governance](./quality-governance.md): [Standard](./quality-governance.md#standard), [Document](./quality-governance.md#document), [CatalogRecord](./quality-governance.md#catalog-record), [DataService](./quality-governance.md#data-service), [Attribution](./quality-governance.md#attribution)

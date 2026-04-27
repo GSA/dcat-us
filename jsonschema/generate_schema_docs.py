@@ -19,6 +19,73 @@ from json_schema_for_humans.schema.schema_importer import get_schemas_to_render
 from json_schema_for_humans.template_renderer import TemplateRenderer
 
 
+MAIN_CLASS_PAGES = [
+    {"source": "Catalog.md", "output": "catalog.md", "title": "Catalog"},
+    {"source": "Dataset.md", "output": "dataset.md", "title": "Dataset"},
+    {
+        "source": "DatasetSeries.md",
+        "output": "dataset-series.md",
+        "title": "Dataset Series",
+    },
+    {
+        "source": "Distribution.md",
+        "output": "distribution.md",
+        "title": "Distribution",
+    },
+]
+
+GROUPED_CLASS_PAGES = [
+    {
+        "output": "agents.md",
+        "title": "Agents",
+        "classes": ["Agent.md", "Organization.md", "Kind.md"],
+    },
+    {
+        "output": "constraints-and-restrictions.md",
+        "title": "Constraints and Restrictions",
+        "classes": ["AccessRestriction.md", "CUIRestriction.md", "UseRestriction.md"],
+    },
+    {
+        "output": "identifiers-and-relationships.md",
+        "title": "Identifiers and Relationships",
+        "classes": [
+            "Identifier.md",
+            "Relationship.md",
+            "Checksum.md",
+            "Concept.md",
+            "ConceptScheme.md",
+        ],
+    },
+    {
+        "output": "temporal-spatial-metrics.md",
+        "title": "Temporal, Spatial, and Metrics",
+        "classes": [
+            "PeriodOfTime.md",
+            "Location.md",
+            "Metric.md",
+            "QualityMeasurement.md",
+            "Activity.md",
+            "Address.md",
+        ],
+    },
+    {
+        "output": "quality-governance.md",
+        "title": "Quality and Governance",
+        "classes": [
+            "Standard.md",
+            "Document.md",
+            "CatalogRecord.md",
+            "DataService.md",
+            "Attribution.md",
+        ],
+    },
+]
+
+GROUP_PAGE_INTRO = (
+    "This page combines supporting DCAT-US 3 classes used with the main schema classes."
+)
+
+
 def _any_differences(comp_object):
     """Check this directory and all of its subdirectories for differences.
 
@@ -81,6 +148,152 @@ def _wrapped_filter(old_filter, wrap_func):
         return wrap_func(old_filter(*args, **kwargs))
 
     return _func_that_wraps
+
+
+def _class_name_from_file(file_name):
+    return Path(file_name).stem
+
+
+def _class_anchor(class_name):
+    slug = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1-\2", class_name)
+    slug = re.sub(r"([a-z0-9])([A-Z])", r"\1-\2", slug)
+    return slug.lower()
+
+
+def _build_class_link_map():
+    link_map = {}
+
+    for page in MAIN_CLASS_PAGES:
+        class_name = _class_name_from_file(page["source"])
+        target = f"./{page['output']}#root"
+        link_map[class_name.lower()] = target
+
+    for page in GROUPED_CLASS_PAGES:
+        for class_file in page["classes"]:
+            class_name = _class_name_from_file(class_file)
+            target = f"./{page['output']}#{_class_anchor(class_name)}"
+            link_map[class_name.lower()] = target
+
+    return link_map
+
+
+CLASS_LINK_MAP = _build_class_link_map()
+
+
+def _rewrite_class_doc_links(content):
+    def _replace(match):
+        label = match.group(1)
+        basename = match.group(2).lower()
+        target = CLASS_LINK_MAP.get(basename)
+        if target is None:
+            return match.group(0)
+        return f"[{label}]({target})"
+
+    return re.sub(r"\[([^\]]+)\]\(\./([A-Za-z0-9]+)\.md\)", _replace, content)
+
+
+def _rewrite_local_anchors(content, anchor_prefix="", root_anchor="root"):
+    def _replace_anchor(match):
+        anchor_name = match.group(1)
+        if anchor_name == "root":
+            return f'<a name="{root_anchor}"></a>'
+        return f'<a name="{anchor_prefix}{anchor_name}"></a>'
+
+    def _replace_fragment(match):
+        anchor_name = match.group(1).strip()
+        if anchor_name == "root":
+            return f"](#{root_anchor})"
+        return f"](#{anchor_prefix}{anchor_name})"
+
+    content = re.sub(r'<a name="([^"]+)"></a>', _replace_anchor, content)
+    return re.sub(r"\]\(#([^\)]+?)\s*\)", _replace_fragment, content)
+
+
+def _normalize_doc_content(content, anchor_prefix="", root_anchor="root"):
+    content = content.strip()
+    content = _rewrite_class_doc_links(content)
+    content = _rewrite_local_anchors(
+        content,
+        anchor_prefix=anchor_prefix,
+        root_anchor=root_anchor,
+    )
+    return content
+
+
+def _write_text(output_path, content):
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(f"{content.rstrip()}\n", encoding="utf-8")
+
+
+def _read_generated_doc(docs_dir, file_name):
+    path = Path(docs_dir) / file_name
+    return path.read_text(encoding="utf-8")
+
+
+def _build_index_page():
+    lines = [
+        "# DCAT-US 3 Schema Documentation",
+        "",
+        "DCAT-US 3 is documented here as a smaller set of review-friendly pages.",
+        "",
+        "## Main classes",
+        "",
+    ]
+
+    for page in MAIN_CLASS_PAGES:
+        lines.append(f"- [{page['title']}](./{page['output']})")
+
+    lines.extend(["", "## Supporting classes", ""])
+
+    for page in GROUPED_CLASS_PAGES:
+        class_links = ", ".join(
+            f"[{_class_name_from_file(class_file)}](./{page['output']}#{_class_anchor(_class_name_from_file(class_file))})"
+            for class_file in page["classes"]
+        )
+        lines.append(f"- [{page['title']}](./{page['output']}): {class_links}")
+
+    return "\n".join(lines)
+
+
+def _clear_generated_markdown(output_dir):
+    for markdown_file in Path(output_dir).glob("*.md"):
+        if markdown_file.name == "README.md":
+            continue
+        markdown_file.unlink()
+
+
+def _build_public_docs(rendered_docs_dir, output_dir):
+    output_dir = Path(output_dir)
+    _clear_generated_markdown(output_dir)
+
+    for page in MAIN_CLASS_PAGES:
+        raw_content = _read_generated_doc(rendered_docs_dir, page["source"])
+        page_content = _normalize_doc_content(raw_content, root_anchor="root")
+        page_content = f'<a name="root"></a>\n\n{page_content}'
+        _write_text(output_dir / page["output"], page_content)
+
+    for page in GROUPED_CLASS_PAGES:
+        sections = []
+        for class_file in page["classes"]:
+            class_name = _class_name_from_file(class_file)
+            section_anchor = _class_anchor(class_name)
+            raw_content = _read_generated_doc(rendered_docs_dir, class_file)
+            section_content = _normalize_doc_content(
+                raw_content,
+                anchor_prefix=f"{section_anchor}--",
+                root_anchor=section_anchor,
+            )
+            sections.append(
+                f'<a name="{section_anchor}"></a>\n\n## {class_name}\n\n{section_content}'
+            )
+
+        page_content = "\n\n---\n\n".join(sections)
+        _write_text(
+            output_dir / page["output"],
+            f"# {page['title']}\n\n{GROUP_PAGE_INTRO}\n\n{page_content}",
+        )
+
+    _write_text(output_dir / "index.md", _build_index_page())
 
 
 def _normalize_requirement_level(value):
@@ -174,20 +387,17 @@ def type_info_table_wrap(type_info_list):
     return [line for line in type_info_list if not _remove_me(line)]
 
 
-def generate_docs(output_dir):
-    """Generate the schema documentation into output_dir."""
+def _render_raw_docs(output_dir):
+    """Generate the unmerged schema documentation into output_dir."""
     schema_files = sorted(glob.glob("definitions/*.json"))
 
-    # We need to preload the schemas at their relative ids
     loaded_schemas = {}
     for schema_file in schema_files:
         with open(schema_file) as f:
             schema = json.load(f)
-        # get path from $id
         _, _, path, _, _ = urlsplit(schema["$id"])
         loaded_schemas[path] = schema
 
-    # generation config
     config = {
         "link_to_reused_ref": True,
         "show_breadcrumbs": True,
@@ -210,7 +420,6 @@ def generate_docs(output_dir):
         )
     template_renderer = TemplateRenderer(final_config)
 
-    # hack the rendering process
     original_md_properties_table = template_renderer.template.environment.filters[
         "md_properties_table"
     ]
@@ -233,6 +442,14 @@ def generate_docs(output_dir):
 
     generate.generate_schemas_doc(schemas_to_render, template_renderer, loaded_schemas)
     generate.copy_additional_files_to_target(schemas_to_render, final_config)
+
+
+def generate_docs(output_dir):
+    """Generate the schema documentation into output_dir."""
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_path = Path(temp_dir)
+        _render_raw_docs(temp_path)
+        _build_public_docs(temp_path, output_dir)
 
 
 @click.command()

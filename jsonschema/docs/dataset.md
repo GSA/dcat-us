@@ -1,4 +1,4 @@
-
+<a name="root"></a>
 
 **Title:** Dataset
 
@@ -99,64 +99,64 @@ A collection of data published or curated by one provider
 
 | Property                                                   | Type                    | Title/Description           |
 | ---------------------------------------------------------- | ----------------------- | --------------------------- |
-| - [@id](#@id )                                             | string                  | -                           |
-| - [@type](#@type )                                         | string                  | -                           |
-| - [otherIdentifier](#otherIdentifier )                     | null or array           | other identifier            |
-| - [sample](#sample )                                       | null or array           | sample                      |
-| - [status](#status )                                       | More than one type      | lifecycle status            |
-| - [supportedSchema](#supportedSchema )                     | More than one type      | supported schema            |
-| - [versionNotes](#versionNotes )                           | null or string          | version notes               |
-| + [contactPoint](#contactPoint )                           | More than one type      | contact point               |
-| - [distribution](#distribution )                           | null or array           | dataset distribution        |
-| - [first](#first )                                         | More than one type      | first                       |
-| - [hasCurrentVersion](#hasCurrentVersion )                 | More than one type      | current version             |
-| - [hasVersion](#hasVersion )                               | null or array           | has version                 |
-| - [inSeries](#inSeries )                                   | null or array           | in series                   |
-| - [keyword](#keyword )                                     | null or array of string | keyword/tag                 |
-| - [landingPage](#landingPage )                             | More than one type      | landing page                |
-| - [previousVersion](#previousVersion )                     | More than one type      | previous version            |
-| - [qualifiedRelation](#qualifiedRelation )                 | null or array           | qualified relation          |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters ) | null or string          | Spatial resolution (meters) |
-| - [temporalResolution](#temporalResolution )               | null or string          | temporal resolution         |
-| - [theme](#theme )                                         | null or array           | theme/category              |
-| - [version](#version )                                     | null or string          | version                     |
-| - [describedBy](#describedBy )                             | More than one type      | data dictionary             |
-| - [liabilityStatement](#liabilityStatement )               | More than one type      | liability statement         |
-| - [metadataDistribution](#metadataDistribution )           | null or array           | metadata distribution       |
-| - [purpose](#purpose )                                     | null or string          | purpose                     |
-| - [accessRights](#accessRights )                           | More than one type      | access rights               |
-| - [accrualPeriodicity](#accrualPeriodicity )               | More than one type      | frequency                   |
-| - [conformsTo](#conformsTo )                               | null or array           | conforms to                 |
-| - [contributor](#contributor )                             | null or array           | contributor                 |
-| - [created](#created )                                     | More than one type      | creation date               |
-| - [creator](#creator )                                     | More than one type      | creator                     |
-| + [description](#description )                             | string                  | description                 |
-| - [hasPart](#hasPart )                                     | null or array           | has part                    |
-| + [identifier](#identifier )                               | More than one type      | identifier                  |
-| - [isReferencedBy](#isReferencedBy )                       | null or array of string | is referenced by            |
-| - [issued](#issued )                                       | More than one type      | release date                |
-| - [language](#language )                                   | More than one type      | language                    |
-| - [modified](#modified )                                   | More than one type      | last modified               |
-| - [provenance](#provenance )                               | null or array of string | provenance                  |
-| + [publisher](#publisher )                                 | object                  | publisher                   |
-| - [relation](#relation )                                   | null or array of string | related resource            |
-| - [replaces](#replaces )                                   | null or array           | replaces                    |
-| - [rights](#rights )                                       | null or array of string | rights                      |
-| - [rightsHolder](#rightsHolder )                           | null or array           | rights holder               |
-| - [source](#source )                                       | null or array           | data source                 |
-| - [spatial](#spatial )                                     | More than one type      | spatial/geographic coverage |
-| - [subject](#subject )                                     | null or array           | subject                     |
-| - [temporal](#temporal )                                   | null or array           | temporal coverage           |
-| + [title](#title )                                         | string                  | title                       |
-| - [category](#category )                                   | null or array           | category                    |
-| - [hasQualityMeasurement](#hasQualityMeasurement )         | null or array           | quality measurement         |
-| - [page](#page )                                           | null or array           | documentation               |
-| - [qualifiedAttribution](#qualifiedAttribution )           | null or array           | qualified attribution       |
-| - [wasAttributedTo](#wasAttributedTo )                     | null or array           | attribution                 |
-| - [wasGeneratedBy](#wasGeneratedBy )                       | null or array           | was generated by            |
-| - [wasUsedBy](#wasUsedBy )                                 | null or array           | used by                     |
-| - [image](#image )                                         | More than one type      | image                       |
-| - [scopeNote](#scopeNote )                                 | null or string          | usage note                  |
+| - [@id](#@id)                                             | string                  | -                           |
+| - [@type](#@type)                                         | string                  | -                           |
+| - [otherIdentifier](#otherIdentifier)                     | null or array           | other identifier            |
+| - [sample](#sample)                                       | null or array           | sample                      |
+| - [status](#status)                                       | More than one type      | lifecycle status            |
+| - [supportedSchema](#supportedSchema)                     | More than one type      | supported schema            |
+| - [versionNotes](#versionNotes)                           | null or string          | version notes               |
+| + [contactPoint](#contactPoint)                           | More than one type      | contact point               |
+| - [distribution](#distribution)                           | null or array           | dataset distribution        |
+| - [first](#first)                                         | More than one type      | first                       |
+| - [hasCurrentVersion](#hasCurrentVersion)                 | More than one type      | current version             |
+| - [hasVersion](#hasVersion)                               | null or array           | has version                 |
+| - [inSeries](#inSeries)                                   | null or array           | in series                   |
+| - [keyword](#keyword)                                     | null or array of string | keyword/tag                 |
+| - [landingPage](#landingPage)                             | More than one type      | landing page                |
+| - [previousVersion](#previousVersion)                     | More than one type      | previous version            |
+| - [qualifiedRelation](#qualifiedRelation)                 | null or array           | qualified relation          |
+| - [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string          | Spatial resolution (meters) |
+| - [temporalResolution](#temporalResolution)               | null or string          | temporal resolution         |
+| - [theme](#theme)                                         | null or array           | theme/category              |
+| - [version](#version)                                     | null or string          | version                     |
+| - [describedBy](#describedBy)                             | More than one type      | data dictionary             |
+| - [liabilityStatement](#liabilityStatement)               | More than one type      | liability statement         |
+| - [metadataDistribution](#metadataDistribution)           | null or array           | metadata distribution       |
+| - [purpose](#purpose)                                     | null or string          | purpose                     |
+| - [accessRights](#accessRights)                           | More than one type      | access rights               |
+| - [accrualPeriodicity](#accrualPeriodicity)               | More than one type      | frequency                   |
+| - [conformsTo](#conformsTo)                               | null or array           | conforms to                 |
+| - [contributor](#contributor)                             | null or array           | contributor                 |
+| - [created](#created)                                     | More than one type      | creation date               |
+| - [creator](#creator)                                     | More than one type      | creator                     |
+| + [description](#description)                             | string                  | description                 |
+| - [hasPart](#hasPart)                                     | null or array           | has part                    |
+| + [identifier](#identifier)                               | More than one type      | identifier                  |
+| - [isReferencedBy](#isReferencedBy)                       | null or array of string | is referenced by            |
+| - [issued](#issued)                                       | More than one type      | release date                |
+| - [language](#language)                                   | More than one type      | language                    |
+| - [modified](#modified)                                   | More than one type      | last modified               |
+| - [provenance](#provenance)                               | null or array of string | provenance                  |
+| + [publisher](#publisher)                                 | object                  | publisher                   |
+| - [relation](#relation)                                   | null or array of string | related resource            |
+| - [replaces](#replaces)                                   | null or array           | replaces                    |
+| - [rights](#rights)                                       | null or array of string | rights                      |
+| - [rightsHolder](#rightsHolder)                           | null or array           | rights holder               |
+| - [source](#source)                                       | null or array           | data source                 |
+| - [spatial](#spatial)                                     | More than one type      | spatial/geographic coverage |
+| - [subject](#subject)                                     | null or array           | subject                     |
+| - [temporal](#temporal)                                   | null or array           | temporal coverage           |
+| + [title](#title)                                         | string                  | title                       |
+| - [category](#category)                                   | null or array           | category                    |
+| - [hasQualityMeasurement](#hasQualityMeasurement)         | null or array           | quality measurement         |
+| - [page](#page)                                           | null or array           | documentation               |
+| - [qualifiedAttribution](#qualifiedAttribution)           | null or array           | qualified attribution       |
+| - [wasAttributedTo](#wasAttributedTo)                     | null or array           | attribution                 |
+| - [wasGeneratedBy](#wasGeneratedBy)                       | null or array           | was generated by            |
+| - [wasUsedBy](#wasUsedBy)                                 | null or array           | used by                     |
+| - [image](#image)                                         | More than one type      | image                       |
+| - [scopeNote](#scopeNote)                                 | null or string          | usage note                  |
 
 ## <a name="@id"></a>[Optional] Property `Dataset > @id`
 
@@ -197,14 +197,10 @@ Additional identifiers for the dataset besides the main identifier, such as a DO
 
 ### <a name="otherIdentifier_items"></a>Dataset > otherIdentifier > Identifier
 
-**Title:** Identifier
-
-A unique identifier and optionally it's scheme and other relevant information
-
 | **Type**                  | More than one type            |
 | ------------------------- | ----------------------------- |
 | **Additional properties** | Any type allowed              |
-| **Defined in**            | [Identifier](./Identifier.md) |
+| **Defined in**            | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="sample"></a>[Optional] Property `Dataset > sample`
 
@@ -223,14 +219,10 @@ List of sample distributions for the dataset
 
 ### <a name="sample_items"></a>Dataset > sample > Distribution
 
-**Title:** Distribution
-
-A specific representation of a dataset, such as a file, feed, or API response
-
 | **Type**                  | `object`                          |
 | ------------------------- | --------------------------------- |
 | **Additional properties** | Any type allowed                  |
-| **Defined in**            | [Distribution](./Distribution.md) |
+| **Defined in**            | [Distribution](./distribution.md#root) |
 
 ## <a name="status"></a>[Optional] Property `Dataset > status`
 
@@ -361,10 +353,6 @@ inline description of Kind
 
 #### <a name="contactPoint_anyOf_i1_items"></a>Dataset > contactPoint > anyOf > List of contacts > Kind
 
-**Title:** Kind
-
-Contact information for an individual or entity
-
 | **Type**                  | `object`                                                     |
 | ------------------------- | ------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                             |
@@ -386,10 +374,6 @@ List of available distributions for the dataset. This can be omitted when no dis
 | [Distribution](#distribution_items) | A specific representation of a dataset, such as a file, feed, or API response |
 
 ### <a name="distribution_items"></a>Dataset > distribution > Distribution
-
-**Title:** Distribution
-
-A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`                      |
 | ------------------------- | ----------------------------- |
@@ -483,10 +467,6 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 
 ### <a name="hasVersion_items"></a>Dataset > hasVersion > Dataset
 
-**Title:** Dataset
-
-A collection of data published or curated by one provider
-
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                 |
@@ -508,10 +488,6 @@ Dataset series this dataset belongs to
 | [DatasetSeries](#inSeries_items) | A group of related datasets that are published separately |
 
 ### <a name="inSeries_items"></a>Dataset > inSeries > DatasetSeries
-
-**Title:** DatasetSeries
-
-A group of related datasets that are published separately
 
 | **Type**                  | `object`                                                                              |
 | ------------------------- | ------------------------------------------------------------------------------------- |
@@ -654,10 +630,6 @@ Detailed relationship between the dataset and another resource, including the ro
 
 ### <a name="qualifiedRelation_items"></a>Dataset > qualifiedRelation > Relationship
 
-**Title:** Relationship
-
-Additional information about how one resource is related to another
-
 | **Type**                  | `object`                                                                                      |
 | ------------------------- | --------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                              |
@@ -713,10 +685,6 @@ List of themes or categories for the dataset
 | [Concept](#theme_items)         | A controlled term or label, optionally drawn from a concept scheme |
 
 ### <a name="theme_items"></a>Dataset > theme > Concept
-
-**Title:** Concept
-
-A controlled term or label, optionally drawn from a concept scheme
 
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
@@ -828,10 +796,6 @@ Distribution of the original metadata document this dataset was derived from
 | [Distribution](#metadataDistribution_items) | A specific representation of a dataset, such as a file, feed, or API response |
 
 ### <a name="metadataDistribution_items"></a>Dataset > metadataDistribution > Distribution
-
-**Title:** Distribution
-
-A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`                      |
 | ------------------------- | ----------------------------- |
@@ -1003,10 +967,6 @@ List of standards, schemas, or profiles the dataset follows
 
 ### <a name="conformsTo_items"></a>Dataset > conformsTo > Standard
 
-**Title:** Standard
-
-A standard or specification that another resource conforms to
-
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                                        |
@@ -1028,10 +988,6 @@ List of agents contributing to the Dataset
 | [Agent](#contributor_items)     | A person, organization, software agent, or other entity involved with a resource |
 
 ### <a name="contributor_items"></a>Dataset > contributor > Agent
-
-**Title:** Agent
-
-A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -1202,10 +1158,6 @@ List of related datasets that are part of the described dataset
 | [Dataset](#hasPart_items)       | A collection of data published or curated by one provider |
 
 ### <a name="hasPart_items"></a>Dataset > hasPart > Dataset
-
-**Title:** Dataset
-
-A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1572,7 +1524,7 @@ Organization responsible for publishing and making the dataset available
 | ------------------------- | --------------------------------- |
 | **Required**              | Yes                               |
 | **Additional properties** | Any type allowed                  |
-| **Defined in**            | [Organization](./Organization.md) |
+| **Defined in**            | [Organization](./agents.md#organization) |
 
 ## <a name="relation"></a>[Optional] Property `Dataset > relation`
 
@@ -1623,10 +1575,6 @@ List of Datasets replaced by this Dataset
 | [Dataset](#replaces_items)      | A collection of data published or curated by one provider |
 
 ### <a name="replaces_items"></a>Dataset > replaces > Dataset
-
-**Title:** Dataset
-
-A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1686,10 +1634,6 @@ List of agents (organizations) holding rights on the Dataset
 
 ### <a name="rightsHolder_items"></a>Dataset > rightsHolder > Organization
 
-**Title:** Organization
-
-An organization involved with a resource, including parent or child organizations
-
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                 |
@@ -1711,10 +1655,6 @@ List of related Datasets from which the described Dataset is derived
 | [Dataset](#source_items)        | A collection of data published or curated by one provider |
 
 ### <a name="source_items"></a>Dataset > source > Dataset
-
-**Title:** Dataset
-
-A collection of data published or curated by one provider
 
 | **Type**                  | `object`                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -1770,10 +1710,6 @@ inline description of Location
 
 #### <a name="spatial_anyOf_i2_items"></a>Dataset > spatial > anyOf > List of geographic regions > Location
 
-**Title:** Location
-
-A named place or geographic area
-
 | **Type**                  | `object`                                                                                       |
 | ------------------------- | ---------------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                               |
@@ -1796,10 +1732,6 @@ List of primary subjects for the dataset, usually narrower than broad theme cate
 
 ### <a name="subject_items"></a>Dataset > subject > Concept
 
-**Title:** Concept
-
-A controlled term or label, optionally drawn from a concept scheme
-
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                          |
@@ -1821,10 +1753,6 @@ Time periods covered by the dataset
 | [PeriodOfTime](#temporal_items) | Information about a specific time period with a start- and/or end-time |
 
 ### <a name="temporal_items"></a>Dataset > temporal > PeriodOfTime
-
-**Title:** PeriodOfTime
-
-Information about a specific time period with a start- and/or end-time
 
 | **Type**                  | More than one type                                                                                  |
 | ------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -1870,10 +1798,6 @@ List of high-level categories for the dataset
 
 ### <a name="category_items"></a>Dataset > category > Concept
 
-**Title:** Concept
-
-A controlled term or label, optionally drawn from a concept scheme
-
 | **Type**                  | More than one type                                        |
 | ------------------------- | --------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                          |
@@ -1895,10 +1819,6 @@ List of quality measurements for the dataset (for example, completeness, accurac
 | [QualityMeasurement](#hasQualityMeasurement_items) | A measurement of a resource against a specific quality metric |
 
 ### <a name="hasQualityMeasurement_items"></a>Dataset > hasQualityMeasurement > QualityMeasurement
-
-**Title:** QualityMeasurement
-
-A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -1922,10 +1842,6 @@ List of pages or documents about this dataset
 
 ### <a name="page_items"></a>Dataset > page > Document
 
-**Title:** Document
-
-A publication or other document related to a resource
-
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                       |
@@ -1947,10 +1863,6 @@ List of agents with specific responsibilities for the dataset
 | [Attribution](#qualifiedAttribution_items) | A responsibility that an agent has for a resource |
 
 ### <a name="qualifiedAttribution_items"></a>Dataset > qualifiedAttribution > Attribution
-
-**Title:** Attribution
-
-A responsibility that an agent has for a resource
 
 | **Type**                  | `object`                                                                                        |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -1974,10 +1886,6 @@ List of agents attributed to this dataset
 
 ### <a name="wasAttributedTo_items"></a>Dataset > wasAttributedTo > Agent
 
-**Title:** Agent
-
-A person, organization, software agent, or other entity involved with a resource
-
 | **Type**                  | `object`                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
 | **Additional properties** | Any type allowed                                                                                 |
@@ -2000,10 +1908,6 @@ List of activities that generated, or provide the business context for the creat
 
 ### <a name="wasGeneratedBy_items"></a>Dataset > wasGeneratedBy > Activity
 
-**Title:** Activity
-
-An activity related to creating, changing, or using a resource
-
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                                       |
@@ -2025,10 +1929,6 @@ List of activities that used the Dataset
 | [Activity](#wasUsedBy_items)    | An activity related to creating, changing, or using a resource |
 
 ### <a name="wasUsedBy_items"></a>Dataset > wasUsedBy > Activity
-
-**Title:** Activity
-
-An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`                                                                               |
 | ------------------------- | -------------------------------------------------------------------------------------- |
@@ -2085,4 +1985,3 @@ usage note for the dataset
 ```json
 "This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets."
 ```
-

@@ -1,4 +1,4 @@
-
+<a name="root"></a>
 
 **Title:** DatasetSeries
 
@@ -143,20 +143,20 @@ A group of related datasets that are published separately
 
 | Property                                     | Type               | Title/Description           |
 | -------------------------------------------- | ------------------ | --------------------------- |
-| - [@id](#@id )                               | string             | -                           |
-| - [@type](#@type )                           | string             | -                           |
-| - [contactPoint](#contactPoint )             | null or array      | contact point               |
-| - [first](#first )                           | More than one type | first                       |
-| - [last](#last )                             | More than one type | last                        |
-| - [seriesMember](#seriesMember )             | null or array      | series member               |
-| - [accrualPeriodicity](#accrualPeriodicity ) | More than one type | frequency                   |
-| + [description](#description )               | string             | description                 |
-| - [issued](#issued )                         | More than one type | release date                |
-| - [modified](#modified )                     | More than one type | update/modification date    |
-| - [publisher](#publisher )                   | More than one type | publisher                   |
-| - [spatial](#spatial )                       | null or array      | spatial/geographic coverage |
-| - [temporal](#temporal )                     | null or array      | temporal coverage           |
-| + [title](#title )                           | string             | title                       |
+| - [@id](#@id)                               | string             | -                           |
+| - [@type](#@type)                           | string             | -                           |
+| - [contactPoint](#contactPoint)             | null or array      | contact point               |
+| - [first](#first)                           | More than one type | first                       |
+| - [last](#last)                             | More than one type | last                        |
+| - [seriesMember](#seriesMember)             | null or array      | series member               |
+| - [accrualPeriodicity](#accrualPeriodicity) | More than one type | frequency                   |
+| + [description](#description)               | string             | description                 |
+| - [issued](#issued)                         | More than one type | release date                |
+| - [modified](#modified)                     | More than one type | update/modification date    |
+| - [publisher](#publisher)                   | More than one type | publisher                   |
+| - [spatial](#spatial)                       | null or array      | spatial/geographic coverage |
+| - [temporal](#temporal)                     | null or array      | temporal coverage           |
+| + [title](#title)                           | string             | title                       |
 
 ## <a name="@id"></a>[Optional] Property `DatasetSeries > @id`
 
@@ -197,14 +197,10 @@ List of contacts people can use to ask questions or send feedback about the data
 
 ### <a name="contactPoint_items"></a>DatasetSeries > contactPoint > Kind
 
-**Title:** Kind
-
-Contact information for an individual or entity
-
 | **Type**                  | `object`          |
 | ------------------------- | ----------------- |
 | **Additional properties** | Any type allowed  |
-| **Defined in**            | [Kind](./Kind.md) |
+| **Defined in**            | [Kind](./agents.md#kind) |
 
 ## <a name="first"></a>[Optional] Property `DatasetSeries > first`
 
@@ -239,7 +235,7 @@ inline description of the first dataset
 | **Type**                  | `object`                |
 | ------------------------- | ----------------------- |
 | **Additional properties** | Any type allowed        |
-| **Defined in**            | [Dataset](./Dataset.md) |
+| **Defined in**            | [Dataset](./dataset.md#root) |
 
 ## <a name="last"></a>[Optional] Property `DatasetSeries > last`
 
@@ -292,10 +288,6 @@ List of members of the Dataset Series
 | [Dataset](#seriesMember_items)  | A collection of data published or curated by one provider |
 
 ### <a name="seriesMember_items"></a>DatasetSeries > seriesMember > Dataset
-
-**Title:** Dataset
-
-A collection of data published or curated by one provider
 
 | **Type**                  | `object`                   |
 | ------------------------- | -------------------------- |
@@ -648,10 +640,6 @@ A geographic region that is covered by the Dataset Series
 
 ### <a name="spatial_items"></a>DatasetSeries > spatial > Location
 
-**Title:** Location
-
-A named place or geographic area
-
 | **Type**                  | `object`                                                                   |
 | ------------------------- | -------------------------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                                           |
@@ -673,10 +661,6 @@ Time periods covered by the dataset series
 | [PeriodOfTime](#temporal_items) | Information about a specific time period with a start- and/or end-time |
 
 ### <a name="temporal_items"></a>DatasetSeries > temporal > PeriodOfTime
-
-**Title:** PeriodOfTime
-
-Information about a specific time period with a start- and/or end-time
 
 | **Type**                  | More than one type                                                              |
 | ------------------------- | ------------------------------------------------------------------------------- |
@@ -704,4 +688,3 @@ Human-readable title of the dataset series
 ```json
 "Annual National Climate Observations Series"
 ```
-
