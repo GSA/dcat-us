@@ -2,8 +2,6 @@
 
 Information about a distribution, including access methods, formats, licenses, restrictions, and quality details.
 
-**Title:** Distribution
-
 A specific representation of a dataset, such as a file, feed, or API response
 
 | **Type**                  | `object`         |
@@ -38,43 +36,43 @@ A specific representation of a dataset, such as a file, feed, or API response
 }
 ```
 
-| Property                                                 | Type                    | Requirement Level | Title/Description           |
-| -------------------------------------------------------- | ----------------------- | ----------------- | --------------------------- |
-| [@id](#@id)                                             | string                  | Optional          | -                           |
-| [@type](#@type)                                         | string                  | Optional          | -                           |
-| [representationTechnique](#representationTechnique)     | More than one type      | Optional          | representation technique    |
-| [status](#status)                                       | More than one type      | Optional          | lifecycle status            |
-| [characterEncoding](#characterEncoding)                 | More than one type      | Optional          | character encoding          |
-| [accessService](#accessService)                         | null or array           | Optional          | access service              |
-| [accessURL](#accessURL)                                 | More than one type      | Recommended       | access URL                  |
-| [byteSize](#byteSize)                                   | null or string          | Optional          | byte size                   |
-| [compressFormat](#compressFormat)                       | null or string          | Optional          | compression format          |
-| [downloadURL](#downloadURL)                             | More than one type      | Optional          | download URL                |
-| [mediaType](#mediaType)                                 | null or string          | Optional          | media type                  |
-| [packageFormat](#packageFormat)                         | null or string          | Optional          | packaging format            |
-| [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string          | Optional          | Spatial resolution (meters) |
-| [temporalResolution](#temporalResolution)               | null or string          | Optional          | termporal resolution        |
-| [availability](#availability)                           | More than one type      | Optional          | availability                |
-| [accessRestriction](#accessRestriction)                 | null or array           | Recommended       | access restriction          |
-| [cuiRestriction](#cuiRestriction)                       | More than one type      | Recommended       | CUI restriction             |
-| [describedBy](#describedBy)                             | More than one type      | Recommended       | data dictionary             |
-| [useRestriction](#useRestriction)                       | null or array           | Recommended       | use restriction             |
-| [accessRights](#accessRights)                           | More than one type      | Optional          | access rights               |
-| [conformsTo](#conformsTo)                               | null or array           | Optional          | linked schemas              |
-| [description](#description)                             | null or string          | Recommended       | description                 |
-| [format](#format)                                       | null or string          | Recommended       | format                      |
-| [identifier](#identifier)                               | More than one type      | Optional          | identifier                  |
-| [otherIdentifier](#otherIdentifier)                     | null or array           | Optional          | other identifier            |
-| [issued](#issued)                                       | More than one type      | Optional          | release date                |
-| [language](#language)                                   | More than one type      | Optional          | language                    |
-| [license](#license)                                     | More than one type      | Recommended       | license                     |
-| [modified](#modified)                                   | More than one type      | Recommended       | last modified               |
-| [rights](#rights)                                       | null or array of string | Recommended       | rights                      |
-| [title](#title)                                         | null or string          | Recommended       | title                       |
-| [hasQualityMeasurement](#hasQualityMeasurement)         | null or array           | Optional          | quality measurement         |
-| [page](#page)                                           | null or array           | Optional          | documentation               |
-| [image](#image)                                         | More than one type      | Optional          | image                       |
-| [checksum](#checksum)                                   | More than one type      | Optional          | checksum                    |
+| Property                                                 | Type                    | Requirement Level | Title/Description                                                                                                                                                             |
+| -------------------------------------------------------- | ----------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#@id)                                             | string                  | Optional          |                                                                                                                                                                               |
+| [@type](#@type)                                         | string                  | Optional          |                                                                                                                                                                               |
+| [representationTechnique](#representationTechnique)     | More than one type      | Optional          | Method or schema used to structure the distribution content (for example, CSV convention, XML schema, or spatial representation type)                                         |
+| [status](#status)                                       | More than one type      | Optional          | The status of the distribution in the context of maturity lifecycle                                                                                                           |
+| [characterEncoding](#characterEncoding)                 | More than one type      | Optional          | List of character encodings used in the Distribution, using IANA character set names (for example, UTF-8)                                                                     |
+| [accessService](#accessService)                         | null or array           | Optional          | A data service that gives access to the distribution of the dataset                                                                                                           |
+| [accessURL](#accessURL)                                 | More than one type      | Recommended       | URL for indirect access to the Distribution (for example, a landing page, API docs, or request form), not a direct file download                                              |
+| [byteSize](#byteSize)                                   | null or string          | Optional          | The size of a Distribution in bytes                                                                                                                                           |
+| [compressFormat](#compressFormat)                       | null or string          | Optional          | The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file                                                  |
+| [downloadURL](#downloadURL)                             | More than one type      | Optional          | Direct URL to a downloadable file for the Distribution; use accessURL for indirect access                                                                                     |
+| [mediaType](#mediaType)                                 | null or string          | Optional          | MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml |
+| [packageFormat](#packageFormat)                         | null or string          | Optional          | The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together                                  |
+| [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string          | Optional          | The minimum spatial separation resolvable in a dataset distribution, measured in meters                                                                                       |
+| [temporalResolution](#temporalResolution)               | null or string          | Optional          | The minimum time period resolvable in the dataset distribution                                                                                                                |
+| [availability](#availability)                           | More than one type      | Optional          | An indication how long it is planned to keep the Distribution of the Dataset available                                                                                        |
+| [accessRestriction](#accessRestriction)                 | null or array           | Recommended       | List of access restrictions related to the distribution                                                                                                                       |
+| [cuiRestriction](#cuiRestriction)                       | More than one type      | Recommended       | Controlled Unclassified Information restriction related to the distribution                                                                                                   |
+| [describedBy](#describedBy)                             | More than one type      | Recommended       | A distribution containing the Data Dictionary for this distribution                                                                                                           |
+| [useRestriction](#useRestriction)                       | null or array           | Recommended       | Use restriction related to the distribution                                                                                                                                   |
+| [accessRights](#accessRights)                           | More than one type      | Optional          | Information about whether the distribution is publicly accessible, restricted, or not public                                                                                  |
+| [conformsTo](#conformsTo)                               | null or array           | Optional          | List of standards, schemas, or reference systems the Distribution follows (prefer stable URIs when available)                                                                 |
+| [description](#description)                             | null or string          | Recommended       | Plain-language summary of the distribution                                                                                                                                    |
+| [format](#format)                                       | null or string          | Recommended       | A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType                                |
+| [identifier](#identifier)                               | More than one type      | Optional          | The unique identifier for the Distribution (e.g. DOI, ISBN)                                                                                                                   |
+| [otherIdentifier](#otherIdentifier)                     | null or array           | Optional          | A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog                                |
+| [issued](#issued)                                       | More than one type      | Optional          | The date of formal issuance (e.g., publication) of the Distribution                                                                                                           |
+| [language](#language)                                   | More than one type      | Optional          | ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                 |
+| [license](#license)                                     | More than one type      | Recommended       | License that governs how the distribution can be used or reused                                                                                                               |
+| [modified](#modified)                                   | More than one type      | Recommended       | The most recent date on which the Distribution was changed or modified                                                                                                        |
+| [rights](#rights)                                       | null or array of string | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                    |
+| [title](#title)                                         | null or string          | Recommended       | Human-readable title of the distribution                                                                                                                                      |
+| [hasQualityMeasurement](#hasQualityMeasurement)         | null or array           | Optional          | Quality measurements for the distribution (for example, completeness, accuracy, or timeliness)                                                                                |
+| [page](#page)                                           | null or array           | Optional          | A page or document about this Distribution                                                                                                                                    |
+| [image](#image)                                         | More than one type      | Optional          | A link to a thumbnail picture illustrating the content of the distribution                                                                                                    |
+| [checksum](#checksum)                                   | More than one type      | Optional          | Checksum used to verify that the downloadable file content has not changed                                                                                                    |
 
 ## <a name="@id"></a>`Distribution > @id`
 
@@ -100,8 +98,6 @@ A specific representation of a dataset, such as a file, feed, or API response
 
 ## <a name="representationTechnique"></a>`Distribution > representationTechnique`
 
-**Title:** representation technique
-
 **Requirement:** Optional
 
 Method or schema used to structure the distribution content (for example, CSV convention, XML schema, or spatial representation type)
@@ -117,14 +113,10 @@ Method or schema used to structure the distribution content (for example, CSV co
 
 ### <a name="representationTechnique_anyOf_i0"></a>`Distribution > representationTechnique > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="representationTechnique_anyOf_i1"></a>`Distribution > representationTechnique > anyOf > Concept`
-
-**Title:** Concept
 
 inline description of Concept
 
@@ -152,14 +144,10 @@ The status of the distribution in the context of maturity lifecycle
 
 ### <a name="status_anyOf_i0"></a>`Distribution > status > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="status_anyOf_i1"></a>`Distribution > status > anyOf > Concept`
-
-**Title:** Concept
 
 inline description of Concept
 
@@ -169,8 +157,6 @@ inline description of Concept
 | **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
 
 ## <a name="characterEncoding"></a>`Distribution > characterEncoding`
-
-**Title:** character encoding
 
 **Requirement:** Optional
 
@@ -195,14 +181,10 @@ List of character encodings used in the Distribution, using IANA character set n
 
 ### <a name="characterEncoding_anyOf_i0"></a>`Distribution > characterEncoding > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="characterEncoding_anyOf_i1"></a>`Distribution > characterEncoding > anyOf > List of encodings`
-
-**Title:** List of encodings
 
 | **Type** | `array of string` |
 | -------- | ----------------- |
@@ -213,14 +195,10 @@ List of character encodings used in the Distribution, using IANA character set n
 
 #### <a name="characterEncoding_anyOf_i1_items"></a>Character encoding
 
-**Title:** Character encoding
-
 | **Type** | `string` |
 | -------- | -------- |
 
 ## <a name="accessService"></a>`Distribution > accessService`
-
-**Title:** access service
 
 **Requirement:** Optional
 
@@ -234,8 +212,6 @@ A data service that gives access to the distribution of the dataset
 | [DataService](./quality-governance.md#data-service) | A service that provides access to data or data processing functions |
 
 ## <a name="accessURL"></a>`Distribution > accessURL`
-
-**Title:** access URL
 
 **Requirement:** Recommended
 
@@ -262,14 +238,10 @@ URL for indirect access to the Distribution (for example, a landing page, API do
 
 ### <a name="accessURL_anyOf_i0"></a>`Distribution > accessURL > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="accessURL_anyOf_i1"></a>`Distribution > accessURL > anyOf > URL`
-
-**Title:** URL
 
 reference iri of Resource
 
@@ -278,8 +250,6 @@ reference iri of Resource
 | **Format** | `iri`    |
 
 ## <a name="byteSize"></a>`Distribution > byteSize`
-
-**Title:** byte size
 
 **Requirement:** Optional
 
@@ -313,8 +283,6 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 ## <a name="downloadURL"></a>`Distribution > downloadURL`
 
-**Title:** download URL
-
 **Requirement:** Optional
 
 Direct URL to a downloadable file for the Distribution; use accessURL for indirect access
@@ -336,14 +304,10 @@ Direct URL to a downloadable file for the Distribution; use accessURL for indire
 
 ### <a name="downloadURL_anyOf_i0"></a>`Distribution > downloadURL > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="downloadURL_anyOf_i1"></a>`Distribution > downloadURL > anyOf > URL`
-
-**Title:** URL
 
 reference iri of Resource
 
@@ -352,8 +316,6 @@ reference iri of Resource
 | **Format** | `iri`    |
 
 ## <a name="mediaType"></a>`Distribution > mediaType`
-
-**Title:** media type
 
 **Requirement:** Optional
 
@@ -421,8 +383,6 @@ The minimum time period resolvable in the dataset distribution
 
 ## <a name="availability"></a>`Distribution > availability`
 
-**Title:** availability
-
 **Requirement:** Optional
 
 An indication how long it is planned to keep the Distribution of the Dataset available
@@ -438,14 +398,10 @@ An indication how long it is planned to keep the Distribution of the Dataset ava
 
 ### <a name="availability_anyOf_i0"></a>`Distribution > availability > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="availability_anyOf_i1"></a>`Distribution > availability > anyOf > Concept`
-
-**Title:** Concept
 
 inline description of Concept
 
@@ -455,8 +411,6 @@ inline description of Concept
 | **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
 
 ## <a name="accessRestriction"></a>`Distribution > accessRestriction`
-
-**Title:** access restriction
 
 **Requirement:** Recommended
 
@@ -470,8 +424,6 @@ List of access restrictions related to the distribution
 | [AccessRestriction](./constraints-and-restrictions.md#access-restriction) | Rules or indicators that describe who can access a resource |
 
 ## <a name="cuiRestriction"></a>`Distribution > cuiRestriction`
-
-**Title:** CUI restriction
 
 **Requirement:** Recommended
 
@@ -488,14 +440,10 @@ Controlled Unclassified Information restriction related to the distribution
 
 ### <a name="cuiRestriction_anyOf_i0"></a>`Distribution > cuiRestriction > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="cuiRestriction_anyOf_i1"></a>`Distribution > cuiRestriction > anyOf > CUIRestriction`
-
-**Title:** CUIRestriction
 
 inline description of CUIRestriction
 
@@ -523,14 +471,10 @@ A distribution containing the Data Dictionary for this distribution
 
 ### <a name="describedBy_anyOf_i0"></a>`Distribution > describedBy > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="describedBy_anyOf_i1"></a>`Distribution > describedBy > anyOf > Distribution`
-
-**Title:** Distribution
 
 inline description of the data dictionary
 
@@ -544,8 +488,6 @@ inline description of the data dictionary
 
 ## <a name="useRestriction"></a>`Distribution > useRestriction`
 
-**Title:** use restriction
-
 **Requirement:** Recommended
 
 Use restriction related to the distribution
@@ -558,8 +500,6 @@ Use restriction related to the distribution
 | [UseRestriction](./constraints-and-restrictions.md#use-restriction) | Rules or legal limits on how a resource may be used |
 
 ## <a name="accessRights"></a>`Distribution > accessRights`
-
-**Title:** access rights
 
 **Requirement:** Optional
 
@@ -581,8 +521,6 @@ Information about whether the distribution is publicly accessible, restricted, o
 | [item 1](#accessRights_anyOf_i1)                         |
 
 ### <a name="accessRights_anyOf_i0"></a>`Distribution > accessRights > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -611,8 +549,6 @@ List of standards, schemas, or reference systems the Distribution follows (prefe
 
 ## <a name="description"></a>`Distribution > description`
 
-**Title:** description
-
 **Requirement:** Recommended
 
 Plain-language summary of the distribution
@@ -632,8 +568,6 @@ Plain-language summary of the distribution
 
 ## <a name="format"></a>`Distribution > format`
 
-**Title:** format
-
 **Requirement:** Recommended
 
 A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType
@@ -648,8 +582,6 @@ A human-readable description of the file format of the Distribution that provide
 ```
 
 ## <a name="identifier"></a>`Distribution > identifier`
-
-**Title:** identifier
 
 **Requirement:** Optional
 
@@ -666,14 +598,10 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 
 ### <a name="identifier_anyOf_i0"></a>`Distribution > identifier > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="identifier_anyOf_i1"></a>`Distribution > identifier > anyOf > Identifier`
-
-**Title:** Identifier
 
 inline description of Identifier
 
@@ -683,8 +611,6 @@ inline description of Identifier
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="otherIdentifier"></a>`Distribution > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -734,14 +660,10 @@ The date of formal issuance (e.g., publication) of the Distribution
 
 ### <a name="issued_anyOf_i0"></a>`Distribution > issued > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>`Distribution > issued > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -790,8 +712,6 @@ A year and month in YYYY-MM format
 
 ## <a name="language"></a>`Distribution > language`
 
-**Title:** language
-
 **Requirement:** Optional
 
 ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
@@ -821,14 +741,10 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 
 ### <a name="language_anyOf_i0"></a>`Distribution > language > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="language_anyOf_i1"></a>`Distribution > language > anyOf > Language code`
-
-**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -839,8 +755,6 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 
 ### <a name="language_anyOf_i2"></a>`Distribution > language > anyOf > List of languages`
 
-**Title:** List of languages
-
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
@@ -850,8 +764,6 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 
 #### <a name="language_anyOf_i2_items"></a>Language code
 
-**Title:** Language code
-
 | **Type** | `string` |
 | -------- | -------- |
 
@@ -860,8 +772,6 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 | **Max length** | 2 |
 
 ## <a name="license"></a>`Distribution > license`
-
-**Title:** license
 
 **Requirement:** Recommended
 
@@ -883,8 +793,6 @@ License that governs how the distribution can be used or reused
 | [item 1](#license_anyOf_i1)                         |
 
 ### <a name="license_anyOf_i0"></a>`Distribution > license > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -937,14 +845,10 @@ The most recent date on which the Distribution was changed or modified
 
 ### <a name="modified_anyOf_i0"></a>`Distribution > modified > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>`Distribution > modified > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -993,8 +897,6 @@ A year and month in YYYY-MM format
 
 ## <a name="rights"></a>`Distribution > rights`
 
-**Title:** rights
-
 **Requirement:** Recommended
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
@@ -1028,8 +930,6 @@ Full text of a statement of rights
 | -------- | -------- |
 
 ## <a name="title"></a>`Distribution > title`
-
-**Title:** title
 
 **Requirement:** Recommended
 
@@ -1076,8 +976,6 @@ A page or document about this Distribution
 
 ## <a name="image"></a>`Distribution > image`
 
-**Title:** image
-
 **Requirement:** Optional
 
 A link to a thumbnail picture illustrating the content of the distribution
@@ -1093,14 +991,10 @@ A link to a thumbnail picture illustrating the content of the distribution
 
 ### <a name="image_anyOf_i0"></a>`Distribution > image > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="image_anyOf_i1"></a>`Distribution > image > anyOf > Link`
-
-**Title:** Link
 
 The link to the image
 
@@ -1109,8 +1003,6 @@ The link to the image
 | **Format** | `iri`    |
 
 ## <a name="checksum"></a>`Distribution > checksum`
-
-**Title:** checksum
 
 **Requirement:** Optional
 
@@ -1127,14 +1019,10 @@ Checksum used to verify that the downloadable file content has not changed
 
 ### <a name="checksum_anyOf_i0"></a>`Distribution > checksum > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="checksum_anyOf_i1"></a>`Distribution > checksum > anyOf > Checksum`
-
-**Title:** Checksum
 
 inline description of Checksum
 

@@ -2,8 +2,6 @@
 
 Information about a dataset series, including its members, ordering, coverage, and publishing details.
 
-**Title:** DatasetSeries
-
 A group of related datasets that are published separately
 
 | **Type**                  | `object`         |
@@ -143,22 +141,22 @@ A group of related datasets that are published separately
 }
 ```
 
-| Property                                   | Type               | Requirement Level | Title/Description           |
-| ------------------------------------------ | ------------------ | ----------------- | --------------------------- |
-| [@id](#@id)                               | string             | Optional          | -                           |
-| [@type](#@type)                           | string             | Optional          | -                           |
-| [contactPoint](#contactPoint)             | null or array      | Recommended       | contact point               |
-| [first](#first)                           | More than one type | Recommended       | first                       |
-| [last](#last)                             | More than one type | Recommended       | last                        |
-| [seriesMember](#seriesMember)             | null or array      | Recommended       | series member               |
-| [accrualPeriodicity](#accrualPeriodicity) | More than one type | Optional          | frequency                   |
-| [description](#description)               | string             | Mandatory         | description                 |
-| [issued](#issued)                         | More than one type | Optional          | release date                |
-| [modified](#modified)                     | More than one type | Recommended       | update/modification date    |
-| [publisher](#publisher)                   | More than one type | Recommended       | publisher                   |
-| [spatial](#spatial)                       | null or array      | Recommended       | spatial/geographic coverage |
-| [temporal](#temporal)                     | null or array      | Recommended       | temporal coverage           |
-| [title](#title)                           | string             | Mandatory         | title                       |
+| Property                                   | Type               | Requirement Level | Title/Description                                                                                                                        |
+| ------------------------------------------ | ------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#@id)                               | string             | Optional          |                                                                                                                                          |
+| [@type](#@type)                           | string             | Optional          |                                                                                                                                          |
+| [contactPoint](#contactPoint)             | null or array      | Recommended       | List of contacts people can use to ask questions or send feedback about the dataset series                                               |
+| [first](#first)                           | More than one type | Recommended       | The first dataset in an ordered dataset series                                                                                           |
+| [last](#last)                             | More than one type | Recommended       | The last dataset in an ordered dataset series                                                                                            |
+| [seriesMember](#seriesMember)             | null or array      | Recommended       | List of members of the Dataset Series                                                                                                    |
+| [accrualPeriodicity](#accrualPeriodicity) | More than one type | Optional          | The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency      |
+| [description](#description)               | string             | Mandatory         | Plain-language summary of the dataset series                                                                                             |
+| [issued](#issued)                         | More than one type | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
+| [modified](#modified)                     | More than one type | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
+| [publisher](#publisher)                   | More than one type | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
+| [spatial](#spatial)                       | null or array      | Recommended       | A geographic region that is covered by the Dataset Series                                                                                |
+| [temporal](#temporal)                     | null or array      | Recommended       | Time periods covered by the dataset series                                                                                               |
+| [title](#title)                           | string             | Mandatory         | Human-readable title of the dataset series                                                                                               |
 
 ## <a name="@id"></a>`DatasetSeries > @id`
 
@@ -184,8 +182,6 @@ A group of related datasets that are published separately
 
 ## <a name="contactPoint"></a>`DatasetSeries > contactPoint`
 
-**Title:** contact point
-
 **Requirement:** Recommended
 
 List of contacts people can use to ask questions or send feedback about the dataset series
@@ -198,8 +194,6 @@ List of contacts people can use to ask questions or send feedback about the data
 | [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
 ## <a name="first"></a>`DatasetSeries > first`
-
-**Title:** first
 
 **Requirement:** Recommended
 
@@ -216,14 +210,10 @@ The first dataset in an ordered dataset series
 
 ### <a name="first_anyOf_i0"></a>`DatasetSeries > first > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="first_anyOf_i1"></a>`DatasetSeries > first > anyOf > Dataset`
-
-**Title:** Dataset
 
 inline description of the first dataset
 
@@ -236,8 +226,6 @@ inline description of the first dataset
 **See Also:** (related supporting classes)
 
 ## <a name="last"></a>`DatasetSeries > last`
-
-**Title:** last
 
 **Requirement:** Recommended
 
@@ -254,14 +242,10 @@ The last dataset in an ordered dataset series
 
 ### <a name="last_anyOf_i0"></a>`DatasetSeries > last > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="last_anyOf_i1"></a>`DatasetSeries > last > anyOf > Dataset`
-
-**Title:** Dataset
 
 inline description of the last dataset
 
@@ -274,8 +258,6 @@ inline description of the last dataset
 **See Also:** (related supporting classes)
 
 ## <a name="seriesMember"></a>`DatasetSeries > seriesMember`
-
-**Title:** series member
 
 **Requirement:** Recommended
 
@@ -314,8 +296,6 @@ The frequency at which the Dataset Series is updated. This is the series update 
 | [item 3](#accrualPeriodicity_anyOf_i3)                         |
 
 ### <a name="accrualPeriodicity_anyOf_i0"></a>`DatasetSeries > accrualPeriodicity > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -380,8 +360,6 @@ Must be one of:
 
 ## <a name="description"></a>`DatasetSeries > description`
 
-**Title:** description
-
 **Requirement:** Mandatory
 
 Plain-language summary of the dataset series
@@ -433,14 +411,10 @@ Date when the Dataset Series was formally established or published, not the rele
 
 ### <a name="issued_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -528,14 +502,10 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 
 ### <a name="modified_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -584,8 +554,6 @@ A year and month in YYYY-MM format
 
 ## <a name="publisher"></a>`DatasetSeries > publisher`
 
-**Title:** publisher
-
 **Requirement:** Recommended
 
 Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
@@ -601,14 +569,10 @@ Organization responsible for maintaining the Dataset Series as a coherent series
 
 ### <a name="publisher_anyOf_i0"></a>`DatasetSeries > publisher > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="publisher_anyOf_i1"></a>`DatasetSeries > publisher > anyOf > Agent`
-
-**Title:** Agent
 
 inline description of publisher
 
@@ -648,8 +612,6 @@ Time periods covered by the dataset series
 | [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
 
 ## <a name="title"></a>`DatasetSeries > title`
-
-**Title:** title
 
 **Requirement:** Mandatory
 

@@ -14,7 +14,7 @@
 {% set keys = schema.keywords %}
 {%- if not skip_headers %}
 
-{% if schema.title and schema.title | length > 0 %}
+{% if schema | should_render_title %}
 **Title:** {{ schema.title }}
 {% endif %}
 

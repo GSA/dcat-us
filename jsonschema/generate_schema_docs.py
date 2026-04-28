@@ -360,6 +360,46 @@ def _normalize_requirement_level(value):
     return "Optional"
 
 
+def _normalize_label(value):
+    if value is None:
+        return ""
+    return re.sub(r"[^a-z0-9]+", "", str(value).strip().lower())
+
+
+def _escape_for_table(value):
+    if value is None:
+        return ""
+    return str(value).translate(str.maketrans({"|": "\\|", "`": "\\`", "\n": "<br />"}))
+
+
+def should_render_title(schema):
+    """Return False when the title just repeats the current node label."""
+    title = getattr(schema, "title", None)
+    normalized_title = _normalize_label(title)
+    if not normalized_title:
+        return False
+
+    candidate_labels = {
+        _normalize_label(getattr(schema, "property_name", None)),
+        _normalize_label(getattr(schema, "name_for_breadcrumbs", None)),
+    }
+    candidate_labels.discard("")
+    return normalized_title not in candidate_labels
+
+
+def property_summary_text(schema):
+    """Return the preferred summary text for property tables."""
+    description = getattr(schema, "description", None)
+    if description:
+        return description
+
+    title = getattr(schema, "title", None)
+    if should_render_title(schema):
+        return title
+
+    return ""
+
+
 def schema_requirement_level(schema):
     """Template helper for property requirement level.
 
@@ -415,8 +455,12 @@ def properties_table_wrap(properties_list, schema):
         if line[property_column_index].startswith(("+ ", "- ")):
             line[property_column_index] = line[property_column_index][2:]
 
-        requirement = schema_requirement_level(property_nodes[index - 1])
+        property_node = property_nodes[index - 1]
+        requirement = schema_requirement_level(property_node)
         line.insert(property_column_index + 2, requirement)
+        line[property_column_index + 3] = _escape_for_table(
+            property_summary_text(property_node)
+        )
 
     # remove lines
     def _remove_me(line):
@@ -510,6 +554,9 @@ def _render_raw_docs(output_dir):
     original_md_properties_table = template_renderer.template.environment.filters[
         "md_properties_table"
     ]
+    template_renderer.template.environment.filters["should_render_title"] = (
+        should_render_title
+    )
     template_renderer.template.environment.filters["schema_requirement_level"] = (
         schema_requirement_level
     )

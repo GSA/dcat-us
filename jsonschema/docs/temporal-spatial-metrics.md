@@ -6,8 +6,6 @@ Supporting classes for time periods, locations, quality metrics, measurements, a
 
 ## Class PeriodOfTime
 
-**Title:** PeriodOfTime
-
 Information about a specific time period with a start- and/or end-time
 
 | **Type**                  | More than one type |
@@ -24,12 +22,12 @@ Information about a specific time period with a start- and/or end-time
 }
 ```
 
-| Property                 | Type               | Requirement Level | Title/Description |
-| ------------------------ | ------------------ | ----------------- | ----------------- |
-| [@id](#period-of-time--@id)             | string             | Optional          | -                 |
-| [@type](#period-of-time--@type)         | string             | Optional          | -                 |
-| [endDate](#period-of-time--endDate)     | More than one type | Recommended       | end date          |
-| [startDate](#period-of-time--startDate) | More than one type | Recommended       | start date        |
+| Property                 | Type               | Requirement Level | Title/Description                    |
+| ------------------------ | ------------------ | ----------------- | ------------------------------------ |
+| [@id](#period-of-time--@id)             | string             | Optional          |                                      |
+| [@type](#period-of-time--@type)         | string             | Optional          |                                      |
+| [endDate](#period-of-time--endDate)     | More than one type | Recommended       | The end date of the period of time   |
+| [startDate](#period-of-time--startDate) | More than one type | Recommended       | The start date of the period of time |
 
 | Any of              |
 | ------------------- |
@@ -78,8 +76,6 @@ Information about a specific time period with a start- and/or end-time
 
 ## <a name="period-of-time--endDate"></a>`PeriodOfTime > endDate`
 
-**Title:** end date
-
 **Requirement:** Recommended
 
 The end date of the period of time
@@ -112,8 +108,6 @@ The end date of the period of time
 | [item 1](#period-of-time--endDate_anyOf_i1)                         |
 
 ### <a name="period-of-time--endDate_anyOf_i0"></a>`PeriodOfTime > endDate > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -167,8 +161,6 @@ A year and month in YYYY-MM format
 
 ## <a name="period-of-time--startDate"></a>`PeriodOfTime > startDate`
 
-**Title:** start date
-
 **Requirement:** Recommended
 
 The start date of the period of time
@@ -201,8 +193,6 @@ The start date of the period of time
 | [item 1](#period-of-time--startDate_anyOf_i1)                         |
 
 ### <a name="period-of-time--startDate_anyOf_i0"></a>`PeriodOfTime > startDate > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -259,8 +249,6 @@ A year and month in YYYY-MM format
 <a name="location"></a>
 
 ## Class Location
-
-**Title:** Location
 
 A named place or geographic area
 
@@ -378,18 +366,18 @@ A named place or geographic area
 }
 ```
 
-| Property                             | Type               | Requirement Level | Title/Description |
-| ------------------------------------ | ------------------ | ----------------- | ----------------- |
-| [@id](#location--@id)                         | string             | Optional          | -                 |
-| [@type](#location--@type)                     | string             | Optional          | -                 |
-| [bbox](#location--bbox)                       | More than one type | Recommended       | bounding box      |
-| [centroid](#location--centroid)               | More than one type | Optional          | centroid          |
-| [identifier](#location--identifier)           | More than one type | Optional          | identifier        |
-| [otherIdentifier](#location--otherIdentifier) | null or array      | Optional          | other identifier  |
-| [geometry](#location--geometry)               | More than one type | Optional          | geometry          |
-| [inScheme](#location--inScheme)               | More than one type | Optional          | gazetteer         |
-| [altLabel](#location--altLabel)               | null or string     | Optional          | alternative name  |
-| [prefLabel](#location--prefLabel)             | null or string     | Recommended       | geographic name   |
+| Property                             | Type               | Requirement Level | Title/Description                                                                                                                                                |
+| ------------------------------------ | ------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#location--@id)                         | string             | Optional          |                                                                                                                                                                  |
+| [@type](#location--@type)                     | string             | Optional          |                                                                                                                                                                  |
+| [bbox](#location--bbox)                       | More than one type | Recommended       | Bounding box for the location, described in WKT, GeoJSON, or GML format                                                                                          |
+| [centroid](#location--centroid)               | More than one type | Optional          | The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format                                                                          |
+| [identifier](#location--identifier)           | More than one type | Optional          | The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer                             |
+| [otherIdentifier](#location--otherIdentifier) | null or array      | Optional          | A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer |
+| [geometry](#location--geometry)               | More than one type | Optional          | Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format                                                                     |
+| [inScheme](#location--inScheme)               | More than one type | Optional          | The gazetteer to which the location belongs                                                                                                                      |
+| [altLabel](#location--altLabel)               | null or string     | Optional          | An alternative label or name for a location                                                                                                                      |
+| [prefLabel](#location--prefLabel)             | null or string     | Recommended       | Preferred label or name of the Location                                                                                                                          |
 
 ## <a name="location--@id"></a>`Location > @id`
 
@@ -489,8 +477,8 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 
 | Property                                   | Type  | Requirement Level | Title/Description |
 | ------------------------------------------ | ----- | ----------------- | ----------------- |
-| [coordinates](#location--bbox_anyOf_i2_coordinates) | array | Optional          | -                 |
-| [type](#location--bbox_anyOf_i2_type)               | const | Optional          | -                 |
+| [coordinates](#location--bbox_anyOf_i2_coordinates) | array | Optional          |                   |
+| [type](#location--bbox_anyOf_i2_type)               | const | Optional          |                   |
 
 #### <a name="location--bbox_anyOf_i2_coordinates"></a>`Location > bbox > anyOf > item 2 > coordinates`
 
@@ -511,8 +499,6 @@ Bounding box represented in GeoJSON format, either as a Polygon or in bbox array
 Specific value: `"Polygon"`
 
 ## <a name="location--centroid"></a>`Location > centroid`
-
-**Title:** centroid
 
 **Requirement:** Optional
 
@@ -562,8 +548,8 @@ Centroid represented in GeoJSON format; force point usage with coordinates of lo
 
 | Property                                       | Type            | Requirement Level | Title/Description |
 | ---------------------------------------------- | --------------- | ----------------- | ----------------- |
-| [coordinates](#location--centroid_anyOf_i2_coordinates) | array of number | Optional          | -                 |
-| [type](#location--centroid_anyOf_i2_type)               | const           | Optional          | -                 |
+| [coordinates](#location--centroid_anyOf_i2_coordinates) | array of number | Optional          |                   |
+| [type](#location--centroid_anyOf_i2_type)               | const           | Optional          |                   |
 
 #### <a name="location--centroid_anyOf_i2_coordinates"></a>`Location > centroid > anyOf > item 2 > coordinates`
 
@@ -594,8 +580,6 @@ Specific value: `"Point"`
 
 ## <a name="location--identifier"></a>`Location > identifier`
 
-**Title:** identifier
-
 **Requirement:** Optional
 
 The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
@@ -616,8 +600,6 @@ The unique geographic identifier for the Location, e.g., the URI or other unique
 
 ### <a name="location--identifier_anyOf_i1"></a>`Location > identifier > anyOf > Identifier`
 
-**Title:** Identifier
-
 inline description of Identifier
 
 | **Type**                  | More than one type                                          |
@@ -626,8 +608,6 @@ inline description of Identifier
 | **Defined in**            | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="location--otherIdentifier"></a>`Location > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -641,8 +621,6 @@ A list of geographic identifiers for the Location besides the main identifier, e
 | [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="location--geometry"></a>`Location > geometry`
-
-**Title:** geometry
 
 **Requirement:** Optional
 
@@ -762,8 +740,6 @@ The gazetteer to which the location belongs
 
 ### <a name="location--inScheme_anyOf_i1"></a>`Location > inScheme > anyOf > ConceptScheme`
 
-**Title:** ConceptScheme
-
 inline description of the gazetteer
 
 | **Type**                  | `object`                                                           |
@@ -815,8 +791,6 @@ Preferred label or name of the Location
 
 ## Class Metric
 
-**Title:** Metric
-
 A standard used to measure one aspect of data quality
 
 | **Type**                  | `object`         |
@@ -834,13 +808,13 @@ A standard used to measure one aspect of data quality
 }
 ```
 
-| Property                               | Type           | Requirement Level | Title/Description |
-| -------------------------------------- | -------------- | ----------------- | ----------------- |
-| [@id](#metric--@id)                           | string         | Optional          | -                 |
-| [@type](#metric--@type)                       | string         | Optional          | -                 |
-| [expectedDataType](#metric--expectedDataType) | string         | Mandatory         | expected datatype |
-| [inDimension](#metric--inDimension)           | string         | Mandatory         | in dimension      |
-| [definition](#metric--definition)             | null or string | Recommended       | definition        |
+| Property                               | Type           | Requirement Level | Title/Description                                                                                        |
+| -------------------------------------- | -------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| [@id](#metric--@id)                           | string         | Optional          |                                                                                                          |
+| [@type](#metric--@type)                       | string         | Optional          |                                                                                                          |
+| [expectedDataType](#metric--expectedDataType) | string         | Mandatory         | Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...) |
+| [inDimension](#metric--inDimension)           | string         | Mandatory         | Represents the dimensions a quality metric, certificate and annotation allow a measurement of.           |
+| [definition](#metric--definition)             | null or string | Recommended       | Definition of the metric.                                                                                |
 
 ## <a name="metric--@id"></a>`Metric > @id`
 
@@ -866,8 +840,6 @@ A standard used to measure one aspect of data quality
 
 ## <a name="metric--expectedDataType"></a>`Metric > expectedDataType`
 
-**Title:** expected datatype
-
 **Requirement:** Mandatory
 
 Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)
@@ -888,8 +860,6 @@ Represents the expected data type for the metric's observed value (e.g., xsd:boo
 
 ## <a name="metric--inDimension"></a>`Metric > inDimension`
 
-**Title:** in dimension
-
 **Requirement:** Mandatory
 
 Represents the dimensions a quality metric, certificate and annotation allow a measurement of.
@@ -909,8 +879,6 @@ Represents the dimensions a quality metric, certificate and annotation allow a m
 ```
 
 ## <a name="metric--definition"></a>`Metric > definition`
-
-**Title:** definition
 
 **Requirement:** Recommended
 
@@ -935,8 +903,6 @@ Definition of the metric.
 
 ## Class QualityMeasurement
 
-**Title:** QualityMeasurement
-
 A measurement of a resource against a specific quality metric
 
 | **Type**                  | `object`         |
@@ -957,13 +923,13 @@ A measurement of a resource against a specific quality metric
 }
 ```
 
-| Property                             | Type           | Requirement Level | Title/Description |
-| ------------------------------------ | -------------- | ----------------- | ----------------- |
-| [@id](#quality-measurement--@id)                         | string         | Optional          | -                 |
-| [@type](#quality-measurement--@type)                     | string         | Optional          | -                 |
-| [isMeasurementOf](#quality-measurement--isMeasurementOf) | object         | Mandatory         | is measurement of |
-| [value](#quality-measurement--value)                     | string         | Mandatory         | value             |
-| [unitMeasure](#quality-measurement--unitMeasure)         | null or string | Optional          | unit of measure   |
+| Property                             | Type           | Requirement Level | Title/Description                         |
+| ------------------------------------ | -------------- | ----------------- | ----------------------------------------- |
+| [@id](#quality-measurement--@id)                         | string         | Optional          |                                           |
+| [@type](#quality-measurement--@type)                     | string         | Optional          |                                           |
+| [isMeasurementOf](#quality-measurement--isMeasurementOf) | object         | Mandatory         | The metric being observed                 |
+| [value](#quality-measurement--value)                     | string         | Mandatory         | The value computed by metric              |
+| [unitMeasure](#quality-measurement--unitMeasure)         | null or string | Optional          | Unit of measure associated with the value |
 
 ## <a name="quality-measurement--@id"></a>`QualityMeasurement > @id`
 
@@ -989,8 +955,6 @@ A measurement of a resource against a specific quality metric
 
 ## <a name="quality-measurement--isMeasurementOf"></a>`QualityMeasurement > isMeasurementOf`
 
-**Title:** is measurement of
-
 **Requirement:** Mandatory
 
 The metric being observed
@@ -1002,8 +966,6 @@ The metric being observed
 | **Defined in**            | [Metric](./temporal-spatial-metrics.md#metric) |
 
 ## <a name="quality-measurement--value"></a>`QualityMeasurement > value`
-
-**Title:** value
 
 **Requirement:** Mandatory
 
@@ -1042,8 +1004,6 @@ Unit of measure associated with the value
 
 ## Class Activity
 
-**Title:** Activity
-
 An activity related to creating, changing, or using a resource
 
 | **Type**                  | `object`         |
@@ -1062,12 +1022,12 @@ An activity related to creating, changing, or using a resource
 }
 ```
 
-| Property               | Type          | Requirement Level | Title/Description |
-| ---------------------- | ------------- | ----------------- | ----------------- |
-| [@id](#activity--@id)           | string        | Optional          | -                 |
-| [@type](#activity--@type)       | string        | Optional          | -                 |
-| [category](#activity--category) | null or array | Optional          | category          |
-| [label](#activity--label)       | string        | Mandatory         | label             |
+| Property               | Type          | Requirement Level | Title/Description                       |
+| ---------------------- | ------------- | ----------------- | --------------------------------------- |
+| [@id](#activity--@id)           | string        | Optional          |                                         |
+| [@type](#activity--@type)       | string        | Optional          |                                         |
+| [category](#activity--category) | null or array | Optional          | List of categories for the Activity     |
+| [label](#activity--label)       | string        | Mandatory         | A human-readable label for the activity |
 
 ## <a name="activity--@id"></a>`Activity > @id`
 
@@ -1093,8 +1053,6 @@ An activity related to creating, changing, or using a resource
 
 ## <a name="activity--category"></a>`Activity > category`
 
-**Title:** category
-
 **Requirement:** Optional
 
 List of categories for the Activity
@@ -1107,8 +1065,6 @@ List of categories for the Activity
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="activity--label"></a>`Activity > label`
-
-**Title:** label
 
 **Requirement:** Mandatory
 
@@ -1134,8 +1090,6 @@ A human-readable label for the activity
 
 ## Class Address
 
-**Title:** Address
-
 A single physical address
 
 | **Type**                  | `object`         |
@@ -1155,15 +1109,15 @@ A single physical address
 }
 ```
 
-| Property                           | Type           | Requirement Level | Title/Description   |
-| ---------------------------------- | -------------- | ----------------- | ------------------- |
-| [@id](#address--@id)                       | string         | Optional          | -                   |
-| [@type](#address--@type)                   | string         | Optional          | -                   |
-| [country-name](#address--country-name)     | null or string | Recommended       | country             |
-| [locality](#address--locality)             | null or string | Recommended       | locality            |
-| [postal-code](#address--postal-code)       | null or string | Recommended       | postal code         |
-| [region](#address--region)                 | null or string | Recommended       | administrative area |
-| [street-address](#address--street-address) | null or string | Recommended       | street address      |
+| Property                           | Type           | Requirement Level | Title/Description                                                                                                                |
+| ---------------------------------- | -------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#address--@id)                       | string         | Optional          |                                                                                                                                  |
+| [@type](#address--@type)                   | string         | Optional          |                                                                                                                                  |
+| [country-name](#address--country-name)     | null or string | Recommended       | The country of the Address                                                                                                       |
+| [locality](#address--locality)             | null or string | Recommended       | The city of the Address                                                                                                          |
+| [postal-code](#address--postal-code)       | null or string | Recommended       | The postal code of the Address                                                                                                   |
+| [region](#address--region)                 | null or string | Recommended       | The administrative area of the Address. Depending on the country, this corresponds to a province, a county, a region, or a state |
+| [street-address](#address--street-address) | null or string | Recommended       | The street name and civic number of an Address                                                                                   |
 
 ## <a name="address--@id"></a>`Address > @id`
 
@@ -1206,8 +1160,6 @@ The country of the Address
 
 ## <a name="address--locality"></a>`Address > locality`
 
-**Title:** locality
-
 **Requirement:** Recommended
 
 The city of the Address
@@ -1226,8 +1178,6 @@ The city of the Address
 ```
 
 ## <a name="address--postal-code"></a>`Address > postal-code`
-
-**Title:** postal code
 
 **Requirement:** Recommended
 
@@ -1268,8 +1218,6 @@ The administrative area of the Address. Depending on the country, this correspon
 ```
 
 ## <a name="address--street-address"></a>`Address > street-address`
-
-**Title:** street address
 
 **Requirement:** Recommended
 

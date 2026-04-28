@@ -6,8 +6,6 @@ Data information classes including Agent, Organization, and Kind, which describe
 
 ## Class Agent
 
-**Title:** Agent
-
 A person, organization, software agent, or other entity involved with a resource
 
 | **Type**                  | `object`         |
@@ -26,12 +24,12 @@ A person, organization, software agent, or other entity involved with a resource
 }
 ```
 
-| Property               | Type          | Requirement Level | Title/Description |
-| ---------------------- | ------------- | ----------------- | ----------------- |
-| [@id](#agent--@id)           | string        | Optional          | -                 |
-| [@type](#agent--@type)       | string        | Optional          | -                 |
-| [category](#agent--category) | null or array | Optional          | category          |
-| [name](#agent--name)         | string        | Mandatory         | name              |
+| Property               | Type          | Requirement Level | Title/Description                                   |
+| ---------------------- | ------------- | ----------------- | --------------------------------------------------- |
+| [@id](#agent--@id)           | string        | Optional          |                                                     |
+| [@type](#agent--@type)       | string        | Optional          |                                                     |
+| [category](#agent--category) | null or array | Optional          | The type of the agent that makes the item available |
+| [name](#agent--name)         | string        | Mandatory         | The name of the agent                               |
 
 ## <a name="agent--@id"></a>`Agent > @id`
 
@@ -57,8 +55,6 @@ A person, organization, software agent, or other entity involved with a resource
 
 ## <a name="agent--category"></a>`Agent > category`
 
-**Title:** category
-
 **Requirement:** Optional
 
 The type of the agent that makes the item available
@@ -71,8 +67,6 @@ The type of the agent that makes the item available
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="agent--name"></a>`Agent > name`
-
-**Title:** name
 
 **Requirement:** Mandatory
 
@@ -97,8 +91,6 @@ The name of the agent
 <a name="organization"></a>
 
 ## Class Organization
-
-**Title:** Organization
 
 An organization involved with a resource, including parent or child organizations
 
@@ -137,15 +129,15 @@ An organization involved with a resource, including parent or child organization
 }
 ```
 
-| Property                                 | Type                    | Requirement Level | Title/Description  |
-| ---------------------------------------- | ----------------------- | ----------------- | ------------------ |
-| [@id](#organization--@id)                             | string                  | Optional          | -                  |
-| [@type](#organization--@type)                         | string                  | Optional          | -                  |
-| [name](#organization--name)                           | string                  | Mandatory         | name               |
-| [subOrganizationOf](#organization--subOrganizationOf) | null or array           | Optional          | suborganization of |
-| [altLabel](#organization--altLabel)                   | null or string          | Optional          | alternative label  |
-| [notation](#organization--notation)                   | null or array of string | Optional          | notation           |
-| [prefLabel](#organization--prefLabel)                 | null or string          | Optional          | preferred label    |
+| Property                                 | Type                    | Requirement Level | Title/Description                                                                                                                       |
+| ---------------------------------------- | ----------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#organization--@id)                             | string                  | Optional          |                                                                                                                                         |
+| [@type](#organization--@type)                         | string                  | Optional          |                                                                                                                                         |
+| [name](#organization--name)                           | string                  | Mandatory         | The full name of the Organization                                                                                                       |
+| [subOrganizationOf](#organization--subOrganizationOf) | null or array           | Optional          | Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization |
+| [altLabel](#organization--altLabel)                   | null or string          | Optional          | alternative name (trading name, colloquial name) for an organization                                                                    |
+| [notation](#organization--notation)                   | null or array of string | Optional          | List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)                                                      |
+| [prefLabel](#organization--prefLabel)                 | null or string          | Optional          | Preferred or legal name of the organization                                                                                             |
 
 ## <a name="organization--@id"></a>`Organization > @id`
 
@@ -171,8 +163,6 @@ An organization involved with a resource, including parent or child organization
 
 ## <a name="organization--name"></a>`Organization > name`
 
-**Title:** name
-
 **Requirement:** Mandatory
 
 The full name of the Organization
@@ -192,8 +182,6 @@ The full name of the Organization
 ```
 
 ## <a name="organization--subOrganizationOf"></a>`Organization > subOrganizationOf`
-
-**Title:** suborganization of
 
 **Requirement:** Optional
 
@@ -229,8 +217,6 @@ alternative name (trading name, colloquial name) for an organization
 
 ## <a name="organization--notation"></a>`Organization > notation`
 
-**Title:** notation
-
 **Requirement:** Optional
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
@@ -252,8 +238,6 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | [Abbreviation](#organization--notation_items) | -           |
 
 ### <a name="organization--notation_items"></a>Abbreviation
-
-**Title:** Abbreviation
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -281,8 +265,6 @@ Preferred or legal name of the organization
 
 ## Class Kind
 
-**Title:** Kind
-
 Contact information for an individual or entity
 
 | **Type**                  | `object`         |
@@ -309,18 +291,18 @@ Contact information for an individual or entity
 }
 ```
 
-| Property                                 | Type           | Requirement Level | Title/Description |
-| ---------------------------------------- | -------------- | ----------------- | ----------------- |
-| [@id](#kind--@id)                             | string         | Optional          | -                 |
-| [@type](#kind--@type)                         | string         | Optional          | -                 |
-| [address](#kind--address)                     | null or array  | Optional          | address           |
-| [hasEmail](#kind--hasEmail)                   | string         | Mandatory         | Email             |
-| [family-name](#kind--family-name)             | null or string | Optional          | family name       |
-| [fn](#kind--fn)                               | string         | Mandatory         | formatted name    |
-| [given-name](#kind--given-name)               | null or string | Optional          | given name        |
-| [organization-name](#kind--organization-name) | null or string | Optional          | organization name |
-| [tel](#kind--tel)                             | null or string | Optional          | telephone         |
-| [title](#kind--title)                         | null or string | Optional          | position title    |
+| Property                                 | Type           | Requirement Level | Title/Description                                                                         |
+| ---------------------------------------- | -------------- | ----------------- | ----------------------------------------------------------------------------------------- |
+| [@id](#kind--@id)                             | string         | Optional          |                                                                                           |
+| [@type](#kind--@type)                         | string         | Optional          |                                                                                           |
+| [address](#kind--address)                     | null or array  | Optional          | The address of the contact                                                                |
+| [hasEmail](#kind--hasEmail)                   | string         | Mandatory         | Email address for the contact in mailto: format (for example, mailto:support@example.gov) |
+| [family-name](#kind--family-name)             | null or string | Optional          | The family name of the contact                                                            |
+| [fn](#kind--fn)                               | string         | Mandatory         | The formatted text of the name of the contact                                             |
+| [given-name](#kind--given-name)               | null or string | Optional          | The given name of the contact                                                             |
+| [organization-name](#kind--organization-name) | null or string | Optional          | The name of the organization to contact                                                   |
+| [tel](#kind--tel)                             | null or string | Optional          | The telephone number for the contact                                                      |
+| [title](#kind--title)                         | null or string | Optional          | The position role of the person to contact                                                |
 
 ## <a name="kind--@id"></a>`Kind > @id`
 
@@ -345,8 +327,6 @@ Contact information for an individual or entity
 | **Default** | `"Kind"` |
 
 ## <a name="kind--address"></a>`Kind > address`
-
-**Title:** address
 
 **Requirement:** Optional
 
@@ -387,8 +367,6 @@ Email address for the contact in mailto: format (for example, mailto:support@exa
 
 ## <a name="kind--family-name"></a>`Kind > family-name`
 
-**Title:** family name
-
 **Requirement:** Optional
 
 The family name of the contact
@@ -426,8 +404,6 @@ The formatted text of the name of the contact
 
 ## <a name="kind--given-name"></a>`Kind > given-name`
 
-**Title:** given name
-
 **Requirement:** Optional
 
 The given name of the contact
@@ -442,8 +418,6 @@ The given name of the contact
 ```
 
 ## <a name="kind--organization-name"></a>`Kind > organization-name`
-
-**Title:** organization name
 
 **Requirement:** Optional
 

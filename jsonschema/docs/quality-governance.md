@@ -6,8 +6,6 @@ Supporting classes for standards, documents, catalog records, data services, and
 
 ## Class Standard
 
-**Title:** Standard
-
 A standard or specification that another resource conforms to
 
 | **Type**                  | `object`         |
@@ -35,19 +33,19 @@ A standard or specification that another resource conforms to
 }
 ```
 
-| Property                             | Type               | Requirement Level | Title/Description |
-| ------------------------------------ | ------------------ | ----------------- | ----------------- |
-| [@id](#standard--@id)                         | string             | Optional          | -                 |
-| [@type](#standard--@type)                     | string             | Optional          | -                 |
-| [created](#standard--created)                 | More than one type | Optional          | creation date     |
-| [description](#standard--description)         | null or string     | Recommended       | description       |
-| [identifier](#standard--identifier)           | More than one type | Recommended       | identifier        |
-| [otherIdentifier](#standard--otherIdentifier) | null or array      | Optional          | other identifier  |
-| [issued](#standard--issued)                   | More than one type | Recommended       | issued            |
-| [modified](#standard--modified)               | More than one type | Optional          | last modified     |
-| [title](#standard--title)                     | null or string     | Recommended       | title             |
-| [category](#standard--category)               | null or array      | Optional          | category          |
-| [inScheme](#standard--inScheme)               | More than one type | Recommended       | in scheme         |
+| Property                             | Type               | Requirement Level | Title/Description                                                                                                                          |
+| ------------------------------------ | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [@id](#standard--@id)                         | string             | Optional          |                                                                                                                                            |
+| [@type](#standard--@type)                     | string             | Optional          |                                                                                                                                            |
+| [created](#standard--created)                 | More than one type | Optional          | The date on which the Standard has been first created                                                                                      |
+| [description](#standard--description)         | null or string     | Recommended       | Plain-language summary of the standard                                                                                                     |
+| [identifier](#standard--identifier)           | More than one type | Recommended       | The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog                              |
+| [otherIdentifier](#standard--otherIdentifier) | null or array      | Optional          | A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog |
+| [issued](#standard--issued)                   | More than one type | Recommended       | The date of formal issuance (e.g., publication) of the Standard                                                                            |
+| [modified](#standard--modified)               | More than one type | Optional          | The most recent date on which the Standard was changed or modified                                                                         |
+| [title](#standard--title)                     | null or string     | Recommended       | Human-readable title of the standard                                                                                                       |
+| [category](#standard--category)               | null or array      | Optional          | List of categories for the Standard                                                                                                        |
+| [inScheme](#standard--inScheme)               | More than one type | Recommended       | The reference register to which the Standard belongs                                                                                       |
 
 ## <a name="standard--@id"></a>`Standard > @id`
 
@@ -108,14 +106,10 @@ The date on which the Standard has been first created
 
 ### <a name="standard--created_anyOf_i0"></a>`Standard > created > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="standard--created_anyOf_i1"></a>`Standard > created > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -164,8 +158,6 @@ A year and month in YYYY-MM format
 
 ## <a name="standard--description"></a>`Standard > description`
 
-**Title:** description
-
 **Requirement:** Recommended
 
 Plain-language summary of the standard
@@ -185,8 +177,6 @@ Plain-language summary of the standard
 
 ## <a name="standard--identifier"></a>`Standard > identifier`
 
-**Title:** identifier
-
 **Requirement:** Recommended
 
 The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
@@ -202,14 +192,10 @@ The unique identifier for the Standard, e.g. the URI or other unique identifier 
 
 ### <a name="standard--identifier_anyOf_i0"></a>`Standard > identifier > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="standard--identifier_anyOf_i1"></a>`Standard > identifier > anyOf > Identifier`
-
-**Title:** Identifier
 
 inline description of Identifier
 
@@ -219,8 +205,6 @@ inline description of Identifier
 | **Defined in**            | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="standard--otherIdentifier"></a>`Standard > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -234,8 +218,6 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 | [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="standard--issued"></a>`Standard > issued`
-
-**Title:** issued
 
 **Requirement:** Recommended
 
@@ -270,14 +252,10 @@ The date of formal issuance (e.g., publication) of the Standard
 
 ### <a name="standard--issued_anyOf_i0"></a>`Standard > issued > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="standard--issued_anyOf_i1"></a>`Standard > issued > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -361,14 +339,10 @@ The most recent date on which the Standard was changed or modified
 
 ### <a name="standard--modified_anyOf_i0"></a>`Standard > modified > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="standard--modified_anyOf_i1"></a>`Standard > modified > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -417,8 +391,6 @@ A year and month in YYYY-MM format
 
 ## <a name="standard--title"></a>`Standard > title`
 
-**Title:** title
-
 **Requirement:** Recommended
 
 Human-readable title of the standard
@@ -438,8 +410,6 @@ Human-readable title of the standard
 
 ## <a name="standard--category"></a>`Standard > category`
 
-**Title:** category
-
 **Requirement:** Optional
 
 List of categories for the Standard
@@ -452,8 +422,6 @@ List of categories for the Standard
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="standard--inScheme"></a>`Standard > inScheme`
-
-**Title:** in scheme
 
 **Requirement:** Recommended
 
@@ -470,14 +438,10 @@ The reference register to which the Standard belongs
 
 ### <a name="standard--inScheme_anyOf_i0"></a>`Standard > inScheme > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="standard--inScheme_anyOf_i1"></a>`Standard > inScheme > anyOf > ConceptScheme`
-
-**Title:** ConceptScheme
 
 inline description of ConceptScheme
 
@@ -491,8 +455,6 @@ inline description of ConceptScheme
 <a name="document"></a>
 
 ## Class Document
-
-**Title:** Document
 
 A publication or other document related to a resource
 
@@ -521,25 +483,25 @@ A publication or other document related to a resource
 }
 ```
 
-| Property                                         | Type               | Requirement Level | Title/Description      |
-| ------------------------------------------------ | ------------------ | ----------------- | ---------------------- |
-| [@id](#document--@id)                                     | string             | Optional          | -                      |
-| [@type](#document--@type)                                 | string             | Optional          | -                      |
-| [accessURL](#document--accessURL)                         | More than one type | Optional          | access URL             |
-| [downloadURL](#document--downloadURL)                     | More than one type | Optional          | download URL           |
-| [creator](#document--creator)                             | null or array      | Optional          | author                 |
-| [mediaType](#document--mediaType)                         | null or string     | Optional          | media type             |
-| [abstract](#document--abstract)                           | null or string     | Optional          | abstract               |
-| [bibliographicCitation](#document--bibliographicCitation) | null or string     | Recommended       | bibliographic citation |
-| [conformsTo](#document--conformsTo)                       | null or array      | Optional          | conforms to            |
-| [corporateCreator](#document--corporateCreator)           | null or array      | Optional          | corporate author       |
-| [description](#document--description)                     | null or string     | Recommended       | description            |
-| [identifier](#document--identifier)                       | More than one type | Recommended       | identifier             |
-| [otherIdentifier](#document--otherIdentifier)             | null or array      | Optional          | other identifier       |
-| [issued](#document--issued)                               | More than one type | Recommended       | publication date       |
-| [publisher](#document--publisher)                         | null or array      | Recommended       | publisher              |
-| [title](#document--title)                                 | string             | Mandatory         | title                  |
-| [category](#document--category)                           | null or array      | Optional          | category               |
+| Property                                         | Type               | Requirement Level | Title/Description                                                                                                                                                  |
+| ------------------------------------------------ | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [@id](#document--@id)                                     | string             | Optional          |                                                                                                                                                                    |
+| [@type](#document--@type)                                 | string             | Optional          |                                                                                                                                                                    |
+| [accessURL](#document--accessURL)                         | More than one type | Optional          | A URL that gives access to the Document                                                                                                                            |
+| [downloadURL](#document--downloadURL)                     | More than one type | Optional          | A URL that is a direct link to a downloadable file of the Document in a given format                                                                               |
+| [creator](#document--creator)                             | null or array      | Optional          | The individual(s) responsible for creating the Document                                                                                                            |
+| [mediaType](#document--mediaType)                         | null or string     | Optional          | The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml |
+| [abstract](#document--abstract)                           | null or string     | Optional          | Text abstract of the Document                                                                                                                                      |
+| [bibliographicCitation](#document--bibliographicCitation) | null or string     | Recommended       | Bibliographic citation as text                                                                                                                                     |
+| [conformsTo](#document--conformsTo)                       | null or array      | Optional          | List of standards or specifications the document follows                                                                                                           |
+| [corporateCreator](#document--corporateCreator)           | null or array      | Optional          | The corporate organization(s) responsible for creating the Document                                                                                                |
+| [description](#document--description)                     | null or string     | Recommended       | Plain-language summary of the document                                                                                                                             |
+| [identifier](#document--identifier)                       | More than one type | Recommended       | The unique identifier for the Document (e.g. DOI, ISBN)                                                                                                            |
+| [otherIdentifier](#document--otherIdentifier)             | null or array      | Optional          | A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog                         |
+| [issued](#document--issued)                               | More than one type | Recommended       | Publication date of the Document                                                                                                                                   |
+| [publisher](#document--publisher)                         | null or array      | Recommended       | The organization(s) that published the Document                                                                                                                    |
+| [title](#document--title)                                 | string             | Mandatory         | The title of the Document                                                                                                                                          |
+| [category](#document--category)                           | null or array      | Optional          | List of categories/genres for the Document                                                                                                                         |
 
 ## <a name="document--@id"></a>`Document > @id`
 
@@ -565,8 +527,6 @@ A publication or other document related to a resource
 
 ## <a name="document--accessURL"></a>`Document > accessURL`
 
-**Title:** access URL
-
 **Requirement:** Optional
 
 A URL that gives access to the Document
@@ -588,14 +548,10 @@ A URL that gives access to the Document
 
 ### <a name="document--accessURL_anyOf_i0"></a>`Document > accessURL > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="document--accessURL_anyOf_i1"></a>`Document > accessURL > anyOf > URL`
-
-**Title:** URL
 
 reference iri of Document
 
@@ -604,8 +560,6 @@ reference iri of Document
 | **Format** | `iri`    |
 
 ## <a name="document--downloadURL"></a>`Document > downloadURL`
-
-**Title:** download URL
 
 **Requirement:** Optional
 
@@ -628,14 +582,10 @@ A URL that is a direct link to a downloadable file of the Document in a given fo
 
 ### <a name="document--downloadURL_anyOf_i0"></a>`Document > downloadURL > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="document--downloadURL_anyOf_i1"></a>`Document > downloadURL > anyOf > URL`
-
-**Title:** URL
 
 reference iri of Document
 
@@ -660,8 +610,6 @@ The individual(s) responsible for creating the Document
 
 ## <a name="document--mediaType"></a>`Document > mediaType`
 
-**Title:** media type
-
 **Requirement:** Optional
 
 The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -677,8 +625,6 @@ The file format of the Document as defined in the official register of media typ
 
 ## <a name="document--abstract"></a>`Document > abstract`
 
-**Title:** abstract
-
 **Requirement:** Optional
 
 Text abstract of the Document
@@ -693,8 +639,6 @@ Text abstract of the Document
 ```
 
 ## <a name="document--bibliographicCitation"></a>`Document > bibliographicCitation`
-
-**Title:** bibliographic citation
 
 **Requirement:** Recommended
 
@@ -714,8 +658,6 @@ Bibliographic citation as text
 ```
 
 ## <a name="document--conformsTo"></a>`Document > conformsTo`
-
-**Title:** conforms to
 
 **Requirement:** Optional
 
@@ -745,8 +687,6 @@ The corporate organization(s) responsible for creating the Document
 
 ## <a name="document--description"></a>`Document > description`
 
-**Title:** description
-
 **Requirement:** Recommended
 
 Plain-language summary of the document
@@ -766,8 +706,6 @@ Plain-language summary of the document
 
 ## <a name="document--identifier"></a>`Document > identifier`
 
-**Title:** identifier
-
 **Requirement:** Recommended
 
 The unique identifier for the Document (e.g. DOI, ISBN)
@@ -783,14 +721,10 @@ The unique identifier for the Document (e.g. DOI, ISBN)
 
 ### <a name="document--identifier_anyOf_i0"></a>`Document > identifier > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="document--identifier_anyOf_i1"></a>`Document > identifier > anyOf > Identifier`
-
-**Title:** Identifier
 
 inline description of Identifier
 
@@ -800,8 +734,6 @@ inline description of Identifier
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="document--otherIdentifier"></a>`Document > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -850,8 +782,6 @@ Publication date of the Document
 | [item 1](#document--issued_anyOf_i1)                         |
 
 ### <a name="document--issued_anyOf_i0"></a>`Document > issued > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -905,8 +835,6 @@ A year and month in YYYY-MM format
 
 ## <a name="document--publisher"></a>`Document > publisher`
 
-**Title:** publisher
-
 **Requirement:** Recommended
 
 The organization(s) that published the Document
@@ -919,8 +847,6 @@ The organization(s) that published the Document
 | [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
 ## <a name="document--title"></a>`Document > title`
-
-**Title:** title
 
 **Requirement:** Mandatory
 
@@ -938,8 +864,6 @@ The title of the Document
 
 ## <a name="document--category"></a>`Document > category`
 
-**Title:** category
-
 **Requirement:** Optional
 
 List of categories/genres for the Document
@@ -956,8 +880,6 @@ List of categories/genres for the Document
 <a name="catalog-record"></a>
 
 ## Class CatalogRecord
-
-**Title:** CatalogRecord
 
 A record in a catalog, describing the registration of a single resource
 
@@ -984,19 +906,19 @@ A record in a catalog, describing the registration of a single resource
 }
 ```
 
-| Property                       | Type                    | Requirement Level | Title/Description        |
-| ------------------------------ | ----------------------- | ----------------- | ------------------------ |
-| [@id](#catalog-record--@id)                   | string                  | Optional          | -                        |
-| [@type](#catalog-record--@type)               | string                  | Optional          | -                        |
-| [status](#catalog-record--status)             | More than one type      | Recommended       | change type              |
-| [conformsTo](#catalog-record--conformsTo)     | More than one type      | Recommended       | application profile      |
-| [description](#catalog-record--description)   | null or array of string | Optional          | Descriptions             |
-| [issued](#catalog-record--issued)             | null or array           | Optional          | listing date             |
-| [language](#catalog-record--language)         | More than one type      | Optional          | language                 |
-| [modified](#catalog-record--modified)         | More than one type      | Mandatory         | update/modification date |
-| [source](#catalog-record--source)             | null or string          | Optional          | source metadata          |
-| [title](#catalog-record--title)               | null or string          | Optional          | title                    |
-| [primaryTopic](#catalog-record--primaryTopic) | string                  | Mandatory         | primary topic            |
+| Property                       | Type                    | Requirement Level | Title/Description                                                                                                                                                                    |
+| ------------------------------ | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [@id](#catalog-record--@id)                   | string                  | Optional          |                                                                                                                                                                                      |
+| [@type](#catalog-record--@type)               | string                  | Optional          |                                                                                                                                                                                      |
+| [status](#catalog-record--status)             | More than one type      | Recommended       | The status of the catalog record in the context of editorial flow of the dataset and data service descriptions                                                                       |
+| [conformsTo](#catalog-record--conformsTo)     | More than one type      | Recommended       | An Application Profile that the Catalog Record's metadata conforms to                                                                                                                |
+| [description](#catalog-record--description)   | null or array of string | Optional          | A list of free-text accounts of the catalog record                                                                                                                                   |
+| [issued](#catalog-record--issued)             | null or array           | Optional          | List of dates on which the catalog record was included in the catalog                                                                                                                |
+| [language](#catalog-record--language)         | More than one type      | Optional          | Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                    |
+| [modified](#catalog-record--modified)         | More than one type      | Mandatory         | The most recent date on which the catalog record was changed or modified                                                                                                             |
+| [source](#catalog-record--source)             | null or string          | Optional          | The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself |
+| [title](#catalog-record--title)               | null or string          | Optional          | A name given to the Catalog Record                                                                                                                                                   |
+| [primaryTopic](#catalog-record--primaryTopic) | string                  | Mandatory         | A link to the Dataset, Data service or Catalog described in the Catalog Record                                                                                                       |
 
 ## <a name="catalog-record--@id"></a>`CatalogRecord > @id`
 
@@ -1039,14 +961,10 @@ The status of the catalog record in the context of editorial flow of the dataset
 
 ### <a name="catalog-record--status_anyOf_i0"></a>`CatalogRecord > status > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="catalog-record--status_anyOf_i1"></a>`CatalogRecord > status > anyOf > Concept`
-
-**Title:** Concept
 
 inline description of status
 
@@ -1074,14 +992,10 @@ An Application Profile that the Catalog Record's metadata conforms to
 
 ### <a name="catalog-record--conformsTo_anyOf_i0"></a>`CatalogRecord > conformsTo > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="catalog-record--conformsTo_anyOf_i1"></a>`CatalogRecord > conformsTo > anyOf > Standard`
-
-**Title:** Standard
 
 inline description of application profile
 
@@ -1115,8 +1029,6 @@ A list of free-text accounts of the catalog record
 | [Description string](#catalog-record--description_items) | -           |
 
 ### <a name="catalog-record--description_items"></a>Description string
-
-**Title:** Description string
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -1163,8 +1075,6 @@ List of dates on which the catalog record was included in the catalog
 | [Date string](#catalog-record--issued_items)    | -           |
 
 ### <a name="catalog-record--issued_items"></a>Date string
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -1213,8 +1123,6 @@ A year and month in YYYY-MM format
 
 ## <a name="catalog-record--language"></a>`CatalogRecord > language`
 
-**Title:** language
-
 **Requirement:** Optional
 
 Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
@@ -1244,14 +1152,10 @@ Language code used in catalog record metadata text, using ISO 639-1 values such 
 
 ### <a name="catalog-record--language_anyOf_i0"></a>`CatalogRecord > language > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="catalog-record--language_anyOf_i1"></a>`CatalogRecord > language > anyOf > Language code`
-
-**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -1262,8 +1166,6 @@ Language code used in catalog record metadata text, using ISO 639-1 values such 
 
 ### <a name="catalog-record--language_anyOf_i2"></a>`CatalogRecord > language > anyOf > Array of language codes`
 
-**Title:** Array of language codes
-
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
@@ -1272,8 +1174,6 @@ Language code used in catalog record metadata text, using ISO 639-1 values such 
 | [Language code](#catalog-record--language_anyOf_i2_items) | -           |
 
 #### <a name="catalog-record--language_anyOf_i2_items"></a>Language code
-
-**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -1373,8 +1273,6 @@ The original metadata that was used in creating metadata for the items in the ca
 
 ## <a name="catalog-record--title"></a>`CatalogRecord > title`
 
-**Title:** title
-
 **Requirement:** Optional
 
 A name given to the Catalog Record
@@ -1393,8 +1291,6 @@ A name given to the Catalog Record
 ```
 
 ## <a name="catalog-record--primaryTopic"></a>`CatalogRecord > primaryTopic`
-
-**Title:** primary topic
 
 **Requirement:** Mandatory
 
@@ -1419,8 +1315,6 @@ A link to the Dataset, Data service or Catalog described in the Catalog Record
 <a name="data-service"></a>
 
 ## Class DataService
-
-**Title:** DataService
 
 A service that provides access to data or data processing functions
 
@@ -1476,38 +1370,38 @@ A service that provides access to data or data processing functions
 }
 ```
 
-| Property                                                 | Type                    | Requirement Level | Title/Description            |
-| -------------------------------------------------------- | ----------------------- | ----------------- | ---------------------------- |
-| [@id](#data-service--@id)                                             | string                  | Optional          | -                            |
-| [@type](#data-service--@type)                                         | string                  | Optional          | -                            |
-| [contactPoint](#data-service--contactPoint)                           | array                   | Mandatory         | contact point                |
-| [endpointDescription](#data-service--endpointDescription)             | null or array of string | Recommended       | endpoint description         |
-| [endpointURL](#data-service--endpointURL)                             | array of string         | Mandatory         | endpoint URL                 |
-| [keyword](#data-service--keyword)                                     | null or array of string | Optional          | keyword/tag                  |
-| [servesDataset](#data-service--servesDataset)                         | null or array           | Recommended       | serves dataset               |
-| [spatialResolutionInMeters](#data-service--spatialResolutionInMeters) | null or string          | Optional          | spatial resolution in meters |
-| [temporalResolution](#data-service--temporalResolution)               | null or string          | Optional          | temporal resolution          |
-| [theme](#data-service--theme)                                         | null or array           | Optional          | theme/category               |
-| [accessRights](#data-service--accessRights)                           | More than one type      | Optional          | access rights                |
-| [conformsTo](#data-service--conformsTo)                               | null or array           | Optional          | conforms to                  |
-| [created](#data-service--created)                                     | More than one type      | Optional          | creation date                |
-| [creator](#data-service--creator)                                     | null or array           | Optional          | creator                      |
-| [description](#data-service--description)                             | null or string          | Optional          | description                  |
-| [identifier](#data-service--identifier)                               | More than one type      | Optional          | identifier                   |
-| [otherIdentifier](#data-service--otherIdentifier)                     | null or array           | Optional          | other identifier             |
-| [language](#data-service--language)                                   | More than one type      | Optional          | language                     |
-| [license](#data-service--license)                                     | More than one type      | Recommended       | license                      |
-| [modified](#data-service--modified)                                   | More than one type      | Optional          | update/modification date     |
-| [publisher](#data-service--publisher)                                 | object                  | Mandatory         | publisher                    |
-| [rights](#data-service--rights)                                       | null or array of string | Optional          | rights                       |
-| [rightsHolder](#data-service--rightsHolder)                           | null or array           | Optional          | rights holder                |
-| [spatial](#data-service--spatial)                                     | null or array           | Optional          | spatial/geographic coverage  |
-| [temporal](#data-service--temporal)                                   | null or array           | Optional          | temporal coverage            |
-| [title](#data-service--title)                                         | string                  | Mandatory         | title                        |
-| [category](#data-service--category)                                   | null or array           | Optional          | category                     |
-| [hasQualityMeasurement](#data-service--hasQualityMeasurement)         | null or array           | Optional          | quality measurement          |
-| [qualifiedAttribution](#data-service--qualifiedAttribution)           | null or array           | Optional          | qualified attribution        |
-| [wasUsedBy](#data-service--wasUsedBy)                                 | null or array           | Optional          | was used by                  |
+| Property                                                 | Type                    | Requirement Level | Title/Description                                                                                                                                    |
+| -------------------------------------------------------- | ----------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#data-service--@id)                                             | string                  | Optional          |                                                                                                                                                      |
+| [@type](#data-service--@type)                                         | string                  | Optional          |                                                                                                                                                      |
+| [contactPoint](#data-service--contactPoint)                           | array                   | Mandatory         | Contact information for questions about the Data Service. Include an email address that is continuously monitored                                    |
+| [endpointDescription](#data-service--endpointDescription)             | null or array of string | Recommended       | List of endpoint descriptions with operations and parameters (for example, OpenAPI or similar service documentation)                                 |
+| [endpointURL](#data-service--endpointURL)                             | array of string         | Mandatory         | A list of root locations or primary endpoints of the service (a Web-resolvable IRI)                                                                  |
+| [keyword](#data-service--keyword)                                     | null or array of string | Optional          | List of keywords or tags describing the data service                                                                                                 |
+| [servesDataset](#data-service--servesDataset)                         | null or array           | Recommended       | List of datasets this service provides access to                                                                                                     |
+| [spatialResolutionInMeters](#data-service--spatialResolutionInMeters) | null or string          | Optional          | The minimum spatial separation resolvable in a Data Service, measured in meters                                                                      |
+| [temporalResolution](#data-service--temporalResolution)               | null or string          | Optional          | The minimum time period resolvable by the Data Service                                                                                               |
+| [theme](#data-service--theme)                                         | null or array           | Optional          | List of themes or categories for the data service                                                                                                    |
+| [accessRights](#data-service--accessRights)                           | More than one type      | Optional          | Information about whether the data service is publicly accessible, restricted, or not public                                                         |
+| [conformsTo](#data-service--conformsTo)                               | null or array           | Optional          | List of general standards or specifications that the Data Service endpoints implement                                                                |
+| [created](#data-service--created)                                     | More than one type      | Optional          | The date on which the Data Service was first created                                                                                                 |
+| [creator](#data-service--creator)                                     | null or array           | Optional          | List of agents primarily responsible for producing the Data Service                                                                                  |
+| [description](#data-service--description)                             | null or string          | Optional          | Plain-language summary of the data service                                                                                                           |
+| [identifier](#data-service--identifier)                               | More than one type      | Optional          | The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog                                    |
+| [otherIdentifier](#data-service--otherIdentifier)                     | null or array           | Optional          | A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog       |
+| [language](#data-service--language)                                   | More than one type      | Optional          | ISO 639-1 language code values supported by the data service, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html |
+| [license](#data-service--license)                                     | More than one type      | Recommended       | License that governs how the data service can be used or reused                                                                                      |
+| [modified](#data-service--modified)                                   | More than one type      | Optional          | The most recent date on which the Data Service was changed or modified                                                                               |
+| [publisher](#data-service--publisher)                                 | object                  | Mandatory         | Person or organization responsible for publishing and making the data service available                                                              |
+| [rights](#data-service--rights)                                       | null or array of string | Optional          | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                           |
+| [rightsHolder](#data-service--rightsHolder)                           | null or array           | Optional          | A list of Agents (organizations) holding rights on the Data Service                                                                                  |
+| [spatial](#data-service--spatial)                                     | null or array           | Optional          | A geographic region that is covered by the Data Service                                                                                              |
+| [temporal](#data-service--temporal)                                   | null or array           | Optional          | Time periods covered by the data service                                                                                                             |
+| [title](#data-service--title)                                         | string                  | Mandatory         | Human-readable title of the data service                                                                                                             |
+| [category](#data-service--category)                                   | null or array           | Optional          | List of high-level categories for the data service                                                                                                   |
+| [hasQualityMeasurement](#data-service--hasQualityMeasurement)         | null or array           | Optional          | Quality measurements for the data service (for example, availability, response time, or reliability)                                                 |
+| [qualifiedAttribution](#data-service--qualifiedAttribution)           | null or array           | Optional          | List of agents with specific responsibilities for the data service                                                                                   |
+| [wasUsedBy](#data-service--wasUsedBy)                                 | null or array           | Optional          | List of activities that used or tested the data service                                                                                              |
 
 ## <a name="data-service--@id"></a>`DataService > @id`
 
@@ -1533,8 +1427,6 @@ A service that provides access to data or data processing functions
 
 ## <a name="data-service--contactPoint"></a>`DataService > contactPoint`
 
-**Title:** contact point
-
 **Requirement:** Mandatory
 
 Contact information for questions about the Data Service. Include an email address that is continuously monitored
@@ -1548,8 +1440,6 @@ Contact information for questions about the Data Service. Include an email addre
 | [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
 ## <a name="data-service--endpointDescription"></a>`DataService > endpointDescription`
-
-**Title:** endpoint description
 
 **Requirement:** Recommended
 
@@ -1583,8 +1473,6 @@ List of endpoint descriptions with operations and parameters (for example, OpenA
 
 ## <a name="data-service--endpointURL"></a>`DataService > endpointURL`
 
-**Title:** endpoint URL
-
 **Requirement:** Mandatory
 
 A list of root locations or primary endpoints of the service (a Web-resolvable IRI)
@@ -1613,8 +1501,6 @@ A list of root locations or primary endpoints of the service (a Web-resolvable I
 | [URLs](#data-service--endpointURL_items)      | The root location or primary endpoint of the service (a Web-resolvable IRI) |
 
 ### <a name="data-service--endpointURL_items"></a>URLs
-
-**Title:** URLs
 
 The root location or primary endpoint of the service (a Web-resolvable IRI)
 
@@ -1659,8 +1545,6 @@ List of keywords or tags describing the data service
 
 ### <a name="data-service--keyword_items"></a>Non-empty strings
 
-**Title:** Non-empty strings
-
 | **Type** | `string` |
 | -------- | -------- |
 
@@ -1669,8 +1553,6 @@ List of keywords or tags describing the data service
 | **Min length** | 1 |
 
 ## <a name="data-service--servesDataset"></a>`DataService > servesDataset`
-
-**Title:** serves dataset
 
 **Requirement:** Recommended
 
@@ -1684,8 +1566,6 @@ List of datasets this service provides access to
 | [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
 
 ## <a name="data-service--spatialResolutionInMeters"></a>`DataService > spatialResolutionInMeters`
-
-**Title:** spatial resolution in meters
 
 **Requirement:** Optional
 
@@ -1701,8 +1581,6 @@ The minimum spatial separation resolvable in a Data Service, measured in meters
 ```
 
 ## <a name="data-service--temporalResolution"></a>`DataService > temporalResolution`
-
-**Title:** temporal resolution
 
 **Requirement:** Optional
 
@@ -1733,8 +1611,6 @@ List of themes or categories for the data service
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="data-service--accessRights"></a>`DataService > accessRights`
-
-**Title:** access rights
 
 **Requirement:** Optional
 
@@ -1768,8 +1644,6 @@ Text description of the access rights
 | -------- | -------- |
 
 ## <a name="data-service--conformsTo"></a>`DataService > conformsTo`
-
-**Title:** conforms to
 
 **Requirement:** Optional
 
@@ -1824,8 +1698,6 @@ The date on which the Data Service was first created
 
 ### <a name="data-service--created_anyOf_i1"></a>`DataService > created > anyOf > Date string`
 
-**Title:** Date string
-
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
@@ -1873,8 +1745,6 @@ A year and month in YYYY-MM format
 
 ## <a name="data-service--creator"></a>`DataService > creator`
 
-**Title:** creator
-
 **Requirement:** Optional
 
 List of agents primarily responsible for producing the Data Service
@@ -1887,8 +1757,6 @@ List of agents primarily responsible for producing the Data Service
 | [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
 
 ## <a name="data-service--description"></a>`DataService > description`
-
-**Title:** description
 
 **Requirement:** Optional
 
@@ -1904,8 +1772,6 @@ Plain-language summary of the data service
 ```
 
 ## <a name="data-service--identifier"></a>`DataService > identifier`
-
-**Title:** identifier
 
 **Requirement:** Optional
 
@@ -1927,8 +1793,6 @@ The unique identifier for the Data Service, e.g. the URI or other unique identif
 
 ### <a name="data-service--identifier_anyOf_i1"></a>`DataService > identifier > anyOf > Identifier`
 
-**Title:** Identifier
-
 inline description of Identifier
 
 | **Type**                  | More than one type                                          |
@@ -1937,8 +1801,6 @@ inline description of Identifier
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="data-service--otherIdentifier"></a>`DataService > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -1952,8 +1814,6 @@ A list of identifiers for the Data Service besides the main identifier, e.g. the
 | [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
 ## <a name="data-service--language"></a>`DataService > language`
-
-**Title:** language
 
 **Requirement:** Optional
 
@@ -1984,14 +1844,10 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 
 ### <a name="data-service--language_anyOf_i0"></a>`DataService > language > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="data-service--language_anyOf_i1"></a>`DataService > language > anyOf > Language code`
-
-**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -2002,8 +1858,6 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 
 ### <a name="data-service--language_anyOf_i2"></a>`DataService > language > anyOf > List of lanuages`
 
-**Title:** List of lanuages
-
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
@@ -2013,8 +1867,6 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 
 #### <a name="data-service--language_anyOf_i2_items"></a>Language code
 
-**Title:** Language code
-
 | **Type** | `string` |
 | -------- | -------- |
 
@@ -2023,8 +1875,6 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 | **Max length** | 2 |
 
 ## <a name="data-service--license"></a>`DataService > license`
-
-**Title:** license
 
 **Requirement:** Recommended
 
@@ -2046,8 +1896,6 @@ License that governs how the data service can be used or reused
 | [item 1](#data-service--license_anyOf_i1)                         |
 
 ### <a name="data-service--license_anyOf_i0"></a>`DataService > license > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -2096,14 +1944,10 @@ The most recent date on which the Data Service was changed or modified
 
 ### <a name="data-service--modified_anyOf_i0"></a>`DataService > modified > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="data-service--modified_anyOf_i1"></a>`DataService > modified > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -2152,8 +1996,6 @@ A year and month in YYYY-MM format
 
 ## <a name="data-service--publisher"></a>`DataService > publisher`
 
-**Title:** publisher
-
 **Requirement:** Mandatory
 
 Person or organization responsible for publishing and making the data service available
@@ -2165,8 +2007,6 @@ Person or organization responsible for publishing and making the data service av
 | **Defined in**            | [Agent](./agents.md#agent) |
 
 ## <a name="data-service--rights"></a>`DataService > rights`
-
-**Title:** rights
 
 **Requirement:** Optional
 
@@ -2193,8 +2033,6 @@ Rights statements not already covered by license or accessRights, such as copyri
 | -------- | -------- |
 
 ## <a name="data-service--rightsHolder"></a>`DataService > rightsHolder`
-
-**Title:** rights holder
 
 **Requirement:** Optional
 
@@ -2239,8 +2077,6 @@ Time periods covered by the data service
 
 ## <a name="data-service--title"></a>`DataService > title`
 
-**Title:** title
-
 **Requirement:** Mandatory
 
 Human-readable title of the data service
@@ -2256,8 +2092,6 @@ Human-readable title of the data service
 ```
 
 ## <a name="data-service--category"></a>`DataService > category`
-
-**Title:** category
 
 **Requirement:** Optional
 
@@ -2287,8 +2121,6 @@ Quality measurements for the data service (for example, availability, response t
 
 ## <a name="data-service--qualifiedAttribution"></a>`DataService > qualifiedAttribution`
 
-**Title:** qualified attribution
-
 **Requirement:** Optional
 
 List of agents with specific responsibilities for the data service
@@ -2301,8 +2133,6 @@ List of agents with specific responsibilities for the data service
 | [Attribution](./quality-governance.md#attribution) | A responsibility that an agent has for a resource |
 
 ## <a name="data-service--wasUsedBy"></a>`DataService > wasUsedBy`
-
-**Title:** was used by
 
 **Requirement:** Optional
 
@@ -2320,8 +2150,6 @@ List of activities that used or tested the data service
 <a name="attribution"></a>
 
 ## Class Attribution
-
-**Title:** Attribution
 
 A responsibility that an agent has for a resource
 
@@ -2341,12 +2169,12 @@ A responsibility that an agent has for a resource
 }
 ```
 
-| Property             | Type   | Requirement Level | Title/Description |
-| -------------------- | ------ | ----------------- | ----------------- |
-| [@id](#attribution--@id)         | string | Optional          | -                 |
-| [@type](#attribution--@type)     | string | Optional          | -                 |
-| [hadRole](#attribution--hadRole) | string | Mandatory         | role              |
-| [agent](#attribution--agent)     | object | Mandatory         | agent             |
+| Property             | Type   | Requirement Level | Title/Description                                                             |
+| -------------------- | ------ | ----------------- | ----------------------------------------------------------------------------- |
+| [@id](#attribution--@id)         | string | Optional          |                                                                               |
+| [@type](#attribution--@type)     | string | Optional          |                                                                               |
+| [hadRole](#attribution--hadRole) | string | Mandatory         | The function of an entity or agent with respect to another entity or resource |
+| [agent](#attribution--agent)     | object | Mandatory         | The agent that plays a role in the resource                                   |
 
 ## <a name="attribution--@id"></a>`Attribution > @id`
 
@@ -2389,8 +2217,6 @@ The function of an entity or agent with respect to another entity or resource
 ```
 
 ## <a name="attribution--agent"></a>`Attribution > agent`
-
-**Title:** agent
 
 **Requirement:** Mandatory
 

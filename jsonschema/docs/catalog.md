@@ -2,8 +2,6 @@
 
 The catalog of datasets, services, and other information describing data assets.
 
-**Title:** DCAT-US 3 Catalog
-
 A curated collection of metadata about datasets, data services, or other resources
 
 | **Type**                  | `object`         |
@@ -69,39 +67,39 @@ A curated collection of metadata about datasets, data services, or other resourc
 }
 ```
 
-| Property                                       | Type                    | Requirement Level | Title/Description           |
-| ---------------------------------------------- | ----------------------- | ----------------- | --------------------------- |
-| [@id](#@id)                                   | string                  | Optional          | -                           |
-| [@type](#@type)                               | string                  | Optional          | -                           |
-| [catalog](#catalog)                           | null or array           | Optional          | Related catalogs            |
-| [contactPoint](#contactPoint)                 | null or array           | Optional          | Contact points              |
-| [dataset](#dataset)                           | array                   | Mandatory         | dataset                     |
-| [keyword](#keyword)                           | null or array of string | Optional          | keyword/tag                 |
-| [record](#record)                             | null or array           | Optional          | catalog record              |
-| [service](#service)                           | null or array           | Optional          | service                     |
-| [theme](#theme)                               | null or array           | Optional          | theme/category              |
-| [themeTaxonomy](#themeTaxonomy)               | null or array           | Recommended       | themes                      |
-| [accessRights](#accessRights)                 | More than one type      | Optional          | access rights               |
-| [conformsTo](#conformsTo)                     | More than one type      | Recommended       | schema version              |
-| [creator](#creator)                           | null or array           | Optional          | creator                     |
-| [description](#description)                   | null or string          | Optional          | description                 |
-| [hasPart](#hasPart)                           | null or array           | Optional          | has part                    |
-| [identifier](#identifier)                     | More than one type      | Optional          | identifier                  |
-| [otherIdentifier](#otherIdentifier)           | null or array           | Optional          | other identifier            |
-| [issued](#issued)                             | More than one type      | Recommended       | release date                |
-| [language](#language)                         | More than one type      | Recommended       | language                    |
-| [license](#license)                           | More than one type      | Optional          | license                     |
-| [modified](#modified)                         | More than one type      | Recommended       | update/modification date    |
-| [publisher](#publisher)                       | More than one type      | Optional          | publisher                   |
-| [rights](#rights)                             | null or array of string | Recommended       | rights                      |
-| [rightsHolder](#rightsHolder)                 | null or array           | Optional          | rights holder               |
-| [spatial](#spatial)                           | null or array           | Recommended       | spatial/geographic coverage |
-| [subject](#subject)                           | null or array           | Optional          | subject                     |
-| [temporal](#temporal)                         | null or array           | Optional          | temporal coverage           |
-| [title](#title)                               | null or string          | Optional          | title                       |
-| [category](#category)                         | null or array           | Optional          | category                    |
-| [homepage](#homepage)                         | More than one type      | Recommended       | homepage                    |
-| [qualifiedAttribution](#qualifiedAttribution) | null or array           | Optional          | qualified attribution       |
+| Property                                       | Type                    | Requirement Level | Title/Description                                                                                                                     |
+| ---------------------------------------------- | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#@id)                                   | string                  | Optional          |                                                                                                                                       |
+| [@type](#@type)                               | string                  | Optional          |                                                                                                                                       |
+| [catalog](#catalog)                           | null or array           | Optional          | List of related catalogs that are useful in the context of this catalog                                                               |
+| [contactPoint](#contactPoint)                 | null or array           | Optional          | Contact information people can use to ask questions or send feedback about the catalog                                                |
+| [dataset](#dataset)                           | array                   | Mandatory         | List of datasets included in the catalog. Use this together with service so the catalog is not empty.                                 |
+| [keyword](#keyword)                           | null or array of string | Optional          | List of keywords or tags describing the catalog                                                                                       |
+| [record](#record)                             | null or array           | Optional          | A catalog record describing how a single resource (such as a dataset or data service) is registered in the catalog                    |
+| [service](#service)                           | null or array           | Optional          | List of data services included in the catalog. Use this together with dataset so the catalog is not empty.                            |
+| [theme](#theme)                               | null or array           | Optional          | List of themes or categories for the catalog. A catalog can have more than one theme.                                                 |
+| [themeTaxonomy](#themeTaxonomy)               | null or array           | Recommended       | Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services                                   |
+| [accessRights](#accessRights)                 | More than one type      | Optional          | Information about whether the catalog is publicly accessible, restricted, or not public                                               |
+| [conformsTo](#conformsTo)                     | More than one type      | Recommended       | Standard, schema, profile, or model that this catalog follows                                                                         |
+| [creator](#creator)                           | null or array           | Optional          | Person or organization responsible for creating the catalog metadata                                                                  |
+| [description](#description)                   | null or string          | Optional          | Plain-language summary of the catalog                                                                                                 |
+| [hasPart](#hasPart)                           | null or array           | Optional          | List of catalogs that are contained within this catalog                                                                               |
+| [identifier](#identifier)                     | More than one type      | Optional          | Main unique identifier for the catalog, such as a URI or another persistent identifier                                                |
+| [otherIdentifier](#otherIdentifier)           | null or array           | Optional          | A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers                           |
+| [issued](#issued)                             | More than one type      | Recommended       | Date when the catalog was formally issued, such as its initial publication date                                                       |
+| [language](#language)                         | More than one type      | Recommended       | Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es                  |
+| [license](#license)                           | More than one type      | Optional          | License that governs how the catalog can be used or reused                                                                            |
+| [modified](#modified)                         | More than one type      | Recommended       | Most recent date when the catalog content changed, not just catalog-record metadata                                                   |
+| [publisher](#publisher)                       | More than one type      | Optional          | Person or organization responsible for publishing and making the catalog available                                                    |
+| [rights](#rights)                             | null or array of string | Recommended       | Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions |
+| [rightsHolder](#rightsHolder)                 | null or array           | Optional          | Organizations that hold rights in the catalog                                                                                         |
+| [spatial](#spatial)                           | null or array           | Recommended       | Geographic area covered by the catalog                                                                                                |
+| [subject](#subject)                           | null or array           | Optional          | List of subjects of the catalog                                                                                                       |
+| [temporal](#temporal)                         | null or array           | Optional          | Time periods covered by the catalog                                                                                                   |
+| [title](#title)                               | null or string          | Optional          | Human-readable title of the catalog                                                                                                   |
+| [category](#category)                         | null or array           | Optional          | List of high-level categories for the catalog                                                                                         |
+| [homepage](#homepage)                         | More than one type      | Recommended       | Main public web page for the catalog, usually an HTML page                                                                            |
+| [qualifiedAttribution](#qualifiedAttribution) | null or array           | Optional          | List of agents with specific responsibilities for the catalog                                                                         |
 
 ## <a name="@id"></a>`DCAT-US 3 Catalog > @id`
 
@@ -156,8 +154,6 @@ Contact information people can use to ask questions or send feedback about the c
 | [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
 ## <a name="dataset"></a>`DCAT-US 3 Catalog > dataset`
-
-**Title:** dataset
 
 **Requirement:** Mandatory
 
@@ -223,8 +219,6 @@ A catalog record describing how a single resource (such as a dataset or data ser
 
 ## <a name="service"></a>`DCAT-US 3 Catalog > service`
 
-**Title:** service
-
 **Requirement:** Optional
 
 List of data services included in the catalog. Use this together with dataset so the catalog is not empty.
@@ -268,8 +262,6 @@ Controlled vocabulary or taxonomy used to classify catalog resources, such as da
 
 ## <a name="accessRights"></a>`DCAT-US 3 Catalog > accessRights`
 
-**Title:** access rights
-
 **Requirement:** Optional
 
 Information about whether the catalog is publicly accessible, restricted, or not public
@@ -290,8 +282,6 @@ Information about whether the catalog is publicly accessible, restricted, or not
 | [item 1](#accessRights_anyOf_i1)                         |
 
 ### <a name="accessRights_anyOf_i0"></a>`DCAT-US 3 Catalog > accessRights > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -322,14 +312,10 @@ Standard, schema, profile, or model that this catalog follows
 
 ### <a name="conformsTo_anyOf_i0"></a>`DCAT-US 3 Catalog > conformsTo > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="conformsTo_anyOf_i1"></a>`DCAT-US 3 Catalog > conformsTo > anyOf > Standard`
-
-**Title:** Standard
 
 A standard or specification that another resource conforms to
 
@@ -339,8 +325,6 @@ A standard or specification that another resource conforms to
 | **Same definition as**    | [Standard](./quality-governance.md#standard) |
 
 ## <a name="creator"></a>`DCAT-US 3 Catalog > creator`
-
-**Title:** creator
 
 **Requirement:** Optional
 
@@ -354,8 +338,6 @@ Person or organization responsible for creating the catalog metadata
 | [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
 
 ## <a name="description"></a>`DCAT-US 3 Catalog > description`
-
-**Title:** description
 
 **Requirement:** Optional
 
@@ -376,8 +358,6 @@ Plain-language summary of the catalog
 
 ## <a name="hasPart"></a>`DCAT-US 3 Catalog > hasPart`
 
-**Title:** has part
-
 **Requirement:** Optional
 
 List of catalogs that are contained within this catalog
@@ -390,8 +370,6 @@ List of catalogs that are contained within this catalog
 | [DCAT-US 3 Catalog](#hasPart_items) | A curated collection of metadata about datasets, data services, or other resources |
 
 ## <a name="identifier"></a>`DCAT-US 3 Catalog > identifier`
-
-**Title:** identifier
 
 **Requirement:** Optional
 
@@ -408,14 +386,10 @@ Main unique identifier for the catalog, such as a URI or another persistent iden
 
 ### <a name="identifier_anyOf_i0"></a>`DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="identifier_anyOf_i1"></a>`DCAT-US 3 Catalog > identifier > anyOf > Identifier`
-
-**Title:** Identifier
 
 inline description of Identifier
 
@@ -425,8 +399,6 @@ inline description of Identifier
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
 ## <a name="otherIdentifier"></a>`DCAT-US 3 Catalog > otherIdentifier`
-
-**Title:** other identifier
 
 **Requirement:** Optional
 
@@ -476,14 +448,10 @@ Date when the catalog was formally issued, such as its initial publication date
 
 ### <a name="issued_anyOf_i0"></a>`DCAT-US 3 Catalog > issued > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="issued_anyOf_i1"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -532,8 +500,6 @@ A year and month in YYYY-MM format
 
 ## <a name="language"></a>`DCAT-US 3 Catalog > language`
 
-**Title:** language
-
 **Requirement:** Recommended
 
 Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
@@ -565,14 +531,10 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 
 ### <a name="language_anyOf_i0"></a>`DCAT-US 3 Catalog > language > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="language_anyOf_i1"></a>`DCAT-US 3 Catalog > language > anyOf > Language code`
-
-**Title:** Language code
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -583,8 +545,6 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 
 ### <a name="language_anyOf_i2"></a>`DCAT-US 3 Catalog > language > anyOf > List of language codes`
 
-**Title:** List of language codes
-
 | **Type** | `array of string` |
 | -------- | ----------------- |
 
@@ -594,8 +554,6 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 
 #### <a name="language_anyOf_i2_items"></a>Language code
 
-**Title:** Language code
-
 | **Type** | `string` |
 | -------- | -------- |
 
@@ -604,8 +562,6 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 | **Max length** | 2 |
 
 ## <a name="license"></a>`DCAT-US 3 Catalog > license`
-
-**Title:** license
 
 **Requirement:** Optional
 
@@ -627,8 +583,6 @@ License that governs how the catalog can be used or reused
 | [item 1](#license_anyOf_i1)                         |
 
 ### <a name="license_anyOf_i0"></a>`DCAT-US 3 Catalog > license > anyOf > Null allowed when not required`
-
-**Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
@@ -677,14 +631,10 @@ Most recent date when the catalog content changed, not just catalog-record metad
 
 ### <a name="modified_anyOf_i0"></a>`DCAT-US 3 Catalog > modified > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="modified_anyOf_i1"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string`
-
-**Title:** Date string
 
 | **Type**                  | More than one type |
 | ------------------------- | ------------------ |
@@ -733,8 +683,6 @@ A year and month in YYYY-MM format
 
 ## <a name="publisher"></a>`DCAT-US 3 Catalog > publisher`
 
-**Title:** publisher
-
 **Requirement:** Optional
 
 Person or organization responsible for publishing and making the catalog available
@@ -750,14 +698,10 @@ Person or organization responsible for publishing and making the catalog availab
 
 ### <a name="publisher_anyOf_i0"></a>`DCAT-US 3 Catalog > publisher > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="publisher_anyOf_i1"></a>`DCAT-US 3 Catalog > publisher > anyOf > Agent`
-
-**Title:** Agent
 
 inline description of the publisher
 
@@ -767,8 +711,6 @@ inline description of the publisher
 | **Same definition as**    | [Agent](./agents.md#agent) |
 
 ## <a name="rights"></a>`DCAT-US 3 Catalog > rights`
-
-**Title:** rights
 
 **Requirement:** Recommended
 
@@ -805,8 +747,6 @@ Full text of a statement of rights
 
 ## <a name="rightsHolder"></a>`DCAT-US 3 Catalog > rightsHolder`
 
-**Title:** rights holder
-
 **Requirement:** Optional
 
 Organizations that hold rights in the catalog
@@ -834,8 +774,6 @@ Geographic area covered by the catalog
 | [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
 
 ## <a name="subject"></a>`DCAT-US 3 Catalog > subject`
-
-**Title:** subject
 
 **Requirement:** Optional
 
@@ -865,8 +803,6 @@ Time periods covered by the catalog
 
 ## <a name="title"></a>`DCAT-US 3 Catalog > title`
 
-**Title:** title
-
 **Requirement:** Optional
 
 Human-readable title of the catalog
@@ -886,8 +822,6 @@ Human-readable title of the catalog
 
 ## <a name="category"></a>`DCAT-US 3 Catalog > category`
 
-**Title:** category
-
 **Requirement:** Optional
 
 List of high-level categories for the catalog
@@ -900,8 +834,6 @@ List of high-level categories for the catalog
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
 ## <a name="homepage"></a>`DCAT-US 3 Catalog > homepage`
-
-**Title:** homepage
 
 **Requirement:** Recommended
 
@@ -918,14 +850,10 @@ Main public web page for the catalog, usually an HTML page
 
 ### <a name="homepage_anyOf_i0"></a>`DCAT-US 3 Catalog > homepage > anyOf > Null allowed when not required`
 
-**Title:** Null allowed when not required
-
 | **Type** | `null` |
 | -------- | ------ |
 
 ### <a name="homepage_anyOf_i1"></a>`DCAT-US 3 Catalog > homepage > anyOf > Document`
-
-**Title:** Document
 
 inline description of the home page
 
@@ -935,8 +863,6 @@ inline description of the home page
 | **Same definition as**    | [Document](./quality-governance.md#document) |
 
 ## <a name="qualifiedAttribution"></a>`DCAT-US 3 Catalog > qualifiedAttribution`
-
-**Title:** qualified attribution
 
 **Requirement:** Optional
 
