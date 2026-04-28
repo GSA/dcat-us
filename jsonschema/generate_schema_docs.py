@@ -335,7 +335,7 @@ def _build_public_docs(rendered_docs_dir, output_dir):
                 root_anchor=section_anchor,
             )
             sections.append(
-                f'<a name="{section_anchor}"></a>\n\n## {class_name}\n\n{section_content}'
+                f'<a name="{section_anchor}"></a>\n\n## Class {class_name}\n\n{section_content}'
             )
 
         page_content = "\n\n---\n\n".join(sections)
@@ -383,12 +383,6 @@ def schema_requirement_level(schema):
                 k: getattr(v, "literal", v) for k, v in old_docs_node.keywords.items()
             }
     return _normalize_requirement_level(old_docs.get("requirementLevel"))
-
-
-def requirement_badge(schema):
-    """Template helper that formats requirement level as an inline badge."""
-    requirement = schema_requirement_level(schema)
-    return f"[{requirement}]"
 
 
 def properties_table_wrap(properties_list, schema):
@@ -497,7 +491,6 @@ def _render_raw_docs(output_dir):
     template_renderer.template.environment.filters["schema_requirement_level"] = (
         schema_requirement_level
     )
-    template_renderer.template.environment.filters["requirement_badge"] = requirement_badge
     template_renderer.template.environment.filters["md_properties_table"] = (
         lambda schema: properties_table_wrap(
             original_md_properties_table(schema),

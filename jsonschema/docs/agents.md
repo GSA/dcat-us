@@ -4,7 +4,7 @@ Data information classes including Agent, Organization, and Kind, which describe
 
 <a name="agent"></a>
 
-## Agent
+## Class Agent
 
 **Title:** Agent
 
@@ -33,7 +33,7 @@ A person, organization, software agent, or other entity involved with a resource
 | - [category](#agent--category) | null or array | category          |
 | + [name](#agent--name)         | string        | name              |
 
-## <a name="agent--@id"></a>[Optional] Property `Agent > @id`
+## <a name="agent--@id"></a>`Agent > @id`
 
 **Requirement:** Optional
 
@@ -47,7 +47,7 @@ A person, organization, software agent, or other entity involved with a resource
 "https://example.gov/agents/data-steward-001"
 ```
 
-## <a name="agent--@type"></a>[Optional] Property `Agent > @type`
+## <a name="agent--@type"></a>`Agent > @type`
 
 **Requirement:** Optional
 
@@ -55,7 +55,7 @@ A person, organization, software agent, or other entity involved with a resource
 | ----------- | --------- |
 | **Default** | `"Agent"` |
 
-## <a name="agent--category"></a>[Optional] Property `Agent > category`
+## <a name="agent--category"></a>`Agent > category`
 
 **Title:** category
 
@@ -70,7 +70,7 @@ The type of the agent that makes the item available
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
-## <a name="agent--name"></a>[Optional] Property `Agent > name`
+## <a name="agent--name"></a>`Agent > name`
 
 **Title:** name
 
@@ -96,7 +96,7 @@ The name of the agent
 
 <a name="organization"></a>
 
-## Organization
+## Class Organization
 
 **Title:** Organization
 
@@ -147,7 +147,7 @@ An organization involved with a resource, including parent or child organization
 | - [notation](#organization--notation)                   | null or array of string | notation           |
 | - [prefLabel](#organization--prefLabel)                 | null or string          | preferred label    |
 
-## <a name="organization--@id"></a>[Optional] Property `Organization > @id`
+## <a name="organization--@id"></a>`Organization > @id`
 
 **Requirement:** Optional
 
@@ -161,7 +161,7 @@ An organization involved with a resource, including parent or child organization
 "https://example.gov/organizations/census-bureau"
 ```
 
-## <a name="organization--@type"></a>[Optional] Property `Organization > @type`
+## <a name="organization--@type"></a>`Organization > @type`
 
 **Requirement:** Optional
 
@@ -169,7 +169,7 @@ An organization involved with a resource, including parent or child organization
 | ----------- | ---------------- |
 | **Default** | `"Organization"` |
 
-## <a name="organization--name"></a>[Optional] Property `Organization > name`
+## <a name="organization--name"></a>`Organization > name`
 
 **Title:** name
 
@@ -191,7 +191,7 @@ The full name of the Organization
 "U.S. Census Bureau"
 ```
 
-## <a name="organization--subOrganizationOf"></a>[Optional] Property `Organization > subOrganizationOf`
+## <a name="organization--subOrganizationOf"></a>`Organization > subOrganizationOf`
 
 **Title:** suborganization of
 
@@ -206,7 +206,7 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 | ---------------------------------------- | --------------------------------------------------------------------------------- |
 | [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
-## <a name="organization--altLabel"></a>[Optional] Property `Organization > altLabel`
+## <a name="organization--altLabel"></a>`Organization > altLabel`
 
 **Title:** alternative label
 
@@ -227,7 +227,7 @@ alternative name (trading name, colloquial name) for an organization
 "Census Bureau"
 ```
 
-## <a name="organization--notation"></a>[Optional] Property `Organization > notation`
+## <a name="organization--notation"></a>`Organization > notation`
 
 **Title:** notation
 
@@ -251,14 +251,14 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 | ------------------------------- | ----------- |
 | [Abbreviation](#organization--notation_items) | -           |
 
-### <a name="organization--notation_items"></a>Organization > notation > Abbreviation
+### <a name="organization--notation_items"></a>Abbreviation
 
 **Title:** Abbreviation
 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="organization--prefLabel"></a>[Optional] Property `Organization > prefLabel`
+## <a name="organization--prefLabel"></a>`Organization > prefLabel`
 
 **Title:** preferred label
 
@@ -279,7 +279,7 @@ Preferred or legal name of the organization
 
 <a name="kind"></a>
 
-## Kind
+## Class Kind
 
 **Title:** Kind
 
@@ -322,7 +322,7 @@ Contact information for an individual or entity
 | - [tel](#kind--tel)                             | null or string | telephone         |
 | - [title](#kind--title)                         | null or string | position title    |
 
-## <a name="kind--@id"></a>[Optional] Property `Kind > @id`
+## <a name="kind--@id"></a>`Kind > @id`
 
 **Requirement:** Optional
 
@@ -336,7 +336,7 @@ Contact information for an individual or entity
 "https://example.gov/contacts/climate-support-001"
 ```
 
-## <a name="kind--@type"></a>[Optional] Property `Kind > @type`
+## <a name="kind--@type"></a>`Kind > @type`
 
 **Requirement:** Optional
 
@@ -344,7 +344,7 @@ Contact information for an individual or entity
 | ----------- | -------- |
 | **Default** | `"Kind"` |
 
-## <a name="kind--address"></a>[Optional] Property `Kind > address`
+## <a name="kind--address"></a>`Kind > address`
 
 **Title:** address
 
@@ -359,7 +359,7 @@ The address of the contact
 | ------------------------------------------------ | ------------------------- |
 | [Address](./temporal-spatial-metrics.md#address) | A single physical address |
 
-## <a name="kind--hasEmail"></a>[Optional] Property `Kind > hasEmail`
+## <a name="kind--hasEmail"></a>`Kind > hasEmail`
 
 **Title:** Email
 
@@ -385,7 +385,7 @@ Email address for the contact in mailto: format (for example, mailto:support@exa
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^mailto:[\w\_\~\!\$\&\'\(\)\*\+\,\;\=\:.-]+@[\w.-]+\.[\w.-]+?$``` [Test](https://regex101.com/?regex=%5Emailto%3A%5B%5Cw%5C_%5C~%5C%21%5C%24%5C%26%5C%27%5C%28%5C%29%5C%2A%5C%2B%5C%2C%5C%3B%5C%3D%5C%3A.-%5D%2B%40%5B%5Cw.-%5D%2B%5C.%5B%5Cw.-%5D%2B%3F%24&testString=%22mailto%3Aclimate-support%40example.gov%22) |
 
-## <a name="kind--family-name"></a>[Optional] Property `Kind > family-name`
+## <a name="kind--family-name"></a>`Kind > family-name`
 
 **Title:** family name
 
@@ -402,7 +402,7 @@ The family name of the contact
 "Smith"
 ```
 
-## <a name="kind--fn"></a>[Optional] Property `Kind > fn`
+## <a name="kind--fn"></a>`Kind > fn`
 
 **Title:** formatted name
 
@@ -424,7 +424,7 @@ The formatted text of the name of the contact
 "Dr. Jane Smith"
 ```
 
-## <a name="kind--given-name"></a>[Optional] Property `Kind > given-name`
+## <a name="kind--given-name"></a>`Kind > given-name`
 
 **Title:** given name
 
@@ -441,7 +441,7 @@ The given name of the contact
 "Jane"
 ```
 
-## <a name="kind--organization-name"></a>[Optional] Property `Kind > organization-name`
+## <a name="kind--organization-name"></a>`Kind > organization-name`
 
 **Title:** organization name
 
@@ -458,7 +458,7 @@ The name of the organization to contact
 "National Climate Data Center"
 ```
 
-## <a name="kind--tel"></a>[Optional] Property `Kind > tel`
+## <a name="kind--tel"></a>`Kind > tel`
 
 **Title:** telephone
 
@@ -475,7 +475,7 @@ The telephone number for the contact
 "+1-555-123-4567"
 ```
 
-## <a name="kind--title"></a>[Optional] Property `Kind > title`
+## <a name="kind--title"></a>`Kind > title`
 
 **Title:** position title
 

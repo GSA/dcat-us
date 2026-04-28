@@ -160,7 +160,7 @@ A group of related datasets that are published separately
 | - [temporal](#temporal)                     | null or array      | temporal coverage           |
 | + [title](#title)                           | string             | title                       |
 
-## <a name="@id"></a>[Optional] Property `DatasetSeries > @id`
+## <a name="@id"></a>`DatasetSeries > @id`
 
 **Requirement:** Optional
 
@@ -174,7 +174,7 @@ A group of related datasets that are published separately
 "https://example.gov/series/annual-climate-observations"
 ```
 
-## <a name="@type"></a>[Optional] Property `DatasetSeries > @type`
+## <a name="@type"></a>`DatasetSeries > @type`
 
 **Requirement:** Optional
 
@@ -182,7 +182,7 @@ A group of related datasets that are published separately
 | ----------- | ----------------- |
 | **Default** | `"DatasetSeries"` |
 
-## <a name="contactPoint"></a>[Optional] Property `DatasetSeries > contactPoint`
+## <a name="contactPoint"></a>`DatasetSeries > contactPoint`
 
 **Title:** contact point
 
@@ -197,7 +197,7 @@ List of contacts people can use to ask questions or send feedback about the data
 | ------------------------------- | ----------------------------------------------- |
 | [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
-## <a name="first"></a>[Optional] Property `DatasetSeries > first`
+## <a name="first"></a>`DatasetSeries > first`
 
 **Title:** first
 
@@ -209,19 +209,19 @@ The first dataset in an ordered dataset series
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                    |
+| Any of                                            |
 | ------------------------------------------------- |
 | [Null allowed when not required](#first_anyOf_i0) |
 | [Dataset](#first_anyOf_i1)                        |
 
-### <a name="first_anyOf_i0"></a>Property `DatasetSeries > first > anyOf > Null allowed when not required`
+### <a name="first_anyOf_i0"></a>`DatasetSeries > first > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="first_anyOf_i1"></a>Property `DatasetSeries > first > anyOf > Dataset`
+### <a name="first_anyOf_i1"></a>`DatasetSeries > first > anyOf > Dataset`
 
 **Title:** Dataset
 
@@ -232,7 +232,10 @@ inline description of the first dataset
 | **Additional properties** | Any type allowed             |
 | **Defined in**            | [Dataset](./dataset.md#root) |
 
-## <a name="last"></a>[Optional] Property `DatasetSeries > last`
+---
+**See Also:** (related supporting classes)
+
+## <a name="last"></a>`DatasetSeries > last`
 
 **Title:** last
 
@@ -244,19 +247,19 @@ The last dataset in an ordered dataset series
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                   |
+| Any of                                           |
 | ------------------------------------------------ |
 | [Null allowed when not required](#last_anyOf_i0) |
 | [Dataset](#last_anyOf_i1)                        |
 
-### <a name="last_anyOf_i0"></a>Property `DatasetSeries > last > anyOf > Null allowed when not required`
+### <a name="last_anyOf_i0"></a>`DatasetSeries > last > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="last_anyOf_i1"></a>Property `DatasetSeries > last > anyOf > Dataset`
+### <a name="last_anyOf_i1"></a>`DatasetSeries > last > anyOf > Dataset`
 
 **Title:** Dataset
 
@@ -267,7 +270,10 @@ inline description of the last dataset
 | **Additional properties** | Any type allowed             |
 | **Same definition as**    | [Dataset](./dataset.md#root) |
 
-## <a name="seriesMember"></a>[Optional] Property `DatasetSeries > seriesMember`
+---
+**See Also:** (related supporting classes)
+
+## <a name="seriesMember"></a>`DatasetSeries > seriesMember`
 
 **Title:** series member
 
@@ -282,7 +288,7 @@ List of members of the Dataset Series
 | ------------------------------- | --------------------------------------------------------- |
 | [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
 
-## <a name="accrualPeriodicity"></a>[Optional] Property `DatasetSeries > accrualPeriodicity`
+## <a name="accrualPeriodicity"></a>`DatasetSeries > accrualPeriodicity`
 
 **Title:** frequency
 
@@ -300,21 +306,21 @@ The frequency at which the Dataset Series is updated. This is the series update 
 "annually"
 ```
 
-| Any of(Option)                                                 |
+| Any of                                                         |
 | -------------------------------------------------------------- |
 | [Null allowed when not required](#accrualPeriodicity_anyOf_i0) |
 | [item 1](#accrualPeriodicity_anyOf_i1)                         |
 | [item 2](#accrualPeriodicity_anyOf_i2)                         |
 | [item 3](#accrualPeriodicity_anyOf_i3)                         |
 
-### <a name="accrualPeriodicity_anyOf_i0"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > Null allowed when not required`
+### <a name="accrualPeriodicity_anyOf_i0"></a>`DatasetSeries > accrualPeriodicity > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accrualPeriodicity_anyOf_i1"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 1`
+### <a name="accrualPeriodicity_anyOf_i1"></a>`DatasetSeries > accrualPeriodicity > anyOf > item 1`
 
 ISO 19115 Maintenance Frequency code
 
@@ -335,7 +341,7 @@ Must be one of:
 * "notPlanned"
 * "unknown"
 
-### <a name="accrualPeriodicity_anyOf_i2"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 2`
+### <a name="accrualPeriodicity_anyOf_i2"></a>`DatasetSeries > accrualPeriodicity > anyOf > item 2`
 
 ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
@@ -346,7 +352,7 @@ ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.or
 | --------------------------------- | ----------------------------------------------------------------- |
 | **Must match regular expression** | ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24) |
 
-### <a name="accrualPeriodicity_anyOf_i3"></a>Property `DatasetSeries > accrualPeriodicity > anyOf > item 3`
+### <a name="accrualPeriodicity_anyOf_i3"></a>`DatasetSeries > accrualPeriodicity > anyOf > item 3`
 
 Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
@@ -372,7 +378,7 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="description"></a>[Optional] Property `DatasetSeries > description`
+## <a name="description"></a>`DatasetSeries > description`
 
 **Title:** description
 
@@ -390,7 +396,7 @@ Plain-language summary of the dataset series
 "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
 ```
 
-## <a name="issued"></a>[Optional] Property `DatasetSeries > issued`
+## <a name="issued"></a>`DatasetSeries > issued`
 
 **Title:** release date
 
@@ -420,19 +426,19 @@ Date when the Dataset Series was formally established or published, not the rele
 "2024-01"
 ```
 
-| Any of(Option)                                     |
+| Any of                                             |
 | -------------------------------------------------- |
 | [Null allowed when not required](#issued_anyOf_i0) |
 | [Date string](#issued_anyOf_i1)                    |
 
-### <a name="issued_anyOf_i0"></a>Property `DatasetSeries > issued > anyOf > Null allowed when not required`
+### <a name="issued_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `DatasetSeries > issued > anyOf > Date string`
+### <a name="issued_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string`
 
 **Title:** Date string
 
@@ -440,26 +446,26 @@ Date when the Dataset Series was formally established or published, not the rele
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                      |
+| Any of                              |
 | ----------------------------------- |
 | [item 0](#issued_anyOf_i1_anyOf_i0) |
 | [item 1](#issued_anyOf_i1_anyOf_i1) |
 | [item 2](#issued_anyOf_i1_anyOf_i2) |
 | [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `DatasetSeries > issued > anyOf > Date string > anyOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `DatasetSeries > issued > anyOf > Date string > anyOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `DatasetSeries > issued > anyOf > Date string > anyOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -470,7 +476,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `DatasetSeries > issued > anyOf > Date string > anyOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -481,7 +487,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="modified"></a>[Optional] Property `DatasetSeries > modified`
+## <a name="modified"></a>`DatasetSeries > modified`
 
 **Title:** update/modification date
 
@@ -515,19 +521,19 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 "2024-01"
 ```
 
-| Any of(Option)                                       |
+| Any of                                               |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
 | [Date string](#modified_anyOf_i1)                    |
 
-### <a name="modified_anyOf_i0"></a>Property `DatasetSeries > modified > anyOf > Null allowed when not required`
+### <a name="modified_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `DatasetSeries > modified > anyOf > Date string`
+### <a name="modified_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string`
 
 **Title:** Date string
 
@@ -535,26 +541,26 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                        |
+| Any of                                |
 | ------------------------------------- |
 | [item 0](#modified_anyOf_i1_anyOf_i0) |
 | [item 1](#modified_anyOf_i1_anyOf_i1) |
 | [item 2](#modified_anyOf_i1_anyOf_i2) |
 | [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `DatasetSeries > modified > anyOf > Date string > anyOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `DatasetSeries > modified > anyOf > Date string > anyOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `DatasetSeries > modified > anyOf > Date string > anyOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -565,7 +571,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `DatasetSeries > modified > anyOf > Date string > anyOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -576,7 +582,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>[Optional] Property `DatasetSeries > publisher`
+## <a name="publisher"></a>`DatasetSeries > publisher`
 
 **Title:** publisher
 
@@ -588,19 +594,19 @@ Organization responsible for maintaining the Dataset Series as a coherent series
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                        |
+| Any of                                                |
 | ----------------------------------------------------- |
 | [Null allowed when not required](#publisher_anyOf_i0) |
 | [Agent](#publisher_anyOf_i1)                          |
 
-### <a name="publisher_anyOf_i0"></a>Property `DatasetSeries > publisher > anyOf > Null allowed when not required`
+### <a name="publisher_anyOf_i0"></a>`DatasetSeries > publisher > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="publisher_anyOf_i1"></a>Property `DatasetSeries > publisher > anyOf > Agent`
+### <a name="publisher_anyOf_i1"></a>`DatasetSeries > publisher > anyOf > Agent`
 
 **Title:** Agent
 
@@ -611,7 +617,7 @@ inline description of publisher
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Agent](./agents.md#agent) |
 
-## <a name="spatial"></a>[Optional] Property `DatasetSeries > spatial`
+## <a name="spatial"></a>`DatasetSeries > spatial`
 
 **Title:** spatial/geographic coverage
 
@@ -626,7 +632,7 @@ A geographic region that is covered by the Dataset Series
 | -------------------------------------------------- | -------------------------------- |
 | [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
 
-## <a name="temporal"></a>[Optional] Property `DatasetSeries > temporal`
+## <a name="temporal"></a>`DatasetSeries > temporal`
 
 **Title:** temporal coverage
 
@@ -641,7 +647,7 @@ Time periods covered by the dataset series
 | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
 
-## <a name="title"></a>[Optional] Property `DatasetSeries > title`
+## <a name="title"></a>`DatasetSeries > title`
 
 **Title:** title
 

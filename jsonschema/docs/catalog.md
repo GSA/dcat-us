@@ -103,7 +103,7 @@ A curated collection of metadata about datasets, data services, or other resourc
 | - [homepage](#homepage)                         | More than one type      | homepage                    |
 | - [qualifiedAttribution](#qualifiedAttribution) | null or array           | qualified attribution       |
 
-## <a name="@id"></a>[Optional] Property `DCAT-US 3 Catalog > @id`
+## <a name="@id"></a>`DCAT-US 3 Catalog > @id`
 
 **Requirement:** Optional
 
@@ -117,7 +117,7 @@ A curated collection of metadata about datasets, data services, or other resourc
 "https://example.gov/catalogs/federal-data-catalog"
 ```
 
-## <a name="@type"></a>[Optional] Property `DCAT-US 3 Catalog > @type`
+## <a name="@type"></a>`DCAT-US 3 Catalog > @type`
 
 **Requirement:** Optional
 
@@ -125,7 +125,7 @@ A curated collection of metadata about datasets, data services, or other resourc
 | ----------- | ----------- |
 | **Default** | `"Catalog"` |
 
-## <a name="catalog"></a>[Optional] Property `DCAT-US 3 Catalog > catalog`
+## <a name="catalog"></a>`DCAT-US 3 Catalog > catalog`
 
 **Title:** Related catalogs
 
@@ -140,7 +140,7 @@ List of related catalogs that are useful in the context of this catalog
 | ----------------------------------- | ---------------------------------------------------------------------------------- |
 | [DCAT-US 3 Catalog](#catalog_items) | A curated collection of metadata about datasets, data services, or other resources |
 
-## <a name="contactPoint"></a>[Optional] Property `DCAT-US 3 Catalog > contactPoint`
+## <a name="contactPoint"></a>`DCAT-US 3 Catalog > contactPoint`
 
 **Title:** Contact points
 
@@ -155,7 +155,7 @@ Contact information people can use to ask questions or send feedback about the c
 | ------------------------------- | ----------------------------------------------- |
 | [Kind](./agents.md#kind)        | Contact information for an individual or entity |
 
-## <a name="dataset"></a>[Optional] Property `DCAT-US 3 Catalog > dataset`
+## <a name="dataset"></a>`DCAT-US 3 Catalog > dataset`
 
 **Title:** dataset
 
@@ -171,7 +171,7 @@ List of datasets included in the catalog. Use this together with service so the 
 | ------------------------------- | --------------------------------------------------------- |
 | [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
 
-## <a name="keyword"></a>[Optional] Property `DCAT-US 3 Catalog > keyword`
+## <a name="keyword"></a>`DCAT-US 3 Catalog > keyword`
 
 **Title:** keyword/tag
 
@@ -197,7 +197,7 @@ List of keywords or tags describing the catalog
 | ------------------------------- | ----------- |
 | [keyword items](#keyword_items) | -           |
 
-### <a name="keyword_items"></a>DCAT-US 3 Catalog > keyword > keyword items
+### <a name="keyword_items"></a>Array Item
 
 | **Type** | `string` |
 | -------- | -------- |
@@ -206,7 +206,7 @@ List of keywords or tags describing the catalog
 | -------------- | - |
 | **Min length** | 1 |
 
-## <a name="record"></a>[Optional] Property `DCAT-US 3 Catalog > record`
+## <a name="record"></a>`DCAT-US 3 Catalog > record`
 
 **Title:** catalog record
 
@@ -221,7 +221,7 @@ A catalog record describing how a single resource (such as a dataset or data ser
 | ------------------------------------------------------- | ----------------------------------------------------------------------- |
 | [CatalogRecord](./quality-governance.md#catalog-record) | A record in a catalog, describing the registration of a single resource |
 
-## <a name="service"></a>[Optional] Property `DCAT-US 3 Catalog > service`
+## <a name="service"></a>`DCAT-US 3 Catalog > service`
 
 **Title:** service
 
@@ -236,7 +236,7 @@ List of data services included in the catalog. Use this together with dataset so
 | --------------------------------------------------- | ------------------------------------------------------------------- |
 | [DataService](./quality-governance.md#data-service) | A service that provides access to data or data processing functions |
 
-## <a name="theme"></a>[Optional] Property `DCAT-US 3 Catalog > theme`
+## <a name="theme"></a>`DCAT-US 3 Catalog > theme`
 
 **Title:** theme/category
 
@@ -251,7 +251,7 @@ List of themes or categories for the catalog. A catalog can have more than one t
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
-## <a name="themeTaxonomy"></a>[Optional] Property `DCAT-US 3 Catalog > themeTaxonomy`
+## <a name="themeTaxonomy"></a>`DCAT-US 3 Catalog > themeTaxonomy`
 
 **Title:** themes
 
@@ -266,7 +266,7 @@ Controlled vocabulary or taxonomy used to classify catalog resources, such as da
 | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) | A controlled vocabulary or other list of approved terms for a concept |
 
-## <a name="accessRights"></a>[Optional] Property `DCAT-US 3 Catalog > accessRights`
+## <a name="accessRights"></a>`DCAT-US 3 Catalog > accessRights`
 
 **Title:** access rights
 
@@ -284,26 +284,26 @@ Information about whether the catalog is publicly accessible, restricted, or not
 "Public access with no restrictions"
 ```
 
-| Any of(Option)                                           |
+| Any of                                                   |
 | -------------------------------------------------------- |
 | [Null allowed when not required](#accessRights_anyOf_i0) |
 | [item 1](#accessRights_anyOf_i1)                         |
 
-### <a name="accessRights_anyOf_i0"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > Null allowed when not required`
+### <a name="accessRights_anyOf_i0"></a>`DCAT-US 3 Catalog > accessRights > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="accessRights_anyOf_i1"></a>Property `DCAT-US 3 Catalog > accessRights > anyOf > item 1`
+### <a name="accessRights_anyOf_i1"></a>`DCAT-US 3 Catalog > accessRights > anyOf > item 1`
 
 Text description of the access rights
 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="conformsTo"></a>[Optional] Property `DCAT-US 3 Catalog > conformsTo`
+## <a name="conformsTo"></a>`DCAT-US 3 Catalog > conformsTo`
 
 **Title:** schema version
 
@@ -315,19 +315,19 @@ Standard, schema, profile, or model that this catalog follows
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                         |
+| Any of                                                 |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#conformsTo_anyOf_i0) |
 | [Standard](#conformsTo_anyOf_i1)                       |
 
-### <a name="conformsTo_anyOf_i0"></a>Property `DCAT-US 3 Catalog > conformsTo > anyOf > Null allowed when not required`
+### <a name="conformsTo_anyOf_i0"></a>`DCAT-US 3 Catalog > conformsTo > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="conformsTo_anyOf_i1"></a>Property `DCAT-US 3 Catalog > conformsTo > anyOf > Standard`
+### <a name="conformsTo_anyOf_i1"></a>`DCAT-US 3 Catalog > conformsTo > anyOf > Standard`
 
 **Title:** Standard
 
@@ -338,7 +338,7 @@ A standard or specification that another resource conforms to
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Standard](./quality-governance.md#standard) |
 
-## <a name="creator"></a>[Optional] Property `DCAT-US 3 Catalog > creator`
+## <a name="creator"></a>`DCAT-US 3 Catalog > creator`
 
 **Title:** creator
 
@@ -353,7 +353,7 @@ Person or organization responsible for creating the catalog metadata
 | ------------------------------- | -------------------------------------------------------------------------------- |
 | [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
 
-## <a name="description"></a>[Optional] Property `DCAT-US 3 Catalog > description`
+## <a name="description"></a>`DCAT-US 3 Catalog > description`
 
 **Title:** description
 
@@ -374,7 +374,7 @@ Plain-language summary of the catalog
 "A comprehensive catalog of federal government data assets spanning multiple agencies and data domains."
 ```
 
-## <a name="hasPart"></a>[Optional] Property `DCAT-US 3 Catalog > hasPart`
+## <a name="hasPart"></a>`DCAT-US 3 Catalog > hasPart`
 
 **Title:** has part
 
@@ -389,7 +389,7 @@ List of catalogs that are contained within this catalog
 | ----------------------------------- | ---------------------------------------------------------------------------------- |
 | [DCAT-US 3 Catalog](#hasPart_items) | A curated collection of metadata about datasets, data services, or other resources |
 
-## <a name="identifier"></a>[Optional] Property `DCAT-US 3 Catalog > identifier`
+## <a name="identifier"></a>`DCAT-US 3 Catalog > identifier`
 
 **Title:** identifier
 
@@ -401,19 +401,19 @@ Main unique identifier for the catalog, such as a URI or another persistent iden
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                         |
+| Any of                                                 |
 | ------------------------------------------------------ |
 | [Null allowed when not required](#identifier_anyOf_i0) |
 | [Identifier](#identifier_anyOf_i1)                     |
 
-### <a name="identifier_anyOf_i0"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
+### <a name="identifier_anyOf_i0"></a>`DCAT-US 3 Catalog > identifier > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="identifier_anyOf_i1"></a>Property `DCAT-US 3 Catalog > identifier > anyOf > Identifier`
+### <a name="identifier_anyOf_i1"></a>`DCAT-US 3 Catalog > identifier > anyOf > Identifier`
 
 **Title:** Identifier
 
@@ -424,7 +424,7 @@ inline description of Identifier
 | **Additional properties** | Any type allowed                                            |
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
 
-## <a name="otherIdentifier"></a>[Optional] Property `DCAT-US 3 Catalog > otherIdentifier`
+## <a name="otherIdentifier"></a>`DCAT-US 3 Catalog > otherIdentifier`
 
 **Title:** other identifier
 
@@ -439,7 +439,7 @@ A list of identifiers for the Catalog besides the main identifier, e.g. the URI 
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
 
-## <a name="issued"></a>[Optional] Property `DCAT-US 3 Catalog > issued`
+## <a name="issued"></a>`DCAT-US 3 Catalog > issued`
 
 **Title:** release date
 
@@ -469,19 +469,19 @@ Date when the catalog was formally issued, such as its initial publication date
 "2024-01"
 ```
 
-| Any of(Option)                                     |
+| Any of                                             |
 | -------------------------------------------------- |
 | [Null allowed when not required](#issued_anyOf_i0) |
 | [Date string](#issued_anyOf_i1)                    |
 
-### <a name="issued_anyOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Null allowed when not required`
+### <a name="issued_anyOf_i0"></a>`DCAT-US 3 Catalog > issued > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="issued_anyOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string`
+### <a name="issued_anyOf_i1"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string`
 
 **Title:** Date string
 
@@ -489,26 +489,26 @@ Date when the catalog was formally issued, such as its initial publication date
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                      |
+| Any of                              |
 | ----------------------------------- |
 | [item 0](#issued_anyOf_i1_anyOf_i0) |
 | [item 1](#issued_anyOf_i1_anyOf_i1) |
 | [item 2](#issued_anyOf_i1_anyOf_i2) |
 | [item 3](#issued_anyOf_i1_anyOf_i3) |
 
-#### <a name="issued_anyOf_i1_anyOf_i0"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 0`
+#### <a name="issued_anyOf_i1_anyOf_i0"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="issued_anyOf_i1_anyOf_i1"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 1`
+#### <a name="issued_anyOf_i1_anyOf_i1"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="issued_anyOf_i1_anyOf_i2"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 2`
+#### <a name="issued_anyOf_i1_anyOf_i2"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -519,7 +519,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="issued_anyOf_i1_anyOf_i3"></a>Property `DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 3`
+#### <a name="issued_anyOf_i1_anyOf_i3"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -530,7 +530,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="language"></a>[Optional] Property `DCAT-US 3 Catalog > language`
+## <a name="language"></a>`DCAT-US 3 Catalog > language`
 
 **Title:** language
 
@@ -557,20 +557,20 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 ]
 ```
 
-| Any of(Option)                                       |
+| Any of                                               |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#language_anyOf_i0) |
 | [Language code](#language_anyOf_i1)                  |
 | [List of language codes](#language_anyOf_i2)         |
 
-### <a name="language_anyOf_i0"></a>Property `DCAT-US 3 Catalog > language > anyOf > Null allowed when not required`
+### <a name="language_anyOf_i0"></a>`DCAT-US 3 Catalog > language > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="language_anyOf_i1"></a>Property `DCAT-US 3 Catalog > language > anyOf > Language code`
+### <a name="language_anyOf_i1"></a>`DCAT-US 3 Catalog > language > anyOf > Language code`
 
 **Title:** Language code
 
@@ -581,7 +581,7 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 | -------------- | - |
 | **Max length** | 2 |
 
-### <a name="language_anyOf_i2"></a>Property `DCAT-US 3 Catalog > language > anyOf > List of language codes`
+### <a name="language_anyOf_i2"></a>`DCAT-US 3 Catalog > language > anyOf > List of language codes`
 
 **Title:** List of language codes
 
@@ -592,7 +592,7 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 | ----------------------------------------- | ----------- |
 | [Language code](#language_anyOf_i2_items) | -           |
 
-#### <a name="language_anyOf_i2_items"></a>DCAT-US 3 Catalog > language > anyOf > List of language codes > Language code
+#### <a name="language_anyOf_i2_items"></a>Language code
 
 **Title:** Language code
 
@@ -603,7 +603,7 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 | -------------- | - |
 | **Max length** | 2 |
 
-## <a name="license"></a>[Optional] Property `DCAT-US 3 Catalog > license`
+## <a name="license"></a>`DCAT-US 3 Catalog > license`
 
 **Title:** license
 
@@ -621,26 +621,26 @@ License that governs how the catalog can be used or reused
 "https://creativecommons.org/publicdomain/zero/1.0/"
 ```
 
-| Any of(Option)                                      |
+| Any of                                              |
 | --------------------------------------------------- |
 | [Null allowed when not required](#license_anyOf_i0) |
 | [item 1](#license_anyOf_i1)                         |
 
-### <a name="license_anyOf_i0"></a>Property `DCAT-US 3 Catalog > license > anyOf > Null allowed when not required`
+### <a name="license_anyOf_i0"></a>`DCAT-US 3 Catalog > license > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="license_anyOf_i1"></a>Property `DCAT-US 3 Catalog > license > anyOf > item 1`
+### <a name="license_anyOf_i1"></a>`DCAT-US 3 Catalog > license > anyOf > item 1`
 
 Full text of the license
 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="modified"></a>[Optional] Property `DCAT-US 3 Catalog > modified`
+## <a name="modified"></a>`DCAT-US 3 Catalog > modified`
 
 **Title:** update/modification date
 
@@ -670,19 +670,19 @@ Most recent date when the catalog content changed, not just catalog-record metad
 "2024-01"
 ```
 
-| Any of(Option)                                       |
+| Any of                                               |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#modified_anyOf_i0) |
 | [Date string](#modified_anyOf_i1)                    |
 
-### <a name="modified_anyOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Null allowed when not required`
+### <a name="modified_anyOf_i0"></a>`DCAT-US 3 Catalog > modified > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="modified_anyOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string`
+### <a name="modified_anyOf_i1"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string`
 
 **Title:** Date string
 
@@ -690,26 +690,26 @@ Most recent date when the catalog content changed, not just catalog-record metad
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                        |
+| Any of                                |
 | ------------------------------------- |
 | [item 0](#modified_anyOf_i1_anyOf_i0) |
 | [item 1](#modified_anyOf_i1_anyOf_i1) |
 | [item 2](#modified_anyOf_i1_anyOf_i2) |
 | [item 3](#modified_anyOf_i1_anyOf_i3) |
 
-#### <a name="modified_anyOf_i1_anyOf_i0"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 0`
+#### <a name="modified_anyOf_i1_anyOf_i0"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 0`
 
 | **Type**   | `string`    |
 | ---------- | ----------- |
 | **Format** | `date-time` |
 
-#### <a name="modified_anyOf_i1_anyOf_i1"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 1`
+#### <a name="modified_anyOf_i1_anyOf_i1"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 1`
 
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `date`   |
 
-#### <a name="modified_anyOf_i1_anyOf_i2"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 2`
+#### <a name="modified_anyOf_i1_anyOf_i2"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 2`
 
 A year in YYYY format
 
@@ -720,7 +720,7 @@ A year in YYYY format
 | --------------------------------- | --------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
 
-#### <a name="modified_anyOf_i1_anyOf_i3"></a>Property `DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 3`
+#### <a name="modified_anyOf_i1_anyOf_i3"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string > anyOf > item 3`
 
 A year and month in YYYY-MM format
 
@@ -731,7 +731,7 @@ A year and month in YYYY-MM format
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
 
-## <a name="publisher"></a>[Optional] Property `DCAT-US 3 Catalog > publisher`
+## <a name="publisher"></a>`DCAT-US 3 Catalog > publisher`
 
 **Title:** publisher
 
@@ -743,19 +743,19 @@ Person or organization responsible for publishing and making the catalog availab
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                        |
+| Any of                                                |
 | ----------------------------------------------------- |
 | [Null allowed when not required](#publisher_anyOf_i0) |
 | [Agent](#publisher_anyOf_i1)                          |
 
-### <a name="publisher_anyOf_i0"></a>Property `DCAT-US 3 Catalog > publisher > anyOf > Null allowed when not required`
+### <a name="publisher_anyOf_i0"></a>`DCAT-US 3 Catalog > publisher > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="publisher_anyOf_i1"></a>Property `DCAT-US 3 Catalog > publisher > anyOf > Agent`
+### <a name="publisher_anyOf_i1"></a>`DCAT-US 3 Catalog > publisher > anyOf > Agent`
 
 **Title:** Agent
 
@@ -766,7 +766,7 @@ inline description of the publisher
 | **Additional properties** | Any type allowed           |
 | **Same definition as**    | [Agent](./agents.md#agent) |
 
-## <a name="rights"></a>[Optional] Property `DCAT-US 3 Catalog > rights`
+## <a name="rights"></a>`DCAT-US 3 Catalog > rights`
 
 **Title:** rights
 
@@ -796,14 +796,14 @@ Rights statements about the catalog that are not already covered by license or a
 | ------------------------------- | ---------------------------------- |
 | [rights items](#rights_items)   | Full text of a statement of rights |
 
-### <a name="rights_items"></a>DCAT-US 3 Catalog > rights > rights items
+### <a name="rights_items"></a>Array Item
 
 Full text of a statement of rights
 
 | **Type** | `string` |
 | -------- | -------- |
 
-## <a name="rightsHolder"></a>[Optional] Property `DCAT-US 3 Catalog > rightsHolder`
+## <a name="rightsHolder"></a>`DCAT-US 3 Catalog > rightsHolder`
 
 **Title:** rights holder
 
@@ -818,7 +818,7 @@ Organizations that hold rights in the catalog
 | ---------------------------------------- | --------------------------------------------------------------------------------- |
 | [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
 
-## <a name="spatial"></a>[Optional] Property `DCAT-US 3 Catalog > spatial`
+## <a name="spatial"></a>`DCAT-US 3 Catalog > spatial`
 
 **Title:** spatial/geographic coverage
 
@@ -833,7 +833,7 @@ Geographic area covered by the catalog
 | -------------------------------------------------- | -------------------------------- |
 | [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
 
-## <a name="subject"></a>[Optional] Property `DCAT-US 3 Catalog > subject`
+## <a name="subject"></a>`DCAT-US 3 Catalog > subject`
 
 **Title:** subject
 
@@ -848,7 +848,7 @@ List of subjects of the catalog
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
-## <a name="temporal"></a>[Optional] Property `DCAT-US 3 Catalog > temporal`
+## <a name="temporal"></a>`DCAT-US 3 Catalog > temporal`
 
 **Title:** temporal coverage
 
@@ -863,7 +863,7 @@ Time periods covered by the catalog
 | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
 
-## <a name="title"></a>[Optional] Property `DCAT-US 3 Catalog > title`
+## <a name="title"></a>`DCAT-US 3 Catalog > title`
 
 **Title:** title
 
@@ -884,7 +884,7 @@ Human-readable title of the catalog
 "Federal Data Catalog"
 ```
 
-## <a name="category"></a>[Optional] Property `DCAT-US 3 Catalog > category`
+## <a name="category"></a>`DCAT-US 3 Catalog > category`
 
 **Title:** category
 
@@ -899,7 +899,7 @@ List of high-level categories for the catalog
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
 | [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
 
-## <a name="homepage"></a>[Optional] Property `DCAT-US 3 Catalog > homepage`
+## <a name="homepage"></a>`DCAT-US 3 Catalog > homepage`
 
 **Title:** homepage
 
@@ -911,19 +911,19 @@ Main public web page for the catalog, usually an HTML page
 | ------------------------- | ------------------ |
 | **Additional properties** | Any type allowed   |
 
-| Any of(Option)                                       |
+| Any of                                               |
 | ---------------------------------------------------- |
 | [Null allowed when not required](#homepage_anyOf_i0) |
 | [Document](#homepage_anyOf_i1)                       |
 
-### <a name="homepage_anyOf_i0"></a>Property `DCAT-US 3 Catalog > homepage > anyOf > Null allowed when not required`
+### <a name="homepage_anyOf_i0"></a>`DCAT-US 3 Catalog > homepage > anyOf > Null allowed when not required`
 
 **Title:** Null allowed when not required
 
 | **Type** | `null` |
 | -------- | ------ |
 
-### <a name="homepage_anyOf_i1"></a>Property `DCAT-US 3 Catalog > homepage > anyOf > Document`
+### <a name="homepage_anyOf_i1"></a>`DCAT-US 3 Catalog > homepage > anyOf > Document`
 
 **Title:** Document
 
@@ -934,7 +934,7 @@ inline description of the home page
 | **Additional properties** | Any type allowed                             |
 | **Same definition as**    | [Document](./quality-governance.md#document) |
 
-## <a name="qualifiedAttribution"></a>[Optional] Property `DCAT-US 3 Catalog > qualifiedAttribution`
+## <a name="qualifiedAttribution"></a>`DCAT-US 3 Catalog > qualifiedAttribution`
 
 **Title:** qualified attribution
 
