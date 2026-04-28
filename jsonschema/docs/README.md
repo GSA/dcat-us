@@ -1,27 +1,47 @@
-# Schema documentation
+# DCAT-US 3 Schema Documentation
 
-This directory contains Markdown documentation for the DCAT-US JSON schema.
-The docs are generated with the `generate_schema_docs.py` script from the
-parent directory. The docs are derived automatically from the JSON Schema
-files without any manual intervention.
+This directory contains the generated Markdown documentation for the DCAT-US 3
+JSON Schema. The documentation is intended to provide a review-friendly,
+human-readable view of the schema so contributors and implementers can inspect
+the classes, fields, examples, and requirement levels without reading raw JSON
+Schema files directly.
 
-When you have made any changes to the schema files, run
+## Documentation pages
+
+### Main classes
+
+- [Catalog](./catalog.md)
+- [Dataset](./dataset.md)
+- [Dataset Series](./dataset-series.md)
+- [Distribution](./distribution.md)
+
+### Supporting classes
+
+- [Agents](./agents.md): [Agent](./agents.md#agent), [Organization](./agents.md#organization), [Kind](./agents.md#kind)
+- [Constraints and Restrictions](./constraints-and-restrictions.md): [AccessRestriction](./constraints-and-restrictions.md#access-restriction), [CUIRestriction](./constraints-and-restrictions.md#cui-restriction), [UseRestriction](./constraints-and-restrictions.md#use-restriction)
+- [Identifiers and Relationships](./identifiers-and-relationships.md): [Identifier](./identifiers-and-relationships.md#identifier), [Relationship](./identifiers-and-relationships.md#relationship), [Checksum](./identifiers-and-relationships.md#checksum), [Concept](./identifiers-and-relationships.md#concept), [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
+- [Temporal, Spatial, and Metrics](./temporal-spatial-metrics.md): [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time), [Location](./temporal-spatial-metrics.md#location), [Metric](./temporal-spatial-metrics.md#metric), [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement), [Activity](./temporal-spatial-metrics.md#activity), [Address](./temporal-spatial-metrics.md#address)
+- [Quality and Governance](./quality-governance.md): [Standard](./quality-governance.md#standard), [Document](./quality-governance.md#document), [CatalogRecord](./quality-governance.md#catalog-record), [DataService](./quality-governance.md#data-service), [Attribution](./quality-governance.md#attribution)
+
+## Regenerating the docs
+
+The docs are generated with `generate_schema_docs.py` from the parent directory.
+They are derived automatically from the JSON Schema files without manual edits.
+
+When you change schema files, run:
 
 ```
 poetry run python generate_schema_docs.py
 ```
 
-in the parent directory to update the documentation here.
-
 ## Version controlling derived files
 
-For convenience, we want these files to be under version control, but we
-also want to ensure that they are up to date with any changes in the schema
-files. We use a Github Actions script to run
+These generated files are kept under version control for convenience, but they
+must always match the current schema definitions. CI validates that by running:
 
 ```
-poetry run generate_schema_docs.py --check
+poetry run python generate_schema_docs.py --check
 ```
 
-which validates that the documentation generated from the present version of
-the schema matches precisely with what is in this directory.
+That check fails if the generated output differs from what is committed in this
+directory.

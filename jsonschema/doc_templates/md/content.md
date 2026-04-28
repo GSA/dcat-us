@@ -14,7 +14,7 @@
 {% set keys = schema.keywords %}
 {%- if not skip_headers %}
 
-{% if schema.title and schema.title | length > 0 %}
+{% if schema | should_render_title %}
 **Title:** {{ schema.title }}
 {% endif %}
 
@@ -30,31 +30,30 @@
     {% include "section_examples.md" %}
 {% endif %}
 
+{# If this is a reference, do not expand inline #}
 {% if schema.should_be_a_link(config) %}
+    {# Only show the canonical link, not inline details #}
 {% elif schema.refers_to -%}
-    {# If it's referred to, we're linking to it, not including it here. #}
-    {%- with schema=schema.refers_to_merged, skip_headers=True, depth=depth -%}
-        {# include "content.md" #}
-    {% endwith %}
+    {# Only show the canonical link, not inline details #}
 {% else %}
     {# Properties, pattern properties, additional properties #}
     {% if schema.is_object %}
-    {{- schema | md_properties_table | md_generate_table -}}
+        {{- schema | md_properties_table | md_generate_table -}}
     {% endif %}
 
     {# Combining: allOf, anyOf, oneOf, not #}
     {% if schema.kw_all_of %}
-        {% with operator="allOf", title="All of(Requirement)", current_node=schema.kw_all_of, skip_required=True %}
+        {% with operator="allOf", title="All of", current_node=schema.kw_all_of, skip_required=True %}
             {% include "tabbed_section.md" %}
         {% endwith %}
     {% endif %}
     {% if schema.kw_any_of %}
-        {% with operator="anyOf", title="Any of(Option)", current_node=schema.kw_any_of, skip_required=True %}
+        {% with operator="anyOf", title="Any of", current_node=schema.kw_any_of, skip_required=True %}
             {% include "tabbed_section.md" %}
         {% endwith %}
     {% endif %}
     {% if schema.kw_one_of %}
-        {% with operator="oneOf", title="One of(Option)",current_node=schema.kw_one_of, skip_required=True %}
+        {% with operator="oneOf", title="One of", current_node=schema.kw_one_of, skip_required=True %}
             {% include "tabbed_section.md" %}
         {% endwith %}
     {% endif %}
@@ -90,6 +89,12 @@
 
     {# details of Properties, pattern properties, additional properties #}
     {% if schema.is_object %}
-    {% include "section_properties_details.md" %}
+        {% include "section_properties_details.md" %}
     {% endif %}
+{% endif %}
+
+{# Placeholder for See Also section for main classes #}
+{% if schema.title in ["Catalog", "Dataset", "Dataset Series", "Distribution"] %}
+---
+**See Also:** (related supporting classes)
 {% endif %}
