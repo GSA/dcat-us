@@ -67,39 +67,39 @@ A curated collection of metadata about datasets, data services, or other resourc
 }
 ```
 
-| Property                                       | Type                    | Requirement Level | Title/Description                                                                                                                     |
-| ---------------------------------------------- | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#@id)                                   | string                  | Optional          |                                                                                                                                       |
-| [@type](#@type)                               | string                  | Optional          |                                                                                                                                       |
-| [catalog](#catalog)                           | null or array           | Optional          | List of related catalogs that are useful in the context of this catalog                                                               |
-| [contactPoint](#contactPoint)                 | null or array           | Optional          | Contact information people can use to ask questions or send feedback about the catalog                                                |
-| [dataset](#dataset)                           | array                   | Mandatory         | List of datasets included in the catalog. Use this together with service so the catalog is not empty.                                 |
-| [keyword](#keyword)                           | null or array of string | Optional          | List of keywords or tags describing the catalog                                                                                       |
-| [record](#record)                             | null or array           | Optional          | A catalog record describing how a single resource (such as a dataset or data service) is registered in the catalog                    |
-| [service](#service)                           | null or array           | Optional          | List of data services included in the catalog. Use this together with dataset so the catalog is not empty.                            |
-| [theme](#theme)                               | null or array           | Optional          | List of themes or categories for the catalog. A catalog can have more than one theme.                                                 |
-| [themeTaxonomy](#themeTaxonomy)               | null or array           | Recommended       | Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services                                   |
-| [accessRights](#accessRights)                 | More than one type      | Optional          | Information about whether the catalog is publicly accessible, restricted, or not public                                               |
-| [conformsTo](#conformsTo)                     | More than one type      | Recommended       | Standard, schema, profile, or model that this catalog follows                                                                         |
-| [creator](#creator)                           | null or array           | Optional          | Person or organization responsible for creating the catalog metadata                                                                  |
-| [description](#description)                   | null or string          | Optional          | Plain-language summary of the catalog                                                                                                 |
-| [hasPart](#hasPart)                           | null or array           | Optional          | List of catalogs that are contained within this catalog                                                                               |
-| [identifier](#identifier)                     | More than one type      | Optional          | Main unique identifier for the catalog, such as a URI or another persistent identifier                                                |
-| [otherIdentifier](#otherIdentifier)           | null or array           | Optional          | A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers                           |
-| [issued](#issued)                             | More than one type      | Recommended       | Date when the catalog was formally issued, such as its initial publication date                                                       |
-| [language](#language)                         | More than one type      | Recommended       | Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es                  |
-| [license](#license)                           | More than one type      | Optional          | License that governs how the catalog can be used or reused                                                                            |
-| [modified](#modified)                         | More than one type      | Recommended       | Most recent date when the catalog content changed, not just catalog-record metadata                                                   |
-| [publisher](#publisher)                       | More than one type      | Optional          | Person or organization responsible for publishing and making the catalog available                                                    |
-| [rights](#rights)                             | null or array of string | Recommended       | Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions |
-| [rightsHolder](#rightsHolder)                 | null or array           | Optional          | Organizations that hold rights in the catalog                                                                                         |
-| [spatial](#spatial)                           | null or array           | Recommended       | Geographic area covered by the catalog                                                                                                |
-| [subject](#subject)                           | null or array           | Optional          | List of subjects of the catalog                                                                                                       |
-| [temporal](#temporal)                         | null or array           | Optional          | Time periods covered by the catalog                                                                                                   |
-| [title](#title)                               | null or string          | Optional          | Human-readable title of the catalog                                                                                                   |
-| [category](#category)                         | null or array           | Optional          | List of high-level categories for the catalog                                                                                         |
-| [homepage](#homepage)                         | More than one type      | Recommended       | Main public web page for the catalog, usually an HTML page                                                                            |
-| [qualifiedAttribution](#qualifiedAttribution) | null or array           | Optional          | List of agents with specific responsibilities for the catalog                                                                         |
+| Property                                       | Type                                                                                        | Requirement Level | Title/Description                                                                                                                     |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#@id)                                   | string                                                                                      | Optional          |                                                                                                                                       |
+| [@type](#@type)                               | string                                                                                      | Optional          |                                                                                                                                       |
+| [catalog](#catalog)                           | null or array of object                                                                     | Optional          | List of related catalogs that are useful in the context of this catalog                                                               |
+| [contactPoint](#contactPoint)                 | null or array of [Kind](./agents.md#kind) classes                                           | Optional          | Contact information people can use to ask questions or send feedback about the catalog                                                |
+| [dataset](#dataset)                           | array of [Dataset](./dataset.md#root) classes                                               | Mandatory         | List of datasets included in the catalog. Use this together with service so the catalog is not empty.                                 |
+| [keyword](#keyword)                           | null or array of string                                                                     | Optional          | List of keywords or tags describing the catalog                                                                                       |
+| [record](#record)                             | null or array of [CatalogRecord](./quality-governance.md#catalog-record) classes            | Optional          | A catalog record describing how a single resource (such as a dataset or data service) is registered in the catalog                    |
+| [service](#service)                           | null or array of [DataService](./quality-governance.md#data-service) classes                | Optional          | List of data services included in the catalog. Use this together with dataset so the catalog is not empty.                            |
+| [theme](#theme)                               | null or array of [Concept](./identifiers-and-relationships.md#concept) classes              | Optional          | List of themes or categories for the catalog. A catalog can have more than one theme.                                                 |
+| [themeTaxonomy](#themeTaxonomy)               | null or array of [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) classes | Recommended       | Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services                                   |
+| [accessRights](#accessRights)                 | More than one type                                                                          | Optional          | Information about whether the catalog is publicly accessible, restricted, or not public                                               |
+| [conformsTo](#conformsTo)                     | More than one type                                                                          | Recommended       | Standard, schema, profile, or model that this catalog follows                                                                         |
+| [creator](#creator)                           | null or array of [Agent](./agents.md#agent) classes                                         | Optional          | Person or organization responsible for creating the catalog metadata                                                                  |
+| [description](#description)                   | null or string                                                                              | Optional          | Plain-language summary of the catalog                                                                                                 |
+| [hasPart](#hasPart)                           | null or array of object                                                                     | Optional          | List of catalogs that are contained within this catalog                                                                               |
+| [identifier](#identifier)                     | More than one type                                                                          | Optional          | Main unique identifier for the catalog, such as a URI or another persistent identifier                                                |
+| [otherIdentifier](#otherIdentifier)           | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes        | Optional          | A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers                           |
+| [issued](#issued)                             | More than one type                                                                          | Recommended       | Date when the catalog was formally issued, such as its initial publication date                                                       |
+| [language](#language)                         | More than one type                                                                          | Recommended       | Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es                  |
+| [license](#license)                           | More than one type                                                                          | Optional          | License that governs how the catalog can be used or reused                                                                            |
+| [modified](#modified)                         | More than one type                                                                          | Recommended       | Most recent date when the catalog content changed, not just catalog-record metadata                                                   |
+| [publisher](#publisher)                       | More than one type                                                                          | Optional          | Person or organization responsible for publishing and making the catalog available                                                    |
+| [rights](#rights)                             | null or array of string                                                                     | Recommended       | Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions |
+| [rightsHolder](#rightsHolder)                 | null or array of [Organization](./agents.md#organization) classes                           | Optional          | Organizations that hold rights in the catalog                                                                                         |
+| [spatial](#spatial)                           | null or array of [Location](./temporal-spatial-metrics.md#location) classes                 | Recommended       | Geographic area covered by the catalog                                                                                                |
+| [subject](#subject)                           | null or array of [Concept](./identifiers-and-relationships.md#concept) classes              | Optional          | List of subjects of the catalog                                                                                                       |
+| [temporal](#temporal)                         | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes       | Optional          | Time periods covered by the catalog                                                                                                   |
+| [title](#title)                               | null or string                                                                              | Optional          | Human-readable title of the catalog                                                                                                   |
+| [category](#category)                         | null or array of [Concept](./identifiers-and-relationships.md#concept) classes              | Optional          | List of high-level categories for the catalog                                                                                         |
+| [homepage](#homepage)                         | More than one type                                                                          | Recommended       | Main public web page for the catalog, usually an HTML page                                                                            |
+| [qualifiedAttribution](#qualifiedAttribution) | null or array of [Attribution](./quality-governance.md#attribution) classes                 | Optional          | List of agents with specific responsibilities for the catalog                                                                         |
 
 ## <a name="@id"></a>`DCAT-US 3 Catalog > @id`
 
@@ -131,8 +131,8 @@ A curated collection of metadata about datasets, data services, or other resourc
 
 List of related catalogs that are useful in the context of this catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of object |
+| -------- | ----------------------- |
 
 | Each item of this array must be     | Description                                                                        |
 | ----------------------------------- | ---------------------------------------------------------------------------------- |
@@ -146,8 +146,8 @@ List of related catalogs that are useful in the context of this catalog
 
 Contact information people can use to ask questions or send feedback about the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Kind](./agents.md#kind) classes |
+| -------- | ------------------------------------------------- |
 
 | Each item of this array must be | Description                                     |
 | ------------------------------- | ----------------------------------------------- |
@@ -159,9 +159,9 @@ Contact information people can use to ask questions or send feedback about the c
 
 List of datasets included in the catalog. Use this together with service so the catalog is not empty.
 
-| **Type**     | `array` |
-| ------------ | ------- |
-| **Required** | Yes     |
+| **Type**     | array of [Dataset](./dataset.md#root) classes |
+| ------------ | --------------------------------------------- |
+| **Required** | Yes                                           |
 
 | Each item of this array must be | Description                                               |
 | ------------------------------- | --------------------------------------------------------- |
@@ -175,8 +175,8 @@ List of datasets included in the catalog. Use this together with service so the 
 
 List of keywords or tags describing the catalog
 
-| **Type** | `null or array of string` |
-| -------- | ------------------------- |
+| **Type** | null or array of string |
+| -------- | ----------------------- |
 
 **Example:**
 
@@ -210,8 +210,8 @@ List of keywords or tags describing the catalog
 
 A catalog record describing how a single resource (such as a dataset or data service) is registered in the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [CatalogRecord](./quality-governance.md#catalog-record) classes |
+| -------- | -------------------------------------------------------------------------------- |
 
 | Each item of this array must be                         | Description                                                             |
 | ------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -223,8 +223,8 @@ A catalog record describing how a single resource (such as a dataset or data ser
 
 List of data services included in the catalog. Use this together with dataset so the catalog is not empty.
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [DataService](./quality-governance.md#data-service) classes |
+| -------- | ---------------------------------------------------------------------------- |
 
 | Each item of this array must be                     | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
@@ -238,8 +238,8 @@ List of data services included in the catalog. Use this together with dataset so
 
 List of themes or categories for the catalog. A catalog can have more than one theme.
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
+| -------- | ------------------------------------------------------------------------------ |
 
 | Each item of this array must be                       | Description                                                        |
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
@@ -253,8 +253,8 @@ List of themes or categories for the catalog. A catalog can have more than one t
 
 Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) classes |
+| -------- | ------------------------------------------------------------------------------------------- |
 
 | Each item of this array must be                                    | Description                                                           |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
@@ -266,9 +266,9 @@ Controlled vocabulary or taxonomy used to classify catalog resources, such as da
 
 Information about whether the catalog is publicly accessible, restricted, or not public
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 **Example:**
 
@@ -301,9 +301,9 @@ Text description of the access rights
 
 Standard, schema, profile, or model that this catalog follows
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                                                 |
 | ------------------------------------------------------ |
@@ -330,8 +330,8 @@ A standard or specification that another resource conforms to
 
 Person or organization responsible for creating the catalog metadata
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Agent](./agents.md#agent) classes |
+| -------- | --------------------------------------------------- |
 
 | Each item of this array must be | Description                                                                      |
 | ------------------------------- | -------------------------------------------------------------------------------- |
@@ -362,8 +362,8 @@ Plain-language summary of the catalog
 
 List of catalogs that are contained within this catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of object |
+| -------- | ----------------------- |
 
 | Each item of this array must be     | Description                                                                        |
 | ----------------------------------- | ---------------------------------------------------------------------------------- |
@@ -375,9 +375,9 @@ List of catalogs that are contained within this catalog
 
 Main unique identifier for the catalog, such as a URI or another persistent identifier
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                                                 |
 | ------------------------------------------------------ |
@@ -393,7 +393,7 @@ Main unique identifier for the catalog, such as a URI or another persistent iden
 
 inline description of Identifier
 
-| **Type**                  | More than one type                                          |
+| **Type**                  | `combining`                                                 |
 | ------------------------- | ----------------------------------------------------------- |
 | **Additional properties** | Any type allowed                                            |
 | **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
@@ -404,8 +404,8 @@ inline description of Identifier
 
 A list of identifiers for the Catalog besides the main identifier, e.g. the URI or other unique identifiers
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes |
+| -------- | ------------------------------------------------------------------------------------ |
 
 | Each item of this array must be                             | Description                                                                   |
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -419,9 +419,9 @@ A list of identifiers for the Catalog besides the main identifier, e.g. the URI 
 
 Date when the catalog was formally issued, such as its initial publication date
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 **Examples:**
 
@@ -453,9 +453,9 @@ Date when the catalog was formally issued, such as its initial publication date
 
 ### <a name="issued_anyOf_i1"></a>`DCAT-US 3 Catalog > issued > anyOf > Date string`
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                              |
 | ----------------------------------- |
@@ -504,9 +504,9 @@ A year and month in YYYY-MM format
 
 Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 **Examples:**
 
@@ -545,8 +545,8 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 
 ### <a name="language_anyOf_i2"></a>`DCAT-US 3 Catalog > language > anyOf > List of language codes`
 
-| **Type** | `array of string` |
-| -------- | ----------------- |
+| **Type** | array of string |
+| -------- | --------------- |
 
 | Each item of this array must be           | Description |
 | ----------------------------------------- | ----------- |
@@ -567,9 +567,9 @@ Language codes used for catalog metadata text (such as titles and descriptions),
 
 License that governs how the catalog can be used or reused
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 **Example:**
 
@@ -602,9 +602,9 @@ Full text of the license
 
 Most recent date when the catalog content changed, not just catalog-record metadata
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 **Examples:**
 
@@ -636,9 +636,9 @@ Most recent date when the catalog content changed, not just catalog-record metad
 
 ### <a name="modified_anyOf_i1"></a>`DCAT-US 3 Catalog > modified > anyOf > Date string`
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                                |
 | ------------------------------------- |
@@ -687,9 +687,9 @@ A year and month in YYYY-MM format
 
 Person or organization responsible for publishing and making the catalog available
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                                                |
 | ----------------------------------------------------- |
@@ -716,8 +716,8 @@ inline description of the publisher
 
 Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions
 
-| **Type** | `null or array of string` |
-| -------- | ------------------------- |
+| **Type** | null or array of string |
+| -------- | ----------------------- |
 
 **Examples:**
 
@@ -751,8 +751,8 @@ Full text of a statement of rights
 
 Organizations that hold rights in the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Organization](./agents.md#organization) classes |
+| -------- | ----------------------------------------------------------------- |
 
 | Each item of this array must be          | Description                                                                       |
 | ---------------------------------------- | --------------------------------------------------------------------------------- |
@@ -766,8 +766,8 @@ Organizations that hold rights in the catalog
 
 Geographic area covered by the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Location](./temporal-spatial-metrics.md#location) classes |
+| -------- | --------------------------------------------------------------------------- |
 
 | Each item of this array must be                    | Description                      |
 | -------------------------------------------------- | -------------------------------- |
@@ -779,8 +779,8 @@ Geographic area covered by the catalog
 
 List of subjects of the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
+| -------- | ------------------------------------------------------------------------------ |
 
 | Each item of this array must be                       | Description                                                        |
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
@@ -794,8 +794,8 @@ List of subjects of the catalog
 
 Time periods covered by the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes |
+| -------- | ------------------------------------------------------------------------------------- |
 
 | Each item of this array must be                              | Description                                                            |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
@@ -826,8 +826,8 @@ Human-readable title of the catalog
 
 List of high-level categories for the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
+| -------- | ------------------------------------------------------------------------------ |
 
 | Each item of this array must be                       | Description                                                        |
 | ----------------------------------------------------- | ------------------------------------------------------------------ |
@@ -839,9 +839,9 @@ List of high-level categories for the catalog
 
 Main public web page for the catalog, usually an HTML page
 
-| **Type**                  | More than one type |
-| ------------------------- | ------------------ |
-| **Additional properties** | Any type allowed   |
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
 
 | Any of                                               |
 | ---------------------------------------------------- |
@@ -868,8 +868,8 @@ inline description of the home page
 
 List of agents with specific responsibilities for the catalog
 
-| **Type** | `null or array` |
-| -------- | --------------- |
+| **Type** | null or array of [Attribution](./quality-governance.md#attribution) classes |
+| -------- | --------------------------------------------------------------------------- |
 
 | Each item of this array must be                    | Description                                       |
 | -------------------------------------------------- | ------------------------------------------------- |

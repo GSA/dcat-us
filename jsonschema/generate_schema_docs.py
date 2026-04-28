@@ -400,6 +400,30 @@ def property_summary_text(schema):
     return ""
 
 
+def _array_item_type_label(item_schema):
+    canonical_link = _canonical_class_doc_link(item_schema)
+    if canonical_link:
+        return f"{canonical_link} classes"
+
+    title = getattr(item_schema, "title", None)
+    if should_render_title(item_schema):
+        return title
+
+    return getattr(item_schema, "type_name", "item")
+
+
+def _display_type_label(schema):
+    array_item = getattr(schema, "array_items_def", None)
+    tuple_items = getattr(schema, "tuple_validation_items", None) or []
+    if array_item and not tuple_items:
+        label = f"array of {_array_item_type_label(array_item)}"
+        if "null" in str(getattr(schema, "type_name", "")).lower():
+            return f"null or {label}"
+        return label
+
+    return None
+
+
 def schema_requirement_level(schema):
     """Template helper for property requirement level.
 
@@ -456,6 +480,9 @@ def properties_table_wrap(properties_list, schema):
             line[property_column_index] = line[property_column_index][2:]
 
         property_node = property_nodes[index - 1]
+        display_type = _display_type_label(property_node)
+        if display_type:
+            line[property_column_index + 1] = display_type
         requirement = schema_requirement_level(property_node)
         line.insert(property_column_index + 2, requirement)
         line[property_column_index + 3] = _escape_for_table(
@@ -495,7 +522,12 @@ def type_info_table_wrap(type_info_list, schema):
 
     # edit lines
     for line in type_info_list:
-        if line[0].strip("*") == "Defined in":
+        line_label = line[0].strip("*")
+        if line_label == "Type":
+            display_type = _display_type_label(schema)
+            if display_type:
+                line[1] = display_type
+        elif line_label == "Defined in":
             if canonical_link:
                 line[1] = canonical_link
             else:
@@ -503,7 +535,7 @@ def type_info_table_wrap(type_info_list, schema):
                 match = re.match(r"^/dcat-us/3.0.0/definitions/(\w+)", line[1])
                 class_name = match.group(1)
                 line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
-        elif line[0].strip("*") == "Same definition as" and canonical_link:
+        elif line_label == "Same definition as" and canonical_link:
             line[1] = canonical_link
         elif "`combining`" in line:
             # replace combining with something better
