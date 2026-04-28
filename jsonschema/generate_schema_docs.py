@@ -294,6 +294,22 @@ def _add_heading_anchor_links(content):
     return "\n".join(lines)
 
 
+def _rewrite_unresolved_self_item_links(content, page_title):
+    anchors = set(re.findall(r'<a name="([^"]+)"></a>', content))
+    self_labels = {page_title, f"DCAT-US 3 {page_title}"}
+
+    def _replace(match):
+        label = match.group(1)
+        fragment = match.group(2)
+        if fragment in anchors:
+            return match.group(0)
+        if fragment.endswith("_items") and label in self_labels:
+            return f"[{label}](#root)"
+        return match.group(0)
+
+    return re.sub(r'\[([^\]]+)\]\(#([^\)]+)\)', _replace, content)
+
+
 def _normalize_doc_content(content, anchor_prefix="", root_anchor="root"):
     content = content.strip()
     content = _rewrite_class_doc_links(content)
@@ -329,6 +345,7 @@ def _build_public_docs(rendered_docs_dir, output_dir):
     for page in MAIN_CLASS_PAGES:
         raw_content = _read_generated_doc(rendered_docs_dir, page["source"])
         page_content = _normalize_doc_content(raw_content, root_anchor="root")
+        page_content = _rewrite_unresolved_self_item_links(page_content, page["title"])
         page_content = f'<a name="root"></a>\n\n{page["intro"]}\n\n{page_content}'
         _write_text(output_dir / page["output"], page_content)
 
@@ -514,6 +531,12 @@ def array_items_restrictions_wrap(items_restrictions, schema):
         canonical_link = _canonical_class_doc_link(item)
         if canonical_link:
             row[0] = canonical_link
+            continue
+
+        item_title = getattr(item, "title", None)
+        schema_title = getattr(schema, "title", None)
+        if item_title and schema_title and item_title == schema_title:
+            row[0] = f"[{item_title}](#root)"
 
     return items_restrictions
 
