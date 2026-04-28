@@ -281,31 +281,6 @@ def _read_generated_doc(docs_dir, file_name):
     return path.read_text(encoding="utf-8")
 
 
-def _build_index_page():
-    lines = [
-        "# DCAT-US 3 Schema Documentation",
-        "",
-        "DCAT-US 3 is documented here as a smaller set of review-friendly pages.",
-        "",
-        "## Main classes",
-        "",
-    ]
-
-    for page in MAIN_CLASS_PAGES:
-        lines.append(f"- [{page['title']}](./{page['output']})")
-
-    lines.extend(["", "## Supporting classes", ""])
-
-    for page in GROUPED_CLASS_PAGES:
-        class_links = ", ".join(
-            f"[{_class_name_from_file(class_file)}](./{page['output']}#{_class_anchor(_class_name_from_file(class_file))})"
-            for class_file in page["classes"]
-        )
-        lines.append(f"- [{page['title']}](./{page['output']}): {class_links}")
-
-    return "\n".join(lines)
-
-
 def _clear_generated_markdown(output_dir):
     for markdown_file in Path(output_dir).glob("*.md"):
         if markdown_file.name == "README.md":
@@ -343,8 +318,6 @@ def _build_public_docs(rendered_docs_dir, output_dir):
             output_dir / page["output"],
             f"# {page['title']}\n\n{page['intro']}\n\n{page_content}",
         )
-
-    _write_text(output_dir / "index.md", _build_index_page())
 
 
 def _normalize_requirement_level(value):
