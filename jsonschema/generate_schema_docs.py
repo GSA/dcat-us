@@ -260,6 +260,40 @@ def _rewrite_local_anchors(content, anchor_prefix="", root_anchor="root"):
     return re.sub(r"\]\(#([^\)]+?)\s*\)", _replace_fragment, content)
 
 
+def _add_heading_anchor_links(content):
+    lines = content.splitlines()
+
+    for index, line in enumerate(lines):
+        inline_match = re.match(r'^(#{1,6}) <a name="([^"]+)"></a>(.+)$', line)
+        if inline_match:
+            heading_marks, anchor_name, heading_text = inline_match.groups()
+            if f'](#{anchor_name})' not in heading_text:
+                lines[index] = (
+                    f'{heading_marks} <a name="{anchor_name}"></a>'
+                    f'{heading_text} [#](#{anchor_name})'
+                )
+            continue
+
+        anchor_match = re.match(r'^<a name="([^"]+)"></a>$', line)
+        if not anchor_match:
+            continue
+
+        anchor_name = anchor_match.group(1)
+        next_index = index + 1
+        while next_index < len(lines) and not lines[next_index].strip():
+            next_index += 1
+
+        if next_index >= len(lines):
+            continue
+
+        heading_match = re.match(r'^(#{1,6}) (.+)$', lines[next_index])
+        if heading_match and f'](#{anchor_name})' not in lines[next_index]:
+            heading_marks, heading_text = heading_match.groups()
+            lines[next_index] = f'{heading_marks} {heading_text} [#](#{anchor_name})'
+
+    return "\n".join(lines)
+
+
 def _normalize_doc_content(content, anchor_prefix="", root_anchor="root"):
     content = content.strip()
     content = _rewrite_class_doc_links(content)
@@ -268,7 +302,7 @@ def _normalize_doc_content(content, anchor_prefix="", root_anchor="root"):
         anchor_prefix=anchor_prefix,
         root_anchor=root_anchor,
     )
-    return content
+    return _add_heading_anchor_links(content)
 
 
 def _write_text(output_path, content):
