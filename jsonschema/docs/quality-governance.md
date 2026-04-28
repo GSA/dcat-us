@@ -35,19 +35,19 @@ A standard or specification that another resource conforms to
 }
 ```
 
-| Property                               | Type               | Title/Description |
-| -------------------------------------- | ------------------ | ----------------- |
-| - [@id](#standard--@id)                         | string             | -                 |
-| - [@type](#standard--@type)                     | string             | -                 |
-| - [created](#standard--created)                 | More than one type | creation date     |
-| - [description](#standard--description)         | null or string     | description       |
-| - [identifier](#standard--identifier)           | More than one type | identifier        |
-| - [otherIdentifier](#standard--otherIdentifier) | null or array      | other identifier  |
-| - [issued](#standard--issued)                   | More than one type | issued            |
-| - [modified](#standard--modified)               | More than one type | last modified     |
-| - [title](#standard--title)                     | null or string     | title             |
-| - [category](#standard--category)               | null or array      | category          |
-| - [inScheme](#standard--inScheme)               | More than one type | in scheme         |
+| Property                             | Type               | Requirement Level | Title/Description |
+| ------------------------------------ | ------------------ | ----------------- | ----------------- |
+| [@id](#standard--@id)                         | string             | Optional          | -                 |
+| [@type](#standard--@type)                     | string             | Optional          | -                 |
+| [created](#standard--created)                 | More than one type | Optional          | creation date     |
+| [description](#standard--description)         | null or string     | Recommended       | description       |
+| [identifier](#standard--identifier)           | More than one type | Recommended       | identifier        |
+| [otherIdentifier](#standard--otherIdentifier) | null or array      | Optional          | other identifier  |
+| [issued](#standard--issued)                   | More than one type | Recommended       | issued            |
+| [modified](#standard--modified)               | More than one type | Optional          | last modified     |
+| [title](#standard--title)                     | null or string     | Recommended       | title             |
+| [category](#standard--category)               | null or array      | Optional          | category          |
+| [inScheme](#standard--inScheme)               | More than one type | Recommended       | in scheme         |
 
 ## <a name="standard--@id"></a>`Standard > @id`
 
@@ -166,7 +166,7 @@ A year and month in YYYY-MM format
 
 **Title:** description
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Plain-language summary of the standard
 
@@ -187,7 +187,7 @@ Plain-language summary of the standard
 
 **Title:** identifier
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -237,7 +237,7 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 
 **Title:** issued
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The date of formal issuance (e.g., publication) of the Standard
 
@@ -419,7 +419,7 @@ A year and month in YYYY-MM format
 
 **Title:** title
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Human-readable title of the standard
 
@@ -455,7 +455,7 @@ List of categories for the Standard
 
 **Title:** in scheme
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The reference register to which the Standard belongs
 
@@ -521,25 +521,25 @@ A publication or other document related to a resource
 }
 ```
 
-| Property                                           | Type               | Title/Description      |
-| -------------------------------------------------- | ------------------ | ---------------------- |
-| - [@id](#document--@id)                                     | string             | -                      |
-| - [@type](#document--@type)                                 | string             | -                      |
-| - [accessURL](#document--accessURL)                         | More than one type | access URL             |
-| - [downloadURL](#document--downloadURL)                     | More than one type | download URL           |
-| - [creator](#document--creator)                             | null or array      | author                 |
-| - [mediaType](#document--mediaType)                         | null or string     | media type             |
-| - [abstract](#document--abstract)                           | null or string     | abstract               |
-| - [bibliographicCitation](#document--bibliographicCitation) | null or string     | bibliographic citation |
-| - [conformsTo](#document--conformsTo)                       | null or array      | conforms to            |
-| - [corporateCreator](#document--corporateCreator)           | null or array      | corporate author       |
-| - [description](#document--description)                     | null or string     | description            |
-| - [identifier](#document--identifier)                       | More than one type | identifier             |
-| - [otherIdentifier](#document--otherIdentifier)             | null or array      | other identifier       |
-| - [issued](#document--issued)                               | More than one type | publication date       |
-| - [publisher](#document--publisher)                         | null or array      | publisher              |
-| + [title](#document--title)                                 | string             | title                  |
-| - [category](#document--category)                           | null or array      | category               |
+| Property                                         | Type               | Requirement Level | Title/Description      |
+| ------------------------------------------------ | ------------------ | ----------------- | ---------------------- |
+| [@id](#document--@id)                                     | string             | Optional          | -                      |
+| [@type](#document--@type)                                 | string             | Optional          | -                      |
+| [accessURL](#document--accessURL)                         | More than one type | Optional          | access URL             |
+| [downloadURL](#document--downloadURL)                     | More than one type | Optional          | download URL           |
+| [creator](#document--creator)                             | null or array      | Optional          | author                 |
+| [mediaType](#document--mediaType)                         | null or string     | Optional          | media type             |
+| [abstract](#document--abstract)                           | null or string     | Optional          | abstract               |
+| [bibliographicCitation](#document--bibliographicCitation) | null or string     | Recommended       | bibliographic citation |
+| [conformsTo](#document--conformsTo)                       | null or array      | Optional          | conforms to            |
+| [corporateCreator](#document--corporateCreator)           | null or array      | Optional          | corporate author       |
+| [description](#document--description)                     | null or string     | Recommended       | description            |
+| [identifier](#document--identifier)                       | More than one type | Recommended       | identifier             |
+| [otherIdentifier](#document--otherIdentifier)             | null or array      | Optional          | other identifier       |
+| [issued](#document--issued)                               | More than one type | Recommended       | publication date       |
+| [publisher](#document--publisher)                         | null or array      | Recommended       | publisher              |
+| [title](#document--title)                                 | string             | Mandatory         | title                  |
+| [category](#document--category)                           | null or array      | Optional          | category               |
 
 ## <a name="document--@id"></a>`Document > @id`
 
@@ -696,7 +696,7 @@ Text abstract of the Document
 
 **Title:** bibliographic citation
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Bibliographic citation as text
 
@@ -747,7 +747,7 @@ The corporate organization(s) responsible for creating the Document
 
 **Title:** description
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Plain-language summary of the document
 
@@ -768,7 +768,7 @@ Plain-language summary of the document
 
 **Title:** identifier
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The unique identifier for the Document (e.g. DOI, ISBN)
 
@@ -818,7 +818,7 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 
 **Title:** publication date
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Publication date of the Document
 
@@ -907,7 +907,7 @@ A year and month in YYYY-MM format
 
 **Title:** publisher
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The organization(s) that published the Document
 
@@ -922,7 +922,7 @@ The organization(s) that published the Document
 
 **Title:** title
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The title of the Document
 
@@ -984,19 +984,19 @@ A record in a catalog, describing the registration of a single resource
 }
 ```
 
-| Property                         | Type                    | Title/Description        |
-| -------------------------------- | ----------------------- | ------------------------ |
-| - [@id](#catalog-record--@id)                   | string                  | -                        |
-| - [@type](#catalog-record--@type)               | string                  | -                        |
-| - [status](#catalog-record--status)             | More than one type      | change type              |
-| - [conformsTo](#catalog-record--conformsTo)     | More than one type      | application profile      |
-| - [description](#catalog-record--description)   | null or array of string | Descriptions             |
-| - [issued](#catalog-record--issued)             | null or array           | listing date             |
-| - [language](#catalog-record--language)         | More than one type      | language                 |
-| + [modified](#catalog-record--modified)         | More than one type      | update/modification date |
-| - [source](#catalog-record--source)             | null or string          | source metadata          |
-| - [title](#catalog-record--title)               | null or string          | title                    |
-| + [primaryTopic](#catalog-record--primaryTopic) | string                  | primary topic            |
+| Property                       | Type                    | Requirement Level | Title/Description        |
+| ------------------------------ | ----------------------- | ----------------- | ------------------------ |
+| [@id](#catalog-record--@id)                   | string                  | Optional          | -                        |
+| [@type](#catalog-record--@type)               | string                  | Optional          | -                        |
+| [status](#catalog-record--status)             | More than one type      | Recommended       | change type              |
+| [conformsTo](#catalog-record--conformsTo)     | More than one type      | Recommended       | application profile      |
+| [description](#catalog-record--description)   | null or array of string | Optional          | Descriptions             |
+| [issued](#catalog-record--issued)             | null or array           | Optional          | listing date             |
+| [language](#catalog-record--language)         | More than one type      | Optional          | language                 |
+| [modified](#catalog-record--modified)         | More than one type      | Mandatory         | update/modification date |
+| [source](#catalog-record--source)             | null or string          | Optional          | source metadata          |
+| [title](#catalog-record--title)               | null or string          | Optional          | title                    |
+| [primaryTopic](#catalog-record--primaryTopic) | string                  | Mandatory         | primary topic            |
 
 ## <a name="catalog-record--@id"></a>`CatalogRecord > @id`
 
@@ -1024,7 +1024,7 @@ A record in a catalog, describing the registration of a single resource
 
 **Title:** change type
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
@@ -1059,7 +1059,7 @@ inline description of status
 
 **Title:** application profile
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 An Application Profile that the Catalog Record's metadata conforms to
 
@@ -1286,7 +1286,7 @@ Language code used in catalog record metadata text, using ISO 639-1 values such 
 
 **Title:** update/modification date
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The most recent date on which the catalog record was changed or modified
 
@@ -1396,7 +1396,7 @@ A name given to the Catalog Record
 
 **Title:** primary topic
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 A link to the Dataset, Data service or Catalog described in the Catalog Record
 
@@ -1476,38 +1476,38 @@ A service that provides access to data or data processing functions
 }
 ```
 
-| Property                                                   | Type                    | Title/Description            |
-| ---------------------------------------------------------- | ----------------------- | ---------------------------- |
-| - [@id](#data-service--@id)                                             | string                  | -                            |
-| - [@type](#data-service--@type)                                         | string                  | -                            |
-| + [contactPoint](#data-service--contactPoint)                           | array                   | contact point                |
-| - [endpointDescription](#data-service--endpointDescription)             | null or array of string | endpoint description         |
-| + [endpointURL](#data-service--endpointURL)                             | array of string         | endpoint URL                 |
-| - [keyword](#data-service--keyword)                                     | null or array of string | keyword/tag                  |
-| - [servesDataset](#data-service--servesDataset)                         | null or array           | serves dataset               |
-| - [spatialResolutionInMeters](#data-service--spatialResolutionInMeters) | null or string          | spatial resolution in meters |
-| - [temporalResolution](#data-service--temporalResolution)               | null or string          | temporal resolution          |
-| - [theme](#data-service--theme)                                         | null or array           | theme/category               |
-| - [accessRights](#data-service--accessRights)                           | More than one type      | access rights                |
-| - [conformsTo](#data-service--conformsTo)                               | null or array           | conforms to                  |
-| - [created](#data-service--created)                                     | More than one type      | creation date                |
-| - [creator](#data-service--creator)                                     | null or array           | creator                      |
-| - [description](#data-service--description)                             | null or string          | description                  |
-| - [identifier](#data-service--identifier)                               | More than one type      | identifier                   |
-| - [otherIdentifier](#data-service--otherIdentifier)                     | null or array           | other identifier             |
-| - [language](#data-service--language)                                   | More than one type      | language                     |
-| - [license](#data-service--license)                                     | More than one type      | license                      |
-| - [modified](#data-service--modified)                                   | More than one type      | update/modification date     |
-| + [publisher](#data-service--publisher)                                 | object                  | publisher                    |
-| - [rights](#data-service--rights)                                       | null or array of string | rights                       |
-| - [rightsHolder](#data-service--rightsHolder)                           | null or array           | rights holder                |
-| - [spatial](#data-service--spatial)                                     | null or array           | spatial/geographic coverage  |
-| - [temporal](#data-service--temporal)                                   | null or array           | temporal coverage            |
-| + [title](#data-service--title)                                         | string                  | title                        |
-| - [category](#data-service--category)                                   | null or array           | category                     |
-| - [hasQualityMeasurement](#data-service--hasQualityMeasurement)         | null or array           | quality measurement          |
-| - [qualifiedAttribution](#data-service--qualifiedAttribution)           | null or array           | qualified attribution        |
-| - [wasUsedBy](#data-service--wasUsedBy)                                 | null or array           | was used by                  |
+| Property                                                 | Type                    | Requirement Level | Title/Description            |
+| -------------------------------------------------------- | ----------------------- | ----------------- | ---------------------------- |
+| [@id](#data-service--@id)                                             | string                  | Optional          | -                            |
+| [@type](#data-service--@type)                                         | string                  | Optional          | -                            |
+| [contactPoint](#data-service--contactPoint)                           | array                   | Mandatory         | contact point                |
+| [endpointDescription](#data-service--endpointDescription)             | null or array of string | Recommended       | endpoint description         |
+| [endpointURL](#data-service--endpointURL)                             | array of string         | Mandatory         | endpoint URL                 |
+| [keyword](#data-service--keyword)                                     | null or array of string | Optional          | keyword/tag                  |
+| [servesDataset](#data-service--servesDataset)                         | null or array           | Recommended       | serves dataset               |
+| [spatialResolutionInMeters](#data-service--spatialResolutionInMeters) | null or string          | Optional          | spatial resolution in meters |
+| [temporalResolution](#data-service--temporalResolution)               | null or string          | Optional          | temporal resolution          |
+| [theme](#data-service--theme)                                         | null or array           | Optional          | theme/category               |
+| [accessRights](#data-service--accessRights)                           | More than one type      | Optional          | access rights                |
+| [conformsTo](#data-service--conformsTo)                               | null or array           | Optional          | conforms to                  |
+| [created](#data-service--created)                                     | More than one type      | Optional          | creation date                |
+| [creator](#data-service--creator)                                     | null or array           | Optional          | creator                      |
+| [description](#data-service--description)                             | null or string          | Optional          | description                  |
+| [identifier](#data-service--identifier)                               | More than one type      | Optional          | identifier                   |
+| [otherIdentifier](#data-service--otherIdentifier)                     | null or array           | Optional          | other identifier             |
+| [language](#data-service--language)                                   | More than one type      | Optional          | language                     |
+| [license](#data-service--license)                                     | More than one type      | Recommended       | license                      |
+| [modified](#data-service--modified)                                   | More than one type      | Optional          | update/modification date     |
+| [publisher](#data-service--publisher)                                 | object                  | Mandatory         | publisher                    |
+| [rights](#data-service--rights)                                       | null or array of string | Optional          | rights                       |
+| [rightsHolder](#data-service--rightsHolder)                           | null or array           | Optional          | rights holder                |
+| [spatial](#data-service--spatial)                                     | null or array           | Optional          | spatial/geographic coverage  |
+| [temporal](#data-service--temporal)                                   | null or array           | Optional          | temporal coverage            |
+| [title](#data-service--title)                                         | string                  | Mandatory         | title                        |
+| [category](#data-service--category)                                   | null or array           | Optional          | category                     |
+| [hasQualityMeasurement](#data-service--hasQualityMeasurement)         | null or array           | Optional          | quality measurement          |
+| [qualifiedAttribution](#data-service--qualifiedAttribution)           | null or array           | Optional          | qualified attribution        |
+| [wasUsedBy](#data-service--wasUsedBy)                                 | null or array           | Optional          | was used by                  |
 
 ## <a name="data-service--@id"></a>`DataService > @id`
 
@@ -1535,7 +1535,7 @@ A service that provides access to data or data processing functions
 
 **Title:** contact point
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Contact information for questions about the Data Service. Include an email address that is continuously monitored
 
@@ -1551,7 +1551,7 @@ Contact information for questions about the Data Service. Include an email addre
 
 **Title:** endpoint description
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of endpoint descriptions with operations and parameters (for example, OpenAPI or similar service documentation)
 
@@ -1585,7 +1585,7 @@ List of endpoint descriptions with operations and parameters (for example, OpenA
 
 **Title:** endpoint URL
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 A list of root locations or primary endpoints of the service (a Web-resolvable IRI)
 
@@ -1672,7 +1672,7 @@ List of keywords or tags describing the data service
 
 **Title:** serves dataset
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of datasets this service provides access to
 
@@ -2026,7 +2026,7 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 
 **Title:** license
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 License that governs how the data service can be used or reused
 
@@ -2154,7 +2154,7 @@ A year and month in YYYY-MM format
 
 **Title:** publisher
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Person or organization responsible for publishing and making the data service available
 
@@ -2241,7 +2241,7 @@ Time periods covered by the data service
 
 **Title:** title
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Human-readable title of the data service
 
@@ -2341,12 +2341,12 @@ A responsibility that an agent has for a resource
 }
 ```
 
-| Property               | Type   | Title/Description |
-| ---------------------- | ------ | ----------------- |
-| - [@id](#attribution--@id)         | string | -                 |
-| - [@type](#attribution--@type)     | string | -                 |
-| + [hadRole](#attribution--hadRole) | string | role              |
-| + [agent](#attribution--agent)     | object | agent             |
+| Property             | Type   | Requirement Level | Title/Description |
+| -------------------- | ------ | ----------------- | ----------------- |
+| [@id](#attribution--@id)         | string | Optional          | -                 |
+| [@type](#attribution--@type)     | string | Optional          | -                 |
+| [hadRole](#attribution--hadRole) | string | Mandatory         | role              |
+| [agent](#attribution--agent)     | object | Mandatory         | agent             |
 
 ## <a name="attribution--@id"></a>`Attribution > @id`
 
@@ -2374,7 +2374,7 @@ A responsibility that an agent has for a resource
 
 **Title:** role
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The function of an entity or agent with respect to another entity or resource
 
@@ -2392,7 +2392,7 @@ The function of an entity or agent with respect to another entity or resource
 
 **Title:** agent
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The agent that plays a role in the resource
 

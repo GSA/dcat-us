@@ -99,66 +99,66 @@ A collection of data published or curated by one provider
 }
 ```
 
-| Property                                                   | Type                    | Title/Description           |
-| ---------------------------------------------------------- | ----------------------- | --------------------------- |
-| - [@id](#@id)                                             | string                  | -                           |
-| - [@type](#@type)                                         | string                  | -                           |
-| - [otherIdentifier](#otherIdentifier)                     | null or array           | other identifier            |
-| - [sample](#sample)                                       | null or array           | sample                      |
-| - [status](#status)                                       | More than one type      | lifecycle status            |
-| - [supportedSchema](#supportedSchema)                     | More than one type      | supported schema            |
-| - [versionNotes](#versionNotes)                           | null or string          | version notes               |
-| + [contactPoint](#contactPoint)                           | More than one type      | contact point               |
-| - [distribution](#distribution)                           | null or array           | dataset distribution        |
-| - [first](#first)                                         | More than one type      | first                       |
-| - [hasCurrentVersion](#hasCurrentVersion)                 | More than one type      | current version             |
-| - [hasVersion](#hasVersion)                               | null or array           | has version                 |
-| - [inSeries](#inSeries)                                   | null or array           | in series                   |
-| - [keyword](#keyword)                                     | null or array of string | keyword/tag                 |
-| - [landingPage](#landingPage)                             | More than one type      | landing page                |
-| - [previousVersion](#previousVersion)                     | More than one type      | previous version            |
-| - [qualifiedRelation](#qualifiedRelation)                 | null or array           | qualified relation          |
-| - [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string          | Spatial resolution (meters) |
-| - [temporalResolution](#temporalResolution)               | null or string          | temporal resolution         |
-| - [theme](#theme)                                         | null or array           | theme/category              |
-| - [version](#version)                                     | null or string          | version                     |
-| - [describedBy](#describedBy)                             | More than one type      | data dictionary             |
-| - [liabilityStatement](#liabilityStatement)               | More than one type      | liability statement         |
-| - [metadataDistribution](#metadataDistribution)           | null or array           | metadata distribution       |
-| - [purpose](#purpose)                                     | null or string          | purpose                     |
-| - [accessRights](#accessRights)                           | More than one type      | access rights               |
-| - [accrualPeriodicity](#accrualPeriodicity)               | More than one type      | frequency                   |
-| - [conformsTo](#conformsTo)                               | null or array           | conforms to                 |
-| - [contributor](#contributor)                             | null or array           | contributor                 |
-| - [created](#created)                                     | More than one type      | creation date               |
-| - [creator](#creator)                                     | More than one type      | creator                     |
-| + [description](#description)                             | string                  | description                 |
-| - [hasPart](#hasPart)                                     | null or array           | has part                    |
-| + [identifier](#identifier)                               | More than one type      | identifier                  |
-| - [isReferencedBy](#isReferencedBy)                       | null or array of string | is referenced by            |
-| - [issued](#issued)                                       | More than one type      | release date                |
-| - [language](#language)                                   | More than one type      | language                    |
-| - [modified](#modified)                                   | More than one type      | last modified               |
-| - [provenance](#provenance)                               | null or array of string | provenance                  |
-| + [publisher](#publisher)                                 | object                  | publisher                   |
-| - [relation](#relation)                                   | null or array of string | related resource            |
-| - [replaces](#replaces)                                   | null or array           | replaces                    |
-| - [rights](#rights)                                       | null or array of string | rights                      |
-| - [rightsHolder](#rightsHolder)                           | null or array           | rights holder               |
-| - [source](#source)                                       | null or array           | data source                 |
-| - [spatial](#spatial)                                     | More than one type      | spatial/geographic coverage |
-| - [subject](#subject)                                     | null or array           | subject                     |
-| - [temporal](#temporal)                                   | null or array           | temporal coverage           |
-| + [title](#title)                                         | string                  | title                       |
-| - [category](#category)                                   | null or array           | category                    |
-| - [hasQualityMeasurement](#hasQualityMeasurement)         | null or array           | quality measurement         |
-| - [page](#page)                                           | null or array           | documentation               |
-| - [qualifiedAttribution](#qualifiedAttribution)           | null or array           | qualified attribution       |
-| - [wasAttributedTo](#wasAttributedTo)                     | null or array           | attribution                 |
-| - [wasGeneratedBy](#wasGeneratedBy)                       | null or array           | was generated by            |
-| - [wasUsedBy](#wasUsedBy)                                 | null or array           | used by                     |
-| - [image](#image)                                         | More than one type      | image                       |
-| - [scopeNote](#scopeNote)                                 | null or string          | usage note                  |
+| Property                                                 | Type                    | Requirement Level | Title/Description           |
+| -------------------------------------------------------- | ----------------------- | ----------------- | --------------------------- |
+| [@id](#@id)                                             | string                  | Optional          | -                           |
+| [@type](#@type)                                         | string                  | Optional          | -                           |
+| [otherIdentifier](#otherIdentifier)                     | null or array           | Optional          | other identifier            |
+| [sample](#sample)                                       | null or array           | Optional          | sample                      |
+| [status](#status)                                       | More than one type      | Optional          | lifecycle status            |
+| [supportedSchema](#supportedSchema)                     | More than one type      | Optional          | supported schema            |
+| [versionNotes](#versionNotes)                           | null or string          | Optional          | version notes               |
+| [contactPoint](#contactPoint)                           | More than one type      | Mandatory         | contact point               |
+| [distribution](#distribution)                           | null or array           | Recommended       | dataset distribution        |
+| [first](#first)                                         | More than one type      | Optional          | first                       |
+| [hasCurrentVersion](#hasCurrentVersion)                 | More than one type      | Optional          | current version             |
+| [hasVersion](#hasVersion)                               | null or array           | Optional          | has version                 |
+| [inSeries](#inSeries)                                   | null or array           | Optional          | in series                   |
+| [keyword](#keyword)                                     | null or array of string | Recommended       | keyword/tag                 |
+| [landingPage](#landingPage)                             | More than one type      | Recommended       | landing page                |
+| [previousVersion](#previousVersion)                     | More than one type      | Optional          | previous version            |
+| [qualifiedRelation](#qualifiedRelation)                 | null or array           | Optional          | qualified relation          |
+| [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string          | Optional          | Spatial resolution (meters) |
+| [temporalResolution](#temporalResolution)               | null or string          | Optional          | temporal resolution         |
+| [theme](#theme)                                         | null or array           | Recommended       | theme/category              |
+| [version](#version)                                     | null or string          | Optional          | version                     |
+| [describedBy](#describedBy)                             | More than one type      | Recommended       | data dictionary             |
+| [liabilityStatement](#liabilityStatement)               | More than one type      | Optional          | liability statement         |
+| [metadataDistribution](#metadataDistribution)           | null or array           | Optional          | metadata distribution       |
+| [purpose](#purpose)                                     | null or string          | Optional          | purpose                     |
+| [accessRights](#accessRights)                           | More than one type      | Optional          | access rights               |
+| [accrualPeriodicity](#accrualPeriodicity)               | More than one type      | Optional          | frequency                   |
+| [conformsTo](#conformsTo)                               | null or array           | Optional          | conforms to                 |
+| [contributor](#contributor)                             | null or array           | Optional          | contributor                 |
+| [created](#created)                                     | More than one type      | Optional          | creation date               |
+| [creator](#creator)                                     | More than one type      | Optional          | creator                     |
+| [description](#description)                             | string                  | Mandatory         | description                 |
+| [hasPart](#hasPart)                                     | null or array           | Optional          | has part                    |
+| [identifier](#identifier)                               | More than one type      | Mandatory         | identifier                  |
+| [isReferencedBy](#isReferencedBy)                       | null or array of string | Optional          | is referenced by            |
+| [issued](#issued)                                       | More than one type      | Optional          | release date                |
+| [language](#language)                                   | More than one type      | Optional          | language                    |
+| [modified](#modified)                                   | More than one type      | Recommended       | last modified               |
+| [provenance](#provenance)                               | null or array of string | Optional          | provenance                  |
+| [publisher](#publisher)                                 | object                  | Mandatory         | publisher                   |
+| [relation](#relation)                                   | null or array of string | Optional          | related resource            |
+| [replaces](#replaces)                                   | null or array           | Optional          | replaces                    |
+| [rights](#rights)                                       | null or array of string | Recommended       | rights                      |
+| [rightsHolder](#rightsHolder)                           | null or array           | Optional          | rights holder               |
+| [source](#source)                                       | null or array           | Optional          | data source                 |
+| [spatial](#spatial)                                     | More than one type      | Recommended       | spatial/geographic coverage |
+| [subject](#subject)                                     | null or array           | Optional          | subject                     |
+| [temporal](#temporal)                                   | null or array           | Recommended       | temporal coverage           |
+| [title](#title)                                         | string                  | Mandatory         | title                       |
+| [category](#category)                                   | null or array           | Optional          | category                    |
+| [hasQualityMeasurement](#hasQualityMeasurement)         | null or array           | Optional          | quality measurement         |
+| [page](#page)                                           | null or array           | Optional          | documentation               |
+| [qualifiedAttribution](#qualifiedAttribution)           | null or array           | Optional          | qualified attribution       |
+| [wasAttributedTo](#wasAttributedTo)                     | null or array           | Optional          | attribution                 |
+| [wasGeneratedBy](#wasGeneratedBy)                       | null or array           | Optional          | was generated by            |
+| [wasUsedBy](#wasUsedBy)                                 | null or array           | Optional          | used by                     |
+| [image](#image)                                         | More than one type      | Optional          | image                       |
+| [scopeNote](#scopeNote)                                 | null or string          | Optional          | usage note                  |
 
 ## <a name="@id"></a>`Dataset > @id`
 
@@ -306,7 +306,7 @@ Notes describing how this version differs from earlier versions of the dataset
 
 **Title:** contact point
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored
 
@@ -346,7 +346,7 @@ inline description of Kind
 
 **Title:** dataset distribution
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of available distributions for the dataset. This can be omitted when no distribution is available yet.
 
@@ -467,7 +467,7 @@ Dataset series this dataset belongs to
 
 **Title:** keyword/tag
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of keywords or tags describing the dataset
 
@@ -516,7 +516,7 @@ List of keywords or tags describing the dataset
 
 **Title:** landing page
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 A web page from the original data provider that gives access to the Dataset, its Distributions, and related information
 
@@ -638,7 +638,7 @@ Smallest time interval between data points, using xsd:duration format (for examp
 
 **Title:** theme/category
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of themes or categories for the dataset
 
@@ -670,7 +670,7 @@ The version indicator (name or identifier) of a resource
 
 **Title:** data dictionary
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 A distribution describing the Data Dictionary for this dataset
 
@@ -1064,7 +1064,7 @@ inline description of Agent
 
 **Title:** description
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Plain-language summary of the dataset
 
@@ -1101,7 +1101,7 @@ List of related datasets that are part of the described dataset
 
 **Title:** identifier
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
 
@@ -1327,7 +1327,7 @@ ISO 639-1 language code values used in the dataset text or metadata, such as en 
 
 **Title:** last modified
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Most recent date when the dataset's actual data changed, not just metadata
 
@@ -1449,7 +1449,7 @@ Full text of the provenance statement
 
 **Title:** publisher
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Organization responsible for publishing and making the dataset available
 
@@ -1511,7 +1511,7 @@ List of Datasets replaced by this Dataset
 
 **Title:** rights
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
@@ -1577,7 +1577,7 @@ List of related Datasets from which the described Dataset is derived
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 A geographic region or regions that are covered by the Dataset
 
@@ -1639,7 +1639,7 @@ List of primary subjects for the dataset, usually narrower than broad theme cate
 
 **Title:** temporal coverage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Time periods covered by the dataset
 
@@ -1654,7 +1654,7 @@ Time periods covered by the dataset
 
 **Title:** title
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Human-readable title of the dataset
 

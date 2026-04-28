@@ -69,39 +69,39 @@ A curated collection of metadata about datasets, data services, or other resourc
 }
 ```
 
-| Property                                         | Type                    | Title/Description           |
-| ------------------------------------------------ | ----------------------- | --------------------------- |
-| - [@id](#@id)                                   | string                  | -                           |
-| - [@type](#@type)                               | string                  | -                           |
-| - [catalog](#catalog)                           | null or array           | Related catalogs            |
-| - [contactPoint](#contactPoint)                 | null or array           | Contact points              |
-| + [dataset](#dataset)                           | array                   | dataset                     |
-| - [keyword](#keyword)                           | null or array of string | keyword/tag                 |
-| - [record](#record)                             | null or array           | catalog record              |
-| - [service](#service)                           | null or array           | service                     |
-| - [theme](#theme)                               | null or array           | theme/category              |
-| - [themeTaxonomy](#themeTaxonomy)               | null or array           | themes                      |
-| - [accessRights](#accessRights)                 | More than one type      | access rights               |
-| - [conformsTo](#conformsTo)                     | More than one type      | schema version              |
-| - [creator](#creator)                           | null or array           | creator                     |
-| - [description](#description)                   | null or string          | description                 |
-| - [hasPart](#hasPart)                           | null or array           | has part                    |
-| - [identifier](#identifier)                     | More than one type      | identifier                  |
-| - [otherIdentifier](#otherIdentifier)           | null or array           | other identifier            |
-| - [issued](#issued)                             | More than one type      | release date                |
-| - [language](#language)                         | More than one type      | language                    |
-| - [license](#license)                           | More than one type      | license                     |
-| - [modified](#modified)                         | More than one type      | update/modification date    |
-| - [publisher](#publisher)                       | More than one type      | publisher                   |
-| - [rights](#rights)                             | null or array of string | rights                      |
-| - [rightsHolder](#rightsHolder)                 | null or array           | rights holder               |
-| - [spatial](#spatial)                           | null or array           | spatial/geographic coverage |
-| - [subject](#subject)                           | null or array           | subject                     |
-| - [temporal](#temporal)                         | null or array           | temporal coverage           |
-| - [title](#title)                               | null or string          | title                       |
-| - [category](#category)                         | null or array           | category                    |
-| - [homepage](#homepage)                         | More than one type      | homepage                    |
-| - [qualifiedAttribution](#qualifiedAttribution) | null or array           | qualified attribution       |
+| Property                                       | Type                    | Requirement Level | Title/Description           |
+| ---------------------------------------------- | ----------------------- | ----------------- | --------------------------- |
+| [@id](#@id)                                   | string                  | Optional          | -                           |
+| [@type](#@type)                               | string                  | Optional          | -                           |
+| [catalog](#catalog)                           | null or array           | Optional          | Related catalogs            |
+| [contactPoint](#contactPoint)                 | null or array           | Optional          | Contact points              |
+| [dataset](#dataset)                           | array                   | Mandatory         | dataset                     |
+| [keyword](#keyword)                           | null or array of string | Optional          | keyword/tag                 |
+| [record](#record)                             | null or array           | Optional          | catalog record              |
+| [service](#service)                           | null or array           | Optional          | service                     |
+| [theme](#theme)                               | null or array           | Optional          | theme/category              |
+| [themeTaxonomy](#themeTaxonomy)               | null or array           | Recommended       | themes                      |
+| [accessRights](#accessRights)                 | More than one type      | Optional          | access rights               |
+| [conformsTo](#conformsTo)                     | More than one type      | Recommended       | schema version              |
+| [creator](#creator)                           | null or array           | Optional          | creator                     |
+| [description](#description)                   | null or string          | Optional          | description                 |
+| [hasPart](#hasPart)                           | null or array           | Optional          | has part                    |
+| [identifier](#identifier)                     | More than one type      | Optional          | identifier                  |
+| [otherIdentifier](#otherIdentifier)           | null or array           | Optional          | other identifier            |
+| [issued](#issued)                             | More than one type      | Recommended       | release date                |
+| [language](#language)                         | More than one type      | Recommended       | language                    |
+| [license](#license)                           | More than one type      | Optional          | license                     |
+| [modified](#modified)                         | More than one type      | Recommended       | update/modification date    |
+| [publisher](#publisher)                       | More than one type      | Optional          | publisher                   |
+| [rights](#rights)                             | null or array of string | Recommended       | rights                      |
+| [rightsHolder](#rightsHolder)                 | null or array           | Optional          | rights holder               |
+| [spatial](#spatial)                           | null or array           | Recommended       | spatial/geographic coverage |
+| [subject](#subject)                           | null or array           | Optional          | subject                     |
+| [temporal](#temporal)                         | null or array           | Optional          | temporal coverage           |
+| [title](#title)                               | null or string          | Optional          | title                       |
+| [category](#category)                         | null or array           | Optional          | category                    |
+| [homepage](#homepage)                         | More than one type      | Recommended       | homepage                    |
+| [qualifiedAttribution](#qualifiedAttribution) | null or array           | Optional          | qualified attribution       |
 
 ## <a name="@id"></a>`DCAT-US 3 Catalog > @id`
 
@@ -159,7 +159,7 @@ Contact information people can use to ask questions or send feedback about the c
 
 **Title:** dataset
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 List of datasets included in the catalog. Use this together with service so the catalog is not empty.
 
@@ -255,7 +255,7 @@ List of themes or categories for the catalog. A catalog can have more than one t
 
 **Title:** themes
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Controlled vocabulary or taxonomy used to classify catalog resources, such as datasets and services
 
@@ -307,7 +307,7 @@ Text description of the access rights
 
 **Title:** schema version
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Standard, schema, profile, or model that this catalog follows
 
@@ -443,7 +443,7 @@ A list of identifiers for the Catalog besides the main identifier, e.g. the URI 
 
 **Title:** release date
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Date when the catalog was formally issued, such as its initial publication date
 
@@ -534,7 +534,7 @@ A year and month in YYYY-MM format
 
 **Title:** language
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
 
@@ -644,7 +644,7 @@ Full text of the license
 
 **Title:** update/modification date
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Most recent date when the catalog content changed, not just catalog-record metadata
 
@@ -770,7 +770,7 @@ inline description of the publisher
 
 **Title:** rights
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions
 
@@ -822,7 +822,7 @@ Organizations that hold rights in the catalog
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Geographic area covered by the catalog
 
@@ -903,7 +903,7 @@ List of high-level categories for the catalog
 
 **Title:** homepage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Main public web page for the catalog, usually an HTML page
 

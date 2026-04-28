@@ -25,13 +25,13 @@ Rules or indicators that describe who can access a resource
 }
 ```
 
-| Property                                       | Type               | Title/Description    |
-| ---------------------------------------------- | ------------------ | -------------------- |
-| - [@id](#access-restriction--@id)                                 | string             | -                    |
-| - [@type](#access-restriction--@type)                             | string             | -                    |
-| - [restrictionNote](#access-restriction--restrictionNote)         | null or string     | restriction note     |
-| + [restrictionStatus](#access-restriction--restrictionStatus)     | object             | restriction status   |
-| - [specificRestriction](#access-restriction--specificRestriction) | More than one type | specific restriction |
+| Property                                     | Type               | Requirement Level | Title/Description    |
+| -------------------------------------------- | ------------------ | ----------------- | -------------------- |
+| [@id](#access-restriction--@id)                                 | string             | Optional          | -                    |
+| [@type](#access-restriction--@type)                             | string             | Optional          | -                    |
+| [restrictionNote](#access-restriction--restrictionNote)         | null or string     | Optional          | restriction note     |
+| [restrictionStatus](#access-restriction--restrictionStatus)     | object             | Mandatory         | restriction status   |
+| [specificRestriction](#access-restriction--specificRestriction) | More than one type | Recommended       | specific restriction |
 
 ## <a name="access-restriction--@id"></a>`AccessRestriction > @id`
 
@@ -70,7 +70,7 @@ A note related to the access restriction
 
 **Title:** restriction status
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
 
@@ -94,7 +94,7 @@ The indication of whether or not there are access restrictions on the item, cons
 
 **Title:** specific restriction
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
 
@@ -159,13 +159,13 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 }
 ```
 
-| Property                                                           | Type                    | Title/Description                |
-| ------------------------------------------------------------------ | ----------------------- | -------------------------------- |
-| - [@id](#cui-restriction--@id)                                                     | string                  | -                                |
-| - [@type](#cui-restriction--@type)                                                 | string                  | -                                |
-| + [cuiBannerMarking](#cui-restriction--cuiBannerMarking)                           | string                  | CUI banner marking               |
-| + [designationIndicator](#cui-restriction--designationIndicator)                   | string                  | CUI designation indicator        |
-| - [requiredIndicatorPerAuthority](#cui-restriction--requiredIndicatorPerAuthority) | null or array of string | required indicator per authority |
+| Property                                                         | Type                    | Requirement Level | Title/Description                |
+| ---------------------------------------------------------------- | ----------------------- | ----------------- | -------------------------------- |
+| [@id](#cui-restriction--@id)                                                     | string                  | Optional          | -                                |
+| [@type](#cui-restriction--@type)                                                 | string                  | Optional          | -                                |
+| [cuiBannerMarking](#cui-restriction--cuiBannerMarking)                           | string                  | Mandatory         | CUI banner marking               |
+| [designationIndicator](#cui-restriction--designationIndicator)                   | string                  | Mandatory         | CUI designation indicator        |
+| [requiredIndicatorPerAuthority](#cui-restriction--requiredIndicatorPerAuthority) | null or array of string | Optional          | required indicator per authority |
 
 ## <a name="cui-restriction--@id"></a>`CUIRestriction > @id`
 
@@ -193,7 +193,7 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 
 **Title:** CUI banner marking
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection; see information at https://www.archives.gov/cui/registry/category-marking-list
 
@@ -215,7 +215,7 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 
 **Title:** CUI designation indicator
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Agency that designated the information as CUI; include at least "Controlled by:" and, when possible, contact information
 
@@ -289,13 +289,13 @@ Rules or legal limits on how a resource may be used
 }
 ```
 
-| Property                                       | Type               | Title/Description    |
-| ---------------------------------------------- | ------------------ | -------------------- |
-| - [@id](#use-restriction--@id)                                 | string             | -                    |
-| - [@type](#use-restriction--@type)                             | string             | -                    |
-| - [restrictionNote](#use-restriction--restrictionNote)         | null or string     | restriction note     |
-| + [restrictionStatus](#use-restriction--restrictionStatus)     | object             | restriction status   |
-| - [specificRestriction](#use-restriction--specificRestriction) | More than one type | specific restriction |
+| Property                                     | Type               | Requirement Level | Title/Description    |
+| -------------------------------------------- | ------------------ | ----------------- | -------------------- |
+| [@id](#use-restriction--@id)                                 | string             | Optional          | -                    |
+| [@type](#use-restriction--@type)                             | string             | Optional          | -                    |
+| [restrictionNote](#use-restriction--restrictionNote)         | null or string     | Optional          | restriction note     |
+| [restrictionStatus](#use-restriction--restrictionStatus)     | object             | Mandatory         | restriction status   |
+| [specificRestriction](#use-restriction--specificRestriction) | More than one type | Recommended       | specific restriction |
 
 ## <a name="use-restriction--@id"></a>`UseRestriction > @id`
 
@@ -344,7 +344,7 @@ Significant information pertaining to the use or reproduction of the data
 
 **Title:** restriction status
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status
 
@@ -368,7 +368,7 @@ Indication of whether or not there are use restrictions on the archival material
 
 **Title:** specific restriction
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction
 

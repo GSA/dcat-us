@@ -26,12 +26,12 @@ A person, organization, software agent, or other entity involved with a resource
 }
 ```
 
-| Property                 | Type          | Title/Description |
-| ------------------------ | ------------- | ----------------- |
-| - [@id](#agent--@id)           | string        | -                 |
-| - [@type](#agent--@type)       | string        | -                 |
-| - [category](#agent--category) | null or array | category          |
-| + [name](#agent--name)         | string        | name              |
+| Property               | Type          | Requirement Level | Title/Description |
+| ---------------------- | ------------- | ----------------- | ----------------- |
+| [@id](#agent--@id)           | string        | Optional          | -                 |
+| [@type](#agent--@type)       | string        | Optional          | -                 |
+| [category](#agent--category) | null or array | Optional          | category          |
+| [name](#agent--name)         | string        | Mandatory         | name              |
 
 ## <a name="agent--@id"></a>`Agent > @id`
 
@@ -74,7 +74,7 @@ The type of the agent that makes the item available
 
 **Title:** name
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The name of the agent
 
@@ -137,15 +137,15 @@ An organization involved with a resource, including parent or child organization
 }
 ```
 
-| Property                                   | Type                    | Title/Description  |
-| ------------------------------------------ | ----------------------- | ------------------ |
-| - [@id](#organization--@id)                             | string                  | -                  |
-| - [@type](#organization--@type)                         | string                  | -                  |
-| + [name](#organization--name)                           | string                  | name               |
-| - [subOrganizationOf](#organization--subOrganizationOf) | null or array           | suborganization of |
-| - [altLabel](#organization--altLabel)                   | null or string          | alternative label  |
-| - [notation](#organization--notation)                   | null or array of string | notation           |
-| - [prefLabel](#organization--prefLabel)                 | null or string          | preferred label    |
+| Property                                 | Type                    | Requirement Level | Title/Description  |
+| ---------------------------------------- | ----------------------- | ----------------- | ------------------ |
+| [@id](#organization--@id)                             | string                  | Optional          | -                  |
+| [@type](#organization--@type)                         | string                  | Optional          | -                  |
+| [name](#organization--name)                           | string                  | Mandatory         | name               |
+| [subOrganizationOf](#organization--subOrganizationOf) | null or array           | Optional          | suborganization of |
+| [altLabel](#organization--altLabel)                   | null or string          | Optional          | alternative label  |
+| [notation](#organization--notation)                   | null or array of string | Optional          | notation           |
+| [prefLabel](#organization--prefLabel)                 | null or string          | Optional          | preferred label    |
 
 ## <a name="organization--@id"></a>`Organization > @id`
 
@@ -173,7 +173,7 @@ An organization involved with a resource, including parent or child organization
 
 **Title:** name
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The full name of the Organization
 
@@ -309,18 +309,18 @@ Contact information for an individual or entity
 }
 ```
 
-| Property                                   | Type           | Title/Description |
-| ------------------------------------------ | -------------- | ----------------- |
-| - [@id](#kind--@id)                             | string         | -                 |
-| - [@type](#kind--@type)                         | string         | -                 |
-| - [address](#kind--address)                     | null or array  | address           |
-| + [hasEmail](#kind--hasEmail)                   | string         | Email             |
-| - [family-name](#kind--family-name)             | null or string | family name       |
-| + [fn](#kind--fn)                               | string         | formatted name    |
-| - [given-name](#kind--given-name)               | null or string | given name        |
-| - [organization-name](#kind--organization-name) | null or string | organization name |
-| - [tel](#kind--tel)                             | null or string | telephone         |
-| - [title](#kind--title)                         | null or string | position title    |
+| Property                                 | Type           | Requirement Level | Title/Description |
+| ---------------------------------------- | -------------- | ----------------- | ----------------- |
+| [@id](#kind--@id)                             | string         | Optional          | -                 |
+| [@type](#kind--@type)                         | string         | Optional          | -                 |
+| [address](#kind--address)                     | null or array  | Optional          | address           |
+| [hasEmail](#kind--hasEmail)                   | string         | Mandatory         | Email             |
+| [family-name](#kind--family-name)             | null or string | Optional          | family name       |
+| [fn](#kind--fn)                               | string         | Mandatory         | formatted name    |
+| [given-name](#kind--given-name)               | null or string | Optional          | given name        |
+| [organization-name](#kind--organization-name) | null or string | Optional          | organization name |
+| [tel](#kind--tel)                             | null or string | Optional          | telephone         |
+| [title](#kind--title)                         | null or string | Optional          | position title    |
 
 ## <a name="kind--@id"></a>`Kind > @id`
 
@@ -363,7 +363,7 @@ The address of the contact
 
 **Title:** Email
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Email address for the contact in mailto: format (for example, mailto:support@example.gov)
 
@@ -406,7 +406,7 @@ The family name of the contact
 
 **Title:** formatted name
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 The formatted text of the name of the contact
 

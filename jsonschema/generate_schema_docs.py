@@ -371,7 +371,10 @@ def schema_requirement_level(schema):
     if isinstance(keywords, dict):
         # New location for requirement metadata.
         if "requirementLevel" in keywords:
-            return _normalize_requirement_level(keywords.get("requirementLevel"))
+            requirement_level = keywords.get("requirementLevel")
+            if hasattr(requirement_level, "literal"):
+                requirement_level = requirement_level.literal
+            return _normalize_requirement_level(requirement_level)
 
     old_docs = {}
     if isinstance(keywords, dict):
@@ -391,10 +394,29 @@ def properties_table_wrap(properties_list, schema):
     properties_list is a list of lists that will eventually be formatted
     into a table.
     """
-    for line in properties_list:
+    property_nodes = list(schema.iterate_properties)
+
+    for index, line in enumerate(properties_list):
         if "Combination" in line:
             # replace combining with something better
             line[line.index("Combination")] = "More than one type"
+
+        if not line:
+            continue
+
+        if index == 0:
+            line = list(line)
+            properties_list[index] = line
+            property_column_index = line.index("Property")
+            line.insert(property_column_index + 2, "Requirement Level")
+            continue
+
+        property_column_index = 0
+        if line[property_column_index].startswith(("+ ", "- ")):
+            line[property_column_index] = line[property_column_index][2:]
+
+        requirement = schema_requirement_level(property_nodes[index - 1])
+        line.insert(property_column_index + 2, requirement)
 
     # remove lines
     def _remove_me(line):

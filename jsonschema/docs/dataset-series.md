@@ -143,22 +143,22 @@ A group of related datasets that are published separately
 }
 ```
 
-| Property                                     | Type               | Title/Description           |
-| -------------------------------------------- | ------------------ | --------------------------- |
-| - [@id](#@id)                               | string             | -                           |
-| - [@type](#@type)                           | string             | -                           |
-| - [contactPoint](#contactPoint)             | null or array      | contact point               |
-| - [first](#first)                           | More than one type | first                       |
-| - [last](#last)                             | More than one type | last                        |
-| - [seriesMember](#seriesMember)             | null or array      | series member               |
-| - [accrualPeriodicity](#accrualPeriodicity) | More than one type | frequency                   |
-| + [description](#description)               | string             | description                 |
-| - [issued](#issued)                         | More than one type | release date                |
-| - [modified](#modified)                     | More than one type | update/modification date    |
-| - [publisher](#publisher)                   | More than one type | publisher                   |
-| - [spatial](#spatial)                       | null or array      | spatial/geographic coverage |
-| - [temporal](#temporal)                     | null or array      | temporal coverage           |
-| + [title](#title)                           | string             | title                       |
+| Property                                   | Type               | Requirement Level | Title/Description           |
+| ------------------------------------------ | ------------------ | ----------------- | --------------------------- |
+| [@id](#@id)                               | string             | Optional          | -                           |
+| [@type](#@type)                           | string             | Optional          | -                           |
+| [contactPoint](#contactPoint)             | null or array      | Recommended       | contact point               |
+| [first](#first)                           | More than one type | Recommended       | first                       |
+| [last](#last)                             | More than one type | Recommended       | last                        |
+| [seriesMember](#seriesMember)             | null or array      | Recommended       | series member               |
+| [accrualPeriodicity](#accrualPeriodicity) | More than one type | Optional          | frequency                   |
+| [description](#description)               | string             | Mandatory         | description                 |
+| [issued](#issued)                         | More than one type | Optional          | release date                |
+| [modified](#modified)                     | More than one type | Recommended       | update/modification date    |
+| [publisher](#publisher)                   | More than one type | Recommended       | publisher                   |
+| [spatial](#spatial)                       | null or array      | Recommended       | spatial/geographic coverage |
+| [temporal](#temporal)                     | null or array      | Recommended       | temporal coverage           |
+| [title](#title)                           | string             | Mandatory         | title                       |
 
 ## <a name="@id"></a>`DatasetSeries > @id`
 
@@ -186,7 +186,7 @@ A group of related datasets that are published separately
 
 **Title:** contact point
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of contacts people can use to ask questions or send feedback about the dataset series
 
@@ -201,7 +201,7 @@ List of contacts people can use to ask questions or send feedback about the data
 
 **Title:** first
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The first dataset in an ordered dataset series
 
@@ -239,7 +239,7 @@ inline description of the first dataset
 
 **Title:** last
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 The last dataset in an ordered dataset series
 
@@ -277,7 +277,7 @@ inline description of the last dataset
 
 **Title:** series member
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 List of members of the Dataset Series
 
@@ -382,7 +382,7 @@ Must be one of:
 
 **Title:** description
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Plain-language summary of the dataset series
 
@@ -491,7 +491,7 @@ A year and month in YYYY-MM format
 
 **Title:** update/modification date
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
@@ -586,7 +586,7 @@ A year and month in YYYY-MM format
 
 **Title:** publisher
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
@@ -621,7 +621,7 @@ inline description of publisher
 
 **Title:** spatial/geographic coverage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 A geographic region that is covered by the Dataset Series
 
@@ -636,7 +636,7 @@ A geographic region that is covered by the Dataset Series
 
 **Title:** temporal coverage
 
-**Requirement:** Optional
+**Requirement:** Recommended
 
 Time periods covered by the dataset series
 
@@ -651,7 +651,7 @@ Time periods covered by the dataset series
 
 **Title:** title
 
-**Requirement:** Optional
+**Requirement:** Mandatory
 
 Human-readable title of the dataset series
 
