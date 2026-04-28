@@ -369,6 +369,58 @@ A controlled term or label, optionally drawn from a concept scheme
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
 
+**Examples:**
+
+```json
+"Environment"
+```
+
+```json
+"Climate Science"
+```
+
+```json
+{
+    "@type": "Concept",
+    "prefLabel": "Environment"
+}
+```
+
+```json
+{
+    "@type": "Concept",
+    "prefLabel": "Climate Science",
+    "definition": "The scientific study of climate patterns and change.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/science-domains",
+        "@type": "ConceptScheme",
+        "title": "Science Domains"
+    }
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/concepts/environment",
+    "@type": "Concept",
+    "prefLabel": "Environment",
+    "altLabel": "Ecology",
+    "definition": "The natural world, including air, water, land, plants, and animals, especially as affected by human activity.",
+    "notation": [
+        "ENV",
+        "E01",
+        "ENVI"
+    ],
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/data-themes",
+        "@type": "ConceptScheme",
+        "version": "2.0",
+        "description": "DCAT-US approved themes for categorizing datasets",
+        "title": "Data Themes"
+    }
+}
+```
+
 | Any of               |
 | -------------------- |
 | [Concept](#concept--anyOf_i0) |
@@ -381,11 +433,43 @@ The value of the concept, expressed as a string. This is only used when the conc
 | **Type** | `string` |
 | -------- | -------- |
 
+**Examples:**
+
+```json
+"Environment"
+```
+
+```json
+"Climate Science"
+```
+
 ## <a name="concept--anyOf_i1"></a>`Concept > anyOf > item 1`
 
 | **Type**                  | `object`         |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Examples:**
+
+```json
+{
+    "@type": "Concept",
+    "prefLabel": "Environment"
+}
+```
+
+```json
+{
+    "@type": "Concept",
+    "prefLabel": "Climate Science",
+    "definition": "The scientific study of climate patterns and change.",
+    "inScheme": {
+        "@id": "https://example.gov/concept-schemes/science-domains",
+        "@type": "ConceptScheme",
+        "title": "Science Domains"
+    }
+}
+```
 
 | Property                            | Type               | Requirement Level | Title/Description                                              |
 | ----------------------------------- | ------------------ | ----------------- | -------------------------------------------------------------- |
@@ -404,6 +488,12 @@ The value of the concept, expressed as a string. This is only used when the conc
 | **Type**   | `string` |
 | ---------- | -------- |
 | **Format** | `iri`    |
+
+**Example:**
+
+```json
+"https://example.gov/concepts/environment"
+```
 
 ### <a name="concept--anyOf_i1_@type"></a>`Concept > anyOf > item 1 > @type`
 
@@ -424,6 +514,12 @@ Alternative label for a concept
 | **Type** | `null or string` |
 | -------- | ---------------- |
 
+**Example:**
+
+```json
+"Ecology"
+```
+
 ### <a name="concept--anyOf_i1_definition"></a>`Concept > anyOf > item 1 > definition`
 
 **Requirement:** Optional
@@ -432,6 +528,16 @@ Definition of the controlled vocabulary term
 
 | **Type** | `null or string` |
 | -------- | ---------------- |
+
+**Examples:**
+
+```json
+"The scientific study of climate patterns and change."
+```
+
+```json
+"The natural world, including air, water, land, plants, and animals, especially as affected by human activity."
+```
 
 ### <a name="concept--anyOf_i1_inScheme"></a>`Concept > anyOf > item 1 > inScheme`
 
@@ -444,6 +550,26 @@ Concept scheme defining this concept
 | **Additional properties** | Any type allowed                                                   |
 | **Defined in**            | [ConceptScheme](./identifiers-and-relationships.md#concept-scheme) |
 
+**Examples:**
+
+```json
+{
+    "@id": "https://example.gov/concept-schemes/science-domains",
+    "@type": "ConceptScheme",
+    "title": "Science Domains"
+}
+```
+
+```json
+{
+    "@id": "https://example.gov/concept-schemes/data-themes",
+    "@type": "ConceptScheme",
+    "version": "2.0",
+    "description": "DCAT-US approved themes for categorizing datasets",
+    "title": "Data Themes"
+}
+```
+
 ### <a name="concept--anyOf_i1_notation"></a>`Concept > anyOf > item 1 > notation`
 
 **Requirement:** Optional
@@ -453,6 +579,16 @@ List of abbreviations or codes from code lists for the Concept
 | **Type**                  | `combining`      |
 | ------------------------- | ---------------- |
 | **Additional properties** | Any type allowed |
+
+**Example:**
+
+```json
+[
+    "ENV",
+    "E01",
+    "ENVI"
+]
+```
 
 | Any of                                |
 | ------------------------------------- |
@@ -489,6 +625,16 @@ Preferred label for the term
 | **Type**     | `string` |
 | ------------ | -------- |
 | **Required** | Yes      |
+
+**Examples:**
+
+```json
+"Environment"
+```
+
+```json
+"Climate Science"
+```
 
 ---
 
