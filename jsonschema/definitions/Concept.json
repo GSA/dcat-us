@@ -8,7 +8,7 @@
       "type": "string",
       "title": "Concept",
       "description": "The value of the concept, expressed as a string. This is only used when the concept is not further described by the properties of the Concept object and is not linked to a concept scheme.",
-      "examples": [ "Environment", "Climate Science" ]
+      "examples": ["Environment", "Climate Science"]
     },
     {
       "type": "object",
@@ -32,7 +32,7 @@
         "@id": {
           "type": "string",
           "format": "iri",
-          "examples": [ "https://example.gov/concepts/environment" ]
+          "examples": ["https://example.gov/concepts/environment"]
         },
         "@type": {
           "type": "string",
@@ -41,13 +41,13 @@
         "altLabel": {
           "title": "alternate label",
           "description": "Alternative label for a concept",
-          "type": [ "null", "string" ],
-          "examples": [ "Ecology" ]
+          "type": ["null", "string"],
+          "examples": ["Ecology"]
         },
         "definition": {
           "title": "definition",
           "description": "Definition of the controlled vocabulary term",
-          "type": [ "null", "string" ],
+          "type": ["null", "string"],
           "examples": [
             "The scientific study of climate patterns and change.",
             "The natural world, including air, water, land, plants, and animals, especially as affected by human activity."
@@ -86,16 +86,16 @@
               }
             }
           ],
-          "examples": [ [ "ENV", "E01", "ENVI" ] ]
+          "examples": [["ENV", "E01", "ENVI"]]
         },
         "prefLabel": {
           "title": "preferred label",
           "description": "Preferred label for the term",
           "type": "string",
-          "examples": [ "Environment", "Climate Science" ]
+          "examples": ["Environment", "Climate Science"]
         }
       },
-      "required": [ "prefLabel" ]
+      "required": ["prefLabel"]
     }
   ],
   "_oldDocs": {
@@ -125,7 +125,7 @@
       "prefLabel": "Environment",
       "altLabel": "Ecology",
       "definition": "The natural world, including air, water, land, plants, and animals, especially as affected by human activity.",
-      "notation": [ "ENV", "E01", "ENVI" ],
+      "notation": ["ENV", "E01", "ENVI"],
       "inScheme": {
         "@id": "https://example.gov/concept-schemes/data-themes",
         "@type": "ConceptScheme",
