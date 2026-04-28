@@ -4,7 +4,7 @@ Supporting classes for time periods, locations, quality metrics, measurements, a
 
 <a name="period-of-time"></a>
 
-## Class PeriodOfTime
+## Class PeriodOfTime [#](#period-of-time)
 
 Information about a specific time period with a start- and/or end-time
 
@@ -248,7 +248,7 @@ A year and month in YYYY-MM format
 
 <a name="location"></a>
 
-## Class Location
+## Class Location [#](#location)
 
 A named place or geographic area
 
@@ -789,7 +789,7 @@ Preferred label or name of the Location
 
 <a name="metric"></a>
 
-## Class Metric
+## Class Metric [#](#metric)
 
 A standard used to measure one aspect of data quality
 
@@ -901,7 +901,7 @@ Definition of the metric.
 
 <a name="quality-measurement"></a>
 
-## Class QualityMeasurement
+## Class QualityMeasurement [#](#quality-measurement)
 
 A measurement of a resource against a specific quality metric
 
@@ -1002,7 +1002,7 @@ Unit of measure associated with the value
 
 <a name="activity"></a>
 
-## Class Activity
+## Class Activity [#](#activity)
 
 An activity related to creating, changing, or using a resource
 
@@ -1088,7 +1088,7 @@ A human-readable label for the activity
 
 <a name="address"></a>
 
-## Class Address
+## Class Address [#](#address)
 
 A single physical address
 

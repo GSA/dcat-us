@@ -4,7 +4,7 @@ Restriction classes describing access limits, controlled unclassified informatio
 
 <a name="access-restriction"></a>
 
-## Class AccessRestriction
+## Class AccessRestriction [#](#access-restriction)
 
 Rules or indicators that describe who can access a resource
 
@@ -127,7 +127,7 @@ inline description of the specific restriction
 
 <a name="cui-restriction"></a>
 
-## Class CUIRestriction
+## Class CUIRestriction [#](#cui-restriction)
 
 Information describing Controlled Unclassified Information (CUI) restrictions for a resource
 
@@ -248,7 +248,7 @@ List of free-text required indicators from the applicable authority (for example
 
 <a name="use-restriction"></a>
 
-## Class UseRestriction
+## Class UseRestriction [#](#use-restriction)
 
 Rules or legal limits on how a resource may be used
 

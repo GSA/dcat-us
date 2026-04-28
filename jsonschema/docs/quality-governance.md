@@ -4,7 +4,7 @@ Supporting classes for standards, documents, catalog records, data services, and
 
 <a name="standard"></a>
 
-## Class Standard
+## Class Standard [#](#standard)
 
 A standard or specification that another resource conforms to
 
@@ -454,7 +454,7 @@ inline description of ConceptScheme
 
 <a name="document"></a>
 
-## Class Document
+## Class Document [#](#document)
 
 A publication or other document related to a resource
 
@@ -879,7 +879,7 @@ List of categories/genres for the Document
 
 <a name="catalog-record"></a>
 
-## Class CatalogRecord
+## Class CatalogRecord [#](#catalog-record)
 
 A record in a catalog, describing the registration of a single resource
 
@@ -1314,7 +1314,7 @@ A link to the Dataset, Data service or Catalog described in the Catalog Record
 
 <a name="data-service"></a>
 
-## Class DataService
+## Class DataService [#](#data-service)
 
 A service that provides access to data or data processing functions
 
@@ -2149,7 +2149,7 @@ List of activities that used or tested the data service
 
 <a name="attribution"></a>
 
-## Class Attribution
+## Class Attribution [#](#attribution)
 
 A responsibility that an agent has for a resource
 

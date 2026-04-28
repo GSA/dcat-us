@@ -4,7 +4,7 @@ Data information classes including Agent, Organization, and Kind, which describe
 
 <a name="agent"></a>
 
-## Class Agent
+## Class Agent [#](#agent)
 
 A person, organization, software agent, or other entity involved with a resource
 
@@ -90,7 +90,7 @@ The name of the agent
 
 <a name="organization"></a>
 
-## Class Organization
+## Class Organization [#](#organization)
 
 An organization involved with a resource, including parent or child organizations
 
@@ -263,7 +263,7 @@ Preferred or legal name of the organization
 
 <a name="kind"></a>
 
-## Class Kind
+## Class Kind [#](#kind)
 
 Contact information for an individual or entity
 

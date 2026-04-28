@@ -4,7 +4,7 @@ Supporting classes for identifiers, relationships, checksums, and controlled con
 
 <a name="identifier"></a>
 
-## Class Identifier
+## Class Identifier [#](#identifier)
 
 A unique identifier and optionally it's scheme and other relevant information
 
@@ -181,7 +181,7 @@ abbreviation or code from code lists for an identifier
 
 <a name="relationship"></a>
 
-## Class Relationship
+## Class Relationship [#](#relationship)
 
 Additional information about how one resource is related to another
 
@@ -274,7 +274,7 @@ The entity related to the dataset. This string should unambiguously identify the
 
 <a name="checksum"></a>
 
-## Class Checksum
+## Class Checksum [#](#checksum)
 
 A mechanism that can be used to verify that the contents of a distribution have not changed
 
@@ -361,7 +361,7 @@ A lower case hexadecimal encoded digest value produced using a specific algorith
 
 <a name="concept"></a>
 
-## Class Concept
+## Class Concept [#](#concept)
 
 A controlled term or label, optionally drawn from a concept scheme
 
@@ -640,7 +640,7 @@ Preferred label for the term
 
 <a name="concept-scheme"></a>
 
-## Class ConceptScheme
+## Class ConceptScheme [#](#concept-scheme)
 
 A controlled vocabulary or other list of approved terms for a concept
 

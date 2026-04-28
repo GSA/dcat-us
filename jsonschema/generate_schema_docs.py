@@ -344,7 +344,7 @@ def _build_public_docs(rendered_docs_dir, output_dir):
                 root_anchor=section_anchor,
             )
             sections.append(
-                f'<a name="{section_anchor}"></a>\n\n## Class {class_name}\n\n{section_content}'
+                f'<a name="{section_anchor}"></a>\n\n## Class {class_name} [#](#{section_anchor})\n\n{section_content}'
             )
 
         page_content = "\n\n---\n\n".join(sections)
