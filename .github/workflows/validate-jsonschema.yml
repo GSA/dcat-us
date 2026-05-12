@@ -5,6 +5,9 @@ on:
     paths:
       - 'jsonschema/**'
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -36,4 +39,3 @@ jobs:
       - name: Check JSON format with prettier
         working-directory: ./jsonschema
         run: npx prettier --check definitions/*.json examples/
-
