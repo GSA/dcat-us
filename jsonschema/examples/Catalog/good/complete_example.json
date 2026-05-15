@@ -131,8 +131,7 @@
       },
       "publisher": {
         "name": "Office of Management and Budget"
-      },
-      "identifier": "https://example.gov/datasets/catalog-complete-001"
+      }
     },
     {
       "@type": "Dataset",
