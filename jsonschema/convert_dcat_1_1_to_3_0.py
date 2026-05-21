@@ -10,11 +10,15 @@ import requests
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+import transforms
+
+
 V1_1_CATALOG_SCHEMA_ID = "https://project-open-data.cio.gov/v1.1/schema/catalog.json"
 V3_CATALOG_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/catalog"
 SCRIPT_DIR = Path(__file__).parent
 V1_1_DEFINITIONS_DIR = SCRIPT_DIR / "v1.1_definitions"
 V3_DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
+
 
 class CatalogFetchException(Exception):
     pass
@@ -28,7 +32,7 @@ class CatalogValidationException(Exception):
     pass
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def format_path(path):
     """Format a jsonschema path as a readable string like 'subject[0].inScheme'."""
     if not path:
@@ -46,7 +50,7 @@ def format_path(path):
     return ".".join(parts)
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def format_validation_errors(errors, indent=0):
     """Format validation errors with summarization and clear nesting."""
     output = []
@@ -61,7 +65,7 @@ def format_validation_errors(errors, indent=0):
     return "\n".join(output)
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def summarize_error(error, prefix=""):
     """Summarize a single error into a human-readable string."""
     path = format_path(error.path)
@@ -151,7 +155,7 @@ def summarize_error(error, prefix=""):
     return error.message
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def find_meaningful_errors(errors):
     """Filter errors to find the meaningful ones, skipping null-type failures."""
     meaningful = []
@@ -162,14 +166,14 @@ def find_meaningful_errors(errors):
     return meaningful if meaningful else list(errors)
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def is_null_type_error(error):
     """Check if this error is just 'type is not null'."""
     return (error.validator == "type" and
             error.validator_value == "null")
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def extract_schema_name(schema):
     """Extract a human-readable schema/class name from a schema definition."""
     if isinstance(schema, dict):
@@ -182,7 +186,7 @@ def extract_schema_name(schema):
     return None
 
 
-# TODO duplciated code with test_json_schema.py
+# TODO duplicated code with test_json_schema.py
 def load_schema_registry(definitions_dir: Path) -> Registry:
     registry = Registry()
     for schema_file in definitions_dir.glob("*.json"):
@@ -193,7 +197,8 @@ def load_schema_registry(definitions_dir: Path) -> Registry:
 
 
 def fetch_dcat_catalog(url: str) -> dict:
-    ## Example URL: https://open.gsa.gov/data.json
+    # Example URL: https://open.gsa.gov/data.json
+    # This catalog contains 342 datasets
     try:
         response = requests.get(url, timeout=30)
         response.raise_for_status()
@@ -205,94 +210,33 @@ def fetch_dcat_catalog(url: str) -> dict:
 def convert_dcat_catalog(old_catalog: dict) -> dict:
     new_catalog = copy.deepcopy(old_catalog)
 
-    # Step 5: conformsTo on the Catalog
+    # conformsTo on the Catalog
     new_catalog["conformsTo"] = {
         "@type": "Standard",
         "title": "DCAT-US 3.0",
         "identifier": "https://resources.data.gov/dcat-us/3.0.0",
     }
 
-    # Step 6: remove @context and describedBy from the Catalog
+    # remove @context and describedBy from the Catalog
     new_catalog.pop("@context", None)
     new_catalog.pop("describedBy", None)
 
-    # Per-dataset transformations
     datasets = new_catalog.get("dataset", [])
     for i, dataset in enumerate(datasets):
-        dataset = _fix_modified(dataset)
-        dataset = _fix_temporal(dataset)
-        dataset = _fix_spatial(dataset)
-        dataset = _fix_language(dataset)
-        dataset = _add_access_rights(dataset)
-        dataset = _propagate_license(dataset)
+        dataset = transforms.modified(dataset)
+        dataset = transforms.temporal(dataset)
+        dataset = transforms.spatial(dataset)
+        dataset = transforms.language(dataset)
+        dataset = transforms.access_rights(dataset)
+        dataset = transforms.propagate_license(dataset)
+        dataset = transforms.rights(dataset)
+        dataset = transforms.described_by(dataset)
+        dataset = transforms.sub_organization_of(dataset)
+        dataset = transforms.conforms_to(dataset)
+        dataset = transforms.landing_page(dataset)
         datasets[i] = dataset
 
     return new_catalog
-
-
-def _fix_modified(dataset: dict) -> dict:
-    """Step 1: Move ISO 8601 repeating intervals out of `modified`.
-
-    If `dataset["modified"]` is a repeating interval (e.g. "R/P1Y"), return
-    a copy with that value moved to `accrualPeriodicity` and `modified`
-    replaced with a concrete date. Otherwise return the dataset unchanged.
-
-    Raises CatalogConversionException when `modified` is a repeating
-    interval and no concrete date is available to substitute.
-    """
-    return dataset  # TODO: implement
-
-
-def _fix_temporal(dataset: dict) -> dict:
-    """Step 2: Convert `temporal` from an ISO 8601 interval string to a
-    list of PeriodOfTime objects.
-
-    Handles three input shapes: "<start>/<end>", "<start>/<duration>",
-    and "<duration>/<end>". Returns the dataset unchanged if `temporal`
-    is absent.
-    """
-    return dataset  # TODO: implement
-
-
-def _fix_spatial(dataset: dict) -> dict:
-    """Step 3: Convert `spatial` from a plain string or bbox string to a
-    list of Location objects.
-
-    Detects bbox format ("<minLon>,<minLat>,<maxLon>,<maxLat>") and emits
-    a POLYGON WKT; otherwise treats the value as a prefLabel. Returns the
-    dataset unchanged if `spatial` is absent.
-    """
-    return dataset  # TODO: implement
-
-
-def _fix_language(dataset: dict) -> dict:
-    """Step 4: Truncate RFC 5646 language tags to two-letter ISO 639-1
-    on the dataset and any nested Distribution objects.
-
-    Returns the dataset unchanged if no `language` field is present at
-    either level.
-    """
-    return dataset  # TODO: implement
-
-
-def _add_access_rights(dataset: dict) -> dict:
-    """Step 7: Add `accessRights` based on the existing `accessLevel`.
-
-    Does not remove `accessLevel`. Returns the dataset unchanged if
-    `accessLevel` is missing or `accessRights` is already set.
-    """
-    return dataset  # TODO: implement
-
-
-def _propagate_license(dataset: dict) -> dict:
-    """Step 8: Copy dataset-level `license` down to each Distribution
-    that does not already declare one.
-
-    Does not remove the dataset-level `license`. Returns the dataset
-    unchanged if there is no license on the dataset or no distributions
-    to copy it to.
-    """
-    return dataset  # TODO: implement
 
 
 def validate_v1_1(catalog: dict, registry: Registry) -> None:
