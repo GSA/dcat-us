@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Convert a valid DCAT-US v1.1 catalog to a valid DCAT-US v3.0 catalog."""
+import copy
 import json
 import sys
 from pathlib import Path
@@ -9,10 +10,10 @@ import requests
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
-
-V11_SCHEMA_URL = "https://project-open-data.cio.gov/v1.1/schema/catalog.json"
+V1_1_CATALOG_SCHEMA_ID = "https://project-open-data.cio.gov/v1.1/schema/catalog.json"
 V3_CATALOG_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/catalog"
 SCRIPT_DIR = Path(__file__).parent
+V1_1_DEFINITIONS_DIR = SCRIPT_DIR / "v1.1_definitions"
 V3_DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
 
 class CatalogFetchException(Exception):
@@ -27,9 +28,172 @@ class CatalogValidationException(Exception):
     pass
 
 
-# Example URL:
-# - https://open.gsa.gov/data.json
+# TODO duplciated code with test_json_schema.py
+def format_path(path):
+    """Format a jsonschema path as a readable string like 'subject[0].inScheme'."""
+    if not path:
+        return "(root)"
+    parts = []
+    for p in path:
+        if isinstance(p, int):
+            # Array index - append to previous part
+            if parts:
+                parts[-1] = f"{parts[-1]}[{p}]"
+            else:
+                parts.append(f"[{p}]")
+        else:
+            parts.append(str(p))
+    return ".".join(parts)
+
+
+# TODO duplciated code with test_json_schema.py
+def format_validation_errors(errors, indent=0):
+    """Format validation errors with summarization and clear nesting."""
+    output = []
+    prefix = "  " * indent
+
+    # Group errors by their root path for cleaner output
+    for error in sorted(errors, key=lambda e: list(e.path)):
+        summary = summarize_error(error, prefix=prefix)
+        if summary:
+            output.append(summary)
+
+    return "\n".join(output)
+
+
+# TODO duplciated code with test_json_schema.py
+def summarize_error(error, prefix=""):
+    """Summarize a single error into a human-readable string."""
+    path = format_path(error.path)
+
+    # Handle anyOf/oneOf errors by finding meaningful sub-errors
+    if error.validator in ("anyOf", "oneOf") and error.context:
+        meaningful = find_meaningful_errors(error.context)
+
+        # If all sub-errors are null-type, we have a different problem
+        if not meaningful:
+            return f"{prefix}{path}: field is not null and does not match any allowed type"
+
+        # Check if it's a simple "not null and wrong type" case
+        has_null_alternative = any(is_null_type_error(e) for e in error.context)
+
+        summaries = []
+        for sub_error in meaningful:
+            sub_summary = summarize_error(sub_error, prefix="")
+            if sub_summary:
+                summaries.append(sub_summary)
+
+        if has_null_alternative and summaries:
+            intro = f"{path}: field is not null and "
+            if len(summaries) == 1:
+                return f"{prefix}{intro}{summaries[0]}"
+            else:
+                return f"{prefix}{intro}does not match alternatives:\n" + "\n".join(
+                    f"{prefix}  - {s}" for s in summaries
+                )
+        elif summaries:
+            if len(summaries) == 1:
+                return f"{prefix}{path}: {summaries[0]}"
+            else:
+                return f"{prefix}{path}: does not match any alternative:\n" + "\n".join(
+                    f"{prefix}    - {s}" for s in summaries
+                )
+
+    # Handle $ref errors - find the expected class
+    if "$ref" in error.schema:
+        class_name = extract_schema_name(error.schema)
+        if error.context:
+            # Dig into what specifically failed
+            meaningful = find_meaningful_errors(error.context)
+            if meaningful:
+                sub_summaries = [summarize_error(e, prefix="") for e in meaningful]
+                sub_summaries = [s for s in sub_summaries if s]
+                if sub_summaries:
+                    if class_name:
+                        return f"does not conform to {class_name}: {'; '.join(sub_summaries)}"
+                    return "; ".join(sub_summaries)
+        if class_name:
+            return f"does not conform to {class_name}"
+
+    # Handle required field errors
+    if error.validator == "required":
+        missing = error.validator_value
+        if isinstance(missing, list):
+            missing_fields = [f for f in missing if f in error.message]
+            if missing_fields:
+                return f"missing required field '{missing_fields[0]}'"
+        # Parse from message: "'fieldname' is a required property"
+        if "is a required property" in error.message:
+            field = error.message.split("'")[1]
+            return f"missing required field '{field}'"
+        return error.message
+
+    # Handle type errors
+    if error.validator == "type":
+        expected = error.validator_value
+        if isinstance(expected, list):
+            expected = " or ".join(expected)
+        return f"{prefix}{path}: expected type '{expected}'"
+
+    # Handle enum errors
+    if error.validator == "enum":
+        return f"value not in allowed values: {error.validator_value}"
+
+    # Handle pattern errors
+    if error.validator == "pattern":
+        return f"does not match pattern '{error.validator_value}'"
+
+    # Handle format errors
+    if error.validator == "format":
+        return f"invalid format, expected '{error.validator_value}'"
+
+    # Default: use the message
+    return error.message
+
+
+# TODO duplciated code with test_json_schema.py
+def find_meaningful_errors(errors):
+    """Filter errors to find the meaningful ones, skipping null-type failures."""
+    meaningful = []
+    for error in errors:
+        if is_null_type_error(error):
+            continue
+        meaningful.append(error)
+    return meaningful if meaningful else list(errors)
+
+
+# TODO duplciated code with test_json_schema.py
+def is_null_type_error(error):
+    """Check if this error is just 'type is not null'."""
+    return (error.validator == "type" and
+            error.validator_value == "null")
+
+
+# TODO duplciated code with test_json_schema.py
+def extract_schema_name(schema):
+    """Extract a human-readable schema/class name from a schema definition."""
+    if isinstance(schema, dict):
+        if "$ref" in schema:
+            # Extract class name from ref like "/dcat-us/3.0.0/definitions/concept"
+            ref = schema["$ref"]
+            return ref.split("/")[-1].title()
+        if "title" in schema:
+            return schema["title"]
+    return None
+
+
+# TODO duplciated code with test_json_schema.py
+def load_schema_registry(definitions_dir: Path) -> Registry:
+    registry = Registry()
+    for schema_file in definitions_dir.glob("*.json"):
+        with schema_file.open() as f:
+            resource = Resource.from_contents(json.load(f))
+            registry = resource @ registry
+    return registry
+
+
 def fetch_dcat_catalog(url: str) -> dict:
+    ## Example URL: https://open.gsa.gov/data.json
     try:
         response = requests.get(url, timeout=30)
         response.raise_for_status()
@@ -39,32 +203,110 @@ def fetch_dcat_catalog(url: str) -> dict:
 
 
 def convert_dcat_catalog(old_catalog: dict) -> dict:
-    raise NotImplementedError("convert_dcat_catalog is not yet implemented")
+    new_catalog = copy.deepcopy(old_catalog)
 
-    # if any issues, raise CatalogConversionException
+    # Step 5: conformsTo on the Catalog
+    new_catalog["conformsTo"] = {
+        "@type": "Standard",
+        "title": "DCAT-US 3.0",
+        "identifier": "https://resources.data.gov/dcat-us/3.0.0",
+    }
 
-    # Breaking Change 1: fix modified
+    # Step 6: remove @context and describedBy from the Catalog
+    new_catalog.pop("@context", None)
+    new_catalog.pop("describedBy", None)
 
-    # Breaking Change 2: fix temporal
+    # Per-dataset transformations
+    datasets = new_catalog.get("dataset", [])
+    for i, dataset in enumerate(datasets):
+        dataset = _fix_modified(dataset)
+        dataset = _fix_temporal(dataset)
+        dataset = _fix_spatial(dataset)
+        dataset = _fix_language(dataset)
+        dataset = _add_access_rights(dataset)
+        dataset = _propagate_license(dataset)
+        datasets[i] = dataset
 
-    # Breaking Change 3: fix spatial
-
-    # Breaking Change 4: fix language
-
-    # Structural Change 1: Update conformsTo on the Catalog
-
-    # Structural Change 2: Remove @context and describedBy from the Catalog
-
-    # Structural Change 3: Replace accessLevel with accessRights
-
-    # Structural Change 4: Add license to Distribution objects
-
-    pass
+    return new_catalog
 
 
-def validate_v1_1(catalog: dict) -> None:
-    # raise CatalogValidationException if invalid
-    pass
+def _fix_modified(dataset: dict) -> dict:
+    """Step 1: Move ISO 8601 repeating intervals out of `modified`.
+
+    If `dataset["modified"]` is a repeating interval (e.g. "R/P1Y"), return
+    a copy with that value moved to `accrualPeriodicity` and `modified`
+    replaced with a concrete date. Otherwise return the dataset unchanged.
+
+    Raises CatalogConversionException when `modified` is a repeating
+    interval and no concrete date is available to substitute.
+    """
+    return dataset  # TODO: implement
+
+
+def _fix_temporal(dataset: dict) -> dict:
+    """Step 2: Convert `temporal` from an ISO 8601 interval string to a
+    list of PeriodOfTime objects.
+
+    Handles three input shapes: "<start>/<end>", "<start>/<duration>",
+    and "<duration>/<end>". Returns the dataset unchanged if `temporal`
+    is absent.
+    """
+    return dataset  # TODO: implement
+
+
+def _fix_spatial(dataset: dict) -> dict:
+    """Step 3: Convert `spatial` from a plain string or bbox string to a
+    list of Location objects.
+
+    Detects bbox format ("<minLon>,<minLat>,<maxLon>,<maxLat>") and emits
+    a POLYGON WKT; otherwise treats the value as a prefLabel. Returns the
+    dataset unchanged if `spatial` is absent.
+    """
+    return dataset  # TODO: implement
+
+
+def _fix_language(dataset: dict) -> dict:
+    """Step 4: Truncate RFC 5646 language tags to two-letter ISO 639-1
+    on the dataset and any nested Distribution objects.
+
+    Returns the dataset unchanged if no `language` field is present at
+    either level.
+    """
+    return dataset  # TODO: implement
+
+
+def _add_access_rights(dataset: dict) -> dict:
+    """Step 7: Add `accessRights` based on the existing `accessLevel`.
+
+    Does not remove `accessLevel`. Returns the dataset unchanged if
+    `accessLevel` is missing or `accessRights` is already set.
+    """
+    return dataset  # TODO: implement
+
+
+def _propagate_license(dataset: dict) -> dict:
+    """Step 8: Copy dataset-level `license` down to each Distribution
+    that does not already declare one.
+
+    Does not remove the dataset-level `license`. Returns the dataset
+    unchanged if there is no license on the dataset or no distributions
+    to copy it to.
+    """
+    return dataset  # TODO: implement
+
+
+def validate_v1_1(catalog: dict, registry: Registry) -> None:
+    validator = Draft202012Validator(
+        {"$ref": V1_1_CATALOG_SCHEMA_ID},
+        registry=registry,
+        format_checker=Draft202012Validator.FORMAT_CHECKER,
+    )
+    errors = list(validator.iter_errors(catalog))
+    if errors:
+        raise CatalogValidationException(
+            f"v1.1 validation failed with {len(errors)} error(s):\n"
+            + format_validation_errors(errors, indent=2)
+        )
 
 
 def validate_v3_0(catalog: dict, registry: Registry) -> None:
@@ -76,22 +318,14 @@ def validate_v3_0(catalog: dict, registry: Registry) -> None:
     errors = list(validator.iter_errors(catalog))
     if errors:
         raise CatalogValidationException(
-            f"v3.0 validation failed with {len(errors)} error(s): "
-            + "; ".join(e.message for e in errors[:5])
+            f"v3.0 validation failed with {len(errors)} error(s):\n"
+            + format_validation_errors(errors, indent=2)
         )
 
 
-def export_converted_catalog(catalog, output_dir: str):
-    pass
-
-
-def load_v3_schema_registry(definitions_dir: Path) -> Registry:
-    registry = Registry()
-    for schema_file in definitions_dir.glob("*.json"):
-        with schema_file.open() as f:
-            resource = Resource.from_contents(json.load(f))
-            registry = resource @ registry
-    return registry
+def export_converted_catalog(catalog: dict, output_dir: str) -> None:
+    # TODO save the result to ./converted_dcat_data
+    print("Saving converted DCAT-US 3.0 to disk...")
 
 
 @click.command()
@@ -99,12 +333,13 @@ def load_v3_schema_registry(definitions_dir: Path) -> Registry:
 @click.option("-u", "--url", help="URL of DCAT-US v1.1 catalog to be converted", required=True)
 def main(output_dir, url):
     """Convert DCAT catalog."""
-    registry = load_v3_schema_registry(V3_DEFINITIONS_DIR)
+    v1_1_registry = load_schema_registry(V1_1_DEFINITIONS_DIR)
+    v3_registry = load_schema_registry(V3_DEFINITIONS_DIR)
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
-        validate_v1_1(catalog_to_convert)
+        validate_v1_1(catalog_to_convert, v1_1_registry)
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
-        validate_v3_0(converted_catalog, registry)
+        validate_v3_0(converted_catalog, v3_registry)
         export_converted_catalog(converted_catalog, output_dir)
     except CatalogFetchException as e:
         click.echo(f"There was an error fetching a DCAT-US v1.1 catalog to convert: {e}", err=True)
