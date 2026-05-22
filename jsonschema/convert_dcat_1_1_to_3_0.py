@@ -6,7 +6,8 @@ import sys
 from pathlib import Path
 
 import click
-import requests
+from curl_cffi import requests
+from curl_cffi.requests.exceptions import RequestException
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
@@ -198,13 +199,14 @@ def load_schema_registry(definitions_dir: Path) -> Registry:
 
 def fetch_dcat_catalog(url: str) -> dict:
     # Example URLs:
-		# - https://open.gsa.gov/data.json (342 datasets, baseline)
+    # - https://open.gsa.gov/data.json (342 datasets, baseline)
     # - https://www.energy.gov/data.json (482 datasets, contains "temporal" keys)
+    # - https://www.usda.gov/sites/default/files/documents/data.json (requires TLS impersonation)
     try:
-        response = requests.get(url, timeout=30)
+        response = requests.get(url, timeout=60, impersonate="safari17_0")
         response.raise_for_status()
         return response.json()
-    except (requests.RequestException, ValueError) as e:
+    except (RequestException, ValueError) as e:
         raise CatalogFetchException(str(e)) from e
 
 

@@ -132,6 +132,8 @@ def transform_modified(dataset: dict) -> dict:
         new_dataset["modified"] = _to_valid_date(modified)
         return new_dataset
 
+		# TODO https://www.fec.gov/data.json is valid v1.1 but does not have `issued` so it
+    # fails v3.0 validation. What should we do in these cases?
     issued = dataset.get("issued")
     if not issued:
         return dataset
