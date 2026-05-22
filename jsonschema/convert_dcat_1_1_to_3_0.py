@@ -197,8 +197,9 @@ def load_schema_registry(definitions_dir: Path) -> Registry:
 
 
 def fetch_dcat_catalog(url: str) -> dict:
-    # Example URL: https://open.gsa.gov/data.json
-    # This catalog contains 342 datasets
+    # Example URLs:
+		# - https://open.gsa.gov/data.json (342 datasets, baseline)
+    # - https://www.energy.gov/data.json (482 datasets, contains "temporal" keys)
     try:
         response = requests.get(url, timeout=30)
         response.raise_for_status()
@@ -222,18 +223,19 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
     new_catalog.pop("describedBy", None)
 
     datasets = new_catalog.get("dataset", [])
+    print(f"Transforming {len(datasets)} datasets.")
     for i, dataset in enumerate(datasets):
-        dataset = transforms.modified(dataset)
-        dataset = transforms.temporal(dataset)
-        dataset = transforms.spatial(dataset)
-        dataset = transforms.language(dataset)
-        dataset = transforms.access_rights(dataset)
+        dataset = transforms.transform_modified(dataset)
+        dataset = transforms.transform_temporal(dataset)
+        dataset = transforms.transform_spatial(dataset)
+        dataset = transforms.transform_language(dataset)
+        dataset = transforms.transform_access_rights(dataset)
         dataset = transforms.propagate_license(dataset)
-        dataset = transforms.rights(dataset)
-        dataset = transforms.described_by(dataset)
-        dataset = transforms.sub_organization_of(dataset)
-        dataset = transforms.conforms_to(dataset)
-        dataset = transforms.landing_page(dataset)
+        dataset = transforms.transform_rights(dataset)
+        dataset = transforms.transform_described_by(dataset)
+        dataset = transforms.transform_sub_organization_of(dataset)
+        dataset = transforms.transform_conforms_to(dataset)
+        dataset = transforms.transform_landing_page(dataset)
         datasets[i] = dataset
 
     return new_catalog
