@@ -43,8 +43,64 @@ class TestTransformTemporal:
         result = transform_temporal(dataset)
         assert result is dataset
 
-    def test_handles_datetime_strings(self):
-        dataset = {"temporal": "2020-01-01T00:00:00Z/2020-12-31T23:59:59Z"}
+    def test_normalizes_datetime_to_date_for_start_end(self):
+        dataset = {"temporal": "2000-01-15T00:00:00Z/2010-01-15T00:00:00Z"}
         result = transform_temporal(dataset)
-        assert result["temporal"][0]["startDate"] == "2020-01-01T00:00:00Z"
-        assert result["temporal"][0]["endDate"] == "2020-12-31T23:59:59Z"
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "startDate": "2000-01-15",
+            "endDate": "2010-01-15",
+        }]
+
+    # --- "<start>/<duration>" ---
+
+    def test_converts_start_duration_to_start_only(self):
+        dataset = {"temporal": "2020-01-01/P1Y"}
+        result = transform_temporal(dataset)
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "startDate": "2020-01-01",
+        }]
+
+    def test_start_duration_omits_end_date(self):
+        result = transform_temporal({"temporal": "2020-01-01/P6M"})
+        assert "endDate" not in result["temporal"][0]
+
+    def test_start_duration_normalizes_datetime(self):
+        dataset = {"temporal": "2020-01-01T00:00:00Z/P1Y"}
+        result = transform_temporal(dataset)
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "startDate": "2020-01-01",
+        }]
+
+    def test_start_duration_handles_complex_duration(self):
+        # Duration component is discarded regardless of its complexity.
+        dataset = {"temporal": "2020-01-01/P1Y2M10DT5H"}
+        result = transform_temporal(dataset)
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "startDate": "2020-01-01",
+        }]
+
+    # --- "<duration>/<end>" ---
+
+    def test_converts_duration_end_to_end_only(self):
+        dataset = {"temporal": "P1Y/2020-12-31"}
+        result = transform_temporal(dataset)
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "endDate": "2020-12-31",
+        }]
+
+    def test_duration_end_omits_start_date(self):
+        result = transform_temporal({"temporal": "P1Y/2020-12-31"})
+        assert "startDate" not in result["temporal"][0]
+
+    def test_duration_end_normalizes_datetime(self):
+        dataset = {"temporal": "P1Y/2020-12-31T23:59:59Z"}
+        result = transform_temporal(dataset)
+        assert result["temporal"] == [{
+            "@type": "PeriodOfTime",
+            "endDate": "2020-12-31",
+        }]

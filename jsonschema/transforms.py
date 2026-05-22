@@ -48,20 +48,32 @@ def transform_temporal(dataset: dict) -> dict:
     """Convert `temporal` from an ISO 8601 interval string to a
     list of PeriodOfTime objects.
 
-    Handles three input shapes: "<start>/<end>", "<start>/<duration>",
-    and "<duration>/<end>". Returns the dataset unchanged if `temporal`
-    is absent.
+    Handles three input shapes:
+      - "<start>/<end>"      -> {startDate, endDate}
+      - "<start>/<duration>" -> {startDate}            (duration discarded)
+      - "<duration>/<end>"   -> {endDate}              (duration discarded)
+
+    Datetime values are normalized to dates (the time component is dropped).
+    Returns the dataset unchanged if `temporal` is absent.
     """
-    if "temporal" in dataset.keys():
-        # naive implementation assuming string is "{date}/{date}"
-        # does not yet account for the other two shapes of input
-        date_range = dataset["temporal"]
-        start_date, end_date = date_range.split("/")
-        dataset["temporal"] = [{
-            "@type": "PeriodOfTime",
-				    "startDate": start_date,
-				    "endDate": end_date
-				}]
+    if "temporal" not in dataset:
+        return dataset
+
+    left, right = dataset["temporal"].split("/")
+    period: dict = {"@type": "PeriodOfTime"}
+
+    if _is_duration(left):
+        # <duration>/<end>
+        period["endDate"] = _normalize_to_date(right)
+    elif _is_duration(right):
+        # <start>/<duration>
+        period["startDate"] = _normalize_to_date(left)
+    else:
+        # <start>/<end>
+        period["startDate"] = _normalize_to_date(left)
+        period["endDate"] = _normalize_to_date(right)
+
+    dataset["temporal"] = [period]
     return dataset
 
 
@@ -223,6 +235,19 @@ def transform_landing_page(dataset: dict) -> dict:
         document["title"] = new_dataset["title"]
     new_dataset["landingPage"] = document
     return new_dataset
+
+
+def _is_duration(token: str) -> bool:
+    """Return True if `token` is an ISO 8601 duration (starts with 'P')."""
+    return token.startswith("P")
+
+
+def _normalize_to_date(token: str) -> str:
+    """Strip any time component from an ISO 8601 datetime, returning
+    just the date portion. '2000-01-15T00:00:00Z' -> '2000-01-15'.
+    Leaves date-only strings unchanged.
+    """
+    return token.split("T", 1)[0]
 
 
 def _upgrade_described_by(obj: dict) -> None:
