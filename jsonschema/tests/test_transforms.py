@@ -53,20 +53,28 @@ class TestTransformModified:
         assert result == {
             "modified": "2024-10-01",
             "issued": "2024-10-01",
-            "accrualPeriodicity": "R/P1Y",
+            "accrualPeriodicity": "annually",
         }
 
-    @pytest.mark.parametrize("interval", ["R/P1Y", "R/P1D", "R/P2Y", "R5/P1Y"])
-    def test_handles_various_repeating_intervals(self, interval):
+    @pytest.mark.parametrize("interval, expected_periodicity", [
+        ("R/P1D", "daily"),
+        ("R/P1W", "weekly"),
+        ("R/P1M", "monthly"),
+        ("R/P3M", "quarterly"),
+        ("R/P1Y", "annually"),
+        ("R/P2Y", "R/P2Y"),    # unmapped -> passthrough
+        ("R5/P1Y", "R5/P1Y"),  # unmapped -> passthrough
+    ])
+    def test_handles_various_repeating_intervals(self, interval, expected_periodicity):
         result = transform_modified({"modified": interval, "issued": "2024-10-01"})
-        assert result["accrualPeriodicity"] == interval
+        assert result["accrualPeriodicity"] == expected_periodicity
         assert result["modified"] == "2024-10-01"
 
     @pytest.mark.parametrize("dataset", [
         {},
         {"title": "no modified"},
         {"modified": "2024-10-01"},                # concrete date
-        {"modified": "2024-10-01T12:30:00Z"},      # concrete datetime
+        {"modified": "2024-10-01T12:30:00Z"},      # concrete Zulu datetime (preserved)
         {"modified": None},                        # not a string
         {"modified": "R/P1Y"},                     # no issued to fall back on
         {"modified": "R/P1Y", "issued": ""},       # empty issued
@@ -74,6 +82,10 @@ class TestTransformModified:
     def test_noop_when_no_transform_needed(self, dataset):
         original = dict(dataset)
         assert transform_modified(dataset) == original
+
+    def test_truncates_non_zulu_datetime(self):
+        result = transform_modified({"modified": "2024-10-01T12:30:00"})
+        assert result == {"modified": "2024-10-01"}
 
 
 class TestTransformTemporal:

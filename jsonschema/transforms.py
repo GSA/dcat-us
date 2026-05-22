@@ -6,7 +6,6 @@ transformation applies.
 
 import copy
 from datetime import datetime
-import re
 
 from convert_dcat_1_1_to_3_0 import CatalogConversionException
 
@@ -18,28 +17,13 @@ ACCESS_RIGHTS_BY_LEVEL = {
 }
 
 
-REPEATING_INTERVAL_REGEX = re.compile(r"^R\d*/")
-
-
-# ISO 8601 date or datetime: YYYY-MM-DD, optionally followed by a time
-# component (T HH:MM[:SS[.fff]]) and optionally a timezone (Z or ±HH:MM).
-# Does not validate that the date itself is real (e.g. 2020-02-30 matches).
-DATE_REGEX = re.compile(
-    r"^\d{4}-\d{2}-\d{2}"
-    r"(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})?)?$"
-)
-
-
-# ISO 8601 duration: PnYnMnDTnHnMnS, where each component is optional but
-# at least one numeric component must be present. The 'T' separator is
-# required if and only if any time component (H/M/S) is present.
-DURATION_REGEX = re.compile(
-    r"^P"
-    r"(?=\d|T\d)"                              # require at least one component
-    r"(?:\d+Y)?(?:\d+M)?(?:\d+D)?"             # date part
-    r"(?:T(?=\d)(?:\d+H)?(?:\d+M)?(?:\d+S)?)?" # optional time part
-    r"$"
-)
+PERIODICITY_MAP = {
+    "R/P1D": "daily",
+    "R/P1W": "weekly",
+    "R/P1M": "monthly",
+    "R/P3M": "quarterly",
+    "R/P1Y": "annually",
+}
 
 
 def propagate_license(dataset: dict) -> dict:
@@ -137,20 +121,23 @@ def transform_language(dataset: dict) -> dict:
 
 def transform_modified(dataset: dict) -> dict:
     """If `modified` is a repeating interval (starts with 'R'), move it
-    to `accrualPeriodicity` and replace `modified` with the value of
-    `issued`. No-op if `modified` isn't a repeating interval or if
-    `issued` isn't available."""
+    to `accrualPeriodicity` (mapped to a plain-language code where
+    possible) and replace `modified` with the value of `issued`. No-op
+    if `modified` isn't a repeating interval or if `issued` isn't
+    available."""
     modified = dataset.get("modified")
-
-    if not (isinstance(modified, str) and modified.startswith("R")):
+    if not isinstance(modified, str):
         return dataset
-    issued = dataset.get("issued")
+    if not modified.startswith("R"):
+        dataset["modified"] = _to_valid_date(modified)
+        return dataset
 
+    issued = dataset.get("issued")
     if not issued:
         return dataset
 
-    dataset["accrualPeriodicity"] = modified
-    dataset["modified"] = issued
+    dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(modified, modified)
+    dataset["modified"] = _to_valid_date(issued)
 
     return dataset
 
@@ -269,6 +256,22 @@ def _as_date(token: str) -> str | None:
         return datetime.fromisoformat(token).date().isoformat()
     except ValueError:
         return None
+
+
+def _to_valid_date(value: str) -> str:
+    """Return `value` unchanged if it's a Zulu date-time (ends with 'Z').
+    Otherwise, truncate to the YYYY-MM-DD portion if possible."""
+    if not isinstance(value, str):
+        return value
+
+    if value.endswith("Z"):
+        return value
+
+    # Anything with a 'T' is a datetime-ish string — take the date part.
+    if "T" in value and len(value) >= 10:
+        return value[:10]
+
+    return value
 
 
 def _upgrade_described_by(obj: dict) -> None:
