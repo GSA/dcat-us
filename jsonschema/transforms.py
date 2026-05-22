@@ -5,6 +5,7 @@ transformation applies.
 """
 
 import copy
+from datetime import datetime
 import re
 
 from convert_dcat_1_1_to_3_0 import CatalogConversionException
@@ -18,6 +19,7 @@ ACCESS_RIGHTS_BY_LEVEL = {
 
 
 REPEATING_INTERVAL_REGEX = re.compile(r"^R\d*/")
+
 
 # ISO 8601 date or datetime: YYYY-MM-DD, optionally followed by a time
 # component (T HH:MM[:SS[.fff]]) and optionally a timezone (Z or ±HH:MM).
@@ -124,60 +126,33 @@ def transform_landing_page(dataset: dict) -> dict:
 
 
 def transform_language(dataset: dict) -> dict:
-    """Truncate RFC 5646 language tags to two-letter ISO 639-1
-    on the dataset and any nested Distribution objects.
-
-    Returns the dataset unchanged if no `language` field is present at
-    either level.
-
-    Raises CatalogConversionException if `language` is present but not a
-    list, or if any element of the list is not a string.
-    """
-    new_dataset = copy.deepcopy(dataset)
-
-    if "language" in new_dataset:
-        _coerce_language_list(new_dataset, "dataset")
-
-    for i, distribution in enumerate(new_dataset.get("distribution", [])):
-        if "language" in distribution:
-            _coerce_language_list(distribution, f"distribution[{i}]")
-
-    return new_dataset
+    """Truncate RFC 5646 language tags to ISO 639-1 on the dataset and
+    any nested distributions. Non-list or non-string entries are left
+    alone."""
+    _truncate_language(dataset)
+    for distribution in dataset.get("distribution", []):
+        _truncate_language(distribution)
+    return dataset
 
 
 def transform_modified(dataset: dict) -> dict:
-    """Move ISO 8601 repeating intervals out of `modified`.
-
-    If `dataset["modified"]` is a repeating interval (e.g. "R/P1Y"), return
-    a copy with that value moved to `accrualPeriodicity` and `modified`
-    replaced with a concrete date. Otherwise return the dataset unchanged.
-
-    Raises CatalogConversionException when `modified` is a repeating
-    interval and no concrete date is available to substitute.
-    """
+    """If `modified` is a repeating interval (starts with 'R'), move it
+    to `accrualPeriodicity` and replace `modified` with the value of
+    `issued`. No-op if `modified` isn't a repeating interval or if
+    `issued` isn't available."""
     modified = dataset.get("modified")
-    if not _is_repeating_interval(modified):
+
+    if not (isinstance(modified, str) and modified.startswith("R")):
+        return dataset
+    issued = dataset.get("issued")
+
+    if not issued:
         return dataset
 
-    concrete_date = dataset.get("issued")
-    if not concrete_date:
-        raise CatalogConversionException(
-            f"`modified` is a repeating interval ({modified!r}) and no "
-            "concrete date is available to substitute."
-        )
+    dataset["accrualPeriodicity"] = modified
+    dataset["modified"] = issued
 
-    result = copy.deepcopy(dataset)
-
-    existing = result.get("accrualPeriodicity")
-    if existing and existing != modified:
-        raise CatalogConversionException(
-            f"Cannot move {modified!r} from `modified` to `accrualPeriodicity`: "
-            f"field already set to {existing!r}."
-        )
-
-    result["accrualPeriodicity"] = modified
-    result["modified"] = concrete_date
-    return result
+    return dataset
 
 
 def transform_rights(dataset: dict) -> dict:
@@ -259,131 +234,41 @@ def transform_sub_organization_of(dataset: dict) -> dict:
 
 
 def transform_temporal(dataset: dict) -> dict:
-    """Convert `temporal` from an ISO 8601 interval string to a
-    list of PeriodOfTime objects.
-
-    Handles three input shapes:
-      - "<start>/<end>"      -> {startDate, endDate}
-      - "<start>/<duration>" -> {startDate}            (duration discarded)
-      - "<duration>/<end>"   -> {endDate}              (duration discarded)
-
-    Datetime values are normalized to dates (the time component is dropped).
-    Returns the dataset unchanged if `temporal` is absent.
-
-    Raises CatalogConversionException if `temporal` is not a well-formed
-    ISO 8601 interval (exactly one '/' separating two non-empty tokens,
-    each token a valid ISO 8601 date/datetime or duration, with at least
-    one of the two tokens being a date).
-    """
-    if "temporal" not in dataset:
+    """Convert `temporal` from an ISO 8601 interval string to a list
+    containing one PeriodOfTime. Whichever side(s) parse as a date
+    become startDate/endDate; non-date sides (durations or anything
+    else) are dropped. No-op if `temporal` isn't a string with one '/'
+    or if neither side parses."""
+    value = dataset.get("temporal")
+    if not isinstance(value, str) or value.count("/") != 1:
         return dataset
 
-    value = dataset["temporal"]
-    if not isinstance(value, str):
-        raise CatalogConversionException(
-            f"`temporal` must be a string, got {type(value).__name__}."
-        )
+    left, right = value.split("/")
+    start = _as_date(left)
+    end = _as_date(right)
+    if start is None and end is None:
+        return dataset
 
-    parts = value.split("/")
-    if len(parts) != 2 or not all(parts):
-        raise CatalogConversionException(
-            f"`temporal` must be an ISO 8601 interval of the form "
-            f"'<start>/<end>', '<start>/<duration>', or "
-            f"'<duration>/<end>'; got {value!r}."
-        )
-    left, right = parts
+    period = {"@type": "PeriodOfTime"}
+    if start is not None:
+        period["startDate"] = start
+    if end is not None:
+        period["endDate"] = end
 
-    left_kind = _classify_interval_token(left)
-    right_kind = _classify_interval_token(right)
+    dataset["temporal"] = [period]
 
-    if left_kind is None or right_kind is None:
-        bad = left if left_kind is None else right
-        raise CatalogConversionException(
-            f"`temporal` token {bad!r} in interval {value!r} is not a "
-            "valid ISO 8601 date, datetime, or duration."
-        )
-
-    if left_kind == "duration" and right_kind == "duration":
-        raise CatalogConversionException(
-            f"`temporal` interval {value!r} has two durations and no "
-            "concrete date; cannot produce a PeriodOfTime."
-        )
-
-    period: dict = {"@type": "PeriodOfTime"}
-    if left_kind == "duration":
-        period["endDate"] = _normalize_to_date(right)
-    elif right_kind == "duration":
-        period["startDate"] = _normalize_to_date(left)
-    else:
-        period["startDate"] = _normalize_to_date(left)
-        period["endDate"] = _normalize_to_date(right)
-
-    new_dataset = copy.deepcopy(dataset)
-    new_dataset["temporal"] = [period]
-    return new_dataset
+    return dataset
 
 
-def _coerce_language_list(obj: dict, context: str) -> None:
-    """Validate and normalize `obj['language']` in place.
-
-    Raises CatalogConversionException if the value is not a list of
-    strings.
-    """
-    value = obj["language"]
-    if not isinstance(value, list):
-        raise CatalogConversionException(
-            f"`language` on {context} must be a list of RFC 5646 tags, "
-            f"got {type(value).__name__}: {value!r}."
-        )
-    for i, tag in enumerate(value):
-        if not isinstance(tag, str):
-            raise CatalogConversionException(
-                f"`language[{i}]` on {context} must be a string, "
-                f"got {type(tag).__name__}: {tag!r}."
-            )
-    obj["language"] = [_to_iso_639_1(tag) for tag in value]
-
-
-def _is_repeating_interval(value) -> bool:
-    return isinstance(value, str) and bool(REPEATING_INTERVAL_REGEX.match(value))
-
-
-def _is_duration(token: str) -> bool:
-    """Return True if `token` is a syntactically valid ISO 8601 duration.
-
-    Matches the grammar PnYnMnDTnHnMnS where each component is optional
-    but at least one numeric component must be present. Does not accept
-    fractional components or the alternative week ('PnW') / date-form
-    ('P[YYYY-MM-DD]') notations.
-    """
-    return bool(DURATION_REGEX.match(token))
-
-
-def _is_date(token: str) -> bool:
-    """Return True if `token` matches the ISO 8601 date or datetime
-    grammar (YYYY-MM-DD with optional time/timezone). Does not validate
-    that the date is a real calendar date.
-    """
-    return bool(DATE_REGEX.match(token))
-
-
-def _classify_interval_token(token: str) -> str | None:
-    """Classify one side of an ISO 8601 interval. Returns 'date',
-    'duration', or None if the token matches neither grammar.
-    """
-    if _is_date(token):
-        return "date"
-    if _is_duration(token):
-        return "duration"
-    return None
-
-
-def _normalize_to_date(token: str) -> str:
-    """Strip any time component from an ISO 8601 datetime, returning
-    just the date portion. '2000-01-15T00:00:00Z' -> '2000-01-15'.
-    Leaves date-only strings unchanged.
-    """
-    return token.split("T", 1)[0]
+def _as_date(token: str) -> str | None:
+    """Return the date portion of `token` if it either (a) is a year,
+    or (b) parses as an ISO 8601 date or datetime, else None."""
+    if len(token) == 4 and token.isdigit():
+        return token
+    try:
+        return datetime.fromisoformat(token).date().isoformat()
+    except ValueError:
+        return None
 
 
 def _upgrade_described_by(obj: dict) -> None:
@@ -438,12 +323,6 @@ def _wrap_sub_organization_of(organization: dict) -> None:
     organization["subOrganizationOf"] = [parent]
 
 
-def _to_iso_639_1(tag: str) -> str:
-    """Reduce an RFC 5646 language tag (e.g. 'en-US') to its ISO 639-1
-    primary subtag ('en'). Lowercases the result."""
-    return tag.split("-", 1)[0].lower()
-
-
 def _parse_bbox(value: str) -> tuple[float, float, float, float] | None:
     """Return (minLon, minLat, maxLon, maxLat) if `value` is a comma-
     separated bbox string, otherwise None."""
@@ -469,3 +348,14 @@ def _bbox_to_polygon_wkt(bbox: tuple[float, float, float, float]) -> str:
         f"{min_lon} {max_lat}, "
         f"{min_lon} {min_lat}))"
     )
+
+
+def _truncate_language(obj: dict) -> None:
+    tags = obj.get("language")
+    if not isinstance(tags, list):
+        return
+    obj["language"] = [
+        tag.split("-", 1)[0].lower()
+        for tag in tags
+        if isinstance(tag, str)
+    ]
