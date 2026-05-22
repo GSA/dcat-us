@@ -15,10 +15,10 @@ import transforms
 
 
 V1_1_CATALOG_SCHEMA_ID = "https://project-open-data.cio.gov/v1.1/schema/catalog.json"
-V3_CATALOG_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/catalog"
+V3_0_CATALOG_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/catalog"
 SCRIPT_DIR = Path(__file__).parent
 V1_1_DEFINITIONS_DIR = SCRIPT_DIR / "v1.1_definitions"
-V3_DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
+V3_0_DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
 
 
 class CatalogFetchException(Exception):
@@ -259,7 +259,7 @@ def validate_v1_1(catalog: dict, registry: Registry) -> None:
 
 def validate_v3_0(catalog: dict, registry: Registry) -> None:
     validator = Draft202012Validator(
-        {"$ref": V3_CATALOG_SCHEMA_ID},
+        {"$ref": V3_0_CATALOG_SCHEMA_ID},
         registry=registry,
         format_checker=Draft202012Validator.FORMAT_CHECKER,
     )
@@ -282,12 +282,18 @@ def export_converted_catalog(catalog: dict, output_dir: str) -> None:
 def main(output_dir, url):
     """Convert DCAT catalog."""
     v1_1_registry = load_schema_registry(V1_1_DEFINITIONS_DIR)
-    v3_registry = load_schema_registry(V3_DEFINITIONS_DIR)
+    v3_0_registry = load_schema_registry(V3_0_DEFINITIONS_DIR)
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
         validate_v1_1(catalog_to_convert, v1_1_registry)
+        # TODO should there be a step here to audit the v1.1 data and make sure that it
+        # has all the necessary properties for conversion? For example,
+        # https://www.fec.gov/data.json is valid v1.1, but it doesn't have an `issued`
+        # property, so we can't successfully transform `modified`: the result would
+        # fail validation.
+        # e.g., check_convertibility(catalog_to_convert)
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
-        validate_v3_0(converted_catalog, v3_registry)
+        validate_v3_0(converted_catalog, v3_0_registry)
         export_converted_catalog(converted_catalog, output_dir)
     except CatalogFetchException as e:
         click.echo(f"There was an error fetching a DCAT-US v1.1 catalog to convert: {e}", err=True)
