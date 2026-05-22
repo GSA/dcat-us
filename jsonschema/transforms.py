@@ -7,8 +7,6 @@ transformation applies.
 import copy
 from datetime import datetime
 
-from convert_dcat_1_1_to_3_0 import CatalogConversionException
-
 
 ACCESS_RIGHTS_BY_LEVEL = {
     "public": "public",
@@ -113,10 +111,11 @@ def transform_language(dataset: dict) -> dict:
     """Truncate RFC 5646 language tags to ISO 639-1 on the dataset and
     any nested distributions. Non-list or non-string entries are left
     alone."""
-    _truncate_language(dataset)
-    for distribution in dataset.get("distribution", []):
+    new_dataset = copy.deepcopy(dataset)
+    _truncate_language(new_dataset)
+    for distribution in new_dataset.get("distribution", []):
         _truncate_language(distribution)
-    return dataset
+    return new_dataset
 
 
 def transform_modified(dataset: dict) -> dict:
@@ -129,17 +128,18 @@ def transform_modified(dataset: dict) -> dict:
     if not isinstance(modified, str):
         return dataset
     if not modified.startswith("R"):
-        dataset["modified"] = _to_valid_date(modified)
-        return dataset
+        new_dataset = copy.deepcopy(dataset)
+        new_dataset["modified"] = _to_valid_date(modified)
+        return new_dataset
 
     issued = dataset.get("issued")
     if not issued:
         return dataset
 
-    dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(modified, modified)
-    dataset["modified"] = _to_valid_date(issued)
-
-    return dataset
+    new_dataset = copy.deepcopy(dataset)
+    new_dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(modified, modified)
+    new_dataset["modified"] = _to_valid_date(issued)
+    return new_dataset
 
 
 def transform_rights(dataset: dict) -> dict:
@@ -168,18 +168,11 @@ def transform_spatial(dataset: dict) -> dict:
     Detects bbox format ("<minLon>,<minLat>,<maxLon>,<maxLat>") and emits
     a POLYGON WKT; otherwise treats the value as a prefLabel. Returns the
     dataset unchanged if `spatial` is absent.
-
-    Raises CatalogConversionException if `spatial` is present but not a
-    string.
     """
     if "spatial" not in dataset:
         return dataset
 
     value = dataset["spatial"]
-    if not isinstance(value, str):
-        raise CatalogConversionException(
-            f"`spatial` must be a string, got {type(value).__name__}."
-        )
 
     new_dataset = copy.deepcopy(dataset)
     bbox = _parse_bbox(value)
@@ -242,9 +235,9 @@ def transform_temporal(dataset: dict) -> dict:
     if end is not None:
         period["endDate"] = end
 
-    dataset["temporal"] = [period]
-
-    return dataset
+    new_dataset = copy.deepcopy(dataset)
+    new_dataset["temporal"] = [period]
+    return new_dataset
 
 
 def _as_date(token: str) -> str | None:
