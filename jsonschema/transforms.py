@@ -7,6 +7,8 @@ transformation applies.
 import copy
 from datetime import datetime
 
+from langcodes import Language, find, tag_is_valid
+
 
 ACCESS_RIGHTS_BY_LEVEL = {
     "public": "public",
@@ -352,8 +354,17 @@ def _truncate_language(obj: dict) -> None:
     tags = obj.get("language")
     if not isinstance(tags, list):
         return
-    obj["language"] = [
-        tag.split("-", 1)[0].lower()
-        for tag in tags
-        if isinstance(tag, str)
-    ]
+
+    normalized = []
+    for tag in tags:
+        if not isinstance(tag, str):
+            continue
+        try:
+            lang = Language.get(tag) if tag_is_valid(tag) else find(tag)
+        except LookupError:
+            continue
+        code = lang.language
+        if code:
+            normalized.append(code)
+
+    obj["language"] = normalized
