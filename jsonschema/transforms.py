@@ -289,8 +289,7 @@ def _to_valid_date(value: str) -> str:
 def _upgrade_described_by(obj: dict) -> None:
     """Upgrade `describedBy` in place from a URL string to a Distribution
     object, consuming `describedByType` (removed from `obj`, folded into
-    the new Distribution's `mediaType`).
-    """
+    the new Distribution's `mediaType`)."""
     if "describedBy" not in obj:
         return
     value = obj["describedBy"]
