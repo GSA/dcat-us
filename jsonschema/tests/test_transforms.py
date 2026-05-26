@@ -1,10 +1,71 @@
+import copy
 import pytest
 
 from transforms import (
+    propagate_license,
+    transform_access_rights,
     transform_language,
     transform_modified,
     transform_temporal,
 )
+
+
+class TestPropagateLicense:
+
+    def test_copies_to_all_distributions(self):
+        result = propagate_license({
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": [
+                {"title": "CSV", "downloadURL": "https://agency.gov/data.csv"},
+                {"title": "JSON", "downloadURL": "https://agency.gov/data.json"},
+            ],
+        })
+        assert result["distribution"][0]["license"] == "https://creativecommons.org/publicdomain/zero/1.0/"
+        assert result["distribution"][1]["license"] == "https://creativecommons.org/publicdomain/zero/1.0/"
+
+    def test_preserves_existing_distribution_license(self):
+        result = propagate_license({
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": [
+                {"title": "CSV", "license": "https://opensource.org/licenses/MIT"},
+                {"title": "JSON"},
+            ],
+        })
+        # First distribution keeps its own license.
+        assert result["distribution"][0]["license"] == "https://opensource.org/licenses/MIT"
+        # Second distribution gets the dataset-level one.
+        assert result["distribution"][1]["license"] == "https://creativecommons.org/publicdomain/zero/1.0/"
+
+    def test_does_not_remove_dataset_level_license(self):
+        result = propagate_license({
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": [{"title": "CSV"}],
+        })
+        assert result["license"] == "https://creativecommons.org/publicdomain/zero/1.0/"
+
+
+class TestTransformAccessRights:
+
+    @pytest.mark.parametrize("access_level, expected_rights", [
+        ("public",            "public"),
+        ("restricted public", "Access restricted. Contact the publisher to request access."),
+        ("non-public",        "Not available for public release. Contact the publisher for more information."),
+    ])
+    def test_adds_access_rights_for_known_levels(self, access_level, expected_rights):
+        result = transform_access_rights({"accessLevel": access_level})
+        assert result["accessRights"] == expected_rights
+
+    def test_does_not_remove_access_level(self):
+        result = transform_access_rights({"accessLevel": "public"})
+        assert result["accessLevel"] == "public"
+
+    def test_preserves_existing_access_rights(self):
+        result = transform_access_rights({
+            "accessLevel": "public",
+            "accessRights": "Access restricted. Contact the publisher to request access.",
+        })
+        assert result["accessRights"] == "Access restricted. Contact the publisher to request access."
+        assert result["accessLevel"] == "public"
 
 
 class TestTransformLanguage:

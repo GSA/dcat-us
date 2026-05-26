@@ -34,7 +34,20 @@ def propagate_license(dataset: dict) -> dict:
     unchanged if there is no license on the dataset or no distributions
     to copy it to.
     """
-    return dataset  # TODO: implement
+    license_value = dataset.get("license")
+    if not license_value:
+        return dataset
+
+    distributions = dataset.get("distribution")
+    if not distributions:
+        return dataset
+
+    new_dataset = copy.deepcopy(dataset)
+    for dist in new_dataset["distribution"]:
+        if isinstance(dist, dict) and "license" not in dist:
+            dist["license"] = license_value
+
+    return new_dataset
 
 
 def transform_access_rights(dataset: dict) -> dict:
@@ -134,7 +147,7 @@ def transform_modified(dataset: dict) -> dict:
         new_dataset["modified"] = _to_valid_date(modified)
         return new_dataset
 
-		# TODO https://www.fec.gov/data.json is valid v1.1 but does not have `issued` so it
+    # TODO https://www.fec.gov/data.json is valid v1.1 but does not have `issued` so it
     # fails v3.0 validation. What should we do in these cases?
     issued = dataset.get("issued")
     if not issued:
@@ -177,6 +190,8 @@ def transform_spatial(dataset: dict) -> dict:
         return dataset
 
     value = dataset["spatial"]
+    if not isinstance(value, str):
+        return dataset
 
     new_dataset = copy.deepcopy(dataset)
     bbox = _parse_bbox(value)
