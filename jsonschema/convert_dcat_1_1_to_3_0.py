@@ -225,7 +225,7 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
     new_catalog.pop("describedBy", None)
 
     datasets = new_catalog.get("dataset", [])
-    print(f"Transforming {len(datasets)} datasets.")
+    click.echo(f"Transforming {len(datasets)} datasets.")
     for i, dataset in enumerate(datasets):
         dataset = transforms.transform_modified(dataset)
         dataset = transforms.transform_temporal(dataset)
@@ -243,49 +243,46 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
     return new_catalog
 
 
-def validate_v1_1(catalog: dict, registry: Registry) -> None:
+def validate_catalog(schema_id: str, registry: Registry, catalog: dict) -> None:
     validator = Draft202012Validator(
-        {"$ref": V1_1_CATALOG_SCHEMA_ID},
+        {"$ref": schema_id},
         registry=registry,
         format_checker=Draft202012Validator.FORMAT_CHECKER,
     )
     errors = list(validator.iter_errors(catalog))
     if errors:
+        version_number = "v1.1" if "v1.1" in schema_id else "v3.0"
         raise CatalogValidationException(
-            f"v1.1 validation failed with {len(errors)} error(s):\n"
-            + format_validation_errors(errors, indent=2)
-        )
-
-
-def validate_v3_0(catalog: dict, registry: Registry) -> None:
-    validator = Draft202012Validator(
-        {"$ref": V3_0_CATALOG_SCHEMA_ID},
-        registry=registry,
-        format_checker=Draft202012Validator.FORMAT_CHECKER,
-    )
-    errors = list(validator.iter_errors(catalog))
-    if errors:
-        raise CatalogValidationException(
-            f"v3.0 validation failed with {len(errors)} error(s):\n"
+            f"{version_number} validation failed with {len(errors)} error(s):\n"
             + format_validation_errors(errors, indent=2)
         )
 
 
 def export_converted_catalog(catalog: dict, output_dir: str) -> None:
-    # TODO save the result to ./converted_dcat_data
-    print("Saving converted DCAT-US 3.0 to disk...")
+    """Write the converted DCAT-US v3.0 catalog to disk as JSON."""
+    click.echo("Saving converted DCAT-US 3.0 to disk.")
+
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    output_file = output_path / "catalog.json"
+    with output_file.open("w", encoding="utf-8") as f:
+        json.dump(catalog, f, indent=2, ensure_ascii=False)
+
+    click.echo(f"Wrote {output_file}")
 
 
 @click.command()
 @click.option("-o", "--output-dir", help="Output directory", default="converted_dcat_data")
 @click.option("-u", "--url", help="URL of DCAT-US v1.1 catalog to be converted", required=True)
-def main(output_dir, url):
+@click.option("--dry-run", help="Validate and convert DCAT-US v1.1 catalog without saving to disk", is_flag=True, default=False)
+def main(output_dir, url, dry_run):
     """Convert DCAT catalog."""
     v1_1_registry = load_schema_registry(V1_1_DEFINITIONS_DIR)
     v3_0_registry = load_schema_registry(V3_0_DEFINITIONS_DIR)
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
-        validate_v1_1(catalog_to_convert, v1_1_registry)
+        validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
         # TODO should there be a step here to audit the v1.1 data and make sure that it
         # has all the necessary properties for conversion? For example,
         # https://www.fec.gov/data.json is valid v1.1, but it doesn't have an `issued`
@@ -293,8 +290,11 @@ def main(output_dir, url):
         # fail validation.
         # e.g., check_convertibility(catalog_to_convert)
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
-        validate_v3_0(converted_catalog, v3_0_registry)
-        export_converted_catalog(converted_catalog, output_dir)
+        validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
+        if dry_run:
+            click.echo("Dry run complete.")
+        else:
+            export_converted_catalog(converted_catalog, output_dir)
     except CatalogFetchException as e:
         click.echo(f"There was an error fetching a DCAT-US v1.1 catalog to convert: {e}", err=True)
         sys.exit(1)

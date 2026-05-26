@@ -17,7 +17,7 @@ urls=(
 
 for url in "${urls[@]}"; do
     echo "Running DCAT-US v1.1 to v3.0 conversion script for: $url"
-    if poetry run python convert_dcat_1_1_to_3_0.py --url="$url"; then
+    if poetry run python convert_dcat_1_1_to_3_0.py --url="$url" --dry-run; then
         echo "success: $url"
     else
         echo "failed (exit $?): $url"
