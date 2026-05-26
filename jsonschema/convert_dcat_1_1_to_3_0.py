@@ -25,11 +25,15 @@ class CatalogFetchException(Exception):
     pass
 
 
-class CatalogConversionException(Exception):
+class CatalogValidationException(Exception):
     pass
 
 
-class CatalogValidationException(Exception):
+class CatalogConvertabilityException(Exception):
+    pass
+
+
+class CatalogConversionException(Exception):
     pass
 
 
@@ -198,19 +202,51 @@ def load_schema_registry(definitions_dir: Path) -> Registry:
 
 
 def fetch_dcat_catalog(url: str) -> dict:
-    # Example URLs:
-    # - https://open.gsa.gov/data.json (342 datasets, baseline)
-    # - https://www.energy.gov/data.json (482 datasets, contains "temporal" keys)
-    # - https://www.usda.gov/sites/default/files/documents/data.json (requires TLS impersonation)
+    """Fetch a DCAT-US v1.1 catalog to convert to DCAT-US v3.0."""
+    # Some target servers (e.g. usda.gov) reject non-browser TLS/HTTP2 fingerprints, so
+		# we impersonate a real browser using curl_cffi.
     try:
         response = requests.get(url, timeout=60, impersonate="safari17_0")
         response.raise_for_status()
+    except RequestException as e:
+        raise CatalogFetchException(f"Request failed: {e}") from e
+    try:
         return response.json()
-    except (RequestException, ValueError) as e:
-        raise CatalogFetchException(str(e)) from e
+    except ValueError as e:
+        raise CatalogFetchException(f"Response was not valid JSON: {e}") from e
+
+
+def validate_catalog(schema_id: str, registry: Registry, catalog: dict) -> None:
+    """Validate a DCAT-US v1.1 or v3.0 catalog."""
+    validator = Draft202012Validator(
+        {"$ref": schema_id},
+        registry=registry,
+        format_checker=Draft202012Validator.FORMAT_CHECKER,
+    )
+    errors = list(validator.iter_errors(catalog))
+    if errors:
+        version_number = "v1.1" if "v1.1" in schema_id else "v3.0"
+        raise CatalogValidationException(
+            f"{version_number} validation failed with {len(errors)} error(s):\n"
+            + format_validation_errors(errors, indent=2)
+        )
+
+
+def check_convertibility(catalog_to_convert: dict) -> None:
+    """Check valid DCAT-US v1.1 data to ensure that it can be successfully converted.
+
+    Report convertability issues to user if found.
+    """
+    issues = []
+
+    # TODO checks go here
+
+    if issues:
+        raise CatalogConvertabilityException(f"Cannot convert: {'; '.join(issues)}")
 
 
 def convert_dcat_catalog(old_catalog: dict) -> dict:
+    """Convert DCAT-US v1.1 catalog to DCAT-US v3.0 catalog."""
     new_catalog = copy.deepcopy(old_catalog)
 
     # conformsTo on the Catalog
@@ -227,35 +263,26 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
     datasets = new_catalog.get("dataset", [])
     click.echo(f"Transforming {len(datasets)} datasets.")
     for i, dataset in enumerate(datasets):
-        dataset = transforms.transform_modified(dataset)
-        dataset = transforms.transform_temporal(dataset)
-        dataset = transforms.transform_spatial(dataset)
-        dataset = transforms.transform_language(dataset)
-        dataset = transforms.transform_access_rights(dataset)
-        dataset = transforms.propagate_license(dataset)
-        dataset = transforms.transform_rights(dataset)
-        dataset = transforms.transform_described_by(dataset)
-        dataset = transforms.transform_sub_organization_of(dataset)
-        dataset = transforms.transform_conforms_to(dataset)
-        dataset = transforms.transform_landing_page(dataset)
-        datasets[i] = dataset
+        identifier = dataset.get("identifier", f"index {i}")
+        try:
+            dataset = transforms.transform_modified(dataset)
+            dataset = transforms.transform_temporal(dataset)
+            dataset = transforms.transform_spatial(dataset)
+            dataset = transforms.transform_language(dataset)
+            dataset = transforms.transform_access_rights(dataset)
+            dataset = transforms.propagate_license(dataset)
+            dataset = transforms.transform_rights(dataset)
+            dataset = transforms.transform_described_by(dataset)
+            dataset = transforms.transform_sub_organization_of(dataset)
+            dataset = transforms.transform_conforms_to(dataset)
+            dataset = transforms.transform_landing_page(dataset)
+            datasets[i] = dataset
+        except Exception as e:
+            raise CatalogConversionException(
+                f"Failed to convert dataset {identifier}: {e}"
+            ) from e
 
     return new_catalog
-
-
-def validate_catalog(schema_id: str, registry: Registry, catalog: dict) -> None:
-    validator = Draft202012Validator(
-        {"$ref": schema_id},
-        registry=registry,
-        format_checker=Draft202012Validator.FORMAT_CHECKER,
-    )
-    errors = list(validator.iter_errors(catalog))
-    if errors:
-        version_number = "v1.1" if "v1.1" in schema_id else "v3.0"
-        raise CatalogValidationException(
-            f"{version_number} validation failed with {len(errors)} error(s):\n"
-            + format_validation_errors(errors, indent=2)
-        )
 
 
 def export_converted_catalog(catalog: dict, output_dir: str) -> None:
@@ -283,12 +310,7 @@ def main(output_dir, url, dry_run):
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
         validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
-        # TODO should there be a step here to audit the v1.1 data and make sure that it
-        # has all the necessary properties for conversion? For example,
-        # https://www.fec.gov/data.json is valid v1.1, but it doesn't have an `issued`
-        # property, so we can't successfully transform `modified`: the result would
-        # fail validation.
-        # e.g., check_convertibility(catalog_to_convert)
+        check_convertibility(catalog_to_convert)
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
         validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
         if dry_run:
@@ -300,6 +322,9 @@ def main(output_dir, url, dry_run):
         sys.exit(1)
     except CatalogValidationException as e:
         click.echo(f"Invalid DCAT-US data: {e}", err=True)
+        sys.exit(1)
+    except CatalogConvertabilityException as e:
+        click.echo(f"DCAT-US v1.1 data provided cannot be converted to DCAT-US v3.0 in its current state: {e}", err=True)
         sys.exit(1)
     except CatalogConversionException as e:
         click.echo(f"There was an error converting a DCAT-US v1.1 catalog to DCAT-US v3.0: {e}", err=True)

@@ -2,17 +2,17 @@
 
 urls=(
     # Produces valid DCAT-US v3.0 data
-    "https://open.gsa.gov/data.json"
-    "https://www.energy.gov/data.json"
+    "https://open.gsa.gov/data.json" # (342 datasets, baseline)
+    "https://www.energy.gov/data.json" # (482 datasets, contains "temporal" keys)
 
-		# Produces invalid DCAT-US v3.0 data
+		# Cannot be converted to valid DCAT-US v3.0 data as-is
 		"https://www.fec.gov/data.json"
     "https://www.nsf.gov/data.json"
     "https://www.treasury.gov/data.json"
 		"https://www.justice.gov/data.json"
 
 		# Contains invalid v1.1 data
-    "https://www.usda.gov/data.json" # missing required field 'programCode'
+    "https://www.usda.gov/data.json" # missing required field 'programCode' (requires TLS impersonation)
 )
 
 for url in "${urls[@]}"; do
