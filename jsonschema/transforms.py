@@ -115,7 +115,12 @@ def transform_issued(dataset: dict) -> dict:
     if not isinstance(value, str):
         return dataset
 
-    parsed = datetime.fromisoformat(value)
+    try:
+        parsed = datetime.fromisoformat(value)
+    except ValueError:
+        # Not a valid ISO date/date-time (e.g. "2019") => unset it.
+        del dataset["issued"]
+        return dataset
 
     if parsed.time() == datetime.min.time():
         # Midnight => no meaningful time component, emit a plain 'date'.
@@ -125,6 +130,7 @@ def transform_issued(dataset: dict) -> dict:
         dataset["issued"] = parsed.isoformat() + "Z"
 
     return dataset
+
 
 def transform_landing_page(dataset: dict) -> dict:
     """Convert `landingPage` from a URL string to a Document object

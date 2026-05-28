@@ -3,6 +3,7 @@ import pytest
 from transforms import (
     propagate_license,
     transform_access_rights,
+    transform_issued,
     transform_language,
     transform_modified,
     transform_temporal,
@@ -65,6 +66,47 @@ class TestTransformAccessRights:
         })
         assert result["accessRights"] == "Access restricted. Contact the publisher to request access."
         assert result["accessLevel"] == "public"
+
+
+class TestTransformIssued:
+
+    @pytest.mark.parametrize("value, expected", [
+        # Midnight => no meaningful time component, collapse to a plain date.
+        ("2015-06-02T00:00:00",        "2015-06-02"),
+        ("2015-06-02",                 "2015-06-02"),
+        # Real time present => emit a date-time with a trailing Z.
+        ("2015-06-02T12:30:00",        "2015-06-02T12:30:00Z"),
+        ("2015-06-02T00:00:01",        "2015-06-02T00:00:01Z"),
+    ])
+    def test_normalizes_valid_values(self, value, expected):
+        result = transform_issued({"issued": value})
+        assert result["issued"] == expected
+
+    @pytest.mark.parametrize("value", [
+        "2019",            # year only
+        "not-a-date",
+        "2019-13-01",      # impossible month
+        "",
+    ])
+    def test_unsets_invalid_isoformat(self, value):
+        result = transform_issued({"issued": value})
+        assert "issued" not in result
+
+    def test_unsetting_leaves_other_keys_intact(self):
+        result = transform_issued({"issued": "2019", "title": "kept"})
+        assert "issued" not in result
+        assert result["title"] == "kept"
+
+    @pytest.mark.parametrize("dataset", [
+        {},
+        {"title": "no issued"},
+        {"issued": None},              # null permitted by schema, leave alone
+        {"issued": 2019},              # non-string, not ours to reinterpret
+        {"issued": ["2019-01-01"]},    # non-string, leave alone
+    ])
+    def test_noop_when_shape_unexpected(self, dataset):
+        original = dict(dataset)
+        assert transform_issued(dataset) == original
 
 
 class TestTransformLanguage:
