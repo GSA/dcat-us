@@ -18,11 +18,13 @@ ACCESS_RIGHTS_BY_LEVEL = {
 
 
 PERIODICITY_MAP = {
-    "R/P1D": "daily",
-    "R/P1W": "weekly",
-    "R/P1M": "monthly",
-    "R/P3M": "quarterly",
-    "R/P1Y": "annually",
+    "P1D": "daily",
+    "P1W": "weekly",
+    "P2W": "fortnightly",
+    "P1M": "monthly",
+    "P3M": "quarterly",
+    "P6M": "biannually",
+    "P1Y": "annually",
 }
 
 
@@ -100,6 +102,30 @@ def transform_described_by(dataset: dict) -> dict:
     return new_dataset
 
 
+def transform_issued(dataset: dict) -> dict:
+    """DCAT-US v3.0 requires that `issued` be either 'date-time'
+    or 'date'."""
+    if "issued" not in dataset:
+        return dataset
+
+    value = dataset["issued"]
+
+    # Pass through null and non-string values untouched; the schema
+    # permits null, and anything non-str isn't ours to reinterpret.
+    if not isinstance(value, str):
+        return dataset
+
+    parsed = datetime.fromisoformat(value)
+
+    if parsed.time() == datetime.min.time():
+        # Midnight => no meaningful time component, emit a plain 'date'.
+        dataset["issued"] = parsed.date().isoformat()  # e.g. 2015-06-02
+    else:
+        # Real time present => emit a valid 'date-time' with UTC offset.
+        dataset["issued"] = parsed.isoformat() + "Z"
+
+    return dataset
+
 def transform_landing_page(dataset: dict) -> dict:
     """Convert `landingPage` from a URL string to a Document object
     with `title` and `accessURL`.
@@ -134,28 +160,21 @@ def transform_language(dataset: dict) -> dict:
 
 
 def transform_modified(dataset: dict) -> dict:
-    """If `modified` is a repeating interval (starts with 'R'), move it
-    to `accrualPeriodicity` (mapped to a plain-language code where
-    possible) and replace `modified` with the value of `issued`. No-op
-    if `modified` isn't a repeating interval or if `issued` isn't
-    available."""
     modified = dataset.get("modified")
     if not isinstance(modified, str):
         return dataset
-    if not modified.startswith("R"):
+
+    duration = _as_duration(modified)
+
+    if duration is None:
         new_dataset = copy.deepcopy(dataset)
         new_dataset["modified"] = _to_valid_date(modified)
         return new_dataset
 
-    # TODO https://www.fec.gov/data.json is valid v1.1 but does not have `issued` so it
-    # fails v3.0 validation. What should we do in these cases?
-    issued = dataset.get("issued")
-    if not issued:
-        return dataset
-
     new_dataset = copy.deepcopy(dataset)
-    new_dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(modified, modified)
-    new_dataset["modified"] = _to_valid_date(issued)
+    new_dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(duration, duration)
+    # `modified` is Recommended + nullable in DCAT-US v3.0
+    new_dataset["modified"] = None
     return new_dataset
 
 
@@ -268,6 +287,19 @@ def _as_date(token: str) -> str | None:
         return datetime.fromisoformat(token).date().isoformat()
     except ValueError:
         return None
+
+
+def _as_duration(value: str) -> str | None:
+    """Return the bare ISO 8601 duration portion of `value` if it looks
+    like a duration or a repeating interval (`R/<duration>` or
+    `R<n>/<duration>`), else None."""
+    if value.startswith("P"):
+        return value
+    if value.startswith("R"):
+        _, _, rest = value.partition("/")
+        if rest.startswith("P"):
+            return rest
+    return None
 
 
 def _to_valid_date(value: str) -> str:

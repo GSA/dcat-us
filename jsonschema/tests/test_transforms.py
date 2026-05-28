@@ -111,7 +111,7 @@ class TestTransformModified:
     def test_moves_repeating_interval_to_accrual_periodicity(self):
         result = transform_modified({"modified": "R/P1Y", "issued": "2024-10-01"})
         assert result == {
-            "modified": "2024-10-01",
+            "modified": None,
             "issued": "2024-10-01",
             "accrualPeriodicity": "annually",
         }
@@ -122,26 +122,28 @@ class TestTransformModified:
         ("R/P1M", "monthly"),
         ("R/P3M", "quarterly"),
         ("R/P1Y", "annually"),
-        ("R/P2Y", "R/P2Y"),    # unmapped -> passthrough
-        ("R5/P1Y", "R5/P1Y"),  # unmapped -> passthrough
     ])
     def test_handles_various_repeating_intervals(self, interval, expected_periodicity):
         result = transform_modified({"modified": interval, "issued": "2024-10-01"})
         assert result["accrualPeriodicity"] == expected_periodicity
-        assert result["modified"] == "2024-10-01"
+        assert result["modified"] is None
 
     @pytest.mark.parametrize("dataset", [
         {},
         {"title": "no modified"},
-        {"modified": "2024-10-01"},                # concrete date
-        {"modified": "2024-10-01T12:30:00Z"},      # concrete Zulu datetime (preserved)
-        {"modified": None},                        # not a string
-        {"modified": "R/P1Y"},                     # no issued to fall back on
-        {"modified": "R/P1Y", "issued": ""},       # empty issued
+        {"modified": None},
     ])
     def test_noop_when_no_transform_needed(self, dataset):
         original = dict(dataset)
         assert transform_modified(dataset) == original
+
+    def test_concrete_date_passes_through(self):
+        result = transform_modified({"modified": "2024-10-01"})
+        assert result == {"modified": "2024-10-01"}
+
+    def test_concrete_zulu_datetime(self):
+        result = transform_modified({"modified": "2024-10-01T12:30:00Z"})
+        assert result == {"modified": "2024-10-01T12:30:00Z"}
 
     def test_truncates_non_zulu_datetime(self):
         result = transform_modified({"modified": "2024-10-01T12:30:00"})

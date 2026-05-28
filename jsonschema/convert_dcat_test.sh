@@ -4,15 +4,26 @@ urls=(
     # Produces valid DCAT-US v3.0 data
     "https://open.gsa.gov/data.json" # (342 datasets, baseline)
     "https://www.energy.gov/data.json" # (482 datasets, contains "temporal" keys)
-
-		# Cannot be converted to valid DCAT-US v3.0 data as-is
+		"https://data.cms.gov/data.json"
+		"https://www.opm.gov/data.json"
+		"https://www.state.gov/data.json"
+		"https://www.dol.gov/data.json"
+		"https://www.energy.gov/data.json"
 		"https://www.fec.gov/data.json"
     "https://www.nsf.gov/data.json"
+		"https://nsf-gov-resources.nsf.gov/files/data.json"
     "https://www.treasury.gov/data.json"
 		"https://www.justice.gov/data.json"
+		"https://www.treasury.gov/jsonfiles/data.json"
+
+		# Cannot be converted to valid DCAT-US v3.0 data as-is
+		"https://www.dhs.gov/xlibrary/assets/digital-strategy/data.json"
+
 
 		# Contains invalid v1.1 data
-    "https://www.usda.gov/data.json" # missing required field 'programCode' (requires TLS impersonation)
+    # "https://www.usda.gov/data.json" # missing required field 'programCode' (requires TLS impersonation)
+		# "https://healthdata.gov/data.json"
+		# "https://data.ed.gov/data.json"
 )
 
 for url in "${urls[@]}"; do
