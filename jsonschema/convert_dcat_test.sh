@@ -15,10 +15,7 @@ urls=(
     "https://www.treasury.gov/data.json"
 		"https://www.justice.gov/data.json"
 		"https://www.treasury.gov/jsonfiles/data.json"
-
-		# Cannot be converted to valid DCAT-US v3.0 data as-is
-		"https://www.dhs.gov/xlibrary/assets/digital-strategy/data.json"
-
+		"https://www.dhs.gov/xlibrary/assets/digital-strategy/data.json" # has `rights` set to null
 
 		# Contains invalid v1.1 data
     # "https://www.usda.gov/data.json" # missing required field 'programCode' (requires TLS impersonation)

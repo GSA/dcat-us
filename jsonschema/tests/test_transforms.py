@@ -6,6 +6,7 @@ from transforms import (
     transform_issued,
     transform_language,
     transform_modified,
+    transform_rights,
     transform_temporal,
 )
 
@@ -153,7 +154,6 @@ class TestTransformModified:
     def test_moves_repeating_interval_to_accrual_periodicity(self):
         result = transform_modified({"modified": "R/P1Y", "issued": "2024-10-01"})
         assert result == {
-            "modified": None,
             "issued": "2024-10-01",
             "accrualPeriodicity": "annually",
         }
@@ -168,7 +168,7 @@ class TestTransformModified:
     def test_handles_various_repeating_intervals(self, interval, expected_periodicity):
         result = transform_modified({"modified": interval, "issued": "2024-10-01"})
         assert result["accrualPeriodicity"] == expected_periodicity
-        assert result["modified"] is None
+        assert "modified" not in result
 
     @pytest.mark.parametrize("dataset", [
         {},
@@ -190,6 +190,54 @@ class TestTransformModified:
     def test_truncates_non_zulu_datetime(self):
         result = transform_modified({"modified": "2024-10-01T12:30:00"})
         assert result == {"modified": "2024-10-01"}
+
+
+class TestTransformRights:
+
+    def test_wraps_string_in_list(self):
+        result = transform_rights({"rights": "public domain", "issued": "2024-10-01"})
+        assert result == {
+            "rights": ["public domain"],
+            "issued": "2024-10-01",
+        }
+
+    def test_leaves_list_unchanged(self):
+        result = transform_rights({"rights": ["public domain", "CC0"]})
+        assert result == {"rights": ["public domain", "CC0"]}
+
+    def test_empty_list_unchanged(self):
+        result = transform_rights({"rights": []})
+        assert result == {"rights": []}
+
+    @pytest.mark.parametrize("dataset", [
+        {},
+        {"title": "no rights"},
+        {"issued": "2024-10-01"},
+    ])
+    def test_noop_when_rights_absent(self, dataset):
+        original = dict(dataset)
+        assert transform_rights(dataset) == original
+
+    @pytest.mark.parametrize("non_string_value", [
+        42,
+        3.14,
+        None,
+        True,
+        {"key": "value"},
+    ])
+    def test_unsets_non_string_non_list(self, non_string_value):
+        result = transform_rights({"rights": non_string_value, "issued": "2024-10-01"})
+        assert result == {"issued": "2024-10-01"}
+        assert "rights" not in result
+
+    def test_does_not_mutate_input(self):
+        original = {"rights": "public domain"}
+        transform_rights(original)
+        assert original == {"rights": "public domain"}
+
+    def test_empty_string_wrapped(self):
+        result = transform_rights({"rights": ""})
+        assert result == {"rights": [""]}
 
 
 class TestTransformTemporal:

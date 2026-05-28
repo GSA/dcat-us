@@ -180,7 +180,7 @@ def transform_modified(dataset: dict) -> dict:
     new_dataset = copy.deepcopy(dataset)
     new_dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(duration, duration)
     # `modified` is Recommended + nullable in DCAT-US v3.0
-    new_dataset["modified"] = None
+    del new_dataset["modified"]
     return new_dataset
 
 
@@ -189,7 +189,7 @@ def transform_rights(dataset: dict) -> dict:
 
     Per the DCAT-US v3.0 migration guide's "Additional improvements"
     section. Returns the dataset unchanged if `rights` is absent or
-    already a list.
+    already a list. Unsets `rights` if it is not a string or list.
     """
     if "rights" not in dataset:
         return dataset
@@ -199,7 +199,10 @@ def transform_rights(dataset: dict) -> dict:
         return dataset
 
     new_dataset = copy.deepcopy(dataset)
-    new_dataset["rights"] = [value]
+    if isinstance(value, str):
+        new_dataset["rights"] = [value]
+    else:
+        del new_dataset["rights"]
     return new_dataset
 
 
