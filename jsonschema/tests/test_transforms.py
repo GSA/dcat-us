@@ -193,6 +193,10 @@ class TestTransformModified:
         result = transform_modified({"modified": "2024-10-01T12:30:00"})
         assert result == {"modified": "2024-10-01"}
 
+    def test_truncates_space_separated_datetime(self):
+        result = transform_modified({"modified": "2024-10-01 12:30:00"})
+        assert result == {"modified": "2024-10-01"}
+
 
 class TestTransformRights:
 

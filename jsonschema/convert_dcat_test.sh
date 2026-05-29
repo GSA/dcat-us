@@ -22,11 +22,11 @@ urls_old=(
 		"https://ddi.doi.gov/boem-data.json"
 		"https://ddi.doi.gov/blm-data.json"
 		"https://ddi.doi.gov/bia-data.json"
+		"https://www.archive.arm.gov/metadata/data.json"
+		"https://www.ftc.gov/data.json"
 
 		# Fails v3.0 validation
 		"https://www.nist.gov/sites/default/files/data.json" # modified
-		"https://www.archive.arm.gov/metadata/data.json" # modified
-		"https://www.ftc.gov/data.json" # modified
 		"https://www.usitc.gov/data.json" # accrualPeriodicity
 		"https://www.huduser.gov/data/data.json" # accrualPeriodicity
 		"https://www.federalreserve.gov/PDC/data.json" # accrualPeriodicity

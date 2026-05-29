@@ -322,8 +322,8 @@ def _to_valid_date(value: str) -> str:
     if value.endswith("Z"):
         return value
 
-    # Anything with a 'T' is a datetime-ish string — take the date part.
-    if "T" in value and len(value) >= 10:
+    # Datetime-ish string (e.g. "2022-01-01T00:00:00" or "2022-01-01 00:00:00") — take the date part.
+    if ("T" in value or " " in value) and len(value) >= 10:
         return value[:10]
 
     return value
