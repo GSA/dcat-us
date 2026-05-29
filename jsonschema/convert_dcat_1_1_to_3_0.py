@@ -29,10 +29,6 @@ class CatalogValidationException(Exception):
     pass
 
 
-class CatalogConvertabilityException(Exception):
-    pass
-
-
 class CatalogConversionException(Exception):
     pass
 
@@ -232,19 +228,6 @@ def validate_catalog(schema_id: str, registry: Registry, catalog: dict) -> None:
         )
 
 
-def check_convertibility(catalog_to_convert: dict) -> None:
-    """Check valid DCAT-US v1.1 data to ensure that it can be successfully converted.
-
-    Report convertability issues to user if found.
-    """
-    issues = []
-
-    # TODO checks go here
-
-    if issues:
-        raise CatalogConvertabilityException(f"Cannot convert: {'; '.join(issues)}")
-
-
 def convert_dcat_catalog(old_catalog: dict) -> dict:
     """Convert DCAT-US v1.1 catalog to DCAT-US v3.0 catalog."""
     new_catalog = copy.deepcopy(old_catalog)
@@ -312,7 +295,6 @@ def main(output_dir, url, dry_run):
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
         validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
-        check_convertibility(catalog_to_convert)
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
         validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
         if dry_run:
@@ -324,9 +306,6 @@ def main(output_dir, url, dry_run):
         sys.exit(1)
     except CatalogValidationException as e:
         click.echo(f"Invalid DCAT-US data: {e}", err=True)
-        sys.exit(1)
-    except CatalogConvertabilityException as e:
-        click.echo(f"DCAT-US v1.1 data provided cannot be converted to DCAT-US v3.0 in its current state: {e}", err=True)
         sys.exit(1)
     except CatalogConversionException as e:
         click.echo(f"There was an error converting a DCAT-US v1.1 catalog to DCAT-US v3.0: {e}", err=True)

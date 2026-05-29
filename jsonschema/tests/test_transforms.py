@@ -324,6 +324,9 @@ class TestTransformTemporal:
         # start/end with datetimes — time component is dropped
         ("2000-01-15T00:00:00+00:00/2010-01-15T00:00:00+00:00",
             {"@type": "PeriodOfTime", "startDate": "2000-01-15", "endDate": "2010-01-15"}),
+        # start/end do not include the date of the day
+        ("2020-01/2020-12",
+            {"@type": "PeriodOfTime", "startDate": "2020-01", "endDate": "2020-12"}),
         # start/duration — duration side doesn't parse as a date, so it's dropped
         ("2020-01-01/P1Y",
             {"@type": "PeriodOfTime", "startDate": "2020-01-01"}),

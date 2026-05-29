@@ -28,9 +28,7 @@ urls=(
 		"https://www.huduser.gov/data/data.json"
 		"https://www.federalreserve.gov/PDC/data.json"
     "https://www.nist.gov/sites/default/files/data.json" # `replaces` set to both passing iri and non-iri in datasets
-
-		# Fails v3.0 validation
-		"https://www.archives.gov/files/data.json" # temporal
+		"https://www.archives.gov/files/data.json" # temporal contains yyyy-mm/yyyy-mm dates
 
 		# fetch error
 		"https://www.arts.gov/data.json" # "Response was not valid JSON: 'utf-8' codec can't decode byte 0x92 in position 15751: invalid start byte"

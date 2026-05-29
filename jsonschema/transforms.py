@@ -318,10 +318,14 @@ def transform_temporal(dataset: dict) -> dict:
 
 
 def _as_date(token: str) -> str | None:
-    """Return the date portion of `token` if it either (a) is a year,
-    or (b) parses as an ISO 8601 date or datetime, else None."""
+    """Return the date portion of `token` if it (a) is a year, (b) is a year and month,
+    or (c) parses as an ISO 8601 date or datetime, else None."""
     if len(token) == 4 and token.isdigit():
         return token
+
+    if len(token) == 7 and token[4] == "-" and token[:4].isdigit() and token[5:].isdigit():
+        return token
+
     try:
         return datetime.fromisoformat(token).date().isoformat()
     except ValueError:
