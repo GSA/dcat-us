@@ -7,6 +7,7 @@ transformation applies.
 import copy
 from datetime import datetime, timezone
 from dateutil import parser
+import re
 
 from langcodes import Language, find, tag_is_valid
 
@@ -192,6 +193,24 @@ def transform_modified(dataset: dict) -> dict:
         new_dataset["accrualPeriodicity"] = mapped_duration
     # `modified` is Recommended + nullable in DCAT-US v3.0
     del new_dataset["modified"]
+    return new_dataset
+
+
+def transform_replaces(dataset: dict) -> dict:
+    """Normalize the 'replaces' field to conform to the DCAT-US 3.0 schema."""
+    if "replaces" not in dataset:
+        return dataset
+
+    value = dataset["replaces"]
+    if isinstance(value, list):
+        return dataset
+
+    new_dataset = copy.deepcopy(dataset)
+    del new_dataset["replaces"]
+
+    if isinstance(value, str) and _is_iri(value):
+        new_dataset["relation"] = [value]
+
     return new_dataset
 
 
@@ -442,3 +461,7 @@ def _is_date(string):
         return True
     except (ValueError, OverflowError):
         return False
+
+
+def _is_iri(value: str) -> bool:
+    return bool(re.match(r'^[a-zA-Z][a-zA-Z0-9+\-.]*:.+', value))

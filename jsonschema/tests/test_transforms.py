@@ -6,6 +6,7 @@ from transforms import (
     transform_issued,
     transform_language,
     transform_modified,
+    transform_replaces,
     transform_rights,
     transform_temporal,
 )
@@ -212,6 +213,58 @@ class TestTransformModified:
         dataset = {"modified": "2024-10-01", "title": "some dataset"}
         transform_modified(dataset)
         assert dataset == {"modified": "2024-10-01", "title": "some dataset"}
+
+
+class TestTransformReplaces:
+
+    def test_iri_string_moved_to_relation(self):
+        result = transform_replaces({"replaces": "ark:/88434/mds2-2313", "title": "test"})
+        assert result == {"relation": ["ark:/88434/mds2-2313"], "title": "test"}
+
+    def test_non_iri_string_dropped(self):
+        result = transform_replaces({"replaces": "6998B81EF78777B2E05324570681D4DC1911", "title": "test"})
+        assert result == {"title": "test"}
+        assert "replaces" not in result
+        assert "relation" not in result
+
+    def test_leaves_list_unchanged(self):
+        value = [{"identifier": "ark:/88434/mds2-2313"}]
+        result = transform_replaces({"replaces": value})
+        assert result == {"replaces": value}
+
+    def test_empty_list_unchanged(self):
+        result = transform_replaces({"replaces": []})
+        assert result == {"replaces": []}
+
+    @pytest.mark.parametrize("dataset", [
+        {},
+        {"title": "no replaces"},
+        {"issued": "2024-10-01"},
+    ])
+    def test_noop_when_replaces_absent(self, dataset):
+        original = dict(dataset)
+        assert transform_replaces(dataset) == original
+
+    @pytest.mark.parametrize("non_string_value", [
+        42,
+        3.14,
+        None,
+        True,
+        {"key": "value"},
+    ])
+    def test_unsets_non_string_non_list(self, non_string_value):
+        result = transform_replaces({"replaces": non_string_value, "title": "test"})
+        assert "replaces" not in result
+
+    def test_does_not_mutate_input(self):
+        original = {"replaces": "ark:/88434/mds2-2313"}
+        transform_replaces(original)
+        assert original == {"replaces": "ark:/88434/mds2-2313"}
+
+    def test_https_iri_moved_to_relation(self):
+        url = "https://example.gov/datasets/old-dataset"
+        result = transform_replaces({"replaces": url})
+        assert result == {"relation": [url]}
 
 
 class TestTransformRights:

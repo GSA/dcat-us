@@ -2,8 +2,8 @@
 
 urls=(
     # Produces valid DCAT-US v3.0 data
-    "https://open.gsa.gov/data.json" # (342 datasets, baseline)
-    "https://www.energy.gov/data.json" # (482 datasets, contains "temporal" keys)
+    "https://open.gsa.gov/data.json"
+    "https://www.energy.gov/data.json" # contains `temporal` keys
 		"https://data.cms.gov/data.json"
 		"https://www.opm.gov/data.json"
 		"https://www.state.gov/data.json"
@@ -27,9 +27,9 @@ urls=(
 		"https://www.usitc.gov/data.json"
 		"https://www.huduser.gov/data/data.json"
 		"https://www.federalreserve.gov/PDC/data.json"
+    "https://www.nist.gov/sites/default/files/data.json" # `replaces` set to both passing iri and non-iri in datasets
 
 		# Fails v3.0 validation
-		"https://www.nist.gov/sites/default/files/data.json" # replaces
 		"https://www.archives.gov/files/data.json" # temporal
 
 		# fetch error
