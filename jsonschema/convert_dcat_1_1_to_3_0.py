@@ -206,8 +206,14 @@ def fetch_dcat_catalog(url: str) -> dict:
         response.raise_for_status()
     except RequestException as e:
         raise CatalogFetchException(f"Request failed: {e}") from e
+
     try:
-        return response.json()
+        text = response.content.decode("utf-8")
+    except UnicodeDecodeError:
+        text = response.content.decode("cp1252")
+
+    try:
+        return json.loads(text)
     except ValueError as e:
         raise CatalogFetchException(f"Response was not valid JSON: {e}") from e
 
