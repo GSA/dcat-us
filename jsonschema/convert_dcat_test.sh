@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-urls_old=(
+urls=(
     # Produces valid DCAT-US v3.0 data
     "https://open.gsa.gov/data.json" # (342 datasets, baseline)
     "https://www.energy.gov/data.json" # (482 datasets, contains "temporal" keys)
@@ -24,12 +24,12 @@ urls_old=(
 		"https://ddi.doi.gov/bia-data.json"
 		"https://www.archive.arm.gov/metadata/data.json"
 		"https://www.ftc.gov/data.json"
+		"https://www.usitc.gov/data.json"
+		"https://www.huduser.gov/data/data.json"
+		"https://www.federalreserve.gov/PDC/data.json"
 
 		# Fails v3.0 validation
-		"https://www.nist.gov/sites/default/files/data.json" # modified
-		"https://www.usitc.gov/data.json" # accrualPeriodicity
-		"https://www.huduser.gov/data/data.json" # accrualPeriodicity
-		"https://www.federalreserve.gov/PDC/data.json" # accrualPeriodicity
+		"https://www.nist.gov/sites/default/files/data.json" # replaces
 		"https://www.archives.gov/files/data.json" # temporal
 
 		# fetch error

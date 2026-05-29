@@ -6,6 +6,7 @@ transformation applies.
 
 import copy
 from datetime import datetime, timezone
+from dateutil import parser
 
 from langcodes import Language, find, tag_is_valid
 
@@ -16,7 +17,11 @@ ACCESS_RIGHTS_BY_LEVEL = {
     "non-public": "Not available for public release. Contact the publisher for more information.",
 }
 
-
+# TODO: there are currently four unmapped valid values for `accrualPeriodicity`:
+# asNeeded
+# irregular
+# notPlanned
+# unknown
 PERIODICITY_MAP = {
     "P1D": "daily",
     "P1W": "weekly",
@@ -25,6 +30,7 @@ PERIODICITY_MAP = {
     "P3M": "quarterly",
     "P6M": "biannually",
     "P1Y": "annually",
+    "PT1S": "continual"
 }
 
 
@@ -172,15 +178,18 @@ def transform_modified(dataset: dict) -> dict:
     if not isinstance(modified, str):
         return dataset
 
-    duration = _as_duration(modified)
-
-    if duration is None:
+    if _is_date(modified):
         new_dataset = copy.deepcopy(dataset)
         new_dataset["modified"] = _to_valid_date(modified)
         return new_dataset
 
     new_dataset = copy.deepcopy(dataset)
-    new_dataset["accrualPeriodicity"] = PERIODICITY_MAP.get(duration, duration)
+    duration = _as_duration(modified)
+    mapped_duration = PERIODICITY_MAP.get(duration)
+    if mapped_duration is None:
+        new_dataset["accrualPeriodicity"] = "irregular"
+    else:
+        new_dataset["accrualPeriodicity"] = mapped_duration
     # `modified` is Recommended + nullable in DCAT-US v3.0
     del new_dataset["modified"]
     return new_dataset
@@ -425,3 +434,11 @@ def _truncate_language(obj: dict) -> None:
             normalized.append(code)
 
     obj["language"] = normalized
+
+
+def _is_date(string):
+    try:
+        parser.parse(string)
+        return True
+    except (ValueError, OverflowError):
+        return False

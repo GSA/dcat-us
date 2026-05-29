@@ -166,6 +166,8 @@ class TestTransformModified:
         ("R/P1M", "monthly"),
         ("R/P3M", "quarterly"),
         ("R/P1Y", "annually"),
+        ("R/PT1S", "continual"),
+        ("junk", "irregular")
     ])
     def test_handles_various_repeating_intervals(self, interval, expected_periodicity):
         result = transform_modified({"modified": interval, "issued": "2024-10-01"})
@@ -196,6 +198,20 @@ class TestTransformModified:
     def test_truncates_space_separated_datetime(self):
         result = transform_modified({"modified": "2024-10-01 12:30:00"})
         assert result == {"modified": "2024-10-01"}
+
+    def test_noop_preserves_sibling_keys_when_modified_not_string(self):
+        dataset = {"modified": 12345, "title": "some dataset"}
+        original = dict(dataset)
+        assert transform_modified(dataset) == original
+
+    def test_truncates_offset_datetime(self):
+        result = transform_modified({"modified": "2024-10-01T12:30:00+05:00"})
+        assert result == {"modified": "2024-10-01"}
+
+    def test_does_not_mutate_input_on_date_path(self):
+        dataset = {"modified": "2024-10-01", "title": "some dataset"}
+        transform_modified(dataset)
+        assert dataset == {"modified": "2024-10-01", "title": "some dataset"}
 
 
 class TestTransformRights:
