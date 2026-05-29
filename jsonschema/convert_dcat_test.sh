@@ -19,18 +19,18 @@ urls_old=(
     "https://www.fdic.gov/data.json"
 		"https://www.loc.gov/data.json"
 		"https://openei.org/data.json"
-
-		# Fails v3.0 validation
-		"https://www.nist.gov/sites/default/files/data.json"
-		"https://www.archive.arm.gov/metadata/data.json"
-		"https://www.ftc.gov/data.json"
-		"https://www.usitc.gov/data.json"
-		"https://www.archives.gov/files/data.json"
-		"https://www.huduser.gov/data/data.json"
 		"https://ddi.doi.gov/boem-data.json"
 		"https://ddi.doi.gov/blm-data.json"
-		"https://www.federalreserve.gov/PDC/data.json"
 		"https://ddi.doi.gov/bia-data.json"
+
+		# Fails v3.0 validation
+		"https://www.nist.gov/sites/default/files/data.json" # modified
+		"https://www.archive.arm.gov/metadata/data.json" # modified
+		"https://www.ftc.gov/data.json" # modified
+		"https://www.usitc.gov/data.json" # accrualPeriodicity
+		"https://www.huduser.gov/data/data.json" # accrualPeriodicity
+		"https://www.federalreserve.gov/PDC/data.json" # accrualPeriodicity
+		"https://www.archives.gov/files/data.json" # temporal
 
 		# fetch error
 		"https://www.arts.gov/data.json" # "Response was not valid JSON: 'utf-8' codec can't decode byte 0x92 in position 15751: invalid start byte"
