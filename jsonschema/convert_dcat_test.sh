@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-urls=(
+urls_old=(
     # Produces valid DCAT-US v3.0 data
     "https://open.gsa.gov/data.json" # (342 datasets, baseline)
     "https://www.energy.gov/data.json" # (482 datasets, contains "temporal" keys)
@@ -16,16 +16,29 @@ urls=(
 		"https://www.justice.gov/data.json"
 		"https://www.treasury.gov/jsonfiles/data.json"
 		"https://www.dhs.gov/xlibrary/assets/digital-strategy/data.json" # has `rights` set to null
+    "https://www.fdic.gov/data.json"
+		"https://www.loc.gov/data.json"
 
-		# Contains invalid v1.1 data
-    # "https://www.usda.gov/data.json" # missing required field 'programCode' (requires TLS impersonation)
-		# "https://healthdata.gov/data.json"
-		# "https://data.ed.gov/data.json"
+		# Fails v3.0 validation
+		"https://openei.org/data.json"
+		"https://www.nist.gov/sites/default/files/data.json"
+		"https://www.archive.arm.gov/metadata/data.json"
+		"https://www.ftc.gov/data.json"
+		"https://www.usitc.gov/data.json"
+		"https://www.archives.gov/files/data.json"
+		"https://www.huduser.gov/data/data.json"
+		"https://ddi.doi.gov/boem-data.json"
+		"https://ddi.doi.gov/blm-data.json"
+		"https://www.federalreserve.gov/PDC/data.json"
+		"https://ddi.doi.gov/bia-data.json"
+
+		# fetch error
+		"https://www.arts.gov/data.json" # "Response was not valid JSON: 'utf-8' codec can't decode byte 0x92 in position 15751: invalid start byte"
 )
 
 for url in "${urls[@]}"; do
     echo "Running DCAT-US v1.1 to v3.0 conversion script for: $url"
-    if poetry run python convert_dcat_1_1_to_3_0.py --url="$url" --dry-run; then
+    if poetry run python convert_dcat_1_1_to_3_0.py --url="$url" --dry-run 2>/dev/null; then
         echo "success: $url"
     else
         echo "failed (exit $?): $url"
