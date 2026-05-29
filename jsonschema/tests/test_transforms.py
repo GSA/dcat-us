@@ -78,6 +78,8 @@ class TestTransformIssued:
         # Real time present => emit a date-time with a trailing Z.
         ("2015-06-02T12:30:00",        "2015-06-02T12:30:00Z"),
         ("2015-06-02T00:00:01",        "2015-06-02T00:00:01Z"),
+        # Timezone-aware input => normalize to UTC, emit trailing Z (not +00:00Z).
+        ("2018-09-28T06:00:00+00:00", "2018-09-28T06:00:00Z"),
     ])
     def test_normalizes_valid_values(self, value, expected):
         result = transform_issued({"issued": value})

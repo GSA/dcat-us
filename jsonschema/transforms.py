@@ -5,7 +5,7 @@ transformation applies.
 """
 
 import copy
-from datetime import datetime
+from datetime import datetime, timezone
 
 from langcodes import Language, find, tag_is_valid
 
@@ -126,8 +126,10 @@ def transform_issued(dataset: dict) -> dict:
         # Midnight => no meaningful time component, emit a plain 'date'.
         dataset["issued"] = parsed.date().isoformat()  # e.g. 2015-06-02
     else:
-        # Real time present => emit a valid 'date-time' with UTC offset.
-        dataset["issued"] = parsed.isoformat() + "Z"
+        # Normalize to UTC and format as a valid ISO 8601 date-time string (e.g. 2018-09-28T06:00:00Z).
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        dataset["issued"] = parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     return dataset
 

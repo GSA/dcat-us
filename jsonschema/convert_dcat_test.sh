@@ -18,9 +18,9 @@ urls_old=(
 		"https://www.dhs.gov/xlibrary/assets/digital-strategy/data.json" # has `rights` set to null
     "https://www.fdic.gov/data.json"
 		"https://www.loc.gov/data.json"
+		"https://openei.org/data.json"
 
 		# Fails v3.0 validation
-		"https://openei.org/data.json"
 		"https://www.nist.gov/sites/default/files/data.json"
 		"https://www.archive.arm.gov/metadata/data.json"
 		"https://www.ftc.gov/data.json"
