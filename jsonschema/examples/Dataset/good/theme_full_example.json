@@ -6,9 +6,6 @@
     "fn": "Water Resources Support",
     "hasEmail": "mailto:water@example.gov"
   },
-  "publisher": {
-    "name": "U.S. Environmental Protection Agency"
-  },
   "theme": [
     {
       "@type": "Concept",

@@ -18,7 +18,7 @@
   "hasPart": null,
   "hasQualityMeasurement": null,
   "hasVersion": null,
-  "identifier": null,
+  "identifier": "",
   "image": null,
   "inSeries": null,
   "isReferencedBy": null,
@@ -33,9 +33,7 @@
   "page": null,
   "previousVersion": null,
   "provenance": null,
-  "publisher": {
-    "name": ""
-  },
+  "publisher": null,
   "purpose": null,
   "qualifiedAttribution": null,
   "qualifiedRelation": null,
