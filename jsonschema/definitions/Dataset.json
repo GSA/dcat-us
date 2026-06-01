@@ -989,12 +989,7 @@
       "requirementLevel": "Optional"
     }
   },
-  "required": [
-    "description",
-    "title",
-    "contactPoint",
-    "identifier"
-  ],
+  "required": ["description", "title", "contactPoint", "identifier"],
   "_oldDocs": {
     "rdfClass": "dcat:Dataset",
     "rationale": "The update of dcat:Dataset is crucial as it aligns the DCAT profile with international standards, offering a standardized and widely recognized way to describe datasets. This alignment enhances data interoperability and discoverability, enabling data publishers to provide structured metadata, improving data sharing, and facilitating seamless integration for users and applications.",
