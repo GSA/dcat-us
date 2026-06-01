@@ -1,9 +1,6 @@
 {
   "title": "Example Dataset",
   "description": "A dataset for testing purposes.",
-  "publisher": {
-    "name": "Example Agency"
-  },
   "contactPoint": {
     "fn": "Data Support",
     "hasEmail": "mailto:data@example.gov"
