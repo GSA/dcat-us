@@ -11,9 +11,11 @@
   "modified": "2024-06-01",
   "rights": ["No rights reserved. This data is in the public domain."],
   "describedBy": {
-    "@type": "Standard",
-    "title": "CSV Data Dictionary",
-    "accessURL": "https://example.gov/data/climate/dictionary"
+    "@type": "Distribution",
+    "title": "Climate Data Dictionary",
+    "description": "Data dictionary describing the fields in the climate data CSV.",
+    "downloadURL": "https://example.gov/data/climate/data-dictionary.pdf",
+    "mediaType": "application/pdf"
   },
   "accessRestriction": null,
   "cuiRestriction": null,
