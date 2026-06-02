@@ -266,7 +266,6 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
             dataset = transforms.transform_conforms_to(dataset)
             dataset = transforms.transform_landing_page(dataset)
             dataset = transforms.transform_issued(dataset)
-            dataset = transforms.transform_replaces(dataset)
             datasets[i] = dataset
         except Exception as e:
             raise CatalogConversionException(
