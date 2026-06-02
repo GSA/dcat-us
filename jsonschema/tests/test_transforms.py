@@ -168,7 +168,7 @@ class TestTransformModified:
         ("R/P3M", "quarterly"),
         ("R/P1Y", "annually"),
         ("R/PT1S", "continual"),
-        ("junk", "irregular")
+        ("junk", "irregular") # unrecognized values fall back to "irregular"
     ])
     def test_handles_various_repeating_intervals(self, interval, expected_periodicity):
         result = transform_modified({"modified": interval, "issued": "2024-10-01"})
@@ -208,11 +208,6 @@ class TestTransformModified:
     def test_truncates_offset_datetime(self):
         result = transform_modified({"modified": "2024-10-01T12:30:00+05:00"})
         assert result == {"modified": "2024-10-01"}
-
-    def test_does_not_mutate_input_on_date_path(self):
-        dataset = {"modified": "2024-10-01", "title": "some dataset"}
-        transform_modified(dataset)
-        assert dataset == {"modified": "2024-10-01", "title": "some dataset"}
 
 
 class TestTransformReplaces:

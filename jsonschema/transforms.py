@@ -2,6 +2,10 @@
 
 Each public function takes a dataset dict and returns a transformed copy when a
 transformation applies.
+
+Resources:
+- https://resources.data.gov/resources/dcat-us3/
+- https://resources.data.gov/resources/dcat-us-3-migration/
 """
 
 import copy
@@ -18,7 +22,7 @@ ACCESS_RIGHTS_BY_LEVEL = {
     "non-public": "Not available for public release. Contact the publisher for more information.",
 }
 
-# TODO: there are currently four unmapped valid values for `accrualPeriodicity`:
+# There are four valid-but-unmapped values for `accrualPeriodicity`:
 # asNeeded
 # irregular
 # notPlanned
@@ -122,23 +126,24 @@ def transform_issued(dataset: dict) -> dict:
     if not isinstance(value, str):
         return dataset
 
+    new_dataset = copy.deepcopy(dataset)
     try:
         parsed = datetime.fromisoformat(value)
     except ValueError:
         # Not a valid ISO date/date-time (e.g. "2019") => unset it.
-        del dataset["issued"]
-        return dataset
+        del new_dataset["issued"]
+        return new_dataset
 
     if parsed.time() == datetime.min.time():
         # Midnight => no meaningful time component, emit a plain 'date'.
-        dataset["issued"] = parsed.date().isoformat()  # e.g. 2015-06-02
+        new_dataset["issued"] = parsed.date().isoformat()  # e.g. 2015-06-02
     else:
         # Normalize to UTC and format as a valid ISO 8601 date-time string (e.g. 2018-09-28T06:00:00Z).
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=timezone.utc)
-        dataset["issued"] = parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        new_dataset["issued"] = parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    return dataset
+    return new_dataset
 
 
 def transform_landing_page(dataset: dict) -> dict:
