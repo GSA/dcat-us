@@ -37,3 +37,6 @@ coverage.xml
 # Environment variables
 .env
 .env.local
+
+# Local development tools
+jsonschema/scratch
