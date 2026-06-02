@@ -54,33 +54,33 @@ jsonschema/
 
 The `definitions/` folder contains individual JSON Schema files for each DCAT-US class:
 
-| Schema | Description |
-|--------|-------------|
-| AccessRestriction | Access restriction information (NARA) |
-| Activity | Provenance activity |
-| Address | Physical or mailing address |
-| Agent | Entity responsible for resources |
-| Attribution | Attribution information |
-| CatalogRecord | Metadata about a catalog entry |
-| Checksum | Checksum for data integrity |
-| Concept | SKOS concept for controlled vocabularies |
-| ConceptScheme | SKOS concept scheme |
-| CUIRestriction | Controlled Unclassified Information restriction |
-| DataService | API or service providing data access |
-| Dataset | A dataset resource |
-| DatasetSeries | A series of related datasets |
-| Distribution | A specific representation of a dataset |
-| Document | A document resource |
-| Identifier | Identifier with scheme information |
-| Kind | Contact information (vCard) |
-| Location | Geographic location |
-| Metric | Quality metric definition |
-| Organization | An organization entity |
-| PeriodOfTime | Temporal coverage |
-| QualityMeasurement | Quality measurement result |
-| Relationship | Relationship between resources |
-| Standard | A standard or specification |
-| UseRestriction | Use restriction information |
+| Schema             | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| AccessRestriction  | Access restriction information (NARA)           |
+| Activity           | Provenance activity                             |
+| Address            | Physical or mailing address                     |
+| Agent              | Entity responsible for resources                |
+| Attribution        | Attribution information                         |
+| CatalogRecord      | Metadata about a catalog entry                  |
+| Checksum           | Checksum for data integrity                     |
+| Concept            | SKOS concept for controlled vocabularies        |
+| ConceptScheme      | SKOS concept scheme                             |
+| CUIRestriction     | Controlled Unclassified Information restriction |
+| DataService        | API or service providing data access            |
+| Dataset            | A dataset resource                              |
+| DatasetSeries      | A series of related datasets                    |
+| Distribution       | A specific representation of a dataset          |
+| Document           | A document resource                             |
+| Identifier         | Identifier with scheme information              |
+| Kind               | Contact information (vCard)                     |
+| Location           | Geographic location                             |
+| Metric             | Quality metric definition                       |
+| Organization       | An organization entity                          |
+| PeriodOfTime       | Temporal coverage                               |
+| QualityMeasurement | Quality measurement result                      |
+| Relationship       | Relationship between resources                  |
+| Standard           | A standard or specification                     |
+| UseRestriction     | Use restriction information                     |
 
 `definitions/Catalog.json` defines the catalog class and serves as the root catalog schema.
 
@@ -266,6 +266,16 @@ npx prettier --write definitions/*.json
 poetry run python generate_schema_docs.py
 ```
 
+### convert_dcat_1_1_to_3_0.py
+
+Summary: Takes a URL pointing to a valid DCAT-US v1.1 catalog and converts it to
+a valid DCAT-US v3.0 catalog. By default saves converted data to the
+`converted_dcat_data` directory in this repository.
+
+```bash
+poetry run python convert_dcat_1_1_to_3_0.py --url="https://www.example.gov/data.json"
+```
+
 ### Script Help Verification
 
 The following commands were tested in this repository using Poetry:
@@ -284,6 +294,7 @@ The following commands were tested in this repository using Poetry:
 To add test examples for a schema:
 
 1. Create the directory structure under `examples/`:
+
    ```
    examples/{SchemaName}/good/
    examples/{SchemaName}/bad/
@@ -376,7 +387,7 @@ Apply formatting:
 npx prettier --write definitions/*.json examples/
 ```
 
-## Schema Metadata (_oldDocs)
+## Schema Metadata (\_oldDocs)
 
 Each schema and property can include an `_oldDocs` object containing metadata extracted from the local DCAT-US HTML snapshot at `../DEPRECATED/docs/index.html`. This includes:
 
@@ -402,4 +413,3 @@ If you need to inspect the historical importer behavior, you can still run:
 ```bash
 poetry run python parse_old_docs.py
 ```
-
