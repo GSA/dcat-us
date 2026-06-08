@@ -1,0 +1,757 @@
+Processing: https://data.ca.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 9160 error(s) across 4457 datasets:
+    missing required field 'bureauCode': 4457 datasets
+    missing required field 'programCode': 4457 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 157 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 81 datasets
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 3 datasets
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 3 datasets
+    dataset[N].theme: field is not null and ['COVID-19', 'COVID-19'] has non-unique elements: 2 datasets
+Removed 4457 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://healthdata.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 902 error(s) across 20461 datasets:
+    dataset[N].accrualPeriodicity: field is not null and does not match alternatives:
+  - value not in allowed values: ['irregular']
+  - invalid ISO 8601 duration: 217 datasets
+    missing required field 'keyword': 201 datasets
+    dataset[N].temporal: field is not null and does not match alternatives:
+  - invalid ISO 8601 date/datetime
+  - invalid ISO 8601 repeating interval: 200 datasets
+    dataset[N].rights: field is not null and value is too long (max 255 characters): 66 datasets
+    dataset[N].describedBy: field is not null and invalid format, expected 'uri': 54 datasets
+    dataset[N].references: field is not null and invalid format, expected 'uri': 31 datasets
+    dataset[N].description: '' should be non-empty: 26 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 23 datasets
+    missing required field 'bureauCode': 22 datasets
+    missing required field 'programCode': 22 datasets
+    dataset[N].programCode[N]: invalid program code format (expected '###:###'): 16 datasets
+    dataset[N].landingPage: field is not null and invalid format, expected 'uri': 12 datasets
+    dataset[N].conformsTo: field is not null and invalid format, expected 'uri': 9 datasets
+    dataset[N].primaryITInvestmentUII: field is not null and invalid IT investment UII format (expected '###-#########'): 2 datasets
+    dataset[N].references: field is not null and ['https://www.cdc.gov/nchs/data/nvsr/nvsr51/nvsr51_12.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr62/nvsr62_09.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr63/nvsr63_04.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr62/nvsr62_09.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_01.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_12.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_01.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr67/nvsr67_01.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr67/nvsr67_08-508.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr68/nvsr68_13-508.pdf', 'https://www.cdc.gov/nchs/data/nvsr/nvsr70/nvsr70-02-508.pdf'] has non-unique elements: 1 dataset
+Removed 548 invalid dataset(s). 19913 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://data.kingcounty.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 748 error(s) across 341 datasets:
+    missing required field 'bureauCode': 341 datasets
+    missing required field 'programCode': 341 datasets
+    missing required field 'keyword': 45 datasets
+    dataset[N].description: '' should be non-empty: 21 datasets
+Removed 341 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.hartford.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 322 error(s) across 128 datasets:
+    missing required field 'bureauCode': 128 datasets
+    missing required field 'programCode': 128 datasets
+    dataset[N].keyword: [] should be non-empty: 23 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 21 datasets
+    dataset[N].theme: field is not null and expected type 'array': 21 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 128 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data-soa-dnr.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1455 error(s) across 460 datasets:
+    dataset[N].license: field is not null and invalid format, expected 'uri': 460 datasets
+    missing required field 'bureauCode': 460 datasets
+    missing required field 'programCode': 460 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 27 datasets
+    dataset[N].theme: field is not null and expected type 'array': 27 datasets
+    dataset[N].description: '' should be non-empty: 10 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 8 datasets
+    dataset[N].keyword: [] should be non-empty: 2 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 1 dataset
+Removed 460 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/onrr-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 14 error(s) across 14 datasets:
+    missing required field 'programCode': 14 datasets
+Removed 14 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://www.imls.gov/sites/default/files/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1 error(s) across 59 datasets:
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 1 invalid dataset(s). 58 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/bsee-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 188 error(s) across 95 datasets:
+    missing required field 'programCode': 95 datasets
+    missing required field 'modified': 80 datasets
+    dataset[N].distribution: field is not null and missing required field 'mediaType': 13 datasets
+Removed 95 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/osmre-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 30 error(s) across 10 datasets:
+    missing required field 'bureauCode': 10 datasets
+    missing required field 'modified': 10 datasets
+    missing required field 'programCode': 10 datasets
+Removed 10 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/usgs-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 37392 error(s) across 37341 datasets:
+    missing required field 'programCode': 37341 datasets
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 51 datasets
+Removed 37341 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.honolulu.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1197 error(s) across 402 datasets:
+    missing required field 'bureauCode': 402 datasets
+    missing required field 'programCode': 402 datasets
+    dataset[N].description: '' should be non-empty: 328 datasets
+    missing required field 'keyword': 65 datasets
+Removed 402 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data-fairfaxcountygis.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 443 error(s) across 148 datasets:
+    missing required field 'bureauCode': 148 datasets
+    missing required field 'programCode': 148 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 147 datasets
+Removed 148 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/doios-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3 error(s) across 2 datasets:
+    missing required field 'programCode': 2 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 1 dataset
+Removed 2 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://edg.epa.gov/data/nongeo_data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 6 error(s) across 449 datasets:
+    missing required field 'keyword': 4 datasets
+    missing required field 'bureauCode': 1 dataset
+    missing required field 'programCode': 1 dataset
+Removed 4 invalid dataset(s). 445 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://opendata.fcc.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 10 error(s) across 60 datasets:
+    missing required field 'keyword': 6 datasets
+    dataset[N].description: '' should be non-empty: 2 datasets
+    missing required field 'bureauCode': 1 dataset
+    missing required field 'programCode': 1 dataset
+Removed 6 invalid dataset(s). 54 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://nycopendata.socrata.com/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 5991 error(s) across 2704 datasets:
+    missing required field 'bureauCode': 2704 datasets
+    missing required field 'programCode': 2704 datasets
+    missing required field 'keyword': 533 datasets
+    dataset[N].description: '' should be non-empty: 50 datasets
+Removed 2704 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://opendata.hawaii.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3491 error(s) across 976 datasets:
+    missing required field 'bureauCode': 976 datasets
+    missing required field 'programCode': 976 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 822 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 453 datasets
+    missing required field 'keyword': 224 datasets
+    missing required field 'description': 39 datasets
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 976 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.brla.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 519 error(s) across 254 datasets:
+    missing required field 'bureauCode': 254 datasets
+    missing required field 'programCode': 254 datasets
+    missing required field 'keyword': 6 datasets
+    dataset[N].description: '' should be non-empty: 5 datasets
+Removed 254 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.ed.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1 error(s) across 906 datasets:
+    missing required field 'contactPoint': 1 dataset
+Removed 1 invalid dataset(s). 905 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://ddi.doi.gov/usbr-data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 8745 error(s) across 8745 datasets:
+    missing required field 'programCode': 8745 datasets
+Removed 8745 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://datacatalog.cookcountyil.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1397 error(s) across 625 datasets:
+    missing required field 'bureauCode': 625 datasets
+    missing required field 'programCode': 625 datasets
+    dataset[N].description: '' should be non-empty: 105 datasets
+    missing required field 'keyword': 42 datasets
+Removed 625 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.nola.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 544 error(s) across 230 datasets:
+    missing required field 'bureauCode': 230 datasets
+    missing required field 'programCode': 230 datasets
+    missing required field 'keyword': 63 datasets
+    dataset[N].description: '' should be non-empty: 21 datasets
+Removed 230 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.sfgov.org/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1771 error(s) across 703 datasets:
+    missing required field 'bureauCode': 703 datasets
+    missing required field 'programCode': 703 datasets
+    missing required field 'keyword': 313 datasets
+    dataset[N].theme: field is not null and '' should be non-empty: 35 datasets
+    dataset[N].description: '' should be non-empty: 17 datasets
+Removed 703 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.ok.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 902 error(s) across 389 datasets:
+    missing required field 'bureauCode': 389 datasets
+    missing required field 'programCode': 389 datasets
+    missing required field 'keyword': 60 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 51 datasets
+    missing required field 'description': 13 datasets
+Removed 389 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.ny.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2344 error(s) across 1143 datasets:
+    missing required field 'bureauCode': 1143 datasets
+    missing required field 'programCode': 1143 datasets
+    missing required field 'keyword': 50 datasets
+    dataset[N].description: '' should be non-empty: 5 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 3 datasets
+Removed 1143 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.cityofchicago.org/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2285 error(s) across 1114 datasets:
+    missing required field 'bureauCode': 1114 datasets
+    missing required field 'programCode': 1114 datasets
+    missing required field 'keyword': 46 datasets
+    dataset[N].description: '' should be non-empty: 11 datasets
+Removed 1114 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.mo.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 850 error(s) across 277 datasets:
+    missing required field 'bureauCode': 277 datasets
+    missing required field 'programCode': 277 datasets
+    missing required field 'keyword': 191 datasets
+    dataset[N].description: '' should be non-empty: 105 datasets
+Removed 277 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.baltimorecity.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3903 error(s) across 972 datasets:
+    missing required field 'bureauCode': 972 datasets
+    missing required field 'programCode': 972 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 932 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 511 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 251 datasets
+    dataset[N].theme: field is not null and expected type 'array': 251 datasets
+    dataset[N].keyword: [] should be non-empty: 7 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 6 datasets
+    dataset[N].description: '' should be non-empty: 1 dataset
+Removed 972 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.austintexas.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 7066 error(s) across 2839 datasets:
+    missing required field 'bureauCode': 2839 datasets
+    missing required field 'programCode': 2839 datasets
+    missing required field 'keyword': 1279 datasets
+    dataset[N].description: '' should be non-empty: 109 datasets
+Removed 2839 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.somervillema.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 106 error(s) across 48 datasets:
+    missing required field 'bureauCode': 48 datasets
+    missing required field 'programCode': 48 datasets
+    missing required field 'keyword': 9 datasets
+    dataset[N].description: '' should be non-empty: 1 dataset
+Removed 48 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://cos-data.seattle.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1405 error(s) across 688 datasets:
+    missing required field 'bureauCode': 688 datasets
+    missing required field 'programCode': 688 datasets
+    missing required field 'keyword': 25 datasets
+    dataset[N].description: '' should be non-empty: 3 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 1 dataset
+Removed 688 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.townofcary.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 269 error(s) across 78 datasets:
+    missing required field 'bureauCode': 78 datasets
+    missing required field 'hasEmail': 78 datasets
+    missing required field 'programCode': 78 datasets
+    dataset[N].publisher.name: expected type 'string': 14 datasets
+    dataset[N].description: expected type 'string': 13 datasets
+    missing required field 'keyword': 8 datasets
+Removed 78 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.charlottenc.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1665 error(s) across 372 datasets:
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 372 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 372 datasets
+    missing required field 'bureauCode': 372 datasets
+    missing required field 'programCode': 372 datasets
+    dataset[N].description: '' should be non-empty: 74 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 31 datasets
+    dataset[N].theme: field is not null and expected type 'array': 31 datasets
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 20 datasets
+    dataset[N].keyword: [] should be non-empty: 15 datasets
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 5 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 1 dataset
+Removed 372 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://opendata-townofchapelhill.hub.arcgis.com/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 468 error(s) across 123 datasets:
+    missing required field 'bureauCode': 123 datasets
+    missing required field 'programCode': 123 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 82 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 64 datasets
+    dataset[N].theme: field is not null and expected type 'array': 64 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 6 datasets
+    dataset[N].description: '' should be non-empty: 5 datasets
+    dataset[N].keyword: [] should be non-empty: 1 dataset
+Removed 123 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.va.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 303 error(s) across 1962 datasets:
+    missing required field 'keyword': 115 datasets
+    missing required field 'bureauCode': 61 datasets
+    missing required field 'programCode': 61 datasets
+    dataset[N].description: '' should be non-empty: 47 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 6 datasets
+    dataset[N].temporal: field is not null and does not match alternatives:
+  - invalid ISO 8601 date/datetime
+  - invalid ISO 8601 repeating interval: 4 datasets
+    dataset[N].bureauCode[N]: does not match pattern '[0-9]{3}:[0-9]{2}': 2 datasets
+    dataset[N].language: field is not null and does not match pattern '^(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)|((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang)))$': 2 datasets
+    dataset[N].programCode[N]: invalid program code format (expected '###:###'): 2 datasets
+    dataset[N].accrualPeriodicity: field is not null and does not match alternatives:
+  - value not in allowed values: ['irregular']
+  - invalid ISO 8601 duration: 1 dataset
+    dataset[N].landingPage: field is not null and invalid format, expected 'uri': 1 dataset
+    dataset[N].references: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 205 invalid dataset(s). 1757 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://geohub-loudoungis.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 783 error(s) across 226 datasets:
+    missing required field 'bureauCode': 226 datasets
+    missing required field 'programCode': 226 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 144 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 92 datasets
+    dataset[N].theme: field is not null and expected type 'array': 92 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 2 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 1 dataset
+Removed 226 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.ct.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2570 error(s) across 1213 datasets:
+    missing required field 'bureauCode': 1213 datasets
+    missing required field 'programCode': 1213 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 69 datasets
+    dataset[N].description: '' should be non-empty: 37 datasets
+    missing required field 'keyword': 36 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 2 datasets
+Removed 1213 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.wa.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 4470 error(s) across 1954 datasets:
+    missing required field 'bureauCode': 1954 datasets
+    missing required field 'programCode': 1954 datasets
+    dataset[N].description: '' should be non-empty: 493 datasets
+    missing required field 'keyword': 65 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 4 datasets
+Removed 1954 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.oregon.gov/data.json?version=2
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2319 error(s) across 981 datasets:
+    missing required field 'bureauCode': 981 datasets
+    missing required field 'programCode': 981 datasets
+    missing required field 'keyword': 260 datasets
+    dataset[N].description: '' should be non-empty: 87 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 10 datasets
+Removed 981 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.providenceri.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 524 error(s) across 234 datasets:
+    missing required field 'bureauCode': 234 datasets
+    missing required field 'programCode': 234 datasets
+    missing required field 'keyword': 32 datasets
+    dataset[N].description: '' should be non-empty: 24 datasets
+Removed 234 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://public-chesva.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 93 error(s) across 36 datasets:
+    missing required field 'bureauCode': 36 datasets
+    missing required field 'programCode': 36 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 11 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 5 datasets
+    dataset[N].theme: field is not null and expected type 'array': 5 datasets
+Removed 36 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://www.ssa.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 984 error(s) across 2416 datasets:
+    dataset[N].isPartOf: expected type 'string': 911 datasets
+    dataset[N].temporal: field is not null and does not match alternatives:
+  - invalid ISO 8601 date/datetime
+  - invalid ISO 8601 repeating interval: 73 datasets
+Removed 920 invalid dataset(s). 1496 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://cwbi-app.sec.usace.army.mil/pub/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 6 error(s) across 2 datasets:
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 2 datasets
+    missing required field 'bureauCode': 2 datasets
+    missing required field 'programCode': 2 datasets
+Removed 2 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://www.nrc.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 14 error(s) across 230 datasets:
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 14 datasets
+Removed 14 invalid dataset(s). 216 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://data.transportation.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 190 error(s) across 1760 datasets:
+    missing required field 'programCode': 62 datasets
+    missing required field 'keyword': 52 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 20 datasets
+    dataset[N].description: '' should be non-empty: 15 datasets
+    missing required field 'bureauCode': 15 datasets
+    dataset[N].temporal: field is not null and does not match alternatives:
+  - invalid ISO 8601 date/datetime
+  - invalid ISO 8601 repeating interval: 12 datasets
+    dataset[N].accrualPeriodicity: field is not null and does not match alternatives:
+  - value not in allowed values: ['irregular']
+  - invalid ISO 8601 duration: 7 datasets
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 3 datasets
+    dataset[N].landingPage: field is not null and invalid format, expected 'uri': 2 datasets
+    dataset[N].describedBy: field is not null and invalid format, expected 'uri': 1 dataset
+    dataset[N].references: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 115 invalid dataset(s). 1645 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://geospatial-usace.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 369 error(s) across 361 datasets:
+    dataset[N].license: field is not null and invalid format, expected 'uri': 361 datasets
+    dataset[N].description: '' should be non-empty: 4 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 3 datasets
+    dataset[N].keyword: [] should be non-empty: 1 dataset
+Removed 361 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://opendata.maryland.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 6243 error(s) across 2451 datasets:
+    missing required field 'bureauCode': 2451 datasets
+    missing required field 'programCode': 2451 datasets
+    missing required field 'keyword': 1341 datasets
+Removed 2451 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://ngda-transportation-geoplatform.hub.arcgis.com/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 28 error(s) across 46 datasets:
+    dataset[N].spatial: field is not null and '' should be non-empty: 14 datasets
+    dataset[N].theme: field is not null and expected type 'array': 14 datasets
+Removed 14 invalid dataset(s). 32 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://data.ferndalemi.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3802 error(s) across 1132 datasets:
+    missing required field 'bureauCode': 1132 datasets
+    missing required field 'programCode': 1132 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 858 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 305 datasets
+    dataset[N].theme: field is not null and expected type 'array': 305 datasets
+    dataset[N].description: '' should be non-empty: 49 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 13 datasets
+    dataset[N].title: expected type 'string': 3 datasets
+    dataset[N].keyword: [] should be non-empty: 2 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 1 dataset
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 1 dataset
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 1 dataset
+Removed 1132 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.tempe.gov/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1267 error(s) across 621 datasets:
+    missing required field 'bureauCode': 621 datasets
+    missing required field 'programCode': 621 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 7 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 6 datasets
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 6 datasets
+    dataset[N].description: '' should be non-empty: 4 datasets
+    dataset[N].keyword: [] should be non-empty: 2 datasets
+Removed 621 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.arlingtonva.us/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 656 error(s) across 185 datasets:
+    missing required field 'bureauCode': 185 datasets
+    missing required field 'keyword': 185 datasets
+    missing required field 'programCode': 185 datasets
+    dataset[N].modified: expected type 'string': 98 datasets
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 3 datasets
+Removed 185 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://bloomington.data.socrata.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 732 error(s) across 278 datasets:
+    missing required field 'bureauCode': 278 datasets
+    missing required field 'programCode': 278 datasets
+    missing required field 'keyword': 151 datasets
+    dataset[N].description: '' should be non-empty: 25 datasets
+Removed 278 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data-wake.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1889 error(s) across 521 datasets:
+    missing required field 'bureauCode': 521 datasets
+    missing required field 'programCode': 521 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 414 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 228 datasets
+    dataset[N].description: '' should be non-empty: 165 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 17 datasets
+    dataset[N].theme: field is not null and expected type 'array': 17 datasets
+    dataset[N].keyword: [] should be non-empty: 5 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 1 dataset
+Removed 521 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://www.cpsc.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1 error(s) across 8 datasets:
+    dataset[N].distribution: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 1 invalid dataset(s). 7 valid dataset(s) remaining.
+------------------------------------------------------
+Processing: https://data.montgomerycountymd.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1102 error(s) across 499 datasets:
+    missing required field 'bureauCode': 499 datasets
+    missing required field 'programCode': 499 datasets
+    missing required field 'keyword': 74 datasets
+    dataset[N].description: '' should be non-empty: 30 datasets
+Removed 499 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://www.opendataphilly.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 1323 error(s) across 462 datasets:
+    missing required field 'bureauCode': 462 datasets
+    missing required field 'programCode': 462 datasets
+    dataset[N].modified: expected type 'string': 373 datasets
+    dataset[N].description: '' should be non-empty: 19 datasets
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 4 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 2 datasets
+    dataset[N].keyword[N]: expected type 'string': 1 dataset
+Removed 462 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://federallabs.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2 error(s) across 1 datasets:
+    missing required field 'bureauCode': 1 dataset
+    missing required field 'programCode': 1 dataset
+Removed 1 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.lacity.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 866 error(s) across 383 datasets:
+    missing required field 'bureauCode': 383 datasets
+    missing required field 'programCode': 383 datasets
+    missing required field 'keyword': 83 datasets
+    dataset[N].description: '' should be non-empty: 17 datasets
+Removed 383 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://opendata.cityofboise.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 298 error(s) across 89 datasets:
+    dataset[N].license: field is not null and invalid format, expected 'uri': 89 datasets
+    missing required field 'bureauCode': 89 datasets
+    missing required field 'programCode': 89 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 13 datasets
+    dataset[N].theme: field is not null and expected type 'array': 13 datasets
+    dataset[N].description: '' should be non-empty: 2 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 2 datasets
+    dataset[N].keyword: [] should be non-empty: 1 dataset
+Removed 89 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://opendata.dc.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3942 error(s) across 1867 datasets:
+    missing required field 'bureauCode': 1867 datasets
+    missing required field 'programCode': 1867 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 72 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 58 datasets
+    dataset[N].theme: field is not null and expected type 'array': 58 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 8 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 7 datasets
+    dataset[N].keyword: [] should be non-empty: 3 datasets
+    dataset[N].description: '' should be non-empty: 2 datasets
+Removed 1867 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data-lakecountyil.opendata.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3527 error(s) across 1548 datasets:
+    missing required field 'bureauCode': 1548 datasets
+    missing required field 'programCode': 1548 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 113 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 105 datasets
+    dataset[N].theme: field is not null and expected type 'array': 105 datasets
+    dataset[N].distribution: field is not null and [N].accessURL: field is not null and invalid format, expected 'uri': 95 datasets
+    dataset[N].description: '' should be non-empty: 10 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 3 datasets
+Removed 1548 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://geodata.vermont.gov/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 3664 error(s) across 1117 datasets:
+    missing required field 'bureauCode': 1117 datasets
+    missing required field 'programCode': 1117 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 950 datasets
+    dataset[N].contactPoint.hasEmail: invalid mailto URI format: 406 datasets
+    dataset[N].description: '' should be non-empty: 44 datasets
+    dataset[N].keyword: [] should be non-empty: 16 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 9 datasets
+    dataset[N].title: expected type 'string': 5 datasets
+Removed 1117 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://dataworks.siouxfalls.gov/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 473 error(s) across 236 datasets:
+    missing required field 'bureauCode': 236 datasets
+    missing required field 'programCode': 236 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 1 dataset
+Removed 236 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://data.wprdc.org/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 2336 error(s) across 368 datasets:
+    missing required field 'bureauCode': 368 datasets
+    missing required field 'identifier': 368 datasets
+    missing required field 'keyword': 368 datasets
+    missing required field 'programCode': 368 datasets
+    missing required field 'fn': 362 datasets
+    missing required field 'hasEmail': 362 datasets
+    dataset[N].distribution: field is not null and missing required field 'mediaType': 139 datasets
+    missing required field 'description': 1 dataset
+Removed 368 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://geocatalog-uidaho.hub.arcgis.com/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 477 error(s) across 191 datasets:
+    missing required field 'bureauCode': 191 datasets
+    missing required field 'programCode': 191 datasets
+    dataset[N].license: field is not null and invalid format, expected 'uri': 83 datasets
+    dataset[N].spatial: field is not null and '' should be non-empty: 6 datasets
+    dataset[N].theme: field is not null and expected type 'array': 6 datasets
+Removed 191 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://rossi.urs-tally.com/Content/data.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 6 error(s) across 3 datasets:
+    missing required field 'bureauCode': 3 datasets
+    missing required field 'programCode': 3 datasets
+Removed 3 invalid dataset(s). 0 valid dataset(s) remaining.
+No valid datasets remain after filtering.
+------------------------------------------------------
+Processing: https://louisville-metro-opendata-lojic.hub.arcgis.com/api/feed/dcat-us/1.1.json
+Warning: catalog has invalid data, filtering it out:
+v1.1 validation failed with 9 error(s) across 515 datasets:
+    dataset[N].keyword: [] should be non-empty: 4 datasets
+    dataset[N].modified: does not match any alternative:
+    - invalid ISO 8601 date/datetime
+    - invalid ISO 8601 repeating interval: 4 datasets
+    dataset[N].keyword[N]: '' should be non-empty: 1 dataset
+Removed 9 invalid dataset(s). 506 valid dataset(s) remaining.
+------------------------------------------------------
