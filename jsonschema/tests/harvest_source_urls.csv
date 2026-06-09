@@ -1,60 +1,60 @@
 url,status,has_valid_subset,notes
 https://www.eac.gov/data.json,converts,n/a
-https://data.ca.gov/data.json,invalid v1.1,no
+https://data.ca.gov/data.json,invalid v1.1,yes
 https://open.gsa.gov/data.json,converts,n/a
 https://healthdata.gov/data.json,invalid v1.1,yes
-https://data.kingcounty.gov/data.json?version=2,invalid v1.1,no
-https://data.hartford.gov/data.json,invalid v1.1,no
+https://data.kingcounty.gov/data.json?version=2,invalid v1.1,yes
+https://data.hartford.gov/data.json,invalid v1.1,yes
 https://data-soa-dnr.opendata.arcgis.com/api/feed/dcat-us/1.1.json,invalid v1.1,no
-https://ddi.doi.gov/onrr-data.json,invalid v1.1,no
+https://ddi.doi.gov/onrr-data.json,converts,n/a
 https://datainventory.doi.gov/data.json,fetch error,n/a
 https://www.imls.gov/sites/default/files/data.json,invalid v1.1,yes
 https://ddi.doi.gov/bia-data.json,converts,n/a
-https://ddi.doi.gov/bsee-data.json,invalid v1.1,no
+https://ddi.doi.gov/bsee-data.json,invalid v1.1,yes
 https://portal.opentopography.org/geoportal/csw/discovery?Request=GetCapabilities&Service=CSW&Version=2.0.2,fetch error,n/a
 https://www.sba.gov/data.json,converts,n/a
 https://ddi.doi.gov/fws-data.json,converts,n/a
 https://ddi.doi.gov/osmre-data.json,invalid v1.1,no
-https://ddi.doi.gov/usgs-data.json,invalid v1.1,no
-https://data.honolulu.gov/data.json?version=2,invalid v1.1,no
-https://data-fairfaxcountygis.opendata.arcgis.com/data.json,invalid v1.1,no
-https://ddi.doi.gov/doios-data.json,invalid v1.1,no
+https://ddi.doi.gov/usgs-data.json,invalid v1.1,yes
+https://data.honolulu.gov/data.json?version=2,invalid v1.1,yes
+https://data-fairfaxcountygis.opendata.arcgis.com/data.json,invalid v1.1,yes
+https://ddi.doi.gov/doios-data.json,invalid v1.1,yes
 https://edg.epa.gov/data/nongeo_data.json,invalid v1.1,yes
 https://opendata.fcc.gov/data.json,invalid v1.1,yes
-https://nycopendata.socrata.com/data.json?version=2,invalid v1.1,no
+https://nycopendata.socrata.com/data.json?version=2,invalid v1.1,yes
 https://www.ncua.gov/data.json,converts,n/a
 https://www.fec.gov/data.json,converts,n/a
 https://www.federalreserve.gov/PDC/data.json,converts,n/a
-https://opendata.hawaii.gov/data.json,invalid v1.1,no
+https://opendata.hawaii.gov/data.json,invalid v1.1,yes
 https://img.exim.gov/s3fs-public/dataset/vbhv-d8am/data.json,converts,n/a
 https://ddi.doi.gov/blm-data.json,converts,n/a
 https://ddi.doi.gov/nps-data.json,converts,n/a
-https://data.brla.gov/data.json,invalid v1.1,no
+https://data.brla.gov/data.json,invalid v1.1,yes
 https://www.commerce.gov/sites/default/files/data.json,fetch error,n/a
 https://data.ed.gov/data.json,invalid v1.1,yes
 https://data.iowa.gov/data.json,fetch error,n/a
 https://www.usda.gov/sites/default/files/documents/data.json,fetch error,n/a
 https://ddi.doi.gov/boem-data.json,converts,n/a
-https://ddi.doi.gov/usbr-data.json,invalid v1.1,no
-https://datacatalog.cookcountyil.gov/data.json?version=2,invalid v1.1,no
-https://data.nola.gov/data.json,invalid v1.1,no
-https://data.sfgov.org/data.json?version=2,invalid v1.1,no
+https://ddi.doi.gov/usbr-data.json,converts,n/a
+https://datacatalog.cookcountyil.gov/data.json?version=2,invalid v1.1,yes
+https://data.nola.gov/data.json,invalid v1.1,yes
+https://data.sfgov.org/data.json?version=2,invalid v1.1,yes
 https://www.state.gov/data.json,converts,n/a
-https://data.ok.gov/data.json?version=2,invalid v1.1,no
-https://data.ny.gov/data.json?version=2,invalid v1.1,no
+https://data.ok.gov/data.json?version=2,invalid v1.1,yes
+https://data.ny.gov/data.json?version=2,invalid v1.1,yes
 https://www.cftc.gov/sites/default/files/CFTC-ODI-metadata-v2.json,converts,n/a
-https://data.cityofchicago.org/data.json?version=2,invalid v1.1,no
+https://data.cityofchicago.org/data.json?version=2,invalid v1.1,yes
 https://www.huduser.gov/data/data.json,converts,n/a
 https://fhfa.gov/data/data.json,converts,n/a
 https://its.ntia.gov/data.json,converts,n/a
 https://www.dol.gov/data.json,converts,n/a
-https://data.mo.gov/data.json?version=2,invalid v1.1,no
-https://data.baltimorecity.gov/data.json,invalid v1.1,no
-https://data.austintexas.gov/data.json,invalid v1.1,no
+https://data.mo.gov/data.json?version=2,invalid v1.1,yes
+https://data.baltimorecity.gov/data.json,invalid v1.1,yes
+https://data.austintexas.gov/data.json,invalid v1.1,yes
 https://data.americorps.gov/data.json,converts,n/a
 https://www.consumerfinance.gov/data.json,converts,n/a
-https://data.somervillema.gov/data.json?version=2,invalid v1.1,no
-https://cos-data.seattle.gov/data.json,invalid v1.1,no
+https://data.somervillema.gov/data.json?version=2,invalid v1.1,yes
+https://cos-data.seattle.gov/data.json,invalid v1.1,yes
 https://data.townofcary.org/data.json,invalid v1.1,no
 https://www.archives.gov/files/data.json,converts,n/a
 https://www.usitc.gov/data.json,converts,n/a
@@ -62,17 +62,17 @@ https://wa-node.gis.washington.edu/geoportal/csw/discovery,fetch error,n/a
 https://www.bls.gov/data.json,converts,n/a
 https://www.opm.gov/data.json,converts,n/a
 https://data.charlottenc.gov/data.json,invalid v1.1,no
-https://opendata-townofchapelhill.hub.arcgis.com/api/feed/dcat-us/1.1.json,invalid v1.1,no
+https://opendata-townofchapelhill.hub.arcgis.com/api/feed/dcat-us/1.1.json,invalid v1.1,yes
 https://data.mcc.gov/data.json,converts,n/a
 https://data.va.gov/data.json,invalid v1.1,yes
 https://www.frtib.gov/data.json,converts,n/a
-https://geohub-loudoungis.opendata.arcgis.com/data.json,invalid v1.1,no
-https://data.ct.gov/data.json,invalid v1.1,no
-https://data.wa.gov/data.json?version=2,invalid v1.1,no
-https://data.oregon.gov/data.json?version=2,invalid v1.1,no
+https://geohub-loudoungis.opendata.arcgis.com/data.json,invalid v1.1,yes
+https://data.ct.gov/data.json,invalid v1.1,yes
+https://data.wa.gov/data.json?version=2,invalid v1.1,yes
+https://data.oregon.gov/data.json?version=2,invalid v1.1,yes
 https://www.mspb.gov/data.json,converts,n/a
-https://data.providenceri.gov/data.json,invalid v1.1,no
-https://public-chesva.opendata.arcgis.com/data.json,invalid v1.1,no
+https://data.providenceri.gov/data.json,invalid v1.1,yes
+https://public-chesva.opendata.arcgis.com/data.json,invalid v1.1,yes
 https://www.eeoc.gov/data.json,converts,n/a
 https://www.ssa.gov/data.json,invalid v1.1,yes
 https://www.ftc.gov/data.json,converts,n/a
@@ -81,49 +81,49 @@ https://cwbi-app.sec.usace.army.mil/pub/data.json,invalid v1.1,no
 https://www.nrc.gov/data.json,invalid v1.1,yes
 https://data.transportation.gov/data.json,invalid v1.1,yes
 https://geospatial-usace.opendata.arcgis.com/data.json,invalid v1.1,no
-https://opendata.maryland.gov/data.json,invalid v1.1,no
+https://opendata.maryland.gov/data.json,invalid v1.1,yes
 https://ngda-transportation-geoplatform.hub.arcgis.com/api/feed/dcat-us/1.1.json,invalid v1.1,yes
 https://gisportal.ibwc.gov/agsportal/,fetch error,n/a
-https://data.ferndalemi.gov/data.json,invalid v1.1,no
-https://data.tempe.gov/api/feed/dcat-us/1.1.json,invalid v1.1,no
+https://data.ferndalemi.gov/data.json,invalid v1.1,yes
+https://data.tempe.gov/api/feed/dcat-us/1.1.json,invalid v1.1,yes
 https://data.arlingtonva.us/data.json,invalid v1.1,no
-https://bloomington.data.socrata.com/data.json,invalid v1.1,no
-https://data-wake.opendata.arcgis.com/data.json,invalid v1.1,no
+https://bloomington.data.socrata.com/data.json,invalid v1.1,yes
+https://data-wake.opendata.arcgis.com/data.json,invalid v1.1,yes
 https://data.ntsb.gov/data.json,converts,n/a
 https://secure.rrb.gov/data.json,converts,n/a
 https://www.dhs.gov/data.json,converts,n/a
 https://www.cpsc.gov/data.json,invalid v1.1,yes
-https://data.montgomerycountymd.gov/data.json,invalid v1.1,no
+https://data.montgomerycountymd.gov/data.json,invalid v1.1,yes
 https://www.nitrd.gov/data.json,converts,n/a
 https://www.archive.arm.gov/metadata/data.json,converts,n/a
 https://data.usaid.gov/data.json,fetch error,n/a
 https://pbgc.gov/data.json,converts,n/a
-https://www.opendataphilly.org/data.json,invalid v1.1,no
+https://www.opendataphilly.org/data.json,invalid v1.1,yes
 https://www.nist.gov/sites/default/files/data.json,invalid v3.0,n/a,v1.1 is valid but uses reserved `replaces` field name
 https://www.treasury.gov/data.json,converts,n/a
 https://pasteur.epa.gov/metadata.json,converts,n/a
 https://max.gov/data.json,converts,n/a
 https://www.justice.gov/data.json,converts,n/a
 https://data.nasa.gov/data.json,fetch error,n/a
-https://federallabs.org/data.json,invalid v1.1,no
+https://federallabs.org/data.json,converts,n/a
 https://www.sec.gov/data.json,converts,n/a
-https://data.lacity.org/data.json,invalid v1.1,no
+https://data.lacity.org/data.json,invalid v1.1,yes
 https://nehopendatastorage.blob.core.windows.net/nehopendata/data.json,converts,n/a
 https://openei.org/data.json,converts,n/a
 https://www.energy.gov/data.json,converts,n/a
 https://www.defense.gov/data.json,fetch error,n/a
 https://opendata.cityofboise.org/data.json,invalid v1.1,no
-https://opendata.dc.gov/data.json,invalid v1.1,no
-https://data-lakecountyil.opendata.arcgis.com/data.json,invalid v1.1,no
-https://geodata.vermont.gov/api/feed/dcat-us/1.1.json,invalid v1.1,no
-https://dataworks.siouxfalls.gov/data.json,invalid v1.1,no
+https://opendata.dc.gov/data.json,invalid v1.1,yes
+https://data-lakecountyil.opendata.arcgis.com/data.json,invalid v1.1,yes
+https://geodata.vermont.gov/api/feed/dcat-us/1.1.json,invalid v1.1,yes
+https://dataworks.siouxfalls.gov/data.json,invalid v1.1,yes
 https://data.srcity.org/data.json,fetch error,n/a
 https://mapcontext.com/npswaf/sample2.json,fetch error,n/a
 https://data.wprdc.org/data.json,invalid v1.1,no
 https://apps.usgs.gov/fgdc/WAF_JSON/combined.json,converts,n/a
-https://geocatalog-uidaho.hub.arcgis.com/data.json,invalid v1.1,no
+https://geocatalog-uidaho.hub.arcgis.com/data.json,invalid v1.1,yes
 https://opendurham.nc.gov/data.json,fetch error,n/a
-https://rossi.urs-tally.com/Content/data.json,invalid v1.1,no
+https://rossi.urs-tally.com/Content/data.json,converts,n/a
 https://louisville-metro-opendata-lojic.hub.arcgis.com/api/feed/dcat-us/1.1.json,invalid v1.1,yes
 https://raw.githubusercontent.com/gbinal/data/master/datasets/hhs_cas.json,fetch error,n/a
 https://www.loc.gov/data.json,converts,n/a
