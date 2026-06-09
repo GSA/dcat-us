@@ -3,6 +3,7 @@
 import copy
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import click
@@ -250,6 +251,18 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
     new_catalog.pop("@context", None)
     new_catalog.pop("describedBy", None)
 
+    # The catalog itself may have a `modified` timestamp so we normalize it to a
+    # timezone-aware date-time string, since v3.0 requires one.
+    catalog_modified = new_catalog.get("modified")
+    if isinstance(catalog_modified, str):
+        try:
+            parsed = datetime.fromisoformat(catalog_modified)
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            new_catalog["modified"] = parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except ValueError:
+            del new_catalog["modified"]
+
     datasets = new_catalog.get("dataset", [])
     click.echo(f"Transforming {len(datasets)} datasets.")
     for i, dataset in enumerate(datasets):
@@ -298,9 +311,16 @@ def main(output_dir, url, dry_run):
     """Convert DCAT catalog."""
     v1_1_registry = load_schema_registry(V1_1_DEFINITIONS_DIR)
     v3_0_registry = load_schema_registry(V3_0_DEFINITIONS_DIR)
+    click.echo(f"Converting DCAT-US v1.1 to DCAT-US v3.0 for {url}")
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
-        validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
+
+        try:
+            validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
+            click.echo("Input catalog is valid DCAT-US v1.1.")
+        except CatalogValidationException as e:
+            click.echo(f"Warning: input catalog failed v1.1 validation — converting anyway.")
+
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
         validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
         if dry_run:
