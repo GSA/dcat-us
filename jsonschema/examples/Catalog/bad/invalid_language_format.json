@@ -11,9 +11,7 @@
         "fn": "Support",
         "hasEmail": "mailto:support@example.gov"
       },
-      "publisher": {
-        "name": "Example Org"
-      }
+      "identifier": "https://example.gov/datasets/catalog-example-001"
     }
   ],
   "language": ["english", "spanish"]

@@ -2,9 +2,6 @@
   "@type": "Dataset",
   "title": "Example Dataset",
   "description": "A minimal dataset example with a valid periodicity",
-  "publisher": {
-    "name": "The Minimal Organization"
-  },
   "accrualPeriodicity": "quarterly",
   "contactPoint": [
     {

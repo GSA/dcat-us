@@ -138,7 +138,7 @@ A collection of data published or curated by one provider
 | [language](#language)                                   | More than one type                                                                               | Optional          | ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                                                                                                |
 | [modified](#modified)                                   | More than one type                                                                               | Recommended       | Most recent date when the dataset's actual data changed, not just metadata                                                                                                                                                                                 |
 | [provenance](#provenance)                               | null or array of string                                                                          | Optional          | List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation                                                         |
-| [publisher](#publisher)                                 | object                                                                                           | Mandatory         | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
+| [publisher](#publisher)                                 | More than one type                                                                               | Recommended       | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
 | [relation](#relation)                                   | null or array of string                                                                          | Optional          | List of links to related resources when the relationship is not otherwise specified                                                                                                                                                                        |
 | [replaces](#replaces)                                   | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of Datasets replaced by this Dataset                                                                                                                                                                                                                  |
 | [rights](#rights)                                       | null or array of string                                                                          | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                                                                                                 |
@@ -1323,15 +1323,32 @@ Full text of the provenance statement
 
 ## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
 
-**Requirement:** Mandatory
+**Requirement:** Recommended
 
 Organization responsible for publishing and making the dataset available
 
+| **Type**                  | `combining`      |
+| ------------------------- | ---------------- |
+| **Additional properties** | Any type allowed |
+
+| Any of                                                |
+| ----------------------------------------------------- |
+| [Null allowed when not required](#publisher_anyOf_i0) |
+| [Organization](#publisher_anyOf_i1)                   |
+
+### <a name="publisher_anyOf_i0"></a>`Dataset > publisher > anyOf > Null allowed when not required` [#](#publisher_anyOf_i0)
+
+| **Type** | `null` |
+| -------- | ------ |
+
+### <a name="publisher_anyOf_i1"></a>`Dataset > publisher > anyOf > Organization` [#](#publisher_anyOf_i1)
+
+inline description of Organization
+
 | **Type**                  | `object`                                 |
 | ------------------------- | ---------------------------------------- |
-| **Required**              | Yes                                      |
 | **Additional properties** | Any type allowed                         |
-| **Defined in**            | [Organization](./agents.md#organization) |
+| **Same definition as**    | [Organization](./agents.md#organization) |
 
 ## <a name="relation"></a>`Dataset > relation` [#](#relation)
 
