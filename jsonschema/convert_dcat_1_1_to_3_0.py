@@ -188,13 +188,22 @@ def extract_schema_name(schema):
     return None
 
 
-# TODO duplicated code with test_json_schema.py
 def load_schema_registry(definitions_dir: Path) -> Registry:
     registry = Registry()
     for schema_file in definitions_dir.glob("*.json"):
         with schema_file.open() as f:
             resource = Resource.from_contents(json.load(f))
             registry = resource @ registry
+
+    # Some catalogs reference non-federal_dataset.json directly by filename URI;
+    # register it under that URI as an alias.
+    non_federal = definitions_dir / "non-federal_dataset.json"
+    if non_federal.exists():
+        with non_federal.open() as f:
+            contents = json.load(f)
+        contents_copy = {**contents, "$id": "https://project-open-data.cio.gov/v1.1/schema/non-federal_dataset.json"}
+        registry = Resource.from_contents(contents_copy) @ registry
+
     return registry
 
 
@@ -234,6 +243,24 @@ def validate_catalog(schema_id: str, registry: Registry, catalog: dict) -> None:
             f"{version_number} validation failed with {len(errors)} error(s):\n"
             + format_validation_errors(errors, indent=2)
         )
+
+
+def validate_datasets(schema_id: str, registry: Registry, datasets: list) -> tuple[int, int]:
+    """Validate each dataset individually. Returns (valid_count, invalid_count)."""
+    validator = Draft202012Validator(
+        {"$ref": schema_id},
+        registry=registry,
+        format_checker=Draft202012Validator.FORMAT_CHECKER,
+    )
+    valid = 0
+    invalid = 0
+    for dataset in datasets:
+        errors = list(validator.iter_errors(dataset))
+        if errors:
+            invalid += 1
+        else:
+            valid += 1
+    return valid, invalid
 
 
 def convert_dcat_catalog(old_catalog: dict) -> dict:
@@ -311,30 +338,66 @@ def main(output_dir, url, dry_run):
     """Convert DCAT catalog."""
     v1_1_registry = load_schema_registry(V1_1_DEFINITIONS_DIR)
     v3_0_registry = load_schema_registry(V3_0_DEFINITIONS_DIR)
+
+    counts = {
+        "valid_v1_1": 0,
+        "invalid_v1_1": 0,
+        "valid_v3_0": 0,
+        "invalid_v3_0": 0,
+        "errors": 0,
+    }
+
     click.echo(f"Converting DCAT-US v1.1 to DCAT-US v3.0 for {url}")
     try:
         catalog_to_convert = fetch_dcat_catalog(url)
+        datasets = catalog_to_convert.get("dataset", [])
 
         try:
             validate_catalog(V1_1_CATALOG_SCHEMA_ID, v1_1_registry, catalog_to_convert)
             click.echo("Input catalog is valid DCAT-US v1.1.")
-        except CatalogValidationException as e:
-            click.echo(f"Warning: input catalog failed v1.1 validation — converting anyway.")
+        except CatalogValidationException:
+            click.echo("Warning: input catalog failed v1.1 validation — converting anyway.")
+
+        # Per-dataset v1.1 validation
+        # The v1.1 catalog schema validates the catalog wrapper, not individual
+        # datasets directly. We use the dataset schema id derived from the catalog.
+        V1_1_DATASET_SCHEMA_ID = "https://project-open-data.cio.gov/v1.1/schema/non-federal_dataset.json"
+        valid_v1_1, invalid_v1_1 = validate_datasets(V1_1_DATASET_SCHEMA_ID, v1_1_registry, datasets)
+        counts["valid_v1_1"] = valid_v1_1
+        counts["invalid_v1_1"] = invalid_v1_1
+        click.echo(f"Per-dataset v1.1: {valid_v1_1} valid, {invalid_v1_1} invalid.")
 
         converted_catalog = convert_dcat_catalog(catalog_to_convert)
-        validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
+
+        try:
+            validate_catalog(V3_0_CATALOG_SCHEMA_ID, v3_0_registry, converted_catalog)
+        except CatalogValidationException as e:
+            click.echo(f"Invalid DCAT-US data: {e}", err=True)
+            counts["errors"] += 1
+            # Still count per-dataset v3.0 results even if catalog-level fails.
+
+        converted_datasets = converted_catalog.get("dataset", [])
+        V3_0_DATASET_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/dataset"
+        valid_v3_0, invalid_v3_0 = validate_datasets(V3_0_DATASET_SCHEMA_ID, v3_0_registry, converted_datasets)
+        counts["valid_v3_0"] = valid_v3_0
+        counts["invalid_v3_0"] = invalid_v3_0
+        click.echo(f"Per-dataset v3.0: {valid_v3_0} valid, {invalid_v3_0} invalid.")
+
         if dry_run:
             click.echo("Dry run complete.")
         else:
             export_converted_catalog(converted_catalog, output_dir)
+
     except CatalogFetchException as e:
         click.echo(f"There was an error fetching a DCAT-US v1.1 catalog to convert: {e}", err=True)
-        sys.exit(1)
-    except CatalogValidationException as e:
-        click.echo(f"Invalid DCAT-US data: {e}", err=True)
-        sys.exit(1)
+        counts["errors"] += 1
     except CatalogConversionException as e:
         click.echo(f"There was an error converting a DCAT-US v1.1 catalog to DCAT-US v3.0: {e}", err=True)
+        counts["errors"] += 1
+
+    click.echo(f"COUNTS:{json.dumps(counts)}")
+
+    if counts["errors"] > 0:
         sys.exit(1)
 
 
