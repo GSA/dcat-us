@@ -11,7 +11,23 @@ URL_CSV = Path(__file__).parent / "harvest_source_urls.csv"
 OUTPUT_CSV = Path(__file__).parent / "test_convert_results.csv"
 
 FIELD_ERROR_RE = re.compile(r"dataset\[\d+\](?:\.\w+(?:\[\d+\])?)*\.(\w+):")
+RESULTS_RE = re.compile(r"^RESULTS:(\{.+\})$", re.MULTILINE)
 COUNTS_RE = re.compile(r"^COUNTS:(\{.+\})$", re.MULTILINE)
+
+DEFAULT_RESULTS = {
+    "error": False,
+    "conversion_successful": False,
+}
+
+DEFAULT_COUNTS = {
+    "datasets": 0,
+    "valid_v1_1": 0,
+    "invalid_v1_1": 0,
+    "validation_errors_v1_1": 0,
+    "valid_v3_0": 0,
+    "invalid_v3_0": 0,
+    "validation_errors_v3_0": 0,
+}
 
 
 def load_urls():
@@ -29,9 +45,9 @@ def run_conversion(url):
     return result.returncode, result.stdout, result.stderr
 
 
-def parse_counts(stdout):
-    """Extract the COUNTS JSON line from stdout. Returns a dict or None."""
-    match = COUNTS_RE.search(stdout)
+def parse_tagged_json(stdout, pattern):
+    """Extract a tagged JSON line (e.g. RESULTS:{...}) from stdout. Returns a dict or None."""
+    match = pattern.search(stdout)
     if match:
         try:
             return json.loads(match.group(1))
@@ -40,82 +56,107 @@ def parse_counts(stdout):
     return None
 
 
-def categorize_failure(stderr):
+def determine_status(results):
+    if results["error"]:
+        return "ERROR"
+    if results["conversion_successful"]:
+        return "CONVERSION SUCCESSFUL"
+    return "CONVERSION FAILED"
+
+
+def categorize_failure(stderr, counts):
     if "There was an error fetching" in stderr:
         if "DNSError" in stderr:
             return "fetch_error:dns", []
         if "not valid JSON" in stderr:
             return "fetch_error:not_json", []
+        if "Expected a JSON object at the catalog root" in stderr:
+            return "fetch_error:bad_shape", []
         return "fetch_error:other", []
     if "v3.0 validation failed" in stderr:
         fields = FIELD_ERROR_RE.findall(stderr)
         return "validation_failed", fields
+    if "There was an error converting" in stderr:
+        return "conversion_exception", []
+    # No exception was raised and stderr doesn't match a known crash pattern--
+    # most likely some datasets simply came out invalid without the script
+    # erroring. Categorize using the counts themselves rather than guessing
+    # from stderr.
+    if counts.get("invalid_v3_0", 0) > 0 or counts.get("invalid_v1_1", 0) > 0:
+        return "invalid_datasets", []
     return "unknown_error", []
 
 
 def main():
     urls = load_urls()
-    results = []
+    runs = []
 
     for i, url in enumerate(urls, 1):
         print(f"[{i}/{len(urls)}] {url}")
         returncode, stdout, stderr = run_conversion(url)
-        status = "OK" if returncode == 0 else "FAIL"
+
+        results = parse_tagged_json(stdout, RESULTS_RE) or dict(DEFAULT_RESULTS)
+        counts = parse_tagged_json(stdout, COUNTS_RE) or dict(DEFAULT_COUNTS)
+        status = determine_status(results)
+
         print(f"  {status}")
-        if returncode != 0:
+        if status != "CONVERSION SUCCESSFUL":
             lines = stderr.splitlines()
             if lines:
                 print(f"  {lines[0]}")
 
-        counts = parse_counts(stdout) or {
-            "valid_v1_1": 0,
-            "invalid_v1_1": 0,
-            "valid_v3_0": 0,
-            "invalid_v3_0": 0,
-            "errors": 0,
-        }
-
-        results.append({
+        runs.append({
             "url": url,
             "status": status,
             "stderr": stderr,
+            "results": results,
             "counts": counts,
         })
 
     with open(OUTPUT_CSV, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
             "harvest source URL",
-            "valid 1.1 record counts",
-            "invalid 1.1 record counts",
-            "valid 3.0 record counts",
-            "invalid 3.0 record counts",
-            "errors",
+            "datasets",
+            "valid 1.1",
+            "invalid 1.1",
+            "validation error count 1.1",
+            "valid 3.0",
+            "invalid 3.0",
+            "validation error count 3.0",
+            "conversion successful",
+            "error",
         ])
         writer.writeheader()
-        for r in results:
+        for r in runs:
             c = r["counts"]
+            res = r["results"]
             writer.writerow({
                 "harvest source URL": r["url"],
-                "valid 1.1 record counts": c["valid_v1_1"],
-                "invalid 1.1 record counts": c["invalid_v1_1"],
-                "valid 3.0 record counts": c["valid_v3_0"],
-                "invalid 3.0 record counts": c["invalid_v3_0"],
-                "errors": c["errors"],
+                "datasets": c["datasets"],
+                "valid 1.1": c["valid_v1_1"],
+                "invalid 1.1": c["invalid_v1_1"],
+                "validation error count 1.1": c["validation_errors_v1_1"],
+                "valid 3.0": c["valid_v3_0"],
+                "invalid 3.0": c["invalid_v3_0"],
+                "validation error count 3.0": c["validation_errors_v3_0"],
+                "conversion successful": res["conversion_successful"],
+                "error": res["error"],
             })
     print(f"\nWrote {OUTPUT_CSV}")
 
-    ok = sum(1 for r in results if r["status"] == "OK")
-    fail = sum(1 for r in results if r["status"] == "FAIL")
+    status_counts = Counter(r["status"] for r in runs)
     print(f"\n{'='*50}")
-    print(f"Results: {ok} OK, {fail} FAIL out of {len(results)}")
+    print(f"Results out of {len(runs)}:")
+    for status in ("CONVERSION SUCCESSFUL", "CONVERSION FAILED", "ERROR"):
+        print(f"  {status:<24} {status_counts.get(status, 0)}")
 
     failure_categories = Counter()
     field_errors = Counter()
     urls_per_field = defaultdict(set)
 
-    for r in results:
-        if r["status"] == "FAIL":
-            category, fields = categorize_failure(r["stderr"])
+    for r in runs:
+        if r["status"] != "CONVERSION SUCCESSFUL":
+            category, fields = categorize_failure(r["stderr"], r["counts"])
             failure_categories[category] += 1
             for field in fields:
                 field_errors[field] += 1
