@@ -9,6 +9,7 @@ Resources:
 """
 
 import copy
+import re
 from datetime import datetime, timezone
 from dateutil import parser
 
@@ -283,7 +284,14 @@ def transform_temporal(dataset: dict) -> dict:
     else) are dropped. No-op if `temporal` isn't a string with one '/'
     or if neither side parses."""
     value = dataset.get("temporal")
-    if not isinstance(value, str) or value.count("/") != 1:
+    if not isinstance(value, str):
+        return dataset
+
+    # Strip repeating interval prefix (e.g. "R/" or "R5/")
+    if re.match(r'^R\d*/', value):
+        value = re.sub(r'^R\d*/', '', value)
+
+    if value.count("/") != 1:
         return dataset
 
     left, right = value.split("/")
