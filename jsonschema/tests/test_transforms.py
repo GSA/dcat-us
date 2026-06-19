@@ -275,6 +275,13 @@ class TestTransformTemporal:
         # duration/end
         ("P1Y/2020-12-31",
             {"@type": "PeriodOfTime", "endDate": "2020-12-31"}),
+        # repeating/start/duration — R prefix and duration dropped, start kept
+        ("R/1975-01-31/P1M",
+            {"@type": "PeriodOfTime", "startDate": "1975-01-31"}),
+        # repeating with count/start/duration — same but with explicit repeat count
+        ("R5/2015-01-26/PT1S",
+            {"@type": "PeriodOfTime", "startDate": "2015-01-26"}),
+
     ])
     def test_converts_interval(self, temporal, expected):
         result = transform_temporal({"temporal": temporal})
@@ -289,6 +296,7 @@ class TestTransformTemporal:
         {"temporal": "2020-01-01/2020-12-31/extra"}, # too many slashes
         {"temporal": "P1Y/P2Y"},                     # neither side is a date
         {"temporal": "Potato/Pineapple"},            # neither side is a date
+        {"temporal": "R/P1Y/P2Y"}                    # repeating interval, no date
     ])
     def test_noop_when_shape_unexpected(self, dataset):
         original = dict(dataset)
