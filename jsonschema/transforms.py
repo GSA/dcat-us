@@ -298,7 +298,6 @@ def transform_temporal(dataset: dict) -> dict:
     start = _as_date(left)
     end = _as_date(right)
     if start is None and end is None:
-        print("start and end do not parse to dates")
         return dataset
 
     period = {"@type": "PeriodOfTime"}
