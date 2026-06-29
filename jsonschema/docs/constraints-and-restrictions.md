@@ -8,9 +8,8 @@ Restriction classes describing access limits, controlled unclassified informatio
 
 Rules or indicators that describe who can access a resource
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -35,17 +34,15 @@ Rules or indicators that describe who can access a resource
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="access-restriction--@type"></a>`AccessRestriction > @type` [#](#access-restriction--@type)
 
 **Requirement:** Optional
 
-| **Type**    | `string`              |
-| ----------- | --------------------- |
-| **Default** | `"AccessRestriction"` |
+- **Type**: `string`
+- **Default**: `"AccessRestriction"`
 
 ## <a name="access-restriction--restrictionNote"></a>`AccessRestriction > restrictionNote` [#](#access-restriction--restrictionNote)
 
@@ -53,8 +50,7 @@ Rules or indicators that describe who can access a resource
 
 A note related to the access restriction
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -68,11 +64,10 @@ A note related to the access restriction
 
 The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Required**              | Yes                                                   |
-| **Additional properties** | Any type allowed                                      |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
+- **Defined in**: [Concept](./identifiers-and-relationships.md#concept)
 
 **Examples:**
 
@@ -90,9 +85,8 @@ The indication of whether or not there are access restrictions on the item, cons
 
 Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -104,24 +98,21 @@ Authority, code list entry, or policy reference that defines the specific access
 "PRMPA - National Security Classified (B)"
 ```
 
-| Any of                                                          |
-| --------------------------------------------------------------- |
-| [Null allowed when not required](#access-restriction--specificRestriction_anyOf_i0) |
-| [Concept](#access-restriction--specificRestriction_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#access-restriction--specificRestriction_anyOf_i0)
+- [Concept](#access-restriction--specificRestriction_anyOf_i1)
 
 ### <a name="access-restriction--specificRestriction_anyOf_i0"></a>`AccessRestriction > specificRestriction > anyOf > Null allowed when not required` [#](#access-restriction--specificRestriction_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="access-restriction--specificRestriction_anyOf_i1"></a>`AccessRestriction > specificRestriction > anyOf > Concept` [#](#access-restriction--specificRestriction_anyOf_i1)
 
 inline description of the specific restriction
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
 
 ---
 
@@ -131,9 +122,8 @@ inline description of the specific restriction
 
 Information describing Controlled Unclassified Information (CUI) restrictions for a resource
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -157,9 +147,8 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -171,9 +160,8 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 
 **Requirement:** Optional
 
-| **Type**    | `string`           |
-| ----------- | ------------------ |
-| **Default** | `"CUIRestriction"` |
+- **Type**: `string`
+- **Default**: `"CUIRestriction"`
 
 ## <a name="cui-restriction--cuiBannerMarking"></a>`CUIRestriction > cuiBannerMarking` [#](#cui-restriction--cuiBannerMarking)
 
@@ -181,9 +169,8 @@ Information describing Controlled Unclassified Information (CUI) restrictions fo
 
 CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection; see information at https://www.archives.gov/cui/registry/category-marking-list
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -203,9 +190,8 @@ CUI (Controlled Unclassified Information) banner marking is required for any unc
 
 Agency that designated the information as CUI; include at least "Controlled by:" and, when possible, contact information
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -223,8 +209,7 @@ Agency that designated the information as CUI; include at least "Controlled by:"
 
 List of free-text required indicators from the applicable authority (for example, category descriptions or distribution statements)
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Example:**
 
@@ -235,14 +220,12 @@ List of free-text required indicators from the applicable authority (for example
 ]
 ```
 
-| Each item of this array must be                          | Description |
-| -------------------------------------------------------- | ----------- |
-| [Indicator string](#cui-restriction--requiredIndicatorPerAuthority_items) | -           |
+**Each item of this array must be:**
+- [Indicator string](#cui-restriction--requiredIndicatorPerAuthority_items): -
 
 ### <a name="cui-restriction--requiredIndicatorPerAuthority_items"></a>Indicator string [#](#cui-restriction--requiredIndicatorPerAuthority_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ---
 
@@ -252,9 +235,8 @@ List of free-text required indicators from the applicable authority (for example
 
 Rules or legal limits on how a resource may be used
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -279,9 +261,8 @@ Rules or legal limits on how a resource may be used
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -293,9 +274,8 @@ Rules or legal limits on how a resource may be used
 
 **Requirement:** Optional
 
-| **Type**    | `string`           |
-| ----------- | ------------------ |
-| **Default** | `"UseRestriction"` |
+- **Type**: `string`
+- **Default**: `"UseRestriction"`
 
 ## <a name="use-restriction--restrictionNote"></a>`UseRestriction > restrictionNote` [#](#use-restriction--restrictionNote)
 
@@ -303,8 +283,7 @@ Rules or legal limits on how a resource may be used
 
 Significant information pertaining to the use or reproduction of the data
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Examples:**
 
@@ -322,11 +301,10 @@ Significant information pertaining to the use or reproduction of the data
 
 Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Required**              | Yes                                                   |
-| **Additional properties** | Any type allowed                                      |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
+- **Defined in**: [Concept](./identifiers-and-relationships.md#concept)
 
 **Examples:**
 
@@ -344,9 +322,8 @@ Indication of whether or not there are use restrictions on the archival material
 
 Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -358,21 +335,18 @@ Authority, code list entry, or policy reference that defines the specific use re
 "Trademark"
 ```
 
-| Any of                                                          |
-| --------------------------------------------------------------- |
-| [Null allowed when not required](#use-restriction--specificRestriction_anyOf_i0) |
-| [Concept](#use-restriction--specificRestriction_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#use-restriction--specificRestriction_anyOf_i0)
+- [Concept](#use-restriction--specificRestriction_anyOf_i1)
 
 ### <a name="use-restriction--specificRestriction_anyOf_i0"></a>`UseRestriction > specificRestriction > anyOf > Null allowed when not required` [#](#use-restriction--specificRestriction_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="use-restriction--specificRestriction_anyOf_i1"></a>`UseRestriction > specificRestriction > anyOf > Concept` [#](#use-restriction--specificRestriction_anyOf_i1)
 
 inline description of the specific restriction
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)

@@ -8,9 +8,8 @@ Data information classes including Agent, Organization, and Kind, which describe
 
 A person, organization, software agent, or other entity involved with a resource
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -35,9 +34,8 @@ A person, organization, software agent, or other entity involved with a resource
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -49,9 +47,8 @@ A person, organization, software agent, or other entity involved with a resource
 
 **Requirement:** Optional
 
-| **Type**    | `string`  |
-| ----------- | --------- |
-| **Default** | `"Agent"` |
+- **Type**: `string`
+- **Default**: `"Agent"`
 
 ## <a name="agent--category"></a>`Agent > category` [#](#agent--category)
 
@@ -59,12 +56,10 @@ A person, organization, software agent, or other entity involved with a resource
 
 The type of the agent that makes the item available
 
-| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
-| -------- | ------------------------------------------------------------------------------ |
+- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
 
-| Each item of this array must be                       | Description                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------ |
-| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
+**Each item of this array must be:**
+- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
 ## <a name="agent--name"></a>`Agent > name` [#](#agent--name)
 
@@ -72,9 +67,8 @@ The type of the agent that makes the item available
 
 The name of the agent
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -94,9 +88,8 @@ The name of the agent
 
 An organization involved with a resource, including parent or child organizations
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -143,9 +136,8 @@ An organization involved with a resource, including parent or child organization
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -157,9 +149,8 @@ An organization involved with a resource, including parent or child organization
 
 **Requirement:** Optional
 
-| **Type**    | `string`         |
-| ----------- | ---------------- |
-| **Default** | `"Organization"` |
+- **Type**: `string`
+- **Default**: `"Organization"`
 
 ## <a name="organization--name"></a>`Organization > name` [#](#organization--name)
 
@@ -167,9 +158,8 @@ An organization involved with a resource, including parent or child organization
 
 The full name of the Organization
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -187,12 +177,10 @@ The full name of the Organization
 
 Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization
 
-| **Type** | null or array of [Organization](./agents.md#organization) classes |
-| -------- | ----------------------------------------------------------------- |
+- **Type**: null or array of [Organization](./agents.md#organization) classes
 
-| Each item of this array must be          | Description                                                                       |
-| ---------------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
+**Each item of this array must be:**
+- [Organization](./agents.md#organization): An organization involved with a resource, including parent or child organizations
 
 ## <a name="organization--altLabel"></a>`Organization > altLabel` [#](#organization--altLabel)
 
@@ -202,8 +190,7 @@ Represents hierarchical containment of Organizations or OrganizationalUnits; ind
 
 alternative name (trading name, colloquial name) for an organization
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Examples:**
 
@@ -221,8 +208,7 @@ alternative name (trading name, colloquial name) for an organization
 
 List of abbreviations or codes from code lists for an organization (e.g. DOI, DOD)
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Example:**
 
@@ -233,14 +219,12 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 ]
 ```
 
-| Each item of this array must be | Description |
-| ------------------------------- | ----------- |
-| [Abbreviation](#organization--notation_items) | -           |
+**Each item of this array must be:**
+- [Abbreviation](#organization--notation_items): -
 
 ### <a name="organization--notation_items"></a>Abbreviation [#](#organization--notation_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="organization--prefLabel"></a>`Organization > prefLabel` [#](#organization--prefLabel)
 
@@ -250,8 +234,7 @@ List of abbreviations or codes from code lists for an organization (e.g. DOI, DO
 
 Preferred or legal name of the organization
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -267,9 +250,8 @@ Preferred or legal name of the organization
 
 Contact information for an individual or entity
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -308,9 +290,8 @@ Contact information for an individual or entity
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -322,9 +303,8 @@ Contact information for an individual or entity
 
 **Requirement:** Optional
 
-| **Type**    | `string` |
-| ----------- | -------- |
-| **Default** | `"Kind"` |
+- **Type**: `string`
+- **Default**: `"Kind"`
 
 ## <a name="kind--address"></a>`Kind > address` [#](#kind--address)
 
@@ -332,12 +312,10 @@ Contact information for an individual or entity
 
 The address of the contact
 
-| **Type** | null or array of [Address](./temporal-spatial-metrics.md#address) classes |
-| -------- | ------------------------------------------------------------------------- |
+- **Type**: null or array of [Address](./temporal-spatial-metrics.md#address) classes
 
-| Each item of this array must be                  | Description               |
-| ------------------------------------------------ | ------------------------- |
-| [Address](./temporal-spatial-metrics.md#address) | A single physical address |
+**Each item of this array must be:**
+- [Address](./temporal-spatial-metrics.md#address): A single physical address
 
 ## <a name="kind--hasEmail"></a>`Kind > hasEmail` [#](#kind--hasEmail)
 
@@ -347,9 +325,8 @@ The address of the contact
 
 Email address for the contact in mailto: format (for example, mailto:support@example.gov)
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -361,9 +338,8 @@ Email address for the contact in mailto: format (for example, mailto:support@exa
 "mailto:jane.smith@example.gov"
 ```
 
-| Restrictions                      |                                                                                                                                                                                                                                                                                                                         |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^mailto:[\w\_\~\!\$\&\'\(\)\*\+\,\;\=\:.-]+@[\w.-]+\.[\w.-]+?$``` [Test](https://regex101.com/?regex=%5Emailto%3A%5B%5Cw%5C_%5C~%5C%21%5C%24%5C%26%5C%27%5C%28%5C%29%5C%2A%5C%2B%5C%2C%5C%3B%5C%3D%5C%3A.-%5D%2B%40%5B%5Cw.-%5D%2B%5C.%5B%5Cw.-%5D%2B%3F%24&testString=%22mailto%3Aclimate-support%40example.gov%22) |
+**Restrictions:**
+- **Must match regular expression**: ```^mailto:[\w\_\~\!\$\&\'\(\)\*\+\,\;\=\:.-]+@[\w.-]+\.[\w.-]+?$``` [Test](https://regex101.com/?regex=%5Emailto%3A%5B%5Cw%5C_%5C~%5C%21%5C%24%5C%26%5C%27%5C%28%5C%29%5C%2A%5C%2B%5C%2C%5C%3B%5C%3D%5C%3A.-%5D%2B%40%5B%5Cw.-%5D%2B%5C.%5B%5Cw.-%5D%2B%3F%24&testString=%22mailto%3Aclimate-support%40example.gov%22)
 
 ## <a name="kind--family-name"></a>`Kind > family-name` [#](#kind--family-name)
 
@@ -371,8 +347,7 @@ Email address for the contact in mailto: format (for example, mailto:support@exa
 
 The family name of the contact
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -388,9 +363,8 @@ The family name of the contact
 
 The formatted text of the name of the contact
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -408,8 +382,7 @@ The formatted text of the name of the contact
 
 The given name of the contact
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -423,8 +396,7 @@ The given name of the contact
 
 The name of the organization to contact
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -440,8 +412,7 @@ The name of the organization to contact
 
 The telephone number for the contact
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -457,8 +428,7 @@ The telephone number for the contact
 
 The position role of the person to contact
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 

@@ -4,9 +4,8 @@ Information about a dataset series, including its members, ordering, coverage, a
 
 A group of related datasets that are published separately
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -162,9 +161,8 @@ A group of related datasets that are published separately
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -176,9 +174,8 @@ A group of related datasets that are published separately
 
 **Requirement:** Optional
 
-| **Type**    | `string`          |
-| ----------- | ----------------- |
-| **Default** | `"DatasetSeries"` |
+- **Type**: `string`
+- **Default**: `"DatasetSeries"`
 
 ## <a name="contactPoint"></a>`DatasetSeries > contactPoint` [#](#contactPoint)
 
@@ -186,12 +183,10 @@ A group of related datasets that are published separately
 
 List of contacts people can use to ask questions or send feedback about the dataset series
 
-| **Type** | null or array of [Kind](./agents.md#kind) classes |
-| -------- | ------------------------------------------------- |
+- **Type**: null or array of [Kind](./agents.md#kind) classes
 
-| Each item of this array must be | Description                                     |
-| ------------------------------- | ----------------------------------------------- |
-| [Kind](./agents.md#kind)        | Contact information for an individual or entity |
+**Each item of this array must be:**
+- [Kind](./agents.md#kind): Contact information for an individual or entity
 
 ## <a name="first"></a>`DatasetSeries > first` [#](#first)
 
@@ -199,28 +194,24 @@ List of contacts people can use to ask questions or send feedback about the data
 
 The first dataset in an ordered dataset series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                            |
-| ------------------------------------------------- |
-| [Null allowed when not required](#first_anyOf_i0) |
-| [Dataset](#first_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#first_anyOf_i0)
+- [Dataset](#first_anyOf_i1)
 
 ### <a name="first_anyOf_i0"></a>`DatasetSeries > first > anyOf > Null allowed when not required` [#](#first_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="first_anyOf_i1"></a>`DatasetSeries > first > anyOf > Dataset` [#](#first_anyOf_i1)
 
 inline description of the first dataset
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Defined in**            | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Defined in**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -231,28 +222,24 @@ inline description of the first dataset
 
 The last dataset in an ordered dataset series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                           |
-| ------------------------------------------------ |
-| [Null allowed when not required](#last_anyOf_i0) |
-| [Dataset](#last_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#last_anyOf_i0)
+- [Dataset](#last_anyOf_i1)
 
 ### <a name="last_anyOf_i0"></a>`DatasetSeries > last > anyOf > Null allowed when not required` [#](#last_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="last_anyOf_i1"></a>`DatasetSeries > last > anyOf > Dataset` [#](#last_anyOf_i1)
 
 inline description of the last dataset
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Same definition as**    | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -263,12 +250,10 @@ inline description of the last dataset
 
 List of members of the Dataset Series
 
-| **Type** | null or array of [Dataset](./dataset.md#root) classes |
-| -------- | ----------------------------------------------------- |
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
 
-| Each item of this array must be | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
-| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
 ## <a name="accrualPeriodicity"></a>`DatasetSeries > accrualPeriodicity` [#](#accrualPeriodicity)
 
@@ -278,9 +263,8 @@ List of members of the Dataset Series
 
 The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -288,24 +272,21 @@ The frequency at which the Dataset Series is updated. This is the series update 
 "annually"
 ```
 
-| Any of                                                         |
-| -------------------------------------------------------------- |
-| [Null allowed when not required](#accrualPeriodicity_anyOf_i0) |
-| [item 1](#accrualPeriodicity_anyOf_i1)                         |
-| [item 2](#accrualPeriodicity_anyOf_i2)                         |
-| [item 3](#accrualPeriodicity_anyOf_i3)                         |
+**Any of:**
+- [Null allowed when not required](#accrualPeriodicity_anyOf_i0)
+- [item 1](#accrualPeriodicity_anyOf_i1)
+- [item 2](#accrualPeriodicity_anyOf_i2)
+- [item 3](#accrualPeriodicity_anyOf_i3)
 
 ### <a name="accrualPeriodicity_anyOf_i0"></a>`DatasetSeries > accrualPeriodicity > anyOf > Null allowed when not required` [#](#accrualPeriodicity_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="accrualPeriodicity_anyOf_i1"></a>`DatasetSeries > accrualPeriodicity > anyOf > item 1` [#](#accrualPeriodicity_anyOf_i1)
 
 ISO 19115 Maintenance Frequency code
 
-| **Type** | `enum (of string)` |
-| -------- | ------------------ |
+- **Type**: `enum (of string)`
 
 Must be one of:
 * "continual"
@@ -325,19 +306,16 @@ Must be one of:
 
 ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                   |
-| --------------------------------- | ----------------------------------------------------------------- |
-| **Must match regular expression** | ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24)
 
 ### <a name="accrualPeriodicity_anyOf_i3"></a>`DatasetSeries > accrualPeriodicity > anyOf > item 3` [#](#accrualPeriodicity_anyOf_i3)
 
 Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
-| **Type** | `enum (of string)` |
-| -------- | ------------------ |
+- **Type**: `enum (of string)`
 
 Must be one of:
 * "continuous"
@@ -364,9 +342,8 @@ Must be one of:
 
 Plain-language summary of the dataset series
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Example:**
 
@@ -382,9 +359,8 @@ Plain-language summary of the dataset series
 
 Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -404,62 +380,52 @@ Date when the Dataset Series was formally established or published, not the rele
 "2024-01"
 ```
 
-| Any of                                             |
-| -------------------------------------------------- |
-| [Null allowed when not required](#issued_anyOf_i0) |
-| [Date string](#issued_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#issued_anyOf_i0)
+- [Date string](#issued_anyOf_i1)
 
 ### <a name="issued_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Null allowed when not required` [#](#issued_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="issued_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string` [#](#issued_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                              |
-| ----------------------------------- |
-| [item 0](#issued_anyOf_i1_anyOf_i0) |
-| [item 1](#issued_anyOf_i1_anyOf_i1) |
-| [item 2](#issued_anyOf_i1_anyOf_i2) |
-| [item 3](#issued_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#issued_anyOf_i1_anyOf_i0)
+- [item 1](#issued_anyOf_i1_anyOf_i1)
+- [item 2](#issued_anyOf_i1_anyOf_i2)
+- [item 3](#issued_anyOf_i1_anyOf_i3)
 
 #### <a name="issued_anyOf_i1_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 0` [#](#issued_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="issued_anyOf_i1_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 1` [#](#issued_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="issued_anyOf_i1_anyOf_i2"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 2` [#](#issued_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="issued_anyOf_i1_anyOf_i3"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 3` [#](#issued_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="modified"></a>`DatasetSeries > modified` [#](#modified)
 
@@ -469,9 +435,8 @@ A year and month in YYYY-MM format
 
 Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -495,62 +460,52 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 "2024-01"
 ```
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#modified_anyOf_i0) |
-| [Date string](#modified_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#modified_anyOf_i0)
+- [Date string](#modified_anyOf_i1)
 
 ### <a name="modified_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Null allowed when not required` [#](#modified_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="modified_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string` [#](#modified_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                |
-| ------------------------------------- |
-| [item 0](#modified_anyOf_i1_anyOf_i0) |
-| [item 1](#modified_anyOf_i1_anyOf_i1) |
-| [item 2](#modified_anyOf_i1_anyOf_i2) |
-| [item 3](#modified_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#modified_anyOf_i1_anyOf_i0)
+- [item 1](#modified_anyOf_i1_anyOf_i1)
+- [item 2](#modified_anyOf_i1_anyOf_i2)
+- [item 3](#modified_anyOf_i1_anyOf_i3)
 
 #### <a name="modified_anyOf_i1_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 0` [#](#modified_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="modified_anyOf_i1_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 1` [#](#modified_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="modified_anyOf_i1_anyOf_i2"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 2` [#](#modified_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="modified_anyOf_i1_anyOf_i3"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 3` [#](#modified_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="publisher"></a>`DatasetSeries > publisher` [#](#publisher)
 
@@ -558,28 +513,24 @@ A year and month in YYYY-MM format
 
 Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                |
-| ----------------------------------------------------- |
-| [Null allowed when not required](#publisher_anyOf_i0) |
-| [Agent](#publisher_anyOf_i1)                          |
+**Any of:**
+- [Null allowed when not required](#publisher_anyOf_i0)
+- [Agent](#publisher_anyOf_i1)
 
 ### <a name="publisher_anyOf_i0"></a>`DatasetSeries > publisher > anyOf > Null allowed when not required` [#](#publisher_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="publisher_anyOf_i1"></a>`DatasetSeries > publisher > anyOf > Agent` [#](#publisher_anyOf_i1)
 
 inline description of publisher
 
-| **Type**                  | `object`                   |
-| ------------------------- | -------------------------- |
-| **Additional properties** | Any type allowed           |
-| **Same definition as**    | [Agent](./agents.md#agent) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Agent](./agents.md#agent)
 
 ## <a name="spatial"></a>`DatasetSeries > spatial` [#](#spatial)
 
@@ -589,12 +540,10 @@ inline description of publisher
 
 A geographic region that is covered by the Dataset Series
 
-| **Type** | null or array of [Location](./temporal-spatial-metrics.md#location) classes |
-| -------- | --------------------------------------------------------------------------- |
+- **Type**: null or array of [Location](./temporal-spatial-metrics.md#location) classes
 
-| Each item of this array must be                    | Description                      |
-| -------------------------------------------------- | -------------------------------- |
-| [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
+**Each item of this array must be:**
+- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
 
 ## <a name="temporal"></a>`DatasetSeries > temporal` [#](#temporal)
 
@@ -604,12 +553,10 @@ A geographic region that is covered by the Dataset Series
 
 Time periods covered by the dataset series
 
-| **Type** | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes |
-| -------- | ------------------------------------------------------------------------------------- |
+- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
 
-| Each item of this array must be                              | Description                                                            |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
+**Each item of this array must be:**
+- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
 
 ## <a name="title"></a>`DatasetSeries > title` [#](#title)
 
@@ -617,9 +564,8 @@ Time periods covered by the dataset series
 
 Human-readable title of the dataset series
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 

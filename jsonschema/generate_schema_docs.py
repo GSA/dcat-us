@@ -12,11 +12,16 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 import click
+import jinja2
+import markdown2
 
 from json_schema_for_humans import generate
+from json_schema_for_humans import jinja_filters, templating_utils
 from json_schema_for_humans.generation_configuration import get_final_config
+from json_schema_for_humans.md_template import MarkdownTemplate
 from json_schema_for_humans.schema.schema_importer import get_schemas_to_render
 from json_schema_for_humans.template_renderer import TemplateRenderer
+from jinja2.ext import loopcontrols
 
 
 MAIN_CLASS_PAGES = [
@@ -202,6 +207,61 @@ CLASS_DISPLAY_NAME_MAP.update(
         for class_file in page["classes"]
     }
 )
+
+
+class CustomTemplateRenderer(TemplateRenderer):
+    def _get_jinja_template(self):
+        loader = jinja2.FileSystemLoader(self.config.template_path.parent)
+        env = jinja2.Environment(
+            loader=loader,
+            extensions=[loopcontrols],
+            trim_blocks=self.config.template_is_markdown,
+            lstrip_blocks=self.config.template_is_markdown,
+        )
+        env.globals["jsfh_config"] = self.config
+        env.globals["jsfh_md"] = markdown2.Markdown(
+            extras=self.config.markdown_options,
+            safe_mode=self.config.description_safe_mode,
+        )
+        if self.config.template_is_markdown:
+            md_template = MarkdownTemplate(self.config)
+            md_template.register_jinja(env)
+
+        env.filters["python_to_json"] = jinja_filters.python_to_json
+        env.filters["get_default"] = (
+            jinja_filters.get_default_look_in_description
+            if self.config.default_from_description
+            else jinja_filters.get_default
+        )
+        env.filters["get_type_name"] = templating_utils.get_type_name
+        env.filters["get_description"] = jinja_filters.get_description
+        env.filters["get_description_literal"] = jinja_filters.get_description_literal
+        env.filters["get_numeric_restrictions_text"] = (
+            jinja_filters.get_numeric_restrictions_text
+        )
+        env.filters["get_required_properties"] = jinja_filters.get_required_properties
+        env.filters["get_first_property"] = jinja_filters.get_first_property
+        env.filters["get_undocumented_required_properties"] = (
+            jinja_filters.get_undocumented_required_properties
+        )
+        env.filters["highlight_json_example"] = jinja_filters.highlight_json_example
+        env.filters["highlight_yaml_example"] = jinja_filters.highlight_yaml_example
+        env.filters["yaml_example"] = jinja_filters.yaml_example
+        env.filters["first_line"] = jinja_filters.first_line
+        env.filters["md_render_array_items_details"] = render_array_items_details
+        env.filters["md_render_key_value_details"] = render_key_value_details
+        env.filters["md_render_option_list"] = render_option_list
+
+        env.tests["combining"] = jinja_filters.is_combining
+        env.tests["description_short"] = jinja_filters.is_text_short
+        env.tests["deprecated"] = lambda schema: jinja_filters.deprecated(
+            self.config, schema
+        )
+        env.globals["examples_as_yaml"] = self.config.examples_as_yaml
+        env.globals["get_local_time"] = jinja_filters.get_local_time
+
+        with open(self.config.template_path, "r") as template_fp:
+            return env.from_string(template_fp.read())
 
 
 def _canonical_class_doc_link(schema_node):
@@ -394,6 +454,84 @@ def _escape_for_table(value):
     if value is None:
         return ""
     return str(value).translate(str.maketrans({"|": "\\|", "`": "\\`", "\n": "<br />"}))
+
+
+def _clean_table_cell(value):
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def _plain_table_label(value):
+    label = _clean_table_cell(value)
+    label = re.sub(r"^\*+", "", label)
+    label = re.sub(r"\*+$", "", label)
+    return label.strip()
+
+
+def render_key_value_details(rows):
+    rows = [row for row in rows if any(_clean_table_cell(cell) for cell in row)]
+    if not rows:
+        return ""
+
+    first_label = _plain_table_label(rows[0][0]) if rows[0] else ""
+    if len(rows[0]) >= 2 and first_label == "Restrictions":
+        lines = ["**Restrictions:**"]
+        for row in rows[1:]:
+            label = _clean_table_cell(row[0])
+            value = _clean_table_cell(row[1]) if len(row) > 1 else ""
+            if label and value:
+                lines.append(f"- {label}: {value}")
+            elif label:
+                lines.append(f"- {label}")
+            elif value:
+                lines.append(f"- {value}")
+        return "\n".join(lines)
+
+    lines = []
+    for row in rows:
+        label = _clean_table_cell(row[0]) if row else ""
+        value = _clean_table_cell(row[1]) if len(row) > 1 else ""
+        if label and value:
+            lines.append(f"- {label}: {value}")
+        elif label:
+            lines.append(f"- {label}")
+        elif value:
+            lines.append(f"- {value}")
+    return "\n".join(lines)
+
+
+def render_option_list(rows):
+    rows = [row for row in rows if any(_clean_table_cell(cell) for cell in row)]
+    if not rows:
+        return ""
+
+    heading = _plain_table_label(rows[0][0]) if rows[0] else "Options"
+    lines = [f"**{heading}:**"]
+    for row in rows[1:]:
+        value = _clean_table_cell(row[0]) if row else ""
+        if value:
+            lines.append(f"- {value}")
+    return "\n".join(lines)
+
+
+def render_array_items_details(rows):
+    rows = [row for row in rows if any(_clean_table_cell(cell) for cell in row)]
+    if not rows:
+        return ""
+
+    heading = _plain_table_label(rows[0][0]) if rows[0] else "Each item of this array must be"
+    lines = [f"**{heading}:**"]
+    for row in rows[1:]:
+        item = _clean_table_cell(row[0]) if row else ""
+        description = _clean_table_cell(row[1]) if len(row) > 1 else ""
+        if item and description:
+            lines.append(f"- {item}: {description}")
+        elif item:
+            lines.append(f"- {item}")
+        elif description:
+            lines.append(f"- {description}")
+    return "\n".join(lines)
 
 
 def should_render_title(schema):
@@ -611,7 +749,7 @@ def _render_raw_docs(output_dir):
         schemas_to_render += get_schemas_to_render(
             schema_file, output_dir, final_config.result_extension
         )
-    template_renderer = TemplateRenderer(final_config)
+    template_renderer = CustomTemplateRenderer(final_config)
 
     original_md_properties_table = template_renderer.template.environment.filters[
         "md_properties_table"
@@ -621,6 +759,15 @@ def _render_raw_docs(output_dir):
     )
     template_renderer.template.environment.filters["schema_requirement_level"] = (
         schema_requirement_level
+    )
+    template_renderer.template.environment.filters["md_render_array_items_details"] = (
+        render_array_items_details
+    )
+    template_renderer.template.environment.filters["md_render_key_value_details"] = (
+        render_key_value_details
+    )
+    template_renderer.template.environment.filters["md_render_option_list"] = (
+        render_option_list
     )
     template_renderer.template.environment.filters["md_properties_table"] = (
         lambda schema: properties_table_wrap(

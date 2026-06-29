@@ -4,9 +4,8 @@ Information about a distribution, including access methods, formats, licenses, r
 
 A specific representation of a dataset, such as a file, feed, or API response
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -78,9 +77,8 @@ A specific representation of a dataset, such as a file, feed, or API response
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -92,9 +90,8 @@ A specific representation of a dataset, such as a file, feed, or API response
 
 **Requirement:** Optional
 
-| **Type**    | `string`         |
-| ----------- | ---------------- |
-| **Default** | `"Distribution"` |
+- **Type**: `string`
+- **Default**: `"Distribution"`
 
 ## <a name="representationTechnique"></a>`Distribution > representationTechnique` [#](#representationTechnique)
 
@@ -102,28 +99,24 @@ A specific representation of a dataset, such as a file, feed, or API response
 
 Method or schema used to structure the distribution content (for example, CSV convention, XML schema, or spatial representation type)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                              |
-| ------------------------------------------------------------------- |
-| [Null allowed when not required](#representationTechnique_anyOf_i0) |
-| [Concept](#representationTechnique_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#representationTechnique_anyOf_i0)
+- [Concept](#representationTechnique_anyOf_i1)
 
 ### <a name="representationTechnique_anyOf_i0"></a>`Distribution > representationTechnique > anyOf > Null allowed when not required` [#](#representationTechnique_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="representationTechnique_anyOf_i1"></a>`Distribution > representationTechnique > anyOf > Concept` [#](#representationTechnique_anyOf_i1)
 
 inline description of Concept
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Defined in**            | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Defined in**: [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="status"></a>`Distribution > status` [#](#status)
 
@@ -133,28 +126,24 @@ inline description of Concept
 
 The status of the distribution in the context of maturity lifecycle
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                             |
-| -------------------------------------------------- |
-| [Null allowed when not required](#status_anyOf_i0) |
-| [Concept](#status_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#status_anyOf_i0)
+- [Concept](#status_anyOf_i1)
 
 ### <a name="status_anyOf_i0"></a>`Distribution > status > anyOf > Null allowed when not required` [#](#status_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="status_anyOf_i1"></a>`Distribution > status > anyOf > Concept` [#](#status_anyOf_i1)
 
 inline description of Concept
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="characterEncoding"></a>`Distribution > characterEncoding` [#](#characterEncoding)
 
@@ -162,9 +151,8 @@ inline description of Concept
 
 List of character encodings used in the Distribution, using IANA character set names (for example, UTF-8)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -174,29 +162,24 @@ List of character encodings used in the Distribution, using IANA character set n
 ]
 ```
 
-| Any of                                                        |
-| ------------------------------------------------------------- |
-| [Null allowed when not required](#characterEncoding_anyOf_i0) |
-| [List of encodings](#characterEncoding_anyOf_i1)              |
+**Any of:**
+- [Null allowed when not required](#characterEncoding_anyOf_i0)
+- [List of encodings](#characterEncoding_anyOf_i1)
 
 ### <a name="characterEncoding_anyOf_i0"></a>`Distribution > characterEncoding > anyOf > Null allowed when not required` [#](#characterEncoding_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="characterEncoding_anyOf_i1"></a>`Distribution > characterEncoding > anyOf > List of encodings` [#](#characterEncoding_anyOf_i1)
 
-| **Type** | array of string |
-| -------- | --------------- |
+- **Type**: array of string
 
-| Each item of this array must be                         | Description |
-| ------------------------------------------------------- | ----------- |
-| [Character encoding](#characterEncoding_anyOf_i1_items) | -           |
+**Each item of this array must be:**
+- [Character encoding](#characterEncoding_anyOf_i1_items): -
 
 #### <a name="characterEncoding_anyOf_i1_items"></a>Character encoding [#](#characterEncoding_anyOf_i1_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="accessService"></a>`Distribution > accessService` [#](#accessService)
 
@@ -204,12 +187,10 @@ List of character encodings used in the Distribution, using IANA character set n
 
 A data service that gives access to the distribution of the dataset
 
-| **Type** | null or array of [DataService](./quality-governance.md#data-service) classes |
-| -------- | ---------------------------------------------------------------------------- |
+- **Type**: null or array of [DataService](./quality-governance.md#data-service) classes
 
-| Each item of this array must be                     | Description                                                         |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [DataService](./quality-governance.md#data-service) | A service that provides access to data or data processing functions |
+**Each item of this array must be:**
+- [DataService](./quality-governance.md#data-service): A service that provides access to data or data processing functions
 
 ## <a name="accessURL"></a>`Distribution > accessURL` [#](#accessURL)
 
@@ -217,9 +198,8 @@ A data service that gives access to the distribution of the dataset
 
 URL for indirect access to the Distribution (for example, a landing page, API docs, or request form), not a direct file download
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -231,23 +211,20 @@ URL for indirect access to the Distribution (for example, a landing page, API do
 "https://example.gov/data/climate/access"
 ```
 
-| Any of                                                |
-| ----------------------------------------------------- |
-| [Null allowed when not required](#accessURL_anyOf_i0) |
-| [URL](#accessURL_anyOf_i1)                            |
+**Any of:**
+- [Null allowed when not required](#accessURL_anyOf_i0)
+- [URL](#accessURL_anyOf_i1)
 
 ### <a name="accessURL_anyOf_i0"></a>`Distribution > accessURL > anyOf > Null allowed when not required` [#](#accessURL_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="accessURL_anyOf_i1"></a>`Distribution > accessURL > anyOf > URL` [#](#accessURL_anyOf_i1)
 
 reference iri of Resource
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="byteSize"></a>`Distribution > byteSize` [#](#byteSize)
 
@@ -255,8 +232,7 @@ reference iri of Resource
 
 The size of a Distribution in bytes
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -272,8 +248,7 @@ The size of a Distribution in bytes
 
 The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -287,9 +262,8 @@ The format of the file in which the data is contained in a compressed form, e.g.
 
 Direct URL to a downloadable file for the Distribution; use accessURL for indirect access
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -297,23 +271,20 @@ Direct URL to a downloadable file for the Distribution; use accessURL for indire
 "https://example.gov/data/climate/climate-data-2023.csv"
 ```
 
-| Any of                                                  |
-| ------------------------------------------------------- |
-| [Null allowed when not required](#downloadURL_anyOf_i0) |
-| [URL](#downloadURL_anyOf_i1)                            |
+**Any of:**
+- [Null allowed when not required](#downloadURL_anyOf_i0)
+- [URL](#downloadURL_anyOf_i1)
 
 ### <a name="downloadURL_anyOf_i0"></a>`Distribution > downloadURL > anyOf > Null allowed when not required` [#](#downloadURL_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="downloadURL_anyOf_i1"></a>`Distribution > downloadURL > anyOf > URL` [#](#downloadURL_anyOf_i1)
 
 reference iri of Resource
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="mediaType"></a>`Distribution > mediaType` [#](#mediaType)
 
@@ -321,8 +292,7 @@ reference iri of Resource
 
 MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -338,8 +308,7 @@ MIME type of the Distribution (for example, text/csv or application/json), from 
 
 The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -355,8 +324,7 @@ The format of the file in which one or more data files are grouped together, e.g
 
 The minimum spatial separation resolvable in a dataset distribution, measured in meters
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -372,8 +340,7 @@ The minimum spatial separation resolvable in a dataset distribution, measured in
 
 The minimum time period resolvable in the dataset distribution
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -387,28 +354,24 @@ The minimum time period resolvable in the dataset distribution
 
 An indication how long it is planned to keep the Distribution of the Dataset available
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                   |
-| -------------------------------------------------------- |
-| [Null allowed when not required](#availability_anyOf_i0) |
-| [Concept](#availability_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#availability_anyOf_i0)
+- [Concept](#availability_anyOf_i1)
 
 ### <a name="availability_anyOf_i0"></a>`Distribution > availability > anyOf > Null allowed when not required` [#](#availability_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="availability_anyOf_i1"></a>`Distribution > availability > anyOf > Concept` [#](#availability_anyOf_i1)
 
 inline description of Concept
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="accessRestriction"></a>`Distribution > accessRestriction` [#](#accessRestriction)
 
@@ -416,12 +379,10 @@ inline description of Concept
 
 List of access restrictions related to the distribution
 
-| **Type** | null or array of [AccessRestriction](./constraints-and-restrictions.md#access-restriction) classes |
-| -------- | -------------------------------------------------------------------------------------------------- |
+- **Type**: null or array of [AccessRestriction](./constraints-and-restrictions.md#access-restriction) classes
 
-| Each item of this array must be                                           | Description                                                 |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| [AccessRestriction](./constraints-and-restrictions.md#access-restriction) | Rules or indicators that describe who can access a resource |
+**Each item of this array must be:**
+- [AccessRestriction](./constraints-and-restrictions.md#access-restriction): Rules or indicators that describe who can access a resource
 
 ## <a name="cuiRestriction"></a>`Distribution > cuiRestriction` [#](#cuiRestriction)
 
@@ -429,28 +390,24 @@ List of access restrictions related to the distribution
 
 Controlled Unclassified Information restriction related to the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                     |
-| ---------------------------------------------------------- |
-| [Null allowed when not required](#cuiRestriction_anyOf_i0) |
-| [CUIRestriction](#cuiRestriction_anyOf_i1)                 |
+**Any of:**
+- [Null allowed when not required](#cuiRestriction_anyOf_i0)
+- [CUIRestriction](#cuiRestriction_anyOf_i1)
 
 ### <a name="cuiRestriction_anyOf_i0"></a>`Distribution > cuiRestriction > anyOf > Null allowed when not required` [#](#cuiRestriction_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="cuiRestriction_anyOf_i1"></a>`Distribution > cuiRestriction > anyOf > CUIRestriction` [#](#cuiRestriction_anyOf_i1)
 
 inline description of CUIRestriction
 
-| **Type**                  | `object`                                                            |
-| ------------------------- | ------------------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                                    |
-| **Same definition as**    | [CUIRestriction](./constraints-and-restrictions.md#cui-restriction) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [CUIRestriction](./constraints-and-restrictions.md#cui-restriction)
 
 ## <a name="describedBy"></a>`Distribution > describedBy` [#](#describedBy)
 
@@ -460,28 +417,24 @@ inline description of CUIRestriction
 
 A distribution containing the Data Dictionary for this distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                  |
-| ------------------------------------------------------- |
-| [Null allowed when not required](#describedBy_anyOf_i0) |
-| [Distribution](#describedBy_anyOf_i1)                   |
+**Any of:**
+- [Null allowed when not required](#describedBy_anyOf_i0)
+- [Distribution](#describedBy_anyOf_i1)
 
 ### <a name="describedBy_anyOf_i0"></a>`Distribution > describedBy > anyOf > Null allowed when not required` [#](#describedBy_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="describedBy_anyOf_i1"></a>`Distribution > describedBy > anyOf > Distribution` [#](#describedBy_anyOf_i1)
 
 inline description of the data dictionary
 
-| **Type**                  | `object`                               |
-| ------------------------- | -------------------------------------- |
-| **Additional properties** | Any type allowed                       |
-| **Same definition as**    | [Distribution](./distribution.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Distribution](./distribution.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -492,12 +445,10 @@ inline description of the data dictionary
 
 Use restriction related to the distribution
 
-| **Type** | null or array of [UseRestriction](./constraints-and-restrictions.md#use-restriction) classes |
-| -------- | -------------------------------------------------------------------------------------------- |
+- **Type**: null or array of [UseRestriction](./constraints-and-restrictions.md#use-restriction) classes
 
-| Each item of this array must be                                     | Description                                         |
-| ------------------------------------------------------------------- | --------------------------------------------------- |
-| [UseRestriction](./constraints-and-restrictions.md#use-restriction) | Rules or legal limits on how a resource may be used |
+**Each item of this array must be:**
+- [UseRestriction](./constraints-and-restrictions.md#use-restriction): Rules or legal limits on how a resource may be used
 
 ## <a name="accessRights"></a>`Distribution > accessRights` [#](#accessRights)
 
@@ -505,9 +456,8 @@ Use restriction related to the distribution
 
 Information about whether the distribution is publicly accessible, restricted, or not public
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -515,22 +465,19 @@ Information about whether the distribution is publicly accessible, restricted, o
 "Public access without restrictions"
 ```
 
-| Any of                                                   |
-| -------------------------------------------------------- |
-| [Null allowed when not required](#accessRights_anyOf_i0) |
-| [item 1](#accessRights_anyOf_i1)                         |
+**Any of:**
+- [Null allowed when not required](#accessRights_anyOf_i0)
+- [item 1](#accessRights_anyOf_i1)
 
 ### <a name="accessRights_anyOf_i0"></a>`Distribution > accessRights > anyOf > Null allowed when not required` [#](#accessRights_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="accessRights_anyOf_i1"></a>`Distribution > accessRights > anyOf > item 1` [#](#accessRights_anyOf_i1)
 
 Text description of the access rights
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="conformsTo"></a>`Distribution > conformsTo` [#](#conformsTo)
 
@@ -540,12 +487,10 @@ Text description of the access rights
 
 List of standards, schemas, or reference systems the Distribution follows (prefer stable URIs when available)
 
-| **Type** | null or array of [Standard](./quality-governance.md#standard) classes |
-| -------- | --------------------------------------------------------------------- |
+- **Type**: null or array of [Standard](./quality-governance.md#standard) classes
 
-| Each item of this array must be              | Description                                                   |
-| -------------------------------------------- | ------------------------------------------------------------- |
-| [Standard](./quality-governance.md#standard) | A standard or specification that another resource conforms to |
+**Each item of this array must be:**
+- [Standard](./quality-governance.md#standard): A standard or specification that another resource conforms to
 
 ## <a name="description"></a>`Distribution > description` [#](#description)
 
@@ -553,8 +498,7 @@ List of standards, schemas, or reference systems the Distribution follows (prefe
 
 Plain-language summary of the distribution
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Examples:**
 
@@ -572,8 +516,7 @@ Plain-language summary of the distribution
 
 A human-readable description of the file format of the Distribution that provides useful information that might not be apparent from mediaType
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -587,28 +530,24 @@ A human-readable description of the file format of the Distribution that provide
 
 The unique identifier for the Distribution (e.g. DOI, ISBN)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                 |
-| ------------------------------------------------------ |
-| [Null allowed when not required](#identifier_anyOf_i0) |
-| [Identifier](#identifier_anyOf_i1)                     |
+**Any of:**
+- [Null allowed when not required](#identifier_anyOf_i0)
+- [Identifier](#identifier_anyOf_i1)
 
 ### <a name="identifier_anyOf_i0"></a>`Distribution > identifier > anyOf > Null allowed when not required` [#](#identifier_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="identifier_anyOf_i1"></a>`Distribution > identifier > anyOf > Identifier` [#](#identifier_anyOf_i1)
 
 inline description of Identifier
 
-| **Type**                  | `combining`                                                 |
-| ------------------------- | ----------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                            |
-| **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="otherIdentifier"></a>`Distribution > otherIdentifier` [#](#otherIdentifier)
 
@@ -616,12 +555,10 @@ inline description of Identifier
 
 A list of identifiers for the Distribution besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog
 
-| **Type** | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes |
-| -------- | ------------------------------------------------------------------------------------ |
+- **Type**: null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes
 
-| Each item of this array must be                             | Description                                                                   |
-| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
+**Each item of this array must be:**
+- [Identifier](./identifiers-and-relationships.md#identifier): A unique identifier and optionally it's scheme and other relevant information
 
 ## <a name="issued"></a>`Distribution > issued` [#](#issued)
 
@@ -631,9 +568,8 @@ A list of identifiers for the Distribution besides the main identifier, e.g. the
 
 The date of formal issuance (e.g., publication) of the Distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -653,62 +589,52 @@ The date of formal issuance (e.g., publication) of the Distribution
 "2024-01"
 ```
 
-| Any of                                             |
-| -------------------------------------------------- |
-| [Null allowed when not required](#issued_anyOf_i0) |
-| [Date string](#issued_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#issued_anyOf_i0)
+- [Date string](#issued_anyOf_i1)
 
 ### <a name="issued_anyOf_i0"></a>`Distribution > issued > anyOf > Null allowed when not required` [#](#issued_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="issued_anyOf_i1"></a>`Distribution > issued > anyOf > Date string` [#](#issued_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                              |
-| ----------------------------------- |
-| [item 0](#issued_anyOf_i1_anyOf_i0) |
-| [item 1](#issued_anyOf_i1_anyOf_i1) |
-| [item 2](#issued_anyOf_i1_anyOf_i2) |
-| [item 3](#issued_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#issued_anyOf_i1_anyOf_i0)
+- [item 1](#issued_anyOf_i1_anyOf_i1)
+- [item 2](#issued_anyOf_i1_anyOf_i2)
+- [item 3](#issued_anyOf_i1_anyOf_i3)
 
 #### <a name="issued_anyOf_i1_anyOf_i0"></a>`Distribution > issued > anyOf > Date string > anyOf > item 0` [#](#issued_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="issued_anyOf_i1_anyOf_i1"></a>`Distribution > issued > anyOf > Date string > anyOf > item 1` [#](#issued_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="issued_anyOf_i1_anyOf_i2"></a>`Distribution > issued > anyOf > Date string > anyOf > item 2` [#](#issued_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="issued_anyOf_i1_anyOf_i3"></a>`Distribution > issued > anyOf > Date string > anyOf > item 3` [#](#issued_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="language"></a>`Distribution > language` [#](#language)
 
@@ -716,9 +642,8 @@ A year and month in YYYY-MM format
 
 ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -733,43 +658,35 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 ]
 ```
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#language_anyOf_i0) |
-| [Language code](#language_anyOf_i1)                  |
-| [List of languages](#language_anyOf_i2)              |
+**Any of:**
+- [Null allowed when not required](#language_anyOf_i0)
+- [Language code](#language_anyOf_i1)
+- [List of languages](#language_anyOf_i2)
 
 ### <a name="language_anyOf_i0"></a>`Distribution > language > anyOf > Null allowed when not required` [#](#language_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="language_anyOf_i1"></a>`Distribution > language > anyOf > Language code` [#](#language_anyOf_i1)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions   |   |
-| -------------- | - |
-| **Max length** | 2 |
+**Restrictions:**
+- **Max length**: 2
 
 ### <a name="language_anyOf_i2"></a>`Distribution > language > anyOf > List of languages` [#](#language_anyOf_i2)
 
-| **Type** | array of string |
-| -------- | --------------- |
+- **Type**: array of string
 
-| Each item of this array must be           | Description |
-| ----------------------------------------- | ----------- |
-| [Language code](#language_anyOf_i2_items) | -           |
+**Each item of this array must be:**
+- [Language code](#language_anyOf_i2_items): -
 
 #### <a name="language_anyOf_i2_items"></a>Language code [#](#language_anyOf_i2_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions   |   |
-| -------------- | - |
-| **Max length** | 2 |
+**Restrictions:**
+- **Max length**: 2
 
 ## <a name="license"></a>`Distribution > license` [#](#license)
 
@@ -777,9 +694,8 @@ ISO 639-1 language code values used in the distribution metadata text, such as e
 
 License that governs how the distribution can be used or reused
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -787,22 +703,19 @@ License that governs how the distribution can be used or reused
 "https://creativecommons.org/publicdomain/zero/1.0/"
 ```
 
-| Any of                                              |
-| --------------------------------------------------- |
-| [Null allowed when not required](#license_anyOf_i0) |
-| [item 1](#license_anyOf_i1)                         |
+**Any of:**
+- [Null allowed when not required](#license_anyOf_i0)
+- [item 1](#license_anyOf_i1)
 
 ### <a name="license_anyOf_i0"></a>`Distribution > license > anyOf > Null allowed when not required` [#](#license_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="license_anyOf_i1"></a>`Distribution > license > anyOf > item 1` [#](#license_anyOf_i1)
 
 Full text of the license
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="modified"></a>`Distribution > modified` [#](#modified)
 
@@ -812,9 +725,8 @@ Full text of the license
 
 The most recent date on which the Distribution was changed or modified
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -838,62 +750,52 @@ The most recent date on which the Distribution was changed or modified
 "2024-01"
 ```
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#modified_anyOf_i0) |
-| [Date string](#modified_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#modified_anyOf_i0)
+- [Date string](#modified_anyOf_i1)
 
 ### <a name="modified_anyOf_i0"></a>`Distribution > modified > anyOf > Null allowed when not required` [#](#modified_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="modified_anyOf_i1"></a>`Distribution > modified > anyOf > Date string` [#](#modified_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                |
-| ------------------------------------- |
-| [item 0](#modified_anyOf_i1_anyOf_i0) |
-| [item 1](#modified_anyOf_i1_anyOf_i1) |
-| [item 2](#modified_anyOf_i1_anyOf_i2) |
-| [item 3](#modified_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#modified_anyOf_i1_anyOf_i0)
+- [item 1](#modified_anyOf_i1_anyOf_i1)
+- [item 2](#modified_anyOf_i1_anyOf_i2)
+- [item 3](#modified_anyOf_i1_anyOf_i3)
 
 #### <a name="modified_anyOf_i1_anyOf_i0"></a>`Distribution > modified > anyOf > Date string > anyOf > item 0` [#](#modified_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="modified_anyOf_i1_anyOf_i1"></a>`Distribution > modified > anyOf > Date string > anyOf > item 1` [#](#modified_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="modified_anyOf_i1_anyOf_i2"></a>`Distribution > modified > anyOf > Date string > anyOf > item 2` [#](#modified_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="modified_anyOf_i1_anyOf_i3"></a>`Distribution > modified > anyOf > Date string > anyOf > item 3` [#](#modified_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="rights"></a>`Distribution > rights` [#](#rights)
 
@@ -901,8 +803,7 @@ A year and month in YYYY-MM format
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Examples:**
 
@@ -918,16 +819,14 @@ Rights statements not already covered by license or accessRights, such as copyri
 ]
 ```
 
-| Each item of this array must be | Description                        |
-| ------------------------------- | ---------------------------------- |
-| [rights items](#rights_items)   | Full text of a statement of rights |
+**Each item of this array must be:**
+- [rights items](#rights_items): Full text of a statement of rights
 
 ### <a name="rights_items"></a>Array Item [#](#rights_items)
 
 Full text of a statement of rights
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="title"></a>`Distribution > title` [#](#title)
 
@@ -935,8 +834,7 @@ Full text of a statement of rights
 
 Human-readable title of the distribution
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -952,12 +850,10 @@ Human-readable title of the distribution
 
 Quality measurements for the distribution (for example, completeness, accuracy, or timeliness)
 
-| **Type** | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes |
-| -------- | ------------------------------------------------------------------------------------------------ |
+- **Type**: null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes
 
-| Each item of this array must be                                         | Description                                                   |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) | A measurement of a resource against a specific quality metric |
+**Each item of this array must be:**
+- [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement): A measurement of a resource against a specific quality metric
 
 ## <a name="page"></a>`Distribution > page` [#](#page)
 
@@ -967,12 +863,10 @@ Quality measurements for the distribution (for example, completeness, accuracy, 
 
 A page or document about this Distribution
 
-| **Type** | null or array of [Document](./quality-governance.md#document) classes |
-| -------- | --------------------------------------------------------------------- |
+- **Type**: null or array of [Document](./quality-governance.md#document) classes
 
-| Each item of this array must be              | Description                                           |
-| -------------------------------------------- | ----------------------------------------------------- |
-| [Document](./quality-governance.md#document) | A publication or other document related to a resource |
+**Each item of this array must be:**
+- [Document](./quality-governance.md#document): A publication or other document related to a resource
 
 ## <a name="image"></a>`Distribution > image` [#](#image)
 
@@ -980,27 +874,23 @@ A page or document about this Distribution
 
 A link to a thumbnail picture illustrating the content of the distribution
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                            |
-| ------------------------------------------------- |
-| [Null allowed when not required](#image_anyOf_i0) |
-| [Link](#image_anyOf_i1)                           |
+**Any of:**
+- [Null allowed when not required](#image_anyOf_i0)
+- [Link](#image_anyOf_i1)
 
 ### <a name="image_anyOf_i0"></a>`Distribution > image > anyOf > Null allowed when not required` [#](#image_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="image_anyOf_i1"></a>`Distribution > image > anyOf > Link` [#](#image_anyOf_i1)
 
 The link to the image
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="checksum"></a>`Distribution > checksum` [#](#checksum)
 
@@ -1008,28 +898,24 @@ The link to the image
 
 Checksum used to verify that the downloadable file content has not changed
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#checksum_anyOf_i0) |
-| [Checksum](#checksum_anyOf_i1)                       |
+**Any of:**
+- [Null allowed when not required](#checksum_anyOf_i0)
+- [Checksum](#checksum_anyOf_i1)
 
 ### <a name="checksum_anyOf_i0"></a>`Distribution > checksum > anyOf > Null allowed when not required` [#](#checksum_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="checksum_anyOf_i1"></a>`Distribution > checksum > anyOf > Checksum` [#](#checksum_anyOf_i1)
 
 inline description of Checksum
 
-| **Type**                  | `object`                                                |
-| ------------------------- | ------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                        |
-| **Same definition as**    | [Checksum](./identifiers-and-relationships.md#checksum) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Checksum](./identifiers-and-relationships.md#checksum)
 
 ---
 **See Also:** (related supporting classes)

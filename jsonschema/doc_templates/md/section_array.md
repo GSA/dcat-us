@@ -1,9 +1,9 @@
 
-{{ schema | md_array_restrictions | md_generate_table }}
+{{ schema | md_array_restrictions | md_render_key_value_details }}
 
 {# Only show array items table; suppress inline details if canonical link exists #}
 {% if schema.array_items_def or schema.tuple_validation_items %}
-{{ schema | md_array_items_restrictions | md_generate_table }}
+{{ schema | md_array_items_restrictions | md_render_array_items_details }}
 {% endif %}
 
 {# Only expand inline details for array items if not a reference/canonical link #}

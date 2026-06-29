@@ -22,7 +22,7 @@
 {% include "section_description.md" %}
 {% endif %}
 
-{{ schema | md_type_info_table | md_generate_table }}
+{{ schema | md_type_info_table | md_render_key_value_details }}
 
 {# Display examples #}
 {% set examples = schema.examples %}
@@ -80,7 +80,7 @@
     {% include "section_undocumented_required_properties.md" %}
 
     {# Show the requested type(s) #}
-    {{- schema | md_restrictions_table | md_generate_table -}}
+    {{- schema | md_restrictions_table | md_render_key_value_details -}}
 
     {# Show array restrictions #}
     {% if "array" in schema.type_name %}

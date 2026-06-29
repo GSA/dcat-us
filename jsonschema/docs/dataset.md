@@ -4,9 +4,8 @@ Information about a dataset, including identifiers, contacts, coverage, distribu
 
 A collection of data published or curated by one provider
 
-| **Type**                  | `object`         |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -162,9 +161,8 @@ A collection of data published or curated by one provider
 
 **Requirement:** Optional
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
@@ -176,9 +174,8 @@ A collection of data published or curated by one provider
 
 **Requirement:** Optional
 
-| **Type**    | `string`    |
-| ----------- | ----------- |
-| **Default** | `"Dataset"` |
+- **Type**: `string`
+- **Default**: `"Dataset"`
 
 ## <a name="otherIdentifier"></a>`Dataset > otherIdentifier` [#](#otherIdentifier)
 
@@ -186,12 +183,10 @@ A collection of data published or curated by one provider
 
 Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID
 
-| **Type** | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes |
-| -------- | ------------------------------------------------------------------------------------ |
+- **Type**: null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes
 
-| Each item of this array must be                             | Description                                                                   |
-| ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Identifier](./identifiers-and-relationships.md#identifier) | A unique identifier and optionally it's scheme and other relevant information |
+**Each item of this array must be:**
+- [Identifier](./identifiers-and-relationships.md#identifier): A unique identifier and optionally it's scheme and other relevant information
 
 ## <a name="sample"></a>`Dataset > sample` [#](#sample)
 
@@ -199,12 +194,10 @@ Additional identifiers for the dataset besides the main identifier, such as a DO
 
 List of sample distributions for the dataset
 
-| **Type** | null or array of [Distribution](./distribution.md#root) classes |
-| -------- | --------------------------------------------------------------- |
+- **Type**: null or array of [Distribution](./distribution.md#root) classes
 
-| Each item of this array must be        | Description                                                                   |
-| -------------------------------------- | ----------------------------------------------------------------------------- |
-| [Distribution](./distribution.md#root) | A specific representation of a dataset, such as a file, feed, or API response |
+**Each item of this array must be:**
+- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
 
 ## <a name="status"></a>`Dataset > status` [#](#status)
 
@@ -214,28 +207,24 @@ List of sample distributions for the dataset
 
 Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                             |
-| -------------------------------------------------- |
-| [Null allowed when not required](#status_anyOf_i0) |
-| [Concept](#status_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#status_anyOf_i0)
+- [Concept](#status_anyOf_i1)
 
 ### <a name="status_anyOf_i0"></a>`Dataset > status > anyOf > Null allowed when not required` [#](#status_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="status_anyOf_i1"></a>`Dataset > status > anyOf > Concept` [#](#status_anyOf_i1)
 
 inline description of Concept
 
-| **Type**                  | `combining`                                           |
-| ------------------------- | ----------------------------------------------------- |
-| **Additional properties** | Any type allowed                                      |
-| **Same definition as**    | [Concept](./identifiers-and-relationships.md#concept) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="supportedSchema"></a>`Dataset > supportedSchema` [#](#supportedSchema)
 
@@ -243,28 +232,24 @@ inline description of Concept
 
 supported schema for this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                      |
-| ----------------------------------------------------------- |
-| [Null allowed when not required](#supportedSchema_anyOf_i0) |
-| [Dataset](#supportedSchema_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#supportedSchema_anyOf_i0)
+- [Dataset](#supportedSchema_anyOf_i1)
 
 ### <a name="supportedSchema_anyOf_i0"></a>`Dataset > supportedSchema > anyOf > Null allowed when not required` [#](#supportedSchema_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="supportedSchema_anyOf_i1"></a>`Dataset > supportedSchema > anyOf > Dataset` [#](#supportedSchema_anyOf_i1)
 
 inline description of the supported schema
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Same definition as**    | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -275,8 +260,7 @@ inline description of the supported schema
 
 Notes describing how this version differs from earlier versions of the dataset
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -290,33 +274,28 @@ Notes describing how this version differs from earlier versions of the dataset
 
 A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
 
-| Any of                                     |
-| ------------------------------------------ |
-| [Kind](#contactPoint_anyOf_i0)             |
-| [List of contacts](#contactPoint_anyOf_i1) |
+**Any of:**
+- [Kind](#contactPoint_anyOf_i0)
+- [List of contacts](#contactPoint_anyOf_i1)
 
 ### <a name="contactPoint_anyOf_i0"></a>`Dataset > contactPoint > anyOf > Kind` [#](#contactPoint_anyOf_i0)
 
 inline description of Kind
 
-| **Type**                  | `object`                 |
-| ------------------------- | ------------------------ |
-| **Additional properties** | Any type allowed         |
-| **Same definition as**    | [Kind](./agents.md#kind) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Kind](./agents.md#kind)
 
 ### <a name="contactPoint_anyOf_i1"></a>`Dataset > contactPoint > anyOf > List of contacts` [#](#contactPoint_anyOf_i1)
 
-| **Type** | array of [Kind](./agents.md#kind) classes |
-| -------- | ----------------------------------------- |
+- **Type**: array of [Kind](./agents.md#kind) classes
 
-| Each item of this array must be | Description                                     |
-| ------------------------------- | ----------------------------------------------- |
-| [Kind](./agents.md#kind)        | Contact information for an individual or entity |
+**Each item of this array must be:**
+- [Kind](./agents.md#kind): Contact information for an individual or entity
 
 ## <a name="distribution"></a>`Dataset > distribution` [#](#distribution)
 
@@ -326,12 +305,10 @@ inline description of Kind
 
 List of available distributions for the dataset. This can be omitted when no distribution is available yet.
 
-| **Type** | null or array of [Distribution](./distribution.md#root) classes |
-| -------- | --------------------------------------------------------------- |
+- **Type**: null or array of [Distribution](./distribution.md#root) classes
 
-| Each item of this array must be        | Description                                                                   |
-| -------------------------------------- | ----------------------------------------------------------------------------- |
-| [Distribution](./distribution.md#root) | A specific representation of a dataset, such as a file, feed, or API response |
+**Each item of this array must be:**
+- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
 
 ## <a name="first"></a>`Dataset > first` [#](#first)
 
@@ -339,28 +316,24 @@ List of available distributions for the dataset. This can be omitted when no dis
 
 the first item of the sequence the dataset belongs to
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                            |
-| ------------------------------------------------- |
-| [Null allowed when not required](#first_anyOf_i0) |
-| [Dataset](#first_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#first_anyOf_i0)
+- [Dataset](#first_anyOf_i1)
 
 ### <a name="first_anyOf_i0"></a>`Dataset > first > anyOf > Null allowed when not required` [#](#first_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="first_anyOf_i1"></a>`Dataset > first > anyOf > Dataset` [#](#first_anyOf_i1)
 
 inline description of Dataset
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Same definition as**    | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -373,28 +346,24 @@ inline description of Dataset
 
 reference to the current (latest) version of a dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                        |
-| ------------------------------------------------------------- |
-| [Null allowed when not required](#hasCurrentVersion_anyOf_i0) |
-| [Dataset](#hasCurrentVersion_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#hasCurrentVersion_anyOf_i0)
+- [Dataset](#hasCurrentVersion_anyOf_i1)
 
 ### <a name="hasCurrentVersion_anyOf_i0"></a>`Dataset > hasCurrentVersion > anyOf > Null allowed when not required` [#](#hasCurrentVersion_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="hasCurrentVersion_anyOf_i1"></a>`Dataset > hasCurrentVersion > anyOf > Dataset` [#](#hasCurrentVersion_anyOf_i1)
 
 inline description of Dataset
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Same definition as**    | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -405,12 +374,10 @@ inline description of Dataset
 
 List of related Datasets that are a version, edition, or adaptation of the described Dataset
 
-| **Type** | null or array of [Dataset](./dataset.md#root) classes |
-| -------- | ----------------------------------------------------- |
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
 
-| Each item of this array must be | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
-| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
 ## <a name="inSeries"></a>`Dataset > inSeries` [#](#inSeries)
 
@@ -418,12 +385,10 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 
 Dataset series this dataset belongs to
 
-| **Type** | null or array of [DatasetSeries](./dataset-series.md#root) classes |
-| -------- | ------------------------------------------------------------------ |
+- **Type**: null or array of [DatasetSeries](./dataset-series.md#root) classes
 
-| Each item of this array must be           | Description                                               |
-| ----------------------------------------- | --------------------------------------------------------- |
-| [DatasetSeries](./dataset-series.md#root) | A group of related datasets that are published separately |
+**Each item of this array must be:**
+- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately
 
 ## <a name="keyword"></a>`Dataset > keyword` [#](#keyword)
 
@@ -433,8 +398,7 @@ Dataset series this dataset belongs to
 
 List of keywords or tags describing the dataset
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Examples:**
 
@@ -459,18 +423,15 @@ List of keywords or tags describing the dataset
 ]
 ```
 
-| Each item of this array must be    | Description |
-| ---------------------------------- | ----------- |
-| [Non-empty string](#keyword_items) | -           |
+**Each item of this array must be:**
+- [Non-empty string](#keyword_items): -
 
 ### <a name="keyword_items"></a>Non-empty string [#](#keyword_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions   |   |
-| -------------- | - |
-| **Min length** | 1 |
+**Restrictions:**
+- **Min length**: 1
 
 ## <a name="landingPage"></a>`Dataset > landingPage` [#](#landingPage)
 
@@ -478,28 +439,24 @@ List of keywords or tags describing the dataset
 
 A web page from the original data provider that gives access to the Dataset, its Distributions, and related information
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                  |
-| ------------------------------------------------------- |
-| [Null allowed when not required](#landingPage_anyOf_i0) |
-| [Document](#landingPage_anyOf_i1)                       |
+**Any of:**
+- [Null allowed when not required](#landingPage_anyOf_i0)
+- [Document](#landingPage_anyOf_i1)
 
 ### <a name="landingPage_anyOf_i0"></a>`Dataset > landingPage > anyOf > Null allowed when not required` [#](#landingPage_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="landingPage_anyOf_i1"></a>`Dataset > landingPage > anyOf > Document` [#](#landingPage_anyOf_i1)
 
 inline description of Document
 
-| **Type**                  | `object`                                     |
-| ------------------------- | -------------------------------------------- |
-| **Additional properties** | Any type allowed                             |
-| **Same definition as**    | [Document](./quality-governance.md#document) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Document](./quality-governance.md#document)
 
 ## <a name="previousVersion"></a>`Dataset > previousVersion` [#](#previousVersion)
 
@@ -507,28 +464,24 @@ inline description of Document
 
 reference to the previous dataset version
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                      |
-| ----------------------------------------------------------- |
-| [Null allowed when not required](#previousVersion_anyOf_i0) |
-| [Dataset](#previousVersion_anyOf_i1)                        |
+**Any of:**
+- [Null allowed when not required](#previousVersion_anyOf_i0)
+- [Dataset](#previousVersion_anyOf_i1)
 
 ### <a name="previousVersion_anyOf_i0"></a>`Dataset > previousVersion > anyOf > Null allowed when not required` [#](#previousVersion_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="previousVersion_anyOf_i1"></a>`Dataset > previousVersion > anyOf > Dataset` [#](#previousVersion_anyOf_i1)
 
 inline description of Dataset
 
-| **Type**                  | `object`                     |
-| ------------------------- | ---------------------------- |
-| **Additional properties** | Any type allowed             |
-| **Same definition as**    | [Dataset](./dataset.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Dataset](./dataset.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -539,12 +492,10 @@ inline description of Dataset
 
 Detailed relationship between the dataset and another resource, including the role of that relationship
 
-| **Type** | null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes |
-| -------- | ---------------------------------------------------------------------------------------- |
+- **Type**: null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes
 
-| Each item of this array must be                                 | Description                                                         |
-| --------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Relationship](./identifiers-and-relationships.md#relationship) | Additional information about how one resource is related to another |
+**Each item of this array must be:**
+- [Relationship](./identifiers-and-relationships.md#relationship): Additional information about how one resource is related to another
 
 ## <a name="spatialResolutionInMeters"></a>`Dataset > spatialResolutionInMeters` [#](#spatialResolutionInMeters)
 
@@ -554,8 +505,7 @@ Detailed relationship between the dataset and another resource, including the ro
 
 Smallest spatial distance between data points, in meters, represented as a single value
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -569,8 +519,7 @@ Smallest spatial distance between data points, in meters, represented as a singl
 
 Smallest time interval between data points, using xsd:duration format (for example, P1D)
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -586,12 +535,10 @@ Smallest time interval between data points, using xsd:duration format (for examp
 
 List of themes or categories for the dataset
 
-| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
-| -------- | ------------------------------------------------------------------------------ |
+- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
 
-| Each item of this array must be                       | Description                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------ |
-| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
+**Each item of this array must be:**
+- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
 ## <a name="version"></a>`Dataset > version` [#](#version)
 
@@ -599,8 +546,7 @@ List of themes or categories for the dataset
 
 The version indicator (name or identifier) of a resource
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -616,28 +562,24 @@ The version indicator (name or identifier) of a resource
 
 A distribution describing the Data Dictionary for this dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                                  |
-| ------------------------------------------------------- |
-| [Null allowed when not required](#describedBy_anyOf_i0) |
-| [Distribution](#describedBy_anyOf_i1)                   |
+**Any of:**
+- [Null allowed when not required](#describedBy_anyOf_i0)
+- [Distribution](#describedBy_anyOf_i1)
 
 ### <a name="describedBy_anyOf_i0"></a>`Dataset > describedBy > anyOf > Null allowed when not required` [#](#describedBy_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="describedBy_anyOf_i1"></a>`Dataset > describedBy > anyOf > Distribution` [#](#describedBy_anyOf_i1)
 
 inline description of Distribution
 
-| **Type**                  | `object`                               |
-| ------------------------- | -------------------------------------- |
-| **Additional properties** | Any type allowed                       |
-| **Same definition as**    | [Distribution](./distribution.md#root) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Distribution](./distribution.md#root)
 
 ---
 **See Also:** (related supporting classes)
@@ -648,9 +590,8 @@ inline description of Distribution
 
 A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -658,22 +599,19 @@ A liability statement about the dataset that may clarify limitations of responsi
 "This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use."
 ```
 
-| Any of                                                         |
-| -------------------------------------------------------------- |
-| [Null allowed when not required](#liabilityStatement_anyOf_i0) |
-| [item 1](#liabilityStatement_anyOf_i1)                         |
+**Any of:**
+- [Null allowed when not required](#liabilityStatement_anyOf_i0)
+- [item 1](#liabilityStatement_anyOf_i1)
 
 ### <a name="liabilityStatement_anyOf_i0"></a>`Dataset > liabilityStatement > anyOf > Null allowed when not required` [#](#liabilityStatement_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="liabilityStatement_anyOf_i1"></a>`Dataset > liabilityStatement > anyOf > item 1` [#](#liabilityStatement_anyOf_i1)
 
 Full text of the liability statement
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="metadataDistribution"></a>`Dataset > metadataDistribution` [#](#metadataDistribution)
 
@@ -681,12 +619,10 @@ Full text of the liability statement
 
 Distribution of the original metadata document this dataset was derived from
 
-| **Type** | null or array of [Distribution](./distribution.md#root) classes |
-| -------- | --------------------------------------------------------------- |
+- **Type**: null or array of [Distribution](./distribution.md#root) classes
 
-| Each item of this array must be        | Description                                                                   |
-| -------------------------------------- | ----------------------------------------------------------------------------- |
-| [Distribution](./distribution.md#root) | A specific representation of a dataset, such as a file, feed, or API response |
+**Each item of this array must be:**
+- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
 
 ## <a name="purpose"></a>`Dataset > purpose` [#](#purpose)
 
@@ -694,8 +630,7 @@ Distribution of the original metadata document this dataset was derived from
 
 The purpose of the dataset
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
@@ -709,9 +644,8 @@ The purpose of the dataset
 
 Information about whether the dataset is publicly accessible, restricted, or not public
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -723,22 +657,19 @@ Information about whether the dataset is publicly accessible, restricted, or not
 "Public access with no restrictions. Data is freely available for download and use."
 ```
 
-| Any of                                                   |
-| -------------------------------------------------------- |
-| [Null allowed when not required](#accessRights_anyOf_i0) |
-| [item 1](#accessRights_anyOf_i1)                         |
+**Any of:**
+- [Null allowed when not required](#accessRights_anyOf_i0)
+- [item 1](#accessRights_anyOf_i1)
 
 ### <a name="accessRights_anyOf_i0"></a>`Dataset > accessRights > anyOf > Null allowed when not required` [#](#accessRights_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="accessRights_anyOf_i1"></a>`Dataset > accessRights > anyOf > item 1` [#](#accessRights_anyOf_i1)
 
 Text description of the access rights
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="accrualPeriodicity"></a>`Dataset > accrualPeriodicity` [#](#accrualPeriodicity)
 
@@ -748,9 +679,8 @@ Text description of the access rights
 
 The frequency at which the Dataset is updated
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -758,24 +688,21 @@ The frequency at which the Dataset is updated
 "daily"
 ```
 
-| Any of                                                         |
-| -------------------------------------------------------------- |
-| [Null allowed when not required](#accrualPeriodicity_anyOf_i0) |
-| [item 1](#accrualPeriodicity_anyOf_i1)                         |
-| [item 2](#accrualPeriodicity_anyOf_i2)                         |
-| [item 3](#accrualPeriodicity_anyOf_i3)                         |
+**Any of:**
+- [Null allowed when not required](#accrualPeriodicity_anyOf_i0)
+- [item 1](#accrualPeriodicity_anyOf_i1)
+- [item 2](#accrualPeriodicity_anyOf_i2)
+- [item 3](#accrualPeriodicity_anyOf_i3)
 
 ### <a name="accrualPeriodicity_anyOf_i0"></a>`Dataset > accrualPeriodicity > anyOf > Null allowed when not required` [#](#accrualPeriodicity_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="accrualPeriodicity_anyOf_i1"></a>`Dataset > accrualPeriodicity > anyOf > item 1` [#](#accrualPeriodicity_anyOf_i1)
 
 ISO 19115 Maintenance Frequency code
 
-| **Type** | `enum (of string)` |
-| -------- | ------------------ |
+- **Type**: `enum (of string)`
 
 Must be one of:
 * "continual"
@@ -795,19 +722,16 @@ Must be one of:
 
 ISO-8601 Maintenance Frequency code for recurring values, see https://www.iso.org/standard/70907.html
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                   |
-| --------------------------------- | ----------------------------------------------------------------- |
-| **Must match regular expression** | ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^R/P.+$``` [Test](https://regex101.com/?regex=%5ER%2FP.%2B%24)
 
 ### <a name="accrualPeriodicity_anyOf_i3"></a>`Dataset > accrualPeriodicity > anyOf > item 3` [#](#accrualPeriodicity_anyOf_i3)
 
 Dublin Core Collection Frequency Vocabulary, see https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/#vocabulary-terms
 
-| **Type** | `enum (of string)` |
-| -------- | ------------------ |
+- **Type**: `enum (of string)`
 
 Must be one of:
 * "continuous"
@@ -834,12 +758,10 @@ Must be one of:
 
 List of standards, schemas, or profiles the dataset follows
 
-| **Type** | null or array of [Standard](./quality-governance.md#standard) classes |
-| -------- | --------------------------------------------------------------------- |
+- **Type**: null or array of [Standard](./quality-governance.md#standard) classes
 
-| Each item of this array must be              | Description                                                   |
-| -------------------------------------------- | ------------------------------------------------------------- |
-| [Standard](./quality-governance.md#standard) | A standard or specification that another resource conforms to |
+**Each item of this array must be:**
+- [Standard](./quality-governance.md#standard): A standard or specification that another resource conforms to
 
 ## <a name="contributor"></a>`Dataset > contributor` [#](#contributor)
 
@@ -847,12 +769,10 @@ List of standards, schemas, or profiles the dataset follows
 
 List of agents contributing to the Dataset
 
-| **Type** | null or array of [Agent](./agents.md#agent) classes |
-| -------- | --------------------------------------------------- |
+- **Type**: null or array of [Agent](./agents.md#agent) classes
 
-| Each item of this array must be | Description                                                                      |
-| ------------------------------- | -------------------------------------------------------------------------------- |
-| [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
+**Each item of this array must be:**
+- [Agent](./agents.md#agent): A person, organization, software agent, or other entity involved with a resource
 
 ## <a name="created"></a>`Dataset > created` [#](#created)
 
@@ -862,9 +782,8 @@ List of agents contributing to the Dataset
 
 The date on which the Dataset was first created
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -884,62 +803,52 @@ The date on which the Dataset was first created
 "2024-01"
 ```
 
-| Any of                                              |
-| --------------------------------------------------- |
-| [Null allowed when not required](#created_anyOf_i0) |
-| [Date string](#created_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#created_anyOf_i0)
+- [Date string](#created_anyOf_i1)
 
 ### <a name="created_anyOf_i0"></a>`Dataset > created > anyOf > Null allowed when not required` [#](#created_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="created_anyOf_i1"></a>`Dataset > created > anyOf > Date string` [#](#created_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                               |
-| ------------------------------------ |
-| [item 0](#created_anyOf_i1_anyOf_i0) |
-| [item 1](#created_anyOf_i1_anyOf_i1) |
-| [item 2](#created_anyOf_i1_anyOf_i2) |
-| [item 3](#created_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#created_anyOf_i1_anyOf_i0)
+- [item 1](#created_anyOf_i1_anyOf_i1)
+- [item 2](#created_anyOf_i1_anyOf_i2)
+- [item 3](#created_anyOf_i1_anyOf_i3)
 
 #### <a name="created_anyOf_i1_anyOf_i0"></a>`Dataset > created > anyOf > Date string > anyOf > item 0` [#](#created_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="created_anyOf_i1_anyOf_i1"></a>`Dataset > created > anyOf > Date string > anyOf > item 1` [#](#created_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="created_anyOf_i1_anyOf_i2"></a>`Dataset > created > anyOf > Date string > anyOf > item 2` [#](#created_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="created_anyOf_i1_anyOf_i3"></a>`Dataset > created > anyOf > Date string > anyOf > item 3` [#](#created_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="creator"></a>`Dataset > creator` [#](#creator)
 
@@ -947,28 +856,24 @@ A year and month in YYYY-MM format
 
 Person or organization responsible for creating the dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                              |
-| --------------------------------------------------- |
-| [Null allowed when not required](#creator_anyOf_i0) |
-| [Agent](#creator_anyOf_i1)                          |
+**Any of:**
+- [Null allowed when not required](#creator_anyOf_i0)
+- [Agent](#creator_anyOf_i1)
 
 ### <a name="creator_anyOf_i0"></a>`Dataset > creator > anyOf > Null allowed when not required` [#](#creator_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="creator_anyOf_i1"></a>`Dataset > creator > anyOf > Agent` [#](#creator_anyOf_i1)
 
 inline description of Agent
 
-| **Type**                  | `object`                   |
-| ------------------------- | -------------------------- |
-| **Additional properties** | Any type allowed           |
-| **Same definition as**    | [Agent](./agents.md#agent) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Agent](./agents.md#agent)
 
 ## <a name="description"></a>`Dataset > description` [#](#description)
 
@@ -976,9 +881,8 @@ inline description of Agent
 
 Plain-language summary of the dataset
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -996,12 +900,10 @@ Plain-language summary of the dataset
 
 List of related datasets that are part of the described dataset
 
-| **Type** | null or array of [Dataset](./dataset.md#root) classes |
-| -------- | ----------------------------------------------------- |
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
 
-| Each item of this array must be | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
-| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
 ## <a name="identifier"></a>`Dataset > identifier` [#](#identifier)
 
@@ -1009,29 +911,25 @@ List of related datasets that are part of the described dataset
 
 The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
 
-| Any of                                                 |
-| ------------------------------------------------------ |
-| [Null allowed when not required](#identifier_anyOf_i0) |
-| [Identifier](#identifier_anyOf_i1)                     |
+**Any of:**
+- [Null allowed when not required](#identifier_anyOf_i0)
+- [Identifier](#identifier_anyOf_i1)
 
 ### <a name="identifier_anyOf_i0"></a>`Dataset > identifier > anyOf > Null allowed when not required` [#](#identifier_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="identifier_anyOf_i1"></a>`Dataset > identifier > anyOf > Identifier` [#](#identifier_anyOf_i1)
 
 inline description of Identifier
 
-| **Type**                  | `combining`                                                 |
-| ------------------------- | ----------------------------------------------------------- |
-| **Additional properties** | Any type allowed                                            |
-| **Same definition as**    | [Identifier](./identifiers-and-relationships.md#identifier) |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="isReferencedBy"></a>`Dataset > isReferencedBy` [#](#isReferencedBy)
 
@@ -1039,8 +937,7 @@ inline description of Identifier
 
 List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Example:**
 
@@ -1050,17 +947,15 @@ List of links to related resources, such as publications, that reference, cite, 
 ]
 ```
 
-| Each item of this array must be | Description               |
-| ------------------------------- | ------------------------- |
-| [Link](#isReferencedBy_items)   | reference iri of Resource |
+**Each item of this array must be:**
+- [Link](#isReferencedBy_items): reference iri of Resource
 
 ### <a name="isReferencedBy_items"></a>Link [#](#isReferencedBy_items)
 
 reference iri of Resource
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="issued"></a>`Dataset > issued` [#](#issued)
 
@@ -1070,9 +965,8 @@ reference iri of Resource
 
 Date when the dataset was first published. If the exact publication date is unknown, use the date it was first referenced in the catalog.
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -1092,62 +986,52 @@ Date when the dataset was first published. If the exact publication date is unkn
 "2024-01"
 ```
 
-| Any of                                             |
-| -------------------------------------------------- |
-| [Null allowed when not required](#issued_anyOf_i0) |
-| [Date string](#issued_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#issued_anyOf_i0)
+- [Date string](#issued_anyOf_i1)
 
 ### <a name="issued_anyOf_i0"></a>`Dataset > issued > anyOf > Null allowed when not required` [#](#issued_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="issued_anyOf_i1"></a>`Dataset > issued > anyOf > Date string` [#](#issued_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                              |
-| ----------------------------------- |
-| [item 0](#issued_anyOf_i1_anyOf_i0) |
-| [item 1](#issued_anyOf_i1_anyOf_i1) |
-| [item 2](#issued_anyOf_i1_anyOf_i2) |
-| [item 3](#issued_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#issued_anyOf_i1_anyOf_i0)
+- [item 1](#issued_anyOf_i1_anyOf_i1)
+- [item 2](#issued_anyOf_i1_anyOf_i2)
+- [item 3](#issued_anyOf_i1_anyOf_i3)
 
 #### <a name="issued_anyOf_i1_anyOf_i0"></a>`Dataset > issued > anyOf > Date string > anyOf > item 0` [#](#issued_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="issued_anyOf_i1_anyOf_i1"></a>`Dataset > issued > anyOf > Date string > anyOf > item 1` [#](#issued_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="issued_anyOf_i1_anyOf_i2"></a>`Dataset > issued > anyOf > Date string > anyOf > item 2` [#](#issued_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="issued_anyOf_i1_anyOf_i3"></a>`Dataset > issued > anyOf > Date string > anyOf > item 3` [#](#issued_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="language"></a>`Dataset > language` [#](#language)
 
@@ -1155,9 +1039,8 @@ A year and month in YYYY-MM format
 
 ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Example:**
 
@@ -1167,43 +1050,35 @@ ISO 639-1 language code values used in the dataset text or metadata, such as en 
 ]
 ```
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#language_anyOf_i0) |
-| [Language code](#language_anyOf_i1)                  |
-| [List of languages](#language_anyOf_i2)              |
+**Any of:**
+- [Null allowed when not required](#language_anyOf_i0)
+- [Language code](#language_anyOf_i1)
+- [List of languages](#language_anyOf_i2)
 
 ### <a name="language_anyOf_i0"></a>`Dataset > language > anyOf > Null allowed when not required` [#](#language_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="language_anyOf_i1"></a>`Dataset > language > anyOf > Language code` [#](#language_anyOf_i1)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions   |   |
-| -------------- | - |
-| **Max length** | 2 |
+**Restrictions:**
+- **Max length**: 2
 
 ### <a name="language_anyOf_i2"></a>`Dataset > language > anyOf > List of languages` [#](#language_anyOf_i2)
 
-| **Type** | array of string |
-| -------- | --------------- |
+- **Type**: array of string
 
-| Each item of this array must be           | Description |
-| ----------------------------------------- | ----------- |
-| [Language code](#language_anyOf_i2_items) | -           |
+**Each item of this array must be:**
+- [Language code](#language_anyOf_i2_items): -
 
 #### <a name="language_anyOf_i2_items"></a>Language code [#](#language_anyOf_i2_items)
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions   |   |
-| -------------- | - |
-| **Max length** | 2 |
+**Restrictions:**
+- **Max length**: 2
 
 ## <a name="modified"></a>`Dataset > modified` [#](#modified)
 
@@ -1213,9 +1088,8 @@ ISO 639-1 language code values used in the dataset text or metadata, such as en 
 
 Most recent date when the dataset's actual data changed, not just metadata
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
 **Examples:**
 
@@ -1235,62 +1109,52 @@ Most recent date when the dataset's actual data changed, not just metadata
 "2024-01"
 ```
 
-| Any of                                               |
-| ---------------------------------------------------- |
-| [Null allowed when not required](#modified_anyOf_i0) |
-| [Date string](#modified_anyOf_i1)                    |
+**Any of:**
+- [Null allowed when not required](#modified_anyOf_i0)
+- [Date string](#modified_anyOf_i1)
 
 ### <a name="modified_anyOf_i0"></a>`Dataset > modified > anyOf > Null allowed when not required` [#](#modified_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="modified_anyOf_i1"></a>`Dataset > modified > anyOf > Date string` [#](#modified_anyOf_i1)
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                |
-| ------------------------------------- |
-| [item 0](#modified_anyOf_i1_anyOf_i0) |
-| [item 1](#modified_anyOf_i1_anyOf_i1) |
-| [item 2](#modified_anyOf_i1_anyOf_i2) |
-| [item 3](#modified_anyOf_i1_anyOf_i3) |
+**Any of:**
+- [item 0](#modified_anyOf_i1_anyOf_i0)
+- [item 1](#modified_anyOf_i1_anyOf_i1)
+- [item 2](#modified_anyOf_i1_anyOf_i2)
+- [item 3](#modified_anyOf_i1_anyOf_i3)
 
 #### <a name="modified_anyOf_i1_anyOf_i0"></a>`Dataset > modified > anyOf > Date string > anyOf > item 0` [#](#modified_anyOf_i1_anyOf_i0)
 
-| **Type**   | `string`    |
-| ---------- | ----------- |
-| **Format** | `date-time` |
+- **Type**: `string`
+- **Format**: `date-time`
 
 #### <a name="modified_anyOf_i1_anyOf_i1"></a>`Dataset > modified > anyOf > Date string > anyOf > item 1` [#](#modified_anyOf_i1_anyOf_i1)
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `date`   |
+- **Type**: `string`
+- **Format**: `date`
 
 #### <a name="modified_anyOf_i1_anyOf_i2"></a>`Dataset > modified > anyOf > Date string > anyOf > item 2` [#](#modified_anyOf_i1_anyOf_i2)
 
 A year in YYYY format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
 
 #### <a name="modified_anyOf_i1_anyOf_i3"></a>`Dataset > modified > anyOf > Date string > anyOf > item 3` [#](#modified_anyOf_i1_anyOf_i3)
 
 A year and month in YYYY-MM format
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
-| Restrictions                      |                                                                                                       |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Must match regular expression** | ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24) |
+**Restrictions:**
+- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="provenance"></a>`Dataset > provenance` [#](#provenance)
 
@@ -1298,8 +1162,7 @@ A year and month in YYYY-MM format
 
 List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Example:**
 
@@ -1310,16 +1173,14 @@ List of statements about the lineage of a Dataset, including any changes in its 
 ]
 ```
 
-| Each item of this array must be       | Description                           |
-| ------------------------------------- | ------------------------------------- |
-| [provenance items](#provenance_items) | Full text of the provenance statement |
+**Each item of this array must be:**
+- [provenance items](#provenance_items): Full text of the provenance statement
 
 ### <a name="provenance_items"></a>Array Item [#](#provenance_items)
 
 Full text of the provenance statement
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
 
@@ -1327,11 +1188,10 @@ Full text of the provenance statement
 
 Organization responsible for publishing and making the dataset available
 
-| **Type**                  | `object`                                 |
-| ------------------------- | ---------------------------------------- |
-| **Required**              | Yes                                      |
-| **Additional properties** | Any type allowed                         |
-| **Defined in**            | [Organization](./agents.md#organization) |
+- **Type**: `object`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
+- **Defined in**: [Organization](./agents.md#organization)
 
 ## <a name="relation"></a>`Dataset > relation` [#](#relation)
 
@@ -1341,8 +1201,7 @@ Organization responsible for publishing and making the dataset available
 
 List of links to related resources when the relationship is not otherwise specified
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Example:**
 
@@ -1352,17 +1211,15 @@ List of links to related resources when the relationship is not otherwise specif
 ]
 ```
 
-| Each item of this array must be | Description               |
-| ------------------------------- | ------------------------- |
-| [Link](#relation_items)         | reference iri of Resource |
+**Each item of this array must be:**
+- [Link](#relation_items): reference iri of Resource
 
 ### <a name="relation_items"></a>Link [#](#relation_items)
 
 reference iri of Resource
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="replaces"></a>`Dataset > replaces` [#](#replaces)
 
@@ -1370,12 +1227,10 @@ reference iri of Resource
 
 List of Datasets replaced by this Dataset
 
-| **Type** | null or array of [Dataset](./dataset.md#root) classes |
-| -------- | ----------------------------------------------------- |
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
 
-| Each item of this array must be | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
-| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
 ## <a name="rights"></a>`Dataset > rights` [#](#rights)
 
@@ -1383,8 +1238,7 @@ List of Datasets replaced by this Dataset
 
 Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
 
-| **Type** | null or array of string |
-| -------- | ----------------------- |
+- **Type**: null or array of string
 
 **Examples:**
 
@@ -1400,16 +1254,14 @@ Rights statements not already covered by license or accessRights, such as copyri
 ]
 ```
 
-| Each item of this array must be | Description                        |
-| ------------------------------- | ---------------------------------- |
-| [rights items](#rights_items)   | Full text of a statement of rights |
+**Each item of this array must be:**
+- [rights items](#rights_items): Full text of a statement of rights
 
 ### <a name="rights_items"></a>Array Item [#](#rights_items)
 
 Full text of a statement of rights
 
-| **Type** | `string` |
-| -------- | -------- |
+- **Type**: `string`
 
 ## <a name="rightsHolder"></a>`Dataset > rightsHolder` [#](#rightsHolder)
 
@@ -1417,12 +1269,10 @@ Full text of a statement of rights
 
 List of agents (organizations) holding rights on the Dataset
 
-| **Type** | null or array of [Organization](./agents.md#organization) classes |
-| -------- | ----------------------------------------------------------------- |
+- **Type**: null or array of [Organization](./agents.md#organization) classes
 
-| Each item of this array must be          | Description                                                                       |
-| ---------------------------------------- | --------------------------------------------------------------------------------- |
-| [Organization](./agents.md#organization) | An organization involved with a resource, including parent or child organizations |
+**Each item of this array must be:**
+- [Organization](./agents.md#organization): An organization involved with a resource, including parent or child organizations
 
 ## <a name="source"></a>`Dataset > source` [#](#source)
 
@@ -1432,12 +1282,10 @@ List of agents (organizations) holding rights on the Dataset
 
 List of related Datasets from which the described Dataset is derived
 
-| **Type** | null or array of [Dataset](./dataset.md#root) classes |
-| -------- | ----------------------------------------------------- |
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
 
-| Each item of this array must be | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
-| [Dataset](./dataset.md#root)    | A collection of data published or curated by one provider |
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
 ## <a name="spatial"></a>`Dataset > spatial` [#](#spatial)
 
@@ -1447,38 +1295,32 @@ List of related Datasets from which the described Dataset is derived
 
 A geographic region or regions that are covered by the Dataset
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                              |
-| --------------------------------------------------- |
-| [Null allowed when not required](#spatial_anyOf_i0) |
-| [Location](#spatial_anyOf_i1)                       |
-| [List of geographic regions](#spatial_anyOf_i2)     |
+**Any of:**
+- [Null allowed when not required](#spatial_anyOf_i0)
+- [Location](#spatial_anyOf_i1)
+- [List of geographic regions](#spatial_anyOf_i2)
 
 ### <a name="spatial_anyOf_i0"></a>`Dataset > spatial > anyOf > Null allowed when not required` [#](#spatial_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="spatial_anyOf_i1"></a>`Dataset > spatial > anyOf > Location` [#](#spatial_anyOf_i1)
 
 inline description of Location
 
-| **Type**                  | `object`                                           |
-| ------------------------- | -------------------------------------------------- |
-| **Additional properties** | Any type allowed                                   |
-| **Same definition as**    | [Location](./temporal-spatial-metrics.md#location) |
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Location](./temporal-spatial-metrics.md#location)
 
 ### <a name="spatial_anyOf_i2"></a>`Dataset > spatial > anyOf > List of geographic regions` [#](#spatial_anyOf_i2)
 
-| **Type** | array of [Location](./temporal-spatial-metrics.md#location) classes |
-| -------- | ------------------------------------------------------------------- |
+- **Type**: array of [Location](./temporal-spatial-metrics.md#location) classes
 
-| Each item of this array must be                    | Description                      |
-| -------------------------------------------------- | -------------------------------- |
-| [Location](./temporal-spatial-metrics.md#location) | A named place or geographic area |
+**Each item of this array must be:**
+- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
 
 ## <a name="subject"></a>`Dataset > subject` [#](#subject)
 
@@ -1486,12 +1328,10 @@ inline description of Location
 
 List of primary subjects for the dataset, usually narrower than broad theme categories
 
-| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
-| -------- | ------------------------------------------------------------------------------ |
+- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
 
-| Each item of this array must be                       | Description                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------ |
-| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
+**Each item of this array must be:**
+- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
 ## <a name="temporal"></a>`Dataset > temporal` [#](#temporal)
 
@@ -1501,12 +1341,10 @@ List of primary subjects for the dataset, usually narrower than broad theme cate
 
 Time periods covered by the dataset
 
-| **Type** | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes |
-| -------- | ------------------------------------------------------------------------------------- |
+- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
 
-| Each item of this array must be                              | Description                                                            |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) | Information about a specific time period with a start- and/or end-time |
+**Each item of this array must be:**
+- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
 
 ## <a name="title"></a>`Dataset > title` [#](#title)
 
@@ -1514,9 +1352,8 @@ Time periods covered by the dataset
 
 Human-readable title of the dataset
 
-| **Type**     | `string` |
-| ------------ | -------- |
-| **Required** | Yes      |
+- **Type**: `string`
+- **Required**: Yes
 
 **Examples:**
 
@@ -1534,12 +1371,10 @@ Human-readable title of the dataset
 
 List of high-level categories for the dataset
 
-| **Type** | null or array of [Concept](./identifiers-and-relationships.md#concept) classes |
-| -------- | ------------------------------------------------------------------------------ |
+- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
 
-| Each item of this array must be                       | Description                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------ |
-| [Concept](./identifiers-and-relationships.md#concept) | A controlled term or label, optionally drawn from a concept scheme |
+**Each item of this array must be:**
+- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
 ## <a name="hasQualityMeasurement"></a>`Dataset > hasQualityMeasurement` [#](#hasQualityMeasurement)
 
@@ -1549,12 +1384,10 @@ List of high-level categories for the dataset
 
 List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution
 
-| **Type** | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes |
-| -------- | ------------------------------------------------------------------------------------------------ |
+- **Type**: null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes
 
-| Each item of this array must be                                         | Description                                                   |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) | A measurement of a resource against a specific quality metric |
+**Each item of this array must be:**
+- [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement): A measurement of a resource against a specific quality metric
 
 ## <a name="page"></a>`Dataset > page` [#](#page)
 
@@ -1564,12 +1397,10 @@ List of quality measurements for the dataset (for example, completeness, accurac
 
 List of pages or documents about this dataset
 
-| **Type** | null or array of [Document](./quality-governance.md#document) classes |
-| -------- | --------------------------------------------------------------------- |
+- **Type**: null or array of [Document](./quality-governance.md#document) classes
 
-| Each item of this array must be              | Description                                           |
-| -------------------------------------------- | ----------------------------------------------------- |
-| [Document](./quality-governance.md#document) | A publication or other document related to a resource |
+**Each item of this array must be:**
+- [Document](./quality-governance.md#document): A publication or other document related to a resource
 
 ## <a name="qualifiedAttribution"></a>`Dataset > qualifiedAttribution` [#](#qualifiedAttribution)
 
@@ -1577,12 +1408,10 @@ List of pages or documents about this dataset
 
 List of agents with specific responsibilities for the dataset
 
-| **Type** | null or array of [Attribution](./quality-governance.md#attribution) classes |
-| -------- | --------------------------------------------------------------------------- |
+- **Type**: null or array of [Attribution](./quality-governance.md#attribution) classes
 
-| Each item of this array must be                    | Description                                       |
-| -------------------------------------------------- | ------------------------------------------------- |
-| [Attribution](./quality-governance.md#attribution) | A responsibility that an agent has for a resource |
+**Each item of this array must be:**
+- [Attribution](./quality-governance.md#attribution): A responsibility that an agent has for a resource
 
 ## <a name="wasAttributedTo"></a>`Dataset > wasAttributedTo` [#](#wasAttributedTo)
 
@@ -1592,12 +1421,10 @@ List of agents with specific responsibilities for the dataset
 
 List of agents attributed to this dataset
 
-| **Type** | null or array of [Agent](./agents.md#agent) classes |
-| -------- | --------------------------------------------------- |
+- **Type**: null or array of [Agent](./agents.md#agent) classes
 
-| Each item of this array must be | Description                                                                      |
-| ------------------------------- | -------------------------------------------------------------------------------- |
-| [Agent](./agents.md#agent)      | A person, organization, software agent, or other entity involved with a resource |
+**Each item of this array must be:**
+- [Agent](./agents.md#agent): A person, organization, software agent, or other entity involved with a resource
 
 ## <a name="wasGeneratedBy"></a>`Dataset > wasGeneratedBy` [#](#wasGeneratedBy)
 
@@ -1605,12 +1432,10 @@ List of agents attributed to this dataset
 
 List of activities that generated, or provide the business context for the creation of the dataset
 
-| **Type** | null or array of [Activity](./temporal-spatial-metrics.md#activity) classes |
-| -------- | --------------------------------------------------------------------------- |
+- **Type**: null or array of [Activity](./temporal-spatial-metrics.md#activity) classes
 
-| Each item of this array must be                    | Description                                                    |
-| -------------------------------------------------- | -------------------------------------------------------------- |
-| [Activity](./temporal-spatial-metrics.md#activity) | An activity related to creating, changing, or using a resource |
+**Each item of this array must be:**
+- [Activity](./temporal-spatial-metrics.md#activity): An activity related to creating, changing, or using a resource
 
 ## <a name="wasUsedBy"></a>`Dataset > wasUsedBy` [#](#wasUsedBy)
 
@@ -1620,12 +1445,10 @@ List of activities that generated, or provide the business context for the creat
 
 List of activities that used the Dataset
 
-| **Type** | null or array of [Activity](./temporal-spatial-metrics.md#activity) classes |
-| -------- | --------------------------------------------------------------------------- |
+- **Type**: null or array of [Activity](./temporal-spatial-metrics.md#activity) classes
 
-| Each item of this array must be                    | Description                                                    |
-| -------------------------------------------------- | -------------------------------------------------------------- |
-| [Activity](./temporal-spatial-metrics.md#activity) | An activity related to creating, changing, or using a resource |
+**Each item of this array must be:**
+- [Activity](./temporal-spatial-metrics.md#activity): An activity related to creating, changing, or using a resource
 
 ## <a name="image"></a>`Dataset > image` [#](#image)
 
@@ -1633,27 +1456,23 @@ List of activities that used the Dataset
 
 Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video
 
-| **Type**                  | `combining`      |
-| ------------------------- | ---------------- |
-| **Additional properties** | Any type allowed |
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-| Any of                                            |
-| ------------------------------------------------- |
-| [Null allowed when not required](#image_anyOf_i0) |
-| [Link](#image_anyOf_i1)                           |
+**Any of:**
+- [Null allowed when not required](#image_anyOf_i0)
+- [Link](#image_anyOf_i1)
 
 ### <a name="image_anyOf_i0"></a>`Dataset > image > anyOf > Null allowed when not required` [#](#image_anyOf_i0)
 
-| **Type** | `null` |
-| -------- | ------ |
+- **Type**: `null`
 
 ### <a name="image_anyOf_i1"></a>`Dataset > image > anyOf > Link` [#](#image_anyOf_i1)
 
 The link to the image
 
-| **Type**   | `string` |
-| ---------- | -------- |
-| **Format** | `iri`    |
+- **Type**: `string`
+- **Format**: `iri`
 
 ## <a name="scopeNote"></a>`Dataset > scopeNote` [#](#scopeNote)
 
@@ -1663,8 +1482,7 @@ The link to the image
 
 usage note for the dataset
 
-| **Type** | `null or string` |
-| -------- | ---------------- |
+- **Type**: `null or string`
 
 **Example:**
 
