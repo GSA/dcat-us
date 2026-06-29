@@ -1,5 +1,5 @@
 
-{{ current_node | md_array_items(title) | md_generate_table }}
+{{ current_node | md_array_items(title) | md_render_option_list }}
 
 {% for node in current_node.array_items %}
     {% filter md_heading(depth+1, node.html_id) -%}

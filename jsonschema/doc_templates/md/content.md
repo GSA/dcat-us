@@ -22,7 +22,7 @@
 {% include "section_description.md" %}
 {% endif %}
 
-{{ schema | md_type_info_table | md_generate_table }}
+{{ schema | md_type_info_table | md_render_key_value_details }}
 
 {# Display examples #}
 {% set examples = schema.examples %}
@@ -47,12 +47,12 @@
             {% include "tabbed_section.md" %}
         {% endwith %}
     {% endif %}
-    {% if schema.kw_any_of %}
+    {% if schema.kw_any_of and not (schema | has_collapsed_nullable_branch) %}
         {% with operator="anyOf", title="Any of", current_node=schema.kw_any_of, skip_required=True %}
             {% include "tabbed_section.md" %}
         {% endwith %}
     {% endif %}
-    {% if schema.kw_one_of %}
+    {% if schema.kw_one_of and not (schema | has_collapsed_nullable_branch) %}
         {% with operator="oneOf", title="One of", current_node=schema.kw_one_of, skip_required=True %}
             {% include "tabbed_section.md" %}
         {% endwith %}
@@ -80,7 +80,7 @@
     {% include "section_undocumented_required_properties.md" %}
 
     {# Show the requested type(s) #}
-    {{- schema | md_restrictions_table | md_generate_table -}}
+    {{- schema | md_restrictions_table | md_render_key_value_details -}}
 
     {# Show array restrictions #}
     {% if "array" in schema.type_name %}
