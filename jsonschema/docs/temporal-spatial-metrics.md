@@ -21,12 +21,12 @@ Information about a specific time period with a start- and/or end-time
 }
 ```
 
-| Property                 | Type               | Requirement Level | Title/Description                    |
-| ------------------------ | ------------------ | ----------------- | ------------------------------------ |
-| [@id](#period-of-time--@id)             | string             | Optional          |                                      |
-| [@type](#period-of-time--@type)         | string             | Optional          |                                      |
-| [endDate](#period-of-time--endDate)     | More than one type | Recommended       | The end date of the period of time   |
-| [startDate](#period-of-time--startDate) | More than one type | Recommended       | The start date of the period of time |
+| Property                 | Type           | Requirement Level | Title/Description                    |
+| ------------------------ | -------------- | ----------------- | ------------------------------------ |
+| [@id](#period-of-time--@id)             | string         | Optional          |                                      |
+| [@type](#period-of-time--@type)         | string         | Optional          |                                      |
+| [endDate](#period-of-time--endDate)     | null or object | Recommended       | The end date of the period of time   |
+| [startDate](#period-of-time--startDate) | null or object | Recommended       | The start date of the period of time |
 
 **Any of:**
 - [item 0](#period-of-time--anyOf_i0)
@@ -74,8 +74,7 @@ Information about a specific time period with a start- and/or end-time
 
 The end date of the period of time
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -95,61 +94,13 @@ The end date of the period of time
 "2024-01"
 ```
 
-**Any of:**
-- [Null allowed when not required](#period-of-time--endDate_anyOf_i0)
-- [item 1](#period-of-time--endDate_anyOf_i1)
-
-### <a name="period-of-time--endDate_anyOf_i0"></a>`PeriodOfTime > endDate > anyOf > Null allowed when not required` [#](#period-of-time--endDate_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="period-of-time--endDate_anyOf_i1"></a>`PeriodOfTime > endDate > anyOf > item 1` [#](#period-of-time--endDate_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#period-of-time--endDate_anyOf_i1_anyOf_i0)
-- [item 1](#period-of-time--endDate_anyOf_i1_anyOf_i1)
-- [item 2](#period-of-time--endDate_anyOf_i1_anyOf_i2)
-- [item 3](#period-of-time--endDate_anyOf_i1_anyOf_i3)
-
-#### <a name="period-of-time--endDate_anyOf_i1_anyOf_i0"></a>`PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 0` [#](#period-of-time--endDate_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="period-of-time--endDate_anyOf_i1_anyOf_i1"></a>`PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 1` [#](#period-of-time--endDate_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="period-of-time--endDate_anyOf_i1_anyOf_i2"></a>`PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 2` [#](#period-of-time--endDate_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="period-of-time--endDate_anyOf_i1_anyOf_i3"></a>`PeriodOfTime > endDate > anyOf > item 1 > anyOf > item 3` [#](#period-of-time--endDate_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
-
 ## <a name="period-of-time--startDate"></a>`PeriodOfTime > startDate` [#](#period-of-time--startDate)
 
 **Requirement:** Recommended
 
 The start date of the period of time
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -168,53 +119,6 @@ The start date of the period of time
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [Null allowed when not required](#period-of-time--startDate_anyOf_i0)
-- [item 1](#period-of-time--startDate_anyOf_i1)
-
-### <a name="period-of-time--startDate_anyOf_i0"></a>`PeriodOfTime > startDate > anyOf > Null allowed when not required` [#](#period-of-time--startDate_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="period-of-time--startDate_anyOf_i1"></a>`PeriodOfTime > startDate > anyOf > item 1` [#](#period-of-time--startDate_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#period-of-time--startDate_anyOf_i1_anyOf_i0)
-- [item 1](#period-of-time--startDate_anyOf_i1_anyOf_i1)
-- [item 2](#period-of-time--startDate_anyOf_i1_anyOf_i2)
-- [item 3](#period-of-time--startDate_anyOf_i1_anyOf_i3)
-
-#### <a name="period-of-time--startDate_anyOf_i1_anyOf_i0"></a>`PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 0` [#](#period-of-time--startDate_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="period-of-time--startDate_anyOf_i1_anyOf_i1"></a>`PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 1` [#](#period-of-time--startDate_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="period-of-time--startDate_anyOf_i1_anyOf_i2"></a>`PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 2` [#](#period-of-time--startDate_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="period-of-time--startDate_anyOf_i1_anyOf_i3"></a>`PeriodOfTime > startDate > anyOf > item 1 > anyOf > item 3` [#](#period-of-time--startDate_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ---
 
@@ -343,10 +247,10 @@ A named place or geographic area
 | [@type](#location--@type)                     | string                                                                               | Optional          |                                                                                                                                                                  |
 | [bbox](#location--bbox)                       | More than one type                                                                   | Recommended       | Bounding box for the location, described in WKT, GeoJSON, or GML format                                                                                          |
 | [centroid](#location--centroid)               | More than one type                                                                   | Optional          | The geographic center (centroid) of a location described in WKT, GeoJSON, or GML format                                                                          |
-| [identifier](#location--identifier)           | More than one type                                                                   | Optional          | The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer                             |
+| [identifier](#location--identifier)           | null or [Identifier](./identifiers-and-relationships.md#identifier)                  | Optional          | The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer                             |
 | [otherIdentifier](#location--otherIdentifier) | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes | Optional          | A list of geographic identifiers for the Location besides the main identifier, e.g. the URI or other unique identifiers in the context of the relevant gazetteer |
 | [geometry](#location--geometry)               | More than one type                                                                   | Optional          | Associates a location with a corresponding geometry described in WKT, GeoJSON, or GML format                                                                     |
-| [inScheme](#location--inScheme)               | More than one type                                                                   | Optional          | The gazetteer to which the location belongs                                                                                                                      |
+| [inScheme](#location--inScheme)               | null or [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)           | Optional          | The gazetteer to which the location belongs                                                                                                                      |
 | [altLabel](#location--altLabel)               | null or string                                                                       | Optional          | An alternative label or name for a location                                                                                                                      |
 | [prefLabel](#location--prefLabel)             | null or string                                                                       | Recommended       | Preferred label or name of the Location                                                                                                                          |
 
@@ -537,24 +441,7 @@ Specific value: `"Point"`
 
 The unique geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#location--identifier_anyOf_i0)
-- [Identifier](#location--identifier_anyOf_i1)
-
-### <a name="location--identifier_anyOf_i0"></a>`Location > identifier > anyOf > item 0` [#](#location--identifier_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="location--identifier_anyOf_i1"></a>`Location > identifier > anyOf > Identifier` [#](#location--identifier_anyOf_i1)
-
-inline description of Identifier
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Defined in**: [Identifier](./identifiers-and-relationships.md#identifier)
+- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="location--otherIdentifier"></a>`Location > otherIdentifier` [#](#location--otherIdentifier)
 
@@ -666,24 +553,7 @@ Geometry represented in GeoJSON format
 
 The gazetteer to which the location belongs
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#location--inScheme_anyOf_i0)
-- [ConceptScheme](#location--inScheme_anyOf_i1)
-
-### <a name="location--inScheme_anyOf_i0"></a>`Location > inScheme > anyOf > item 0` [#](#location--inScheme_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="location--inScheme_anyOf_i1"></a>`Location > inScheme > anyOf > ConceptScheme` [#](#location--inScheme_anyOf_i1)
-
-inline description of the gazetteer
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Defined in**: [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
+- **Type**: null or [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
 
 ## <a name="location--altLabel"></a>`Location > altLabel` [#](#location--altLabel)
 

@@ -251,6 +251,7 @@ class CustomTemplateRenderer(TemplateRenderer):
         env.filters["md_render_array_items_details"] = render_array_items_details
         env.filters["md_render_key_value_details"] = render_key_value_details
         env.filters["md_render_option_list"] = render_option_list
+        env.filters["has_collapsed_nullable_branch"] = has_collapsed_nullable_branch
 
         env.tests["combining"] = jinja_filters.is_combining
         env.tests["description_short"] = jinja_filters.is_text_short
@@ -574,6 +575,51 @@ def _array_item_type_label(item_schema):
     return getattr(item_schema, "type_name", "item")
 
 
+def _simple_type_label(schema):
+    canonical_link = _canonical_class_doc_link(schema)
+    if canonical_link:
+        return canonical_link
+
+    array_item = getattr(schema, "array_items_def", None)
+    tuple_items = getattr(schema, "tuple_validation_items", None) or []
+    if array_item and not tuple_items:
+        return f"array of {_array_item_type_label(array_item)}"
+
+    type_name = getattr(schema, "type_name", "")
+    if type_name == "combining":
+        title = getattr(schema, "title", None)
+        if should_render_title(schema):
+            return title
+    return type_name or None
+
+
+def _collapsed_nullable_branch(schema):
+    for keyword_name in ("kw_any_of", "kw_one_of"):
+        keyword_node = getattr(schema, keyword_name, None)
+        if not keyword_node:
+            continue
+
+        branches = list(keyword_node.array_items or [])
+        if len(branches) != 2:
+            continue
+
+        null_branches = [branch for branch in branches if getattr(branch, "type_name", "") == "null"]
+        if len(null_branches) != 1:
+            continue
+
+        non_null_branches = [branch for branch in branches if branch not in null_branches]
+        if len(non_null_branches) != 1:
+            continue
+
+        return non_null_branches[0]
+
+    return None
+
+
+def has_collapsed_nullable_branch(schema):
+    return _collapsed_nullable_branch(schema) is not None
+
+
 def _display_type_label(schema):
     array_item = getattr(schema, "array_items_def", None)
     tuple_items = getattr(schema, "tuple_validation_items", None) or []
@@ -582,6 +628,12 @@ def _display_type_label(schema):
         if "null" in str(getattr(schema, "type_name", "")).lower():
             return f"null or {label}"
         return label
+
+    nullable_branch = _collapsed_nullable_branch(schema)
+    if nullable_branch:
+        label = _simple_type_label(nullable_branch)
+        if label:
+            return f"null or {label}"
 
     return None
 
@@ -688,6 +740,8 @@ def type_info_table_wrap(type_info_list, schema):
 
     canonical_link = _canonical_class_doc_link(schema)
 
+    collapsed_nullable_branch = has_collapsed_nullable_branch(schema)
+
     # edit lines
     for line in type_info_list:
         line_label = line[0].strip("*")
@@ -711,6 +765,8 @@ def type_info_table_wrap(type_info_list, schema):
 
     # remove lines
     def _remove_me(line):
+        if collapsed_nullable_branch and line[0].strip("*") == "Additional properties":
+            return True
         return (line[0].strip("*") == "Required" and line[1] == "No") or (
             all(not bool(item) for item in line)  # remove empty lines
         )
@@ -759,6 +815,9 @@ def _render_raw_docs(output_dir):
     )
     template_renderer.template.environment.filters["schema_requirement_level"] = (
         schema_requirement_level
+    )
+    template_renderer.template.environment.filters["has_collapsed_nullable_branch"] = (
+        has_collapsed_nullable_branch
     )
     template_renderer.template.environment.filters["md_render_array_items_details"] = (
         render_array_items_details

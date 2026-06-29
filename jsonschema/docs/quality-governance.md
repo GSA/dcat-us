@@ -36,15 +36,15 @@ A standard or specification that another resource conforms to
 | ------------------------------------ | ------------------------------------------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [@id](#standard--@id)                         | string                                                                               | Optional          |                                                                                                                                            |
 | [@type](#standard--@type)                     | string                                                                               | Optional          |                                                                                                                                            |
-| [created](#standard--created)                 | More than one type                                                                   | Optional          | The date on which the Standard has been first created                                                                                      |
+| [created](#standard--created)                 | null or object                                                                       | Optional          | The date on which the Standard has been first created                                                                                      |
 | [description](#standard--description)         | null or string                                                                       | Recommended       | Plain-language summary of the standard                                                                                                     |
-| [identifier](#standard--identifier)           | More than one type                                                                   | Recommended       | The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog                              |
+| [identifier](#standard--identifier)           | null or [Identifier](./identifiers-and-relationships.md#identifier)                  | Recommended       | The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog                              |
 | [otherIdentifier](#standard--otherIdentifier) | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes | Optional          | A list of identifiers for the Standard besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog |
-| [issued](#standard--issued)                   | More than one type                                                                   | Recommended       | The date of formal issuance (e.g., publication) of the Standard                                                                            |
-| [modified](#standard--modified)               | More than one type                                                                   | Optional          | The most recent date on which the Standard was changed or modified                                                                         |
+| [issued](#standard--issued)                   | null or object                                                                       | Recommended       | The date of formal issuance (e.g., publication) of the Standard                                                                            |
+| [modified](#standard--modified)               | null or object                                                                       | Optional          | The most recent date on which the Standard was changed or modified                                                                         |
 | [title](#standard--title)                     | null or string                                                                       | Recommended       | Human-readable title of the standard                                                                                                       |
 | [category](#standard--category)               | null or array of [Concept](./identifiers-and-relationships.md#concept) classes       | Optional          | List of categories for the Standard                                                                                                        |
-| [inScheme](#standard--inScheme)               | More than one type                                                                   | Recommended       | The reference register to which the Standard belongs                                                                                       |
+| [inScheme](#standard--inScheme)               | null or [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)           | Recommended       | The reference register to which the Standard belongs                                                                                       |
 
 ## <a name="standard--@id"></a>`Standard > @id` [#](#standard--@id)
 
@@ -74,8 +74,7 @@ A standard or specification that another resource conforms to
 
 The date on which the Standard has been first created
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -94,53 +93,6 @@ The date on which the Standard has been first created
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [Null allowed when not required](#standard--created_anyOf_i0)
-- [Date string](#standard--created_anyOf_i1)
-
-### <a name="standard--created_anyOf_i0"></a>`Standard > created > anyOf > Null allowed when not required` [#](#standard--created_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="standard--created_anyOf_i1"></a>`Standard > created > anyOf > Date string` [#](#standard--created_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#standard--created_anyOf_i1_anyOf_i0)
-- [item 1](#standard--created_anyOf_i1_anyOf_i1)
-- [item 2](#standard--created_anyOf_i1_anyOf_i2)
-- [item 3](#standard--created_anyOf_i1_anyOf_i3)
-
-#### <a name="standard--created_anyOf_i1_anyOf_i0"></a>`Standard > created > anyOf > Date string > anyOf > item 0` [#](#standard--created_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="standard--created_anyOf_i1_anyOf_i1"></a>`Standard > created > anyOf > Date string > anyOf > item 1` [#](#standard--created_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="standard--created_anyOf_i1_anyOf_i2"></a>`Standard > created > anyOf > Date string > anyOf > item 2` [#](#standard--created_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="standard--created_anyOf_i1_anyOf_i3"></a>`Standard > created > anyOf > Date string > anyOf > item 3` [#](#standard--created_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="standard--description"></a>`Standard > description` [#](#standard--description)
 
@@ -166,24 +118,7 @@ Plain-language summary of the standard
 
 The unique identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalog
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#standard--identifier_anyOf_i0)
-- [Identifier](#standard--identifier_anyOf_i1)
-
-### <a name="standard--identifier_anyOf_i0"></a>`Standard > identifier > anyOf > Null allowed when not required` [#](#standard--identifier_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="standard--identifier_anyOf_i1"></a>`Standard > identifier > anyOf > Identifier` [#](#standard--identifier_anyOf_i1)
-
-inline description of Identifier
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Defined in**: [Identifier](./identifiers-and-relationships.md#identifier)
+- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="standard--otherIdentifier"></a>`Standard > otherIdentifier` [#](#standard--otherIdentifier)
 
@@ -202,8 +137,7 @@ A list of identifiers for the Standard besides the main identifier, e.g. the URI
 
 The date of formal issuance (e.g., publication) of the Standard
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -223,53 +157,6 @@ The date of formal issuance (e.g., publication) of the Standard
 "2024-01"
 ```
 
-**Any of:**
-- [Null allowed when not required](#standard--issued_anyOf_i0)
-- [Date string](#standard--issued_anyOf_i1)
-
-### <a name="standard--issued_anyOf_i0"></a>`Standard > issued > anyOf > Null allowed when not required` [#](#standard--issued_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="standard--issued_anyOf_i1"></a>`Standard > issued > anyOf > Date string` [#](#standard--issued_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#standard--issued_anyOf_i1_anyOf_i0)
-- [item 1](#standard--issued_anyOf_i1_anyOf_i1)
-- [item 2](#standard--issued_anyOf_i1_anyOf_i2)
-- [item 3](#standard--issued_anyOf_i1_anyOf_i3)
-
-#### <a name="standard--issued_anyOf_i1_anyOf_i0"></a>`Standard > issued > anyOf > Date string > anyOf > item 0` [#](#standard--issued_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="standard--issued_anyOf_i1_anyOf_i1"></a>`Standard > issued > anyOf > Date string > anyOf > item 1` [#](#standard--issued_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="standard--issued_anyOf_i1_anyOf_i2"></a>`Standard > issued > anyOf > Date string > anyOf > item 2` [#](#standard--issued_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="standard--issued_anyOf_i1_anyOf_i3"></a>`Standard > issued > anyOf > Date string > anyOf > item 3` [#](#standard--issued_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
-
 ## <a name="standard--modified"></a>`Standard > modified` [#](#standard--modified)
 
 **Title:** last modified
@@ -278,8 +165,7 @@ A year and month in YYYY-MM format
 
 The most recent date on which the Standard was changed or modified
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -298,53 +184,6 @@ The most recent date on which the Standard was changed or modified
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [Null allowed when not required](#standard--modified_anyOf_i0)
-- [Date string](#standard--modified_anyOf_i1)
-
-### <a name="standard--modified_anyOf_i0"></a>`Standard > modified > anyOf > Null allowed when not required` [#](#standard--modified_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="standard--modified_anyOf_i1"></a>`Standard > modified > anyOf > Date string` [#](#standard--modified_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#standard--modified_anyOf_i1_anyOf_i0)
-- [item 1](#standard--modified_anyOf_i1_anyOf_i1)
-- [item 2](#standard--modified_anyOf_i1_anyOf_i2)
-- [item 3](#standard--modified_anyOf_i1_anyOf_i3)
-
-#### <a name="standard--modified_anyOf_i1_anyOf_i0"></a>`Standard > modified > anyOf > Date string > anyOf > item 0` [#](#standard--modified_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="standard--modified_anyOf_i1_anyOf_i1"></a>`Standard > modified > anyOf > Date string > anyOf > item 1` [#](#standard--modified_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="standard--modified_anyOf_i1_anyOf_i2"></a>`Standard > modified > anyOf > Date string > anyOf > item 2` [#](#standard--modified_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="standard--modified_anyOf_i1_anyOf_i3"></a>`Standard > modified > anyOf > Date string > anyOf > item 3` [#](#standard--modified_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="standard--title"></a>`Standard > title` [#](#standard--title)
 
@@ -381,24 +220,7 @@ List of categories for the Standard
 
 The reference register to which the Standard belongs
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#standard--inScheme_anyOf_i0)
-- [ConceptScheme](#standard--inScheme_anyOf_i1)
-
-### <a name="standard--inScheme_anyOf_i0"></a>`Standard > inScheme > anyOf > Null allowed when not required` [#](#standard--inScheme_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="standard--inScheme_anyOf_i1"></a>`Standard > inScheme > anyOf > ConceptScheme` [#](#standard--inScheme_anyOf_i1)
-
-inline description of ConceptScheme
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
+- **Type**: null or [ConceptScheme](./identifiers-and-relationships.md#concept-scheme)
 
 ---
 
@@ -436,8 +258,8 @@ A publication or other document related to a resource
 | ------------------------------------------------ | ------------------------------------------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [@id](#document--@id)                                     | string                                                                               | Optional          |                                                                                                                                                                    |
 | [@type](#document--@type)                                 | string                                                                               | Optional          |                                                                                                                                                                    |
-| [accessURL](#document--accessURL)                         | More than one type                                                                   | Optional          | A URL that gives access to the Document                                                                                                                            |
-| [downloadURL](#document--downloadURL)                     | More than one type                                                                   | Optional          | A URL that is a direct link to a downloadable file of the Document in a given format                                                                               |
+| [accessURL](#document--accessURL)                         | null or string                                                                       | Optional          | A URL that gives access to the Document                                                                                                                            |
+| [downloadURL](#document--downloadURL)                     | null or string                                                                       | Optional          | A URL that is a direct link to a downloadable file of the Document in a given format                                                                               |
 | [creator](#document--creator)                             | null or array of [Kind](./agents.md#kind) classes                                    | Optional          | The individual(s) responsible for creating the Document                                                                                                            |
 | [mediaType](#document--mediaType)                         | null or string                                                                       | Optional          | The file format of the Document as defined in the official register of media types managed by IANA: https://www.iana.org/assignments/media-types/media-types.xhtml |
 | [abstract](#document--abstract)                           | null or string                                                                       | Optional          | Text abstract of the Document                                                                                                                                      |
@@ -445,9 +267,9 @@ A publication or other document related to a resource
 | [conformsTo](#document--conformsTo)                       | null or array of [Standard](./quality-governance.md#standard) classes                | Optional          | List of standards or specifications the document follows                                                                                                           |
 | [corporateCreator](#document--corporateCreator)           | null or array of [Organization](./agents.md#organization) classes                    | Optional          | The corporate organization(s) responsible for creating the Document                                                                                                |
 | [description](#document--description)                     | null or string                                                                       | Recommended       | Plain-language summary of the document                                                                                                                             |
-| [identifier](#document--identifier)                       | More than one type                                                                   | Recommended       | The unique identifier for the Document (e.g. DOI, ISBN)                                                                                                            |
+| [identifier](#document--identifier)                       | null or [Identifier](./identifiers-and-relationships.md#identifier)                  | Recommended       | The unique identifier for the Document (e.g. DOI, ISBN)                                                                                                            |
 | [otherIdentifier](#document--otherIdentifier)             | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes | Optional          | A list of identifiers for the Document besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog                         |
-| [issued](#document--issued)                               | More than one type                                                                   | Recommended       | Publication date of the Document                                                                                                                                   |
+| [issued](#document--issued)                               | null or object                                                                       | Recommended       | Publication date of the Document                                                                                                                                   |
 | [publisher](#document--publisher)                         | null or array of [Organization](./agents.md#organization) classes                    | Recommended       | The organization(s) that published the Document                                                                                                                    |
 | [title](#document--title)                                 | string                                                                               | Mandatory         | The title of the Document                                                                                                                                          |
 | [category](#document--category)                           | null or array of [Concept](./identifiers-and-relationships.md#concept) classes       | Optional          | List of categories/genres for the Document                                                                                                                         |
@@ -478,8 +300,7 @@ A publication or other document related to a resource
 
 A URL that gives access to the Document
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or string
 
 **Example:**
 
@@ -487,50 +308,19 @@ A URL that gives access to the Document
 "https://example.gov/docs/climate-user-guide"
 ```
 
-**Any of:**
-- [Null allowed when not required](#document--accessURL_anyOf_i0)
-- [URL](#document--accessURL_anyOf_i1)
-
-### <a name="document--accessURL_anyOf_i0"></a>`Document > accessURL > anyOf > Null allowed when not required` [#](#document--accessURL_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="document--accessURL_anyOf_i1"></a>`Document > accessURL > anyOf > URL` [#](#document--accessURL_anyOf_i1)
-
-reference iri of Document
-
-- **Type**: `string`
-- **Format**: `iri`
-
 ## <a name="document--downloadURL"></a>`Document > downloadURL` [#](#document--downloadURL)
 
 **Requirement:** Optional
 
 A URL that is a direct link to a downloadable file of the Document in a given format
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or string
 
 **Example:**
 
 ```json
 "https://example.gov/docs/climate-user-guide.pdf"
 ```
-
-**Any of:**
-- [Null allowed when not required](#document--downloadURL_anyOf_i0)
-- [URL](#document--downloadURL_anyOf_i1)
-
-### <a name="document--downloadURL_anyOf_i0"></a>`Document > downloadURL > anyOf > Null allowed when not required` [#](#document--downloadURL_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="document--downloadURL_anyOf_i1"></a>`Document > downloadURL > anyOf > URL` [#](#document--downloadURL_anyOf_i1)
-
-reference iri of Document
-
-- **Type**: `string`
-- **Format**: `iri`
 
 ## <a name="document--creator"></a>`Document > creator` [#](#document--creator)
 
@@ -639,24 +429,7 @@ Plain-language summary of the document
 
 The unique identifier for the Document (e.g. DOI, ISBN)
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#document--identifier_anyOf_i0)
-- [Identifier](#document--identifier_anyOf_i1)
-
-### <a name="document--identifier_anyOf_i0"></a>`Document > identifier > anyOf > Null allowed when not required` [#](#document--identifier_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="document--identifier_anyOf_i1"></a>`Document > identifier > anyOf > Identifier` [#](#document--identifier_anyOf_i1)
-
-inline description of Identifier
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Identifier](./identifiers-and-relationships.md#identifier)
+- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="document--otherIdentifier"></a>`Document > otherIdentifier` [#](#document--otherIdentifier)
 
@@ -677,8 +450,7 @@ A list of identifiers for the Document besides the main identifier, e.g. the URI
 
 Publication date of the Document
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -697,53 +469,6 @@ Publication date of the Document
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [Null allowed when not required](#document--issued_anyOf_i0)
-- [item 1](#document--issued_anyOf_i1)
-
-### <a name="document--issued_anyOf_i0"></a>`Document > issued > anyOf > Null allowed when not required` [#](#document--issued_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="document--issued_anyOf_i1"></a>`Document > issued > anyOf > item 1` [#](#document--issued_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#document--issued_anyOf_i1_anyOf_i0)
-- [item 1](#document--issued_anyOf_i1_anyOf_i1)
-- [item 2](#document--issued_anyOf_i1_anyOf_i2)
-- [item 3](#document--issued_anyOf_i1_anyOf_i3)
-
-#### <a name="document--issued_anyOf_i1_anyOf_i0"></a>`Document > issued > anyOf > item 1 > anyOf > item 0` [#](#document--issued_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="document--issued_anyOf_i1_anyOf_i1"></a>`Document > issued > anyOf > item 1 > anyOf > item 1` [#](#document--issued_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="document--issued_anyOf_i1_anyOf_i2"></a>`Document > issued > anyOf > item 1 > anyOf > item 2` [#](#document--issued_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="document--issued_anyOf_i1_anyOf_i3"></a>`Document > issued > anyOf > item 1 > anyOf > item 3` [#](#document--issued_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="document--publisher"></a>`Document > publisher` [#](#document--publisher)
 
@@ -812,19 +537,19 @@ A record in a catalog, describing the registration of a single resource
 }
 ```
 
-| Property                       | Type                    | Requirement Level | Title/Description                                                                                                                                                                    |
-| ------------------------------ | ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [@id](#catalog-record--@id)                   | string                  | Optional          |                                                                                                                                                                                      |
-| [@type](#catalog-record--@type)               | string                  | Optional          |                                                                                                                                                                                      |
-| [status](#catalog-record--status)             | More than one type      | Recommended       | The status of the catalog record in the context of editorial flow of the dataset and data service descriptions                                                                       |
-| [conformsTo](#catalog-record--conformsTo)     | More than one type      | Recommended       | An Application Profile that the Catalog Record's metadata conforms to                                                                                                                |
-| [description](#catalog-record--description)   | null or array of string | Optional          | A list of free-text accounts of the catalog record                                                                                                                                   |
-| [issued](#catalog-record--issued)             | null or array of object | Optional          | List of dates on which the catalog record was included in the catalog                                                                                                                |
-| [language](#catalog-record--language)         | More than one type      | Optional          | Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                    |
-| [modified](#catalog-record--modified)         | More than one type      | Mandatory         | The most recent date on which the catalog record was changed or modified                                                                                                             |
-| [source](#catalog-record--source)             | null or string          | Optional          | The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself |
-| [title](#catalog-record--title)               | null or string          | Optional          | A name given to the Catalog Record                                                                                                                                                   |
-| [primaryTopic](#catalog-record--primaryTopic) | string                  | Mandatory         | A link to the Dataset, Data service or Catalog described in the Catalog Record                                                                                                       |
+| Property                       | Type                                                          | Requirement Level | Title/Description                                                                                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [@id](#catalog-record--@id)                   | string                                                        | Optional          |                                                                                                                                                                                      |
+| [@type](#catalog-record--@type)               | string                                                        | Optional          |                                                                                                                                                                                      |
+| [status](#catalog-record--status)             | null or [Concept](./identifiers-and-relationships.md#concept) | Recommended       | The status of the catalog record in the context of editorial flow of the dataset and data service descriptions                                                                       |
+| [conformsTo](#catalog-record--conformsTo)     | null or [Standard](./quality-governance.md#standard)          | Recommended       | An Application Profile that the Catalog Record's metadata conforms to                                                                                                                |
+| [description](#catalog-record--description)   | null or array of string                                       | Optional          | A list of free-text accounts of the catalog record                                                                                                                                   |
+| [issued](#catalog-record--issued)             | null or array of object                                       | Optional          | List of dates on which the catalog record was included in the catalog                                                                                                                |
+| [language](#catalog-record--language)         | More than one type                                            | Optional          | Language code used in catalog record metadata text, using ISO 639-1 values such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                    |
+| [modified](#catalog-record--modified)         | More than one type                                            | Mandatory         | The most recent date on which the catalog record was changed or modified                                                                                                             |
+| [source](#catalog-record--source)             | null or string                                                | Optional          | The original metadata that was used in creating metadata for the items in the catalog record, either a URL referencing the source metadata or a string of the source metadata itself |
+| [title](#catalog-record--title)               | null or string                                                | Optional          | A name given to the Catalog Record                                                                                                                                                   |
+| [primaryTopic](#catalog-record--primaryTopic) | string                                                        | Mandatory         | A link to the Dataset, Data service or Catalog described in the Catalog Record                                                                                                       |
 
 ## <a name="catalog-record--@id"></a>`CatalogRecord > @id` [#](#catalog-record--@id)
 
@@ -854,24 +579,7 @@ A record in a catalog, describing the registration of a single resource
 
 The status of the catalog record in the context of editorial flow of the dataset and data service descriptions
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#catalog-record--status_anyOf_i0)
-- [Concept](#catalog-record--status_anyOf_i1)
-
-### <a name="catalog-record--status_anyOf_i0"></a>`CatalogRecord > status > anyOf > Null allowed when not required` [#](#catalog-record--status_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="catalog-record--status_anyOf_i1"></a>`CatalogRecord > status > anyOf > Concept` [#](#catalog-record--status_anyOf_i1)
-
-inline description of status
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Defined in**: [Concept](./identifiers-and-relationships.md#concept)
+- **Type**: null or [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="catalog-record--conformsTo"></a>`CatalogRecord > conformsTo` [#](#catalog-record--conformsTo)
 
@@ -881,24 +589,7 @@ inline description of status
 
 An Application Profile that the Catalog Record's metadata conforms to
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#catalog-record--conformsTo_anyOf_i0)
-- [Standard](#catalog-record--conformsTo_anyOf_i1)
-
-### <a name="catalog-record--conformsTo_anyOf_i0"></a>`CatalogRecord > conformsTo > anyOf > Null allowed when not required` [#](#catalog-record--conformsTo_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="catalog-record--conformsTo_anyOf_i1"></a>`CatalogRecord > conformsTo > anyOf > Standard` [#](#catalog-record--conformsTo_anyOf_i1)
-
-inline description of application profile
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Defined in**: [Standard](./quality-governance.md#standard)
+- **Type**: null or [Standard](./quality-governance.md#standard)
 
 ## <a name="catalog-record--description"></a>`CatalogRecord > description` [#](#catalog-record--description)
 
@@ -1244,16 +935,16 @@ A service that provides access to data or data processing functions
 | [spatialResolutionInMeters](#data-service--spatialResolutionInMeters) | null or string                                                                                   | Optional          | The minimum spatial separation resolvable in a Data Service, measured in meters                                                                      |
 | [temporalResolution](#data-service--temporalResolution)               | null or string                                                                                   | Optional          | The minimum time period resolvable by the Data Service                                                                                               |
 | [theme](#data-service--theme)                                         | null or array of [Concept](./identifiers-and-relationships.md#concept) classes                   | Optional          | List of themes or categories for the data service                                                                                                    |
-| [accessRights](#data-service--accessRights)                           | More than one type                                                                               | Optional          | Information about whether the data service is publicly accessible, restricted, or not public                                                         |
+| [accessRights](#data-service--accessRights)                           | null or string                                                                                   | Optional          | Information about whether the data service is publicly accessible, restricted, or not public                                                         |
 | [conformsTo](#data-service--conformsTo)                               | null or array of [Standard](./quality-governance.md#standard) classes                            | Optional          | List of general standards or specifications that the Data Service endpoints implement                                                                |
-| [created](#data-service--created)                                     | More than one type                                                                               | Optional          | The date on which the Data Service was first created                                                                                                 |
+| [created](#data-service--created)                                     | null or object                                                                                   | Optional          | The date on which the Data Service was first created                                                                                                 |
 | [creator](#data-service--creator)                                     | null or array of [Agent](./agents.md#agent) classes                                              | Optional          | List of agents primarily responsible for producing the Data Service                                                                                  |
 | [description](#data-service--description)                             | null or string                                                                                   | Optional          | Plain-language summary of the data service                                                                                                           |
-| [identifier](#data-service--identifier)                               | More than one type                                                                               | Optional          | The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog                                    |
+| [identifier](#data-service--identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                              | Optional          | The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog                                    |
 | [otherIdentifier](#data-service--otherIdentifier)                     | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes             | Optional          | A list of identifiers for the Data Service besides the main identifier, e.g. the URI or other unique identifiers in the context of the Catalog       |
 | [language](#data-service--language)                                   | More than one type                                                                               | Optional          | ISO 639-1 language code values supported by the data service, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html |
-| [license](#data-service--license)                                     | More than one type                                                                               | Recommended       | License that governs how the data service can be used or reused                                                                                      |
-| [modified](#data-service--modified)                                   | More than one type                                                                               | Optional          | The most recent date on which the Data Service was changed or modified                                                                               |
+| [license](#data-service--license)                                     | null or string                                                                                   | Recommended       | License that governs how the data service can be used or reused                                                                                      |
+| [modified](#data-service--modified)                                   | null or object                                                                                   | Optional          | The most recent date on which the Data Service was changed or modified                                                                               |
 | [publisher](#data-service--publisher)                                 | object                                                                                           | Mandatory         | Person or organization responsible for publishing and making the data service available                                                              |
 | [rights](#data-service--rights)                                       | null or array of string                                                                          | Optional          | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                           |
 | [rightsHolder](#data-service--rightsHolder)                           | null or array of [Organization](./agents.md#organization) classes                                | Optional          | A list of Agents (organizations) holding rights on the Data Service                                                                                  |
@@ -1458,28 +1149,13 @@ List of themes or categories for the data service
 
 Information about whether the data service is publicly accessible, restricted, or not public
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or string
 
 **Example:**
 
 ```json
 "Public access with no restrictions"
 ```
-
-**Any of:**
-- [item 0](#data-service--accessRights_anyOf_i0)
-- [item 1](#data-service--accessRights_anyOf_i1)
-
-### <a name="data-service--accessRights_anyOf_i0"></a>`DataService > accessRights > anyOf > item 0` [#](#data-service--accessRights_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="data-service--accessRights_anyOf_i1"></a>`DataService > accessRights > anyOf > item 1` [#](#data-service--accessRights_anyOf_i1)
-
-Text description of the access rights
-
-- **Type**: `string`
 
 ## <a name="data-service--conformsTo"></a>`DataService > conformsTo` [#](#data-service--conformsTo)
 
@@ -1500,8 +1176,7 @@ List of general standards or specifications that the Data Service endpoints impl
 
 The date on which the Data Service was first created
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -1520,53 +1195,6 @@ The date on which the Data Service was first created
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [item 0](#data-service--created_anyOf_i0)
-- [Date string](#data-service--created_anyOf_i1)
-
-### <a name="data-service--created_anyOf_i0"></a>`DataService > created > anyOf > item 0` [#](#data-service--created_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="data-service--created_anyOf_i1"></a>`DataService > created > anyOf > Date string` [#](#data-service--created_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#data-service--created_anyOf_i1_anyOf_i0)
-- [item 1](#data-service--created_anyOf_i1_anyOf_i1)
-- [item 2](#data-service--created_anyOf_i1_anyOf_i2)
-- [item 3](#data-service--created_anyOf_i1_anyOf_i3)
-
-#### <a name="data-service--created_anyOf_i1_anyOf_i0"></a>`DataService > created > anyOf > Date string > anyOf > item 0` [#](#data-service--created_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="data-service--created_anyOf_i1_anyOf_i1"></a>`DataService > created > anyOf > Date string > anyOf > item 1` [#](#data-service--created_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="data-service--created_anyOf_i1_anyOf_i2"></a>`DataService > created > anyOf > Date string > anyOf > item 2` [#](#data-service--created_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="data-service--created_anyOf_i1_anyOf_i3"></a>`DataService > created > anyOf > Date string > anyOf > item 3` [#](#data-service--created_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="data-service--creator"></a>`DataService > creator` [#](#data-service--creator)
 
@@ -1599,24 +1227,7 @@ Plain-language summary of the data service
 
 The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#data-service--identifier_anyOf_i0)
-- [Identifier](#data-service--identifier_anyOf_i1)
-
-### <a name="data-service--identifier_anyOf_i0"></a>`DataService > identifier > anyOf > item 0` [#](#data-service--identifier_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="data-service--identifier_anyOf_i1"></a>`DataService > identifier > anyOf > Identifier` [#](#data-service--identifier_anyOf_i1)
-
-inline description of Identifier
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Identifier](./identifiers-and-relationships.md#identifier)
+- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
 
 ## <a name="data-service--otherIdentifier"></a>`DataService > otherIdentifier` [#](#data-service--otherIdentifier)
 
@@ -1687,28 +1298,13 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 
 License that governs how the data service can be used or reused
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or string
 
 **Example:**
 
 ```json
 "https://creativecommons.org/publicdomain/zero/1.0/"
 ```
-
-**Any of:**
-- [Null allowed when not required](#data-service--license_anyOf_i0)
-- [item 1](#data-service--license_anyOf_i1)
-
-### <a name="data-service--license_anyOf_i0"></a>`DataService > license > anyOf > Null allowed when not required` [#](#data-service--license_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="data-service--license_anyOf_i1"></a>`DataService > license > anyOf > item 1` [#](#data-service--license_anyOf_i1)
-
-Full text of the license
-
-- **Type**: `string`
 
 ## <a name="data-service--modified"></a>`DataService > modified` [#](#data-service--modified)
 
@@ -1718,8 +1314,7 @@ Full text of the license
 
 The most recent date on which the Data Service was changed or modified
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -1738,53 +1333,6 @@ The most recent date on which the Data Service was changed or modified
 ```json
 "2024-01"
 ```
-
-**Any of:**
-- [Null allowed when not required](#data-service--modified_anyOf_i0)
-- [Date string](#data-service--modified_anyOf_i1)
-
-### <a name="data-service--modified_anyOf_i0"></a>`DataService > modified > anyOf > Null allowed when not required` [#](#data-service--modified_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="data-service--modified_anyOf_i1"></a>`DataService > modified > anyOf > Date string` [#](#data-service--modified_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#data-service--modified_anyOf_i1_anyOf_i0)
-- [item 1](#data-service--modified_anyOf_i1_anyOf_i1)
-- [item 2](#data-service--modified_anyOf_i1_anyOf_i2)
-- [item 3](#data-service--modified_anyOf_i1_anyOf_i3)
-
-#### <a name="data-service--modified_anyOf_i1_anyOf_i0"></a>`DataService > modified > anyOf > Date string > anyOf > item 0` [#](#data-service--modified_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="data-service--modified_anyOf_i1_anyOf_i1"></a>`DataService > modified > anyOf > Date string > anyOf > item 1` [#](#data-service--modified_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="data-service--modified_anyOf_i1_anyOf_i2"></a>`DataService > modified > anyOf > Date string > anyOf > item 2` [#](#data-service--modified_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="data-service--modified_anyOf_i1_anyOf_i3"></a>`DataService > modified > anyOf > Date string > anyOf > item 3` [#](#data-service--modified_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
 
 ## <a name="data-service--publisher"></a>`DataService > publisher` [#](#data-service--publisher)
 

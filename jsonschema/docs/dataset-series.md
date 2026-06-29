@@ -145,14 +145,14 @@ A group of related datasets that are published separately
 | [@id](#@id)                               | string                                                                                | Optional          |                                                                                                                                          |
 | [@type](#@type)                           | string                                                                                | Optional          |                                                                                                                                          |
 | [contactPoint](#contactPoint)             | null or array of [Kind](./agents.md#kind) classes                                     | Recommended       | List of contacts people can use to ask questions or send feedback about the dataset series                                               |
-| [first](#first)                           | More than one type                                                                    | Recommended       | The first dataset in an ordered dataset series                                                                                           |
-| [last](#last)                             | More than one type                                                                    | Recommended       | The last dataset in an ordered dataset series                                                                                            |
+| [first](#first)                           | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The first dataset in an ordered dataset series                                                                                           |
+| [last](#last)                             | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The last dataset in an ordered dataset series                                                                                            |
 | [seriesMember](#seriesMember)             | null or array of [Dataset](./dataset.md#root) classes                                 | Recommended       | List of members of the Dataset Series                                                                                                    |
 | [accrualPeriodicity](#accrualPeriodicity) | More than one type                                                                    | Optional          | The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency      |
 | [description](#description)               | string                                                                                | Mandatory         | Plain-language summary of the dataset series                                                                                             |
-| [issued](#issued)                         | More than one type                                                                    | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
-| [modified](#modified)                     | More than one type                                                                    | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
-| [publisher](#publisher)                   | More than one type                                                                    | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
+| [issued](#issued)                         | null or object                                                                        | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
+| [modified](#modified)                     | null or object                                                                        | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
+| [publisher](#publisher)                   | null or [Agent](./agents.md#agent)                                                    | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
 | [spatial](#spatial)                       | null or array of [Location](./temporal-spatial-metrics.md#location) classes           | Recommended       | A geographic region that is covered by the Dataset Series                                                                                |
 | [temporal](#temporal)                     | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes | Recommended       | Time periods covered by the dataset series                                                                                               |
 | [title](#title)                           | string                                                                                | Mandatory         | Human-readable title of the dataset series                                                                                               |
@@ -194,27 +194,7 @@ List of contacts people can use to ask questions or send feedback about the data
 
 The first dataset in an ordered dataset series
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#first_anyOf_i0)
-- [Dataset](#first_anyOf_i1)
-
-### <a name="first_anyOf_i0"></a>`DatasetSeries > first > anyOf > Null allowed when not required` [#](#first_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="first_anyOf_i1"></a>`DatasetSeries > first > anyOf > Dataset` [#](#first_anyOf_i1)
-
-inline description of the first dataset
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Defined in**: [Dataset](./dataset.md#root)
-
----
-**See Also:** (related supporting classes)
+- **Type**: null or [Dataset](./dataset.md#root)
 
 ## <a name="last"></a>`DatasetSeries > last` [#](#last)
 
@@ -222,27 +202,7 @@ inline description of the first dataset
 
 The last dataset in an ordered dataset series
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#last_anyOf_i0)
-- [Dataset](#last_anyOf_i1)
-
-### <a name="last_anyOf_i0"></a>`DatasetSeries > last > anyOf > Null allowed when not required` [#](#last_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="last_anyOf_i1"></a>`DatasetSeries > last > anyOf > Dataset` [#](#last_anyOf_i1)
-
-inline description of the last dataset
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Dataset](./dataset.md#root)
-
----
-**See Also:** (related supporting classes)
+- **Type**: null or [Dataset](./dataset.md#root)
 
 ## <a name="seriesMember"></a>`DatasetSeries > seriesMember` [#](#seriesMember)
 
@@ -359,8 +319,7 @@ Plain-language summary of the dataset series
 
 Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -380,53 +339,6 @@ Date when the Dataset Series was formally established or published, not the rele
 "2024-01"
 ```
 
-**Any of:**
-- [Null allowed when not required](#issued_anyOf_i0)
-- [Date string](#issued_anyOf_i1)
-
-### <a name="issued_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Null allowed when not required` [#](#issued_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="issued_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string` [#](#issued_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#issued_anyOf_i1_anyOf_i0)
-- [item 1](#issued_anyOf_i1_anyOf_i1)
-- [item 2](#issued_anyOf_i1_anyOf_i2)
-- [item 3](#issued_anyOf_i1_anyOf_i3)
-
-#### <a name="issued_anyOf_i1_anyOf_i0"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 0` [#](#issued_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="issued_anyOf_i1_anyOf_i1"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 1` [#](#issued_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="issued_anyOf_i1_anyOf_i2"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 2` [#](#issued_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="issued_anyOf_i1_anyOf_i3"></a>`DatasetSeries > issued > anyOf > Date string > anyOf > item 3` [#](#issued_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
-
 ## <a name="modified"></a>`DatasetSeries > modified` [#](#modified)
 
 **Title:** update/modification date
@@ -435,8 +347,7 @@ A year and month in YYYY-MM format
 
 Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or object
 
 **Examples:**
 
@@ -460,77 +371,13 @@ Most recent date when the Dataset Series changed, not the modified date of the n
 "2024-01"
 ```
 
-**Any of:**
-- [Null allowed when not required](#modified_anyOf_i0)
-- [Date string](#modified_anyOf_i1)
-
-### <a name="modified_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Null allowed when not required` [#](#modified_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="modified_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string` [#](#modified_anyOf_i1)
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [item 0](#modified_anyOf_i1_anyOf_i0)
-- [item 1](#modified_anyOf_i1_anyOf_i1)
-- [item 2](#modified_anyOf_i1_anyOf_i2)
-- [item 3](#modified_anyOf_i1_anyOf_i3)
-
-#### <a name="modified_anyOf_i1_anyOf_i0"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 0` [#](#modified_anyOf_i1_anyOf_i0)
-
-- **Type**: `string`
-- **Format**: `date-time`
-
-#### <a name="modified_anyOf_i1_anyOf_i1"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 1` [#](#modified_anyOf_i1_anyOf_i1)
-
-- **Type**: `string`
-- **Format**: `date`
-
-#### <a name="modified_anyOf_i1_anyOf_i2"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 2` [#](#modified_anyOf_i1_anyOf_i2)
-
-A year in YYYY format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D%24)
-
-#### <a name="modified_anyOf_i1_anyOf_i3"></a>`DatasetSeries > modified > anyOf > Date string > anyOf > item 3` [#](#modified_anyOf_i1_anyOf_i3)
-
-A year and month in YYYY-MM format
-
-- **Type**: `string`
-
-**Restrictions:**
-- **Must match regular expression**: ```^[0-9]{4}-[0-9]{2}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D%24)
-
 ## <a name="publisher"></a>`DatasetSeries > publisher` [#](#publisher)
 
 **Requirement:** Recommended
 
 Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-
-**Any of:**
-- [Null allowed when not required](#publisher_anyOf_i0)
-- [Agent](#publisher_anyOf_i1)
-
-### <a name="publisher_anyOf_i0"></a>`DatasetSeries > publisher > anyOf > Null allowed when not required` [#](#publisher_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="publisher_anyOf_i1"></a>`DatasetSeries > publisher > anyOf > Agent` [#](#publisher_anyOf_i1)
-
-inline description of publisher
-
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Agent](./agents.md#agent)
+- **Type**: null or [Agent](./agents.md#agent)
 
 ## <a name="spatial"></a>`DatasetSeries > spatial` [#](#spatial)
 

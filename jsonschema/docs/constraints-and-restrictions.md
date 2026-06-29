@@ -22,13 +22,13 @@ Rules or indicators that describe who can access a resource
 }
 ```
 
-| Property                                     | Type               | Requirement Level | Title/Description                                                                                                                                                                                                                                 |
-| -------------------------------------------- | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#access-restriction--@id)                                 | string             | Optional          |                                                                                                                                                                                                                                                   |
-| [@type](#access-restriction--@type)                             | string             | Optional          |                                                                                                                                                                                                                                                   |
-| [restrictionNote](#access-restriction--restrictionNote)         | null or string     | Optional          | A note related to the access restriction                                                                                                                                                                                                          |
-| [restrictionStatus](#access-restriction--restrictionStatus)     | object             | Mandatory         | The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status                              |
-| [specificRestriction](#access-restriction--specificRestriction) | More than one type | Recommended       | Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction |
+| Property                                     | Type                                                          | Requirement Level | Title/Description                                                                                                                                                                                                                                 |
+| -------------------------------------------- | ------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#access-restriction--@id)                                 | string                                                        | Optional          |                                                                                                                                                                                                                                                   |
+| [@type](#access-restriction--@type)                             | string                                                        | Optional          |                                                                                                                                                                                                                                                   |
+| [restrictionNote](#access-restriction--restrictionNote)         | null or string                                                | Optional          | A note related to the access restriction                                                                                                                                                                                                          |
+| [restrictionStatus](#access-restriction--restrictionStatus)     | object                                                        | Mandatory         | The indication of whether or not there are access restrictions on the item, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/access-restriction-status                              |
+| [specificRestriction](#access-restriction--specificRestriction) | null or [Concept](./identifiers-and-relationships.md#concept) | Recommended       | Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction |
 
 ## <a name="access-restriction--@id"></a>`AccessRestriction > @id` [#](#access-restriction--@id)
 
@@ -85,8 +85,7 @@ The indication of whether or not there are access restrictions on the item, cons
 
 Authority, code list entry, or policy reference that defines the specific access restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-access-restriction
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or [Concept](./identifiers-and-relationships.md#concept)
 
 **Examples:**
 
@@ -97,22 +96,6 @@ Authority, code list entry, or policy reference that defines the specific access
 ```json
 "PRMPA - National Security Classified (B)"
 ```
-
-**Any of:**
-- [Null allowed when not required](#access-restriction--specificRestriction_anyOf_i0)
-- [Concept](#access-restriction--specificRestriction_anyOf_i1)
-
-### <a name="access-restriction--specificRestriction_anyOf_i0"></a>`AccessRestriction > specificRestriction > anyOf > Null allowed when not required` [#](#access-restriction--specificRestriction_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="access-restriction--specificRestriction_anyOf_i1"></a>`AccessRestriction > specificRestriction > anyOf > Concept` [#](#access-restriction--specificRestriction_anyOf_i1)
-
-inline description of the specific restriction
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
 
 ---
 
@@ -249,13 +232,13 @@ Rules or legal limits on how a resource may be used
 }
 ```
 
-| Property                                     | Type               | Requirement Level | Title/Description                                                                                                                                                                                                                           |
-| -------------------------------------------- | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#use-restriction--@id)                                 | string             | Optional          |                                                                                                                                                                                                                                             |
-| [@type](#use-restriction--@type)                             | string             | Optional          |                                                                                                                                                                                                                                             |
-| [restrictionNote](#use-restriction--restrictionNote)         | null or string     | Optional          | Significant information pertaining to the use or reproduction of the data                                                                                                                                                                   |
-| [restrictionStatus](#use-restriction--restrictionStatus)     | object             | Mandatory         | Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status                    |
-| [specificRestriction](#use-restriction--specificRestriction) | More than one type | Recommended       | Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction |
+| Property                                     | Type                                                          | Requirement Level | Title/Description                                                                                                                                                                                                                           |
+| -------------------------------------------- | ------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@id](#use-restriction--@id)                                 | string                                                        | Optional          |                                                                                                                                                                                                                                             |
+| [@type](#use-restriction--@type)                             | string                                                        | Optional          |                                                                                                                                                                                                                                             |
+| [restrictionNote](#use-restriction--restrictionNote)         | null or string                                                | Optional          | Significant information pertaining to the use or reproduction of the data                                                                                                                                                                   |
+| [restrictionStatus](#use-restriction--restrictionStatus)     | object                                                        | Mandatory         | Indication of whether or not there are use restrictions on the archival materials, consider using a controlled vocabulary such as https://www.archives.gov/research/catalog/lcdrg/authority-lists/use-restriction-status                    |
+| [specificRestriction](#use-restriction--specificRestriction) | null or [Concept](./identifiers-and-relationships.md#concept) | Recommended       | Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction |
 
 ## <a name="use-restriction--@id"></a>`UseRestriction > @id` [#](#use-restriction--@id)
 
@@ -322,8 +305,7 @@ Indication of whether or not there are use restrictions on the archival material
 
 Authority, code list entry, or policy reference that defines the specific use restriction; consider using a controlled vocabulary such as the NARA https://www.archives.gov/research/catalog/lcdrg/authority-lists/specific-use-restriction
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: null or [Concept](./identifiers-and-relationships.md#concept)
 
 **Examples:**
 
@@ -334,19 +316,3 @@ Authority, code list entry, or policy reference that defines the specific use re
 ```json
 "Trademark"
 ```
-
-**Any of:**
-- [Null allowed when not required](#use-restriction--specificRestriction_anyOf_i0)
-- [Concept](#use-restriction--specificRestriction_anyOf_i1)
-
-### <a name="use-restriction--specificRestriction_anyOf_i0"></a>`UseRestriction > specificRestriction > anyOf > Null allowed when not required` [#](#use-restriction--specificRestriction_anyOf_i0)
-
-- **Type**: `null`
-
-### <a name="use-restriction--specificRestriction_anyOf_i1"></a>`UseRestriction > specificRestriction > anyOf > Concept` [#](#use-restriction--specificRestriction_anyOf_i1)
-
-inline description of the specific restriction
-
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Concept](./identifiers-and-relationships.md#concept)
