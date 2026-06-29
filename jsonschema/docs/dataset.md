@@ -101,13 +101,13 @@ A collection of data published or curated by one provider
 | [contactPoint](#contactPoint)                           | More than one type                                                                               | Mandatory         | A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored                                                                                                                          |
 | [description](#description)                             | string                                                                                           | Mandatory         | Plain-language summary of the dataset                                                                                                                                                                                                                      |
 | [identifier](#identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                              | Mandatory         | The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog                                                                                                                                               |
-| [publisher](#publisher)                                 | object                                                                                           | Mandatory         | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
 | [title](#title)                                         | string                                                                                           | Mandatory         | Human-readable title of the dataset                                                                                                                                                                                                                        |
 | [describedBy](#describedBy)                             | null or [Distribution](./distribution.md#root)                                                   | Recommended       | A distribution describing the Data Dictionary for this dataset                                                                                                                                                                                             |
 | [distribution](#distribution)                           | null or array of [Distribution](./distribution.md#root) classes                                  | Recommended       | List of available distributions for the dataset. This can be omitted when no distribution is available yet.                                                                                                                                                |
 | [keyword](#keyword)                                     | null or array of string                                                                          | Recommended       | List of keywords or tags describing the dataset                                                                                                                                                                                                            |
 | [landingPage](#landingPage)                             | null or [Document](./quality-governance.md#document)                                             | Recommended       | A web page from the original data provider that gives access to the Dataset, its Distributions, and related information                                                                                                                                    |
 | [modified](#modified)                                   | null or object                                                                                   | Recommended       | Most recent date when the dataset's actual data changed, not just metadata                                                                                                                                                                                 |
+| [publisher](#publisher)                                 | null or [Organization](./agents.md#organization)                                                 | Recommended       | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
 | [rights](#rights)                                       | null or array of string                                                                          | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                                                                                                 |
 | [spatial](#spatial)                                     | More than one type                                                                               | Recommended       | A geographic region or regions that are covered by the Dataset                                                                                                                                                                                             |
 | [temporal](#temporal)                                   | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes            | Recommended       | Time periods covered by the dataset                                                                                                                                                                                                                        |
@@ -213,17 +213,6 @@ The unique identifier for the Dataset, e.g. the URI or other unique identifier i
 
 - **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
 - **Required**: Yes
-
-## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
-
-**Requirement:** Mandatory
-
-Organization responsible for publishing and making the dataset available
-
-- **Type**: `object`
-- **Required**: Yes
-- **Additional properties**: Any type allowed
-- **Defined in**: [Organization](./agents.md#organization)
 
 ## <a name="title"></a>`Dataset > title` [#](#title)
 
@@ -345,6 +334,14 @@ Most recent date when the dataset's actual data changed, not just metadata
 ```json
 "2024-01"
 ```
+
+## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
+
+**Requirement:** Recommended
+
+Organization responsible for publishing and making the dataset available
+
+- **Type**: null or [Organization](./agents.md#organization)
 
 ## <a name="rights"></a>`Dataset > rights` [#](#rights)
 
