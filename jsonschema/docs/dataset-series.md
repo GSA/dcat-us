@@ -142,40 +142,54 @@ A group of related datasets that are published separately
 
 | Property                                   | Type                                                                                  | Requirement Level | Title/Description                                                                                                                        |
 | ------------------------------------------ | ------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#@id)                               | string                                                                                | Optional          |                                                                                                                                          |
-| [@type](#@type)                           | string                                                                                | Optional          |                                                                                                                                          |
+| [description](#description)               | string                                                                                | Mandatory         | Plain-language summary of the dataset series                                                                                             |
+| [title](#title)                           | string                                                                                | Mandatory         | Human-readable title of the dataset series                                                                                               |
 | [contactPoint](#contactPoint)             | null or array of [Kind](./agents.md#kind) classes                                     | Recommended       | List of contacts people can use to ask questions or send feedback about the dataset series                                               |
 | [first](#first)                           | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The first dataset in an ordered dataset series                                                                                           |
 | [last](#last)                             | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The last dataset in an ordered dataset series                                                                                            |
-| [seriesMember](#seriesMember)             | null or array of [Dataset](./dataset.md#root) classes                                 | Recommended       | List of members of the Dataset Series                                                                                                    |
-| [accrualPeriodicity](#accrualPeriodicity) | More than one type                                                                    | Optional          | The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency      |
-| [description](#description)               | string                                                                                | Mandatory         | Plain-language summary of the dataset series                                                                                             |
-| [issued](#issued)                         | null or object                                                                        | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
 | [modified](#modified)                     | null or object                                                                        | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
 | [publisher](#publisher)                   | null or [Agent](./agents.md#agent)                                                    | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
+| [seriesMember](#seriesMember)             | null or array of [Dataset](./dataset.md#root) classes                                 | Recommended       | List of members of the Dataset Series                                                                                                    |
 | [spatial](#spatial)                       | null or array of [Location](./temporal-spatial-metrics.md#location) classes           | Recommended       | A geographic region that is covered by the Dataset Series                                                                                |
 | [temporal](#temporal)                     | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes | Recommended       | Time periods covered by the dataset series                                                                                               |
-| [title](#title)                           | string                                                                                | Mandatory         | Human-readable title of the dataset series                                                                                               |
+| [@id](#@id)                               | string                                                                                | Optional          |                                                                                                                                          |
+| [@type](#@type)                           | string                                                                                | Optional          |                                                                                                                                          |
+| [accrualPeriodicity](#accrualPeriodicity) | More than one type                                                                    | Optional          | The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency      |
+| [issued](#issued)                         | null or object                                                                        | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
 
-## <a name="@id"></a>`DatasetSeries > @id` [#](#@id)
+## <a name="description"></a>`DatasetSeries > description` [#](#description)
 
-**Requirement:** Optional
+**Requirement:** Mandatory
+
+Plain-language summary of the dataset series
 
 - **Type**: `string`
-- **Format**: `iri`
+- **Required**: Yes
 
 **Example:**
 
 ```json
-"https://example.gov/series/annual-climate-observations"
+"An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
 ```
 
-## <a name="@type"></a>`DatasetSeries > @type` [#](#@type)
+## <a name="title"></a>`DatasetSeries > title` [#](#title)
 
-**Requirement:** Optional
+**Requirement:** Mandatory
+
+Human-readable title of the dataset series
 
 - **Type**: `string`
-- **Default**: `"DatasetSeries"`
+- **Required**: Yes
+
+**Examples:**
+
+```json
+"Annual Climate Observations"
+```
+
+```json
+"Annual National Climate Observations Series"
+```
 
 ## <a name="contactPoint"></a>`DatasetSeries > contactPoint` [#](#contactPoint)
 
@@ -204,6 +218,46 @@ The last dataset in an ordered dataset series
 
 - **Type**: null or [Dataset](./dataset.md#root)
 
+## <a name="modified"></a>`DatasetSeries > modified` [#](#modified)
+
+**Title:** update/modification date
+
+**Requirement:** Recommended
+
+Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
+
+- **Type**: null or object
+
+**Examples:**
+
+```json
+"2024-12-01"
+```
+
+```json
+"2024-06-01"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
+
+## <a name="publisher"></a>`DatasetSeries > publisher` [#](#publisher)
+
+**Requirement:** Recommended
+
+Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
+
+- **Type**: null or [Agent](./agents.md#agent)
+
 ## <a name="seriesMember"></a>`DatasetSeries > seriesMember` [#](#seriesMember)
 
 **Requirement:** Recommended
@@ -214,6 +268,52 @@ List of members of the Dataset Series
 
 **Each item of this array must be:**
 - [Dataset](./dataset.md#root): A collection of data published or curated by one provider
+
+## <a name="spatial"></a>`DatasetSeries > spatial` [#](#spatial)
+
+**Title:** spatial/geographic coverage
+
+**Requirement:** Recommended
+
+A geographic region that is covered by the Dataset Series
+
+- **Type**: null or array of [Location](./temporal-spatial-metrics.md#location) classes
+
+**Each item of this array must be:**
+- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
+
+## <a name="temporal"></a>`DatasetSeries > temporal` [#](#temporal)
+
+**Title:** temporal coverage
+
+**Requirement:** Recommended
+
+Time periods covered by the dataset series
+
+- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
+
+**Each item of this array must be:**
+- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
+
+## <a name="@id"></a>`DatasetSeries > @id` [#](#@id)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Format**: `iri`
+
+**Example:**
+
+```json
+"https://example.gov/series/annual-climate-observations"
+```
+
+## <a name="@type"></a>`DatasetSeries > @type` [#](#@type)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Default**: `"DatasetSeries"`
 
 ## <a name="accrualPeriodicity"></a>`DatasetSeries > accrualPeriodicity` [#](#accrualPeriodicity)
 
@@ -296,21 +396,6 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
-## <a name="description"></a>`DatasetSeries > description` [#](#description)
-
-**Requirement:** Mandatory
-
-Plain-language summary of the dataset series
-
-- **Type**: `string`
-- **Required**: Yes
-
-**Example:**
-
-```json
-"An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations."
-```
-
 ## <a name="issued"></a>`DatasetSeries > issued` [#](#issued)
 
 **Title:** release date
@@ -337,89 +422,4 @@ Date when the Dataset Series was formally established or published, not the rele
 
 ```json
 "2024-01"
-```
-
-## <a name="modified"></a>`DatasetSeries > modified` [#](#modified)
-
-**Title:** update/modification date
-
-**Requirement:** Recommended
-
-Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series
-
-- **Type**: null or object
-
-**Examples:**
-
-```json
-"2024-12-01"
-```
-
-```json
-"2024-06-01"
-```
-
-```json
-"2024-01-15T10:30:00Z"
-```
-
-```json
-"2024"
-```
-
-```json
-"2024-01"
-```
-
-## <a name="publisher"></a>`DatasetSeries > publisher` [#](#publisher)
-
-**Requirement:** Recommended
-
-Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets
-
-- **Type**: null or [Agent](./agents.md#agent)
-
-## <a name="spatial"></a>`DatasetSeries > spatial` [#](#spatial)
-
-**Title:** spatial/geographic coverage
-
-**Requirement:** Recommended
-
-A geographic region that is covered by the Dataset Series
-
-- **Type**: null or array of [Location](./temporal-spatial-metrics.md#location) classes
-
-**Each item of this array must be:**
-- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
-
-## <a name="temporal"></a>`DatasetSeries > temporal` [#](#temporal)
-
-**Title:** temporal coverage
-
-**Requirement:** Recommended
-
-Time periods covered by the dataset series
-
-- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
-
-**Each item of this array must be:**
-- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
-
-## <a name="title"></a>`DatasetSeries > title` [#](#title)
-
-**Requirement:** Mandatory
-
-Human-readable title of the dataset series
-
-- **Type**: `string`
-- **Required**: Yes
-
-**Examples:**
-
-```json
-"Annual Climate Observations"
-```
-
-```json
-"Annual National Climate Observations Series"
 ```

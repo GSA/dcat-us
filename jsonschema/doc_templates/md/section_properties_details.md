@@ -1,4 +1,4 @@
-{% for sub_property in schema.iterate_properties %}
+{% for sub_property in schema | sorted_properties %}
   {%- if sub_property.is_additional_properties and not sub_property.is_additional_properties_schema -%}
     {% continue %}
   {% endif %}

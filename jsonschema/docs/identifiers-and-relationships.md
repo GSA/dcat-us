@@ -28,11 +28,11 @@ A unique identifier and optionally it's scheme and other relevant information
 | --------------------------------------- | ------------------------------------------------ | ----------------- | ----------------------------------------------------------------- |
 | [@id](#identifier--anyOf_i1_@id)                   | string                                           | Optional          |                                                                   |
 | [@type](#identifier--anyOf_i1_@type)               | string                                           | Optional          |                                                                   |
-| [schemaAgency](#identifier--anyOf_i1_schemaAgency) | null or string                                   | Optional          | The name of the agency that issued the identifier                 |
 | [creator](#identifier--anyOf_i1_creator)           | null or [Organization](./agents.md#organization) | Optional          | the agency that manages the identifier scheme                     |
 | [issued](#identifier--anyOf_i1_issued)             | null or object                                   | Optional          | The date of formal issuance (e.g., publication) of the Identifier |
-| [version](#identifier--anyOf_i1_version)           | null or string                                   | Optional          | version of the identifier scheme                                  |
 | [notation](#identifier--anyOf_i1_notation)         | null or string                                   | Optional          | abbreviation or code from code lists for an identifier            |
+| [schemaAgency](#identifier--anyOf_i1_schemaAgency) | null or string                                   | Optional          | The name of the agency that issued the identifier                 |
+| [version](#identifier--anyOf_i1_version)           | null or string                                   | Optional          | version of the identifier scheme                                  |
 
 ### <a name="identifier--anyOf_i1_@id"></a>`Identifier > anyOf > Identifier as a complex object > @id` [#](#identifier--anyOf_i1_@id)
 
@@ -47,14 +47,6 @@ A unique identifier and optionally it's scheme and other relevant information
 
 - **Type**: `string`
 - **Default**: `"Identifier"`
-
-### <a name="identifier--anyOf_i1_schemaAgency"></a>`Identifier > anyOf > Identifier as a complex object > schemaAgency` [#](#identifier--anyOf_i1_schemaAgency)
-
-**Requirement:** Optional
-
-The name of the agency that issued the identifier
-
-- **Type**: `null or string`
 
 ### <a name="identifier--anyOf_i1_creator"></a>`Identifier > anyOf > Identifier as a complex object > creator` [#](#identifier--anyOf_i1_creator)
 
@@ -72,19 +64,27 @@ The date of formal issuance (e.g., publication) of the Identifier
 
 - **Type**: null or object
 
-### <a name="identifier--anyOf_i1_version"></a>`Identifier > anyOf > Identifier as a complex object > version` [#](#identifier--anyOf_i1_version)
-
-**Requirement:** Optional
-
-version of the identifier scheme
-
-- **Type**: `null or string`
-
 ### <a name="identifier--anyOf_i1_notation"></a>`Identifier > anyOf > Identifier as a complex object > notation` [#](#identifier--anyOf_i1_notation)
 
 **Requirement:** Optional
 
 abbreviation or code from code lists for an identifier
+
+- **Type**: `null or string`
+
+### <a name="identifier--anyOf_i1_schemaAgency"></a>`Identifier > anyOf > Identifier as a complex object > schemaAgency` [#](#identifier--anyOf_i1_schemaAgency)
+
+**Requirement:** Optional
+
+The name of the agency that issued the identifier
+
+- **Type**: `null or string`
+
+### <a name="identifier--anyOf_i1_version"></a>`Identifier > anyOf > Identifier as a complex object > version` [#](#identifier--anyOf_i1_version)
+
+**Requirement:** Optional
+
+version of the identifier scheme
 
 - **Type**: `null or string`
 
@@ -111,30 +111,10 @@ Additional information about how one resource is related to another
 
 | Property               | Type   | Requirement Level | Title/Description                                                                                                                  |
 | ---------------------- | ------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#relationship--@id)           | string | Optional          |                                                                                                                                    |
-| [@type](#relationship--@type)       | string | Optional          |                                                                                                                                    |
 | [hadRole](#relationship--hadRole)   | string | Mandatory         | The function of an entity or agent with respect to a dataset                                                                       |
 | [relation](#relationship--relation) | string | Mandatory         | The entity related to the dataset. This string should unambiguously identify the related resource using an appropriate identifier. |
-
-## <a name="relationship--@id"></a>`Relationship > @id` [#](#relationship--@id)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Format**: `iri`
-
-**Example:**
-
-```json
-"https://example.gov/relationships/dataset-001-data-provider"
-```
-
-## <a name="relationship--@type"></a>`Relationship > @type` [#](#relationship--@type)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Default**: `"Relationship"`
+| [@id](#relationship--@id)           | string | Optional          |                                                                                                                                    |
+| [@type](#relationship--@type)       | string | Optional          |                                                                                                                                    |
 
 ## <a name="relationship--hadRole"></a>`Relationship > hadRole` [#](#relationship--hadRole)
 
@@ -176,6 +156,26 @@ The entity related to the dataset. This string should unambiguously identify the
 "https://example.gov/organizations/national-weather-service"
 ```
 
+## <a name="relationship--@id"></a>`Relationship > @id` [#](#relationship--@id)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Format**: `iri`
+
+**Example:**
+
+```json
+"https://example.gov/relationships/dataset-001-data-provider"
+```
+
+## <a name="relationship--@type"></a>`Relationship > @type` [#](#relationship--@type)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Default**: `"Relationship"`
+
 ---
 
 <a name="checksum"></a>
@@ -199,30 +199,10 @@ A mechanism that can be used to verify that the contents of a distribution have 
 
 | Property                         | Type   | Requirement Level | Title/Description                                                                 |
 | -------------------------------- | ------ | ----------------- | --------------------------------------------------------------------------------- |
-| [@id](#checksum--@id)                     | string | Optional          |                                                                                   |
-| [@type](#checksum--@type)                 | string | Optional          |                                                                                   |
 | [algorithm](#checksum--algorithm)         | string | Mandatory         | The algorithm used to produce the checksum                                        |
 | [checksumValue](#checksum--checksumValue) | string | Mandatory         | A lower case hexadecimal encoded digest value produced using a specific algorithm |
-
-## <a name="checksum--@id"></a>`Checksum > @id` [#](#checksum--@id)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Format**: `iri`
-
-**Example:**
-
-```json
-"https://example.gov/checksums/dataset-001-sha256"
-```
-
-## <a name="checksum--@type"></a>`Checksum > @type` [#](#checksum--@type)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Default**: `"Checksum"`
+| [@id](#checksum--@id)                     | string | Optional          |                                                                                   |
+| [@type](#checksum--@type)                 | string | Optional          |                                                                                   |
 
 ## <a name="checksum--algorithm"></a>`Checksum > algorithm` [#](#checksum--algorithm)
 
@@ -257,6 +237,26 @@ A lower case hexadecimal encoded digest value produced using a specific algorith
 ```json
 "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e"
 ```
+
+## <a name="checksum--@id"></a>`Checksum > @id` [#](#checksum--@id)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Format**: `iri`
+
+**Example:**
+
+```json
+"https://example.gov/checksums/dataset-001-sha256"
+```
+
+## <a name="checksum--@type"></a>`Checksum > @type` [#](#checksum--@type)
+
+**Requirement:** Optional
+
+- **Type**: `string`
+- **Default**: `"Checksum"`
 
 ---
 
@@ -525,14 +525,51 @@ A controlled vocabulary or other list of approved terms for a concept
 
 | Property                     | Type           | Requirement Level | Title/Description                                                        |
 | ---------------------------- | -------------- | ----------------- | ------------------------------------------------------------------------ |
+| [title](#concept-scheme--title)             | string         | Mandatory         | The title of the concept scheme                                          |
+| [description](#concept-scheme--description) | null or string | Recommended       | A description of the concept scheme                                      |
 | [@id](#concept-scheme--@id)                 | string         | Optional          |                                                                          |
 | [@type](#concept-scheme--@type)             | string         | Optional          |                                                                          |
-| [version](#concept-scheme--version)         | null or string | Optional          | A version number or other version designation of the concept scheme      |
 | [created](#concept-scheme--created)         | null or object | Optional          | The date on which the Concept Scheme was first created                   |
-| [description](#concept-scheme--description) | null or string | Recommended       | A description of the concept scheme                                      |
 | [issued](#concept-scheme--issued)           | null or object | Optional          | The date of formal issuance (e.g., publication) of the concept scheme    |
 | [modified](#concept-scheme--modified)       | null or object | Optional          | The most recent date at which the concept scheme was changed or modified |
-| [title](#concept-scheme--title)             | string         | Mandatory         | The title of the concept scheme                                          |
+| [version](#concept-scheme--version)         | null or string | Optional          | A version number or other version designation of the concept scheme      |
+
+## <a name="concept-scheme--title"></a>`ConceptScheme > title` [#](#concept-scheme--title)
+
+**Requirement:** Mandatory
+
+The title of the concept scheme
+
+- **Type**: `string`
+- **Required**: Yes
+
+**Examples:**
+
+```json
+"Science Domains"
+```
+
+```json
+"Federal Data Classification Scheme"
+```
+
+## <a name="concept-scheme--description"></a>`ConceptScheme > description` [#](#concept-scheme--description)
+
+**Requirement:** Recommended
+
+A description of the concept scheme
+
+- **Type**: `null or string`
+
+**Examples:**
+
+```json
+"A classification scheme for scientific research domains."
+```
+
+```json
+"A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
+```
 
 ## <a name="concept-scheme--@id"></a>`ConceptScheme > @id` [#](#concept-scheme--@id)
 
@@ -553,22 +590,6 @@ A controlled vocabulary or other list of approved terms for a concept
 
 - **Type**: `string`
 - **Default**: `"ConceptScheme"`
-
-## <a name="concept-scheme--version"></a>`ConceptScheme > version` [#](#concept-scheme--version)
-
-**Title:** version info
-
-**Requirement:** Optional
-
-A version number or other version designation of the concept scheme
-
-- **Type**: `null or string`
-
-**Example:**
-
-```json
-"2.0.1"
-```
 
 ## <a name="concept-scheme--created"></a>`ConceptScheme > created` [#](#concept-scheme--created)
 
@@ -596,24 +617,6 @@ The date on which the Concept Scheme was first created
 
 ```json
 "2024-01"
-```
-
-## <a name="concept-scheme--description"></a>`ConceptScheme > description` [#](#concept-scheme--description)
-
-**Requirement:** Recommended
-
-A description of the concept scheme
-
-- **Type**: `null or string`
-
-**Examples:**
-
-```json
-"A classification scheme for scientific research domains."
-```
-
-```json
-"A controlled vocabulary for classifying federal government data assets by sensitivity and access requirements."
 ```
 
 ## <a name="concept-scheme--issued"></a>`ConceptScheme > issued` [#](#concept-scheme--issued)
@@ -672,21 +675,18 @@ The most recent date at which the concept scheme was changed or modified
 "2024-01"
 ```
 
-## <a name="concept-scheme--title"></a>`ConceptScheme > title` [#](#concept-scheme--title)
+## <a name="concept-scheme--version"></a>`ConceptScheme > version` [#](#concept-scheme--version)
 
-**Requirement:** Mandatory
+**Title:** version info
 
-The title of the concept scheme
+**Requirement:** Optional
 
-- **Type**: `string`
-- **Required**: Yes
+A version number or other version designation of the concept scheme
 
-**Examples:**
+- **Type**: `null or string`
 
-```json
-"Science Domains"
-```
+**Example:**
 
 ```json
-"Federal Data Classification Scheme"
+"2.0.1"
 ```

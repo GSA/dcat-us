@@ -252,6 +252,7 @@ class CustomTemplateRenderer(TemplateRenderer):
         env.filters["md_render_key_value_details"] = render_key_value_details
         env.filters["md_render_option_list"] = render_option_list
         env.filters["has_collapsed_nullable_branch"] = has_collapsed_nullable_branch
+        env.filters["sorted_properties"] = sorted_properties
 
         env.tests["combining"] = jinja_filters.is_combining
         env.tests["description_short"] = jinja_filters.is_text_short
@@ -445,10 +446,27 @@ def _normalize_requirement_level(value):
     return "Optional"
 
 
+REQUIREMENT_SORT_ORDER = {
+    "Mandatory": 0,
+    "Recommended": 1,
+    "Optional": 2,
+}
+
+
 def _normalize_label(value):
     if value is None:
         return ""
     return re.sub(r"[^a-z0-9]+", "", str(value).strip().lower())
+
+
+def _property_sort_label(schema):
+    return (
+        getattr(schema, "property_name", None)
+        or getattr(schema, "property_display_name", None)
+        or getattr(schema, "name_for_breadcrumbs", None)
+        or getattr(schema, "title", None)
+        or ""
+    ).lower()
 
 
 def _escape_for_table(value):
@@ -666,6 +684,15 @@ def schema_requirement_level(schema):
     return _normalize_requirement_level(old_docs.get("requirementLevel"))
 
 
+def property_sort_key(schema):
+    requirement = schema_requirement_level(schema)
+    return (REQUIREMENT_SORT_ORDER.get(requirement, 2), _property_sort_label(schema))
+
+
+def sorted_properties(schema):
+    return sorted(list(schema.iterate_properties), key=property_sort_key)
+
+
 def properties_table_wrap(properties_list, schema):
     """Edit the properties list for our preferred format.
 
@@ -673,6 +700,13 @@ def properties_table_wrap(properties_list, schema):
     into a table.
     """
     property_nodes = list(schema.iterate_properties)
+    if len(properties_list) > 1:
+        sorted_pairs = sorted(
+            zip(property_nodes, properties_list[1:]),
+            key=lambda pair: property_sort_key(pair[0]),
+        )
+        property_nodes = [pair[0] for pair in sorted_pairs]
+        properties_list = [properties_list[0]] + [pair[1] for pair in sorted_pairs]
 
     for index, line in enumerate(properties_list):
         if "Combination" in line:
@@ -818,6 +852,9 @@ def _render_raw_docs(output_dir):
     )
     template_renderer.template.environment.filters["has_collapsed_nullable_branch"] = (
         has_collapsed_nullable_branch
+    )
+    template_renderer.template.environment.filters["sorted_properties"] = (
+        sorted_properties
     )
     template_renderer.template.environment.filters["md_render_array_items_details"] = (
         render_array_items_details

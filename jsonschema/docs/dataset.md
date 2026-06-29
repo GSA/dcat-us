@@ -98,138 +98,64 @@ A collection of data published or curated by one provider
 
 | Property                                                 | Type                                                                                             | Requirement Level | Title/Description                                                                                                                                                                                                                                          |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#@id)                                             | string                                                                                           | Optional          |                                                                                                                                                                                                                                                            |
-| [@type](#@type)                                         | string                                                                                           | Optional          |                                                                                                                                                                                                                                                            |
-| [otherIdentifier](#otherIdentifier)                     | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes             | Optional          | Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID                                                                                                                                                   |
-| [sample](#sample)                                       | null or array of [Distribution](./distribution.md#root) classes                                  | Optional          | List of sample distributions for the dataset                                                                                                                                                                                                               |
-| [status](#status)                                       | null or [Concept](./identifiers-and-relationships.md#concept)                                    | Optional          | Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn                                                                                                                                                            |
-| [supportedSchema](#supportedSchema)                     | null or [Dataset](./dataset.md#root)                                                             | Optional          | supported schema for this dataset                                                                                                                                                                                                                          |
-| [versionNotes](#versionNotes)                           | null or string                                                                                   | Optional          | Notes describing how this version differs from earlier versions of the dataset                                                                                                                                                                             |
 | [contactPoint](#contactPoint)                           | More than one type                                                                               | Mandatory         | A contact point for questions about the Dataset (single contact or list). Include an email address that is continuously monitored                                                                                                                          |
+| [description](#description)                             | string                                                                                           | Mandatory         | Plain-language summary of the dataset                                                                                                                                                                                                                      |
+| [identifier](#identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                              | Mandatory         | The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog                                                                                                                                               |
+| [publisher](#publisher)                                 | object                                                                                           | Mandatory         | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
+| [title](#title)                                         | string                                                                                           | Mandatory         | Human-readable title of the dataset                                                                                                                                                                                                                        |
+| [describedBy](#describedBy)                             | null or [Distribution](./distribution.md#root)                                                   | Recommended       | A distribution describing the Data Dictionary for this dataset                                                                                                                                                                                             |
 | [distribution](#distribution)                           | null or array of [Distribution](./distribution.md#root) classes                                  | Recommended       | List of available distributions for the dataset. This can be omitted when no distribution is available yet.                                                                                                                                                |
-| [first](#first)                                         | null or [Dataset](./dataset.md#root)                                                             | Optional          | the first item of the sequence the dataset belongs to                                                                                                                                                                                                      |
-| [hasCurrentVersion](#hasCurrentVersion)                 | null or [Dataset](./dataset.md#root)                                                             | Optional          | reference to the current (latest) version of a dataset                                                                                                                                                                                                     |
-| [hasVersion](#hasVersion)                               | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of related Datasets that are a version, edition, or adaptation of the described Dataset                                                                                                                                                               |
-| [inSeries](#inSeries)                                   | null or array of [DatasetSeries](./dataset-series.md#root) classes                               | Optional          | Dataset series this dataset belongs to                                                                                                                                                                                                                     |
 | [keyword](#keyword)                                     | null or array of string                                                                          | Recommended       | List of keywords or tags describing the dataset                                                                                                                                                                                                            |
 | [landingPage](#landingPage)                             | null or [Document](./quality-governance.md#document)                                             | Recommended       | A web page from the original data provider that gives access to the Dataset, its Distributions, and related information                                                                                                                                    |
-| [previousVersion](#previousVersion)                     | null or [Dataset](./dataset.md#root)                                                             | Optional          | reference to the previous dataset version                                                                                                                                                                                                                  |
-| [qualifiedRelation](#qualifiedRelation)                 | null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes         | Optional          | Detailed relationship between the dataset and another resource, including the role of that relationship                                                                                                                                                    |
-| [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string                                                                                   | Optional          | Smallest spatial distance between data points, in meters, represented as a single value                                                                                                                                                                    |
-| [temporalResolution](#temporalResolution)               | null or string                                                                                   | Optional          | Smallest time interval between data points, using xsd:duration format (for example, P1D)                                                                                                                                                                   |
+| [modified](#modified)                                   | null or object                                                                                   | Recommended       | Most recent date when the dataset's actual data changed, not just metadata                                                                                                                                                                                 |
+| [rights](#rights)                                       | null or array of string                                                                          | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                                                                                                 |
+| [spatial](#spatial)                                     | More than one type                                                                               | Recommended       | A geographic region or regions that are covered by the Dataset                                                                                                                                                                                             |
+| [temporal](#temporal)                                   | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes            | Recommended       | Time periods covered by the dataset                                                                                                                                                                                                                        |
 | [theme](#theme)                                         | null or array of [Concept](./identifiers-and-relationships.md#concept) classes                   | Recommended       | List of themes or categories for the dataset                                                                                                                                                                                                               |
-| [version](#version)                                     | null or string                                                                                   | Optional          | The version indicator (name or identifier) of a resource                                                                                                                                                                                                   |
-| [describedBy](#describedBy)                             | null or [Distribution](./distribution.md#root)                                                   | Recommended       | A distribution describing the Data Dictionary for this dataset                                                                                                                                                                                             |
-| [liabilityStatement](#liabilityStatement)               | null or string                                                                                   | Optional          | A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations |
-| [metadataDistribution](#metadataDistribution)           | null or array of [Distribution](./distribution.md#root) classes                                  | Optional          | Distribution of the original metadata document this dataset was derived from                                                                                                                                                                               |
-| [purpose](#purpose)                                     | null or string                                                                                   | Optional          | The purpose of the dataset                                                                                                                                                                                                                                 |
+| [@id](#@id)                                             | string                                                                                           | Optional          |                                                                                                                                                                                                                                                            |
+| [@type](#@type)                                         | string                                                                                           | Optional          |                                                                                                                                                                                                                                                            |
 | [accessRights](#accessRights)                           | null or string                                                                                   | Optional          | Information about whether the dataset is publicly accessible, restricted, or not public                                                                                                                                                                    |
 | [accrualPeriodicity](#accrualPeriodicity)               | More than one type                                                                               | Optional          | The frequency at which the Dataset is updated                                                                                                                                                                                                              |
+| [category](#category)                                   | null or array of [Concept](./identifiers-and-relationships.md#concept) classes                   | Optional          | List of high-level categories for the dataset                                                                                                                                                                                                              |
 | [conformsTo](#conformsTo)                               | null or array of [Standard](./quality-governance.md#standard) classes                            | Optional          | List of standards, schemas, or profiles the dataset follows                                                                                                                                                                                                |
 | [contributor](#contributor)                             | null or array of [Agent](./agents.md#agent) classes                                              | Optional          | List of agents contributing to the Dataset                                                                                                                                                                                                                 |
 | [created](#created)                                     | null or object                                                                                   | Optional          | The date on which the Dataset was first created                                                                                                                                                                                                            |
 | [creator](#creator)                                     | null or [Agent](./agents.md#agent)                                                               | Optional          | Person or organization responsible for creating the dataset                                                                                                                                                                                                |
-| [description](#description)                             | string                                                                                           | Mandatory         | Plain-language summary of the dataset                                                                                                                                                                                                                      |
+| [first](#first)                                         | null or [Dataset](./dataset.md#root)                                                             | Optional          | the first item of the sequence the dataset belongs to                                                                                                                                                                                                      |
+| [hasCurrentVersion](#hasCurrentVersion)                 | null or [Dataset](./dataset.md#root)                                                             | Optional          | reference to the current (latest) version of a dataset                                                                                                                                                                                                     |
 | [hasPart](#hasPart)                                     | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of related datasets that are part of the described dataset                                                                                                                                                                                            |
-| [identifier](#identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                              | Mandatory         | The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog                                                                                                                                               |
+| [hasQualityMeasurement](#hasQualityMeasurement)         | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes | Optional          | List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution                                                                                                                    |
+| [hasVersion](#hasVersion)                               | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of related Datasets that are a version, edition, or adaptation of the described Dataset                                                                                                                                                               |
+| [image](#image)                                         | null or string                                                                                   | Optional          | Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video                                                                                                                                                 |
+| [inSeries](#inSeries)                                   | null or array of [DatasetSeries](./dataset-series.md#root) classes                               | Optional          | Dataset series this dataset belongs to                                                                                                                                                                                                                     |
 | [isReferencedBy](#isReferencedBy)                       | null or array of string                                                                          | Optional          | List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset                                                                                                                                          |
 | [issued](#issued)                                       | null or object                                                                                   | Optional          | Date when the dataset was first published. If the exact publication date is unknown, use the date it was first referenced in the catalog.                                                                                                                  |
 | [language](#language)                                   | More than one type                                                                               | Optional          | ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                                                                                                |
-| [modified](#modified)                                   | null or object                                                                                   | Recommended       | Most recent date when the dataset's actual data changed, not just metadata                                                                                                                                                                                 |
+| [liabilityStatement](#liabilityStatement)               | null or string                                                                                   | Optional          | A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations |
+| [metadataDistribution](#metadataDistribution)           | null or array of [Distribution](./distribution.md#root) classes                                  | Optional          | Distribution of the original metadata document this dataset was derived from                                                                                                                                                                               |
+| [otherIdentifier](#otherIdentifier)                     | null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes             | Optional          | Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID                                                                                                                                                   |
+| [page](#page)                                           | null or array of [Document](./quality-governance.md#document) classes                            | Optional          | List of pages or documents about this dataset                                                                                                                                                                                                              |
+| [previousVersion](#previousVersion)                     | null or [Dataset](./dataset.md#root)                                                             | Optional          | reference to the previous dataset version                                                                                                                                                                                                                  |
 | [provenance](#provenance)                               | null or array of string                                                                          | Optional          | List of statements about the lineage of a Dataset, including any changes in its ownership or custody since its creation that may be significant for its authenticity, integrity, or interpretation                                                         |
-| [publisher](#publisher)                                 | object                                                                                           | Mandatory         | Organization responsible for publishing and making the dataset available                                                                                                                                                                                   |
+| [purpose](#purpose)                                     | null or string                                                                                   | Optional          | The purpose of the dataset                                                                                                                                                                                                                                 |
+| [qualifiedAttribution](#qualifiedAttribution)           | null or array of [Attribution](./quality-governance.md#attribution) classes                      | Optional          | List of agents with specific responsibilities for the dataset                                                                                                                                                                                              |
+| [qualifiedRelation](#qualifiedRelation)                 | null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes         | Optional          | Detailed relationship between the dataset and another resource, including the role of that relationship                                                                                                                                                    |
 | [relation](#relation)                                   | null or array of string                                                                          | Optional          | List of links to related resources when the relationship is not otherwise specified                                                                                                                                                                        |
 | [replaces](#replaces)                                   | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of Datasets replaced by this Dataset                                                                                                                                                                                                                  |
-| [rights](#rights)                                       | null or array of string                                                                          | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                                                                                                 |
 | [rightsHolder](#rightsHolder)                           | null or array of [Organization](./agents.md#organization) classes                                | Optional          | List of agents (organizations) holding rights on the Dataset                                                                                                                                                                                               |
+| [sample](#sample)                                       | null or array of [Distribution](./distribution.md#root) classes                                  | Optional          | List of sample distributions for the dataset                                                                                                                                                                                                               |
+| [scopeNote](#scopeNote)                                 | null or string                                                                                   | Optional          | usage note for the dataset                                                                                                                                                                                                                                 |
 | [source](#source)                                       | null or array of [Dataset](./dataset.md#root) classes                                            | Optional          | List of related Datasets from which the described Dataset is derived                                                                                                                                                                                       |
-| [spatial](#spatial)                                     | More than one type                                                                               | Recommended       | A geographic region or regions that are covered by the Dataset                                                                                                                                                                                             |
+| [spatialResolutionInMeters](#spatialResolutionInMeters) | null or string                                                                                   | Optional          | Smallest spatial distance between data points, in meters, represented as a single value                                                                                                                                                                    |
+| [status](#status)                                       | null or [Concept](./identifiers-and-relationships.md#concept)                                    | Optional          | Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn                                                                                                                                                            |
 | [subject](#subject)                                     | null or array of [Concept](./identifiers-and-relationships.md#concept) classes                   | Optional          | List of primary subjects for the dataset, usually narrower than broad theme categories                                                                                                                                                                     |
-| [temporal](#temporal)                                   | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes            | Recommended       | Time periods covered by the dataset                                                                                                                                                                                                                        |
-| [title](#title)                                         | string                                                                                           | Mandatory         | Human-readable title of the dataset                                                                                                                                                                                                                        |
-| [category](#category)                                   | null or array of [Concept](./identifiers-and-relationships.md#concept) classes                   | Optional          | List of high-level categories for the dataset                                                                                                                                                                                                              |
-| [hasQualityMeasurement](#hasQualityMeasurement)         | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes | Optional          | List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution                                                                                                                    |
-| [page](#page)                                           | null or array of [Document](./quality-governance.md#document) classes                            | Optional          | List of pages or documents about this dataset                                                                                                                                                                                                              |
-| [qualifiedAttribution](#qualifiedAttribution)           | null or array of [Attribution](./quality-governance.md#attribution) classes                      | Optional          | List of agents with specific responsibilities for the dataset                                                                                                                                                                                              |
+| [supportedSchema](#supportedSchema)                     | null or [Dataset](./dataset.md#root)                                                             | Optional          | supported schema for this dataset                                                                                                                                                                                                                          |
+| [temporalResolution](#temporalResolution)               | null or string                                                                                   | Optional          | Smallest time interval between data points, using xsd:duration format (for example, P1D)                                                                                                                                                                   |
+| [version](#version)                                     | null or string                                                                                   | Optional          | The version indicator (name or identifier) of a resource                                                                                                                                                                                                   |
+| [versionNotes](#versionNotes)                           | null or string                                                                                   | Optional          | Notes describing how this version differs from earlier versions of the dataset                                                                                                                                                                             |
 | [wasAttributedTo](#wasAttributedTo)                     | null or array of [Agent](./agents.md#agent) classes                                              | Optional          | List of agents attributed to this dataset                                                                                                                                                                                                                  |
 | [wasGeneratedBy](#wasGeneratedBy)                       | null or array of [Activity](./temporal-spatial-metrics.md#activity) classes                      | Optional          | List of activities that generated, or provide the business context for the creation of the dataset                                                                                                                                                         |
 | [wasUsedBy](#wasUsedBy)                                 | null or array of [Activity](./temporal-spatial-metrics.md#activity) classes                      | Optional          | List of activities that used the Dataset                                                                                                                                                                                                                   |
-| [image](#image)                                         | null or string                                                                                   | Optional          | Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video                                                                                                                                                 |
-| [scopeNote](#scopeNote)                                 | null or string                                                                                   | Optional          | usage note for the dataset                                                                                                                                                                                                                                 |
-
-## <a name="@id"></a>`Dataset > @id` [#](#@id)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Format**: `iri`
-
-**Example:**
-
-```json
-"https://example.gov/datasets/national-climate-observations-2024"
-```
-
-## <a name="@type"></a>`Dataset > @type` [#](#@type)
-
-**Requirement:** Optional
-
-- **Type**: `string`
-- **Default**: `"Dataset"`
-
-## <a name="otherIdentifier"></a>`Dataset > otherIdentifier` [#](#otherIdentifier)
-
-**Requirement:** Optional
-
-Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID
-
-- **Type**: null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes
-
-**Each item of this array must be:**
-- [Identifier](./identifiers-and-relationships.md#identifier): A unique identifier and optionally it's scheme and other relevant information
-
-## <a name="sample"></a>`Dataset > sample` [#](#sample)
-
-**Requirement:** Optional
-
-List of sample distributions for the dataset
-
-- **Type**: null or array of [Distribution](./distribution.md#root) classes
-
-**Each item of this array must be:**
-- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
-
-## <a name="status"></a>`Dataset > status` [#](#status)
-
-**Title:** lifecycle status
-
-**Requirement:** Optional
-
-Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn
-
-- **Type**: null or [Concept](./identifiers-and-relationships.md#concept)
-
-## <a name="supportedSchema"></a>`Dataset > supportedSchema` [#](#supportedSchema)
-
-**Requirement:** Optional
-
-supported schema for this dataset
-
-- **Type**: null or [Dataset](./dataset.md#root)
-
-## <a name="versionNotes"></a>`Dataset > versionNotes` [#](#versionNotes)
-
-**Requirement:** Optional
-
-Notes describing how this version differs from earlier versions of the dataset
-
-- **Type**: `null or string`
-
-**Example:**
-
-```json
-"Initial release of 2024 climate observations data."
-```
 
 ## <a name="contactPoint"></a>`Dataset > contactPoint` [#](#contactPoint)
 
@@ -260,6 +186,74 @@ inline description of Kind
 **Each item of this array must be:**
 - [Kind](./agents.md#kind): Contact information for an individual or entity
 
+## <a name="description"></a>`Dataset > description` [#](#description)
+
+**Requirement:** Mandatory
+
+Plain-language summary of the dataset
+
+- **Type**: `string`
+- **Required**: Yes
+
+**Examples:**
+
+```json
+"Daily temperature, precipitation, and wind measurements from monitoring stations across the United States."
+```
+
+```json
+"Comprehensive daily climate observations collected from monitoring stations across the United States, including temperature, precipitation, humidity, and wind measurements."
+```
+
+## <a name="identifier"></a>`Dataset > identifier` [#](#identifier)
+
+**Requirement:** Mandatory
+
+The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
+
+- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
+- **Required**: Yes
+
+## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
+
+**Requirement:** Mandatory
+
+Organization responsible for publishing and making the dataset available
+
+- **Type**: `object`
+- **Required**: Yes
+- **Additional properties**: Any type allowed
+- **Defined in**: [Organization](./agents.md#organization)
+
+## <a name="title"></a>`Dataset > title` [#](#title)
+
+**Requirement:** Mandatory
+
+Human-readable title of the dataset
+
+- **Type**: `string`
+- **Required**: Yes
+
+**Examples:**
+
+```json
+"Daily Climate Observations 2024"
+```
+
+```json
+"National Climate Observations 2024"
+```
+
+## <a name="describedBy"></a>`Dataset > describedBy` [#](#describedBy)
+
+**Title:** data dictionary
+
+**Requirement:** Recommended
+
+A distribution describing the Data Dictionary for this dataset
+
+- **Type**: null or [Distribution](./distribution.md#root)
+
 ## <a name="distribution"></a>`Dataset > distribution` [#](#distribution)
 
 **Title:** dataset distribution
@@ -272,46 +266,6 @@ List of available distributions for the dataset. This can be omitted when no dis
 
 **Each item of this array must be:**
 - [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
-
-## <a name="first"></a>`Dataset > first` [#](#first)
-
-**Requirement:** Optional
-
-the first item of the sequence the dataset belongs to
-
-- **Type**: null or [Dataset](./dataset.md#root)
-
-## <a name="hasCurrentVersion"></a>`Dataset > hasCurrentVersion` [#](#hasCurrentVersion)
-
-**Title:** current version
-
-**Requirement:** Optional
-
-reference to the current (latest) version of a dataset
-
-- **Type**: null or [Dataset](./dataset.md#root)
-
-## <a name="hasVersion"></a>`Dataset > hasVersion` [#](#hasVersion)
-
-**Requirement:** Optional
-
-List of related Datasets that are a version, edition, or adaptation of the described Dataset
-
-- **Type**: null or array of [Dataset](./dataset.md#root) classes
-
-**Each item of this array must be:**
-- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
-
-## <a name="inSeries"></a>`Dataset > inSeries` [#](#inSeries)
-
-**Requirement:** Optional
-
-Dataset series this dataset belongs to
-
-- **Type**: null or array of [DatasetSeries](./dataset-series.md#root) classes
-
-**Each item of this array must be:**
-- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately
 
 ## <a name="keyword"></a>`Dataset > keyword` [#](#keyword)
 
@@ -364,54 +318,112 @@ A web page from the original data provider that gives access to the Dataset, its
 
 - **Type**: null or [Document](./quality-governance.md#document)
 
-## <a name="previousVersion"></a>`Dataset > previousVersion` [#](#previousVersion)
+## <a name="modified"></a>`Dataset > modified` [#](#modified)
 
-**Requirement:** Optional
+**Title:** last modified
 
-reference to the previous dataset version
+**Requirement:** Recommended
 
-- **Type**: null or [Dataset](./dataset.md#root)
+Most recent date when the dataset's actual data changed, not just metadata
 
-## <a name="qualifiedRelation"></a>`Dataset > qualifiedRelation` [#](#qualifiedRelation)
+- **Type**: null or object
 
-**Requirement:** Optional
+**Examples:**
 
-Detailed relationship between the dataset and another resource, including the role of that relationship
+```json
+"2024-06-01"
+```
 
-- **Type**: null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
+
+## <a name="rights"></a>`Dataset > rights` [#](#rights)
+
+**Requirement:** Recommended
+
+Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
+
+- **Type**: null or array of string
+
+**Examples:**
+
+```json
+[
+    "Data is provided as-is without warranty. Please cite the National Climate Data Center when using this data."
+]
+```
+
+```json
+[
+    "This data is in the public domain and may be used without restriction."
+]
+```
 
 **Each item of this array must be:**
-- [Relationship](./identifiers-and-relationships.md#relationship): Additional information about how one resource is related to another
+- [rights items](#rights_items): Full text of a statement of rights
 
-## <a name="spatialResolutionInMeters"></a>`Dataset > spatialResolutionInMeters` [#](#spatialResolutionInMeters)
+### <a name="rights_items"></a>Array Item [#](#rights_items)
 
-**Title:** Spatial resolution (meters)
+Full text of a statement of rights
 
-**Requirement:** Optional
+- **Type**: `string`
 
-Smallest spatial distance between data points, in meters, represented as a single value
+## <a name="spatial"></a>`Dataset > spatial` [#](#spatial)
 
-- **Type**: `null or string`
+**Title:** spatial/geographic coverage
 
-**Example:**
+**Requirement:** Recommended
 
-```json
-"1000"
-```
+A geographic region or regions that are covered by the Dataset
 
-## <a name="temporalResolution"></a>`Dataset > temporalResolution` [#](#temporalResolution)
+- **Type**: `combining`
+- **Additional properties**: Any type allowed
 
-**Requirement:** Optional
+**Any of:**
+- [Null allowed when not required](#spatial_anyOf_i0)
+- [Location](#spatial_anyOf_i1)
+- [List of geographic regions](#spatial_anyOf_i2)
 
-Smallest time interval between data points, using xsd:duration format (for example, P1D)
+### <a name="spatial_anyOf_i0"></a>`Dataset > spatial > anyOf > Null allowed when not required` [#](#spatial_anyOf_i0)
 
-- **Type**: `null or string`
+- **Type**: `null`
 
-**Example:**
+### <a name="spatial_anyOf_i1"></a>`Dataset > spatial > anyOf > Location` [#](#spatial_anyOf_i1)
 
-```json
-"P1D"
-```
+inline description of Location
+
+- **Type**: `object`
+- **Additional properties**: Any type allowed
+- **Same definition as**: [Location](./temporal-spatial-metrics.md#location)
+
+### <a name="spatial_anyOf_i2"></a>`Dataset > spatial > anyOf > List of geographic regions` [#](#spatial_anyOf_i2)
+
+- **Type**: array of [Location](./temporal-spatial-metrics.md#location) classes
+
+**Each item of this array must be:**
+- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
+
+## <a name="temporal"></a>`Dataset > temporal` [#](#temporal)
+
+**Title:** temporal coverage
+
+**Requirement:** Recommended
+
+Time periods covered by the dataset
+
+- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
+
+**Each item of this array must be:**
+- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
 
 ## <a name="theme"></a>`Dataset > theme` [#](#theme)
 
@@ -426,68 +438,25 @@ List of themes or categories for the dataset
 **Each item of this array must be:**
 - [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
-## <a name="version"></a>`Dataset > version` [#](#version)
+## <a name="@id"></a>`Dataset > @id` [#](#@id)
 
 **Requirement:** Optional
 
-The version indicator (name or identifier) of a resource
-
-- **Type**: `null or string`
+- **Type**: `string`
+- **Format**: `iri`
 
 **Example:**
 
 ```json
-"2024.1"
+"https://example.gov/datasets/national-climate-observations-2024"
 ```
 
-## <a name="describedBy"></a>`Dataset > describedBy` [#](#describedBy)
-
-**Title:** data dictionary
-
-**Requirement:** Recommended
-
-A distribution describing the Data Dictionary for this dataset
-
-- **Type**: null or [Distribution](./distribution.md#root)
-
-## <a name="liabilityStatement"></a>`Dataset > liabilityStatement` [#](#liabilityStatement)
+## <a name="@type"></a>`Dataset > @type` [#](#@type)
 
 **Requirement:** Optional
 
-A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations
-
-- **Type**: null or string
-
-**Example:**
-
-```json
-"This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use."
-```
-
-## <a name="metadataDistribution"></a>`Dataset > metadataDistribution` [#](#metadataDistribution)
-
-**Requirement:** Optional
-
-Distribution of the original metadata document this dataset was derived from
-
-- **Type**: null or array of [Distribution](./distribution.md#root) classes
-
-**Each item of this array must be:**
-- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
-
-## <a name="purpose"></a>`Dataset > purpose` [#](#purpose)
-
-**Requirement:** Optional
-
-The purpose of the dataset
-
-- **Type**: `null or string`
-
-**Example:**
-
-```json
-"To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate."
-```
+- **Type**: `string`
+- **Default**: `"Dataset"`
 
 ## <a name="accessRights"></a>`Dataset > accessRights` [#](#accessRights)
 
@@ -588,6 +557,17 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
+## <a name="category"></a>`Dataset > category` [#](#category)
+
+**Requirement:** Optional
+
+List of high-level categories for the dataset
+
+- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
+
+**Each item of this array must be:**
+- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
+
 ## <a name="conformsTo"></a>`Dataset > conformsTo` [#](#conformsTo)
 
 **Requirement:** Optional
@@ -646,24 +626,23 @@ Person or organization responsible for creating the dataset
 
 - **Type**: null or [Agent](./agents.md#agent)
 
-## <a name="description"></a>`Dataset > description` [#](#description)
+## <a name="first"></a>`Dataset > first` [#](#first)
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
-Plain-language summary of the dataset
+the first item of the sequence the dataset belongs to
 
-- **Type**: `string`
-- **Required**: Yes
+- **Type**: null or [Dataset](./dataset.md#root)
 
-**Examples:**
+## <a name="hasCurrentVersion"></a>`Dataset > hasCurrentVersion` [#](#hasCurrentVersion)
 
-```json
-"Daily temperature, precipitation, and wind measurements from monitoring stations across the United States."
-```
+**Title:** current version
 
-```json
-"Comprehensive daily climate observations collected from monitoring stations across the United States, including temperature, precipitation, humidity, and wind measurements."
-```
+**Requirement:** Optional
+
+reference to the current (latest) version of a dataset
+
+- **Type**: null or [Dataset](./dataset.md#root)
 
 ## <a name="hasPart"></a>`Dataset > hasPart` [#](#hasPart)
 
@@ -676,14 +655,48 @@ List of related datasets that are part of the described dataset
 **Each item of this array must be:**
 - [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
-## <a name="identifier"></a>`Dataset > identifier` [#](#identifier)
+## <a name="hasQualityMeasurement"></a>`Dataset > hasQualityMeasurement` [#](#hasQualityMeasurement)
 
-**Requirement:** Mandatory
+**Title:** quality measurement
 
-The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog
+**Requirement:** Optional
 
-- **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
-- **Required**: Yes
+List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution
+
+- **Type**: null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes
+
+**Each item of this array must be:**
+- [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement): A measurement of a resource against a specific quality metric
+
+## <a name="hasVersion"></a>`Dataset > hasVersion` [#](#hasVersion)
+
+**Requirement:** Optional
+
+List of related Datasets that are a version, edition, or adaptation of the described Dataset
+
+- **Type**: null or array of [Dataset](./dataset.md#root) classes
+
+**Each item of this array must be:**
+- [Dataset](./dataset.md#root): A collection of data published or curated by one provider
+
+## <a name="image"></a>`Dataset > image` [#](#image)
+
+**Requirement:** Optional
+
+Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video
+
+- **Type**: null or string
+
+## <a name="inSeries"></a>`Dataset > inSeries` [#](#inSeries)
+
+**Requirement:** Optional
+
+Dataset series this dataset belongs to
+
+- **Type**: null or array of [DatasetSeries](./dataset-series.md#root) classes
+
+**Each item of this array must be:**
+- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately
 
 ## <a name="isReferencedBy"></a>`Dataset > isReferencedBy` [#](#isReferencedBy)
 
@@ -786,33 +799,62 @@ ISO 639-1 language code values used in the dataset text or metadata, such as en 
 **Restrictions:**
 - **Max length**: 2
 
-## <a name="modified"></a>`Dataset > modified` [#](#modified)
+## <a name="liabilityStatement"></a>`Dataset > liabilityStatement` [#](#liabilityStatement)
 
-**Title:** last modified
+**Requirement:** Optional
 
-**Requirement:** Recommended
+A liability statement about the dataset that may clarify limitations of responsibility, qualifications on the accuracy, reliability, and completeness of the data, or absence of endorsement by the data publisher or provider, among other considerations
 
-Most recent date when the dataset's actual data changed, not just metadata
+- **Type**: null or string
 
-- **Type**: null or object
-
-**Examples:**
+**Example:**
 
 ```json
-"2024-06-01"
+"This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use."
 ```
 
-```json
-"2024-01-15T10:30:00Z"
-```
+## <a name="metadataDistribution"></a>`Dataset > metadataDistribution` [#](#metadataDistribution)
 
-```json
-"2024"
-```
+**Requirement:** Optional
 
-```json
-"2024-01"
-```
+Distribution of the original metadata document this dataset was derived from
+
+- **Type**: null or array of [Distribution](./distribution.md#root) classes
+
+**Each item of this array must be:**
+- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
+
+## <a name="otherIdentifier"></a>`Dataset > otherIdentifier` [#](#otherIdentifier)
+
+**Requirement:** Optional
+
+Additional identifiers for the dataset besides the main identifier, such as a DOI or other persistent ID
+
+- **Type**: null or array of [Identifier](./identifiers-and-relationships.md#identifier) classes
+
+**Each item of this array must be:**
+- [Identifier](./identifiers-and-relationships.md#identifier): A unique identifier and optionally it's scheme and other relevant information
+
+## <a name="page"></a>`Dataset > page` [#](#page)
+
+**Title:** documentation
+
+**Requirement:** Optional
+
+List of pages or documents about this dataset
+
+- **Type**: null or array of [Document](./quality-governance.md#document) classes
+
+**Each item of this array must be:**
+- [Document](./quality-governance.md#document): A publication or other document related to a resource
+
+## <a name="previousVersion"></a>`Dataset > previousVersion` [#](#previousVersion)
+
+**Requirement:** Optional
+
+reference to the previous dataset version
+
+- **Type**: null or [Dataset](./dataset.md#root)
 
 ## <a name="provenance"></a>`Dataset > provenance` [#](#provenance)
 
@@ -840,16 +882,41 @@ Full text of the provenance statement
 
 - **Type**: `string`
 
-## <a name="publisher"></a>`Dataset > publisher` [#](#publisher)
+## <a name="purpose"></a>`Dataset > purpose` [#](#purpose)
 
-**Requirement:** Mandatory
+**Requirement:** Optional
 
-Organization responsible for publishing and making the dataset available
+The purpose of the dataset
 
-- **Type**: `object`
-- **Required**: Yes
-- **Additional properties**: Any type allowed
-- **Defined in**: [Organization](./agents.md#organization)
+- **Type**: `null or string`
+
+**Example:**
+
+```json
+"To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate."
+```
+
+## <a name="qualifiedAttribution"></a>`Dataset > qualifiedAttribution` [#](#qualifiedAttribution)
+
+**Requirement:** Optional
+
+List of agents with specific responsibilities for the dataset
+
+- **Type**: null or array of [Attribution](./quality-governance.md#attribution) classes
+
+**Each item of this array must be:**
+- [Attribution](./quality-governance.md#attribution): A responsibility that an agent has for a resource
+
+## <a name="qualifiedRelation"></a>`Dataset > qualifiedRelation` [#](#qualifiedRelation)
+
+**Requirement:** Optional
+
+Detailed relationship between the dataset and another resource, including the role of that relationship
+
+- **Type**: null or array of [Relationship](./identifiers-and-relationships.md#relationship) classes
+
+**Each item of this array must be:**
+- [Relationship](./identifiers-and-relationships.md#relationship): Additional information about how one resource is related to another
 
 ## <a name="relation"></a>`Dataset > relation` [#](#relation)
 
@@ -890,37 +957,6 @@ List of Datasets replaced by this Dataset
 **Each item of this array must be:**
 - [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
-## <a name="rights"></a>`Dataset > rights` [#](#rights)
-
-**Requirement:** Recommended
-
-Rights statements not already covered by license or accessRights, such as copyright or policy restrictions
-
-- **Type**: null or array of string
-
-**Examples:**
-
-```json
-[
-    "Data is provided as-is without warranty. Please cite the National Climate Data Center when using this data."
-]
-```
-
-```json
-[
-    "This data is in the public domain and may be used without restriction."
-]
-```
-
-**Each item of this array must be:**
-- [rights items](#rights_items): Full text of a statement of rights
-
-### <a name="rights_items"></a>Array Item [#](#rights_items)
-
-Full text of a statement of rights
-
-- **Type**: `string`
-
 ## <a name="rightsHolder"></a>`Dataset > rightsHolder` [#](#rightsHolder)
 
 **Requirement:** Optional
@@ -931,6 +967,33 @@ List of agents (organizations) holding rights on the Dataset
 
 **Each item of this array must be:**
 - [Organization](./agents.md#organization): An organization involved with a resource, including parent or child organizations
+
+## <a name="sample"></a>`Dataset > sample` [#](#sample)
+
+**Requirement:** Optional
+
+List of sample distributions for the dataset
+
+- **Type**: null or array of [Distribution](./distribution.md#root) classes
+
+**Each item of this array must be:**
+- [Distribution](./distribution.md#root): A specific representation of a dataset, such as a file, feed, or API response
+
+## <a name="scopeNote"></a>`Dataset > scopeNote` [#](#scopeNote)
+
+**Title:** usage note
+
+**Requirement:** Optional
+
+usage note for the dataset
+
+- **Type**: `null or string`
+
+**Example:**
+
+```json
+"This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets."
+```
 
 ## <a name="source"></a>`Dataset > source` [#](#source)
 
@@ -945,40 +1008,31 @@ List of related Datasets from which the described Dataset is derived
 **Each item of this array must be:**
 - [Dataset](./dataset.md#root): A collection of data published or curated by one provider
 
-## <a name="spatial"></a>`Dataset > spatial` [#](#spatial)
+## <a name="spatialResolutionInMeters"></a>`Dataset > spatialResolutionInMeters` [#](#spatialResolutionInMeters)
 
-**Title:** spatial/geographic coverage
+**Title:** Spatial resolution (meters)
 
-**Requirement:** Recommended
+**Requirement:** Optional
 
-A geographic region or regions that are covered by the Dataset
+Smallest spatial distance between data points, in meters, represented as a single value
 
-- **Type**: `combining`
-- **Additional properties**: Any type allowed
+- **Type**: `null or string`
 
-**Any of:**
-- [Null allowed when not required](#spatial_anyOf_i0)
-- [Location](#spatial_anyOf_i1)
-- [List of geographic regions](#spatial_anyOf_i2)
+**Example:**
 
-### <a name="spatial_anyOf_i0"></a>`Dataset > spatial > anyOf > Null allowed when not required` [#](#spatial_anyOf_i0)
+```json
+"1000"
+```
 
-- **Type**: `null`
+## <a name="status"></a>`Dataset > status` [#](#status)
 
-### <a name="spatial_anyOf_i1"></a>`Dataset > spatial > anyOf > Location` [#](#spatial_anyOf_i1)
+**Title:** lifecycle status
 
-inline description of Location
+**Requirement:** Optional
 
-- **Type**: `object`
-- **Additional properties**: Any type allowed
-- **Same definition as**: [Location](./temporal-spatial-metrics.md#location)
+Lifecycle status of the dataset, such as completed, deprecated, under development, or withdrawn
 
-### <a name="spatial_anyOf_i2"></a>`Dataset > spatial > anyOf > List of geographic regions` [#](#spatial_anyOf_i2)
-
-- **Type**: array of [Location](./temporal-spatial-metrics.md#location) classes
-
-**Each item of this array must be:**
-- [Location](./temporal-spatial-metrics.md#location): A named place or geographic area
+- **Type**: null or [Concept](./identifiers-and-relationships.md#concept)
 
 ## <a name="subject"></a>`Dataset > subject` [#](#subject)
 
@@ -991,85 +1045,55 @@ List of primary subjects for the dataset, usually narrower than broad theme cate
 **Each item of this array must be:**
 - [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
 
-## <a name="temporal"></a>`Dataset > temporal` [#](#temporal)
+## <a name="supportedSchema"></a>`Dataset > supportedSchema` [#](#supportedSchema)
 
-**Title:** temporal coverage
+**Requirement:** Optional
 
-**Requirement:** Recommended
+supported schema for this dataset
 
-Time periods covered by the dataset
+- **Type**: null or [Dataset](./dataset.md#root)
 
-- **Type**: null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes
+## <a name="temporalResolution"></a>`Dataset > temporalResolution` [#](#temporalResolution)
 
-**Each item of this array must be:**
-- [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time): Information about a specific time period with a start- and/or end-time
+**Requirement:** Optional
 
-## <a name="title"></a>`Dataset > title` [#](#title)
+Smallest time interval between data points, using xsd:duration format (for example, P1D)
 
-**Requirement:** Mandatory
+- **Type**: `null or string`
 
-Human-readable title of the dataset
-
-- **Type**: `string`
-- **Required**: Yes
-
-**Examples:**
+**Example:**
 
 ```json
-"Daily Climate Observations 2024"
+"P1D"
 ```
+
+## <a name="version"></a>`Dataset > version` [#](#version)
+
+**Requirement:** Optional
+
+The version indicator (name or identifier) of a resource
+
+- **Type**: `null or string`
+
+**Example:**
 
 ```json
-"National Climate Observations 2024"
+"2024.1"
 ```
 
-## <a name="category"></a>`Dataset > category` [#](#category)
+## <a name="versionNotes"></a>`Dataset > versionNotes` [#](#versionNotes)
 
 **Requirement:** Optional
 
-List of high-level categories for the dataset
+Notes describing how this version differs from earlier versions of the dataset
 
-- **Type**: null or array of [Concept](./identifiers-and-relationships.md#concept) classes
+- **Type**: `null or string`
 
-**Each item of this array must be:**
-- [Concept](./identifiers-and-relationships.md#concept): A controlled term or label, optionally drawn from a concept scheme
+**Example:**
 
-## <a name="hasQualityMeasurement"></a>`Dataset > hasQualityMeasurement` [#](#hasQualityMeasurement)
-
-**Title:** quality measurement
-
-**Requirement:** Optional
-
-List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution
-
-- **Type**: null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes
-
-**Each item of this array must be:**
-- [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement): A measurement of a resource against a specific quality metric
-
-## <a name="page"></a>`Dataset > page` [#](#page)
-
-**Title:** documentation
-
-**Requirement:** Optional
-
-List of pages or documents about this dataset
-
-- **Type**: null or array of [Document](./quality-governance.md#document) classes
-
-**Each item of this array must be:**
-- [Document](./quality-governance.md#document): A publication or other document related to a resource
-
-## <a name="qualifiedAttribution"></a>`Dataset > qualifiedAttribution` [#](#qualifiedAttribution)
-
-**Requirement:** Optional
-
-List of agents with specific responsibilities for the dataset
-
-- **Type**: null or array of [Attribution](./quality-governance.md#attribution) classes
-
-**Each item of this array must be:**
-- [Attribution](./quality-governance.md#attribution): A responsibility that an agent has for a resource
+```json
+"Initial release of 2024 climate observations data."
+```
 
 ## <a name="wasAttributedTo"></a>`Dataset > wasAttributedTo` [#](#wasAttributedTo)
 
@@ -1107,30 +1131,6 @@ List of activities that used the Dataset
 
 **Each item of this array must be:**
 - [Activity](./temporal-spatial-metrics.md#activity): An activity related to creating, changing, or using a resource
-
-## <a name="image"></a>`Dataset > image` [#](#image)
-
-**Requirement:** Optional
-
-Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video
-
-- **Type**: null or string
-
-## <a name="scopeNote"></a>`Dataset > scopeNote` [#](#scopeNote)
-
-**Title:** usage note
-
-**Requirement:** Optional
-
-usage note for the dataset
-
-- **Type**: `null or string`
-
-**Example:**
-
-```json
-"This dataset contains raw observational data. For derived products such as monthly averages or climate normals, see related datasets."
-```
 
 ---
 **See Also:** (related supporting classes)
