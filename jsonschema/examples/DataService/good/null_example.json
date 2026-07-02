@@ -28,5 +28,8 @@
   "temporalResolution": null,
   "theme": null,
   "title": "",
-  "wasUsedBy": null
+  "wasUsedBy": null,
+  "accessRestriction": null,
+  "cuiRestriction": null,
+  "useRestriction": null
 }
