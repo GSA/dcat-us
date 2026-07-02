@@ -25,7 +25,7 @@ A specific representation of a dataset, such as a file, feed, or API response
         "No rights reserved. This data is in the public domain."
     ],
     "describedBy": {
-        "@type": "Standard",
+        "@type": "Distribution",
         "title": "CSV Data Dictionary",
         "accessURL": "https://example.gov/data/climate/dictionary"
     },
@@ -47,7 +47,7 @@ A specific representation of a dataset, such as a file, feed, or API response
 | [modified](#modified)                                   | null or object                                                                                     | Recommended       | The most recent date on which the Distribution was changed or modified                                                                                                        |
 | [rights](#rights)                                       | null or array of string                                                                            | Recommended       | Rights statements not already covered by license or accessRights, such as copyright or policy restrictions                                                                    |
 | [title](#title)                                         | null or string                                                                                     | Recommended       | Human-readable title of the distribution                                                                                                                                      |
-| [useRestriction](#useRestriction)                       | null or array of [UseRestriction](./constraints-and-restrictions.md#use-restriction) classes       | Recommended       | Use restriction related to the distribution                                                                                                                                   |
+| [useRestriction](#useRestriction)                       | null or array of [UseRestriction](./constraints-and-restrictions.md#use-restriction) classes       | Recommended       | List of use restrictions related to the distribution                                                                                                                          |
 | [@id](#@id)                                             | string                                                                                             | Optional          |                                                                                                                                                                               |
 | [@type](#@type)                                         | string                                                                                             | Optional          |                                                                                                                                                                               |
 | [accessRights](#accessRights)                           | null or string                                                                                     | Optional          | Information about whether the distribution is publicly accessible, restricted, or not public                                                                                  |
@@ -247,7 +247,7 @@ Human-readable title of the distribution
 
 **Requirement:** Recommended
 
-Use restriction related to the distribution
+List of use restrictions related to the distribution
 
 - **Type**: null or array of [UseRestriction](./constraints-and-restrictions.md#use-restriction) classes
 
