@@ -387,7 +387,7 @@
         "uri": "dcat-us:accessRestriction",
         "range": "dcat-us:AccessRestriction"
       },
-      "requirementLevel": "Recommended"
+      "requirementLevel": "Optional"
     },
     "cuiRestriction": {
       "title": "CUI restriction",
@@ -406,7 +406,7 @@
         "uri": "dcat-us:cuiRestriction",
         "range": "dcat-us:CuiRestriction"
       },
-      "requirementLevel": "Recommended"
+      "requirementLevel": "Optional"
     },
     "useRestriction": {
       "title": "use restriction",
@@ -419,7 +419,7 @@
         "uri": "dcat-us:useRestriction",
         "range": "dcat-us:UseRestriction"
       },
-      "requirementLevel": "Recommended"
+      "requirementLevel": "Optional"
     },
     "rights": {
       "title": "rights",
