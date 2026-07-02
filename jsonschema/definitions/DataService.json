@@ -356,26 +356,6 @@
       },
       "requirementLevel": "Mandatory"
     },
-    "license": {
-      "title": "license",
-      "description": "License that governs how the data service can be used or reused",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "type": "string",
-          "description": "Full text of the license"
-        }
-      ],
-      "_oldDocs": {
-        "uri": "dcterms:license",
-        "range": "dcterms:LicenseDocument"
-      },
-      "examples": ["https://creativecommons.org/publicdomain/zero/1.0/"],
-      "requirementLevel": "Recommended"
-    },
     "accessRestriction": {
       "title": "access restriction",
       "description": "List of access restrictions related to the data service",
