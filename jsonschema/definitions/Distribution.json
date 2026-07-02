@@ -619,7 +619,7 @@
       "modified": "2024-06-01",
       "rights": ["No rights reserved. This data is in the public domain."],
       "describedBy": {
-        "@type": "Standard",
+        "@type": "Distribution",
         "title": "CSV Data Dictionary",
         "accessURL": "https://example.gov/data/climate/dictionary"
       },
