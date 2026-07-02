@@ -404,5 +404,49 @@
     }
   ],
   "image": "https://example.gov/images/dataset-thumbnail.png",
-  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields."
+  "scopeNote": "This dataset should be used for demonstration and testing purposes only. It showcases all available metadata fields.",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "accessRestriction": [
+    {
+      "@id": "https://example.gov/restrictions/none",
+      "@type": "AccessRestriction",
+      "restrictionNote": "No access restrictions apply to this distribution.",
+      "restrictionStatus": {
+        "@id": "https://example.gov/concepts/unrestricted",
+        "@type": "Concept",
+        "prefLabel": "Unrestricted",
+        "definition": "No restrictions on access.",
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
+      }
+    }
+  ],
+  "cuiRestriction": {
+    "@id": "https://example.gov/cui-restrictions/none",
+    "@type": "CUIRestriction",
+    "cuiBannerMarking": "",
+    "designationIndicator": "",
+    "requiredIndicatorPerAuthority": []
+  },
+  "useRestriction": [
+    {
+      "@id": "https://example.gov/restrictions/attribution",
+      "@type": "UseRestriction",
+      "restrictionNote": "Attribution is requested but not required.",
+      "restrictionStatus": {
+        "@id": "https://example.gov/concepts/unrestricted",
+        "@type": "Concept",
+        "prefLabel": "Unrestricted",
+        "definition": "No restrictions on use.",
+        "inScheme": {
+          "@id": "https://example.gov/concept-schemes/restriction-status",
+          "@type": "ConceptScheme",
+          "title": "Restriction Status"
+        }
+      }
+    }
+  ]
 }
