@@ -410,7 +410,7 @@
     {
       "@id": "https://example.gov/restrictions/none",
       "@type": "AccessRestriction",
-      "restrictionNote": "No access restrictions apply to this distribution.",
+      "restrictionNote": "No access restrictions apply to this dataset.",
       "restrictionStatus": {
         "@id": "https://example.gov/concepts/unrestricted",
         "@type": "Concept",
