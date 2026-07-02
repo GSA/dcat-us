@@ -270,7 +270,7 @@
     },
     "useRestriction": {
       "title": "use restriction",
-      "description": "Use restriction related to the distribution",
+      "description": "List of use restrictions related to the distribution",
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/userestriction"
