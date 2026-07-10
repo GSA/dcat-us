@@ -174,6 +174,7 @@
   "version": "2024.1",
   "versionNotes": "Initial release of 2024 climate observations data.",
   "issued": "2024-01-15",
+  "inventoried": "2024-03-01",
   "modified": "2024-06-01",
   "created": "2024-01-01",
   "language": ["en"],
