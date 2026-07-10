@@ -105,6 +105,13 @@
       }
     }
   ],
+  "cuiRestriction": {
+    "@id": "https://example.gov/cui-restrictions/none",
+    "@type": "CUIRestriction",
+    "cuiBannerMarking": "",
+    "designationIndicator": "",
+    "requiredIndicatorPerAuthority": []
+  },
   "useRestriction": [
     {
       "@id": "https://example.gov/restrictions/attribution",

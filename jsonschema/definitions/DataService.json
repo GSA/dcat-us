@@ -356,6 +356,51 @@
       },
       "requirementLevel": "Mandatory"
     },
+    "accessRestriction": {
+      "title": "access restriction",
+      "description": "List of access restrictions related to the data service",
+      "type": ["null", "array"],
+      "items": {
+        "$ref": "/dcat-us/3.0.0/definitions/accessrestriction"
+      },
+      "_oldDocs": {
+        "uri": "dcat-us:accessRestriction",
+        "range": "dcat-us:AccessRestriction"
+      },
+      "requirementLevel": "Optional"
+    },
+    "cuiRestriction": {
+      "title": "CUI restriction",
+      "description": "Controlled Unclassified Information restriction related to the data service",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Null allowed when not required"
+        },
+        {
+          "$ref": "/dcat-us/3.0.0/definitions/cuirestriction",
+          "description": "inline description of CUIRestriction"
+        }
+      ],
+      "_oldDocs": {
+        "uri": "dcat-us:cuiRestriction",
+        "range": "dcat-us:CuiRestriction"
+      },
+      "requirementLevel": "Optional"
+    },
+    "useRestriction": {
+      "title": "use restriction",
+      "description": "List of use restrictions related to the data service",
+      "type": ["null", "array"],
+      "items": {
+        "$ref": "/dcat-us/3.0.0/definitions/userestriction"
+      },
+      "_oldDocs": {
+        "uri": "dcat-us:useRestriction",
+        "range": "dcat-us:UseRestriction"
+      },
+      "requirementLevel": "Optional"
+    },
     "rights": {
       "title": "rights",
       "description": "Rights statements not already covered by license or accessRights, such as copyright or policy restrictions",
