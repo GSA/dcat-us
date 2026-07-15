@@ -62,6 +62,7 @@ A specific representation of a dataset, such as a file, feed, or API response
 | [hasQualityMeasurement](#hasQualityMeasurement)         | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes   | Optional          | Quality measurements for the distribution (for example, completeness, accuracy, or timeliness)                                                                                |
 | [identifier](#identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                                | Optional          | The unique identifier for the Distribution (e.g. DOI, ISBN)                                                                                                                   |
 | [image](#image)                                         | null or string                                                                                     | Optional          | A link to a thumbnail picture illustrating the content of the distribution                                                                                                    |
+| [inventoried](#inventoried)                             | null or object                                                                                     | Optional          | Date on which the distribution was added to the catalog. This may differ from the publication/release date.                                                                   |
 | [issued](#issued)                                       | null or object                                                                                     | Optional          | The date of formal issuance (e.g., publication) of the Distribution                                                                                                           |
 | [language](#language)                                   | More than one type                                                                                 | Optional          | ISO 639-1 language code values used in the distribution metadata text, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                 |
 | [mediaType](#mediaType)                                 | null or string                                                                                     | Optional          | MIME type of the Distribution (for example, text/csv or application/json), from the IANA media types registry: https://www.iana.org/assignments/media-types/media-types.xhtml |
@@ -416,6 +417,34 @@ The unique identifier for the Distribution (e.g. DOI, ISBN)
 A link to a thumbnail picture illustrating the content of the distribution
 
 - **Type**: null or string
+
+## <a name="inventoried"></a>`Distribution > inventoried` [#](#inventoried)
+
+**Title:** inventoried date
+
+**Requirement:** Optional
+
+Date on which the distribution was added to the catalog. This may differ from the publication/release date.
+
+- **Type**: null or object
+
+**Examples:**
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 ## <a name="issued"></a>`Distribution > issued` [#](#issued)
 
