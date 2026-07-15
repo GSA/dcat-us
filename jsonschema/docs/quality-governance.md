@@ -944,6 +944,7 @@ A service that provides access to data or data processing functions
 | [description](#data-service--description)                             | null or string                                                                                     | Optional          | Plain-language summary of the data service                                                                                                           |
 | [hasQualityMeasurement](#data-service--hasQualityMeasurement)         | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes   | Optional          | Quality measurements for the data service (for example, availability, response time, or reliability)                                                 |
 | [identifier](#data-service--identifier)                               | null or [Identifier](./identifiers-and-relationships.md#identifier)                                | Optional          | The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog                                    |
+| [inventoried](#data-service--inventoried)                             | null or object                                                                                     | Optional          | Date on which the data service was added to the catalog. This may differ from the publication/release date.                                          |
 | [keyword](#data-service--keyword)                                     | null or array of string                                                                            | Optional          | List of keywords or tags describing the data service                                                                                                 |
 | [language](#data-service--language)                                   | More than one type                                                                                 | Optional          | ISO 639-1 language code values supported by the data service, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html |
 | [modified](#data-service--modified)                                   | null or object                                                                                     | Optional          | The most recent date on which the Data Service was changed or modified                                                                               |
@@ -1233,6 +1234,34 @@ Quality measurements for the data service (for example, availability, response t
 The unique identifier for the Data Service, e.g. the URI or other unique identifier in the context of the Catalog
 
 - **Type**: null or [Identifier](./identifiers-and-relationships.md#identifier)
+
+## <a name="data-service--inventoried"></a>`DataService > inventoried` [#](#data-service--inventoried)
+
+**Title:** inventoried date
+
+**Requirement:** Optional
+
+Date on which the data service was added to the catalog. This may differ from the publication/release date.
+
+- **Type**: null or object
+
+**Examples:**
+
+```json
+"2024-01-15"
+```
+
+```json
+"2024-01-15T10:30:00Z"
+```
+
+```json
+"2024"
+```
+
+```json
+"2024-01"
+```
 
 ## <a name="data-service--keyword"></a>`DataService > keyword` [#](#data-service--keyword)
 
