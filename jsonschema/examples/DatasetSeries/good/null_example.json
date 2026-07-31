@@ -1,4 +1,5 @@
 {
+  "@id": "https://example.gov/series/example-dataset-series-null",
   "accrualPeriodicity": null,
   "contactPoint": null,
   "description": "",

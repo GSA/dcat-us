@@ -150,6 +150,7 @@
   ],
   "datasetSeries": [
     {
+      "@id": "https://example.gov/series/federal-budget-data-series",
       "@type": "DatasetSeries",
       "title": "Federal Budget Data Series",
       "description": "A series of federal budget datasets published by fiscal year.",
