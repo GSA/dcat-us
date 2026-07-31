@@ -36,6 +36,16 @@ SCHEMA_STARTERS = {
         "title": "",
         "contactPoint": {"hasEmail": "mailto:a@example.gov", "fn": ""},
     },
+    "Catalog": {
+        "dataset": [
+            {
+                "description": "",
+                "title": "",
+                "contactPoint": {"hasEmail": "mailto:a@example.gov", "fn": ""},
+                "identifier": "",
+            }
+        ]
+    },
     "DatasetSeries": {"description": "", "title": ""},
     "Distribution": {},
     "Document": {"title": ""},

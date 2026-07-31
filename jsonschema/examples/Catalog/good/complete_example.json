@@ -148,6 +148,31 @@
       "identifier": "https://example.gov/datasets/catalog-complete-002"
     }
   ],
+  "datasetSeries": [
+    {
+      "@type": "DatasetSeries",
+      "title": "Federal Budget Data Series",
+      "description": "A series of federal budget datasets published by fiscal year.",
+      "publisher": {
+        "name": "Office of Management and Budget"
+      },
+      "seriesMember": [
+        {
+          "@type": "Dataset",
+          "title": "Annual Budget Data",
+          "description": "Federal budget allocations and expenditures by agency and fiscal year.",
+          "contactPoint": {
+            "fn": "Budget Data Team",
+            "hasEmail": "mailto:budget@example.gov"
+          },
+          "publisher": {
+            "name": "Office of Management and Budget"
+          },
+          "identifier": "https://example.gov/datasets/catalog-complete-001"
+        }
+      ]
+    }
+  ],
   "service": [
     {
       "@type": "DataService",

@@ -146,46 +146,6 @@
       "identifier": "https://example.gov/datasets/nested-version-003"
     }
   ],
-  "inSeries": [
-    {
-      "@id": "https://example.gov/series/comprehensive-series",
-      "@type": "DatasetSeries",
-      "title": "Comprehensive Dataset Series",
-      "description": "A series of comprehensive example datasets demonstrating DCAT-US 3.0 schema",
-      "contactPoint": [
-        {
-          "@id": "https://example.gov/contacts/series-contact",
-          "@type": "Kind",
-          "fn": "Series Manager",
-          "hasEmail": "mailto:series@example.gov"
-        }
-      ],
-      "first": {
-        "description": "A minimal dataset",
-        "publisher": {
-          "name": "The Minimal Organization"
-        },
-        "title": "Dataset One",
-        "contactPoint": {
-          "hasEmail": "mailto:example@example.gov",
-          "fn": "Example contact"
-        },
-        "identifier": "https://example.gov/datasets/nested-series-first-004"
-      },
-      "last": {
-        "description": "A minimal dataset",
-        "publisher": {
-          "name": "The Minimal Organization"
-        },
-        "title": "Dataset One",
-        "contactPoint": {
-          "hasEmail": "mailto:example@example.gov",
-          "fn": "Example contact"
-        },
-        "identifier": "https://example.gov/datasets/nested-series-last-005"
-      }
-    }
-  ],
   "keyword": [
     "government",
     "open data",
