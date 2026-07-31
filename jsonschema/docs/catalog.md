@@ -36,6 +36,7 @@ A curated collection of metadata about datasets, data services, or other resourc
     ],
     "datasetSeries": [
         {
+            "@id": "https://example.gov/series/annual-climate-observations",
             "@type": "DatasetSeries",
             "title": "Annual Climate Observations",
             "description": "A series of annual climate observation datasets from monitoring stations.",
