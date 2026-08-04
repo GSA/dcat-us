@@ -132,7 +132,6 @@ A collection of data published or curated by one provider
 | [hasQualityMeasurement](#hasQualityMeasurement)         | null or array of [QualityMeasurement](./temporal-spatial-metrics.md#quality-measurement) classes   | Optional          | List of quality measurements for the dataset (for example, completeness, accuracy, or timeliness) beyond spatial or temporal resolution                                                                                                                    |
 | [hasVersion](#hasVersion)                               | null or array of [Dataset](./dataset.md#root) classes                                              | Optional          | List of related Datasets that are a version, edition, or adaptation of the described Dataset                                                                                                                                                               |
 | [image](#image)                                         | null or string                                                                                     | Optional          | Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video                                                                                                                                                 |
-| [inSeries](#inSeries)                                   | null or array of [DatasetSeries](./dataset-series.md#root) classes                                 | Optional          | Dataset series this dataset belongs to                                                                                                                                                                                                                     |
 | [isReferencedBy](#isReferencedBy)                       | null or array of string                                                                            | Optional          | List of links to related resources, such as publications, that reference, cite, or otherwise point to the Dataset                                                                                                                                          |
 | [issued](#issued)                                       | null or object                                                                                     | Optional          | Date when the dataset was first published. If the exact publication date is unknown, use the date it was first referenced in the catalog.                                                                                                                  |
 | [language](#language)                                   | More than one type                                                                                 | Optional          | ISO 639-1 language code values used in the dataset text or metadata, such as en or es, full list can be seen at https://id.loc.gov/vocabulary/iso639-1.html                                                                                                |
@@ -760,17 +759,6 @@ List of related Datasets that are a version, edition, or adaptation of the descr
 Thumbnail image illustrating the dataset, especially useful for visual data such as maps, photos, or video
 
 - **Type**: null or string
-
-## <a name="inSeries"></a>`Dataset > inSeries` [#](#inSeries)
-
-**Requirement:** Optional
-
-Dataset series this dataset belongs to
-
-- **Type**: null or array of [DatasetSeries](./dataset-series.md#root) classes
-
-**Each item of this array must be:**
-- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately
 
 ## <a name="isReferencedBy"></a>`Dataset > isReferencedBy` [#](#isReferencedBy)
 

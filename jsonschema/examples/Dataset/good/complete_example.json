@@ -220,14 +220,6 @@
   ],
   "purpose": "To provide comprehensive, high-quality climate observations for research, planning, and decision-making related to weather and climate.",
   "liabilityStatement": "This dataset is provided as-is without warranty of any kind. Users are responsible for determining fitness for their intended use.",
-  "inSeries": [
-    {
-      "@id": "https://example.gov/series/annual-climate-observations",
-      "@type": "DatasetSeries",
-      "title": "Annual Climate Observations Series",
-      "description": "An annual series of national climate observations datasets."
-    }
-  ],
   "previousVersion": {
     "@id": "https://example.gov/datasets/national-climate-observations-2023",
     "@type": "Dataset",
