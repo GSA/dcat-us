@@ -9,12 +9,15 @@ Resources:
 """
 
 import copy
+import logging
 import re
 from datetime import datetime, timezone
 from dateutil import parser
 
 from langcodes import Language, find, tag_is_valid
 
+
+logger = logging.getLogger(__name__)
 
 ACCESS_RIGHTS_BY_LEVEL = {
     "public": "public",
@@ -245,40 +248,12 @@ def transform_theme(dataset: dict) -> dict:
     if isinstance(value, str):
         new_dataset["theme"] = [value]
     else:
+        logger.warning(
+            "Dataset %r has a `theme` of unexpected type %s; unsetting it.",
+            dataset.get("identifier", "<unknown>"),
+            type(value).__name__,
+        )
         del new_dataset["theme"]
-    return new_dataset
-
-
-def transform_email(dataset: dict) -> dict:
-    """Strip leading/trailing whitespace from `contactPoint.hasEmail`.
-
-    A trailing space breaks the `mailto:` format check. Handles
-    `contactPoint` as a single Kind object or a list of them. Returns
-    the dataset unchanged if there is no `contactPoint`, no `hasEmail`,
-    or `hasEmail` is not a string.
-    """
-    contacts = dataset.get("contactPoint")
-    if isinstance(contacts, dict):
-        contact_list = [contacts]
-    elif isinstance(contacts, list):
-        contact_list = contacts
-    else:
-        return dataset
-
-    if not any(
-        isinstance(contact, dict)
-        and isinstance(contact.get("hasEmail"), str)
-        and contact["hasEmail"] != contact["hasEmail"].strip()
-        for contact in contact_list
-    ):
-        return dataset
-
-    new_dataset = copy.deepcopy(dataset)
-    new_contacts = new_dataset["contactPoint"]
-    new_contact_list = [new_contacts] if isinstance(new_contacts, dict) else new_contacts
-    for contact in new_contact_list:
-        if isinstance(contact, dict) and isinstance(contact.get("hasEmail"), str):
-            contact["hasEmail"] = contact["hasEmail"].strip()
     return new_dataset
 
 
@@ -340,9 +315,8 @@ def transform_temporal(dataset: dict) -> dict:
     """Convert `temporal` from an ISO 8601 interval string to a list
     containing one PeriodOfTime. Whichever side(s) parse as a date
     become startDate/endDate; non-date sides (durations or anything
-    else) are dropped. No-op if `temporal` isn't a string with one '/'.
-    If neither side parses, `temporal` is set to None rather than left
-    as an invalid string."""
+    else) are dropped. No-op if `temporal` isn't a string with one '/'
+    or if neither side parses."""
     value = dataset.get("temporal")
     if not isinstance(value, str):
         return dataset
@@ -358,9 +332,7 @@ def transform_temporal(dataset: dict) -> dict:
     start = _as_date(left)
     end = _as_date(right)
     if start is None and end is None:
-        new_dataset = copy.deepcopy(dataset)
-        new_dataset["temporal"] = None
-        return new_dataset
+        return dataset
 
     period = {"@type": "PeriodOfTime"}
     if start is not None:

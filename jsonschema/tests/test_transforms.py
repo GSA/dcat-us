@@ -3,7 +3,6 @@ import pytest
 from transforms import (
     propagate_license,
     transform_access_rights,
-    transform_email,
     transform_issued,
     transform_language,
     transform_modified,
@@ -313,42 +312,6 @@ class TestTransformTheme:
         assert original == {"theme": "Environment"}
 
 
-class TestTransformEmail:
-
-    def test_strips_single_contact(self):
-        result = transform_email({"contactPoint": {"fn": "Jane", "hasEmail": "mailto:jane@agency.gov "}})
-        assert result["contactPoint"]["hasEmail"] == "mailto:jane@agency.gov"
-
-    def test_strips_leading_and_trailing(self):
-        result = transform_email({"contactPoint": {"hasEmail": "  mailto:jane@agency.gov  "}})
-        assert result["contactPoint"]["hasEmail"] == "mailto:jane@agency.gov"
-
-    def test_strips_each_contact_in_a_list(self):
-        result = transform_email({"contactPoint": [
-            {"fn": "Jane", "hasEmail": "mailto:jane@agency.gov "},
-            {"fn": "Joe", "hasEmail": "mailto:joe@agency.gov"},
-        ]})
-        assert result["contactPoint"][0]["hasEmail"] == "mailto:jane@agency.gov"
-        assert result["contactPoint"][1]["hasEmail"] == "mailto:joe@agency.gov"
-
-    @pytest.mark.parametrize("dataset", [
-        {},
-        {"title": "no contact"},
-        {"contactPoint": {"fn": "Jane"}},                        # no hasEmail
-        {"contactPoint": {"hasEmail": "mailto:jane@agency.gov"}}, # already stripped
-        {"contactPoint": {"hasEmail": None}},                     # not a string
-        {"contactPoint": "mailto:jane@agency.gov"},               # not a dict or list
-    ])
-    def test_noop_when_shape_unexpected(self, dataset):
-        original = dict(dataset)
-        assert transform_email(dataset) == original
-
-    def test_does_not_mutate_input(self):
-        original = {"contactPoint": {"hasEmail": "mailto:jane@agency.gov "}}
-        transform_email(original)
-        assert original == {"contactPoint": {"hasEmail": "mailto:jane@agency.gov "}}
-
-
 class TestTransformTemporal:
 
     @pytest.mark.parametrize("temporal, expected", [
@@ -386,19 +349,10 @@ class TestTransformTemporal:
         {"temporal": ["2020-01-01/2020-12-31"]},     # not a string
         {"temporal": "2020-01-01"},                  # no slash
         {"temporal": "2020-01-01/2020-12-31/extra"}, # too many slashes
+        {"temporal": "P1Y/P2Y"},                     # neither side is a date
+        {"temporal": "Potato/Pineapple"},            # neither side is a date
+        {"temporal": "R/P1Y/P2Y"},                   # repeating interval, no date
     ])
     def test_noop_when_shape_unexpected(self, dataset):
         original = dict(dataset)
         assert transform_temporal(dataset) == original
-
-    @pytest.mark.parametrize("temporal", [
-        "P1Y/P2Y",       # neither side is a date
-        "Potato/Pineapple",  # neither side is a date
-        "R/P1Y/P2Y",     # repeating interval, no date
-    ])
-    def test_sets_none_when_neither_side_parses(self, temporal):
-        # An unparseable interval is set to None rather than left as an
-        # invalid raw string, since `temporal` is nullable in v3.0 but
-        # not allowed to be an arbitrary string.
-        result = transform_temporal({"temporal": temporal})
-        assert result["temporal"] is None
