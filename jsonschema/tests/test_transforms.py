@@ -3,11 +3,13 @@ import pytest
 from transforms import (
     propagate_license,
     transform_access_rights,
+    transform_email,
     transform_issued,
     transform_language,
     transform_modified,
     transform_rights,
     transform_temporal,
+    transform_theme,
 )
 
 
@@ -137,9 +139,8 @@ class TestTransformLanguage:
     @pytest.mark.parametrize("dataset", [
         {},
         {"title": "no language"},
-        {"language": "en-US"},        # not a list: leave alone
-        {"language": None},           # not a list: leave alone
-        {"language": {"tag": "en"}},  # not a list: leave alone
+        {"language": None},           # not a string or list: leave alone
+        {"language": {"tag": "en"}},  # not a string or list: leave alone
     ])
     def test_noop_when_shape_unexpected(self, dataset):
         original = dict(dataset)
@@ -149,6 +150,17 @@ class TestTransformLanguage:
         # Permissive: skip the bad entries rather than raising.
         result = transform_language({"language": ["en-US", 42, "fr-CA"]})
         assert result["language"] == ["en", "fr"]
+
+    @pytest.mark.parametrize("tag, expected", [
+        ("en-US", ["en"]),
+        ("en", ["en"]),
+        ("zh-Hant-TW", ["zh"]),
+    ])
+    def test_wraps_bare_string_before_truncating(self, tag, expected):
+        # A bare `language` string is wrapped in a list first so it
+        # still gets truncated, since v3.0's 2-char maxLength rejects
+        # untruncated RFC 5646 tags either way.
+        assert transform_language({"language": tag})["language"] == expected
 
 
 class TestTransformModified:
@@ -257,6 +269,86 @@ class TestTransformRights:
         assert result == {"rights": [""]}
 
 
+class TestTransformTheme:
+
+    def test_wraps_string_in_list(self):
+        result = transform_theme({"theme": "Environment", "issued": "2024-10-01"})
+        assert result == {
+            "theme": ["Environment"],
+            "issued": "2024-10-01",
+        }
+
+    def test_leaves_list_unchanged(self):
+        result = transform_theme({"theme": ["Environment", "Climate"]})
+        assert result == {"theme": ["Environment", "Climate"]}
+
+    def test_empty_list_unchanged(self):
+        result = transform_theme({"theme": []})
+        assert result == {"theme": []}
+
+    @pytest.mark.parametrize("dataset", [
+        {},
+        {"title": "no theme"},
+        {"issued": "2024-10-01"},
+    ])
+    def test_noop_when_theme_absent(self, dataset):
+        original = dict(dataset)
+        assert transform_theme(dataset) == original
+
+    @pytest.mark.parametrize("non_string_value", [
+        42,
+        3.14,
+        None,
+        True,
+        {"@type": "Concept", "prefLabel": "Environment"},
+    ])
+    def test_unsets_non_string_non_list(self, non_string_value):
+        result = transform_theme({"theme": non_string_value, "issued": "2024-10-01"})
+        assert result == {"issued": "2024-10-01"}
+        assert "theme" not in result
+
+    def test_does_not_mutate_input(self):
+        original = {"theme": "Environment"}
+        transform_theme(original)
+        assert original == {"theme": "Environment"}
+
+
+class TestTransformEmail:
+
+    def test_strips_single_contact(self):
+        result = transform_email({"contactPoint": {"fn": "Jane", "hasEmail": "mailto:jane@agency.gov "}})
+        assert result["contactPoint"]["hasEmail"] == "mailto:jane@agency.gov"
+
+    def test_strips_leading_and_trailing(self):
+        result = transform_email({"contactPoint": {"hasEmail": "  mailto:jane@agency.gov  "}})
+        assert result["contactPoint"]["hasEmail"] == "mailto:jane@agency.gov"
+
+    def test_strips_each_contact_in_a_list(self):
+        result = transform_email({"contactPoint": [
+            {"fn": "Jane", "hasEmail": "mailto:jane@agency.gov "},
+            {"fn": "Joe", "hasEmail": "mailto:joe@agency.gov"},
+        ]})
+        assert result["contactPoint"][0]["hasEmail"] == "mailto:jane@agency.gov"
+        assert result["contactPoint"][1]["hasEmail"] == "mailto:joe@agency.gov"
+
+    @pytest.mark.parametrize("dataset", [
+        {},
+        {"title": "no contact"},
+        {"contactPoint": {"fn": "Jane"}},                        # no hasEmail
+        {"contactPoint": {"hasEmail": "mailto:jane@agency.gov"}}, # already stripped
+        {"contactPoint": {"hasEmail": None}},                     # not a string
+        {"contactPoint": "mailto:jane@agency.gov"},               # not a dict or list
+    ])
+    def test_noop_when_shape_unexpected(self, dataset):
+        original = dict(dataset)
+        assert transform_email(dataset) == original
+
+    def test_does_not_mutate_input(self):
+        original = {"contactPoint": {"hasEmail": "mailto:jane@agency.gov "}}
+        transform_email(original)
+        assert original == {"contactPoint": {"hasEmail": "mailto:jane@agency.gov "}}
+
+
 class TestTransformTemporal:
 
     @pytest.mark.parametrize("temporal, expected", [
@@ -294,12 +386,19 @@ class TestTransformTemporal:
         {"temporal": ["2020-01-01/2020-12-31"]},     # not a string
         {"temporal": "2020-01-01"},                  # no slash
         {"temporal": "2020-01-01/2020-12-31/extra"}, # too many slashes
-        {"temporal": "P1Y/P2Y"},                     # neither side is a date
-        {"temporal": "Potato/Pineapple"},            # neither side is a date
-        {"temporal": "R/P1Y/P2Y"}                    # repeating interval, no date
     ])
     def test_noop_when_shape_unexpected(self, dataset):
         original = dict(dataset)
-        # We allow the function to mutate `dataset["temporal"]` only when
-        # at least one side parses — none of these cases should change.
         assert transform_temporal(dataset) == original
+
+    @pytest.mark.parametrize("temporal", [
+        "P1Y/P2Y",       # neither side is a date
+        "Potato/Pineapple",  # neither side is a date
+        "R/P1Y/P2Y",     # repeating interval, no date
+    ])
+    def test_sets_none_when_neither_side_parses(self, temporal):
+        # An unparseable interval is set to None rather than left as an
+        # invalid raw string, since `temporal` is nullable in v3.0 but
+        # not allowed to be an arbitrary string.
+        result = transform_temporal({"temporal": temporal})
+        assert result["temporal"] is None

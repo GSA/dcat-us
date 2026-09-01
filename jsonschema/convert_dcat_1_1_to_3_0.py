@@ -311,6 +311,8 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
             dataset = transforms.transform_access_rights(dataset)
             dataset = transforms.propagate_license(dataset)
             dataset = transforms.transform_rights(dataset)
+            dataset = transforms.transform_theme(dataset)
+            dataset = transforms.transform_email(dataset)
             dataset = transforms.transform_described_by(dataset)
             dataset = transforms.transform_sub_organization_of(dataset)
             dataset = transforms.transform_conforms_to(dataset)
