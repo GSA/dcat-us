@@ -9,12 +9,15 @@ Resources:
 """
 
 import copy
+import logging
 import re
 from datetime import datetime, timezone
 from dateutil import parser
 
 from langcodes import Language, find, tag_is_valid
 
+
+logger = logging.getLogger(__name__)
 
 ACCESS_RIGHTS_BY_LEVEL = {
     "public": "public",
@@ -170,9 +173,12 @@ def transform_landing_page(dataset: dict) -> dict:
 
 def transform_language(dataset: dict) -> dict:
     """Truncate RFC 5646 language tags to ISO 639-1 on the dataset and
-    any nested distributions. Non-list or non-string entries are left
-    alone."""
+    any nested distributions. A bare `language` string is wrapped in a
+    list first so it still gets truncated. Non-string list entries are
+    left alone."""
     new_dataset = copy.deepcopy(dataset)
+    if isinstance(new_dataset.get("language"), str):
+        new_dataset["language"] = [new_dataset["language"]]
     _truncate_language(new_dataset)
     for distribution in new_dataset.get("distribution", []):
         _truncate_language(distribution)
@@ -220,6 +226,34 @@ def transform_rights(dataset: dict) -> dict:
         new_dataset["rights"] = [value]
     else:
         del new_dataset["rights"]
+    return new_dataset
+
+
+def transform_theme(dataset: dict) -> dict:
+    """Convert `theme` from a single string to an array.
+
+    `theme` is `null` or an array of Concept in DCAT-US v3.0, with no
+    bare-string form. Returns the dataset unchanged if `theme` is
+    absent or already a list. Unsets `theme` if it is not a string or
+    list.
+    """
+    if "theme" not in dataset:
+        return dataset
+
+    value = dataset["theme"]
+    if isinstance(value, list):
+        return dataset
+
+    new_dataset = copy.deepcopy(dataset)
+    if isinstance(value, str):
+        new_dataset["theme"] = [value]
+    else:
+        logger.warning(
+            "Dataset %r has a `theme` of unexpected type %s; unsetting it.",
+            dataset.get("identifier", "<unknown>"),
+            type(value).__name__,
+        )
+        del new_dataset["theme"]
     return new_dataset
 
 
