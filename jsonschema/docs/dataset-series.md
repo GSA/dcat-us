@@ -2,7 +2,7 @@
 
 Information about a dataset series, including its members, ordering, coverage, and publishing details.
 
-A group of related datasets that are published separately
+A group of related datasets that are published separately and identified by @id as the series identifier
 
 - **Type**: `object`
 - **Additional properties**: Any type allowed
@@ -180,7 +180,7 @@ A group of related datasets that are published separately
 | ------------------------------------------ | ------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [description](#description)               | string                                                                                | Mandatory         | Plain-language summary of the dataset series                                                                                             |
 | [title](#title)                           | string                                                                                | Mandatory         | Human-readable title of the dataset series                                                                                               |
-| [@id](#@id)                               | string                                                                                | Recommended       |                                                                                                                                          |
+| [@id](#@id)                               | string                                                                                | Recommended       | IRI that uniquely identifies the dataset series. Use @id as the identifier field for DatasetSeries.                                      |
 | [contactPoint](#contactPoint)             | null or array of [Kind](./agents.md#kind) classes                                     | Recommended       | List of contacts people can use to ask questions or send feedback about the dataset series                                               |
 | [modified](#modified)                     | null or object                                                                        | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
 | [publisher](#publisher)                   | null or [Agent](./agents.md#agent)                                                    | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
@@ -230,6 +230,8 @@ Human-readable title of the dataset series
 ## <a name="@id"></a>`DatasetSeries > @id` [#](#@id)
 
 **Requirement:** Recommended
+
+IRI that uniquely identifies the dataset series. Use @id as the identifier field for DatasetSeries.
 
 - **Type**: `string`
 - **Format**: `iri`

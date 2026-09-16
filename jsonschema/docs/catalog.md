@@ -416,7 +416,7 @@ List of dataset series included in the catalog.
 - **Type**: null or array of [DatasetSeries](./dataset-series.md#root) classes
 
 **Each item of this array must be:**
-- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately
+- [DatasetSeries](./dataset-series.md#root): A group of related datasets that are published separately and identified by @id as the series identifier
 
 ## <a name="description"></a>`DCAT-US 3 Catalog > description` [#](#description)
 

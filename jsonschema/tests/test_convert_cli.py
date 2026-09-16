@@ -44,7 +44,7 @@ def sample_v1_1_series_catalog():
                     "fn": "Widget Desk",
                     "hasEmail": "mailto:widgets@agency.gov",
                 },
-                "identifier": "series-widget",
+                "identifier": "https://example.gov/series/widget-series",
                 "accessLevel": "public",
             },
             {
@@ -65,7 +65,7 @@ def sample_v1_1_series_catalog():
                         "mediaType": "text/csv"
                     }
                 ],
-                "isPartOf": "series-widget"
+                "isPartOf": "https://example.gov/series/widget-series"
             },
             {
                 "title": "Widget Inventory 2025",
@@ -85,7 +85,7 @@ def sample_v1_1_series_catalog():
                         "mediaType": "text/csv"
                     }
                 ],
-                "isPartOf": "series-widget"
+                "isPartOf": "https://example.gov/series/widget-series"
             }
         ]
     }
@@ -101,8 +101,8 @@ class TestMain:
 
         series = converted["datasetSeries"][0]
         assert series["@type"] == "DatasetSeries"
-        assert "@id" not in series
-        assert series["identifier"] == "series-widget"
+        assert series["@id"] == "https://example.gov/series/widget-series"
+        assert "identifier" not in series
         assert isinstance(series["contactPoint"], list)
         assert "first" not in series
         assert "last" not in series

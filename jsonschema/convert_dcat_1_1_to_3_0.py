@@ -5,7 +5,6 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
 
 import click
 from curl_cffi import requests
@@ -288,14 +287,6 @@ def remove_legacy_is_part_of(dataset: dict) -> dict:
     return dataset
 
 
-def is_iri(value: str | None) -> bool:
-    """Return True when a string looks like an absolute IRI/URL."""
-    if not value:
-        return False
-    parsed = urlparse(value)
-    return bool(parsed.scheme and (parsed.netloc or parsed.path))
-
-
 def normalize_series_contact_point(series: dict) -> dict:
     """DatasetSeries expects contactPoint to be null or an array."""
     contact_point = series.get("contactPoint")
@@ -360,8 +351,9 @@ def build_dataset_series(
             series = normalize_series_contact_point(series)
 
             series_identifier = normalize_identifier(original_datasets[index].get("identifier"))
-            if series_identifier and is_iri(series_identifier) and "@id" not in series:
+            if series_identifier:
                 series["@id"] = series_identifier
+            series.pop("identifier", None)
 
             series["seriesMember"] = [
                 copy.deepcopy(transformed_datasets[child_index])
