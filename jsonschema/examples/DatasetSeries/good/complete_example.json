@@ -73,7 +73,17 @@
     "publisher": {
       "name": "National Climate Data Center"
     },
-    "identifier": "https://example.gov/datasets/series-first"
+    "identifier": "https://example.gov/datasets/series-first",
+    "distribution": [
+      {
+        "@id": "https://example.gov/distributions/climate-2000-csv",
+        "@type": "Distribution",
+        "title": "Climate Observations 2000 CSV",
+        "description": "Climate observations for 2000 in CSV format",
+        "downloadURL": "https://example.gov/downloads/climate-observations-2000.csv",
+        "mediaType": "text/csv"
+      }
+    ]
   },
   "last": {
     "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -87,7 +97,17 @@
     "publisher": {
       "name": "National Climate Data Center"
     },
-    "identifier": "https://example.gov/datasets/series-last"
+    "identifier": "https://example.gov/datasets/series-last",
+    "distribution": [
+      {
+        "@id": "https://example.gov/distributions/climate-2024-csv",
+        "@type": "Distribution",
+        "title": "Climate Observations 2024 CSV",
+        "description": "Climate observations for 2024 in CSV format",
+        "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
+        "mediaType": "text/csv"
+      }
+    ]
   },
   "seriesMember": [
     {
@@ -102,7 +122,17 @@
       "publisher": {
         "name": "National Climate Data Center"
       },
-      "identifier": "https://example.gov/datasets/series-member-001"
+      "identifier": "https://example.gov/datasets/series-member-001",
+      "distribution": [
+        {
+          "@id": "https://example.gov/distributions/climate-2022-csv",
+          "@type": "Distribution",
+          "title": "Climate Observations 2022 CSV",
+          "description": "Climate observations for 2022 in CSV format",
+          "downloadURL": "https://example.gov/downloads/climate-observations-2022.csv",
+          "mediaType": "text/csv"
+        }
+      ]
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2023",
@@ -116,7 +146,17 @@
       "publisher": {
         "name": "National Climate Data Center"
       },
-      "identifier": "https://example.gov/datasets/series-member-002"
+      "identifier": "https://example.gov/datasets/series-member-002",
+      "distribution": [
+        {
+          "@id": "https://example.gov/distributions/climate-2023-csv",
+          "@type": "Distribution",
+          "title": "Climate Observations 2023 CSV",
+          "description": "Climate observations for 2023 in CSV format",
+          "downloadURL": "https://example.gov/downloads/climate-observations-2023.csv",
+          "mediaType": "text/csv"
+        }
+      ]
     },
     {
       "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -130,7 +170,17 @@
       "publisher": {
         "name": "National Climate Data Center"
       },
-      "identifier": "https://example.gov/datasets/series-member-003"
+      "identifier": "https://example.gov/datasets/series-member-003",
+      "distribution": [
+        {
+          "@id": "https://example.gov/distributions/climate-2024-series-csv",
+          "@type": "Distribution",
+          "title": "Climate Observations 2024 Series CSV",
+          "description": "Climate observations for 2024 in CSV format",
+          "downloadURL": "https://example.gov/downloads/climate-observations-2024-series.csv",
+          "mediaType": "text/csv"
+        }
+      ]
     }
   ]
 }

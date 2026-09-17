@@ -272,6 +272,104 @@ def validate_datasets(schema_id: str, registry: Registry, datasets: list) -> tup
     return valid, invalid, error_count
 
 
+def normalize_identifier(value) -> str | None:
+    """Return a normalized string identifier when present."""
+    if isinstance(value, str):
+        normalized = value.strip()
+        if normalized:
+            return normalized
+    return None
+
+
+def remove_legacy_is_part_of(dataset: dict) -> dict:
+    """Drop the legacy v1.1 isPartOf field from converted datasets."""
+    dataset.pop("isPartOf", None)
+    return dataset
+
+
+def normalize_series_contact_point(series: dict) -> dict:
+    """DatasetSeries expects contactPoint to be null or an array."""
+    contact_point = series.get("contactPoint")
+    if isinstance(contact_point, dict):
+        series["contactPoint"] = [contact_point]
+    return series
+
+
+def build_dataset_series(
+    original_datasets: list[dict],
+    transformed_datasets: list[dict],
+) -> tuple[list[dict], list[dict]]:
+    """Promote legacy parent datasets into catalog-level DatasetSeries objects."""
+    datasets_by_identifier: dict[str, int] = {}
+    children_by_parent: dict[int, list[int]] = {}
+    child_indexes: set[int] = set()
+
+    for index, dataset in enumerate(original_datasets):
+        identifier = normalize_identifier(dataset.get("identifier"))
+        if identifier and identifier not in datasets_by_identifier:
+            datasets_by_identifier[identifier] = index
+
+    for index, dataset in enumerate(original_datasets):
+        parent_identifier = normalize_identifier(dataset.get("isPartOf"))
+        if not parent_identifier:
+            continue
+
+        parent_index = datasets_by_identifier.get(parent_identifier)
+        if parent_index is None:
+            child_identifier = normalize_identifier(dataset.get("identifier")) or f"index {index}"
+            click.echo(
+                f"Warning: dataset {child_identifier} references missing isPartOf parent {parent_identifier}; leaving it as a top-level dataset."
+            )
+            continue
+
+        if parent_index == index:
+            child_identifier = normalize_identifier(dataset.get("identifier")) or f"index {index}"
+            raise CatalogConversionException(
+                f"Dataset {child_identifier} cannot reference itself via isPartOf."
+            )
+
+        children_by_parent.setdefault(parent_index, []).append(index)
+        child_indexes.add(index)
+
+    nested_series_indexes = set(children_by_parent).intersection(child_indexes)
+    if nested_series_indexes:
+        nested_index = min(nested_series_indexes)
+        nested_identifier = normalize_identifier(original_datasets[nested_index].get("identifier")) or f"index {nested_index}"
+        raise CatalogConversionException(
+            f"Dataset {nested_identifier} is both a datasetSeries parent and a series member; nested series conversion is not supported."
+        )
+
+    dataset_series: list[dict] = []
+    top_level_datasets: list[dict] = []
+
+    for index, dataset in enumerate(transformed_datasets):
+        if index in children_by_parent:
+            series = copy.deepcopy(dataset)
+            series["@type"] = "DatasetSeries"
+            series.pop("first", None)
+            series.pop("last", None)
+            series = normalize_series_contact_point(series)
+
+            series_identifier = normalize_identifier(original_datasets[index].get("identifier"))
+            if series_identifier:
+                series["@id"] = series_identifier
+            series.pop("identifier", None)
+
+            series["seriesMember"] = [
+                copy.deepcopy(transformed_datasets[child_index])
+                for child_index in children_by_parent[index]
+            ]
+            dataset_series.append(series)
+            continue
+
+        if index in child_indexes:
+            continue
+
+        top_level_datasets.append(dataset)
+
+    return dataset_series, top_level_datasets
+
+
 def convert_dcat_catalog(old_catalog: dict) -> dict:
     """Convert DCAT-US v1.1 catalog to DCAT-US v3.0 catalog."""
     new_catalog = copy.deepcopy(old_catalog)
@@ -301,6 +399,7 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
 
     datasets = new_catalog.get("dataset", [])
     click.echo(f"Transforming {len(datasets)} datasets.")
+    original_datasets = copy.deepcopy(datasets)
     for i, dataset in enumerate(datasets):
         identifier = dataset.get("identifier", f"index {i}")
         try:
@@ -317,11 +416,19 @@ def convert_dcat_catalog(old_catalog: dict) -> dict:
             dataset = transforms.transform_conforms_to(dataset)
             dataset = transforms.transform_landing_page(dataset)
             dataset = transforms.transform_issued(dataset)
+            dataset = remove_legacy_is_part_of(dataset)
             datasets[i] = dataset
         except Exception as e:
             raise CatalogConversionException(
                 f"Failed to convert dataset {identifier}: {e}"
             ) from e
+
+    dataset_series, top_level_datasets = build_dataset_series(original_datasets, datasets)
+    new_catalog["dataset"] = top_level_datasets
+    if dataset_series:
+        new_catalog["datasetSeries"] = dataset_series
+    else:
+        new_catalog.pop("datasetSeries", None)
 
     return new_catalog
 
@@ -356,12 +463,16 @@ def main(output_dir, url, dry_run):
 
     counts = {
         "datasets": 0,
+        "dataset_series": 0,
         "valid_v1_1": 0,
         "invalid_v1_1": 0,
         "validation_errors_v1_1": 0,
         "valid_v3_0": 0,
         "invalid_v3_0": 0,
         "validation_errors_v3_0": 0,
+        "valid_dataset_series_v3_0": 0,
+        "invalid_dataset_series_v3_0": 0,
+        "validation_errors_dataset_series_v3_0": 0,
     }
 
     click.echo(f"Converting DCAT-US v1.1 to DCAT-US v3.0 for {url}")
@@ -394,12 +505,28 @@ def main(output_dir, url, dry_run):
             click.echo(f"Invalid DCAT-US data: {e}", err=True)
 
         converted_datasets = converted_catalog.get("dataset", [])
+        converted_dataset_series = converted_catalog.get("datasetSeries", [])
         V3_0_DATASET_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/dataset"
         valid_v3_0, invalid_v3_0, validation_errors_v3_0 = validate_datasets(V3_0_DATASET_SCHEMA_ID, v3_0_registry, converted_datasets)
         counts["valid_v3_0"] = valid_v3_0
         counts["invalid_v3_0"] = invalid_v3_0
         counts["validation_errors_v3_0"] = validation_errors_v3_0
         click.echo(f"Per-dataset v3.0: {valid_v3_0} valid, {invalid_v3_0} invalid.")
+
+        V3_0_DATASET_SERIES_SCHEMA_ID = "https://resources.data.gov/dcat-us/3.0.0/definitions/datasetseries"
+        valid_dataset_series_v3_0, invalid_dataset_series_v3_0, validation_errors_dataset_series_v3_0 = validate_datasets(
+            V3_0_DATASET_SERIES_SCHEMA_ID,
+            v3_0_registry,
+            converted_dataset_series,
+        )
+        counts["dataset_series"] = len(converted_dataset_series)
+        counts["valid_dataset_series_v3_0"] = valid_dataset_series_v3_0
+        counts["invalid_dataset_series_v3_0"] = invalid_dataset_series_v3_0
+        counts["validation_errors_dataset_series_v3_0"] = validation_errors_dataset_series_v3_0
+        click.echo(
+            "Per-datasetSeries v3.0: "
+            f"{valid_dataset_series_v3_0} valid, {invalid_dataset_series_v3_0} invalid."
+        )
 
         if dry_run:
             click.echo("Dry run complete.")
@@ -413,7 +540,11 @@ def main(output_dir, url, dry_run):
         results["error"] = True
         click.echo(f"There was an error converting a DCAT-US v1.1 catalog to DCAT-US v3.0: {e}", err=True)
 
-    if not results["error"] and counts["datasets"] == counts["valid_v3_0"]:
+    if (
+        not results["error"]
+        and counts["invalid_v3_0"] == 0
+        and counts["invalid_dataset_series_v3_0"] == 0
+    ):
         results["conversion_successful"] = True
 
     click.echo(f"RESULTS:{json.dumps(results)}")

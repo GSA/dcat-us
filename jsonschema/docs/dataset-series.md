@@ -2,7 +2,7 @@
 
 Information about a dataset series, including its members, ordering, coverage, and publishing details.
 
-A group of related datasets that are published separately
+A group of related datasets that are published separately and identified by @id as the series identifier
 
 - **Type**: `object`
 - **Additional properties**: Any type allowed
@@ -27,35 +27,28 @@ A group of related datasets that are published separately
     "accrualPeriodicity": "annually",
     "issued": "2000-01-15",
     "modified": "2024-12-01",
-    "first": {
-        "@id": "https://example.gov/datasets/climate-observations-2000",
-        "@type": "Dataset",
-        "title": "Climate Observations 2000",
-        "description": "First year of climate observations.",
-        "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-        },
-        "publisher": {
-            "name": "National Climate Data Center"
-        },
-        "identifier": "https://example.gov/datasets/series-first"
-    },
-    "last": {
-        "@id": "https://example.gov/datasets/climate-observations-2024",
-        "@type": "Dataset",
-        "title": "Climate Observations 2024",
-        "description": "Latest year of climate observations.",
-        "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-        },
-        "publisher": {
-            "name": "National Climate Data Center"
-        },
-        "identifier": "https://example.gov/datasets/series-last"
-    },
     "seriesMember": [
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2000",
+            "@type": "Dataset",
+            "title": "Climate Observations 2000",
+            "description": "First year of climate observations.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-first",
+            "distribution": [
+                {
+                    "title": "Climate Observations 2000 CSV",
+                    "downloadURL": "https://example.gov/downloads/climate-observations-2000.csv",
+                    "mediaType": "text/csv"
+                }
+            ]
+        },
         {
             "@id": "https://example.gov/datasets/climate-observations-2022",
             "@type": "Dataset",
@@ -68,7 +61,14 @@ A group of related datasets that are published separately
             "publisher": {
                 "name": "National Climate Data Center"
             },
-            "identifier": "https://example.gov/datasets/series-member-001"
+            "identifier": "https://example.gov/datasets/series-member-001",
+            "distribution": [
+                {
+                    "title": "Climate Observations 2022 CSV",
+                    "downloadURL": "https://example.gov/downloads/climate-observations-2022.csv",
+                    "mediaType": "text/csv"
+                }
+            ]
         },
         {
             "@id": "https://example.gov/datasets/climate-observations-2023",
@@ -82,7 +82,14 @@ A group of related datasets that are published separately
             "publisher": {
                 "name": "National Climate Data Center"
             },
-            "identifier": "https://example.gov/datasets/series-member-002"
+            "identifier": "https://example.gov/datasets/series-member-002",
+            "distribution": [
+                {
+                    "title": "Climate Observations 2023 CSV",
+                    "downloadURL": "https://example.gov/downloads/climate-observations-2023.csv",
+                    "mediaType": "text/csv"
+                }
+            ]
         },
         {
             "@id": "https://example.gov/datasets/climate-observations-2024",
@@ -96,7 +103,35 @@ A group of related datasets that are published separately
             "publisher": {
                 "name": "National Climate Data Center"
             },
-            "identifier": "https://example.gov/datasets/series-member-003"
+            "identifier": "https://example.gov/datasets/series-member-003",
+            "distribution": [
+                {
+                    "title": "Climate Observations 2024 CSV",
+                    "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
+                    "mediaType": "text/csv"
+                }
+            ]
+        },
+        {
+            "@id": "https://example.gov/datasets/climate-observations-2024",
+            "@type": "Dataset",
+            "title": "Climate Observations 2024",
+            "description": "Latest year of climate observations.",
+            "contactPoint": {
+                "fn": "Climate Support",
+                "hasEmail": "mailto:climate@example.gov"
+            },
+            "publisher": {
+                "name": "National Climate Data Center"
+            },
+            "identifier": "https://example.gov/datasets/series-last",
+            "distribution": [
+                {
+                    "title": "Climate Observations 2024 CSV",
+                    "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
+                    "mediaType": "text/csv"
+                }
+            ]
         }
     ],
     "spatial": [
@@ -145,10 +180,8 @@ A group of related datasets that are published separately
 | ------------------------------------------ | ------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [description](#description)               | string                                                                                | Mandatory         | Plain-language summary of the dataset series                                                                                             |
 | [title](#title)                           | string                                                                                | Mandatory         | Human-readable title of the dataset series                                                                                               |
-| [@id](#@id)                               | string                                                                                | Recommended       |                                                                                                                                          |
+| [@id](#@id)                               | string                                                                                | Recommended       | IRI that uniquely identifies the dataset series. Use @id as the identifier field for DatasetSeries.                                      |
 | [contactPoint](#contactPoint)             | null or array of [Kind](./agents.md#kind) classes                                     | Recommended       | List of contacts people can use to ask questions or send feedback about the dataset series                                               |
-| [first](#first)                           | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The first dataset in an ordered dataset series                                                                                           |
-| [last](#last)                             | null or [Dataset](./dataset.md#root)                                                  | Recommended       | The last dataset in an ordered dataset series                                                                                            |
 | [modified](#modified)                     | null or object                                                                        | Recommended       | Most recent date when the Dataset Series changed, not the modified date of the newest dataset in the series                              |
 | [publisher](#publisher)                   | null or [Agent](./agents.md#agent)                                                    | Recommended       | Organization responsible for maintaining the Dataset Series as a coherent series; this may differ from publishers of individual datasets |
 | [seriesMember](#seriesMember)             | null or array of [Dataset](./dataset.md#root) classes                                 | Recommended       | List of members of the Dataset Series                                                                                                    |
@@ -156,7 +189,9 @@ A group of related datasets that are published separately
 | [temporal](#temporal)                     | null or array of [PeriodOfTime](./temporal-spatial-metrics.md#period-of-time) classes | Recommended       | Time periods covered by the dataset series                                                                                               |
 | [@type](#@type)                           | string                                                                                | Optional          |                                                                                                                                          |
 | [accrualPeriodicity](#accrualPeriodicity) | More than one type                                                                    | Optional          | The frequency at which the Dataset Series is updated. This is the series update frequency, not necessarily each dataset's frequency      |
+| [first](#first)                           | null or [Dataset](./dataset.md#root)                                                  | Optional          | The first dataset in an ordered dataset series                                                                                           |
 | [issued](#issued)                         | null or object                                                                        | Optional          | Date when the Dataset Series was formally established or published, not the release date of the oldest dataset in the series             |
+| [last](#last)                             | null or [Dataset](./dataset.md#root)                                                  | Optional          | The last dataset in an ordered dataset series                                                                                            |
 
 ## <a name="description"></a>`DatasetSeries > description` [#](#description)
 
@@ -196,6 +231,8 @@ Human-readable title of the dataset series
 
 **Requirement:** Recommended
 
+IRI that uniquely identifies the dataset series. Use @id as the identifier field for DatasetSeries.
+
 - **Type**: `string`
 - **Format**: `iri`
 
@@ -215,22 +252,6 @@ List of contacts people can use to ask questions or send feedback about the data
 
 **Each item of this array must be:**
 - [Kind](./agents.md#kind): Contact information for an individual or entity
-
-## <a name="first"></a>`DatasetSeries > first` [#](#first)
-
-**Requirement:** Recommended
-
-The first dataset in an ordered dataset series
-
-- **Type**: null or [Dataset](./dataset.md#root)
-
-## <a name="last"></a>`DatasetSeries > last` [#](#last)
-
-**Requirement:** Recommended
-
-The last dataset in an ordered dataset series
-
-- **Type**: null or [Dataset](./dataset.md#root)
 
 ## <a name="modified"></a>`DatasetSeries > modified` [#](#modified)
 
@@ -397,6 +418,14 @@ Must be one of:
 * "semiweekly"
 * "threeTimesAWeek"
 
+## <a name="first"></a>`DatasetSeries > first` [#](#first)
+
+**Requirement:** Optional
+
+The first dataset in an ordered dataset series
+
+- **Type**: null or [Dataset](./dataset.md#root)
+
 ## <a name="issued"></a>`DatasetSeries > issued` [#](#issued)
 
 **Title:** release date
@@ -424,3 +453,11 @@ Date when the Dataset Series was formally established or published, not the rele
 ```json
 "2024-01"
 ```
+
+## <a name="last"></a>`DatasetSeries > last` [#](#last)
+
+**Requirement:** Optional
+
+The last dataset in an ordered dataset series
+
+- **Type**: null or [Dataset](./dataset.md#root)

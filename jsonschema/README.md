@@ -269,7 +269,11 @@ poetry run python generate_schema_docs.py
 ### convert_dcat_1_1_to_3_0.py
 
 Summary: Takes a URL pointing to a valid DCAT-US v1.1 catalog and converts it to
-a valid DCAT-US v3.0 catalog. By default saves converted data to the
+a valid DCAT-US v3.0 catalog. Legacy v1.1 `isPartOf` string relationships are
+converted into catalog-level `datasetSeries` entries, where the referenced
+source dataset is promoted into a `DatasetSeries`, its dataset `identifier` is
+mapped to the series `@id`, and its member datasets are removed from the top-level
+`dataset` list. By default saves converted data to the
 `converted_dcat_data` directory in this repository.
 
 ```bash
