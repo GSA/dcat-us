@@ -293,6 +293,32 @@ def _canonical_class_doc_link(schema_node):
     return None
 
 
+def _canonical_class_display_name(schema_node):
+    if schema_node is None:
+        return None
+
+    candidates = [schema_node, schema_node.refers_to, schema_node.refers_to_merged]
+    for candidate in candidates:
+        if candidate is None:
+            continue
+
+        class_name = None
+        if getattr(candidate, "ref_path", None):
+            class_name = candidate.ref_path.split("/")[-1]
+        elif getattr(candidate, "definition_name", None):
+            class_name = candidate.definition_name
+
+        if not class_name:
+            continue
+
+        normalized_name = class_name.lower()
+        display_name = CLASS_DISPLAY_NAME_MAP.get(normalized_name)
+        if display_name:
+            return display_name
+
+    return None
+
+
 def _rewrite_class_doc_links(content):
     def _replace(match):
         label = match.group(1)
@@ -611,6 +637,168 @@ def _simple_type_label(schema):
     return type_name or None
 
 
+def _combining_schema(schema):
+    candidates = [schema, schema.refers_to_merged, schema.refers_to]
+    for candidate in candidates:
+        if candidate and jinja_filters.is_combining(candidate):
+            return candidate
+
+    return None
+
+
+def _combining_branches(schema):
+    combining_schema = _combining_schema(schema)
+    if combining_schema is None:
+        return []
+
+    for keyword_name in ("kw_any_of", "kw_one_of", "kw_all_of"):
+        keyword_node = getattr(combining_schema, keyword_name, None)
+        if keyword_node:
+            return list(keyword_node.array_items or [])
+
+    return []
+
+
+def _meaningful_combining_branches(schema):
+    return [
+        branch
+        for branch in _combining_branches(schema)
+        if getattr(branch, "type_name", "") != "null"
+    ]
+
+
+def _single_branch_class(branch):
+    class_link = _canonical_class_doc_link(branch)
+    class_name = _canonical_class_display_name(branch)
+    if class_link and class_name:
+        return class_name.lower(), class_link
+
+    return None, None
+
+
+def _array_branch_class(branch):
+    array_item = getattr(branch, "array_items_def", None)
+    if array_item is None:
+        return None, None
+
+    class_link = _canonical_class_doc_link(array_item)
+    class_name = _canonical_class_display_name(array_item)
+    if class_link and class_name:
+        return class_name.lower(), class_link
+
+    return None, None
+
+
+def _pluralize_label(label):
+    if not label:
+        return label
+
+    parts = label.split(" ")
+    last_word = parts[-1]
+
+    if re.search(r"[^aeiou]y$", last_word, re.IGNORECASE):
+        parts[-1] = f"{last_word[:-1]}ies"
+    elif re.search(r"(s|x|z|ch|sh)$", last_word, re.IGNORECASE):
+        parts[-1] = f"{last_word}es"
+    else:
+        parts[-1] = f"{last_word}s"
+
+    return " ".join(parts)
+
+
+def _branch_descriptor(branch):
+    class_key, class_link = _single_branch_class(branch)
+    if class_key and class_link:
+        return {"kind": "class", "key": class_key, "label": class_link}
+
+    title = getattr(branch, "title", None)
+    if title and not re.fullmatch(r"item\s+\d+", title, re.IGNORECASE):
+        return {
+            "kind": "label",
+            "key": _normalize_label(title),
+            "label": title,
+        }
+
+    type_name = getattr(branch, "type_name", None)
+    if type_name:
+        return {"kind": "label", "key": type_name, "label": type_name}
+
+    return None
+
+
+def _array_item_descriptor(branch):
+    array_item = getattr(branch, "array_items_def", None)
+    if array_item is None:
+        return None
+
+    return _branch_descriptor(array_item)
+
+
+def _descriptive_combining_type_label(schema):
+    branches = _meaningful_combining_branches(schema)
+    if len(branches) != 2:
+        return None
+
+    non_array_branch = None
+    array_branch = None
+    primitive_branch = None
+    object_branch = None
+
+    for branch in branches:
+        branch_type = getattr(branch, "type_name", "")
+        if getattr(branch, "array_items_def", None) is not None:
+            array_branch = branch
+        else:
+            non_array_branch = branch
+
+        if branch_type in {"string", "integer", "number", "boolean"}:
+            primitive_branch = branch
+
+        if branch_type == "object":
+            object_branch = branch
+
+    if non_array_branch and array_branch:
+        single_class_key, single_class_link = _single_branch_class(non_array_branch)
+        array_class_key, array_class_link = _array_branch_class(array_branch)
+        if (
+            single_class_key
+            and array_class_key
+            and single_class_key == array_class_key
+            and single_class_link
+            and array_class_link
+        ):
+            return (
+                f"single {single_class_link} object or array of "
+                f"{array_class_link} objects"
+            )
+
+        single_descriptor = _branch_descriptor(non_array_branch)
+        array_item_descriptor = _array_item_descriptor(array_branch)
+        if (
+            single_descriptor
+            and array_item_descriptor
+            and single_descriptor["key"] == array_item_descriptor["key"]
+            and single_descriptor["kind"] == "label"
+            and array_item_descriptor["kind"] == "label"
+        ):
+            singular_label = single_descriptor["label"]
+            plural_label = _pluralize_label(array_item_descriptor["label"])
+            return f"single {singular_label} or array of {plural_label}"
+
+    if primitive_branch and object_branch:
+        primitive_type = getattr(primitive_branch, "type_name", None)
+        class_link = _canonical_class_doc_link(schema) or _canonical_class_doc_link(
+            object_branch
+        )
+        class_name = _canonical_class_display_name(schema) or _canonical_class_display_name(
+            object_branch
+        )
+        if primitive_type and class_link and class_name:
+            return f"{primitive_type} or {class_link} object"
+
+    return None
+
+
 def _collapsed_nullable_branch(schema):
     for keyword_name in ("kw_any_of", "kw_one_of"):
         keyword_node = getattr(schema, keyword_name, None)
@@ -639,6 +827,10 @@ def has_collapsed_nullable_branch(schema):
 
 
 def _display_type_label(schema):
+    descriptive_combining_label = _descriptive_combining_type_label(schema)
+    if descriptive_combining_label:
+        return descriptive_combining_label
+
     array_item = getattr(schema, "array_items_def", None)
     tuple_items = getattr(schema, "tuple_validation_items", None) or []
     if array_item and not tuple_items:
@@ -793,9 +985,6 @@ def type_info_table_wrap(type_info_list, schema):
                 line[1] = f"[{class_name.title()}](./{class_name.title()}.md)"
         elif line_label == "Same definition as" and canonical_link:
             line[1] = canonical_link
-        elif "`combining`" in line:
-            # replace combining with something better
-            line[line.index("`combining`")] = "More than one type"
 
     # remove lines
     def _remove_me(line):
