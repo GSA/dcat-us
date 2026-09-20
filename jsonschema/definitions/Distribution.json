@@ -192,7 +192,7 @@
       "requirementLevel": "Optional"
     },
     "temporalResolution": {
-      "title": "termporal resolution",
+      "title": "temporal resolution",
       "description": "The minimum time period resolvable in the dataset distribution",
       "type": ["null", "string"],
       "_oldDocs": {

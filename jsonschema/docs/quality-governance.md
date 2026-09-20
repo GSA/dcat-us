@@ -1328,7 +1328,7 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 **Any of:**
 - [Null allowed when not required](#data-service--language_anyOf_i0)
 - [Language code](#data-service--language_anyOf_i1)
-- [List of lanuages](#data-service--language_anyOf_i2)
+- [List of languages](#data-service--language_anyOf_i2)
 
 ### <a name="data-service--language_anyOf_i0"></a>`DataService > language > anyOf > Null allowed when not required` [#](#data-service--language_anyOf_i0)
 
@@ -1341,7 +1341,7 @@ ISO 639-1 language code values supported by the data service, such as en or es, 
 **Restrictions:**
 - **Max length**: 2
 
-### <a name="data-service--language_anyOf_i2"></a>`DataService > language > anyOf > List of lanuages` [#](#data-service--language_anyOf_i2)
+### <a name="data-service--language_anyOf_i2"></a>`DataService > language > anyOf > List of languages` [#](#data-service--language_anyOf_i2)
 
 - **Type**: array of string
 
