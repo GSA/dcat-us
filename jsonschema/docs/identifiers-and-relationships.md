@@ -8,7 +8,7 @@ Supporting classes for identifiers, relationships, checksums, and controlled con
 
 A unique identifier and optionally it's scheme and other relevant information
 
-- **Type**: `combining`
+- **Type**: string or [Identifier](./identifiers-and-relationships.md#identifier) object
 - **Additional properties**: Any type allowed
 
 **Any of:**
@@ -266,7 +266,7 @@ A lower case hexadecimal encoded digest value produced using a specific algorith
 
 A controlled term or label, optionally drawn from a concept scheme
 
-- **Type**: `combining`
+- **Type**: string or [Concept](./identifiers-and-relationships.md#concept) object
 - **Additional properties**: Any type allowed
 
 **Examples:**

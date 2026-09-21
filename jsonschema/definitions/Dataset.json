@@ -541,16 +541,7 @@
     "identifier": {
       "title": "identifier",
       "description": "The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog",
-      "anyOf": [
-        {
-          "type": "null",
-          "title": "Null allowed when not required"
-        },
-        {
-          "$ref": "/dcat-us/3.0.0/definitions/identifier",
-          "description": "inline description of Identifier"
-        }
-      ],
+      "$ref": "/dcat-us/3.0.0/definitions/identifier",
       "_oldDocs": {
         "uri": "dcterms:identifier",
         "range": "rdfs:Literal"

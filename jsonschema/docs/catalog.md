@@ -98,7 +98,7 @@ A curated collection of metadata about datasets, data services, or other resourc
 | [conformsTo](#conformsTo)                     | null or [Standard](./quality-governance.md#standard)                                        | Recommended       | Standard, schema, profile, or model that this catalog follows                                                                         |
 | [homepage](#homepage)                         | null or [Document](./quality-governance.md#document)                                        | Recommended       | Main public web page for the catalog, usually an HTML page                                                                            |
 | [issued](#issued)                             | null or object                                                                              | Recommended       | Date when the catalog was formally issued, such as its initial publication date                                                       |
-| [language](#language)                         | More than one type                                                                          | Recommended       | Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es                  |
+| [language](#language)                         | single Language code or array of Language codes                                             | Recommended       | Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es                  |
 | [modified](#modified)                         | null or object                                                                              | Recommended       | Most recent date when the catalog content changed, not just catalog-record metadata                                                   |
 | [rights](#rights)                             | null or array of string                                                                     | Recommended       | Rights statements about the catalog that are not already covered by license or accessRights, such as copyright or policy restrictions |
 | [spatial](#spatial)                           | null or array of [Location](./temporal-spatial-metrics.md#location) classes                 | Recommended       | Geographic area covered by the catalog                                                                                                |
@@ -191,7 +191,7 @@ Date when the catalog was formally issued, such as its initial publication date
 
 Language codes used for catalog metadata text (such as titles and descriptions), using ISO 639-1 codes like en or es
 
-- **Type**: `combining`
+- **Type**: single Language code or array of Language codes
 - **Additional properties**: Any type allowed
 
 **Examples:**
