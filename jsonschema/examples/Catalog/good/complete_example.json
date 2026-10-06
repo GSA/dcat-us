@@ -123,29 +123,16 @@
   "dataset": [
     {
       "@type": "Dataset",
-      "title": "Annual Budget Data",
-      "description": "Federal budget allocations and expenditures by agency and fiscal year.",
+      "title": "National Park Visitor Counts",
+      "description": "Annual visitor counts for national parks across the United States.",
       "contactPoint": {
-        "fn": "Budget Data Team",
-        "hasEmail": "mailto:budget@example.gov"
+        "fn": "Park Data Office",
+        "hasEmail": "mailto:park-data@example.gov"
       },
       "publisher": {
-        "name": "Office of Management and Budget"
+        "name": "National Park Service"
       },
-      "identifier": "https://example.gov/datasets/catalog-complete-001"
-    },
-    {
-      "@type": "Dataset",
-      "title": "Employment Statistics",
-      "description": "Monthly employment data across federal agencies.",
-      "contactPoint": {
-        "fn": "HR Data Team",
-        "hasEmail": "mailto:hr-data@example.gov"
-      },
-      "publisher": {
-        "name": "Office of Personnel Management"
-      },
-      "identifier": "https://example.gov/datasets/catalog-complete-002"
+      "identifier": "https://example.gov/datasets/national-park-visitor-counts"
     }
   ],
   "datasetSeries": [
@@ -169,7 +156,7 @@
           "publisher": {
             "name": "Office of Management and Budget"
           },
-          "identifier": "https://example.gov/datasets/catalog-complete-001"
+          "identifier": "https://example.gov/datasets/federal-budget-series-fy2024"
         }
       ]
     }
