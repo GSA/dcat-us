@@ -55,7 +55,7 @@ A curated collection of metadata about datasets, data services, or other resourc
                     "publisher": {
                         "name": "National Climate Data Center"
                     },
-                    "identifier": "https://example.gov/datasets/annual-climate-observations-2024"
+                    "identifier": "https://example.gov/datasets/daily-climate-observations-2024"
                 }
             ]
         }
