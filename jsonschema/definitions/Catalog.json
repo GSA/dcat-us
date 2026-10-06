@@ -42,7 +42,7 @@
     },
     "dataset": {
       "title": "dataset",
-      "description": "List of datasets included in the catalog. Use this together with service so the catalog is not empty.",
+      "description": "List of datasets included directly in the catalog. Do not include datasets that are members of a dataset series here. Dataset identifiers must be unique across all datasets in the catalog, including series members.",
       "type": "array",
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
@@ -55,7 +55,7 @@
     },
     "datasetSeries": {
       "title": "dataset series",
-      "description": "List of dataset series included in the catalog.",
+      "description": "List of dataset series included in the catalog. Do not duplicate datasets in the series members in the catalog's dataset list.",
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/datasetseries"
@@ -521,26 +521,26 @@
   "examples": [
     {
       "@type": "Catalog",
-      "title": "National Climate Data Catalog",
-      "description": "A comprehensive catalog of climate and weather datasets from federal monitoring stations across the United States.",
+      "title": "Federal Data Catalog",
+      "description": "A catalog of datasets from federal agencies covering a range of subject areas.",
       "publisher": {
         "@type": "Agent",
-        "name": "National Climate Data Center"
+        "name": "Federal Data Management Office"
       },
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "dataset": [
         {
           "@type": "Dataset",
-          "title": "Daily Climate Observations 2024",
-          "description": "Daily temperature, precipitation, and wind measurements.",
+          "title": "Federal Workforce Statistics 2024",
+          "description": "Annual statistics on the federal civilian workforce by agency.",
           "contactPoint": {
-            "fn": "Climate Data Support",
-            "hasEmail": "mailto:climate@example.gov"
+            "fn": "Workforce Data Support",
+            "hasEmail": "mailto:workforce@example.gov"
           },
           "publisher": {
-            "name": "National Climate Data Center"
+            "name": "Office of Personnel Management"
           },
-          "identifier": "https://example.gov/datasets/climate-observations-1"
+          "identifier": "https://example.gov/datasets/federal-workforce-statistics-2024"
         }
       ],
       "datasetSeries": [
@@ -564,21 +564,21 @@
               "publisher": {
                 "name": "National Climate Data Center"
               },
-              "identifier": "https://example.gov/datasets/climate-observations-1"
+              "identifier": "https://example.gov/datasets/annual-climate-observations-2024"
             }
           ]
         }
       ],
       "homepage": {
         "@type": "Document",
-        "title": "National Climate Data Catalog Homepage",
-        "accessURL": "https://example.gov/climate-data"
+        "title": "Federal Data Catalog Homepage",
+        "accessURL": "https://example.gov/data-catalog"
       },
       "language": ["en"],
       "issued": "2020-01-15",
       "modified": "2024-06-01",
       "rights": [
-        "This catalog is maintained by the National Climate Data Center."
+        "This catalog is maintained by the Federal Data Management Office."
       ],
       "spatial": [
         {
@@ -589,7 +589,7 @@
       "themeTaxonomy": [
         {
           "@type": "ConceptScheme",
-          "title": "Climate Science Topics"
+          "title": "Federal Data Topics"
         }
       ],
       "conformsTo": {

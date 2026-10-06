@@ -5,7 +5,7 @@
   "description": "An annual series of comprehensive climate observation datasets collected from monitoring stations across the United States. Each dataset in the series covers one calendar year of daily observations.",
   "accrualPeriodicity": "annually",
   "issued": "2000-01-15",
-  "modified": "2024-06-01",
+  "modified": "2025-06-01",
   "publisher": {
     "@id": "https://example.gov/agents/ncdc",
     "@type": "Agent",
@@ -58,7 +58,7 @@
       "@id": "https://example.gov/periods/series-coverage",
       "@type": "PeriodOfTime",
       "startDate": "2000-01-01",
-      "endDate": "2024-12-31"
+      "endDate": "2025-12-31"
     }
   ],
   "first": {
@@ -86,10 +86,10 @@
     ]
   },
   "last": {
-    "@id": "https://example.gov/datasets/climate-observations-2024",
+    "@id": "https://example.gov/datasets/climate-observations-2025",
     "@type": "Dataset",
-    "title": "National Climate Observations 2024",
-    "description": "The most recent dataset in the annual climate observations series, covering calendar year 2024.",
+    "title": "National Climate Observations 2025",
+    "description": "The most recent dataset in the annual climate observations series, covering calendar year 2025.",
     "contactPoint": {
       "fn": "Climate Data Support",
       "hasEmail": "mailto:climate@example.gov"
@@ -97,14 +97,14 @@
     "publisher": {
       "name": "National Climate Data Center"
     },
-    "identifier": "https://example.gov/datasets/series-last",
+    "identifier": "https://example.gov/datasets/series-last-2025",
     "distribution": [
       {
-        "@id": "https://example.gov/distributions/climate-2024-csv",
+        "@id": "https://example.gov/distributions/climate-2025-csv",
         "@type": "Distribution",
-        "title": "Climate Observations 2024 CSV",
-        "description": "Climate observations for 2024 in CSV format",
-        "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
+        "title": "Climate Observations 2025 CSV",
+        "description": "Climate observations for 2025 in CSV format",
+        "downloadURL": "https://example.gov/downloads/climate-observations-2025.csv",
         "mediaType": "text/csv"
       }
     ]

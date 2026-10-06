@@ -99,27 +99,6 @@
           "mediaType": "text/csv"
         }
       ]
-    },
-    {
-      "@id": "https://example.gov/datasets/climate-observations-2024",
-      "@type": "Dataset",
-      "title": "Climate Observations 2024",
-      "description": "Latest year of climate observations.",
-      "contactPoint": {
-        "fn": "Climate Support",
-        "hasEmail": "mailto:climate@example.gov"
-      },
-      "publisher": {
-        "name": "National Climate Data Center"
-      },
-      "identifier": "https://example.gov/datasets/series-last",
-      "distribution": [
-        {
-          "title": "Climate Observations 2024 CSV",
-          "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
-          "mediaType": "text/csv"
-        }
-      ]
     }
   ],
   "spatial": [

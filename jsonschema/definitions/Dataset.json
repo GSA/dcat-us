@@ -540,7 +540,7 @@
     },
     "identifier": {
       "title": "identifier",
-      "description": "The unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog",
+      "description": "An identifier that is unique to this Dataset within its Catalog. Do not reuse it for another Dataset in the Catalog, including a Dataset that is a member of a Dataset Series.",
       "$ref": "/dcat-us/3.0.0/definitions/identifier",
       "_oldDocs": {
         "uri": "dcterms:identifier",

@@ -69,7 +69,7 @@
     },
     "seriesMember": {
       "title": "series member",
-      "description": "List of members of the Dataset Series",
+      "description": "List of members of the Dataset Series. Each member's identifier must be unique across its Catalog, and members must not also be listed in the Catalog's dataset list.",
       "type": ["null", "array"],
       "items": {
         "$ref": "/dcat-us/3.0.0/definitions/dataset"
@@ -400,27 +400,6 @@
             "name": "National Climate Data Center"
           },
           "identifier": "https://example.gov/datasets/series-member-003",
-          "distribution": [
-            {
-              "title": "Climate Observations 2024 CSV",
-              "downloadURL": "https://example.gov/downloads/climate-observations-2024.csv",
-              "mediaType": "text/csv"
-            }
-          ]
-        },
-        {
-          "@id": "https://example.gov/datasets/climate-observations-2024",
-          "@type": "Dataset",
-          "title": "Climate Observations 2024",
-          "description": "Latest year of climate observations.",
-          "contactPoint": {
-            "fn": "Climate Support",
-            "hasEmail": "mailto:climate@example.gov"
-          },
-          "publisher": {
-            "name": "National Climate Data Center"
-          },
-          "identifier": "https://example.gov/datasets/series-last",
           "distribution": [
             {
               "title": "Climate Observations 2024 CSV",
