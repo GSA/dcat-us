@@ -616,7 +616,7 @@ The status of the distribution in the context of maturity lifecycle
 
 ## <a name="temporalResolution"></a>`Distribution > temporalResolution` [#](#temporalResolution)
 
-**Title:** termporal resolution
+**Title:** temporal resolution
 
 **Requirement:** Optional
 

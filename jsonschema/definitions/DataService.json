@@ -272,7 +272,7 @@
         },
         {
           "type": "array",
-          "title": "List of lanuages",
+          "title": "List of languages",
           "items": {
             "title": "Language code",
             "type": "string",
